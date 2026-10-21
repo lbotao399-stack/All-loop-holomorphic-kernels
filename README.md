@@ -2,7 +2,7 @@
 
 **Computing all-loop holomorphic Feynman diagrams in four dimensions by circuit reduction** — full version (draft of 21 October 2026).
 
-Botao Li, Peking University
+Botao Li (Peking University), GPT Astra, Claude Opus 5.5
 
 ## Abstract
 
