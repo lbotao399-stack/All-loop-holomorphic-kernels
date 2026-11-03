@@ -1,8 +1,10 @@
 # Perturbative quantum corrections and the quantum ring structure of the BPS sector
 
-**Computing all-loop holomorphic Feynman diagrams in four dimensions by circuit reduction** — full version (draft of 21 October 2026).
+**Computing all-loop holomorphic Feynman diagrams in four dimensions by circuit reduction** — current reader snapshot of 4 November 2026 (revision 3788).
 
 Botao Li (Peking University), GPT Astra, Claude Opus 5.5
+
+The current manuscript is available as a [colored PDF](All_loop_holomorphic_kernels_full.pdf) and a [self-contained HTML export](reader/index.html) (download and open locally). Both preserve the reader’s red and blue text, yellow highlights, formulas, figures, and chapter order. The [editable snapshot](reader/document.json) preserves every block, stable ID, and formatting range.
 
 ## Abstract
 
@@ -12,12 +14,18 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 
 | File | |
 |---|---|
-| [`All_loop_holomorphic_kernels_full.pdf`](All_loop_holomorphic_kernels_full.pdf) | the paper (165 pages) |
-| `All_loop_holomorphic_kernels_full.tex` | LaTeX source, a single file with the bibliography included |
+| [`All_loop_holomorphic_kernels_full.pdf`](All_loop_holomorphic_kernels_full.pdf) | current color-preserving reader export |
+| [`reader/index.html`](reader/index.html) | standalone manuscript with embedded fonts and figures; download and open in a browser |
+| [`reader/document.json`](reader/document.json) | lossless editable snapshot, revision 3788, 3,627 blocks |
+| [`reader/snapshot-manifest.json`](reader/snapshot-manifest.json) | snapshot metadata, validation results, and file hashes |
+| `reader/figures/` | image assets referenced by the editable snapshot |
+| `All_loop_holomorphic_kernels_full.tex` | original 21 October 2026 LaTeX source, retained unchanged; subsequent reader edits are in `reader/document.json` |
 | `figures/` | the figures used by the source |
 | `SQED_two_loop_repro.zip` | companion package for the two-loop lifting example in massive SQED (Section 9.1); Python 3, standard library only |
 
-## Build
+## Build the original LaTeX source
+
+This command builds the original 21 October source. It does not reproduce the updated reader snapshot or its colored PDF.
 
 ```sh
 latexmk -pdf All_loop_holomorphic_kernels_full.tex
