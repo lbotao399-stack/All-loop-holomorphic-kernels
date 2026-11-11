@@ -18,6 +18,7 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 | [`main.tex`](main.tex) | LaTeX source of the manuscript (mirrored at [`All_loop_holomorphic_kernels_full.tex`](All_loop_holomorphic_kernels_full.tex)) |
 | `figures/vec/` | Vector PDF figures included by `main.tex` |
 | [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lifting example in massive SQED (Section 9.2; Python 3, standard library only) |
+| [`product_kernels/`](product_kernels/) | Kernels of the quantum product through seven loops (Sections 6 and 7): tree charts, moment tables and a reader (Python 3, standard library only) |
 
 ## Build
 
