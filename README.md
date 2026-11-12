@@ -2,7 +2,7 @@
 
 Botao Li, Kangning Liu, Chi-Ming Chang
 
-## Latest manuscript: 2026-11-12 20:09 (Beijing time)
+## Latest manuscript: 2026-11-12 21:08 (Beijing time)
 
 **[Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf)** (125 pages). LaTeX source: [`main.tex`](main.tex) with the figures in `figures/vec/`.
 
@@ -18,7 +18,7 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 
 | File | Description |
 |---|---|
-| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | The manuscript (2026-11-12 20:09, Beijing time; 125 pages) |
+| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | The manuscript (2026-11-12 21:08, Beijing time; 125 pages) |
 | [`main.tex`](main.tex), `figures/vec/` | LaTeX source of the manuscript and its vector figures |
 | [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lift in massive SQED (Section 2.3; Python 3, standard library only) |
 | [`product_kernels/`](product_kernels/) | Kernels of the quantum product through seven loops (Sections 6 and 7): tree charts, moment tables and a reader (Python 3, standard library only) |

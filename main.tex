@@ -14,8 +14,26 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,decorations.markings,decorations.pathreplacing,calc}
 % Heat-edge (cut) graphs of Section 3
-\tikzset{cutp/.style={line width=.5pt},cutI/.style={line width=1.7pt,orange!90!black},cutO/.style={line width=1.7pt,violet!85!black},
+\tikzset{cutp/.style={line width=.6pt,draw=black!85},
+  cutmark/.style={postaction={decorate},decoration={markings,mark=at position .5 with {\draw[line width=.8pt] (-2pt,-3.6pt)--(-.2pt,3.6pt); \draw[line width=.8pt] (.7pt,-3.6pt)--(2.5pt,3.6pt);}}},
+  cutI/.style={line width=1.6pt,draw=orange!85!black,cutmark},cutO/.style={line width=1.6pt,draw=violet!80!black,cutmark},
+  hfprop/.style={line width=.7pt,draw=black!85,postaction={decorate},decoration={markings,mark=at position .58 with {\arrow{Stealth[length=2mm,width=1.5mm]}}}},
+  hfheat/.style={line width=1.6pt,draw=red!72!black,cutmark},
+  hfout/.style={line width=.7pt,draw=teal!55!black,-{Stealth[length=2mm,width=1.5mm]}},
+  hfv/.style={circle,fill=black,inner sep=1.6pt},hfo/.style={rectangle,draw,fill=white,inner sep=2.6pt,line width=.6pt},
   cutv/.style={circle,fill=black,inner sep=1.4pt},cuto/.style={rectangle,draw,fill=white,inner sep=2.3pt}}
+\newcommand{\bbtri}[4]{\begin{scope}[xshift=#1]
+  \coordinate (a) at (-1.0,1.5); \coordinate (b) at (1.0,1.5); \coordinate (o) at (0,0);
+  \draw[#2] (a)--(b); \draw[#3] (a)--(o); \draw[#4] (b)--(o);
+  \draw[hfout] (a)--++(-.42,.6); \draw[hfout] (b)--++(.42,.6);
+  \node[hfv] at (a) {}; \node[hfv] at (b) {}; \node[hfo] at (o) {};
+  \node[font=\scriptsize,teal!45!black] at (-1.55,2.33) {$\mathsf b$}; \node[font=\scriptsize,teal!45!black] at (1.55,2.33) {$\mathsf c$};
+  \node[font=\scriptsize,anchor=east] at (-1.1,1.4) {$x_1$}; \node[font=\scriptsize,anchor=west] at (1.1,1.4) {$x_2$};
+  \node[font=\scriptsize] at (0,-.38) {$\mathsf b\mathsf b\,(0)$};
+  \node[font=\tiny,black!60] at (-.62,1.68) {$\mathsf c$}; \node[font=\tiny,black!60] at (.62,1.68) {$\mathsf b$};
+  \node[font=\tiny,black!60] at (-1.0,1.05) {$\mathsf c$}; \node[font=\tiny,black!60] at (-.42,.2) {$\mathsf b$};
+  \node[font=\tiny,black!60] at (1.0,1.05) {$\mathsf c$}; \node[font=\tiny,black!60] at (.42,.2) {$\mathsf b$};
+  \end{scope}}
 \newcommand{\cutone}[4]{\begin{scope}[xshift=#1]
   \coordinate (a) at (-.6,1.05); \coordinate (b) at (.6,1.05); \coordinate (o) at (0,0);
   \draw[#2] (a)--(b); \draw[#3] (a)--(o); \draw[#4] (b)--(o);
@@ -1652,7 +1670,15 @@ Indeed, by Cartan's formula $N$ is the Lie derivative along the vector field $x^
 
 With the twisted theory in hand, we review its graph operations \cite{semichiral,Wang,operatope,higher,BK}: the higher brackets and, in Section \ref{positive-schwinger-times-and-the-operatope}, the current integrals that evaluate them.
 
-The graph operations are built from the BV pairing, the heat kernel and the propagator. Define $\Delta_{vw}$ as the inverse BV pairing contracting the fields at vertices $v,w$. It acts on the fields by
+\paragraph{The BV pairing.}
+
+The graph operations are built from the BV pairing, the heat kernel and the propagator. The free action \eqref{eq-BV-free-action} pairs $\mathsf b_A$ with $\mathsf c^A$ and $\beta^i$ with $\gamma_i$ through $\int\Omega\wedge$. The inverse $\omega_E^{-1}$ of this pairing is a delta function on spacetime times a constant tensor in field space. Contracting two fields with $\omega_E^{-1}$ is the BV Laplacian $\Delta=\partial_{\omega_E^{-1}}$; on the fields at two vertices $v,w$ it acts as
+\begin{equation}\label{eq-pairing-Delta}
+\partial_{\omega_E^{-1}}=[K_0(x_v,x_w)]_\Omega\;\Delta_{vw},
+\qquad
+\int_{\mathbb C^2}\Omega_{x_v}\wedge[K_0(x_v,x_w)]_\Omega\,f(x_v)=f(x_w),
+\end{equation}
+where $[K_0]_\Omega$ is the delta function, a form of degree two in the antiholomorphic differentials, and $\Delta_{vw}$ is the field-space part of the inverse pairing,
 \begin{equation}\label{eq-A-20}
 \begin{aligned}
 \Delta_{vw}={}&
@@ -1671,16 +1697,29 @@ The graph operations are built from the BV pairing, the heat kernel and the prop
 \end{aligned}
 \end{equation}
 
-The gauge fixing (a choice of Lagrangian submanifold) uses the adjoint $\bar\partial^*$ of $\bar\partial$ in the flat metric; $H=\{\bar\partial,\bar\partial^*\}$ is the Laplacian.
+Here and below, a subscript $\Omega$ on a kernel denotes its spacetime part: the differential form in $d(x_v-x_w)^{-\dot a}$ that remains when the pairing $\int\Omega$ and the field-space tensor $\Delta_{vw}$ are stripped off, as in \eqref{eq-pairing-Delta}.
 
-With $\omega_E^{-1}$ the inverse BV pairing, and with $e^{-tH}$ and $\bar\partial^*$ acting on the first argument, the heat kernel and, for $0<\varepsilon<L$, the propagator are \cite{Costello,Wang}
+\paragraph{Gauge fixing, heat kernel and propagator.}
+
+The quantization of the twisted theory needs a gauge fixing, that is, a choice of Lagrangian submanifold in the space of fields. We use the adjoint of $\bar\partial$ in the flat metric,
+\begin{equation}\label{eq-dbar-star}
+\bar\partial^*=-2\,\epsilon^{\dot a\dot b}\,\iota_{-\dot a}\frac{\partial}{\partial x^{+\dot b}},
+\qquad
+H=\{\bar\partial,\bar\partial^*\}
+=-2\,\epsilon^{\dot a\dot b}\frac{\partial}{\partial x^{-\dot a}}\frac{\partial}{\partial x^{+\dot b}}
+=-\frac12\frac{\partial}{\partial x_E^\mu}\frac{\partial}{\partial x_E^\mu},
+\end{equation}
+with $\iota_{-\dot a}$ the contraction of a form with $\partial/\partial x^{-\dot a}$ \eqref{eq-B-20}; $H$ is the Laplacian.
+
+With $e^{-tH}$ and $\bar\partial^*$ acting on the first argument, the heat kernel and, for $0<\varepsilon<L$, the propagator are \cite{Costello,Wang}
 \begin{equation}\label{eq-propagator}
 K_t=(e^{-tH}\otimes1)\omega_E^{-1}.
 \end{equation}
 \begin{equation}\label{eq-C-heat-spatial}
 [K_t(x_1,x_2)]_\Omega
 =-\frac{e^{-|x_1-x_2|_E^2/(2t)}}{32\pi^2t^2}
- d(x_1-x_2)^{-\dot+}\wedge d(x_1-x_2)^{-\dot-}.
+ d(x_1-x_2)^{-\dot+}\wedge d(x_1-x_2)^{-\dot-},
+\qquad\int_{\mathbb C^2}\Omega\wedge[K_t]_\Omega=1.
 \end{equation}
 \begin{equation}\label{eq-C-heat-homotopy}
 \begin{aligned}
@@ -1691,6 +1730,14 @@ P_{\varepsilon,L}
 =K_\varepsilon-K_L.
 \end{aligned}
 \end{equation}
+
+Apart from the regularization by $\varepsilon$ and $L$, \eqref{eq-C-heat-homotopy} is the standard Schwinger-parameter form of a propagator, in which $t$ is the proper time of the world-line formalism: for a scalar field,
+\begin{equation*}
+\langle\phi\,\phi\rangle=\int_0^\infty e^{-tp^2}\,dt=\frac1{p^2}.
+\end{equation*}
+In Costello's formalism the limits $\varepsilon$ and $L$ parametrize the renormalization-group flow from the ultraviolet to a physical or infrared scale. In ordinary terms, $\varepsilon$ is an ultraviolet cutoff and $L$ an infrared cutoff. The kernel $K_0$ is the delta function.
+
+\paragraph{Higher brackets.}
 
 The higher brackets are the basic objects in the computation of the anomalous supersymmetry transformation and of the quantum product.
 
@@ -1713,23 +1760,7 @@ The higher brackets are the basic objects in the computation of the anomalous su
 \end{aligned}
 \end{equation}
 
-In this formula, $\Gamma$ runs over the connected Feynman graphs whose vertices are the $k$ operators, with edges $\Gamma_1=(e_1,\ldots,e_{|\Gamma_1|})$ in their contraction order; $\Omega_v$ is the holomorphic volume form $\Omega=2\,dx^{+\dot+}\wedge dx^{+\dot-}$ at the vertex $v$; $[P_{\varepsilon,L;e}]_\Omega$ is the propagator \eqref{eq-C-heat-homotopy} on the edge $e$, the Bochner--Martinelli form with Schwinger time integrated over $\varepsilon<t_e<L$; $[K_{\varepsilon;e}]_\Omega$ is the heat kernel \eqref{eq-C-heat-spatial} at $t_e=\varepsilon$; and $W_\Gamma$ denotes the ordered Wick contractions of the fields along the edges of $\Gamma$, written out in \eqref{eq-W-fibre-explicit}. The final projection to $H(\bar\partial)$ keeps the holomorphic local operators (Section \ref{dolbeault-contraction-and-wick-derivatives}).
-
-In each term of the sum over $j$, exactly one edge, $e_j$, carries the heat kernel $K_\varepsilon$ in place of the propagator. We call it the \emph{heat edge}, or the cut edge: by \eqref{eq-C-heat-homotopy} it is the integrand of the propagator at the ultraviolet end $t_{e_j}=\varepsilon$ of its Schwinger-time integral. Section \ref{sec-brackets-origin} explains where the heat edge comes from.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.56\linewidth]{figures/vec/author-notes-bcc-bcc-bb-20261101.pdf}
-\caption{A contraction graph in $\{\mathsf b\mathsf c\mathsf c,\mathsf b\mathsf c\mathsf c,\mathsf b\mathsf b\}_0$. The output letters are $\mathsf b$ at $x_1$ and $\mathsf c$ at $x_2$; internal arrows run from $\mathsf c$ to $\mathsf b$.}
-\label{b-00153}
-\end{figure}
-
-For an interaction density $\mathcal I$~in the action and a holomorphic local operator $\mathcal O$, the full quantum BV differential is
-\begin{equation}\label{eq-1-1}
-\mathbf Q=\sum_{n\geq0}\hbar^nQ_n,\qquad Q_n\mathcal O=\frac1{(n+1)!}\{\mathcal I^{\otimes(n+1)},\mathcal O\}_0 .
-\end{equation}
-
-We now write the Wick contraction $W_\Gamma$ explicitly, so that the graph kernels determine the higher brackets on words and their holomorphic derivatives.
+In this formula, $\Gamma$ runs over the connected Feynman graphs whose vertices are the $k$ operators, with edges $\Gamma_1=(e_1,\ldots,e_{|\Gamma_1|})$ in their contraction order; $\Omega_v$ is the holomorphic volume form $\Omega=2\,dx^{+\dot+}\wedge dx^{+\dot-}$ at the vertex $v$; $[P_{\varepsilon,L;e}]_\Omega$ is the propagator \eqref{eq-C-heat-homotopy} on the edge $e$, the Bochner--Martinelli form with Schwinger time integrated over $\varepsilon<t_e<L$; $[K_{\varepsilon;e}]_\Omega$ is the heat kernel \eqref{eq-C-heat-spatial} at $t_e=\varepsilon$; and $W_\Gamma$ denotes the ordered Wick contractions of the fields along the edges of $\Gamma$. The final projection to $H(\bar\partial)$ keeps the holomorphic local operators (Section \ref{dolbeault-contraction-and-wick-derivatives}).
 
 Let $F$ be the spacetime form in \eqref{eq-A-28} and $e_a=(v_a,w_a)$ its ordered edges. For operators with no input holomorphic derivatives, the Wick contraction is
 \begin{equation}\label{eq-W-fibre-explicit}
@@ -1751,32 +1782,15 @@ Let $F$ be the spacetime form in \eqref{eq-A-28} and $e_a=(v_a,w_a)$ its ordered
 \end{aligned}
 \end{equation}
 
-The field derivatives act on the ordered product from right to left; each factor is the pairing \eqref{eq-A-20} of one edge, and the spacetime form $F$ multiplies the result. For letters with holomorphic derivatives, let $X,Y$ be the paired fields in a term and let $r,s$ and $p,q$ be their respective derivative orders. Each oriented edge $e=(v,w)$ replaces the two field derivatives in every term of \eqref{eq-W-fibre-explicit} by
+The field derivatives act on the ordered product from right to left; each factor is the pairing \eqref{eq-A-20} of one edge, and the spacetime form $F$ multiplies the result. For letters with holomorphic derivatives, each field derivative becomes a functional derivative at a displaced point, as in \eqref{eq-sum-N4}: for an edge $e=(v,w)$ and paired fields $X,Y$,
 \begin{equation}\label{eq-W-jet-edge}
-\begin{aligned}
-&\frac{\partial_L}{\partial X_v}
-\frac{\partial_L}{\partial Y_w}\\
-&\quad\longmapsto
-\sum_{r,s,p,q\ge0}(-2)^{r+s}2^{p+q}
-\frac{\partial^{r+p}}{\partial(z_e^{+\dot+})^{r+p}}
-\frac{\partial^{s+q}}{\partial(z_e^{+\dot-})^{s+q}}
-\frac{\partial_L}
- {\partial[(\partial_{+\dot+}^{r}\partial_{+\dot-}^{s}X)(x_v)]}
-\frac{\partial_L}
- {\partial[(\partial_{+\dot+}^{p}\partial_{+\dot-}^{q}Y)(x_w)]}.
-\end{aligned}
+\frac{\partial_L}{\partial X_v}\frac{\partial_L}{\partial Y_w}
+\;\longmapsto\;
+\int d^4z_v\,d^4z_w\,
+\frac{\delta_L}{\delta X(x_v+z_v)}\,
+\frac{\delta_L}{\delta Y(x_w+z_w)},
 \end{equation}
-
-The $z_e$ derivatives act only on the propagator of the edge $e$, whose argument is shifted to $x_v-x_w+z_e$; set all $z_e=0$ afterwards. Indeed,
-\begin{equation*}
-\partial_{v,+\dot a}[P_{\varepsilon,L;e}]_\Omega
-=-2\frac{\partial}{\partial z_e^{+\dot a}}[P_{\varepsilon,L;e}]_\Omega,
-\qquad
-\partial_{w,+\dot a}[P_{\varepsilon,L;e}]_\Omega
-=2\frac{\partial}{\partial z_e^{+\dot a}}[P_{\varepsilon,L;e}]_\Omega.
-\end{equation*}
-
-These identities also hold for the heat edge. The derivatives with respect to the input letters remove the contracted letters; all remaining letters are translated by \eqref{eq-B-21}. For example,
+with the propagator or heat kernel of the edge evaluated at $x_v-x_w+z_e$, $z_e=z_v-z_w$. The functional derivatives are normalized by $\delta X(y)/\delta X(y')=\delta^{(4)}(y-y')$. Acting on a letter with holomorphic derivatives they give derivatives of $\delta^{(4)}(z_v)$, which the integral moves onto the kernel of the edge; the displacement $z_e$ therefore generates the holomorphic derivatives of the contracted letters. These rules also hold for the heat edge. The derivatives with respect to the input letters remove the contracted letters; all remaining letters are translated by \eqref{eq-B-21}. For example,
 \begin{equation*}
 W_{(v,w)}[F;(\partial_{+\dot a}\mathsf b_A)(x_v),
 \mathsf c^B(x_w)]
@@ -1784,35 +1798,50 @@ W_{(v,w)}[F;(\partial_{+\dot a}\mathsf b_A)(x_v),
 \frac{\partial F}{\partial z_e^{+\dot a}}\right|_{z_e=0}.
 \end{equation*}
 
-The projection to $H(\bar\partial)$ is given in \eqref{eq-B-20}. Applying $\bar\partial$ to the ordered propagators gives the heat-edge signs $(-1)^{j-1}$ of \eqref{eq-A-28}.
+The projection to $H(\bar\partial)$ is given in \eqref{eq-B-20}. For labelled vertices and a fixed edge order, every graph is included once. The derivatives supply the multiplicities of identical letters; the factor $1/(n+1)!$ in \eqref{eq-2-3} accounts for the identical interaction insertions.
 
-For labelled vertices and a fixed edge order, every graph is included once. The derivatives supply the multiplicities of identical letters; the factor $1/(n+1)!$ in \eqref{eq-2-3} accounts for the identical interaction insertions.
+In each term of the sum over $j$ in \eqref{eq-A-28}, exactly one edge, $e_j$, carries the heat kernel $K_\varepsilon$ in place of the propagator. We call it the \emph{heat edge}, or the cut edge: by \eqref{eq-C-heat-homotopy} it is the integrand of the propagator at the ultraviolet end $t_{e_j}=\varepsilon$ of its Schwinger-time integral, and the sign $(-1)^{j-1}$ comes from applying $\bar\partial$ to the ordered propagators. Figure \ref{b-00153} shows the three terms of one graph. Section \ref{sec-brackets-origin} explains where the heat edge comes from.
 
-The translation \eqref{eq-B-21} of the surviving letters is the source of the momentum substitution in the higher bracket \eqref{eq-A-28}: writing $\lambda_{v,+\dot a}$ for the holomorphic momentum of the surviving (output) letters at the vertex $v$, the momentum at the root $k$ is eliminated by momentum conservation, and the momenta at the integrated vertices become derivatives of their surviving letters,
-\begin{equation}\label{eq-D-lambda}
-\begin{gathered}\lambda_{k,+\dot a}=-\sum_{\substack{v=1,\ldots,k-1\\\mathrm{integrated\ vertices}}}\lambda_{v,+\dot a},\qquad\lambda_{v,+\dot a}\longmapsto\frac{\partial}{\partial x_v^{+\dot a}}=-\frac12\partial_{v,+\dot a}\qquad(v<k),\end{gathered}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[rounded corners=6pt,draw=black!18,fill=black!3] (-2.55,-1.0) rectangle (12.25,3.75);
+% legend
+\draw[hfprop] (-2.2,3.3)--(-1.1,3.3); \node[anchor=west,font=\scriptsize] at (-1.05,3.3) {propagator $P_{\varepsilon,L}$, from $\mathsf c$ to $\mathsf b$};
+\draw[hfheat] (3.35,3.3)--(4.45,3.3); \node[anchor=west,font=\scriptsize] at (4.5,3.3) {heat edge $K_\varepsilon$ (cut)};
+\node[hfv] at (7.75,3.3) {}; \node[anchor=west,font=\scriptsize] at (7.85,3.3) {$\mathsf b\mathsf c\mathsf c$};
+\node[hfo] at (8.95,3.3) {}; \node[anchor=west,font=\scriptsize] at (9.1,3.3) {$\mathsf b\mathsf b$};
+\draw[hfout] (9.95,3.2)--(10.5,3.4); \node[anchor=west,font=\scriptsize] at (10.5,3.3) {output letter};
+\draw[black!18] (-2.3,2.95)--(12.0,2.95);
+% three terms
+\bbtri{0cm}{hfheat}{hfprop}{hfprop}\node at (2.43,.85) {\large$-$};
+\bbtri{4.85cm}{hfprop}{hfheat}{hfprop}\node at (7.28,.85) {\large$+$};
+\bbtri{9.7cm}{hfprop}{hfprop}{hfheat}
+\end{tikzpicture}
+\caption{The three terms of one contraction graph in $\{\mathsf b\mathsf c\mathsf c,\mathsf b\mathsf c\mathsf c,\mathsf b\mathsf b\}_0$: the heat edge is placed on each edge in turn, with the signs $(-1)^{j-1}$ of the edge order $(12,1\mathcal O,2\mathcal O)$. The interaction vertices sit at $x_1$, $x_2$ and the insertion $\mathsf b\mathsf b$ at the origin; the output letters are $\mathsf b$ at $x_1$ and $\mathsf c$ at $x_2$.}
+\label{b-00153}
+\end{figure}
+
+For an interaction density $\mathcal I$~in the action and a holomorphic local operator $\mathcal O$, the full quantum BV differential is
+\begin{equation}\label{eq-1-1}
+\mathbf Q=\sum_{n\geq0}\hbar^nQ_n,\qquad Q_n\mathcal O=\frac1{(n+1)!}\{\mathcal I^{\otimes(n+1)},\mathcal O\}_0 .
 \end{equation}
-with the Leibniz rule when several letters survive at $v$. A fully contracted integrated vertex has $\lambda_v=0$.
 
 \subsection{Where the brackets come from}\label{sec-brackets-origin}
 
 The heat edge of \eqref{eq-A-28} follows from the BV transformation of a renormalized insertion \cite{Costello,semichiral,higher,BK}, in the same way as a Ward identity. We recall the argument; a reader who is familiar with the holomorphic twist and the higher brackets can skip this subsection.
 
-Take the holomorphic interaction density $\mathcal I$ in \eqref{eq-B-10} and a polynomial $\mathcal O$ in the zero-form fields $\mathsf c,\mathsf b,\gamma,\beta$ and their holomorphic derivatives.
-\begin{equation*}
-I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)},
-\qquad F=\mathcal O(0).
-\end{equation*}
+Take the holomorphic interaction density $\mathcal I$ in \eqref{eq-B-10} and a polynomial $\mathcal O$ in the zero-form fields $\mathsf c,\mathsf b,\gamma,\beta$ and their holomorphic derivatives, inserted at the origin, and write $I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)}$.
 
-\paragraph{The regularized insertion.}
+\paragraph{The regularized expectation value.}
 
-The operator $\partial_{P_{\varepsilon,L}}$ contracts one unordered pair using $P_{\varepsilon,L}$. At fixed $L>0$, evaluated on smooth compactly supported external fields, the effective interaction and insertion exist coefficientwise in perturbation theory \cite[Theorem 5 and Corollary 4]{Wang} as
+The operator $\partial_{P_{\varepsilon,L}}$ contracts one unordered pair of fields using $P_{\varepsilon,L}$. At fixed $L>0$, evaluated on smooth compactly supported external fields, the effective interaction and insertion exist coefficientwise in perturbation theory \cite[Theorem 5 and Corollary 4]{Wang}\footnote{$L$ is a physical scale, which Costello's formalism requires; it plays no role in the discussion below. In the language of textbook quantum field theory it is an infrared regularization of the propagator, and taking it to infinity does not affect the argument.} as
 \begin{equation}\label{eq-C-local-to-effective}
 \begin{aligned}
 e^{I[L]/\hbar}
 &=\lim_{\varepsilon\downarrow0}
  e^{\hbar\partial_{P_{\varepsilon,L}}}e^{I/\hbar},\\
-F[L]e^{I[L]/\hbar}
+\mathcal O[L]\,e^{I[L]/\hbar}
 &=\lim_{\varepsilon\downarrow0}
  e^{\hbar\partial_{P_{\varepsilon,L}}}
  \bigl(\mathcal O(0)e^{I/\hbar}\bigr).
@@ -1821,21 +1850,31 @@ F[L]e^{I[L]/\hbar}
 
 These limits need no counterterms. The graph integrals of the twisted theory are ultraviolet finite, so the interaction $I$ is not renormalized; and since $\mathcal O$ is a polynomial in zero-form fields, the graphs through the insertion are finite as well. This is the reason for the simplicity of the twisted theory. In the physical theory, the same computation requires the counterterms of the action and of the composite operator, with their many ultraviolet divergences, and is much harder to carry out directly.
 
-\paragraph{The BV differential at the scales $L$ and $\varepsilon$.}
-
-Let $K_L=(e^{-LH}\otimes1)\omega_E^{-1}$, let $\Delta_L$ contract one pair with $K_L$, and let $(\ ,\ )_L$ be the corresponding BV bracket. Write $\mathbf Q_L$ for the quantum BV differential acting on effective insertions.
-\begin{equation*}
-\mathbf Q_LF[L]
-=Q_{\mathrm{BV}}F[L]+(I[L],F[L])_L+\hbar\Delta_LF[L].
-\end{equation*}
-
-This is the regulated meaning of the quantum transformation of the insertion. By \eqref{eq-C-heat-homotopy}, the propagator is a homotopy between the two heat kernels, $[Q_{\mathrm{BV}},\partial_{P_{\varepsilon,L}}]=\Delta_\varepsilon-\Delta_L$, so the differential at the scale $L$ can be evaluated at the scale $\varepsilon$, where the functionals are local:
-\begin{equation}\label{eq-C-scale-intertwine}
-\bigl(Q_{\mathrm{BV}}+\hbar\Delta_L\bigr)\,e^{\hbar\partial_{P_{\varepsilon,L}}}
-=e^{\hbar\partial_{P_{\varepsilon,L}}}\,\bigl(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon\bigr).
+From here on we take $L=\infty$ and write $P_\varepsilon=P_{\varepsilon,\infty}$, so that $\bar\partial P_\varepsilon=K_\varepsilon$ by \eqref{eq-C-heat-homotopy}.\footnote{At finite $L$ the same steps give $(Q_{\mathrm{BV}}+\hbar\Delta_L)\,e^{\hbar\partial_{P_{\varepsilon,L}}}=e^{\hbar\partial_{P_{\varepsilon,L}}}(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon)$, with $\Delta_L=\partial_{K_L}$ and $(\ ,\ )_L$ the bracket with the pairing $K_L$, and the Ward identity $\mathbf Q_L(\mathcal O[L])=(\mathbf Q\mathcal O)[L]$ for $\mathbf Q_L=Q_{\mathrm{BV}}+(I[L],\,\cdot\,)_L+\hbar\Delta_L$. This form is used only in Section \ref{sec-normal-ordering}.} Then
+\begin{equation}\label{eq-C-expectation}
+\langle\mathcal O\rangle_\varepsilon=e^{\hbar\partial_{P_\varepsilon}}\bigl(\mathcal O\,e^{I/\hbar}\bigr)
 \end{equation}
+is the regularized expectation value of ordinary perturbation theory: the sum of all Wick contractions with the propagator $P_\varepsilon$, as a functional of the fields that are left uncontracted.
 
-Acting on the local insertion, the differential at the scale $\varepsilon$ gives
+\paragraph{The regularized BV Laplacian.}
+
+In the BV formalism the expectation value is, formally, an integral over a Lagrangian submanifold $\mathcal L$ of the space of fields, and the integral of a $\Delta$-exact function vanishes:
+\begin{equation}\label{eq-C-naive}
+\begin{gathered}
+\langle\mathcal O\rangle=\int_{\mathcal L}\mathcal O\,e^{S/\hbar},
+\qquad
+\int_{\mathcal L}\Delta(\,\cdots)=0,\\
+\hbar\,\Delta\bigl(\mathcal O\,e^{S/\hbar}\bigr)
+=\Bigl[(S,\mathcal O)+\hbar\Delta\mathcal O
++\frac1\hbar\Bigl(\frac12(S,S)+\hbar\Delta S\Bigr)\mathcal O\Bigr]e^{S/\hbar}.
+\end{gathered}
+\end{equation}
+The first term on the right is the BV variation of the operator, and the second is the quantum master equation $\frac12(S,S)+\hbar\Delta S=0$, which makes the integral independent of the choice of $\mathcal L$. For local $S$ and $\mathcal O$ this is only formal, because $\Delta$ contracts two fields at the same point with the delta function $K_0$ of \eqref{eq-pairing-Delta}. The regularized statement replaces $\Delta$ by $\Delta_\varepsilon=\partial_{K_\varepsilon}$, the contraction with the heat kernel, and acts on the whole integrand $\mathcal O\,e^{S/\hbar}$. With $S=S_{\mathrm{free}}+I$ and $Q_{\mathrm{BV}}=(S_{\mathrm{free}},\,\cdot\,)$, the relation $\bar\partial P_\varepsilon=K_\varepsilon$ says that $[Q_{\mathrm{BV}},\partial_{P_\varepsilon}]=\Delta_\varepsilon$, so
+\begin{equation}\label{eq-C-scale-intertwine}
+Q_{\mathrm{BV}}\,e^{\hbar\partial_{P_\varepsilon}}
+=e^{\hbar\partial_{P_\varepsilon}}\,\bigl(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon\bigr):
+\end{equation}
+the BV variation of a regularized expectation value is the expectation value of $Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon$ acting on the integrand. On the local insertion,
 \begin{equation}\label{eq-C-two-cuts}
 \begin{aligned}
 e^{-I/\hbar}\bigl(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon\bigr)\bigl(\mathcal O\,e^{I/\hbar}\bigr)
@@ -1848,107 +1887,77 @@ e^{-I/\hbar}\bigl(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon\bigr)\bigl(\mathcal O\
 \end{aligned}
 \end{equation}
 
-The free differential annihilates the integrated holomorphic interaction and the zero-form holomorphic input, $Q_{\mathrm{BV}}I=Q_{\mathrm{BV}}\mathcal O=0$, and a contraction of two fields at the same point vanishes, $\Delta_\varepsilon I=\Delta_\varepsilon\mathcal O=0$, because the form $d(x_1-x_2)^{-\dot+}\wedge d(x_1-x_2)^{-\dot-}$ of \eqref{eq-C-heat-spatial} is zero at $x_1=x_2$. Two terms remain, and each contains exactly one heat kernel $K_\varepsilon$. In the first, the bracket $(I,\mathcal O)_\varepsilon$ of the action with the insertion contracts a field of $\mathcal O$ with a field of one interaction vertex. In the second, $(I,I)_\varepsilon$ contracts the fields of two interaction vertices: the local interaction satisfies the classical master equation \eqref{eq-B-5} with the delta-function pairing, and $\frac12(I,I)_\varepsilon$ is its defect when the pairing is smeared to the scale $\varepsilon$. Applying \eqref{eq-C-scale-intertwine} to $\mathcal O\,e^{I/\hbar}$ therefore gives the Ward identity
+Here $(\ ,\ )_\varepsilon$ is the BV bracket with the pairing smeared to $K_\varepsilon$. The free differential annihilates the integrated holomorphic interaction and the zero-form holomorphic input, $Q_{\mathrm{BV}}I=Q_{\mathrm{BV}}\mathcal O=0$, and a contraction of two fields at the same point vanishes, $\Delta_\varepsilon I=\Delta_\varepsilon\mathcal O=0$, because the form $d(x_1-x_2)^{-\dot+}\wedge d(x_1-x_2)^{-\dot-}$ of \eqref{eq-C-heat-spatial} is zero at $x_1=x_2$. Two terms remain, and each contains exactly one heat kernel $K_\varepsilon$. In the first, the bracket $(I,\mathcal O)_\varepsilon$ of the action with the insertion contracts a field of $\mathcal O$ with a field of one interaction vertex. In the second, $(I,I)_\varepsilon$ contracts the fields of two interaction vertices: the local interaction satisfies the classical master equation \eqref{eq-B-5} with the delta-function pairing, and $\frac12(I,I)_\varepsilon$ is its defect when the pairing is smeared to the scale $\varepsilon$. Applying \eqref{eq-C-scale-intertwine} to $\mathcal O\,e^{I/\hbar}$ therefore gives the Ward identity
 \begin{equation}\label{eq-C-Ward}
-\bigl(Q_{\mathrm{BV}}+\hbar\Delta_L\bigr)\bigl(F[L]\,e^{I[L]/\hbar}\bigr)
-=\lim_{\varepsilon\downarrow0}e^{\hbar\partial_{P_{\varepsilon,L}}}
+Q_{\mathrm{BV}}\,\langle\mathcal O\rangle_\varepsilon
+=e^{\hbar\partial_{P_\varepsilon}}
 \Bigl(\Bigl[(I,\mathcal O)_\varepsilon+\frac1{2\hbar}(I,I)_\varepsilon\,\mathcal O\Bigr]e^{I/\hbar}\Bigr).
 \end{equation}
 
-The right-hand side is a sum of Feynman graphs with one heat edge, carrying $K_\varepsilon$, and propagators $P_{\varepsilon,L}$ on all other edges: the heat edge joins $\mathcal O$ to an interaction vertex in the graphs of the first term, and two interaction vertices in the graphs of the second (Figure \ref{fig-cut-origin}). In terms of the graph integrand, \eqref{eq-C-scale-intertwine} is the action of $\bar\partial$ on the product of the propagators \cite[\S2.3]{BK}: for the ordered edges $e_1,\ldots,e_E$,
+The right-hand side is a sum of Feynman graphs with one heat edge, carrying $K_\varepsilon$, and propagators $P_\varepsilon$ on all other edges: the heat edge joins $\mathcal O$ to an interaction vertex in the graphs of the first term, and two interaction vertices in the graphs of the second (Figure \ref{fig-cut-origin}). In terms of the graph integrand, \eqref{eq-C-scale-intertwine} is the action of $\bar\partial$ on the product of the propagators \cite[\S2.3]{BK}: for the ordered edges $e_1,\ldots,e_E$,
 \begin{equation}\label{eq-C-heat-edge-cut}
-\begin{aligned}
-\bar\partial\bigwedge_{i=1}^{E}[P_{\varepsilon,L;e_i}]_\Omega
-={}&\sum_{\substack{j=1,\ldots,E\\\mathrm{heat\ edges}}}(-1)^{j-1}
-\left(\bigwedge_{i<j}[P_{\varepsilon,L;e_i}]_\Omega\right)\\
-&\wedge[K_{\varepsilon;e_j}-K_{L;e_j}]_\Omega
-\wedge\left(\bigwedge_{i>j}[P_{\varepsilon,L;e_i}]_\Omega\right).
-\end{aligned}
+\bar\partial\bigwedge_{i=1}^{E}[P_{\varepsilon;e_i}]_\Omega
+=\sum_{\substack{j=1,\ldots,E\\\mathrm{heat\ edges}}}(-1)^{j-1}
+\left(\bigwedge_{i<j}[P_{\varepsilon;e_i}]_\Omega\right)
+\wedge[K_{\varepsilon;e_j}]_\Omega
+\wedge\left(\bigwedge_{i>j}[P_{\varepsilon;e_i}]_\Omega\right),
 \end{equation}
-
-The $K_L$ terms are the contractions of $(I[L],F[L])_L+\hbar\Delta_LF[L]$ on the left of \eqref{eq-C-Ward}. The $K_\varepsilon$ terms are the heat edges, and $(-1)^{j-1}$ is the sign of moving $\bar\partial$ past $j-1$ propagator one-forms; this is the sum over $j$ in \eqref{eq-A-28}.
+which is the sum over $j$ in \eqref{eq-A-28}, with the sign of moving $\bar\partial$ past $j-1$ propagator one-forms.
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm]
-\node[anchor=east] at (-1.25,.55) {\small one loop:};
-\cutone{0cm}{cutI}{cutp}{cutp}\node at (1.35,.55) {$-$};
-\cutone{2.7cm}{cutp}{cutO}{cutp}\node at (4.05,.55) {$+$};
-\cutone{5.4cm}{cutp}{cutp}{cutO}
-\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (-.75,-.42)--(.75,-.42) node[midway,below=5pt] {\scriptsize$\tfrac1{2}(I,I)_\varepsilon\,\mathcal O$};
-\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (1.95,-.42)--(6.15,-.42) node[midway,below=5pt] {\scriptsize$(I,\mathcal O)_\varepsilon\,I$};
-\begin{scope}[yshift=-3.05cm]
-\node[anchor=east] at (-1.25,.55) {\small two loops:};
-\cuttwo{0cm}{cutI}{cutp}{cutp}{cutp}{cutp}\node at (1.35,.55) {$-$};
-\cuttwo{2.7cm}{cutp}{cutI}{cutp}{cutp}{cutp}\node at (4.05,.55) {$+$};
-\cuttwo{5.4cm}{cutp}{cutp}{cutO}{cutp}{cutp}\node at (6.75,.55) {$-$};
-\cuttwo{8.1cm}{cutp}{cutp}{cutp}{cutO}{cutp}\node at (9.45,.55) {$+$};
-\cuttwo{10.8cm}{cutp}{cutp}{cutp}{cutp}{cutO}
-\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (-1.05,-.42)--(3.75,-.42) node[midway,below=5pt] {\scriptsize$\tfrac12(I,I)_\varepsilon\,I\,\mathcal O$};
-\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (4.35,-.42)--(11.85,-.42) node[midway,below=5pt] {\scriptsize$\tfrac12(I,\mathcal O)_\varepsilon\,I^2$};
+\draw[rounded corners=6pt,draw=black!18,fill=black!3] (-2.75,-1.35) rectangle (12.3,2.75);
+\draw[cutp] (-2.4,2.35)--(-1.5,2.35); \node[anchor=west,font=\scriptsize] at (-1.45,2.35) {propagator $P_\varepsilon$};
+\draw[cutI] (1.3,2.35)--(2.2,2.35); \node[anchor=west,font=\scriptsize] at (2.25,2.35) {heat edge from $\tfrac12(I,I)_\varepsilon$};
+\draw[cutO] (6.3,2.35)--(7.2,2.35); \node[anchor=west,font=\scriptsize] at (7.25,2.35) {heat edge from $(I,\mathcal O)_\varepsilon$};
+\draw[black!18] (-2.5,2.0)--(12.05,2.0);
+\node[anchor=west,font=\small\bfseries] at (-2.55,.5) {one loop};
+\cutone{0.6cm}{cutI}{cutp}{cutp}\node at (2.0,.5) {$-$};
+\cutone{3.4cm}{cutp}{cutO}{cutp}\node at (4.8,.5) {$+$};
+\cutone{6.2cm}{cutp}{cutp}{cutO}
+\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (-.15,-.45)--(1.35,-.45) node[midway,below=5pt] {\scriptsize$\tfrac1{2}(I,I)_\varepsilon\,\mathcal O$};
+\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (2.65,-.45)--(6.95,-.45) node[midway,below=5pt] {\scriptsize$(I,\mathcal O)_\varepsilon\,I$};
+\begin{scope}[yshift=-4.35cm]
+\draw[rounded corners=6pt,draw=black!18,fill=black!3] (-2.75,-1.35) rectangle (12.3,1.9);
+\node[anchor=west,font=\small\bfseries] at (-2.55,.5) {two loops};
+\cuttwo{0.6cm}{cutI}{cutp}{cutp}{cutp}{cutp}\node at (1.9,.5) {$-$};
+\cuttwo{3.2cm}{cutp}{cutI}{cutp}{cutp}{cutp}\node at (4.5,.5) {$+$};
+\cuttwo{5.8cm}{cutp}{cutp}{cutO}{cutp}{cutp}\node at (7.1,.5) {$-$};
+\cuttwo{8.4cm}{cutp}{cutp}{cutp}{cutO}{cutp}\node at (9.7,.5) {$+$};
+\cuttwo{11.0cm}{cutp}{cutp}{cutp}{cutp}{cutO}
+\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (-.45,-.45)--(4.25,-.45) node[midway,below=5pt] {\scriptsize$\tfrac12(I,I)_\varepsilon\,I\,\mathcal O$};
+\draw[decorate,decoration={brace,mirror,amplitude=4pt}] (4.75,-.45)--(12.05,-.45) node[midway,below=5pt] {\scriptsize$\tfrac12(I,\mathcal O)_\varepsilon\,I^2$};
 \end{scope}
 \end{tikzpicture}
-\caption{Origin of the heat edge in $Q_1\mathcal O$ and $Q_2\mathcal O$. Dots are interaction vertices and the square is $\mathcal O$; thin edges carry propagators $P_{\varepsilon,L}$ and the thick edge carries the heat kernel $K_\varepsilon$. A heat edge between two interaction vertices (orange) comes from the defect $\frac12(I,I)_\varepsilon$ of the master equation at the scale $\varepsilon$; a heat edge at $\mathcal O$ (violet) comes from the bracket $(I,\mathcal O)_\varepsilon$. The signs are $(-1)^{j-1}$ for the edge orders $(12,1\mathcal O,2\mathcal O)$ and $(12,23,1\mathcal O,2\mathcal O,3\mathcal O)$.}
+\caption{Origin of the heat edge in $Q_1\mathcal O$ and $Q_2\mathcal O$. Dots are interaction vertices and the square is $\mathcal O$. The heat edge, marked by a cut, carries $K_\varepsilon$: between two interaction vertices (orange) it comes from the defect $\frac12(I,I)_\varepsilon$ of the master equation at the scale $\varepsilon$, and at $\mathcal O$ (violet) from the bracket $(I,\mathcal O)_\varepsilon$. The signs are $(-1)^{j-1}$ for the edge orders $(12,1\mathcal O,2\mathcal O)$ and $(12,23,1\mathcal O,2\mathcal O,3\mathcal O)$.}
 \label{fig-cut-origin}
 \end{figure}
 
-\paragraph{The limit $\varepsilon\downarrow0$ and the definition of $Q_n$.}
+\paragraph{The limit $\varepsilon\downarrow0$.}
 
-As $\varepsilon\downarrow0$ the heat kernel $K_\varepsilon$ concentrates at coincident points and forces a connected cluster of vertices that contains the heat edge to collapse to a point. A total-collision boundary is a finite, constant-coefficient holomorphic differential operator on the coincident vertex inputs \cite[Theorem 6]{Wang}. A cluster containing $\mathcal O$ and some of the interaction vertices gives a local word at the root, and summing its graphs gives exactly the higher operation \eqref{eq-A-28}. A cluster of interaction vertices alone gives the brackets $\{\mathcal I^{\otimes k}\}_0$ of the interaction with itself, which cancel when the interaction satisfies the quantum master equation \eqref{eq-2-40}, that is, when the gauge anomaly cancels (Theorem~\ref{b-00465}). The uncollapsed vertices and propagators give the effective representative of that word, so that
+As $\varepsilon\downarrow0$ the heat kernel $K_\varepsilon$ concentrates at coincident points and forces a connected cluster of vertices that contains the heat edge to collapse to a point. A total-collision boundary is a finite, constant-coefficient holomorphic differential operator on the coincident vertex inputs \cite[Theorem 6]{Wang}. Together the two terms of \eqref{eq-C-Ward} have a finite limit. A cluster of interaction vertices alone gives the brackets $\{\mathcal I^{\otimes k}\}_0$ of the interaction with itself. They cancel when the interaction satisfies the quantum master equation \eqref{eq-2-40}, which in the present language reads
+\begin{equation}\label{eq-C-QME}
+\lim_{\varepsilon\downarrow0}e^{\hbar\partial_{P_\varepsilon}}\Bigl((I,I)_\varepsilon\,e^{I/\hbar}\Bigr)=0 .
+\end{equation}
+At order $\hbar^0$ this is the classical master equation $(I,I)=0$ with the ordinary bracket, and at one loop it is the standard triangle graph, the gauge anomaly \eqref{eq-sum-QI}, which vanishes for $\operatorname{Tr}_R(t_A\{t_B,t_C\})=0$ (Theorem~\ref{b-00465}). A cluster that contains $\mathcal O$ and some of the interaction vertices gives a local operator at the origin, and the vertices and propagators outside the cluster reproduce the expectation value of that operator:
 \begin{equation}\label{eq-C-local-Ward-identity}
-\begin{aligned}
-&Q_{\mathrm{BV}}F[L]+(I[L],F[L])_L+\hbar\Delta_LF[L]\\
-&\quad=(\mathbf Q\mathcal O)[L]\\
-&\quad=e^{-I[L]/\hbar}\lim_{\varepsilon\downarrow0}
- e^{\hbar\partial_{P_{\varepsilon,L}}}
- \bigl((\mathbf Q\mathcal O)(0)e^{I/\hbar}\bigr).
-\end{aligned}
-\end{equation}
-
-Collecting the clusters with $m=n+1$ interaction vertices gives the definition of $Q_n$ in this theory. Write $[X]_{\mathrm{c}}$ for the sum of the graphs in which propagators $P_{\varepsilon,L}$ connect all the factors of $X$ into one cluster, in the limit $\varepsilon\downarrow0$ and projected to $H(\bar\partial)$. Then, with the signs of \eqref{eq-A-28},
-\begin{equation}\label{eq-C-Qn-definition}
-Q_n\mathcal O
-=\underbrace{\frac1{n!}\bigl[(I,\mathcal O)_\varepsilon\,I^{n}\bigr]_{\mathrm c}}_{\text{heat edge between }\mathcal O\text{ and }\mathcal I}
-+\underbrace{\frac1{2\,(n-1)!}\bigl[(I,I)_\varepsilon\,I^{n-1}\,\mathcal O\bigr]_{\mathrm c}}_{\text{heat edge between }\mathcal I\text{ and }\mathcal I}
-=\frac1{(n+1)!}\{\mathcal I^{\otimes(n+1)},\mathcal O\}_0 ,
-\end{equation}
-where the second term is absent for $n=0$. Together the two terms have a finite limit as $\varepsilon\downarrow0$: their sum is the boundary term \eqref{eq-C-heat-edge-cut}, summed over all the heat edges of each graph. The two coefficients count the choices of the heat edge: $n+1$ interaction vertices can be bracketed with $\mathcal O$, and $\binom{n+1}{2}$ pairs of them with each other, out of the $(n+1)!$ orderings of the interaction vertices. For $m$ interaction vertices and the root $\mathcal O$, the surviving graph has
-\begin{equation}\label{eq-C-loop-count}
-|\Gamma_0|=m+1,\qquad
-2+(|\Gamma_1|-1)=2m,\qquad
-n=|\Gamma_1|-|\Gamma_0|+1=m-1.
-\end{equation}
-
-Each propagator contraction contributes $\hbar$, and the heat edge comes from $\hbar\Delta_\varepsilon$. The interaction exponential contributes $1/(m!\hbar^m)$. Hence
-\begin{equation}\label{eq-C-loop-weight}
-\frac{\hbar^{|\Gamma_1|-m}}{m!}
-=\frac{\hbar^{m-1}}{m!}
-=\frac{\hbar^n}{(n+1)!}.
-\end{equation}
-which is the coefficient in \eqref{eq-1-1}.
-
-At tree level the single heat edge gives $Q_0\mathcal O=(I,\mathcal O)=\{\mathcal I,\mathcal O\}_0$. At one loop, order the triangle edges as $(12,1\mathcal O,2\mathcal O)$. The ultraviolet boundary is
-\begin{equation*}
-\begin{aligned}
- &[K_{\varepsilon;12}]_\Omega\wedge[P_{\varepsilon,L;1\mathcal O}]_\Omega
-       \wedge[P_{\varepsilon,L;2\mathcal O}]_\Omega\\
--&[P_{\varepsilon,L;12}]_\Omega\wedge[K_{\varepsilon;1\mathcal O}]_\Omega
-       \wedge[P_{\varepsilon,L;2\mathcal O}]_\Omega\\
-+&[P_{\varepsilon,L;12}]_\Omega\wedge[P_{\varepsilon,L;1\mathcal O}]_\Omega
-       \wedge[K_{\varepsilon;2\mathcal O}]_\Omega,
+\lim_{\varepsilon\downarrow0}Q_{\mathrm{BV}}\,\langle\mathcal O\rangle_\varepsilon
+=\lim_{\varepsilon\downarrow0}\langle\mathbf Q\mathcal O\rangle_\varepsilon,
 \qquad
-\frac{\hbar^3}{2!\hbar^2}=\frac\hbar2.
-\end{aligned}
-\end{equation*}
-\begin{equation*}
-Q_1\mathcal O=\frac12\{\mathcal I,\mathcal I,\mathcal O\}_0.
-\end{equation*}
-
-The first term contracts the two interactions with the heat kernel: it comes from the defect $\frac12(I,I)_\varepsilon$. The two remaining terms contract an interaction with $\mathcal O$: they come from $(I,\mathcal O)_\varepsilon$ (first row of Figure \ref{fig-cut-origin}).
+\mathbf Q\mathcal O=\sum_{n\ge0}\frac{\hbar^n}{(n+1)!}\{\mathcal I^{\otimes(n+1)},\mathcal O\}_0 .
+\end{equation}
+This is the origin of the higher brackets \eqref{eq-A-28} and of \eqref{eq-1-1}: the term of order $\hbar^n$ collects the clusters with $n+1$ interaction vertices, summed over the heat edges of each graph as in Figure \ref{fig-cut-origin}. The combinatorial coefficients of the graphs are worked out in \cite{higher,semichiral,BK}.
 
 \subsection{Positive Schwinger times and the operatope}\label{positive-schwinger-times-and-the-operatope}
 
 Computing a higher bracket amounts to computing the kernels of its graphs, with the external momenta supplied by the uncontracted output letters.
+
+The translation \eqref{eq-B-21} of the surviving letters is the source of the momentum substitution in the higher bracket \eqref{eq-A-28}: writing $\lambda_{v,+\dot a}$ for the holomorphic momentum of the surviving (output) letters at the vertex $v$, the momentum at the root $k$ is eliminated by momentum conservation, and the momenta at the integrated vertices become derivatives of their surviving letters,
+\begin{equation}\label{eq-D-lambda}
+\begin{gathered}\lambda_{k,+\dot a}=-\sum_{\substack{v=1,\ldots,k-1\\\mathrm{integrated\ vertices}}}\lambda_{v,+\dot a},\qquad\lambda_{v,+\dot a}\longmapsto\frac{\partial}{\partial x_v^{+\dot a}}=-\frac12\partial_{v,+\dot a}\qquad(v<k),\end{gathered}
+\end{equation}
+with the Leibniz rule when several letters survive at $v$. A fully contracted integrated vertex has $\lambda_v=0$.
 
 \rthm{Proposition}{b-00169}{Current representation; external input \cite[Section 2.7, Equations (2.32)--(2.33)]{operatope}, \cite[Lemma 2, Proposition 9]{Wang}} \emph{Let $\Gamma$ have vertices $\Gamma_0=\{1,\ldots,k\}$, the insertion at $x_k=0$, ordered edges $\Gamma_1=(e_1,\ldots,e_{2n+1})$, each oriented from $e(0)$ to $e(1)$, and Schwinger times $t_e>0$. } \emph{With the source $\lambda_v$ of the output letters at $v$ \eqref{eq-D-lambda}, and the edge displacement $z_e$ generating the holomorphic derivatives of the input letters \eqref{eq-W-jet-edge}, and the edge currents $y_{e,+\dot a}$ of \eqref{eq-1-8}, the kernel $\mathcal I_\Gamma(\lambda;z)$ of the graph, defined in \eqref{eq-1-7}, is}
 \begin{equation}\label{eq-C-current-delta-integral}
@@ -2017,7 +2026,7 @@ e^{\sum_{v<n+2}\lambda_{v,+\dot a}x_v^{+\dot a}}\\
 =\bigcup_{j=1}^{2n+1}\bigl\{t_{e_j}=\varepsilon,\ \ \varepsilon\le t_{e_i}\le L\ (i\ne j)\bigr\},
 \end{equation}
 
-In the last step each propagator is written as its Schwinger-time integral \eqref{eq-C-heat-homotopy}, and the heat edge $t_{e_j}=\varepsilon$ becomes a facet of the cube $[\varepsilon,L]^{2n+1}$. The facet carries the orientation $(-1)^{j-1}\bigwedge_{i\ne j}dt_{e_i}$, the sign of passing $\bar\partial$ through $j-1$ propagators, and collecting the $2n$ Schwinger differentials in front of the propagator forms gives $(-1)^{n(2n-1)}=(-1)^n$. The facets at $t_{e_j}=L$ combine with the scale-$L$ BV operations $(I[L],\,\cdot\,)_L+\hbar\Delta_L$, as in \eqref{eq-C-heat-edge-cut}.
+In the last step each propagator is written as its Schwinger-time integral \eqref{eq-C-heat-homotopy}, and the heat edge $t_{e_j}=\varepsilon$ becomes a facet of the cube $[\varepsilon,L]^{2n+1}$. The facet carries the orientation $(-1)^{j-1}\bigwedge_{i\ne j}dt_{e_i}$, the sign of passing $\bar\partial$ through $j-1$ propagators, and collecting the $2n$ Schwinger differentials in front of the propagator forms gives $(-1)^{n(2n-1)}=(-1)^n$. The facets at $t_{e_j}=L$ carry the kernel $K_L$; they do not contribute to the local operator and are absent for $L=\infty$ (Section \ref{sec-brackets-origin}).
 
 We can further simplify the last line of \eqref{eq-1-7} by combining the terms into one two-form.
 
@@ -5437,12 +5446,11 @@ Q_n\mathcal O
 ={}&\frac{(-1)^n}{(n+1)!\,(8\pi^2)^n}
 \sum_{\substack{\Gamma\ \mathrm{labelled,\ rooted,\ Laman}}}
 \Bigl[\mathcal I_\Gamma(\lambda;z)
-W_\Gamma[\mathcal I^{\otimes(n+1)},\mathcal O]\Bigr]
-\Big|_{\eqref{eq-W-jet-edge},\ z_{v,i}=0}.
+W_\Gamma[\mathcal I^{\otimes(n+1)},\mathcal O]\Bigr],
 \end{aligned}
 \end{equation}
 
-At $n=0$ the single-edge graph gives $Q_0\mathcal O=\{\mathcal I,\mathcal O\}_0$, which is the tree-level (classical) SUSY transformation.
+with the displacements $z$ integrated against the functional derivatives of $W_\Gamma$ as in \eqref{eq-W-jet-edge}. At $n=0$ the single-edge graph gives $Q_0\mathcal O=\{\mathcal I,\mathcal O\}_0$, which is the tree-level (classical) SUSY transformation.
 
 The $n$-loop $Q_n$ increases the number of derivatives by $2n$ (and by more if $\mathcal I$ contains derivatives):~
 
