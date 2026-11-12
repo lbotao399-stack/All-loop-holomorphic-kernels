@@ -1156,9 +1156,46 @@ and $D_0=(S_0,\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $q$ be the ghost number an
 \underbrace{D_0D_Q+D_QD_0}_{(p,q)=(1,1)}=0,\qquad
 \underbrace{D_Q}_{(p,q)=(1,0)}{}^{2}=0,
 \end{equation*}
-the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $p$, so the local operators form a double complex.\footnote{Both differentials preserve the sum of the scaling dimension and of the rotation weight of which $Q_-$ carries $-\frac12$, with dimensionful couplings counted with their dimensions. Every field, antifield and derivative has a positive value of this sum, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $q=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $q$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
+the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $p$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve the sum of the scaling dimension and of the rotation weight of which $Q_-$ carries $-\frac12$, with dimensionful couplings counted with their dimensions. Every field, antifield and derivative has a positive value of this sum, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $q=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $q$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
 
-Proposition~\ref{prop-twist-cohomology} is the classical statement. In perturbation theory both sides are deformed by loop corrections, and the cohomology of the corrected twisted differential $\mathbf Q$ of \eqref{eq-1-1} is the perturbative BPS sector \cite{semichiral,BK}.
+Proposition~\ref{prop-twist-cohomology} is the classical statement. The same comparison holds in perturbation theory, where the question is whether the cohomology of the total quantum differential agrees with the cohomology of the quantum supercharge on the quantum physical operators. Give the supercharge a constant ghost $\epsilon$ with $(p,q)=(-1,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_0+\epsilon S_Q$ has $(p,q)=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves the ghost number and the rotation weight gives, at $\epsilon=1$, a differential on local operators of the form
+\begin{equation*}
+\begin{gathered}
+\mathbf D=\sum_{k\ge0}D_k,\qquad
+D_k:\ (p,q)\longmapsto(p+k,\,q+1-k),\qquad
+\mathbf D^2=0,\\
+D_0=(S_0,\,\cdot\,)+O(\hbar),\qquad D_1=(S_Q,\,\cdot\,)+O(\hbar),
+\end{gathered}
+\end{equation*}
+with $D_k=O(\hbar)$ for $k\ge2$. Here $D_0$ is the quantum BRST differential of the physical theory, with the loop corrections to the gauge transformations and to the equations of motion of composite operators; $D_1$ is the quantum supercharge, with its anomalous terms; and the $D_k$ with $k\ge2$ record that the quantum supercharge squares to zero only up to BRST-exact terms, $D_1^2=-D_0D_2-D_2D_0$.
+
+\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ be the space of local operators that do not contain the undifferentiated ghost, and let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above, preserving the weight of footnote~\ref{fn-weight}, whose eigenspaces are finite dimensional.}
+
+(i) \emph{The cohomology of $D_0$ is concentrated in ghost number zero, and the space $P=H^0(D_0)$ of quantum physical operators is a free $\mathbb C[[\hbar]]$-module with $P/\hbar P$ the classical space of gauge-invariant local operators modulo the equations of motion.}
+
+(ii) \emph{$D_1$ induces a differential $Q_\hbar$ on $P$, the quantum supercharge acting on physical operators.}
+
+(iii) \emph{The complexes $(V[[\hbar]],\mathbf D)$ and $(P,Q_\hbar)$ are homotopy equivalent over $\mathbb C[[\hbar]]$. In particular}
+\begin{equation*}
+H\bigl(V[[\hbar]],\mathbf D\bigr)\;\cong\;H\bigl(Q_\hbar\,;\,H(D_0)\bigr)
+\end{equation*}
+\emph{as $\mathbb C[[\hbar]]$-modules, torsion included: a class is lifted at the same order in $\hbar$ on both sides.}
+
+\emph{Proof.} (i) In each weight, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
+\begin{equation*}
+0\to H^q(D_0)/\hbar H^q(D_0)\to H^q\bigl(D_0|_{\hbar=0}\bigr)\to\ker\bigl(\hbar:H^{q+1}(D_0)\to H^{q+1}(D_0)\bigr)\to0
+\end{equation*}
+gives $H^q(D_0)=\hbar H^q(D_0)$ for $q\ne0$, hence $H^q(D_0)=0$ by Nakayama's lemma, and then shows that $H^0(D_0)$ has no $\hbar$-torsion and reduces to the classical cohomology.
+
+(ii) The components of $\mathbf D^2=0$ of rotation weight one and two are $D_0D_1+D_1D_0=0$ and $D_1^2+D_0D_2+D_2D_0=0$.
+
+(iii) Since $P$ is free, the complex $(V[[\hbar]],D_0)$ splits: there are $\mathbb C[[\hbar]]$-linear maps $\iota:P\to V[[\hbar]]$, $\pi:V[[\hbar]]\to P$ and a homotopy $h$ of $(p,q)=(0,-1)$ with $\pi\iota=1$ and $\iota\pi=1-D_0h-hD_0$. Treat $\delta=\sum_{k\ge1}D_k$ as a perturbation of $D_0$. It raises $p$, which is bounded in each weight, so $\delta h$ is nilpotent and the homological perturbation lemma gives a homotopy equivalence between $(V[[\hbar]],\mathbf D)$ and $P$ with the differential
+\begin{equation*}
+\pi\Bigl(\delta+\delta h\delta+\delta h\delta h\delta+\cdots\Bigr)\iota .
+\end{equation*}
+A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(p,q)=(A,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
+
+The terms $D_k$ with $k\ge2$ and the loop corrections in $D_0$ therefore do not affect the answer: the cohomology of the total differential, which the twisted theory computes, is the cohomology of the quantum supercharge on the quantum physical operators. Proposition~\ref{prop-twist-cohomology-quantum} applies to every quantization of the form above. The differential $\mathbf Q$ of \eqref{eq-1-1} is obtained from the heat-kernel quantization of $S_{\mathrm{tw}}$; its identification with such a $\mathbf D$ rests on the independence of the BV quantization of the gauge fixing and of the regularization, up to a redefinition of the couplings \cite{Costello}, which we assume, as in \cite{semichiral,BK}.
 
 \subsection{The retained fields as Dolbeault forms}\label{the-retained-fields}
 

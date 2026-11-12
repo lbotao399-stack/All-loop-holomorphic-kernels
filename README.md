@@ -2,7 +2,7 @@
 
 Botao Li, Kangning Liu, Chi-Ming Chang (November 2026)
 
-Manuscript PDF: [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) (121 pages; also mirrored at [`All_loop_holomorphic_kernels_full.pdf`](All_loop_holomorphic_kernels_full.pdf) for backward link compatibility).
+Manuscript PDF: [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) (122 pages; also mirrored at [`All_loop_holomorphic_kernels_full.pdf`](All_loop_holomorphic_kernels_full.pdf) for backward link compatibility).
 
 Companion results repository (supplementary algorithm document, census tables, and exact rational lifting certificates): [`quantum-lifts-results`](https://github.com/lbotao399-stack/quantum-lifts-results).
 
@@ -14,7 +14,7 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 
 | File | Description |
 |---|---|
-| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | Compiled manuscript PDF (121 pages) |
+| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | Compiled manuscript PDF (122 pages) |
 | [`main.tex`](main.tex) | LaTeX source of the manuscript (mirrored at [`All_loop_holomorphic_kernels_full.tex`](All_loop_holomorphic_kernels_full.tex)) |
 | `figures/vec/` | Vector PDF figures included by `main.tex` |
 | [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lifting example in massive SQED (Section 2.3; Python 3, standard library only) |
