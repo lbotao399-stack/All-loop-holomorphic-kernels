@@ -108,7 +108,7 @@ W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^
 \end{equation*}
 two-, three- and four-loop lifts in abelian theories of SQED type, and two- and three-loop lifts in $\mathcal N=2$ $SU(2)$ and $SU(3)$ gauge theories and their singlet deformations.
 
-Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $E+J_L=14$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests.
+Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $E+J_L=14$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators.
 
 \section{Summary of results}\label{sec-summary}
 
@@ -1056,9 +1056,9 @@ The move (a) is the step of the recursion that Gui, Wang and Williams found, fro
 
 This section reviews the holomorphic twist of the physical theory \cite{semichiral,BK} and the graph operations of the twisted theory \cite{Costello,Wang,operatope,higher}, for readers who have not met them. It ends with the current integral \eqref{eq-C-current-delta-integral}, the starting point of our computations.
 
-The starting point is the BV formulation of the physical theory, in which the fields, the ghosts and their antifields carry the differential $(S_{\mathrm{BV}},\,\cdot\,)$. Without the supercharge, its cohomology on local operators consists of the gauge-invariant operators modulo the equations of motion. Including one supercharge $Q_-$ in $S_{\mathrm{BV}}$ gives a complex whose cohomology consists of these operators annihilated by $Q_-$ modulo $Q_-$-exact ones, that is, the BPS sector (Proposition~\ref{prop-twist-cohomology}).
+The starting point is the BV formulation of the physical theory, in which the fields, the ghosts and their antifields carry the differential $(S_{\mathrm{BV}},\,\cdot\,)$. Without the supercharge, its cohomology on local operators consists of the gauge-invariant operators modulo the equations of motion. Including one supercharge $Q_-$ in $S_{\mathrm{BV}}$ gives a complex whose cohomology consists of these operators annihilated by $Q_-$ modulo $Q_-$-exact ones, that is, the BPS sector \eqref{eq-twist-cohomology}.
 
-The twist simplifies this complex in three steps. First, a canonical change of BV variables removes the $Q_-$-exact part of the action and exhibits most fields as pairs $(u,v)$ with $(S_{\mathrm{BV}},u)\propto v$; such pairs do not contribute to the cohomology and are dropped. What remains is the action $S_{\mathrm{tw}}$ of the holomorphic twist (Section \ref{canonical-changes-of-variables}). Second, the remaining fields and antifields assemble into four Dolbeault forms $\mathsf c,\mathsf b,\gamma,\beta$ on $\mathbb C^2$, in terms of which $S_{\mathrm{tw}}$ is a first-order action with a polynomial interaction (Section \ref{the-retained-fields}); their zero-form components are the familiar BPS letters (Section \ref{bv-completion-of-the-changyin-letters}). Third, the free differential $\bar\partial$ is contracted, so that local operators become polynomials in the zero-form fields and their holomorphic derivatives (Section \ref{dolbeault-contraction-and-wick-derivatives}). The interaction then acts on these operators through the higher brackets (Sections \ref{sec-brackets} and \ref{sec-brackets-origin}), which are evaluated by the current integral of Section \ref{positive-schwinger-times-and-the-operatope}.
+The twist simplifies this complex in three steps. First, a canonical change of BV variables removes the $Q_-$-exact part of the action and exhibits most fields as pairs $(u,v)$ with $(S_{\mathrm{BV}},u)\propto v$; such pairs do not contribute to the cohomology and are dropped. What remains is the action $S_{\mathrm{tw}}$ of the holomorphic twist (Section \ref{canonical-changes-of-variables}). Second, the remaining fields and antifields assemble into four Dolbeault forms $\mathsf c,\mathsf b,\gamma,\beta$ on $\mathbb C^2$, in terms of which $S_{\mathrm{tw}}$ is a first-order action with a polynomial interaction (Section \ref{the-retained-fields}); their zero-form components are the familiar BPS letters (Section \ref{bv-completion-of-the-changyin-letters}). Third, the cohomology of the free differential $\bar\partial$ is easy to describe: it consists of the polynomials in the zero-form fields and their holomorphic derivatives (Section \ref{dolbeault-contraction-and-wick-derivatives}). The interaction then acts on these operators through the higher brackets \cite{higher,semichiral,BK} (Sections \ref{sec-brackets} and \ref{sec-brackets-origin}), which are evaluated by the current integral \cite{Wang,operatope} of Section \ref{positive-schwinger-times-and-the-operatope}.
 
 \subsection{Coordinates and fields}\label{sec-A-conventions}
 
@@ -1096,7 +1096,7 @@ Here $\partial_\mu=\partial/\partial x_E^\mu$ and $\partial_{a\dot a}=\sigma^\mu
 
 \subsection{Canonical changes of variables and the twisted action}\label{canonical-changes-of-variables}
 
-In this subsection, we start from the original physical action and perform a canonical transformation (``adding $Q$-exact terms to the action''). The goal is the action $S_{\mathrm{tw}}$ of the holomorphic twist in \eqref{eq-B-5}, together with the statement that the cohomology of $(S_{\mathrm{tw}},\,\cdot\,)$ on local operators is the $Q_-$-cohomology of the physical theory (Proposition~\ref{prop-twist-cohomology}).
+In this subsection, we start from the original physical action and perform a canonical transformation (``adding $Q$-exact terms to the action''). The goal is the action $S_{\mathrm{tw}}$ of the holomorphic twist in \eqref{eq-B-5}, together with the statement \eqref{eq-twist-cohomology} that the cohomology of $(S_{\mathrm{tw}},\,\cdot\,)$ on local operators is the $Q_-$-cohomology of the physical theory.
 
 We use the $N=1$ off-shell superfield formulation in the gauge vector representation \cite[Chapters 26--27]{Weinberg}.
 
@@ -1186,7 +1186,7 @@ Let $\mathcal T$ contain these pairs and their spacetime derivatives. The remain
 The key point is that the $\mathcal S$ letters transform only among themselves (without $\mathcal T$ dependence), and the $\mathcal T$ letters form contractible pairs.
 
 \begin{proofbox}
-We remind the reader that we will contract $\mathcal T$ and keep the $\mathcal S$ letters and their antifields; however, the $\mathcal S$ letters are not the familiar ``BPS letters''.
+We remind the reader that we will contract $\mathcal T$ and keep the $\mathcal S$ letters and their antifields; however, the $\mathcal S$ letters are not the familiar ``BPS letters'', which are $\{\bar\phi_i,\ \psi_+^i,\ f_{++}^A,\ \bar\lambda_{\dot a}^A\}$ and their covariant derivatives $\nabla_{+\dot a}$ \cite{ChangYin}. The dictionary between the two sets of letters is \eqref{eq-B-14}.
 \end{proofbox}
 
 The contracting homotopy $h_{\mathcal T}$ of these pairs acts on field functionals by
@@ -1250,68 +1250,13 @@ In particular,
 =-\frac{\partial c^A}{\partial x^{+\dot a}}.
 \end{equation}
 
-The complex of $S_{\mathrm{tw}}$ computes the BPS operators of the physical theory:
-
-\rthm{Proposition}{prop-twist-cohomology}{The twisted complex and the BPS operators} \emph{On local operators that do not contain the undifferentiated ghost $c^A$,}
+The complex of $S_{\mathrm{tw}}$ computes the BPS operators of the physical theory. On local operators that do not contain the undifferentiated ghost $c^A$,
 \begin{equation}\label{eq-twist-cohomology}
 H\bigl((S_{\mathrm{tw}},\,\cdot\,)\bigr)
 \;\cong\;H\bigl((S_{\mathrm{BV}},\,\cdot\,)\bigr)
 \;\cong\;H\Bigl(Q_-\,;\ \frac{\text{gauge-invariant local operators}}{\text{equations of motion}}\Bigr).
 \end{equation}
-\emph{The cohomology of the total differential, which contains the gauge BRST transformation, the equations of motion and $Q_-$, is thus the same as the cohomology of $Q_-$ on the BRST cohomology of the physical theory.}
-
-\emph{Proof.} The canonical transformations generated by $\Psi$ and $\Psi'$ are changes of variables, and by \eqref{eq-T-representative} every cocycle of $S_{\mathrm{BV,new}}=S_{\mathrm{tw}}+S_{\mathcal T}$ has a representative that depends only on the retained fields $\mathcal S$ and their antifields; this gives the first isomorphism. For the second, write
-\begin{equation*}
-S_{\mathrm{BV}}=S_0+S_Q,\qquad
-S_0=S_{\mathrm{phys}}+\int d^4x\,(s\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},\qquad
-S_Q=\int d^4x\,(Q_-\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},
-\end{equation*}
-and $D_0=(S_0,\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $q$ be the ghost number and $p$ twice the weight under the Cartan generator of the rotations of the undotted index, normalized so that $Q_-$ has $p=1$. Then
-\begin{equation*}
-\underbrace{D_0}_{(p,q)=(0,1)}{}^{2}=0,\qquad
-\underbrace{D_0D_Q+D_QD_0}_{(p,q)=(1,1)}=0,\qquad
-\underbrace{D_Q}_{(p,q)=(1,0)}{}^{2}=0,
-\end{equation*}
-the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $p$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve the sum of the scaling dimension and of the rotation weight of which $Q_-$ carries $-\frac12$, with dimensionful couplings counted with their dimensions. Every field, antifield and derivative has a positive value of this sum, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $q=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $q$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
-
-Proposition~\ref{prop-twist-cohomology} is the classical statement. The same comparison holds in perturbation theory, where the question is whether the cohomology of the total quantum differential agrees with the cohomology of the quantum supercharge on the quantum physical operators. Give the supercharge a constant ghost $\epsilon$ with $(p,q)=(-1,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_0+\epsilon S_Q$ has $(p,q)=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves the ghost number and the rotation weight gives, at $\epsilon=1$, a differential on local operators of the form
-\begin{equation*}
-\begin{gathered}
-\mathbf D=\sum_{k\ge0}D_k,\qquad
-D_k:\ (p,q)\longmapsto(p+k,\,q+1-k),\qquad
-\mathbf D^2=0,\\
-D_0=(S_0,\,\cdot\,)+O(\hbar),\qquad D_1=(S_Q,\,\cdot\,)+O(\hbar),
-\end{gathered}
-\end{equation*}
-with $D_k=O(\hbar)$ for $k\ge2$. Here $D_0$ is the quantum BRST differential of the physical theory, with the loop corrections to the gauge transformations and to the equations of motion of composite operators; $D_1$ is the quantum supercharge, with its anomalous terms; and the $D_k$ with $k\ge2$ record that the quantum supercharge squares to zero only up to BRST-exact terms, $D_1^2=-D_0D_2-D_2D_0$.
-
-\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ be the space of local operators that do not contain the undifferentiated ghost, and let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above, preserving the weight of footnote~\ref{fn-weight}, whose eigenspaces are finite dimensional.}
-
-(i) \emph{The cohomology of $D_0$ is concentrated in ghost number zero, and the space $P=H^0(D_0)$ of quantum physical operators is a free $\mathbb C[[\hbar]]$-module with $P/\hbar P$ the classical space of gauge-invariant local operators modulo the equations of motion.}
-
-(ii) \emph{$D_1$ induces a differential $Q_\hbar$ on $P$, the quantum supercharge acting on physical operators.}
-
-(iii) \emph{The complexes $(V[[\hbar]],\mathbf D)$ and $(P,Q_\hbar)$ are homotopy equivalent over $\mathbb C[[\hbar]]$. In particular}
-\begin{equation*}
-H\bigl(V[[\hbar]],\mathbf D\bigr)\;\cong\;H\bigl(Q_\hbar\,;\,H(D_0)\bigr)
-\end{equation*}
-\emph{as $\mathbb C[[\hbar]]$-modules, torsion included: a class is lifted at the same order in $\hbar$ on both sides.}
-
-\emph{Proof.} (i) In each weight, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
-\begin{equation*}
-0\to H^q(D_0)/\hbar H^q(D_0)\to H^q\bigl(D_0|_{\hbar=0}\bigr)\to\ker\bigl(\hbar:H^{q+1}(D_0)\to H^{q+1}(D_0)\bigr)\to0
-\end{equation*}
-gives $H^q(D_0)=\hbar H^q(D_0)$ for $q\ne0$, hence $H^q(D_0)=0$ by Nakayama's lemma, and then shows that $H^0(D_0)$ has no $\hbar$-torsion and reduces to the classical cohomology.
-
-(ii) The components of $\mathbf D^2=0$ of rotation weight one and two are $D_0D_1+D_1D_0=0$ and $D_1^2+D_0D_2+D_2D_0=0$.
-
-(iii) Since $P$ is free, the complex $(V[[\hbar]],D_0)$ splits: there are $\mathbb C[[\hbar]]$-linear maps $\iota:P\to V[[\hbar]]$, $\pi:V[[\hbar]]\to P$ and a homotopy $h$ of $(p,q)=(0,-1)$ with $\pi\iota=1$ and $\iota\pi=1-D_0h-hD_0$. Treat $\delta=\sum_{k\ge1}D_k$ as a perturbation of $D_0$. It raises $p$, which is bounded in each weight, so $\delta h$ is nilpotent and the homological perturbation lemma gives a homotopy equivalence between $(V[[\hbar]],\mathbf D)$ and $P$ with the differential
-\begin{equation*}
-\pi\Bigl(\delta+\delta h\delta+\delta h\delta h\delta+\cdots\Bigr)\iota .
-\end{equation*}
-A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(p,q)=(A,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
-
-The terms $D_k$ with $k\ge2$ and the loop corrections in $D_0$ therefore do not affect the answer: the cohomology of the total differential, which the twisted theory computes, is the cohomology of the quantum supercharge on the quantum physical operators. Proposition~\ref{prop-twist-cohomology-quantum} applies to every quantization of the form above. The differential $\mathbf Q$ of \eqref{eq-1-1} is obtained from the heat-kernel quantization of $S_{\mathrm{tw}}$; its identification with such a $\mathbf D$ rests on the independence of the BV quantization of the gauge fixing and of the regularization, up to a redefinition of the couplings \cite{Costello}, which we assume, as in \cite{semichiral,BK}.
+The first isomorphism follows from \eqref{eq-T-representative}. The second says that the cohomology of the total differential, which contains the gauge BRST transformation, the equations of motion and $Q_-$, is the cohomology of $Q_-$ on the BRST cohomology of the physical theory, that is, on the gauge-invariant local operators modulo the equations of motion. This identification is widely accepted, and earlier work on twisted theories uses it without comment \cite{CostelloTwist,SaberiWilliams,ESW,semichiral,BK}. Appendix \ref{app-twist-cohomology} gives a proof (Proposition \ref{prop-twist-cohomology}) and its form in perturbation theory (Proposition \ref{prop-twist-cohomology-quantum}).
 
 \subsection{The retained fields as Dolbeault forms}\label{the-retained-fields}
 
@@ -6592,6 +6537,71 @@ A class with zero input derivatives has no incoming $d_r$ for $r\ge1$.
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 \end{proofbox}
 
+\section{The twisted complex and the physical $Q$-cohomology}\label{app-twist-cohomology}
+
+This appendix proves the identification \eqref{eq-twist-cohomology} of Section \ref{canonical-changes-of-variables}, in the notation of that section, and gives its form in perturbation theory.
+
+\rthm{Proposition}{prop-twist-cohomology}{The twisted complex and the BPS operators} \emph{On local operators that do not contain the undifferentiated ghost $c^A$, the isomorphisms \eqref{eq-twist-cohomology} hold:}
+\begin{equation*}
+H\bigl((S_{\mathrm{tw}},\,\cdot\,)\bigr)
+\;\cong\;H\bigl((S_{\mathrm{BV}},\,\cdot\,)\bigr)
+\;\cong\;H\Bigl(Q_-\,;\ \frac{\text{gauge-invariant local operators}}{\text{equations of motion}}\Bigr).
+\end{equation*}
+\emph{The cohomology of the total differential, which contains the gauge BRST transformation, the equations of motion and $Q_-$, is thus the same as the cohomology of $Q_-$ on the BRST cohomology of the physical theory.}
+
+\emph{Proof.} The canonical transformations generated by $\Psi$ and $\Psi'$ are changes of variables, and by \eqref{eq-T-representative} every cocycle of $S_{\mathrm{BV,new}}=S_{\mathrm{tw}}+S_{\mathcal T}$ has a representative that depends only on the retained fields $\mathcal S$ and their antifields; this gives the first isomorphism. For the second, write
+\begin{equation*}
+S_{\mathrm{BV}}=S_0+S_Q,\qquad
+S_0=S_{\mathrm{phys}}+\int d^4x\,(s\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},\qquad
+S_Q=\int d^4x\,(Q_-\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},
+\end{equation*}
+and $D_0=(S_0,\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $q$ be the ghost number and $p$ twice the weight under the Cartan generator of the rotations of the undotted index, normalized so that $Q_-$ has $p=1$. Then
+\begin{equation*}
+\underbrace{D_0}_{(p,q)=(0,1)}{}^{2}=0,\qquad
+\underbrace{D_0D_Q+D_QD_0}_{(p,q)=(1,1)}=0,\qquad
+\underbrace{D_Q}_{(p,q)=(1,0)}{}^{2}=0,
+\end{equation*}
+the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $p$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve the sum of the scaling dimension and of the rotation weight of which $Q_-$ carries $-\frac12$, with dimensionful couplings counted with their dimensions. Every field, antifield and derivative has a positive value of this sum, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $q=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $q$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
+
+Proposition~\ref{prop-twist-cohomology} is the classical statement. The same comparison holds in perturbation theory, where the question is whether the cohomology of the total quantum differential agrees with the cohomology of the quantum supercharge on the quantum physical operators. Give the supercharge a constant ghost $\epsilon$ with $(p,q)=(-1,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_0+\epsilon S_Q$ has $(p,q)=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves the ghost number and the rotation weight gives, at $\epsilon=1$, a differential on local operators of the form
+\begin{equation*}
+\begin{gathered}
+\mathbf D=\sum_{k\ge0}D_k,\qquad
+D_k:\ (p,q)\longmapsto(p+k,\,q+1-k),\qquad
+\mathbf D^2=0,\\
+D_0=(S_0,\,\cdot\,)+O(\hbar),\qquad D_1=(S_Q,\,\cdot\,)+O(\hbar),
+\end{gathered}
+\end{equation*}
+with $D_k=O(\hbar)$ for $k\ge2$. Here $D_0$ is the quantum BRST differential of the physical theory, with the loop corrections to the gauge transformations and to the equations of motion of composite operators; $D_1$ is the quantum supercharge, with its anomalous terms; and the $D_k$ with $k\ge2$ record that the quantum supercharge squares to zero only up to BRST-exact terms, $D_1^2=-D_0D_2-D_2D_0$.
+
+\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ be the space of local operators that do not contain the undifferentiated ghost, and let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above, preserving the weight of footnote~\ref{fn-weight}, whose eigenspaces are finite dimensional.}
+
+(i) \emph{The cohomology of $D_0$ is concentrated in ghost number zero, and the space $P=H^0(D_0)$ of quantum physical operators is a free $\mathbb C[[\hbar]]$-module with $P/\hbar P$ the classical space of gauge-invariant local operators modulo the equations of motion.}
+
+(ii) \emph{$D_1$ induces a differential $Q_\hbar$ on $P$, the quantum supercharge acting on physical operators.}
+
+(iii) \emph{The complexes $(V[[\hbar]],\mathbf D)$ and $(P,Q_\hbar)$ are homotopy equivalent over $\mathbb C[[\hbar]]$. In particular}
+\begin{equation*}
+H\bigl(V[[\hbar]],\mathbf D\bigr)\;\cong\;H\bigl(Q_\hbar\,;\,H(D_0)\bigr)
+\end{equation*}
+\emph{as $\mathbb C[[\hbar]]$-modules, torsion included: a class is lifted at the same order in $\hbar$ on both sides.}
+
+\emph{Proof.} (i) In each weight, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
+\begin{equation*}
+0\to H^q(D_0)/\hbar H^q(D_0)\to H^q\bigl(D_0|_{\hbar=0}\bigr)\to\ker\bigl(\hbar:H^{q+1}(D_0)\to H^{q+1}(D_0)\bigr)\to0
+\end{equation*}
+gives $H^q(D_0)=\hbar H^q(D_0)$ for $q\ne0$, hence $H^q(D_0)=0$ by Nakayama's lemma, and then shows that $H^0(D_0)$ has no $\hbar$-torsion and reduces to the classical cohomology.
+
+(ii) The components of $\mathbf D^2=0$ of rotation weight one and two are $D_0D_1+D_1D_0=0$ and $D_1^2+D_0D_2+D_2D_0=0$.
+
+(iii) Since $P$ is free, the complex $(V[[\hbar]],D_0)$ splits: there are $\mathbb C[[\hbar]]$-linear maps $\iota:P\to V[[\hbar]]$, $\pi:V[[\hbar]]\to P$ and a homotopy $h$ of $(p,q)=(0,-1)$ with $\pi\iota=1$ and $\iota\pi=1-D_0h-hD_0$. Treat $\delta=\sum_{k\ge1}D_k$ as a perturbation of $D_0$. It raises $p$, which is bounded in each weight, so $\delta h$ is nilpotent and the homological perturbation lemma gives a homotopy equivalence between $(V[[\hbar]],\mathbf D)$ and $P$ with the differential
+\begin{equation*}
+\pi\Bigl(\delta+\delta h\delta+\delta h\delta h\delta+\cdots\Bigr)\iota .
+\end{equation*}
+A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(p,q)=(A,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
+
+The terms $D_k$ with $k\ge2$ and the loop corrections in $D_0$ therefore do not affect the answer: the cohomology of the total differential, which the twisted theory computes, is the cohomology of the quantum supercharge on the quantum physical operators. Proposition~\ref{prop-twist-cohomology-quantum} applies to every quantization of the form above. The differential $\mathbf Q$ of \eqref{eq-1-1} is obtained from the heat-kernel quantization of $S_{\mathrm{tw}}$; its identification with such a $\mathbf D$ rests on the independence of the BV quantization of the gauge fixing and of the regularization, up to a redefinition of the couplings \cite{Costello}, which we assume, as in \cite{semichiral,BK}.
+
 \begin{thebibliography}{99}
 \small
 \bibitem{ChangYin}
@@ -6628,6 +6638,12 @@ B.~Li, K.~Liu and C.-M.~Chang, ``Holomorphic Feynman Diagrams in Four Dimensions
 R.~G.~Leigh and M.~J.~Strassler, ``Exactly Marginal Operators and Duality in Four Dimensional $\mathcal N=1$ Supersymmetric Gauge Theory,'' \emph{Nucl. Phys. B} \textbf{447} (1995), 95--136, \href{https://arxiv.org/abs/hep-th/9503121}{arXiv:hep-th/9503121}.
 \bibitem{Weinberg}
 S.~Weinberg, \emph{The Quantum Theory of Fields}, Vol.~III: \emph{Supersymmetry}, Cambridge University Press (2000).
+\bibitem{CostelloTwist}
+K.~Costello, ``Notes on Supersymmetric and Holomorphic Field Theories in Dimensions 2 and 4,'' \href{https://arxiv.org/abs/1111.4234}{arXiv:1111.4234}.
+\bibitem{SaberiWilliams}
+I.~Saberi and B.~R.~Williams, ``Twisted Characters and Holomorphic Symmetries,'' \href{https://arxiv.org/abs/1906.04221}{arXiv:1906.04221}.
+\bibitem{ESW}
+C.~Elliott, P.~Safronov and B.~R.~Williams, ``A Taxonomy of Twists of Supersymmetric Yang--Mills Theory,'' \href{https://arxiv.org/abs/2002.10517}{arXiv:2002.10517}.
 \bibitem{BBH}
 G.~Barnich, F.~Brandt and M.~Henneaux, ``Local BRST Cohomology in Gauge Theories,'' \emph{Phys. Rept.} \textbf{338} (2000), 439--569, \href{https://arxiv.org/abs/hep-th/0002245}{arXiv:hep-th/0002245}.
 \bibitem{Costello}
