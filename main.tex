@@ -126,7 +126,7 @@ W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^
 \end{equation*}
 two-, three- and four-loop lifts in abelian theories of SQED type, and two- and three-loop lifts in $\mathcal N=2$ $SU(2)$ and $SU(3)$ gauge theories and their singlet deformations.
 
-Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $E+J_L=14$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators.
+Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $E+J_L=14$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
 
 \section{Summary of results}\label{sec-summary}
 
@@ -1731,9 +1731,9 @@ P_{\varepsilon,L}
 \end{aligned}
 \end{equation}
 
-Apart from the regularization by $\varepsilon$ and $L$, \eqref{eq-C-heat-homotopy} is the standard Schwinger-parameter form of a propagator, in which $t$ is the proper time of the world-line formalism: for a scalar field,
+Apart from the regularization by $\varepsilon$ and $L$, \eqref{eq-C-heat-homotopy} is the standard Schwinger-parameter form of a propagator, in which $t$ is the proper time of the world-line formalism. For a free scalar field, $Q\phi^\ddagger=\nabla^2\phi$ and the gauge-fixing operator $Q^{\mathrm{GF}}\phi=\phi^\ddagger$ take the place of $\bar\partial$ and $\bar\partial^*$, with $\{Q,Q^{\mathrm{GF}}\}=\nabla^2=-p^2$, and
 \begin{equation*}
-\langle\phi\,\phi\rangle=\int_0^\infty e^{-tp^2}\,dt=\frac1{p^2}.
+\langle\phi\,\phi\rangle=\int_0^\infty e^{t\{Q,Q^{\mathrm{GF}}\}}\,dt=\int_0^\infty e^{-tp^2}\,dt=\frac1{p^2}.
 \end{equation*}
 In Costello's formalism the limits $\varepsilon$ and $L$ parametrize the renormalization-group flow from the ultraviolet to a physical or infrared scale. In ordinary terms, $\varepsilon$ is an ultraviolet cutoff and $L$ an infrared cutoff. The kernel $K_0$ is the delta function.
 
@@ -2136,7 +2136,7 @@ This analogy brings the series, parallel, and star--triangle transformations of 
 
 \section{Constraints and classification of $Q_n$ graphs}\label{sec-restrictions}
 
-Only a few graphs can have a nonzero contribution to \eqref{eq-C-current-delta-integral}; they must satisfy the so-called Laman condition (Section \ref{sec-laman}). In addition, the diagrams in 4d separate further into a few classes. The result of this section is the classification of the graphs of $Q_n$ (Corollary~\ref{b-00247}): for the interaction \eqref{eq-B-10} with $\bar W$ of arbitrary degree, every nonzero connected graph of $Q_n$, $n\ge1$, is a fan or a spider whose arms meet at its single $\bar W$ vertex (Figure \ref{fig-sum-families}); for interactions of degree at most three, including renormalizable $\mathcal N=1$ gauge theories with mass terms, only fans contribute (Section \ref{sec-only-fans}). The same counting shows that $Q_n\mathcal O$ vanishes beyond a finite loop order (Corollary~\ref{b-00235}).
+Only a few graphs can have a nonzero contribution to \eqref{eq-C-current-delta-integral}; they must satisfy the so-called Laman condition (Section \ref{sec-laman}). In addition, the diagrams in the four-dimensional holomorphic twist of an $\mathcal N=1$ theory separate further into a few classes. This comes from the fact that each propagator lowers the number of $\mathsf b$ and $\beta$ factors by one, while each vertex raises it by at most one. The result of this section is the classification of the graphs of $Q_n$ (Corollary~\ref{b-00247}): for the interaction \eqref{eq-B-10} with $\bar W$ of arbitrary degree, every nonzero connected graph of $Q_n$, $n\ge1$, is a fan or a spider whose arms meet at its single $\bar W$ vertex (Figure \ref{fig-sum-families}); for interactions of degree at most three, including all renormalizable $\mathcal N=1$ gauge theories, only fans contribute (Section \ref{sec-only-fans}). The same counting shows that $Q_n\mathcal O$ vanishes beyond a finite loop order (Corollary~\ref{b-00235}).
 
 \begin{figure}[H]
 \centering
@@ -2241,7 +2241,7 @@ These are the Laman constraints in two holomorphic dimensions \cite[Equations (2
 
 We now turn to the condition special to $d=4$.
 
-By \eqref{eq-1-1}, the Feynman graphs of the loop-corrected supercharge $Q_n$ have $n+1$ interaction vertices and one insertion $\mathcal O$. We call an edge that joins an interaction vertex to $\mathcal O$ a \emph{spoke}.
+By \eqref{eq-1-1}, the Feynman graphs of the loop-corrected supercharge $Q_n$ have $n+1$ interaction vertices and one insertion $\mathcal O$. We call an edge that joins an interaction vertex to $\mathcal O$ a \emph{spoke}, and write $\deg_\Gamma\mathcal O$ for the number of spokes of a graph $\Gamma$, the degree of $\mathcal O$; by Corollary~\ref{b-00188} it is at most $n+1$.
 
 \rthm{Proposition}{b-00210}{Graphs of $Q_n$ with cubic vertices are fans} \emph{For a translation-invariant interaction $\mathcal I$ whose vertices have degree at most three, every nonzero connected $n$-loop kernel with one local-operator insertion is a fan of cubic vertices (Figure~\ref{fig-fan-family}), for $n\ge1$. (The $n=0$ case is a single edge connecting two vertices, representing the classical tree-level SUSY transformation.)} \emph{The interaction vertices form a path; each is joined to the insertion, and one output field remains at each endpoint of the path.}
 
@@ -2256,7 +2256,7 @@ By Lemma~\ref{b-00207}, there are $n+1$ interaction vertices besides the inserti
 
 The proof of Proposition~\ref{b-00210} uses two lemmas:
 
-\rthm{Lemma}{b-00213}{Spokes} \emph{Let $\deg_\Gamma\mathcal O$ be the number of edges incident to $\mathcal O$ in a graph of Proposition~\ref{b-00210}. } \emph{Then $\deg_\Gamma\mathcal O=n+1$: every interaction vertex is joined to $\mathcal O$ by one edge and exactly two interaction fields remain uncontracted.}
+\rthm{Lemma}{b-00213}{$\deg_\Gamma\mathcal O$ is maximal} \emph{In a graph of Proposition~\ref{b-00210}, $\deg_\Gamma\mathcal O=n+1$: every interaction vertex is joined to $\mathcal O$ by one edge and exactly two interaction fields remain uncontracted.}
 
 \emph{Proof (circuit).} The uncontracted interaction fields inject the external currents. By Corollary~\ref{b-00188} and Lemma~\ref{b-00207}, with equality in the first step only for cubic vertices,
 \begin{equation}\label{eq-cubiccount}
@@ -2448,7 +2448,7 @@ e^{\sum_j y_{j,n+2,+\dot a}z_j^{+\dot a}}.
 
 The final two coordinates form a triangle; the earlier coordinates range independently over intervals. \textbf{Each $r_j$ with $j\le2n-2$ is a current-division ratio of the iteration: $r_{2i-1}$ is the fraction of the source at the eliminated vertex $i$ that the series step passes to vertex $i+1$, and $r_{2i}$ is the fraction of the merged current carried by the original spoke $(i+1,n+2)$ after the parallel merge.} The last two, $r_{2n-1}$ and $r_{2n}$, are the simplex coordinates of the final triangle, as in \eqref{eq-1-25}.
 
-All currents are polynomial in the new coordinates, without the spanning-tree denominators that appeared in previous work, so every fixed Taylor coefficient is a polynomial integral over the explicit domain \eqref{eq-1-37}, for arbitrary sources on the path.
+All currents are polynomial in the new coordinates, without the spanning-tree denominators that appeared in previous work (Appendix~\ref{sec-B-spanning}), so every fixed Taylor coefficient is a polynomial integral over the explicit domain \eqref{eq-1-37}, for arbitrary sources on the path.
 
 We keep the sources $\lambda_2,\ldots,\lambda_n$ arbitrary. In a renormalizable theory, however, these $\lambda$'s are zero in $Q_n$ because there are no uncontracted letters at these vertices; only $\lambda_1$ and $\lambda_{n+1}$ (and $\lambda_{n+2}=-\sum_{v<n+2}\lambda_v$) are nonzero.~ (By Propositions~\ref{b-00225} and~\ref{b-00240}, even in a non-renormalizable theory, at most one of $\lambda_2,\ldots,\lambda_n$ is nonzero in every fan kernel considered here.)
 
@@ -2504,35 +2504,7 @@ Expanding the exponential and integrating each monomial yields the entire displa
 
 \subsection{Local reductions as kernel operators}\label{sec-B-local-reduction}\label{sec-network}
 
-We reduce each graph integral to an integro-differential operator acting on the kernel of a smaller graph. Each move replaces a circuit by a reduced one, whose quantities carry the superscript $\mathrm{red}$; the kernel operator of the move follows from the corresponding change of variables.
-
-\subsubsection{The spanning-tree solution}\label{sec-B-spanning}
-
-In principle, a formalism already exists for computing all integrals of the form \eqref{eq-operatope} \cite[Theorem 4 and Corollary 2]{Wang}, which solves the discrete Laplace equation on the circuit exactly and expresses all edge currents in terms of the external currents $\lambda$ and the resistances $t_e$. However, this formula is cumbersome and lengthy, with exponential complexity. We review it briefly.
-
-To evaluate the current integral at fixed resistances, first solve the conservation law on each spanning tree. Then we sum over the spanning trees with the weights in \eqref{eq-1-24}; the result automatically satisfies the loop voltage equation.
-
-Deleting $e\in T$ gives its current as the source sum on the component containing $e(0)$.
-
-The weighted average over spanning trees solves the full network \cite{Wang},
-\begin{equation}\label{eq-1-24}
-\begin{aligned}
-y^T_{e,+\dot a}
-&=\begin{cases}
-\displaystyle\sum_{\substack{v\text{ connected to }e(0)\\
-\text{in }T\setminus\{e\}}}\lambda_{v,+\dot a},&e\in T,\\[3pt]
-0,&e\notin T,
-\end{cases}\\[4pt]
-y_{e,+\dot a}(t)
-&=\frac{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}
-\left(\prod_{h\in\Gamma_1\setminus T}t_h\right)y^T_{e,+\dot a}}
-{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}\prod_{h\in\Gamma_1\setminus T}t_h}.
-\end{aligned}
-\end{equation}
-
-A common rescaling of the resistances does not affect the formula, so we may impose $\sum_{e\in\Gamma_1}t_e=1$.
-
-Then the integral is just the Jacobian of the change of variables from the $y$'s to the independent $t$'s. The moves below replace this global solution by local changes of the resistances, in which the spanning-tree denominator of \eqref{eq-1-24} cancels.
+We reduce each graph integral to an integro-differential operator acting on the kernel of a smaller graph. Each move replaces a circuit by a reduced one, whose quantities carry the superscript $\mathrm{red}$; the kernel operator of the move follows from the corresponding change of variables. The moves are local: they do not use the global solution of the circuit by a sum over spanning trees \cite[Theorem 4 and Corollary 2]{Wang}, which is recalled in Appendix~\ref{sec-B-spanning}.
 
 \subsubsection{Series elimination}\label{local-B-series-heading}
 
@@ -2776,7 +2748,7 @@ The next step acts on vertex $2$ with the reduced source $\lambda_2+r_1\lambda_1
 \subsection{Fan kernels from the one-loop kernel}\label{sec-fan-positive}\label{sec-B-fan-reduction}
 
 For $n\ge2$, iterating Proposition~\ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea} along the interaction path, at vertex $1$, then vertex $2$, and so on, reduces the fan to the triangle (Figure~\ref{local-B4-fan-chain}). Repeated application of \eqref{eq-kernel-series-parallel} gives integral--derivative operators acting on the known triangle kernel \eqref{eq-1-25}:
-\begin{equation*}
+\begin{equation}\label{eq-fan-operator-product}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
 ={}&\left[
@@ -2793,7 +2765,7 @@ r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot b}
 \underbrace{\mathcal I_\triangle
 (\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\text{vertices }n,n+1,n+2}.
 \end{aligned}
-\end{equation*}
+\end{equation}
 
 The factor $i=1$ acts outermost; $\mathrm{red}$ refers to the indicated stage, and each derivative acts on everything to its right before that stage's displacement substitution.
 
@@ -2826,11 +2798,10 @@ The sources passed inward obey the following recurrence, with empty products equ
 \end{aligned}
 \end{equation}
 
-\subsubsection{The first two operators}\label{local-B4-first-two-heading}
+\begin{proofbox}
+\textbf{Proof of \eqref{eq-1-40}.} Every kernel in \eqref{eq-fan-operator-product} depends on the displacements only through the exponential $e^{-\sum_ey_{e,+\dot a}z_e^{+\dot a}}$. Each derivative $\partial/\partial z$ therefore reads off a current $y$, and the currents are solved completely by iterating backwards from the triangle. The proof has three steps.
 
-The first factor is \eqref{b-00282}; for $n\ge3$ the second is the same formula applied to the smaller fan at $(v,u,w)=(2,3,n+2)$.
-
-For $n\ge3$, the first derivative acts on both the second phase and its displacement substitution; the two terms reconstruct the reduced current $y_{2,n+2}^{\mathrm{red}}$ inserted in \eqref{eq-fan-kernel-recursion}:
+\medskip\noindent\textbf{Step 1: the first two operators.} The first factor of \eqref{eq-fan-operator-product} is \eqref{b-00282}; for $n\ge3$ the second is the same formula applied to the smaller fan at $(v,u,w)=(2,3,n+2)$. The first derivative acts on the phase of the second factor and on its displacement substitution:
 \begin{equation}\label{eq-B-fan-second-fractions}
 \begin{aligned}
 &r_2\lambda_{1,+}{}^{\dot a}
@@ -2849,10 +2820,13 @@ e^{-\lambda_{2,+\dot b}^{\mathrm{red}}
 \mathcal I_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}.
 \end{aligned}
 \end{equation}
-
-The Leibniz rule gives the bracket $r_2[(1-r_3)\lambda_{1,+\dot a}\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}+(1-r_4)\lambda_{1,+}{}^{\dot a}\partial/\partial z_{3,n+2}^{\mathrm{red},+\dot a}]$ in the second equality of \eqref{eq-fan-chain}.
-
-The first two inserted-current factors are
+By the Leibniz rule, the first operator becomes the bracket $r_2[(1-r_3)\lambda_{1,+\dot a}\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}+(1-r_4)\lambda_{1,+}{}^{\dot a}\partial/\partial z_{3,n+2}^{\mathrm{red},+\dot a}]$ in the second equality of \eqref{eq-fan-chain} below. Its derivative reads off $y^{\mathrm{red}}_{3,n+2}$ from the exponential of the remaining kernel, as in \eqref{eq-fan-kernel-recursion}, and the two terms of the bracket add up to the current on the reduced spoke $(2,n+2)$, by Proposition~\ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea} applied at vertex $2$:
+\begin{equation*}
+(1-r_3)\lambda^{\mathrm{red}}_{2,+\dot a}+(1-r_4)y^{\mathrm{red}}_{3,n+2,+\dot a}
+=\lambda^{\mathrm{red}}_{2,+\dot a}-y_{23,+\dot a}
+=y^{\mathrm{red}}_{2,n+2,+\dot a}.
+\end{equation*}
+The first two inserted-current factors are therefore
 \begin{equation*}
 \begin{aligned}
 r_2\lambda_{1,+\dot a}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot a}
@@ -2863,12 +2837,7 @@ r_4\lambda^{\mathrm{red}}_{2,+\dot a}y^{\mathrm{red}}_{3,n+2,+}{}^{\dot a}
 (\lambda_{3,+}{}^{\dot a}-y_{34,+}{}^{\dot a}(r)).
 \end{aligned}
 \end{equation*}
-
-For $n\ge3$, the first two reductions and their iteration give the equality chain below.
-
-In each term, take the displayed derivatives first, then apply the displacement substitutions from the last reduction to the first.
-
-For $n=2$, the first reduced kernel is the triangle \eqref{eq-1-25}, so the second reduction is omitted:
+The first two reductions give the first two equalities of the chain below; their iteration gives the rest. In each term, take the displayed derivatives first, then apply the displacement substitutions from the last reduction to the first. For $n=2$, the first reduced kernel is the triangle \eqref{eq-1-25}, so the second reduction is omitted.
 \begin{equation}\label{eq-fan-chain}
 \begin{aligned}
 &\mathcal I_\Gamma(\lambda;z)\\
@@ -2909,9 +2878,7 @@ r_4(\lambda^{\mathrm{red}}_{2,+\dot c}y^{\mathrm{red}}_{3,n+2,+}{}^{\dot c})}}
 \end{aligned}
 \end{equation}
 
-\subsubsection{Evaluate from the triangle outward}\label{local-B4-restore-heading}
-
-Start with the one-loop kernel \eqref{eq-1-25}, relabelled to $n,n+1,n+2$:
+\medskip\noindent\textbf{Step 2: evaluation from the triangle outward.} The innermost factor of \eqref{eq-fan-operator-product} is the one-loop kernel \eqref{eq-1-25}, relabelled to $n,n+1,n+2$:
 \begin{equation}\label{eq-B-fan-second-merge}
 \begin{aligned}
 \mathcal I_\triangle(\lambda^{\mathrm{red}};z^{\mathrm{red}})
@@ -2922,11 +2889,7 @@ y_{n,n+1,+\dot a}&=r_{2n-1}\lambda_{n,+\dot a}^{\mathrm{red}}
 -r_{2n}\lambda_{n+1,+\dot a}.
 \end{aligned}
 \end{equation}
-
-\begin{proofbox}
-\textbf{Evaluation of one operator.}
-
-Fix the inner integration ratios and sources; the factors already obtained are independent of the displacements, so the next derivative acts on their exponential:
+Apply the operators in the order $i=n-1,n-2,\ldots,1$. Fix the inner integration ratios and sources; the factors already obtained are independent of the displacements, so the next derivative acts on their exponential and reads off the current on the reduced spoke $(i+1,n+2)$:
 \begin{equation}\label{eq-fan-kernel-recursion}
 \begin{aligned}
 &r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}
@@ -2939,7 +2902,6 @@ e^{-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
 \end{aligned}
 \end{equation}
-
 Multiplying by the phase of the vertex being restored and substituting the reduced displacement gives
 \begin{equation*}
 \begin{aligned}
@@ -2954,10 +2916,7 @@ Multiplying by the phase of the vertex being restored and substituting the reduc
 +r_{2i}y_{i+1,n+2,+\dot a}^{\mathrm{red}}z_{i+1,n+2}^{+\dot a}.
 \end{aligned}
 \end{equation*}
-
-The coefficients of the three displacements are the restored currents: the new series branch carries $(1-r_{2i})y_{i+1,n+2}^{\mathrm{red}}$, and the old spoke carries $r_{2i}y_{i+1,n+2}^{\mathrm{red}}$.
-
-Conservation at $i+1$ identifies the factor inserted by the derivative:
+The coefficients of the three displacements are the restored currents $y_{i,i+1}$, $y^{\mathrm{red}}_{i,n+2}$ and $y_{i+1,n+2}$: the new series branch carries $(1-r_{2i})y_{i+1,n+2}^{\mathrm{red}}$, and the old spoke carries $r_{2i}y_{i+1,n+2}^{\mathrm{red}}$. Conservation at $i+1$ identifies the factor inserted by the derivative; the term $r_{2i-1}\lambda_i^{\mathrm{red}}$ drops out of the contraction, since $\lambda_{+\dot a}\lambda_{+}{}^{\dot a}=0$:
 \begin{equation}\label{eq-B-fan-first-merge}
 \begin{aligned}
 y_{i+1,n+2,+\dot a}^{\mathrm{red}}
@@ -2970,15 +2929,9 @@ y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}
 \qquad 1\le i<n.
 \end{aligned}
 \end{equation}
+Each operator thus multiplies the displacement-independent factors by this contraction and restores one more circuit. The resulting nested integral is \eqref{eq-1-40}: insert the source sum \eqref{eq-B-fan-first-cycle}; the interval pairs come from \eqref{eq-kernel-series-parallel}, and the final simplex comes from \eqref{eq-B-fan-second-merge}.
 
-Repeat for $i=n-1,n-2,\ldots,1$; each operator multiplies the displacement-independent factors by this contraction and restores one more circuit. $\square$
-\end{proofbox}
-
-The resulting nested integral is \eqref{eq-1-40}: insert the source sum \eqref{eq-B-fan-first-cycle}; the interval pairs come from \eqref{eq-kernel-series-parallel}, and the final simplex comes from \eqref{eq-B-fan-second-merge}.
-
-\subsubsection{Recover the currents}\label{local-B4-y-heading}
-
-Compute the final triangle current first, then read the coefficient of $z_{i,i+1}$ above backwards through the circuit:
+\medskip\noindent\textbf{Step 3: the currents.} The currents are now solved backwards: the triangle gives $y_{n,n+1}$, and the coefficient of $z_{i,i+1}$ in Step 2 gives $y_{i,i+1}$ in terms of $y_{i+1,i+2}$,
 \begin{equation}\label{eq-B-fan-general-fractions}
 \begin{aligned}
 y_{n,n+1,+\dot a}
@@ -2989,10 +2942,10 @@ y_{i,i+1,+\dot a}
 -(1-r_{2i})\lambda_{i+1,+\dot a}+(1-r_{2i})y_{i+1,i+2,+\dot a},\qquad i=n-1,\ldots,1.
 \end{aligned}
 \end{equation}
-
 Inserting \eqref{eq-B-fan-first-cycle} gives \eqref{eq-1-38}. The coordinates are the resistance ratios $r_{2i-1}=t^{\mathrm{red}}_{i,n+2}/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})$ and $r_{2i}=(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2}+t_{i+1,n+2})$ of Theorem~\ref{b-01142}; the first line is the triangle \eqref{eq-triangle-current} with $t_{13},t_{23}$ replaced by $t^{\mathrm{red}}_{n,n+2}=r_{2n-1}$ and $t_{n+1,n+2}=r_{2n}$. The spoke currents \eqref{eq-1-39} follow from conservation in the restored fan. This reflects the order of our iteration: the path currents are fixed first, backward from $y_{n,n+1}$ to $y_{12}$, and current conservation at each path vertex then determines every spoke current.
 
-For $n=1$, the operator product is empty and gives \eqref{eq-1-25}; for $n=2$, the single operator restores the two-loop circuit of Figure~\ref{fig-fan-series-parallel-currents}.
+For $n=1$, the operator product is empty and gives \eqref{eq-1-25}; for $n=2$, the single operator restores the two-loop circuit of Figure~\ref{fig-fan-series-parallel-currents}. $\square$
+\end{proofbox}
 
 \subsection{Endpoint sources and final Taylor expansion}\label{endpoint-sources-and-taylor-expansion}
 
@@ -6609,6 +6562,28 @@ gives $H^{\mathrm{gh}}(D_0)=\hbar H^{\mathrm{gh}}(D_0)$ for $\mathrm{gh}\ne0$, h
 A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(J_L,\mathrm{gh})=(-\tfrac A2,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
 
 The terms $D_k$ with $k\ge2$ and the loop corrections in $D_0$ therefore do not affect the answer: the cohomology of the total differential, which the twisted theory computes, is the cohomology of the quantum supercharge on the quantum physical operators. Proposition~\ref{prop-twist-cohomology-quantum} applies to every quantization of the form above. The differential $\mathbf Q$ of \eqref{eq-1-1} is obtained from the heat-kernel quantization of $S_{\mathrm{tw}}$; its identification with such a $\mathbf D$ rests on the independence of the BV quantization of the gauge fixing and of the regularization, up to a redefinition of the couplings \cite{Costello}, which we assume, as in \cite{semichiral,BK}.
+
+\section{The spanning-tree solution of the circuit}\label{sec-B-spanning}
+
+The reductions of Section~\ref{sec-B-local-reduction} do not use the global solution of the circuit. We recall it here for comparison with earlier work. A formalism already exists for computing all integrals of the form \eqref{eq-operatope} \cite[Theorem 4 and Corollary 2]{Wang}, which solves the discrete Laplace equation on the circuit exactly and expresses all edge currents in terms of the external currents $\lambda$ and the resistances $t_e$. However, this formula is cumbersome and lengthy, with exponential complexity.
+
+To evaluate the current integral at fixed resistances, first solve the conservation law on each spanning tree $T$: deleting $e\in T$ gives its current as the source sum on the component containing $e(0)$. Then sum over the spanning trees with the weights in \eqref{eq-1-24}; the result automatically satisfies the loop voltage equation and solves the full network \cite{Wang},
+\begin{equation}\label{eq-1-24}
+\begin{aligned}
+y^T_{e,+\dot a}
+&=\begin{cases}
+\displaystyle\sum_{\substack{v\text{ connected to }e(0)\\
+\text{in }T\setminus\{e\}}}\lambda_{v,+\dot a},&e\in T,\\[3pt]
+0,&e\notin T,
+\end{cases}\\[4pt]
+y_{e,+\dot a}(t)
+&=\frac{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}
+\left(\prod_{h\in\Gamma_1\setminus T}t_h\right)y^T_{e,+\dot a}}
+{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}\prod_{h\in\Gamma_1\setminus T}t_h}.
+\end{aligned}
+\end{equation}
+
+A common rescaling of the resistances does not affect the formula, so we may impose $\sum_{e\in\Gamma_1}t_e=1$. Then the integral is just the Jacobian of the change of variables from the $y$'s to the independent $t$'s. The moves of Section~\ref{sec-B-local-reduction} replace this global solution by local changes of the resistances, in which the spanning-tree denominator of \eqref{eq-1-24} cancels.
 
 \begin{thebibliography}{99}
 \small

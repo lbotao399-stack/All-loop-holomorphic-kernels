@@ -2,9 +2,9 @@
 
 Botao Li, Kangning Liu, Chi-Ming Chang
 
-## Latest manuscript: 2026-11-12 21:08 (Beijing time)
+## Latest manuscript: 2026-11-12 22:26 (Beijing time)
 
-**[Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf)** (125 pages). LaTeX source: [`main.tex`](main.tex) with the figures in `figures/vec/`.
+**[Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf)** (126 pages). LaTeX source: [`main.tex`](main.tex) with the figures in `figures/vec/`.
 
 This repository keeps only the latest version of the manuscript; earlier versions are in the commit history.
 
