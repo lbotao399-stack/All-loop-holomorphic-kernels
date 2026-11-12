@@ -13,7 +13,7 @@ gives them through seven loops, for arbitrary derivatives on the letters.
 With `n` interaction vertices, the order-`ħ^n` term of the product is [LLC (6.26)]
 
     [ħ^n](A ⋆ B) = (1/n!) {I^{⊗n}, A, B}^{γ,0}
-                 = (-1)^n / (n! (8π²)^n)  Σ_{labelled product forests Γ}  [ I_Γ^{raw cut}(λ; z) · Π_edges Δ_vw (I_1 ⋯ I_n A B) ]_jets
+                 = (-1)^n / (n! (8π²)^n)  Σ_{labelled product forests Γ}  [ I_Γ(λ; z) · Π_edges Δ_vw (I_1 ⋯ I_n A B) ]_jets
                  = (-1)^n / (8π²)^n  Σ_{forests F}  1/|Aut F|  Σ_{assignments}  M_F(jets; λ) · (ordered fibre contractions),
 
 where
@@ -22,7 +22,7 @@ where
   sit on the inputs `A` or `B` (at most one leaf on each input per vertex); the root of every tree keeps one
   uncontracted letter, the surviving letter;
 * an assignment sends distinct letters of `A` and of `B` to the external edges;
-* `M_F(jets; λ) = Π_e (-1)^{r_e+s_e} r_e! s_e! × [Taylor coefficient of I_F^{raw cut} in the displacement of the edge e]`,
+* `M_F(jets; λ) = Π_e (-1)^{r_e+s_e} r_e! s_e! × [Taylor coefficient of I_F in the displacement of the edge e]`,
   with `(r_e, s_e)` the numbers of `∂_1, ∂_2` on the input letter contracted along the external edge `e`;
 * `M_F` is a polynomial in the sources: `λ_root` becomes a derivative on the surviving letter of that tree,
   `λ_A` a derivative acting on the product of all uncontracted letters of `A`; the input `B` is the base point;
