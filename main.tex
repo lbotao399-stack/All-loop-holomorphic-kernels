@@ -67,6 +67,8 @@
 \newcommand{\rthm}[3]{\par\addvspace{\medskipamount}\noindent\refstepcounter{rthmc}\label{#2}\textbf{#1~\therthmc}\if\relax\detokenize{#3}\relax\else\ (#3)\fi\textbf{.}}
 \newtcolorbox{proofbox}{breakable,enhanced,colback=white,colframe=black!28,boxrule=0.4pt,arc=1pt,
   left=5pt,right=5pt,top=3pt,bottom=3pt,before skip=6pt,after skip=8pt,parbox=false}
+\newcommand{\HQ}{|H(Q_0)|}
+\newcommand{\HQC}{|H(Q_0)|_{\mathrm{Cartan}}}
 \DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\sgn}{sgn}
 \allowdisplaybreaks[3]
@@ -172,12 +174,50 @@ These are \eqref{eq-2-8} and \eqref{eq-fan-output-points}; the functional deriva
 
 \paragraph{Taylor expansion.}
 
-The functional derivatives in \eqref{eq-sum-N4} remove $n+1$ letters of the operator, and the dependence on $z_j$ records their holomorphic derivatives. Expanding the two output fields in the translations \eqref{eq-sum-N4-points}, which are linear in the $z_j$, turns the integrand into a polynomial in $r$, and every coefficient is a moment of the domain \eqref{eq-1-44}:
-\begin{equation}\label{eq-sum-moments}
-\int_{\eqref{eq-1-37}}dr_1\cdots dr_{2n}\,\prod_{j=1}^{2n}r_j^{m_j}=\frac{m_{2n-1}!\,m_{2n}!}{(m_{2n-1}+m_{2n}+2)!}\prod_{j=1}^{2n-2}\frac1{m_j+1}.
+The functional derivatives in \eqref{eq-sum-N4} remove $n+1$ letters of the operator, and the dependence on $z_j$ records their holomorphic derivatives. The integrand of \eqref{eq-sum-N4} is a polynomial in $r_1,\ldots,r_{2n}$ at every order in the displacements $z_1,\ldots,z_{n+1}$, and integrating term by term \eqref{eq-fan-full-taylor} gives the Taylor expansion of $Q_n$ with rational coefficients. We contract dotted indices from lower to upper, $z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$ with $z^{+}{}_{\dot b}=\epsilon_{\dot b\dot c}z^{+\dot c}$, so that the translation $z^{+\dot b}\,\partial/\partial x^{+\dot b}=-\tfrac12z^{+\dot b}\partial_{+\dot b}$ of \eqref{eq-coordinates} is $\tfrac12z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$. Writing $\partial_{1,+}{}^{\dot a}$ and $\partial_{n+1,+}{}^{\dot a}$ for the derivatives acting on the first output factor $(\partial_{+\dot a_1}\cdots\partial_{+\dot a_n}C^D)(x,\theta)$ and on the second output factor $(\partial_+{}^{\dot a_1}\cdots\partial_+{}^{\dot a_n}C^E)(x,\theta)$, respectively, we obtain
+\begin{equation}\label{eq-sum-N4-taylor}
+\begin{aligned}
+Q_n={}&\frac{(-1)^ni^{n+1}}{2(32\pi^2)^n}
+\sum_{m=0}^{\infty}
+\sum_{\substack{r_0,s_0,r_{ik},s_i\ge 0\\
+r_0+s_0+\sum_{i=1}^n s_i+\sum_{1\le i\le k\le n}r_{ik}=m}}
+c^{(n)}_{r_0,s_0,\{r_{ik}\},\{s_i\}}
+\int d^3\theta\int\prod_{j=1}^{n+1}d^4z_j\\
+&\times C_{A_1DR_1}\left(\prod_{j=2}^nC_{A_jR_{j-1}R_j}\right)C_{A_{n+1}R_nE}\\
+&\times\frac{\bigl(\tfrac12 z_1{}^{+}{}_{\dot b}\,\partial_{1,+}{}^{\dot b}\bigr)^{r_0}
+\bigl(\tfrac12 z_{n+1}{}^{+}{}_{\dot c}\,\partial_{n+1,+}{}^{\dot c}\bigr)^{s_0}}{r_0!\,s_0!}
+\prod_{1\le i\le k\le n}
+\frac{\bigl[\tfrac12(z_{i+1}-z_i)^{+}{}_{\dot d}\,\partial_{1,+}{}^{\dot d}\bigr]^{r_{ik}}}{r_{ik}!}\\
+&\times\prod_{i=1}^n
+\frac{\bigl[\tfrac12(z_i-z_{i+1})^{+}{}_{\dot e}\,\partial_{n+1,+}{}^{\dot e}\bigr]^{s_i}}{s_i!}
+\,\big(\partial_{+\dot a_1}\cdots\partial_{+\dot a_n}C^D\big)(x,\theta)
+\big(\partial_+{}^{\dot a_1}\cdots\partial_+{}^{\dot a_n}C^E\big)(x,\theta)\\
+&\times\frac{\delta}{\delta C^{A_1}(x+z_1,\theta)}\cdots
+\frac{\delta}{\delta C^{A_{n+1}}(x+z_{n+1},\theta)},
+\end{aligned}
+\end{equation}
+with the coefficient
+\begin{equation}\label{eq-sum-N4-coeff}
+\begin{aligned}
+c^{(n)}_{r_0,s_0,\{r_{ik}\},\{s_i\}}
+={}&\frac{\bigl(\sum_{i=1}^n r_{in}\bigr)!\,\bigl(n-1+\sum_{i=1}^n s_i\bigr)!}
+{\bigl(n+1+\sum_{i=1}^n r_{in}+\sum_{i=1}^n s_i\bigr)!}
+\prod_{j=1}^{n-1}\frac{1}{n-j+1+\sum_{k=j}^n\sum_{i=1}^k r_{ik}}\\
+&\times\prod_{j=1}^{n-1}
+\frac{\bigl(1+\sum_{i=1}^j r_{ij}\bigr)!\,
+\bigl(j-1+\sum_{i=1}^j\bigl[s_i+\sum_{k=j+1}^n r_{ik}\bigr]\bigr)!}
+{\bigl(j+1+\sum_{i=1}^j\bigl[s_i+\sum_{k=j}^n r_{ik}\bigr]\bigr)!}.
+\end{aligned}
 \end{equation}
 
-The complete expansion, a finite factorial sum at each order in the derivatives, is \eqref{eq-fan-full-taylor}. Its lowest term acts on the letters without derivatives \eqref{eq-Qnzero}:
+On a polynomial local operator, each monomial in the displacements becomes a derivative with respect to a differentiated letter,
+\begin{equation}\label{eq-sum-N4-letters}
+\int d^4z_j\,
+\frac{\bigl(-\tfrac12 z_j^{+\dot+}\bigr)^{p_j}\bigl(-\tfrac12 z_j^{+\dot-}\bigr)^{q_j}}{p_j!\,q_j!}
+\frac{\delta}{\delta C^{A_j}(x+z_j,\theta)}
+=\frac{\delta}{\delta\bigl(\partial_{+\dot+}^{p_j}\partial_{+\dot-}^{q_j}C^{A_j}\bigr)(x,\theta)},
+\end{equation}
+so only finitely many orders $m$ contribute to a given operator. On letters without holomorphic derivatives, $m=0$ and $c^{(n)}_{0,0,\{0\},\{0\}}=1/[(n!)^3(n+1)]$, and \eqref{eq-sum-N4-taylor} becomes \eqref{eq-Qnzero}:
 \begin{equation}\label{eq-sum-Qnzero}
 \begin{aligned}
 Q_n\big|_{\text{no input derivatives}}
@@ -191,13 +231,15 @@ C_{A_{n+1}R_nE}\\
 \end{aligned}
 \end{equation}
 
-The proof and the one- and two-loop operators in components are in Section \ref{sec-supercharge}. The same fan kernel gives $Q_n$ in every $\mathcal N=1$ gauge theory with interactions of degree at most three; with a superpotential of higher degree the spiders of Figure \ref{fig-sum-families}(b) also contribute (Sections \ref{sec-restrictions} and \ref{sec-forests}). The quantum product of Section \ref{the-quantum-product-and-the-quantum-bps-ring} is evaluated by the same reduction, graph by graph; its $n$-loop kernels, for letters with arbitrary derivatives, are tabulated through seven loops in the repository \cite{KernelRepo}.
+The proof and the one- and two-loop operators in components are in Section \ref{sec-supercharge}. The same fan kernel gives $Q_n$ in every $\mathcal N=1$ gauge theory with interactions of degree at most three; with a superpotential of higher degree the spiders of Figure \ref{fig-sum-families}(b) also contribute (Sections \ref{sec-restrictions} and \ref{sec-forests}).
+
+For the marked higher operations $\{\mathcal I^{\otimes n},A,B\}^{\gamma,0}$ that define the $n$-loop quantum product $A\star B$ in \eqref{eq-sum-star}, the one- and two-loop operators are given in Section~\ref{sec-product-loops}, and the $n$-loop kernels of the product forests, with their values at zero displacement and their Taylor-expansion tables, enumerated and evaluated through seven loops, are archived on GitHub at \href{https://github.com/lbotao399-stack/All-loop-holomorphic-kernels/tree/main/product_kernels}{\texttt{All-loop-holomorphic-kernels/product\_kernels}} \cite{KernelRepo}. Our iterated reduction turns every one of them into the integral of a polynomial over a product of simplices. The number of graphs is large, however, and these kernels have few practical uses at present, so we do not reproduce them in this paper.
 
 \subsection{Quantum lifting, multi-gravitons and the quantum BPS ring}\label{the-quantum-product-and-the-quantum-bps-ring}
 
 The classical BPS operators are the classes of $E_1=H(Q_0)$. The loop corrections act on them through the successive differentials $d_r$ of the homotopy transfer (Section \ref{sec-homotopy-transfer}), with pages $E_{r+1}=H(E_r,d_r)$: a class with $d_r\ne0$, and the class it is mapped to, leave the BPS spectrum at $r$ loops; they are lifted. The following statements constrain the lifting.
 
-\rthm{Lemma}{b-00094}{Derivative grading} \emph{For an interaction without holomorphic derivatives, $Q_n$ raises each holomorphic derivative total---the numbers of $\partial_{+\dot+}$ and $\partial_{+\dot-}$---by $n$.} \emph{With homotopy contractions homogeneous in these totals, the successive obstruction differential $d_r$ of Section~\ref{sec-homotopy-transfer} raises each by $r$; a nonzero class can therefore be $d_r$-exact only if both totals of its leading representative are at least $r$.} \emph{In particular, a class whose leading representative has no holomorphic derivatives is $d_r$-exact for no $r\ge1$.}
+\rthm{Lemma}{b-00094}{Derivative grading \cite[Theorem 6]{Wang}, \cite[Section 2.8]{operatope}} \emph{For an interaction without holomorphic derivatives, $Q_n$ raises each holomorphic derivative total---the numbers of $\partial_{+\dot+}$ and $\partial_{+\dot-}$---by $n$.} \emph{With homotopy contractions homogeneous in these totals, the successive obstruction differential $d_r$ of Section~\ref{sec-homotopy-transfer} raises each by $r$; a nonzero class can therefore be $d_r$-exact only if both totals of its leading representative are at least $r$.} \emph{In particular, a class whose leading representative has no holomorphic derivatives is $d_r$-exact for no $r\ge1$.}
 
 The $\mathcal N=4$ grading is Corollary \ref{b-00758}; the same derivative count applies to the massive SQED example of Section \ref{sec-results-SQED}.
 
@@ -277,9 +319,12 @@ and each fixed component has finitely many corrections: with $\deg_\theta$ equal
 
 (c) \emph{Higher differentials vanish on completed classes.} A completed class is annihilated by $d_r$ on every page on which it is defined \eqref{eq-graviton-dr-zero}.\footnote{A closed completion may still be removed by a $d_r$-exact leading class. If $\mathbf QX=\hbar^r\mathcal O$, then $[\mathcal O]$ is annihilated by $\hbar^r$ over formal power series, while $\mathcal O=\mathbf Q(\hbar^{-r}X)$ after inverting $\hbar$ \eqref{eq-incoming-exactness}. Moreover, the product of a closed class with a class that is not closed can be closed; such products are quantum analogues of fortuitous classes.} For a finite-dimensional charge sector of $\mathcal N=4$ theory, cohomological degree $k$, and any finite number $R$ of pages,
 \begin{equation}\label{eq-sum-rank}
+\begin{aligned}
 \sum_{\substack{r=1\\\text{pages}}}^{R}\operatorname{rank}d_r^k
-\le\dim E_1^k-
-\dim\operatorname{span}\left\{[\mathcal O_0]_1\in E_1^k:\mathcal O_0\text{ is a multi-graviton}\right\}.
+&\le\dim E_1^k-
+\dim\operatorname{span}\left\{[\mathcal O_0]_1\in E_1^k:\mathcal O_0\text{ is a multi-graviton}\right\}\\
+&=\dim\{\text{fortuitous classes in }E_1^k\}.
+\end{aligned}
 \end{equation}
 
 The right-hand side is the dimension of the classical cohomology modulo the span of the multi-gravitons, that is, of the space of fortuitous classes \eqref{local-ch8-fortuitous-rank-bound}.
@@ -294,7 +339,7 @@ We enumerate the classical cohomology $E_1=H(Q_0)$ sector by sector, isolate its
 
 \paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters, as in \eqref{eq-E-sector}. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are given by \eqref{eq-E-charges}; we quote them as $(E;R_1,R_2,R_3;J_L,J_R)$. Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $E+J_L$, which we call the level; a census is complete through a level when every sector up to that level has been computed.
 
-\paragraph{Fortuitous and monotone classes.} Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons of Section~\ref{sec-graviton-closure} are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group. The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $h-\rho$, with $h=\dim E_1$ and $\rho$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
+\paragraph{Fortuitous and monotone classes.} Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons of Section~\ref{sec-graviton-closure} are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group. The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $\HQ-\HQC$, with $\HQ=\dim E_1$ and $\HQC$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
 
 \paragraph{Lifting.} The loop corrections act on $E_1$ through the differentials $d_r$ of the successive homotopy transfer of Section~\ref{sec-homotopy-transfer}: $E_{r+1}=H(E_r,d_r)$, with $d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1$ and $d_2[\mathcal O_0]_2=[Q_2\mathcal O_0+Q_1\mathcal O_1]_2$ for $Q_0\mathcal O_1=-Q_1\mathcal O_0$. A class is lifted at $r$ loops when $d_r$ is nonzero on it or when it is $d_r$-exact; the source and the target of a nonzero $d_r$ then leave the perturbative BPS spectrum together. For each class we therefore test both whether $d_r$ of the class vanishes and whether the class is $d_r$-exact, for every $r$ that the grading allows (Corollary~\ref{b-00758}). A class on which every $d_r$ vanishes and which is $d_r$-exact for no $r\ge1$ survives at every perturbative order. The tables give $\operatorname{rank}d_r$ between a source sector and its target sector $(\lambda-r\mathsf d)_{Y+1-r}$.
 
@@ -349,15 +394,15 @@ $\mathcal N=2$ $SU(2)$, $SU(3)$; $SU(2)$ with a flipping singlet & weight $14$, 
 
 In summary:
 
-(i) \emph{New fortuitous classes.} For $SU(2)$, beyond the threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} and the class $\mathcal O_1$ \cite{microstates}, we find the classes P39 and X40. For $SU(3)$, beyond the towers $F_1$ and $B_1$ of \cite{KLLS,BraneFused}, we find the charge-conjugation-odd class $X_7$ and four primary sectors with ten and eleven letters. X40 and $X_7$ are visible to Cartan restriction, $h=\rho$, although they are not multi-gravitons. For $SU(4)$ we find the first fortuitous class.\footnote{Earlier $SU(4)$ searches \cite{CCKLL,KLLS,FortuityAI} cover the BMN sector, whose operators carry no derivatives or gaugini; the class found here has $n_+=n_-=2$. A fortuitous $SU(4)$ class built from two $SU(2)$ cores at much higher charges is constructed in \cite{MultiCore}.} For $SO(2N+1)$ and $Sp(N)$, the $SO(7)$ class is that of \cite{GLRT}, and the first fortuitous classes of $SO(5)=Sp(2)$, $Sp(3)$, $SO(9)$ and $SO(11)$ are new. For $G_2$, the class \eqref{local-ch9-g2-gram-class} is a monotone class that is invisible to Cartan restriction.
+(i) \emph{New fortuitous classes.} For $SU(2)$, beyond the threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} and the class $\mathcal O_1$ \cite{microstates}, we find the classes P39 and X40. For $SU(3)$, beyond the towers $F_1$ and $B_1$ of \cite{KLLS,BraneFused}, we find the charge-conjugation-odd class $X_7$ and four primary sectors with ten and eleven letters. X40 and $X_7$ are visible to Cartan restriction, $\HQ=\HQC$, although they are not multi-gravitons. For $SU(4)$ we find the first fortuitous class.\footnote{Earlier $SU(4)$ searches \cite{CCKLL,KLLS,FortuityAI} cover the BMN sector, whose operators carry no derivatives or gaugini; the class found here has $n_+=n_-=2$. A fortuitous $SU(4)$ class built from two $SU(2)$ cores at much higher charges is constructed in \cite{MultiCore}.} For $SO(2N+1)$ and $Sp(N)$, the $SO(7)$ class is that of \cite{GLRT}, and the first fortuitous classes of $SO(5)=Sp(2)$, $Sp(3)$, $SO(9)$ and $SO(11)$ are new. For $G_2$, the class \eqref{local-ch9-g2-gram-class} is a monotone class that is invisible to Cartan restriction.
 
-(ii) \emph{$\mathcal N=4$ Yang--Mills theory has one-loop lifts and, in the ranges scanned, no lift beyond one loop.} The differential $d_1$ is nonzero in nineteen sectors: one for $SU(2)$, sixteen for $SO(7)$ through $E+J_L=11$, and one each for $SO(9)$ and $SO(11)$. The one-loop lifts of $\mathcal O_1$ and of the $SO(7)$ class $O_f$ are those of \cite{KKLP} and \cite{KonishiBH}; the one-loop lifts in $SO(9)$ and $SO(11)$ and all the higher-loop lifts below are new. Every tested $d_r$ with $r\ge2$ vanishes. After the one-loop lifts, the $SO(7)$ and $Sp(3)$ spectra, and the $SO(9)$ and $Sp(4)$ spectra, agree charge by charge through $E+J_L=11$, as S-duality requires.
+(ii) \emph{No lift beyond one loop in $\mathcal N=2$ superconformal theories.} Across all the $\mathcal N=2$ superconformal theories tested, $\mathcal N=4$ Yang--Mills theory included, with every gauge group and in every sector, we find no lift beyond one loop: $d_r=0$ for $r\ge2$. In $\mathcal N=4$ Yang--Mills theory the differential $d_1$ is nonzero in nineteen sectors: one for $SU(2)$, sixteen for $SO(7)$ through $E+J_L=11$, and one each for $SO(9)$ and $SO(11)$. The one-loop lifts of $\mathcal O_1$ and of the $SO(7)$ class $O_f$ are those of \cite{KKLP} and \cite{KonishiBH}; the one-loop lifts in $SO(9)$ and $SO(11)$ and all the higher-loop lifts below are new. Every tested $d_r$ with $r\ge2$ vanishes. After the one-loop lifts, the $SO(7)$ and $Sp(3)$ spectra, and the $SO(9)$ and $Sp(4)$ spectra, agree charge by charge through $E+J_L=11$, as S-duality requires.
 
-(iii) \emph{The deformations of $\mathcal N=4$ Yang--Mills theory have two-loop lifts.} In the $SU(3)$ Leigh--Strassler theory, $d_2\ne0$ in twelve pairs of sectors through $E+J_L=11$; the three lowest are certified over $\mathbb Q$, and every class of the lowest source sector is fortuitous. On the $\beta$-deformation line there is one two-loop lift through $E+J_L=\tfrac{21}2$.
+(iii) \emph{With $\mathcal N=1$ superconformal symmetry the higher differentials are nonzero: the deformations of $\mathcal N=4$ Yang--Mills theory have two-loop lifts.} There $d_2$ lifts classical $Q_0$-cohomology classes that survive one loop. In the $SU(3)$ Leigh--Strassler theory, $d_2\ne0$ in twelve pairs of sectors through $E+J_L=11$; the three lowest are certified over $\mathbb Q$, and every class of the lowest source sector is fortuitous. On the $\beta$-deformation line there is one two-loop lift through $E+J_L=\tfrac{21}2$.
 
-(iv) \emph{The $\mathcal N=2$ quiver, $\mathcal N=2$ SQCD and their mass deformations have no lift beyond one loop in the ranges scanned.}
+(iv) \emph{The $\mathcal N=2$ superconformal quiver and SQCD, and their mass deformations, have no lift beyond one loop in the ranges scanned.}
 
-(v) \emph{Lifts at two, three and four loops occur in abelian theories and in $\mathcal N=2$ gauge theories.} Massive SQED has a two-loop lift at weight $14$, with the explicit obstruction \eqref{local-ch9-sqed-lift}. Abelian theories with a gauge-neutral chiral multiplet have lifts with $d_2\ne0$, $d_3\ne0$ and $d_4\ne0$, and pure $\mathcal N=2$ $SU(2)$ and $SU(3)$ Yang--Mills theory and $\mathcal N=2$ $SU(2)$ Yang--Mills theory with a flipping singlet have lifts with $d_2\ne0$ and, with the singlet, $d_3\ne0$ (Table~\ref{local-ch9-higher-lifts}).
+(v) \emph{Lifts at two, three and four loops occur in abelian theories and in $\mathcal N=2$ gauge theories without conformal symmetry.} Massive SQED, our toy model, has a two-loop lift at weight $14$, with the explicit source \eqref{local-ch9-sqed-source} and obstruction \eqref{local-ch9-sqed-lift}; it is the first two-loop lift that we found. Abelian theories with a gauge-neutral chiral multiplet have lifts with $d_2\ne0$, $d_3\ne0$ and $d_4\ne0$, and pure $\mathcal N=2$ $SU(2)$ and $SU(3)$ Yang--Mills theory and $\mathcal N=2$ $SU(2)$ Yang--Mills theory with a flipping singlet have lifts with $d_2\ne0$ and, with the singlet, $d_3\ne0$ (Table~\ref{local-ch9-higher-lifts}).
 
 The census builds on the following work. The classical cohomology and its fortuitous classes are organized as in \cite{ChangYin,microstates,ChangLinWords,ChangChevalley}, and the enumerations extend those of \cite{ChangLin,GLRT,KLLS,BraneFused}; they reproduce the published $SU(2)$ census \cite{BPSCounting}, the one-loop lifts of \cite{KonishiBH,KKLP} and the mass-deformed classes of \cite{CK}. The classes invisible to Cartan restriction are analysed through the commuting scheme of the Lie algebra, with the higher-dimensional Chevalley restriction results of \cite{ChenNgo,ChenNgoSp,SXX,Vaccarino,Domokos,Hunziker,Richardson,LNY,SemplinerYang,Goyal}, the proofs of the conjecture of Cachazo, Douglas, Seiberg and Witten \cite{CDSW,EtingofKac,CederwallFerretti,Kumar,WittenSpSO,EtingofII}, the super-commuting schemes of \cite{KvLM} and standard invariant theory \cite{Sergeev,BereleRegev,GoodmanWallach,Bourbaki}. The Leigh--Strassler family is that of \cite{LeighStrassler,BundzikMansson}. The one- and two-loop operators used in the tests were compared with \cite{BK,KKLP}, with the two-loop kernel of \cite[Section 4.5]{GWW} and with the two-loop coefficient of the fortuity report \cite{FortuityAI}. Exact linear algebra over the integers and the rationals uses FLINT \cite{FLINT}.
 
@@ -371,7 +416,7 @@ S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
 \end{aligned}
 \end{equation}
 
-In the tables below, the lifting column lists the tests that have been completed, and $R_r=\sum_{\substack{k=1\\\text{loop orders}}}^{r}Q_k\mathcal O_{r-k}$ is the order-$r$ residual of Section~\ref{sec-homotopy-transfer}: $d_r$ vanishes on a class when $R_r\in\operatorname{im}Q_0$ for a suitable choice of the lower corrections.
+In the tables below, the lifting column lists the tests that have been completed, and $R_r=\sum_{\substack{k=1\\\text{loop orders}}}^{r}Q_k\mathcal O_{r-k}$ is the order-$r$ residual of Section~\ref{sec-homotopy-transfer}: $d_r$ vanishes on a class when $R_r\in\operatorname{im}Q_0$ for a suitable choice of the lower corrections. The lower corrections are not unique. The equation $Q_0\mathcal O_1=-Q_1\mathcal O_0$ fixes $\mathcal O_1$ only up to a $Q_0$-cocycle $Z$, and the same holds at every order. This is the freedom of a finite renormalization of the composite operator, $\mathcal O_0\to\mathcal O_0+\hbar Z+\cdots$, its mixing at higher order in $\hbar$ with the other classical cocycles of the same charges. The shift changes $R_2$ by $Q_1Z$, whose class is the $d_1$-boundary $d_1[Z]_1$, and in general it changes the class of $R_r$ by an element of the images of $d_1,\ldots,d_{r-1}$. The freedom is therefore removed by passing to the pages: $d_r$ is defined on $E_r$, where these images are already divided out, and its rank does not depend on the choice (Section~\ref{sec-homotopy-transfer}, after \eqref{eq-d2}). In the computation the choice is made once, by fixing homotopy contractions $(i_r,\pi_r,h_r)$ that are homogeneous in the gradings.
 
 \subsubsection{$\mathcal N=4$ Yang--Mills: $SU(N)$}\label{sec-results-SU}
 
@@ -415,33 +460,66 @@ $SU(2)$ & $\mathcal O_0$: $(4,4,4;0,0)_7$\newline $(\tfrac{19}2;\tfrac32,\tfrac3
 \cline{2-4}
  & P39: $(5,5,5;3,0)_9$\newline $(15;2,2,2;\tfrac92,\tfrac32)$ & One new class beyond $12$ products and descendants in this sector & $d_1=0$; $R_2,R_3,R_4\in\operatorname{im}Q_0$; the fifth target sector is empty; $d_r$-exact for no $r$. Survives at every order $[p,p^{\prime}]$\\
 \cline{2-4}
- & X40: $(7,5,5;1,1)_{10}$\newline $(\tfrac{31}2;\tfrac72,\tfrac32,\tfrac32;\tfrac92,0)$ & $h=\rho=8$, graviton dimension $7$ & $d_r=0$ on the class for every $r$; $d_r$-exact for no $r$ (the source sectors have $h=0$). Survives at every order, $[p,p^{\prime}]$ through $r=2$, $[p]$ above\\
+ & X40: $(7,5,5;1,1)_{10}$\newline $(\tfrac{31}2;\tfrac72,\tfrac32,\tfrac32;\tfrac92,0)$ & $\HQ=\HQC=8$, graviton dimension $7$ & $d_r=0$ on the class for every $r$; $d_r$-exact for no $r$ (the source sectors have $\HQ=0$). Survives at every order, $[p,p^{\prime}]$ through $r=2$, $[p]$ above\\
 \hline
-$SU(3)$ & $X_7$: $(2,2,2;2,2)_7$\newline $(\tfrac{21}2;\tfrac52,\tfrac52,\tfrac52;\tfrac32,0)$ & $h=\rho=26$, graviton dimension $25$; charge-conjugation odd & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
+$SU(3)$ & $X_7$: $(2,2,2;2,2)_7$\newline $(\tfrac{21}2;\tfrac52,\tfrac52,\tfrac52;\tfrac32,0)$ & $\HQ=\HQC=26$, graviton dimension $25$; charge-conjugation odd & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
 \cline{2-4}
  & $X_7$ member: $(0,0,0;5,5)_7$\newline $(\tfrac{27}2;\tfrac72,\tfrac72,\tfrac72;\tfrac32,0)$ & Fortuitous relative Lie-algebra class $[\mathbb Q]$ & Survives at every order with the $X_7$ multiplet $[p]$\\
 \cline{2-4}
  & $F_1$, $n=3$: $(7,4,4;0,0)_{10}$\newline $(\tfrac{25}2;\tfrac92,\tfrac32,\tfrac32;\tfrac52,0)$ & Known tower \cite{KLLS,BraneFused} & Closed completion through $\hbar^4$; the higher target sectors are empty; $d_r$-exact for no $r$. Survives at every order $[p]$\\
 \cline{2-4}
- & $(5,4,4;1,1)_{10}$\newline $(\tfrac{27}2;\tfrac72,\tfrac52,\tfrac52;\tfrac52,0)$ & New primary sector; $h=2$, $\rho=0$ & $d_1=d_2=d_3=0$ on both classes; $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
+ & $(5,4,4;1,1)_{10}$\newline $(\tfrac{27}2;\tfrac72,\tfrac52,\tfrac52;\tfrac52,0)$ & New primary sector; $\HQ=2$, $\HQC=0$ & $d_1=d_2=d_3=0$ on both classes; $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
 \cline{2-4}
- & $(7,4,4;1,0)_{11}$\newline $(14;5,2,2;\tfrac52,\tfrac12)$ & $h=2$, $\rho=0$; one class beyond the $F_1$ descendant & $d_1=d_3=0$; $d_2=d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
+ & $(7,4,4;1,0)_{11}$\newline $(14;5,2,2;\tfrac52,\tfrac12)$ & $\HQ=2$, $\HQC=0$; one class beyond the $F_1$ descendant & $d_1=d_3=0$; $d_2=d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
 \cline{2-4}
- & $(6,4,4;1,1)_{11}$\newline $(\tfrac{29}2;\tfrac92,\tfrac52,\tfrac52;\tfrac52,0)$ & $h=3$, $\rho=0$ & $d_3=0$; $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
+ & $(6,4,4;1,1)_{11}$\newline $(\tfrac{29}2;\tfrac92,\tfrac52,\tfrac52;\tfrac52,0)$ & $\HQ=3$, $\HQC=0$ & $d_3=0$; $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
 \cline{2-4}
- & $(7,5,4;1,0)_{11}$\newline $(\tfrac{29}2;\tfrac92,\tfrac52,\tfrac32;3,\tfrac12)$ & $h=4$, $\rho=0$ & $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
+ & $(7,5,4;1,0)_{11}$\newline $(\tfrac{29}2;\tfrac92,\tfrac52,\tfrac32;3,\tfrac12)$ & $\HQ=4$, $\HQC=0$ & $d_4=0$ [cond]; $d_r$-exact for no $r$ $[p]$\\
 \cline{2-4}
  & $B_1$, $n=3$: $(8,5,4;0,0)_{11}$\newline $(14;5,2,1;3,0)$ & Known tower \cite{KLLS,BraneFused} & --\\
 \hline
-$SU(4)$ & $(4,2,2;2,2)_9$\newline $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$ & $f=1$ $[\mathbb Q]$; charge-conjugation odd; the only fortuitous class through $E+J_L=14$ & $R_1,R_2\in\operatorname{im}Q_0$; the higher target sectors are empty; $d_1$ from the $453$ classes of $(5,3,3;1,1)_9$ has rank $0$, and the source sector of $d_2$ has $h=0$. Survives at every order $[p]$\\
+$SU(4)$ & $(4,2,2;2,2)_9$\newline $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$ & $f=1$ $[\mathbb Q]$; charge-conjugation odd; the only fortuitous class through $E+J_L=14$ & $R_1,R_2\in\operatorname{im}Q_0$; the higher target sectors are empty; $d_1$ from the $453$ classes of $(5,3,3;1,1)_9$ has rank $0$, and the source sector of $d_2$ has $\HQ=0$. Survives at every order $[p]$\\
 \hline
 \end{xltabular}}
 
-Here [cond] assumes zero Cartan restriction of $R_r$; because $h=\rho$ in the target sector, this gives $R_r\in\operatorname{im}Q_0$ and hence $d_r=0$ \cite[results report, \S1.6]{Repo}.
+Here [cond] assumes zero Cartan restriction of $R_r$; because $\HQ=\HQC$ in the target sector, this gives $R_r\in\operatorname{im}Q_0$ and hence $d_r=0$ \cite[results report, \S1.6]{Repo}.
 
 The partial scans at higher levels and the null results at higher rank are tabulated in \cite[supplement, Section S2.1]{Repo}.
 
 Explicit representatives of the threshold class and of its graviton hair, and the multi-graviton checks at low letter number, are in \cite[supplement, Sections S8.2 and S8.3]{Repo}.
+
+Table~\ref{tab-su-frontier} gives the range of the census for each $SU(N)$. For $E+J_L\le N+\tfrac12$ no trace relation enters: the complex coincides with its large-$N$ limit, so every class is monotone and no computation is needed \cite{ChangYin,ChangLinWords}. The census is complete, in every sector, through the level of the third column. The last two columns give the level of the first fortuitous class in the census and the level at which earlier constructions provide one.
+
+{\small\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{5pt}
+\begin{xltabular}{\linewidth}{|l|c|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\caption{Range of the $SU(N)$ census, by the level $E+J_L$. Below the second column every class is monotone; through the third column all sectors are computed.}\label{tab-su-frontier}\\
+\hline
+$G$ & monotone for $E+J_L\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
+\hline\endfirsthead
+\hline
+$G$ & monotone for $E+J_L\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
+\hline\endhead
+$SU(2)$ & $\tfrac52$ & $\tfrac{33}2$ & $12$: $\mathcal O_0$ & $12$ \cite{ChangLinWords,microstates}\\
+\hline
+$SU(3)$ & $\tfrac72$ & $15$ & $12$: $X_7$ & $15$, the tower $F_1$ \cite{CCKLL,KLLS,BraneFused}\\
+\hline
+$SU(4)$ & $\tfrac92$ & $14$ & $14$: $(4,2,2;2,2)_9$ & $E+J_L\ge129$ \cite{MultiCore}; existence \cite{EveryN}\\
+\hline
+$SU(5)$ & $\tfrac{11}2$ & $14$ & none & existence \cite{EveryN}\\
+\hline
+$SU(6)$ & $\tfrac{13}2$ & $15$ & none & existence \cite{EveryN}\\
+\hline
+$SU(7)$ & $\tfrac{15}2$ & $15$ & none & existence \cite{EveryN}\\
+\hline
+$SU(8)$ & $\tfrac{17}2$ & $\tfrac{31}2$ & none & existence \cite{EveryN}\\
+\hline
+$SU(9)$ & $\tfrac{19}2$ & $\tfrac{33}2$ & none & existence \cite{EveryN}\\
+\hline
+$SU(10)$ & $\tfrac{21}2$ & $17$ & none & existence \cite{EveryN}\\
+\hline
+$SU(11)$--$SU(15)$ & $N+\tfrac12$ & $18$ & none & existence \cite{EveryN}\\
+\hline
+\end{xltabular}}
 
 \subsubsection{$\mathcal N=4$ Yang--Mills: $SO(2N+1)$ and $Sp(N)$}\label{sec-results-SOSp}
 
@@ -464,17 +542,17 @@ $G$ & Source sector, charges & Classical result & Lifting tests completed\\
 \hline
 $G$ & Source sector, charges & Classical result & Lifting tests completed\\
 \hline\endhead
-$SO(5)=Sp(2)$ & $(3,2,2;1,1)_7$\newline $(9;3,2,2;1,0)$ & $f=1$, $\rho=0$ & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
+$SO(5)=Sp(2)$ & $(3,2,2;1,1)_7$\newline $(9;3,2,2;1,0)$ & $f=1$, $\HQC=0$ & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
 \hline
 $SO(7)$ & $O_f$: $(3,3,3;0,0)_8$\newline $(\tfrac{17}2;\tfrac52,\tfrac52,\tfrac52;\tfrac12,0)$ & Known fortuitous source \cite{GLRT} & $\operatorname{rank}d_1=1$ into $(2,2,2;1,1)_8$ \cite{KonishiBH}: lifted at one loop\\
 \hline
-$Sp(3)$ & $(5,2,2;1,1)_9$\newline $(11;5,2,2;1,0)$ & $h=f=1$ & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
+$Sp(3)$ & $(5,2,2;1,1)_9$\newline $(11;5,2,2;1,0)$ & $\HQ=f=1$ & $d_r=0$ on the class and the class is $d_r$-exact for no $r$. Survives at every order $[p]$\\
 \cline{2-4}
- & $(5,0,0;3,3)_9$\newline $(13;7,2,2;1,0)$ & $h=1$, $\rho=0$ & $d_r=0$ on the class for every $r$; $d_2$-exactness is the one remaining test\\
+ & $(5,0,0;3,3)_9$\newline $(13;7,2,2;1,0)$ & $\HQ=1$, $\HQC=0$ & $d_r=0$ on the class for every $r$; $d_2$-exactness is the one remaining test\\
 \hline
-$SO(9)$ & $(5,3,3;0,0)_{10}$\newline $(\tfrac{21}2;\tfrac92,\tfrac52,\tfrac52;\tfrac12,0)$ & $h=6$; one-class excess over $Sp(4)$ & $\operatorname{rank}d_1=1$ into $(4,2,2;1,1)_{10}$ $[p]$: lifted at one loop\\
+$SO(9)$ & $(5,3,3;0,0)_{10}$\newline $(\tfrac{21}2;\tfrac92,\tfrac52,\tfrac52;\tfrac12,0)$ & $\HQ=6$; one-class excess over $Sp(4)$ & $\operatorname{rank}d_1=1$ into $(4,2,2;1,1)_{10}$ $[p]$: lifted at one loop\\
 \hline
-$SO(11)$ & $(7,3,3;0,0)_{12}$\newline $(\tfrac{25}2;\tfrac{13}2,\tfrac52,\tfrac52;\tfrac12,0)$ & $h=23$, $f=1$ & $\operatorname{rank}d_1=1$ into $(6,2,2;1,1)_{12}$ $[p]$: lifted at one loop\\
+$SO(11)$ & $(7,3,3;0,0)_{12}$\newline $(\tfrac{25}2;\tfrac{13}2,\tfrac52,\tfrac52;\tfrac12,0)$ & $\HQ=23$, $f=1$ & $\operatorname{rank}d_1=1$ into $(6,2,2;1,1)_{12}$ $[p]$: lifted at one loop\\
 \hline
 \end{xltabular}}
 
@@ -509,9 +587,9 @@ Sector & Classical result & Lifting tests completed\\
 \hline
 Sector & Classical result & Lifting tests completed\\
 \hline\endhead
-$(2,2,2;0,0)_6$ & $\dim C^6=4$, $\operatorname{rank}Q_0=3$, $h=1$, $\rho=0$ $[\mathbb Q]$ & Survives at every order: closed multi-graviton completion; it is $d_r$-exact for no $r$, since $n_+=n_-=0$\\
+$(2,2,2;0,0)_6$ & $\dim C^6=4$, $\operatorname{rank}Q_0=3$, $\HQ=1$, $\HQC=0$ $[\mathbb Q]$ & Survives at every order: closed multi-graviton completion; it is $d_r$-exact for no $r$, since $n_+=n_-=0$\\
 \hline
-All sectors through $E+J_L=\tfrac{23}2$ & At $E+J_L=\tfrac{23}2$: $\sum_{\text{sectors}}h=2075$, $\sum_{\text{sectors}}(h-\rho)=170$ & $d_1=0$; no $d_2$ pairs; all $d_3$ candidate ranks zero $[p]$\\
+All sectors through $E+J_L=\tfrac{23}2$ & At $E+J_L=\tfrac{23}2$: $\sum_{\text{sectors}}\HQ=2075$, $\sum_{\text{sectors}}(\HQ-\HQC)=170$ & $d_1=0$; no $d_2$ pairs; all $d_3$ candidate ranks zero $[p]$\\
 \hline
 \end{xltabular}}
 
@@ -519,7 +597,7 @@ The level-by-level census of the classes in the kernel of Cartan restriction is 
 
 \subsubsection{$SU(3)$ Leigh--Strassler deformation}\label{sec-results-LS}
 
-This theory, a deformation of $\mathcal N=4$ Yang--Mills theory, gave the first two-loop lifts that we found.
+This theory, a deformation of $\mathcal N=4$ Yang--Mills theory, gave the first two-loop lifts that we found in a non-abelian theory.
 
 The matter consists of three adjoint chiral multiplets \cite{LeighStrassler}. In the trace convention $\operatorname{tr}(t_At_B)=\tfrac12\delta_{AB}$ of \cite[results report, \S6.1]{Repo}, the potential in the common twisted action is
 \begin{equation}\label{local-ch9-ls-action}
@@ -790,19 +868,35 @@ The representatives of $w^2$ and $\mathcal O_{16}$ and the full mass-deformed ce
 
 \subsubsection{Massive SQED with a cubic superpotential}\label{sec-results-SQED}
 
-The gauge group is $U(1)$, with chiral multiplets of charges $+1,-1,0$ and $gmy\ne0$. The charge matrix is $t=\operatorname{diag}(-1,1,0)$ in $(+,-,s)$ order \cite[results report, \S5.4]{Repo}:
+The gauge group is $U(1)$, with chiral multiplets of charges $+1,-1,0$ and $gmy\ne0$. The charge matrix is $t=\operatorname{diag}(-1,1,0)$ in $(+,-,0)$ order \cite[results report, \S5.4]{Repo}:
 \begin{equation}\label{local-ch9-sqed-action}
 \begin{aligned}
 S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
 &\mathsf b\bar\partial\mathsf c
 +(\bar\partial\gamma_+)\beta^+
 +(\bar\partial\gamma_-)\beta^-
-+(\bar\partial\gamma_s)\beta^s\\
++(\bar\partial\gamma_0)\beta^0\\
 &+ig\mathsf c(\gamma_+\beta^+-\gamma_-\beta^-)
-+\frac m2\gamma_s^2+y\gamma_s\gamma_+\gamma_-
++\frac m2\gamma_0^2+y\gamma_0\gamma_+\gamma_-
 -\frac14\mathsf w_{\dot a}\mathsf w^{\dot a}\Big]_{(0,2)}.
 \end{aligned}
 \end{equation}
+
+This is our toy model, and its lift is the first two-loop lift that we found. For $gmy\ne0$ the source is the gauge-invariant operator, with a free dotted index $\dot a$,
+\begin{equation}\label{local-ch9-sqed-source}
+\begin{aligned}
+\mathcal O_0=ig\Big[&\beta^+\beta^-\mathsf b^2
++\frac ym(\gamma_-\beta^--\gamma_+\beta^+)\beta^0\mathsf b^2
++\frac{y^2}{3m\,ig}\gamma_+\gamma_-\mathsf b^3\Big]
+\partial_{+\dot a}\mathsf c,
+\qquad Q_0\mathcal O_0=0 .
+\end{aligned}
+\end{equation}
+It is not $Q_0$-exact, and the one-loop obstruction vanishes on it,
+\begin{equation}\label{local-ch9-sqed-d1}
+d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1=0,\qquad Q_1\mathcal O_0=-Q_0\mathcal O_1,
+\end{equation}
+with the correction $\mathcal O_1$ of \cite[supplement, Section S8.1]{Repo}; the class is lifted at two loops by \eqref{local-ch9-sqed-lift}.
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
@@ -832,7 +926,7 @@ The exact elimination of the massive pair, the first correction and the rational
 
 \subsubsection{Lifts at two, three and four loops in abelian and $\mathcal N=2$ theories}\label{sec-results-higher}
 
-Further abelian theories with a gauge-neutral chiral multiplet $\gamma_s$, and $\mathcal N=2$ gauge theories computed in components on the gauge-invariant subcomplex, have lifts at higher loop order \cite[results report, \S8 and \S9]{Repo}. In these theories a block is labelled $(\mathrm{wt};n_+,n_-;\mathrm{gh})_f$: the weight $\mathrm{wt}$ assigns $w_g$ to $\gamma_g$, $D-w_g$ to $\beta^g$, $D$ to $\mathsf b$ and $0$ to $\mathsf c$, with $D$ the weight of the superpotential; $\mathrm{gh}$ is the ghost number, equal to $0,-1,-2,1$ on $\gamma,\beta,\mathsf b,\mathsf c$; and $f$ is the flavour charge. The charges of a block are $R=2\,\mathrm{wt}/D+\mathrm{gh}$, $J_L=\tfrac12(n_++n_--\mathrm{gh})$ and $J_R=\tfrac12(n_+-n_-)$, and $d_r$ maps $(\mathrm{wt};n_+,n_-;\mathrm{gh})$ to $(\mathrm{wt}-rD;n_++r,n_-+r;\mathrm{gh}+2r+1)$. Table~\ref{local-ch9-higher-lifts} lists, for each theory, the lowest block with a nonzero $d_r$ at each loop order $r$ found; for massive SQED it also lists the weight-$14$ block of Table~\ref{local-ch9-sqed-results}.
+Further abelian theories with a gauge-neutral chiral multiplet $\gamma_0$, and $\mathcal N=2$ gauge theories computed in components on the gauge-invariant subcomplex, have lifts at higher loop order \cite[results report, \S8 and \S9]{Repo}. In these theories a block is labelled $(\mathrm{wt};n_+,n_-;\mathrm{gh})_f$: the weight $\mathrm{wt}$ assigns $w_g$ to $\gamma_g$, $D-w_g$ to $\beta^g$, $D$ to $\mathsf b$ and $0$ to $\mathsf c$, with $D$ the weight of the superpotential; $\mathrm{gh}$ is the ghost number, equal to $0,-1,-2,1$ on $\gamma,\beta,\mathsf b,\mathsf c$; and $f$ is the flavour charge. The charges of a block are $R=2\,\mathrm{wt}/D+\mathrm{gh}$, $J_L=\tfrac12(n_++n_--\mathrm{gh})$ and $J_R=\tfrac12(n_+-n_-)$, and $d_r$ maps $(\mathrm{wt};n_+,n_-;\mathrm{gh})$ to $(\mathrm{wt}-rD;n_++r,n_-+r;\mathrm{gh}+2r+1)$. Table~\ref{local-ch9-higher-lifts} lists, for each theory, the lowest block with a nonzero $d_r$ at each loop order $r$ found; for massive SQED it also lists the weight-$14$ block of Table~\ref{local-ch9-sqed-results}.
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}X|l|l|c|c|l|}
@@ -843,21 +937,21 @@ Theory and $\bar W$ & Block $(\mathrm{wt};n_+,n_-;\mathrm{gh})_f$ & $(R;J_L,J_R)
 \hline
 Theory and $\bar W$ & Block $(\mathrm{wt};n_+,n_-;\mathrm{gh})_f$ & $(R;J_L,J_R)$ & $r$ & $\operatorname{rank}d_r$ & Field\\
 \hline\endhead
-$U(1)$, $\tfrac m2\gamma_s^2+y\gamma_s\gamma_+\gamma_-$ (massive SQED) & $(12;1,1;-4)$ & $(2;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
+$U(1)$, $\tfrac m2\gamma_0^2+y\gamma_0\gamma_+\gamma_-$ (massive SQED) & $(12;1,1;-4)$ & $(2;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \cline{2-6}
  & $(14;1,0;-5)$ & $(2;3,\tfrac12)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \hline
 $U(1)$, $\lambda\gamma_+^2\gamma_-^2$ (quartic SQED) & $(12;1,1;-4)$ & $(2;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \hline
-$U(1)$, $y\gamma_s\gamma_+\gamma_-$ ($\mathcal N=2$ SQED, $N_f=1$) & $(11;1,1;-5)_{(0,-1)}$ & $(\tfrac73;\tfrac72,0)$ & $3$ & $1$ & $[\mathbb Q]$\\
+$U(1)$, $y\gamma_0\gamma_+\gamma_-$ ($\mathcal N=2$ SQED, $N_f=1$) & $(11;1,1;-5)_{(0,-1)}$ & $(\tfrac73;\tfrac72,0)$ & $3$ & $1$ & $[\mathbb Q]$\\
 \hline
-$U(1)$, $y\gamma_s\gamma_+\gamma_-+\tfrac h3\gamma_s^3$ & $(9;1,1;-4)$ & $(2;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
+$U(1)$, $y\gamma_0\gamma_+\gamma_-+\tfrac h3\gamma_0^3$ & $(9;1,1;-4)$ & $(2;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \cline{2-6}
  & $(11;1,0;-5)$ & $(\tfrac73;3,\tfrac12)$ & $3$ & $1$ & $[\mathbb Q]$\\
 \cline{2-6}
  & $(16;1,1;-8)$ & $(\tfrac83;5,0)$ & $4$ & $1$ & $[\mathbb Q]$\\
 \hline
-$U(1)$, $y\gamma_s^2\gamma_+\gamma_-$ & $(11;1,1;-3)_{(0,-1)}$ & $(\tfrac52;\tfrac52,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
+$U(1)$, $y\gamma_0^2\gamma_+\gamma_-$ & $(11;1,1;-3)_{(0,-1)}$ & $(\tfrac52;\tfrac52,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \hline
 $U(1)^2$, two cubic terms (triangle) & $(10;1,1;-4)_{(-1,0,-1,0)}$ & $(\tfrac83;3,0)$ & $2$ & $1$ & $[\mathbb Q]$\\
 \hline
@@ -877,7 +971,7 @@ $SU(2)$ with an adjoint $\gamma_\Phi$ and a singlet $\gamma_S$, $\tfrac12\gamma_
 \hline
 \end{xltabular}}
 
-The weight-$16$ block of the theory with $\bar W=y\gamma_s\gamma_+\gamma_-+\tfrac h3\gamma_s^3$ carries the four-loop lift $d_4\ne0$: its source is a two-term class, $d_1$, $d_2$ and $d_3$ vanish on it, and the rational certificate is verified on all $106{,}587$ monomials of the blocks involved. The $\mathcal N=2$ SQED with one flavour is the low-energy theory at the monopole point of $\mathcal N=2$ $SU(2)$ Yang--Mills theory; there $d_2$ vanishes on every block in which $d_1$ has a kernel, and the first lift is at three loops. In pure $\mathcal N=2$ $SU(2)$ Yang--Mills theory, $d_2\ne0$ in twelve blocks through weight $14$, five of them certified over $\mathbb Q$; with the flipping singlet, $d_2\ne0$ in seven blocks through weight $12$, five of them certified over $\mathbb Q$, and $d_3\ne0$ at weights $13$ and $14$.
+The weight-$16$ block of the theory with $\bar W=y\gamma_0\gamma_+\gamma_-+\tfrac h3\gamma_0^3$ carries the four-loop lift $d_4\ne0$: its source is a two-term class, $d_1$, $d_2$ and $d_3$ vanish on it, and the rational certificate is verified on all $106{,}587$ monomials of the blocks involved. The $\mathcal N=2$ SQED with one flavour is the low-energy theory at the monopole point of $\mathcal N=2$ $SU(2)$ Yang--Mills theory; there $d_2$ vanishes on every block in which $d_1$ has a kernel, and the first lift is at three loops. In pure $\mathcal N=2$ $SU(2)$ Yang--Mills theory, $d_2\ne0$ in twelve blocks through weight $14$, five of them certified over $\mathbb Q$; with the flipping singlet, $d_2\ne0$ in seven blocks through weight $12$, five of them certified over $\mathbb Q$, and $d_3\ne0$ at weights $13$ and $14$.
 
 \subsection{The circuit picture and the idea of the reduction}\label{sec-sum-circuit}
 
@@ -897,7 +991,7 @@ vertex delta functions \eqref{eq-C-current-delta-integral}, \eqref{eq-1-9} & Kir
 loop relation \eqref{eq-C-oriented-cycle} & voltage law with resistances $t_e$ & \pictLoop\\
 weighted Laplacian \cite[Remark 6]{Wang} & conductance matrix & \pictConductance\\
 $-\partial/\partial z_e^{+\dot a}$ & insertion of the current $y_{e,+\dot a}$ & \pictInsert\\
-Laman bound $|\Gamma_1[S]|\le2|S|-3$ \eqref{eq-1-11}, $S$ a vertex set with $|S|\ge2$ & local bound on independent current directions & \pictLaman\\
+Laman bound $|\Gamma_1[S]|\le2|S|-3$ \eqref{eq-1-11}, $S$ a vertex set with $|S|\ge2$ & local Ohm's and Kirchhoff's laws: bound on the independent current directions & \pictLaman\\
 kernel at $z=0$ & oriented volume swept by the independent currents & \pictVolume\\
 \bottomrule
 \end{xltabular}}
@@ -921,7 +1015,9 @@ Because both properties are local, the replacement can be applied to a small sub
 \label{fig-sum-moves}
 \end{figure}
 
-For the series and parallel steps, the resistance, source and current transformations are \eqref{eq-1-64} and \eqref{eq-1-63}:
+The relations between the old and the new resistances, sources and currents are as follows.
+
+\begin{tcolorbox}[enhanced,breakable,colback=white,colframe=black!45,boxrule=0.5pt,arc=1pt,left=4pt,right=4pt,top=2pt,bottom=2pt,fonttitle=\small\bfseries,title={(a) Series--parallel move (Figure \ref{fig-sum-moves}(a), Theorem \ref{b-01142}): a vertex $v$ of degree two, between $u$ and $w$}]
 \begin{equation}\label{eq-sum-moves}
 \begin{gathered}
 r=\frac{t_{vu}}{t_{vu}+t_{vw}},\qquad t^{(1)}_{uw}=t_{vu}+t_{vw},\qquad
@@ -933,8 +1029,28 @@ y_{vw}=r\lambda_v+y^{(1)}_{uw},\qquad
 y^{(j)}_{uw}=r_jy^{\mathrm{red}}_{uw}.
 \end{gathered}
 \end{equation}
+The series step \eqref{eq-1-64} replaces the branch $u$--$v$--$w$ by one resistor and divides the source $\lambda_v$ between $u$ and $w$ in the ratio $1-r:r$; the parallel merge \eqref{eq-1-63} joins the new resistor $t^{(1)}_{uw}$ to the resistor already present between $u$ and $w$, and the current divides between them in the ratio $r_1:r_2$.
+\end{tcolorbox}
 
-The transformations of the two star--triangle moves are given in Theorems \ref{b-01159} and \ref{b-01173}.
+\begin{tcolorbox}[enhanced,breakable,colback=white,colframe=black!45,boxrule=0.5pt,arc=1pt,left=4pt,right=4pt,top=2pt,bottom=2pt,fonttitle=\small\bfseries,title={(b) Star--triangle move (Figure \ref{fig-sum-moves}(b), Theorem \ref{b-01159}): a vertex $v$ of degree three, with neighbours $u,w,x$}]
+\begin{equation}\label{eq-sum-star-triangle}
+\begin{gathered}
+t_{uw}^{\mathrm{red}}=t_{vu}+t_{vw}+\frac{t_{vu}t_{vw}}{t_{vx}},\qquad
+\frac1{t_{ux}^{\mathrm{red}}}=\frac1{t_{ux}}+\frac{t_{vw}}{\Sigma},\qquad
+\frac1{t_{wx}^{\mathrm{red}}}=\frac1{t_{wx}}+\frac{t_{vu}}{\Sigma},\\
+\Sigma=t_{vu}t_{vw}+t_{vw}t_{vx}+t_{vx}t_{vu},\qquad
+r_1=\frac{t_{ux}^{\mathrm{red}}}{t_{ux}},\qquad
+r_2=\frac{t_{wx}^{\mathrm{red}}}{t_{wx}},\\
+y_{vu}=-y_{uw}^{\mathrm{red}}-(1-r_1)y_{ux}^{\mathrm{red}},\qquad
+y_{vw}=y_{uw}^{\mathrm{red}}-(1-r_2)y_{wx}^{\mathrm{red}},\\
+y_{vx}=(1-r_1)y_{ux}^{\mathrm{red}}+(1-r_2)y_{wx}^{\mathrm{red}},\qquad
+y_{ux}=r_1y_{ux}^{\mathrm{red}},\qquad y_{wx}=r_2y_{wx}^{\mathrm{red}}.
+\end{gathered}
+\end{equation}
+The star at $v$ becomes a triangle on $u,w,x$, and its two new resistors merge in parallel with the resistors $t_{ux}$, $t_{wx}$ already present; $r_1$ and $r_2$ are the fractions of the merged currents carried by the old resistors. The currents are written for $\lambda_v=0$ \eqref{b-01166}; a source at $v$ is divided between $u$, $w$ and $x$ \eqref{local-B-sourced-operator}. The simultaneous removal of two source-free stars, Figure \ref{fig-sum-moves}(c), has four such fractions (Theorem \ref{b-01173}).
+\end{tcolorbox}
+
+The move (a) is the step of the recursion that Gui, Wang and Williams found, from the algebraic properties of the propagator, for the Laman graphs of type~I$'$ \cite[Theorem 4.13]{GWW}. They left the relation of their new coordinates to the Schwinger parameters open \cite[Remark 4.14]{GWW}. Here the two coordinates of each step are current-division ratios: $r$ divides the source at the eliminated vertex between its two branches, and $r_j$ divides the current between parallel resistors; their relation to the original resistances is the one in the box (a).
 
 \section{Review of holomorphic twist}\label{sec-BV}
 
@@ -1240,7 +1356,7 @@ The identification $dx^{-\dot a}=4\bar\theta^{\dot a}$ and the volume relation
 \end{equation}
 turn $S_{\mathrm{tw}}$ of \eqref{eq-B-5} into an integral over $\mathbb C^2$:
 
-\rthm{Proposition}{b-00164}{Twisted action and interaction density} With $(t_A)^j{}_i$ the generators in the matter representation, the action of the holomorphic twist is
+\rthm{Proposition}{b-00164}{Twisted action and interaction density \cite{semichiral,BK}} With $(t_A)^j{}_i$ the generators in the matter representation, the action of the holomorphic twist is
 \begin{equation}\label{eq-B-8}
 \begin{aligned}
 S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
@@ -2081,7 +2197,7 @@ Write $\Gamma_1[S]$ for the edges with both ends in a vertex set $S\subseteq\Gam
 
 Some of the proofs are easier to understand in terms of a circuit diagram (Table \ref{tab-sum-dictionary}), so we sometimes provide more than one proof to illustrate the idea.
 
-\rthm{Lemma}{b-00180}{Laman count} \emph{Every nonzero graph satisfies}
+\rthm{Lemma}{b-00180}{Laman count \cite[Equation (2.22)]{operatope}, \cite[Theorem 6]{Wang}} \emph{Every nonzero graph satisfies}
 \begin{equation}\label{eq-1-12}
 |\Gamma_1|=2|\Gamma_0|-3 .
 \end{equation}
@@ -2102,7 +2218,7 @@ Some of the proofs are easier to understand in terms of a circuit diagram (Table
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
-\rthm{Lemma}{b-00194}{Laman bound on subgraphs} \emph{Every $S\subseteq\Gamma_0$ with $\Gamma_1[S]\ne\emptyset$ satisfies}
+\rthm{Lemma}{b-00194}{Laman bound on subgraphs \cite[Equation (2.23)]{operatope}, \cite[Proposition 5]{Wang}} \emph{Every $S\subseteq\Gamma_0$ with $\Gamma_1[S]\ne\emptyset$ satisfies}
 \begin{equation*}
 |\Gamma_1[S]|\le2|S|-3 .
 \end{equation*}
@@ -2136,7 +2252,7 @@ so the number of holomorphic directions drops by one.
 
 Lemma~\ref{b-00194} immediately leads to:
 
-\rthm{Corollary}{b-00188}{No self-loops or parallel edges} \emph{A nonzero graph has no self-loop and at most one edge between any two vertices.}
+\rthm{Corollary}{b-00188}{No self-loops or parallel edges \cite[Proposition 5]{Wang}, \cite[Section 2.1]{operatope}} \emph{A nonzero graph has no self-loop and at most one edge between any two vertices.}
 
 \emph{Proof (propagators).} A self-loop carries $d(x_v-x_v)^{-\dot a}=0$ \cite[Section 2.3]{Wang}. Two edges between $v$ and $w$, with holomorphic shifts $z,z'$, share the one-form direction of $x_v-x_w$ \cite[Section 2.1]{operatope}:
 \begin{equation}\label{eq-1-13}
@@ -3060,7 +3176,7 @@ Here $\{\cdot\}_0$ denotes the brackets of Section~\ref{sec-setup}. The quantum 
 \{X,Y\}_{\mathcal I}=\sum_{r\ge0}\frac{\hbar^r}{r!}\{\mathcal I^{\otimes r},X,Y\}_0 .
 \end{equation}
 
-\rthm{Lemma}{b-00452}{} \emph{Suppose that the interaction satisfies}
+\rthm{Lemma}{b-00452}{\cite[Theorem 7]{Wang}, \cite[Section 3.2]{operatope}, \cite[Equations (1.12) and (2.25)--(2.26)]{BK}} \emph{Suppose that the interaction satisfies}
 \begin{equation}\label{eq-2-40}
 \sum_{k\ge2}\frac{\hbar^{k-2}}{k!}\{\mathcal I^{\otimes k}\}_0
 =\sum_{n\ge0}\frac{\hbar^n}{n+2}Q_n\mathcal I=0 .
@@ -6532,6 +6648,8 @@ R.~de~Mello~Koch, M.~Kim, S.~Kim, J.~Lee and S.~Lee, ``Brane-Fused Black Hole Op
 J.~Choi, S.~Choi, S.~Kim, J.~Lee and S.~Lee, ``Finite $N$ Black Hole Cohomologies,'' \emph{JHEP} \textbf{12} (2024), 029, \href{https://arxiv.org/abs/2312.16443}{arXiv:2312.16443}.
 \bibitem{FortuityAI}
 ``Fortuity: Fortuitous BPS States of $\mathcal N=4$ SYM at Weak Coupling,'' report and code, \url{https://github.com/davidsd/fortuity-ai} (2026).
+\bibitem{EveryN}
+R.~de~Mello~Koch, M.~Kim and S.~Liu, ``Fortuitous BMN Cohomology at Every $N$,'' \href{https://arxiv.org/abs/2610.21592}{arXiv:2610.21592}.
 \bibitem{MultiCore}
 R.~de~Mello~Koch, S.~Duary, M.~Kim and S.~Liu, ``Fortuitous BMN Operators from Multiple Cores,'' \href{https://arxiv.org/abs/2611.04722}{arXiv:2611.04722}.
 \bibitem{GLRT}
