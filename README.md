@@ -1,8 +1,12 @@
 # Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring
 
-Botao Li, Kangning Liu, Chi-Ming Chang (November 2026)
+Botao Li, Kangning Liu, Chi-Ming Chang
 
-Manuscript PDF: [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) (125 pages; also mirrored at [`All_loop_holomorphic_kernels_full.pdf`](All_loop_holomorphic_kernels_full.pdf) for backward link compatibility).
+## Latest manuscript: 2026-11-12 20:09 (Beijing time)
+
+**[Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf)** (125 pages). LaTeX source: [`main.tex`](main.tex) with the figures in `figures/vec/`.
+
+This repository keeps only the latest version of the manuscript; earlier versions are in the commit history.
 
 Companion results repository (supplementary algorithm document, census tables, and exact rational lifting certificates): [`quantum-lifts-results`](https://github.com/lbotao399-stack/quantum-lifts-results).
 
@@ -14,10 +18,9 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 
 | File | Description |
 |---|---|
-| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | Compiled manuscript PDF (125 pages) |
-| [`main.tex`](main.tex) | LaTeX source of the manuscript (mirrored at [`All_loop_holomorphic_kernels_full.tex`](All_loop_holomorphic_kernels_full.tex)) |
-| `figures/vec/` | Vector PDF figures included by `main.tex` |
-| [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lifting example in massive SQED (Section 2.3; Python 3, standard library only) |
+| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | The manuscript (2026-11-12 20:09, Beijing time; 125 pages) |
+| [`main.tex`](main.tex), `figures/vec/` | LaTeX source of the manuscript and its vector figures |
+| [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lift in massive SQED (Section 2.3; Python 3, standard library only) |
 | [`product_kernels/`](product_kernels/) | Kernels of the quantum product through seven loops (Sections 6 and 7): tree charts, moment tables and a reader (Python 3, standard library only) |
 
 ## Build
