@@ -97,7 +97,7 @@
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu and Chi-Ming Chang\\[6pt]
 {\normalsize $^{1}$Peking University}}
-\date{\small Version 20261113-174233 (Beijing time)}
+\date{\small Version 20261113-192858 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -1815,20 +1815,25 @@ P_{0,\infty}=\bigl(Q^{\mathrm{GF}}H^{-1}\otimes1\bigr)\omega_E^{-1}.
 \end{equation}
 This is the finite-dimensional Gaussian identity on the nonzero modes \cite[Section 6.6]{CostelloBV}, used formally in field theory. Keeping the fields unevaluated retains the external legs; taking $\mathcal O=1$ and dividing by the resulting expression removes vacuum bubbles.
 
-Write $S=S_{\mathrm{free}}+I$ in the formal BV integral. The quantum master equation (QME) is an identity of integrands:
+Write $S=S_{\mathrm{free}}+I$ and initially retain a possible quantum master equation (QME) defect. For an arbitrary functional $\mathcal O$, the defect and BV Stokes identity on an admissible gauge-fixing cycle are
 \begin{equation}\label{eq-C-formal-QME}
 \hbar^2\Delta e^{S/\hbar}
-=\left[\frac12(S,S)+\hbar\Delta S\right]e^{S/\hbar}=0,
+=\left[\frac12(S,S)+\hbar\Delta S\right]e^{S/\hbar},
 \qquad
-\int_{\mathcal L}\Delta e^{S/\hbar}\,\mathcal D e=0.
+\int_{\mathcal L}\Delta\bigl(\mathcal Oe^{S/\hbar}\bigr)\,\mathcal D e=0.
 \end{equation}
-For an admissible gauge-fixing cycle with no boundary contribution, BV Stokes gives $\int_{\mathcal L}\Delta(\,\cdots)\,\mathcal D e=0$. This integrated identity holds for any integrand; the QME imposes the stronger vanishing of the integrand in \eqref{eq-C-formal-QME}. The transformation of an insertion follows from the BV product rule:
+Expanding the total BV derivative gives a Ward identity with a possible anomaly insertion:
 \begin{equation}\label{eq-C-naive}
-\hbar\Delta\bigl(\mathcal Oe^{S/\hbar}\bigr)
-=\left[(S,\mathcal O)+\hbar\Delta\mathcal O
-+\frac1\hbar\left(\frac12(S,S)+\hbar\Delta S\right)\mathcal O\right]e^{S/\hbar}.
+\begin{aligned}
+0&=\hbar\int_{\mathcal L}\Delta\bigl(\mathcal Oe^{S/\hbar}\bigr)\,\mathcal D e\\
+&=\int_{\mathcal L}\left[
+ (S,\mathcal O)+\hbar\Delta\mathcal O
+ +\underbrace{\frac1\hbar\left(\frac12(S,S)+\hbar\Delta S\right)\mathcal O}
+ _{\text{QME-defect insertion}}
+ \right]e^{S/\hbar}\,\mathcal D e.
+\end{aligned}
 \end{equation}
-Under the QME, integration therefore proves the Ward, or Slavnov--Taylor, identity:
+The QME-defect insertion is the anomaly contribution. Imposing the QME, $\frac12(S,S)+\hbar\Delta S=0$, removes it and gives the standard Slavnov--Taylor identity, the BV form of the BRST Ward identity:
 \begin{equation}\label{eq-C-formal-Ward}
 \frac{\displaystyle\int_{\mathcal L}
  \bigl[(S,\mathcal O)+\hbar\Delta\mathcal O\bigr]e^{S/\hbar}\,\mathcal D e}
@@ -1837,21 +1842,30 @@ Under the QME, integration therefore proves the Ward, or Slavnov--Taylor, identi
  \Delta\bigl(\mathcal Oe^{S/\hbar}\bigr)\,\mathcal D e}
  {\displaystyle\int_{\mathcal L}e^{S/\hbar}\,\mathcal D e}=0.
 \end{equation}
-An exact insertion decouples. In field theory, both the coincident contractions in $\Delta$ and the Wick expansion must be regularized before using this argument.
+An exact insertion decouples. We now regularize both the Wick expansion and the coincident contractions in these identities.
 
 \paragraph{The regularized master equation and insertion.}
 
-At scale $L$, the BV Laplacian is $\Delta_L=\partial_{K_L}$, and $(\ ,\ )_L$ is the antibracket with the inverse pairing replaced by $K_L$. The homotopy \eqref{eq-C-heat-homotopy} gives
-\begin{equation}\label{eq-C-finite-scale-intertwine}
-\begin{aligned}
-[Q_{\mathrm{BV}},\partial_{P_{\varepsilon,L}}]
-&=\Delta_\varepsilon-\Delta_L,\\
-(Q_{\mathrm{BV}}+\hbar\Delta_L)e^{\hbar\partial_{P_{\varepsilon,L}}}
-&=e^{\hbar\partial_{P_{\varepsilon,L}}}
- (Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon).
-\end{aligned}
+Introduce an ultraviolet momentum scale $\Lambda_{\mathrm{UV}}$ through the proper-time cutoff
+\begin{equation}\label{eq-C-cutoff-scales}
+\varepsilon=\frac1{\Lambda_{\mathrm{UV}}^2},
+\qquad
+e^{-\varepsilon H(p)}
+=e^{-p_E^2/(2\Lambda_{\mathrm{UV}}^2)},
+\qquad 0<\varepsilon<L.
 \end{equation}
-The second line follows from the first because constant contraction operators commute. Write $I(\varepsilon)$ for the local interaction including its counterterms, and $\mathcal O(\varepsilon)$ for the insertion including its composite-operator counterterms. Their effective values are defined coefficientwise in perturbation theory by
+Both $\varepsilon$ and $L$ have dimensions of length squared. The parameter $L$ fixes the physical resolution $\sqrt L$ of the effective description, with momentum scale labelled by $L^{-1/2}$. The propagator $P_{\varepsilon,L}$ integrates Schwinger times from the ultraviolet cutoff $\varepsilon$ to this chosen scale. Its damping factors are given in \eqref{eq-C-proper-time-inverse}; the remaining covariance is $P_{L,\infty}$. Thus removing $\varepsilon$ and integrating the remaining long-time modes are two separate steps.
+
+Write $I(\varepsilon)$ for the local interaction including its counterterms, and $\mathcal O(\varepsilon)$ for the insertion including its composite-operator counterterms. For a correlator admitting the infrared limit, the regularized and vacuum-normalized version of \eqref{eq-C-Gaussian-Wick} is
+\begin{equation}\label{eq-C-cutoff-correlator}
+\langle\mathcal O\rangle
+=\lim_{L\to\infty}\lim_{\varepsilon\downarrow0}
+\frac{\left.e^{\hbar\partial_{P_{\varepsilon,L}}}
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\right|_{e=0}}
+ {\left.e^{\hbar\partial_{P_{\varepsilon,L}}}
+ e^{I(\varepsilon)/\hbar}\right|_{e=0}}.
+\end{equation}
+The ultraviolet limit is taken first at each fixed $L$. Costello's effective description stops at a finite $L$ and retains the uncontracted fields as arguments. Its interaction and insertion are defined coefficientwise by
 \begin{equation}\label{eq-C-local-to-effective}
 \begin{aligned}
 e^{I[L]/\hbar}
@@ -1863,7 +1877,17 @@ e^{I[L]/\hbar}
  \bigl(\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar}\bigr).
 \end{aligned}
 \end{equation}
-The regularized counterpart of \eqref{eq-C-formal-QME} is the following chain \cite[Section 10]{CostelloBV}:
+To rewrite \eqref{eq-C-naive}--\eqref{eq-C-formal-Ward} at this scale, use the BV Laplacian $\Delta_L=\partial_{K_L}$ and the antibracket $(\ ,\ )_L$ with inverse pairing $K_L$. The homotopy \eqref{eq-C-heat-homotopy} gives
+\begin{equation}\label{eq-C-finite-scale-intertwine}
+\begin{aligned}
+[Q_{\mathrm{BV}},\partial_{P_{\varepsilon,L}}]
+&=\Delta_\varepsilon-\Delta_L,\\
+(Q_{\mathrm{BV}}+\hbar\Delta_L)e^{\hbar\partial_{P_{\varepsilon,L}}}
+&=e^{\hbar\partial_{P_{\varepsilon,L}}}
+ (Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon).
+\end{aligned}
+\end{equation}
+The second line follows from the first because constant contraction operators commute. The regularized QME sets the transported defect to zero \cite[Section 10]{CostelloBV}:
 \begin{equation}\label{eq-C-regularized-QME}
 \begin{aligned}
 &(Q_{\mathrm{BV}}+\hbar\Delta_L)e^{I[L]/\hbar}\\
@@ -1900,14 +1924,30 @@ The quantum BV charge at scale $L$ acts on an effective insertion by
 Using \eqref{eq-C-local-to-effective} and \eqref{eq-C-finite-scale-intertwine}, its relation to the cutoff insertion is
 \begin{equation}\label{eq-C-regularized-insertion}
 \begin{aligned}
-\bigl(\mathbf Q_L\mathcal O[L]\bigr)e^{I[L]/\hbar}
-&=\lim_{\varepsilon\downarrow0}
+&(\mathbf Q_L\mathcal O[L])e^{I[L]/\hbar}\\
+&\quad=\lim_{\varepsilon\downarrow0}
+ (Q_{\mathrm{BV}}+\hbar\Delta_L)
+ e^{\hbar\partial_{P_{\varepsilon,L}}}
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\\
+&\quad=\lim_{\varepsilon\downarrow0}
  e^{\hbar\partial_{P_{\varepsilon,L}}}
  (Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon)
- \bigl(\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar}\bigr).
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\\
+&\quad=\lim_{\varepsilon\downarrow0}
+ e^{\hbar\partial_{P_{\varepsilon,L}}}
+ \left[\left\{\begin{aligned}
+ &Q_{\mathrm{BV}}\mathcal O(\varepsilon)
+ +(I(\varepsilon),\mathcal O(\varepsilon))_\varepsilon
+ +\hbar\Delta_\varepsilon\mathcal O(\varepsilon)\\
+ &+\frac1\hbar\left(Q_{\mathrm{BV}}I(\varepsilon)
+ +\frac12(I(\varepsilon),I(\varepsilon))_\varepsilon
+ +\hbar\Delta_\varepsilon I(\varepsilon)\right)\mathcal O(\varepsilon)
+ \end{aligned}\right\}e^{I(\varepsilon)/\hbar}\right].
 \end{aligned}
 \end{equation}
-This is the regularized version of inserting $\hbar\Delta(\mathcal Oe^{S/\hbar})$ in the formal integral. The insertion stays inside the cutoff limit, so all its contact contractions are included.
+The first line inside braces is the insertion's regularized BV transformation; the second is the QME-defect insertion. The latter must remain inside the Wick contractions with $\mathcal O(\varepsilon)$, even when its Wick sum without the insertion vanishes by \eqref{eq-C-regularized-QME}. These are the two sources of heat edges in Section~\ref{sec-brackets-origin}.
+
+Contact contractions and any required action and insertion counterterms are included in principle. For the holomorphic interactions and local operators studied here, the graph integrals have finite $\varepsilon\downarrow0$ limits as distributions on smooth compactly supported external fields \cite[Theorem 5 and Corollary 4]{Wang}. We may therefore take $I(\varepsilon)=I$ and $\mathcal O(\varepsilon)=\mathcal O$, with no divergent counterterms; the finite heat-edge contributions are retained in \eqref{eq-C-regularized-insertion}.
 
 Nilpotence follows directly from the free regularized BV algebra:
 \begin{equation}\label{eq-C-effective-nilpotence}
@@ -1924,7 +1964,12 @@ The QME is what identifies this conjugated operator with the second line of \eqr
 =(\mathbf Q_LF)G+(-1)^{|F|}F\mathbf Q_LG
 +\hbar(-1)^{|F|}(F,G)_L.
 \end{equation}
-Thus a Ward identity for several insertions acts on their jointly renormalized product, including contractions between the factors.
+For local cutoff insertions $F(\varepsilon),G(\varepsilon)$ of fixed finite jet order, having fixed compact supports separated by a positive distance and with counterterm coefficients having at most power and logarithmic growth as $\varepsilon\downarrow0$, the Gaussian in \eqref{eq-C-heat-spatial} and all its finite coordinate derivatives vanish between the two supports as $\varepsilon\downarrow0$. Hence
+\begin{equation}\label{eq-C-separated-insertions}
+\lim_{\varepsilon\downarrow0}
+ (F(\varepsilon),G(\varepsilon))_\varepsilon=0.
+\end{equation}
+The local BV transformation consequently obeys the graded Leibniz rule on separated insertions: it acts letter by letter on noncoincident letters. At a finite heat scale the Gaussian tails generally give a nonzero cross-bracket; transported effective insertions also have nonlocal tails. Thus \eqref{eq-C-quantum-product-rule} retains the cross term at finite $L$, and coincident composite operators retain their contact contractions.
 
 \paragraph{Scale transport and decoupling of exact insertions.}
 
@@ -1950,7 +1995,7 @@ e^{I[L']/\hbar}
  \bigl((\mathbf Q_L\mathcal O[L])e^{I[L]/\hbar}\bigr).
 \end{aligned}
 \end{equation}
-The third line follows by applying \eqref{eq-C-finite-scale-intertwine} to the second. These maps compose by \eqref{eq-C-RG-homotopy} and are invertible as formal perturbative maps between positive scales. They identify closed insertions and exact insertions at different $L$. This is the homotopy transport underlying scale independence; the effective expressions themselves depend on $L$.
+The third line follows by applying \eqref{eq-C-finite-scale-intertwine} to the second. These maps compose by \eqref{eq-C-RG-homotopy} and are invertible as formal perturbative maps between positive scales. They identify closed insertions and exact insertions at different $L$. Physically, $P_{\varepsilon,L}$ is the free BV homotopy from the ultraviolet resolution $\varepsilon$ to the physical resolution $L$, as expressed by \eqref{eq-C-heat-homotopy}. Summing the interaction graphs promotes it to the transport $\mathcal O(\varepsilon)\mapsto\mathcal O[L]$ of the full quantum theory; \eqref{eq-C-regularized-insertion} and \eqref{eq-C-RG-transport} transport its BV transformation at the same time. Completing this integration at $L=\infty$ gives the ordinary expectation value, with the infrared prescription stated below. This identifies the quantum cohomology across scales, although its effective representatives depend on $L$.
 
 For scalar correlation functions, integrate the remaining modes. Assume an infrared prescription for which the following limit and its BV variation exist, the $K_{L'}$ boundary contribution vanishes after vacuum normalization as $L'\to\infty$, and no residual zero modes remain.\footnote{If residual zero modes remain, retain their effective BV theory and integrate over an admissible residual Lagrangian cycle; the final step is then BV Stokes on that cycle.} The normalized correlator is
 \begin{equation}\label{eq-C-RG-correlator}
@@ -1960,27 +2005,39 @@ For scalar correlation functions, integrate the remaining modes. Assume an infra
  (\mathcal O[L]e^{I[L]/\hbar})\right|_{e=0}}
  {\left.e^{\hbar\partial_{P_{L,L'}}}e^{I[L]/\hbar}\right|_{e=0}}.
 \end{equation}
-Equations \eqref{eq-C-RG-homotopy}--\eqref{eq-C-RG-transport} make this independent of the intermediate scale $L$. For an exact insertion the numerator becomes
+Equations \eqref{eq-C-RG-homotopy}--\eqref{eq-C-RG-transport} make this independent of the intermediate scale $L$. At the cutoff, the numerator for a transformed insertion obeys
 \begin{equation}\label{eq-C-regularized-Ward-proof}
 \begin{gathered}
 \begin{aligned}
-&\left.e^{\hbar\partial_{P_{L,L'}}}
- \bigl((\mathbf Q_L\mathcal O[L])e^{I[L]/\hbar}\bigr)\right|_{e=0}\\
+&\left.e^{\hbar\partial_{P_{\varepsilon,L'}}}
+ (Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon)
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\right|_{e=0}\\
 &\quad=\left.(Q_{\mathrm{BV}}+\hbar\Delta_{L'})
- e^{\hbar\partial_{P_{L,L'}}}
- \bigl(\mathcal O[L]e^{I[L]/\hbar}\bigr)\right|_{e=0}\\
+ e^{\hbar\partial_{P_{\varepsilon,L'}}}
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\right|_{e=0}\\
 &\quad=\left.\hbar\Delta_{L'}
- e^{\hbar\partial_{P_{L,L'}}}
- \bigl(\mathcal O[L]e^{I[L]/\hbar}\bigr)\right|_{e=0},
-\end{aligned}\\
+ e^{\hbar\partial_{P_{\varepsilon,L'}}}
+ (\mathcal O(\varepsilon)e^{I(\varepsilon)/\hbar})\right|_{e=0},
+\end{aligned}\\[1ex]
+\begin{multlined}[0.97\linewidth]
 \langle\mathbf Q_L\mathcal O[L]\rangle
-=\lim_{L'\to\infty}
-\frac{\left.\hbar\Delta_{L'}e^{\hbar\partial_{P_{L,L'}}}
- (\mathcal O[L]e^{I[L]/\hbar})\right|_{e=0}}
- {\left.e^{\hbar\partial_{P_{L,L'}}}e^{I[L]/\hbar}\right|_{e=0}}=0.
+=\lim_{L'\to\infty}\lim_{\varepsilon\downarrow0}\\
+\frac{\displaystyle
+ \left.e^{\hbar\partial_{P_{\varepsilon,L'}}}
+ \left[\left\{\begin{aligned}
+ &Q_{\mathrm{BV}}\mathcal O(\varepsilon)
+ +\hbar\Delta_\varepsilon\mathcal O(\varepsilon)
+ +(I(\varepsilon),\mathcal O(\varepsilon))_\varepsilon\\
+ &+\frac1\hbar\left(Q_{\mathrm{BV}}I(\varepsilon)
+ +\frac12(I(\varepsilon),I(\varepsilon))_\varepsilon
+ +\hbar\Delta_\varepsilon I(\varepsilon)\right)\mathcal O(\varepsilon)
+ \end{aligned}\right\}e^{I(\varepsilon)/\hbar}\right]\right|_{e=0}}
+ {\displaystyle\left.e^{\hbar\partial_{P_{\varepsilon,L'}}}
+ e^{I(\varepsilon)/\hbar}\right|_{e=0}}=0.
+\end{multlined}
 \end{gathered}
 \end{equation}
-The second equality uses that the linear free BV vector field vanishes at $e=0$; the last step uses the stated boundary condition after vacuum normalization. This proves the regularized Ward identity. In this sense the final correlation function can be computed at $L=\infty$.
+The numerator is the sum of the regularized insertion transformation, including the bracket $(I(\varepsilon),\mathcal O(\varepsilon))_\varepsilon$, and the QME-defect insertion. The second equality above uses that the linear free BV vector field vanishes at $e=0$. First removing $\varepsilon$ at fixed $L'$, and then applying the stated infrared boundary condition after vacuum normalization, gives the final zero. This proves the regularized Ward identity with both cutoff contributions displayed.
 
 
 \paragraph{Higher brackets.}
@@ -1991,7 +2048,7 @@ Removing the cutoff recovers the ordinary BV transformation when no local collis
 \qquad
 \bar\partial[P_{0,\infty}(x_1,x_2)]_\Omega=0\quad(x_1\ne x_2).
 \end{equation}
-The first identity retains the contact distribution that is invisible in the second. More generally, the ordinary holomorphic graph integrals are ultraviolet finite, while their BV variations have finite boundary contributions from colliding vertices \cite[Theorems 5 and 6]{Wang}. Thus finite contact terms, including anomalous operator transformations, survive even when no ultraviolet counterterms are required. In a theory with ultraviolet divergences, action and insertion counterterms must also be included in \eqref{eq-C-local-to-effective}.
+The first identity retains the contact distribution that is invisible in the second. More generally, the ordinary holomorphic graph integrals are ultraviolet finite, while their BV variations have finite boundary contributions from colliding vertices \cite[Theorems 5 and 6]{Wang}. Thus finite contact terms, including anomalous operator transformations, survive even when no ultraviolet counterterms are required. In a theory with ultraviolet divergences, action and insertion counterterms must also be included in \eqref{eq-C-local-to-effective}, which is a source of the technical difficulty in the original physical theory.
 
 Applying $Q_{\mathrm{BV}}$ to the propagators produces one heat kernel through \eqref{eq-C-heat-homotopy}. The local collision terms of \eqref{eq-C-regularized-insertion}, projected to holomorphic operators, are the higher brackets \cite{semichiral,operatope,higher,BK}. Section~\ref{sec-brackets-origin} spells out the two possible positions of the heat edge in the Ward identity.
 
