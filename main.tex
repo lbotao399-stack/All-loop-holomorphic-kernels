@@ -97,7 +97,7 @@
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu and Chi-Ming Chang\\[6pt]
 {\normalsize $^{1}$Peking University}}
-\date{\small Version 20261113-155158 (Beijing time)}
+\date{\small Version 20261113-162125 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -1666,19 +1666,43 @@ Indeed, by Cartan's formula $N$ is the Lie derivative along the vector field $x^
 \end{aligned}
 \end{equation}
 
-\subsection{Propagators and higher brackets}\label{sec-brackets}\label{sec-setup}
+\subsection{Quantization of the twist theory and higher brackets}\label{sec-brackets}\label{sec-setup}
 
-With the twisted theory in hand, we review its graph operations \cite{semichiral,Wang,operatope,higher,BK}: the higher brackets and, in Section \ref{positive-schwinger-times-and-the-operatope}, the current integrals that evaluate them.
+Quantization of the physical theory, including its regularization and renormalization, is technically demanding. We therefore quantize the classical twisted theory. A gap remains in identifying the result with the twist of the quantized physical theory: a general all-orders equivalence for the theories and composite operators considered here has not been established. Known supersymmetry anomalies, including the generalized Konishi anomaly, provide evidence for this identification \cite[Section 2.2]{BK}; we assume it when interpreting the twisted cohomology as the physical quantum BPS sector. Appendix~\ref{app-twist-cohomology} explains the conditional cohomological comparison.
 
-\paragraph{The BV pairing.}
+\paragraph{From the functional integral to the BV pairing.}
 
-The graph operations are built from the BV pairing, the heat kernel and the propagator. The free action \eqref{eq-BV-free-action} pairs $\mathsf b_A$ with $\mathsf c^A$ and $\beta^i$ with $\gamma_i$ through $\int\Omega\wedge$. The inverse $\omega_E^{-1}$ of this pairing is a delta function on spacetime times a constant tensor in field space. Contracting two fields with $\omega_E^{-1}$ is the BV Laplacian $\Delta=\partial_{\omega_E^{-1}}$; on the fields at two vertices $v,w$ it acts as
+Naive perturbation theory starts from a gauge-fixed functional integral
+\begin{equation*}
+\int_{\mathcal L}\mathcal O(e)\,
+\exp\!\left[\frac{S_{\mathrm{free}}(e)+I(e)}{\hbar}\right]\mathcal D e,
+\qquad S_{\mathrm{tw}}=S_{\mathrm{free}}+I,
+\qquad I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)}.
+\end{equation*}
+Here $e$ denotes the collective Dolbeault BV fields $\mathsf c,\mathsf b,\gamma,\beta$, $E$ is their graded space, and $\mathcal L\subset E$ is the gauge-fixing Lagrangian subspace; $\mathcal D e$ denotes the formal integration measure. Costello's construction \cite{Costello,CostelloBV} replaces this expression by a regularized Wick expansion and a master equation at each scale. To construct that expansion we need the free quadratic action, its gauge-fixed inverse, and the pairing that specifies which fields can contract.
+
+The odd, nondegenerate BV pairing $\omega_E$ pairs $\mathsf b_A$ with $\mathsf c^A$ and $\beta^i$ with $\gamma_i$, integrated with $\Omega$. Its inverse defines the antibracket \eqref{eq-A-8}. With the free BV differential $Q_{\mathrm{BV}}=\bar\partial$ of \eqref{eq-BV-free-action}, the quadratic action is
+\begin{equation*}
+\begin{aligned}
+S_{\mathrm{free}}(e)
+&=\frac12\omega_E(e,Q_{\mathrm{BV}}e)
+=\int_{\mathbb C^2}\Omega\wedge
+\bigl[\mathsf b_A\bar\partial\mathsf c^A
++(\bar\partial\gamma_i)\beta^i\bigr]_{(0,2)},\\
+\delta S_{\mathrm{free}}(e)
+&=\omega_E(\delta e,Q_{\mathrm{BV}}e),
+\qquad (S_{\mathrm{free}},\,\cdot\,)=Q_{\mathrm{BV}}.
+\end{aligned}
+\end{equation*}
+The second line follows by graded integration by parts for compactly supported variations $\delta e$. Thus $Q_{\mathrm{BV}}$ is the free BV charge acting on fields, while the pairing turns its value into the functional derivative of the action. The factor $1/2$ counts the two paired terms once. This uses the $e^{S/\hbar}$ convention of \cite{CostelloBV}: the Gaussian contour is chosen so that the bosonic quadratic form is negative definite, rather than inserting an extra minus sign in the Wick operator.
+
+The inverse pairing $\omega_E^{-1}$ is a spacetime delta function times a constant field-space tensor. Contracting one unordered pair of fields with it gives the formal BV Laplacian $\Delta=\partial_{\omega_E^{-1}}$. For a pair at distinct labelled vertices $v,w$, its contribution is
 \begin{equation}\label{eq-pairing-Delta}
 \partial_{\omega_E^{-1}}=[K_0(x_v,x_w)]_\Omega\;\Delta_{vw},
 \qquad
 \int_{\mathbb C^2}\Omega_{x_v}\wedge[K_0(x_v,x_w)]_\Omega\,f(x_v)=f(x_w),
 \end{equation}
-where $[K_0]_\Omega$ is the delta function, a form of degree two in the antiholomorphic differentials, and $\Delta_{vw}$ is the field-space part of the inverse pairing,
+where $[K_0]_\Omega$ is the delta function as a relative antiholomorphic two-form, and the field-space contraction is
 \begin{equation}\label{eq-A-20}
 \begin{aligned}
 \Delta_{vw}={}&
@@ -1696,51 +1720,137 @@ where $[K_0]_\Omega$ is the delta function, a form of degree two in the antiholo
 \frac{\partial_L}{\partial\beta_w^i}.
 \end{aligned}
 \end{equation}
+The subscript $\Omega$ on a kernel denotes its spacetime differential form after stripping off the pairing volume and this field-space tensor. For an odd kernel, $\partial_K$ denotes the signed BV contraction fixed by \eqref{eq-A-8} and \eqref{eq-A-20}; for an even propagator, $\partial_P$ denotes the ordinary unordered-pair Wick contraction.\footnote{In the raw symmetric-tensor contraction notation of \cite[Sections 6.4 and 10]{CostelloBV}, the odd-kernel contraction has the opposite sign and $\Delta_t=-\partial_{K_t}$. Our signed convention writes $\Delta_t=\partial_{K_t}$; the even-propagator Wick operator is unchanged.} For a local functional, both contracted fields can be at the same point: $\Delta$ then requires a delta distribution on the diagonal. This is the ultraviolet problem that the heat kernel will regularize.
 
-Here and below, a subscript $\Omega$ on a kernel denotes its spacetime part: the differential form in $d(x_v-x_w)^{-\dot a}$ that remains when the pairing $\int\Omega$ and the field-space tensor $\Delta_{vw}$ are stripped off, as in \eqref{eq-pairing-Delta}.
+\paragraph{Gauge fixing and the inverse kinetic operator.}
 
-\paragraph{Gauge fixing, heat kernel and propagator.}
-
-The quantization of the twisted theory needs a gauge fixing, that is, a choice of Lagrangian submanifold in the space of fields. We use the adjoint of $\bar\partial$ in the flat metric,
-\begin{equation}\label{eq-dbar-star}
-\bar\partial^*=-2\,\epsilon^{\dot a\dot b}\,\iota_{-\dot a}\frac{\partial}{\partial x^{+\dot b}},
+Since $Q_{\mathrm{BV}}^2=0$, it has no inverse on all of $E$. A gauge-fixing operator $Q^{\mathrm{GF}}$ is an odd operator of degree $-1$, compatible with the BV pairing, with $(Q^{\mathrm{GF}})^2=0$, such that $H=\{Q_{\mathrm{BV}},Q^{\mathrm{GF}}\}$ is a nonnegative elliptic operator. On the nonzero modes of $H$,
+\begin{equation*}
+e=Q_{\mathrm{BV}}Q^{\mathrm{GF}}H^{-1}e
++Q^{\mathrm{GF}}Q_{\mathrm{BV}}H^{-1}e,
 \qquad
-H=\{\bar\partial,\bar\partial^*\}
-=-2\,\epsilon^{\dot a\dot b}\frac{\partial}{\partial x^{-\dot a}}\frac{\partial}{\partial x^{+\dot b}}
-=-\frac12\frac{\partial}{\partial x_E^\mu}\frac{\partial}{\partial x_E^\mu},
-\end{equation}
-with $\iota_{-\dot a}$ the contraction of a form with $\partial/\partial x^{-\dot a}$ \eqref{eq-B-20}; $H$ is the Laplacian.
+\mathcal L=\operatorname{im}Q^{\mathrm{GF}}.
+\end{equation*}
+The two terms lie in complementary isotropic subspaces: moving $Q_{\mathrm{BV}}$ or $Q^{\mathrm{GF}}$ across the pairing makes the pairing of two image vectors vanish by its square-zero property. Hence $\mathcal L$ is Lagrangian there. Any zero modes are retained as residual fields. The operator $Q^{\mathrm{GF}}H^{-1}$ inverts the free differential in the homotopy sense: its anticommutator with $Q_{\mathrm{BV}}$ is the identity on the nonzero modes. Combining it with $\omega_E^{-1}$ gives the two-field contraction of the gauge-fixed Gaussian.
 
-With $e^{-tH}$ and $\bar\partial^*$ acting on the first argument, the heat kernel and, for $0<\varepsilon<L$, the propagator are \cite{Costello,Wang}
+For the flat metric we take $Q^{\mathrm{GF}}=\bar\partial^*$. In the Euclidean coordinates $x_E^\mu$, with inverse metric $\delta^{\mu\nu}$,
+\begin{equation}\label{eq-dbar-star}
+\begin{aligned}
+Q^{\mathrm{GF}}=\bar\partial^*
+&=-2\,\epsilon^{\dot a\dot b}\,\iota_{-\dot a}
+\frac{\partial}{\partial x^{+\dot b}},\\
+H=\{\bar\partial,\bar\partial^*\}
+&=-2\,\epsilon^{\dot a\dot b}
+\frac{\partial}{\partial x^{-\dot a}}
+\frac{\partial}{\partial x^{+\dot b}}
+=-\frac12\delta^{\mu\nu}
+\frac{\partial}{\partial x_E^\mu}
+\frac{\partial}{\partial x_E^\nu}.
+\end{aligned}
+\end{equation}
+Here $\iota_{-\dot a}$ contracts a form with $\partial/\partial x^{-\dot a}$, as in \eqref{eq-B-20}. For Euclidean momentum $p_\mu$, put $p_E^2=\delta^{\mu\nu}p_\mu p_\nu$. The Fourier symbol of $H$ is $p_E^2/2$, and its proper-time inverse, restricted to $0<\varepsilon<L$, is
+\begin{equation*}
+\begin{aligned}
+\int_\varepsilon^L e^{-tH}\,dt
+&=H^{-1}(e^{-\varepsilon H}-e^{-LH}),\\
+\int_\varepsilon^L e^{-tp_E^2/2}\,dt
+&=\frac{2}{p_E^2}
+\bigl(e^{-\varepsilon p_E^2/2}-e^{-Lp_E^2/2}\bigr)
+\quad(p_E^2>0).
+\end{aligned}
+\end{equation*}
+The value at $p=0$ is $L-\varepsilon$. Thus the lower cutoff removes arbitrarily short proper times and suppresses large momentum, while the upper cutoff controls small momentum. These are the ultraviolet and infrared cutoffs of the Schwinger representation, with the factor $2$ fixed by \eqref{eq-dbar-star}.
+
+\paragraph{Heat kernel and propagator.}
+
+Smoothing the inverse pairing by the heat operator gives
 \begin{equation}\label{eq-propagator}
 K_t=(e^{-tH}\otimes1)\omega_E^{-1}.
 \end{equation}
+Its scalar density with respect to $d^4x_E$ is the Fourier Gaussian
+\begin{equation*}
+\int_{\mathbb R^4}\frac{d^4p}{(2\pi)^4}
+e^{ip_\mu(x_1-x_2)_E^\mu-tp_E^2/2}
+=\frac{e^{-|x_1-x_2|_E^2/(2t)}}{(2\pi t)^2}.
+\end{equation*}
+Using $\Omega\wedge dx^{-\dot+}\wedge dx^{-\dot-}=-8\,d^4x_E$ from \eqref{b-00919}, this becomes
 \begin{equation}\label{eq-C-heat-spatial}
 [K_t(x_1,x_2)]_\Omega
 =-\frac{e^{-|x_1-x_2|_E^2/(2t)}}{32\pi^2t^2}
  d(x_1-x_2)^{-\dot+}\wedge d(x_1-x_2)^{-\dot-},
 \qquad\int_{\mathbb C^2}\Omega\wedge[K_t]_\Omega=1.
 \end{equation}
+It tends to the delta pairing $K_0=\omega_E^{-1}$ as $t\downarrow0$. Applying the gauge-fixing operator to the proper-time inverse gives the propagator \cite{Costello,Wang}:
 \begin{equation}\label{eq-C-heat-homotopy}
 \begin{aligned}
 P_{\varepsilon,L}
-&=\int_\varepsilon^L\bar\partial^*K_t\,dt,\\
+&=\int_\varepsilon^L(\bar\partial^*\otimes1)K_t\,dt
+=\bigl(\bar\partial^*H^{-1}(e^{-\varepsilon H}-e^{-LH})\otimes1\bigr)\omega_E^{-1},\\
 (\bar\partial\otimes1+1\otimes\bar\partial)P_{\varepsilon,L}
-&=-\int_\varepsilon^L\partial_tK_t\,dt
+&=\int_\varepsilon^L(H\otimes1)K_t\,dt
+=-\int_\varepsilon^L\partial_tK_t\,dt
 =K_\varepsilon-K_L.
 \end{aligned}
 \end{equation}
+The inverse in the first line is understood on nonzero modes, with the continuous extension supplied by the integral. The second line uses the graded tensor differential, the invariance of $\omega_E^{-1}$ under $Q_{\mathrm{BV}}$, and $\partial_tK_t=-(H\otimes1)K_t$. It is the regularized Green identity for the first-order kinetic operator $\bar\partial$. The propagator carries one antiholomorphic differential; the heat kernel carries two. On flat $\mathbb C^2$, the limit $\varepsilon\downarrow0$, $L\to\infty$ gives the Bochner--Martinelli inverse of $\bar\partial$, distributionally, as used in Section~\ref{positive-schwinger-times-and-the-operatope}.
 
-Apart from the regularization by $\varepsilon$ and $L$, \eqref{eq-C-heat-homotopy} is the standard Schwinger-parameter form of a propagator, in which $t$ is the proper time of the world-line formalism. For a free scalar field, $Q\phi^\ddagger=\nabla^2\phi$ and the gauge-fixing operator $Q^{\mathrm{GF}}\phi=\phi^\ddagger$ take the place of $\bar\partial$ and $\bar\partial^*$, with $\{Q,Q^{\mathrm{GF}}\}=\nabla^2=-p^2$, and
+\paragraph{Wick expansion and the quantum BV charge.}
+
+Let $\partial_{P_{\varepsilon,L}}$ contract one unordered pair of fields with $P_{\varepsilon,L}$. Its normalization counts each pair once; equivalently it contains a factor $1/2$ if both ordered endpoints are summed. The regulated Gaussian expansion is generated by
 \begin{equation*}
-\langle\phi\,\phi\rangle=\int_0^\infty e^{t\{Q,Q^{\mathrm{GF}}\}}\,dt=\int_0^\infty e^{-tp^2}\,dt=\frac1{p^2}.
+e^{\hbar\partial_{P_{\varepsilon,L}}}
+=1+\hbar\partial_{P_{\varepsilon,L}}
++\frac{\hbar^2}{2!}\partial_{P_{\varepsilon,L}}^2+\cdots .
 \end{equation*}
-In Costello's formalism the limits $\varepsilon$ and $L$ parametrize the renormalization-group flow from the ultraviolet to a physical or infrared scale. In ordinary terms, $\varepsilon$ is an ultraviolet cutoff and $L$ an infrared cutoff. The kernel $K_0$ is the delta function.
+Each contraction contributes $\hbar P_{\varepsilon,L}$, and each interaction vertex comes from $I/\hbar$. In a finite-dimensional Gaussian model on the nonzero modes, Wick's theorem identifies the formal integral above, divided by its free Gaussian integral, with
+\begin{equation*}
+\left.
+e^{\hbar\partial_{P_{0,\infty}}}
+\bigl(\mathcal O\,e^{I/\hbar}\bigr)
+\right|_{e=0},
+\qquad
+P_{0,\infty}=\bigl(Q^{\mathrm{GF}}H^{-1}\otimes1\bigr)\omega_E^{-1}.
+\end{equation*}
+This Gaussian identity follows from \cite[Sections 6.3--6.6]{CostelloBV}. Keeping the fields unevaluated retains the external legs. In field theory Costello uses the smooth $P_{\varepsilon,L}$ and takes $\varepsilon\downarrow0$ at fixed $L$ after subtracting local counterterms when required. The logarithm of the Wick expansion selects connected graphs and defines the effective interaction $I[L]$; \eqref{eq-C-local-to-effective} gives the corresponding interaction and operator insertion for the present holomorphic theory.
+
+At scale $L$ the BV Laplacian is $\Delta_L=\partial_{K_L}$, and $(\ ,\ )_L$ is the antibracket with the inverse pairing replaced by $K_L$. The propagator identity gives
+\begin{equation*}
+\begin{aligned}
+[Q_{\mathrm{BV}},\partial_{P_{\varepsilon,L}}]
+&=\Delta_\varepsilon-\Delta_L,\\
+(Q_{\mathrm{BV}}+\hbar\Delta_L)e^{\hbar\partial_{P_{\varepsilon,L}}}
+&=e^{\hbar\partial_{P_{\varepsilon,L}}}
+(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon).
+\end{aligned}
+\end{equation*}
+The exponential identity follows because the constant contraction operators commute. It transports the free quantum BV differential between scales. The effective quantum master equation is
+\begin{equation*}
+\begin{aligned}
+0&=(Q_{\mathrm{BV}}+\hbar\Delta_L)e^{I[L]/\hbar}\\
+&=\frac1\hbar\left(
+Q_{\mathrm{BV}}I[L]+\frac12(I[L],I[L])_L
++\hbar\Delta_L I[L]\right)e^{I[L]/\hbar}.
+\end{aligned}
+\end{equation*}
+When this equation holds, conjugation by $e^{I[L]/\hbar}$ gives the interacting quantum BV charge on effective observables,
+\begin{equation*}
+\begin{aligned}
+\mathbf Q_L\mathcal O
+&=e^{-I[L]/\hbar}(Q_{\mathrm{BV}}+\hbar\Delta_L)
+\bigl(\mathcal O e^{I[L]/\hbar}\bigr)\\
+&=Q_{\mathrm{BV}}\mathcal O+(I[L],\mathcal O)_L
++\hbar\Delta_L\mathcal O,
+\qquad \mathbf Q_L^2=0.
+\end{aligned}
+\end{equation*}
+Thus the second-order BV term records quantum contractions, while $Q^{\mathrm{GF}}$ selects the propagator. An uncancelled local obstruction to the master equation is an anomaly; its cancellation in the gauge theories under consideration is addressed in Theorem~\ref{b-00465}.
+
 
 \paragraph{Higher brackets.}
 
-The higher brackets are the basic objects in the computation of the anomalous supersymmetry transformation and of the quantum product.
+The BV variation of a propagator replaces it by $K_\varepsilon-K_L$ in \eqref{eq-C-heat-homotopy}. Its ultraviolet boundary therefore produces a graph with one heat kernel and propagators on the remaining edges. After integrating the vertices that collide and projecting to holomorphic local operators, these graphs define the higher brackets \cite{semichiral,Wang,operatope,higher,BK}. They compute the anomalous supersymmetry transformations and enter the quantum product. Section~\ref{sec-brackets-origin} derives their insertion Ward identity.
 
+\Needspace{8\baselineskip}
 \rthm{Definition}{b-00151}{Brackets and the full quantum differential} ~ Let $\mathcal O_1,\ldots,\mathcal O_k$ be (composite or fundamental) operators with fermion numbers $|\mathcal O_i|$, with $\mathcal O_k$ at the origin.~ The higher bracket is
 \begin{equation}\label{eq-A-28}
 \begin{aligned}
@@ -1800,7 +1910,7 @@ W_{(v,w)}[F;(\partial_{+\dot a}\mathsf b_A)(x_v),
 
 The projection to $H(\bar\partial)$ is given in \eqref{eq-B-20}. For labelled vertices and a fixed edge order, every graph is included once. The derivatives supply the multiplicities of identical letters; the factor $1/(n+1)!$ in \eqref{eq-2-3} accounts for the identical interaction insertions.
 
-In each term of the sum over $j$ in \eqref{eq-A-28}, exactly one edge, $e_j$, carries the heat kernel $K_\varepsilon$ in place of the propagator. We call it the \emph{heat edge}, or the cut edge: by \eqref{eq-C-heat-homotopy} it is the integrand of the propagator at the ultraviolet end $t_{e_j}=\varepsilon$ of its Schwinger-time integral, and the sign $(-1)^{j-1}$ comes from applying $\bar\partial$ to the ordered propagators. Figure \ref{b-00153} shows the three terms of one graph. Section \ref{sec-brackets-origin} explains where the heat edge comes from.
+In each term of the sum over $j$ in \eqref{eq-A-28}, exactly one edge, $e_j$, carries the heat kernel $K_\varepsilon$ in place of the propagator. We call it the \emph{heat edge}, or the cut edge: by \eqref{eq-C-heat-homotopy} it is the ultraviolet boundary term obtained by applying $Q_{\mathrm{BV}}$ to the propagator and integrating $-\partial_{t_{e_j}}K_{t_{e_j}}$. The sign $(-1)^{j-1}$ comes from applying $\bar\partial$ to the ordered propagators. Figure \ref{b-00153} shows the three terms of one graph. Section \ref{sec-brackets-origin} explains where the heat edge comes from.
 
 \begin{figure}[H]
 \centering
@@ -1869,7 +1979,7 @@ In the BV formalism the expectation value is, formally, an integral over a Lagra
 +\frac1\hbar\Bigl(\frac12(S,S)+\hbar\Delta S\Bigr)\mathcal O\Bigr]e^{S/\hbar}.
 \end{gathered}
 \end{equation}
-The first term on the right is the BV variation of the operator, and the second is the quantum master equation $\frac12(S,S)+\hbar\Delta S=0$, which makes the integral independent of the choice of $\mathcal L$. For local $S$ and $\mathcal O$ this is only formal, because $\Delta$ contracts two fields at the same point with the delta function $K_0$ of \eqref{eq-pairing-Delta}. The regularized statement replaces $\Delta$ by $\Delta_\varepsilon=\partial_{K_\varepsilon}$, the contraction with the heat kernel, and acts on the whole integrand $\mathcal O\,e^{S/\hbar}$. With $S=S_{\mathrm{free}}+I$ and $Q_{\mathrm{BV}}=(S_{\mathrm{free}},\,\cdot\,)$, the relation $\bar\partial P_\varepsilon=K_\varepsilon$ says that $[Q_{\mathrm{BV}},\partial_{P_\varepsilon}]=\Delta_\varepsilon$, so
+The terms $(S,\mathcal O)+\hbar\Delta\mathcal O$ give the quantum BV variation of the insertion. The remaining coefficient vanishes by the quantum master equation $\frac12(S,S)+\hbar\Delta S=0$, which ensures invariance under admissible deformations of $\mathcal L$. For local $S$ and $\mathcal O$ this is only formal, because $\Delta$ contracts two fields at the same point with the delta function $K_0$ of \eqref{eq-pairing-Delta}. The regularized statement replaces $\Delta$ by $\Delta_\varepsilon=\partial_{K_\varepsilon}$, the contraction with the heat kernel, and acts on the whole integrand $\mathcal O\,e^{S/\hbar}$. With $S=S_{\mathrm{free}}+I$ and $Q_{\mathrm{BV}}=(S_{\mathrm{free}},\,\cdot\,)$, the relation $\bar\partial P_\varepsilon=K_\varepsilon$ says that $[Q_{\mathrm{BV}},\partial_{P_\varepsilon}]=\Delta_\varepsilon$, so
 \begin{equation}\label{eq-C-scale-intertwine}
 Q_{\mathrm{BV}}\,e^{\hbar\partial_{P_\varepsilon}}
 =e^{\hbar\partial_{P_\varepsilon}}\,\bigl(Q_{\mathrm{BV}}+\hbar\Delta_\varepsilon\bigr):
@@ -6528,7 +6638,7 @@ and $D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $\mathr
 \end{equation*}
 the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $J_L$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve $E+J_L$, with $E$ the scaling dimension and dimensionful couplings counted with their dimensions. Every field, antifield and derivative has $E+J_L>0$, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $\mathrm{gh}=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $\mathrm{gh}$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
 
-Proposition~\ref{prop-twist-cohomology} is the classical statement. The same comparison holds in perturbation theory, where the question is whether the cohomology of the total quantum differential agrees with the cohomology of the quantum supercharge on the quantum physical operators. Give the supercharge a constant ghost $\epsilon$ with $(J_L,\mathrm{gh})=(\tfrac12,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_{\mathrm{phys,BRST}}+\epsilon S_Q$ has $(J_L,\mathrm{gh})=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves $\mathrm{gh}$ and $J_L$ gives, at $\epsilon=1$, a differential on local operators of the form
+Proposition~\ref{prop-twist-cohomology} is the classical statement. Within a perturbative quantization of the physical theory that preserves the symmetries below, one can compare the total quantum differential with the quantum supercharge on physical operators. Give the supercharge a constant ghost $\epsilon$ with $(J_L,\mathrm{gh})=(\tfrac12,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_{\mathrm{phys,BRST}}+\epsilon S_Q$ has $(J_L,\mathrm{gh})=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves $\mathrm{gh}$ and $J_L$ gives, at $\epsilon=1$, a differential on local operators of the form
 \begin{equation*}
 \begin{gathered}
 \mathbf D=\sum_{k\ge0}D_k,\qquad
@@ -6565,7 +6675,7 @@ gives $H^{\mathrm{gh}}(D_0)=\hbar H^{\mathrm{gh}}(D_0)$ for $\mathrm{gh}\ne0$, h
 \end{equation*}
 A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(J_L,\mathrm{gh})=(-\tfrac A2,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
 
-The terms $D_k$ with $k\ge2$ and the loop corrections in $D_0$ therefore do not affect the answer: the cohomology of the total differential, which the twisted theory computes, is the cohomology of the quantum supercharge on the quantum physical operators. Proposition~\ref{prop-twist-cohomology-quantum} applies to every quantization of the form above. The differential $\mathbf Q$ of \eqref{eq-1-1} is obtained from the heat-kernel quantization of $S_{\mathrm{tw}}$; its identification with such a $\mathbf D$ rests on the independence of the BV quantization of the gauge fixing and of the regularization, up to a redefinition of the couplings \cite{Costello}, which we assume, as in \cite{semichiral,BK}.
+Under the hypotheses of Proposition~\ref{prop-twist-cohomology-quantum}, the total differential $\mathbf D$ and the quantum supercharge on physical operators have the same cohomology. This compares two complexes within the chosen quantization of the physical theory. The differential $\mathbf Q$ of \eqref{eq-1-1}, however, is obtained by quantizing the classical twisted action $S_{\mathrm{tw}}$ directly. Identifying its complex with $(V[[\hbar]],\mathbf D)$ requires a quantum comparison compatible with local operator renormalization. Independence of gauge fixing and regularization within a fixed BV quantization \cite{Costello} does not by itself construct this comparison. We assume this identification when interpreting the results as physical quantum BPS cohomology, as stated in Section~\ref{sec-brackets}.
 
 \section{The spanning-tree solution of the circuit}\label{sec-B-spanning}
 
@@ -6772,6 +6882,8 @@ D.~Bundzik and T.~M{\aa}nsson, ``The General Leigh--Strassler Deformation and In
 The FLINT team, \emph{FLINT: Fast Library for Number Theory}, \url{https://flintlib.org}, used through \url{https://github.com/flintlib/python-flint}.
 \bibitem{WW}
 M.~Wang and B.~R.~Williams, ``On the Renormalization and Quantization of Topological--Holomorphic Field Theories,'' \emph{Adv. Math.} \textbf{496} (2026), 110970, \href{https://arxiv.org/abs/2407.08667}{arXiv:2407.08667}.
+\bibitem{CostelloBV}
+K.~Costello, ``Renormalisation and the Batalin--Vilkovisky Formalism,'' \href{https://arxiv.org/abs/0706.1533}{arXiv:0706.1533}.
 \end{thebibliography}
 
 \end{document}
