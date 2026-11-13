@@ -1,4 +1,4 @@
-Latest manuscript: 2026-11-13 19:28:58 (Beijing time) — version `20261113-192858`
+Latest manuscript: 2026-11-13 20:40:58 (Beijing time) — version `20261113-204058`
 
 # Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring
 
@@ -18,7 +18,7 @@ We compute, at arbitrary loop order, the kernels of the holomorphic Feynman grap
 
 | File | Description |
 |---|---|
-| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | The manuscript (version 20261113-192858; 132 pages) |
+| [`Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf`](Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf) | The manuscript (version 20261113-204058; 132 pages) |
 | [`main.tex`](main.tex), `figures/vec/` | LaTeX source of the manuscript and its vector figures |
 | [`SQED_two_loop_repro.zip`](SQED_two_loop_repro.zip) | Standalone reproduction package for the two-loop lift in massive SQED (Section 2.3; Python 3, standard library only) |
 | [`product_kernels/`](product_kernels/) | Kernels of the quantum product through seven loops (Sections 6 and 7): tree charts, moment tables and a reader (Python 3, standard library only) |

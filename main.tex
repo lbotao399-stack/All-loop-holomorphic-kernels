@@ -97,7 +97,7 @@
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu and Chi-Ming Chang\\[6pt]
 {\normalsize $^{1}$Peking University}}
-\date{\small Version 20261113-192858 (Beijing time)}
+\date{\small Version 20261113-204058 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -126,7 +126,7 @@ W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^
 \end{equation*}
 two-, three- and four-loop lifts in abelian theories of SQED type, and two- and three-loop lifts in $\mathcal N=2$ $SU(2)$ and $SU(3)$ gauge theories and their singlet deformations.
 
-Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $E+J_L=14$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
+Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $2(E+J_L)=28$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
 
 \section{Summary of results}\label{sec-summary}
 
@@ -355,7 +355,7 @@ The right-hand side is the dimension of the classical cohomology modulo the span
 
 We enumerate the classical cohomology $E_1=H(Q_0)$ sector by sector, isolate its fortuitous classes, and test their lifting with the explicit loop corrections $Q_1,\ldots,Q_4$ of \eqref{eq-2-3}, in $\mathcal N=4$ Yang--Mills theory with gauge groups $SU(N)$, $SO(2N+1)$, $Sp(N)$ and $G_2$, in its Leigh--Strassler and $\beta$-deformations, and in the $\mathcal N=2$ and $\mathcal N=1$ theories listed below. Table~\ref{tab-census-overview} states the results; the subsubsections that follow list the classes and their successive obstruction maps theory by theory. The algorithm, the computations and the certificates are described in the supplementary material \cite{Repo}, which also contains the results report cited below.
 
-\paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters, as in \eqref{eq-E-sector}. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are given by \eqref{eq-E-charges}; we quote them as $(E;R_1,R_2,R_3;J_L,J_R)$. Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $E+J_L$, which we call the level; a census is complete through a level when every sector up to that level has been computed.
+\paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters, as in \eqref{eq-E-sector}. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are given by \eqref{eq-E-charges}; we quote them as $(E;R_1,R_2,R_3;J_L,J_R)$. Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $2(E+J_L)$, which we call the level; a census is complete through a level when every sector up to that level has been computed.
 
 \paragraph{Fortuitous and monotone classes.} Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons of Section~\ref{sec-graviton-closure} are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group. The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $\HQ-\HQC$, with $\HQ=\dim E_1$ and $\HQC$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
 
@@ -365,42 +365,42 @@ We enumerate the classical cohomology $E_1=H(Q_0)$ sector by sector, isolate its
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.75cm}|}
-\caption{Results of the census. Second column: the census is complete for $E+J_L$ up to the value given. Third column: first fortuitous class, with its sector and its charges $(E;R_1,R_2,R_3;J_L,J_R)$. Last column: field over which the ranks are established.}\label{tab-census-overview}\\
+\caption{Results of the census. Second column: the census is complete for $2(E+J_L)$ up to the value given. Third column: first fortuitous class, with its sector and its charges $(E;R_1,R_2,R_3;J_L,J_R)$. Last column: field over which the ranks are established.}\label{tab-census-overview}\\
 \hline
 Theory & Complete through & First fortuitous class & Lifts found & Field\\
 \hline\endfirsthead
 \hline
 Theory & Complete through & First fortuitous class & Lifts found & Field\\
 \hline\endhead
-$\mathcal N=4$, $SU(2)$ & $\tfrac{33}2$ & $\mathcal O_0$: $(4,4,4;0,0)_7$, $(\tfrac{19}2;\tfrac32,\tfrac32,\tfrac32;\tfrac52,0)$ \cite{KKLP,ChangLinWords}; further generators $\mathcal O_1$, P39, X40 & $d_1\ne0$ on $\mathcal O_1$ \cite{KKLP}; $\mathcal O_0$, P39, X40 survive at every order & $\mathcal O_0$: $\mathbb Q$; others: $p,p^{\prime}$\\
+$\mathcal N=4$, $SU(2)$ & $33$ & $\mathcal O_0$: $(4,4,4;0,0)_7$, $(\tfrac{19}2;\tfrac32,\tfrac32,\tfrac32;\tfrac52,0)$ \cite{KKLP,ChangLinWords}; further generators $\mathcal O_1$, P39, X40 & $d_1\ne0$ on $\mathcal O_1$ \cite{KKLP}; $\mathcal O_0$, P39, X40 survive at every order & $\mathcal O_0$: $\mathbb Q$; others: $p,p^{\prime}$\\
 \hline
-$\mathcal N=4$, $SU(3)$ & $15$ & $X_7$: $(2,2,2;2,2)_7$, $(\tfrac{21}2;\tfrac52,\tfrac52,\tfrac52;\tfrac32,0)$; towers $F_1$, $B_1$ \cite{KLLS,BraneFused}; four further primary sectors & none; $X_7$ and $F_1$ $(n=3)$ survive at every order & $p$\\
+$\mathcal N=4$, $SU(3)$ & $30$ & $X_7$: $(2,2,2;2,2)_7$, $(\tfrac{21}2;\tfrac52,\tfrac52,\tfrac52;\tfrac32,0)$; towers $F_1$, $B_1$ \cite{KLLS,BraneFused}; four further primary sectors & none; $X_7$ and $F_1$ $(n=3)$ survive at every order & $p$\\
 \hline
-$\mathcal N=4$, $SU(4)$ & $14$ & $(4,2,2;2,2)_9$, $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$; the only one in the census & none; the class survives at every order & $f=1$: $\mathbb Q$; lifting: $p$\\
+$\mathcal N=4$, $SU(4)$ & $28$ & $(4,2,2;2,2)_9$, $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$; the only one in the census & none; the class survives at every order & $f=1$: $\mathbb Q$; lifting: $p$\\
 \hline
-$\mathcal N=4$, $SU(5)$--$SU(15)$ & $14$ to $18$ (Section~\ref{sec-results-SU}) & none & -- & $p$\\
+$\mathcal N=4$, $SU(5)$--$SU(15)$ & $28$ to $36$ (Section~\ref{sec-results-SU}) & none & -- & $p$\\
 \hline
-$\mathcal N=4$, $SO(5)=Sp(2)$ & $\tfrac{23}2$ & $(3,2,2;1,1)_7$, $(9;3,2,2;1,0)$ & none; the class survives at every order & $p$\\
+$\mathcal N=4$, $SO(5)=Sp(2)$ & $23$ & $(3,2,2;1,1)_7$, $(9;3,2,2;1,0)$ & none; the class survives at every order & $p$\\
 \hline
-$\mathcal N=4$, $SO(7)$ & $\tfrac{23}2$ & $O_f$: $(3,3,3;0,0)_8$, $(\tfrac{17}2;\tfrac52,\tfrac52,\tfrac52;\tfrac12,0)$ \cite{GLRT} & $d_1\ne0$ in $16$ sectors through $E+J_L=11$, first on $O_f$ \cite{KonishiBH}; no $d_2$ candidate; $d_3$ rank $0$ & $p$; one $d_1$: $\mathbb Q$\\
+$\mathcal N=4$, $SO(7)$ & $23$ & $O_f$: $(3,3,3;0,0)_8$, $(\tfrac{17}2;\tfrac52,\tfrac52,\tfrac52;\tfrac12,0)$ \cite{GLRT} & $d_1\ne0$ in $16$ sectors through $2(E+J_L)=22$, first on $O_f$ \cite{KonishiBH}; no $d_2$ candidate; $d_3$ rank $0$ & $p$; one $d_1$: $\mathbb Q$\\
 \hline
-$\mathcal N=4$, $Sp(3)$ & $12$ & $(5,2,2;1,1)_9$, $(11;5,2,2;1,0)$ & none; the class survives at every order & $p$\\
+$\mathcal N=4$, $Sp(3)$ & $24$ & $(5,2,2;1,1)_9$, $(11;5,2,2;1,0)$ & none; the class survives at every order & $p$\\
 \hline
-$\mathcal N=4$, $SO(9)$ & $\tfrac{23}2$ & $(5,3,3;0,0)_{10}$, $(\tfrac{21}2;\tfrac92,\tfrac52,\tfrac52;\tfrac12,0)$ & $\operatorname{rank}d_1=1$ on the class & $p$\\
+$\mathcal N=4$, $SO(9)$ & $23$ & $(5,3,3;0,0)_{10}$, $(\tfrac{21}2;\tfrac92,\tfrac52,\tfrac52;\tfrac12,0)$ & $\operatorname{rank}d_1=1$ on the class & $p$\\
 \hline
-$\mathcal N=4$, $Sp(4)$, $Sp(5)$ & $12$ & none & none & $p$\\
+$\mathcal N=4$, $Sp(4)$, $Sp(5)$ & $24$ & none & none & $p$\\
 \hline
-$\mathcal N=4$, $SO(11)$ & $12$; partial at $13$ & $(7,3,3;0,0)_{12}$, $(\tfrac{25}2;\tfrac{13}2,\tfrac52,\tfrac52;\tfrac12,0)$ & $\operatorname{rank}d_1=1$ on the class & $p$\\
+$\mathcal N=4$, $SO(11)$ & $24$; partial at $26$ & $(7,3,3;0,0)_{12}$, $(\tfrac{25}2;\tfrac{13}2,\tfrac52,\tfrac52;\tfrac12,0)$ & $\operatorname{rank}d_1=1$ on the class & $p$\\
 \hline
-$\mathcal N=4$, $G_2$ & $\tfrac{23}2$ & monotone class \eqref{local-ch9-g2-gram-class} in the kernel of Cartan restriction: $(2,2,2;0,0)_6$, $(6;2,2,2;0,0)$ & none: $d_1=0$ in every sector, no $d_2$ candidate, $d_3$ rank $0$ & class: $\mathbb Q$; lifting: $p$\\
+$\mathcal N=4$, $G_2$ & $23$ & monotone class \eqref{local-ch9-g2-gram-class} in the kernel of Cartan restriction: $(2,2,2;0,0)_6$, $(6;2,2,2;0,0)$ & none: $d_1=0$ in every sector, no $d_2$ candidate, $d_3$ rank $0$ & class: $\mathbb Q$; lifting: $p$\\
 \hline
-$SU(3)$ Leigh--Strassler & $11$ & $P_{14}$: $(\Theta,c;n_+,n_-)_Y=(7,0;0,0)_5$, $E=6$, $J_L=1$, $J_R=0$; five fortuitous classes & $d_1\ne0$ in $53$ pairs of sectors; $d_2\ne0$ in $12$ pairs, first on $P_{14}$; no $d_3$ candidate & first three $d_2$: $\mathbb Q$; others: $p$\\
+$SU(3)$ Leigh--Strassler & $22$ & $P_{14}$: $(\Theta,c;n_+,n_-)_Y=(7,0;0,0)_5$, $E=6$, $J_L=1$, $J_R=0$; five fortuitous classes & $d_1\ne0$ in $53$ pairs of sectors; $d_2\ne0$ in $12$ pairs, first on $P_{14}$; no $d_3$ candidate & first three $d_2$: $\mathbb Q$; others: $p$\\
 \hline
-$SU(3)$ $\beta$-deformation & $\tfrac{21}2$ & source of the lift: $(5,2,2;1,0)_8$, $(\tfrac{19}2;\tfrac92,\tfrac32,\tfrac32;1,\tfrac12)$ & $\operatorname{rank}d_2=1$ on this source; every other $d_2$, $d_3$ candidate has rank $0$ & $p,p^{\prime}$\\
+$SU(3)$ $\beta$-deformation & $21$ & source of the lift: $(5,2,2;1,0)_8$, $(\tfrac{19}2;\tfrac92,\tfrac32,\tfrac32;1,\tfrac12)$ & $\operatorname{rank}d_2=1$ on this source; every other $d_2$, $d_3$ candidate has rank $0$ & $p,p^{\prime}$\\
 \hline
-$\mathcal N=2$ quiver, $SU(2)^2$, $SU(3)^2$ & $\tfrac{21}2$, $9$ & -- & $d_1\ne0$; every $d_2$ and $d_3$ candidate has rank $0$ & $p$\\
+$\mathcal N=2$ quiver, $SU(2)^2$, $SU(3)^2$ & $21$, $18$ & -- & $d_1\ne0$; every $d_2$ and $d_3$ candidate has rank $0$ & $p$\\
 \hline
-$\mathcal N=2$ SQCD, $SU(2)$, $SU(3)$ & $12$, $9$ & -- & $SU(2)$: none; $SU(3)$: $d_1\ne0$ in $8$ sectors; every $d_2$ candidate has rank $0$ & $p$\\
+$\mathcal N=2$ SQCD, $SU(2)$, $SU(3)$ & $24$, $18$ & -- & $SU(2)$: none; $SU(3)$: $d_1\ne0$ in $8$ sectors; every $d_2$ candidate has rank $0$ & $p$\\
 \hline
 Adjoint-mass deformations & weight $13$ to $16$ (Section~\ref{sec-results-masses}) & classes $\mathcal O_7$, $\mathcal O_{16}$ of \cite{CK}; both survive at every order & $d_1\ne0$ in four sectors; every $d_2$, $d_3$ candidate has rank $0$ & $p$\\
 \hline
@@ -414,9 +414,9 @@ In summary:
 
 (i) \emph{New fortuitous classes.} For $SU(2)$, beyond the threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} and the class $\mathcal O_1$ \cite{microstates}, we find the classes P39 and X40. For $SU(3)$, beyond the towers $F_1$ and $B_1$ of \cite{KLLS,BraneFused}, we find the charge-conjugation-odd class $X_7$ and four primary sectors with ten and eleven letters. X40 and $X_7$ are visible to Cartan restriction, $\HQ=\HQC$, although they are not multi-gravitons. For $SU(4)$ we find the first fortuitous class.\footnote{Earlier $SU(4)$ searches \cite{CCKLL,KLLS,FortuityAI} cover the BMN sector, whose operators carry no derivatives or gaugini; the class found here has $n_+=n_-=2$. A fortuitous $SU(4)$ class built from two $SU(2)$ cores at much higher charges is constructed in \cite{MultiCore}.} For $SO(2N+1)$ and $Sp(N)$, the $SO(7)$ class is that of \cite{GLRT}, and the first fortuitous classes of $SO(5)=Sp(2)$, $Sp(3)$, $SO(9)$ and $SO(11)$ are new. For $G_2$, the class \eqref{local-ch9-g2-gram-class} is a monotone class that is invisible to Cartan restriction.
 
-(ii) \emph{No lift beyond one loop in $\mathcal N=2$ superconformal theories.} Across all the $\mathcal N=2$ superconformal theories tested, $\mathcal N=4$ Yang--Mills theory included, with every gauge group and in every sector, we find no lift beyond one loop: $d_r=0$ for $r\ge2$. In $\mathcal N=4$ Yang--Mills theory the differential $d_1$ is nonzero in nineteen sectors: one for $SU(2)$, sixteen for $SO(7)$ through $E+J_L=11$, and one each for $SO(9)$ and $SO(11)$. The one-loop lifts of $\mathcal O_1$ and of the $SO(7)$ class $O_f$ are those of \cite{KKLP} and \cite{KonishiBH}; the one-loop lifts in $SO(9)$ and $SO(11)$ and all the higher-loop lifts below are new. Every tested $d_r$ with $r\ge2$ vanishes. After the one-loop lifts, the $SO(7)$ and $Sp(3)$ spectra, and the $SO(9)$ and $Sp(4)$ spectra, agree charge by charge through $E+J_L=11$, as S-duality requires.
+(ii) \emph{No lift beyond one loop in $\mathcal N=2$ superconformal theories.} Across all the $\mathcal N=2$ superconformal theories tested, $\mathcal N=4$ Yang--Mills theory included, with every gauge group and in every sector, we find no lift beyond one loop: $d_r=0$ for $r\ge2$. In $\mathcal N=4$ Yang--Mills theory the differential $d_1$ is nonzero in nineteen sectors: one for $SU(2)$, sixteen for $SO(7)$ through $2(E+J_L)=22$, and one each for $SO(9)$ and $SO(11)$. The one-loop lifts of $\mathcal O_1$ and of the $SO(7)$ class $O_f$ are those of \cite{KKLP} and \cite{KonishiBH}; the one-loop lifts in $SO(9)$ and $SO(11)$ and all the higher-loop lifts below are new. Every tested $d_r$ with $r\ge2$ vanishes. After the one-loop lifts, the $SO(7)$ and $Sp(3)$ spectra, and the $SO(9)$ and $Sp(4)$ spectra, agree charge by charge through $2(E+J_L)=22$, as S-duality requires.
 
-(iii) \emph{With $\mathcal N=1$ superconformal symmetry the higher differentials are nonzero: the deformations of $\mathcal N=4$ Yang--Mills theory have two-loop lifts.} There $d_2$ lifts classical $Q_0$-cohomology classes that survive one loop. In the $SU(3)$ Leigh--Strassler theory, $d_2\ne0$ in twelve pairs of sectors through $E+J_L=11$; the three lowest are certified over $\mathbb Q$, and every class of the lowest source sector is fortuitous. On the $\beta$-deformation line there is one two-loop lift through $E+J_L=\tfrac{21}2$.
+(iii) \emph{With $\mathcal N=1$ superconformal symmetry the higher differentials are nonzero: the deformations of $\mathcal N=4$ Yang--Mills theory have two-loop lifts.} There $d_2$ lifts classical $Q_0$-cohomology classes that survive one loop. In the $SU(3)$ Leigh--Strassler theory, $d_2\ne0$ in twelve pairs of sectors through $2(E+J_L)=22$; the three lowest are certified over $\mathbb Q$, and every class of the lowest source sector is fortuitous. On the $\beta$-deformation line there is one two-loop lift through $2(E+J_L)=21$.
 
 (iv) \emph{The $\mathcal N=2$ superconformal quiver and SQCD, and their mass deformations, have no lift beyond one loop in the ranges scanned.}
 
@@ -453,7 +453,7 @@ The census is complete, in all sectors, through the following levels:
 \hline
 $SU(N)$, $N=$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$--$15$\\
 \hline
-$E+J_L\le$ & $\tfrac{33}2$ & $15$ & $14$ & $14$ & $15$ & $15$ & $\tfrac{31}2$ & $\tfrac{33}2$ & $17$ & $18$\\
+$2(E+J_L)\le$ & $33$ & $30$ & $28$ & $28$ & $30$ & $30$ & $31$ & $33$ & $34$ & $36$\\
 \hline
 \end{tabular}}
 \end{center}
@@ -496,7 +496,7 @@ $SU(3)$ & $X_7$: $(2,2,2;2,2)_7$\newline $(\tfrac{21}2;\tfrac52,\tfrac52,\tfrac5
 \cline{2-4}
  & $B_1$, $n=3$: $(8,5,4;0,0)_{11}$\newline $(14;5,2,1;3,0)$ & Known tower \cite{KLLS,BraneFused} & --\\
 \hline
-$SU(4)$ & $(4,2,2;2,2)_9$\newline $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$ & $f=1$ $[\mathbb Q]$; charge-conjugation odd; the only fortuitous class through $E+J_L=14$ & $R_1,R_2\in\operatorname{im}Q_0$; the higher target sectors are empty; $d_1$ from the $453$ classes of $(5,3,3;1,1)_9$ has rank $0$, and the source sector of $d_2$ has $\HQ=0$. Survives at every order $[p]$\\
+$SU(4)$ & $(4,2,2;2,2)_9$\newline $(\tfrac{25}2;\tfrac92,\tfrac52,\tfrac52;\tfrac32,0)$ & $f=1$ $[\mathbb Q]$; charge-conjugation odd; the only fortuitous class through $2(E+J_L)=28$ & $R_1,R_2\in\operatorname{im}Q_0$; the higher target sectors are empty; $d_1$ from the $453$ classes of $(5,3,3;1,1)_9$ has rank $0$, and the source sector of $d_2$ has $\HQ=0$. Survives at every order $[p]$\\
 \hline
 \end{xltabular}}
 
@@ -506,36 +506,36 @@ The partial scans at higher levels and the null results at higher rank are tabul
 
 Explicit representatives of the threshold class and of its graviton hair, and the multi-graviton checks at low letter number, are in \cite[supplement, Sections S8.2 and S8.3]{Repo}.
 
-Table~\ref{tab-su-frontier} gives the range of the census for each $SU(N)$. For $E+J_L\le N+\tfrac12$ no trace relation enters: the complex coincides with its large-$N$ limit, so every class is monotone and no computation is needed \cite{ChangYin,ChangLinWords}. The census is complete, in every sector, through the level of the third column. The last two columns give the level of the first fortuitous class in the census and the level at which earlier constructions provide one.
+Table~\ref{tab-su-frontier} gives the range of the census for each $SU(N)$. For $2(E+J_L)\le 2N+1$ no trace relation enters: the complex coincides with its large-$N$ limit, so every class is monotone and no computation is needed \cite{ChangYin,ChangLinWords}. The census is complete, in every sector, through the level of the third column. The last two columns give the level of the first fortuitous class in the census and the level at which earlier constructions provide one.
 
 {\small\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{5pt}
 \begin{xltabular}{\linewidth}{|l|c|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
-\caption{Range of the $SU(N)$ census, by the level $E+J_L$. Below the second column every class is monotone; through the third column all sectors are computed.}\label{tab-su-frontier}\\
+\caption{Range of the $SU(N)$ census, by the level $2(E+J_L)$. Below the second column every class is monotone; through the third column all sectors are computed.}\label{tab-su-frontier}\\
 \hline
-$G$ & monotone for $E+J_L\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
+$G$ & monotone for $2(E+J_L)\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
 \hline\endfirsthead
 \hline
-$G$ & monotone for $E+J_L\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
+$G$ & monotone for $2(E+J_L)\le$ & complete through & first fortuitous class in the census & fortuitous class from earlier constructions\\
 \hline\endhead
-$SU(2)$ & $\tfrac52$ & $\tfrac{33}2$ & $12$: $\mathcal O_0$ & $12$ \cite{ChangLinWords,microstates}\\
+$SU(2)$ & $5$ & $33$ & $24$: $\mathcal O_0$ & $24$ \cite{ChangLinWords,microstates}\\
 \hline
-$SU(3)$ & $\tfrac72$ & $15$ & $12$: $X_7$ & $15$, the tower $F_1$ \cite{CCKLL,KLLS,BraneFused}\\
+$SU(3)$ & $7$ & $30$ & $24$: $X_7$ & $30$, the tower $F_1$ \cite{CCKLL,KLLS,BraneFused}\\
 \hline
-$SU(4)$ & $\tfrac92$ & $14$ & $14$: $(4,2,2;2,2)_9$ & $E+J_L\ge129$ \cite{MultiCore}; existence \cite{EveryN}\\
+$SU(4)$ & $9$ & $28$ & $28$: $(4,2,2;2,2)_9$ & $2(E+J_L)\ge258$ \cite{MultiCore}; existence \cite{EveryN}\\
 \hline
-$SU(5)$ & $\tfrac{11}2$ & $14$ & none & existence \cite{EveryN}\\
+$SU(5)$ & $11$ & $28$ & none & existence \cite{EveryN}\\
 \hline
-$SU(6)$ & $\tfrac{13}2$ & $15$ & none & existence \cite{EveryN}\\
+$SU(6)$ & $13$ & $30$ & none & existence \cite{EveryN}\\
 \hline
-$SU(7)$ & $\tfrac{15}2$ & $15$ & none & existence \cite{EveryN}\\
+$SU(7)$ & $15$ & $30$ & none & existence \cite{EveryN}\\
 \hline
-$SU(8)$ & $\tfrac{17}2$ & $\tfrac{31}2$ & none & existence \cite{EveryN}\\
+$SU(8)$ & $17$ & $31$ & none & existence \cite{EveryN}\\
 \hline
-$SU(9)$ & $\tfrac{19}2$ & $\tfrac{33}2$ & none & existence \cite{EveryN}\\
+$SU(9)$ & $19$ & $33$ & none & existence \cite{EveryN}\\
 \hline
-$SU(10)$ & $\tfrac{21}2$ & $17$ & none & existence \cite{EveryN}\\
+$SU(10)$ & $21$ & $34$ & none & existence \cite{EveryN}\\
 \hline
-$SU(11)$--$SU(15)$ & $N+\tfrac12$ & $18$ & none & existence \cite{EveryN}\\
+$SU(11)$--$SU(15)$ & $2N+1$ & $36$ & none & existence \cite{EveryN}\\
 \hline
 \end{xltabular}}
 
@@ -574,7 +574,7 @@ $SO(11)$ & $(7,3,3;0,0)_{12}$\newline $(\tfrac{25}2;\tfrac{13}2,\tfrac52,\tfrac5
 \hline
 \end{xltabular}}
 
-For $N=3,4,5$, the first fortuitous class of $SO(2N+1)$ has $E=\tfrac{4N+5}2$ and $J_L=\tfrac12$, and it is lifted at one loop by $d_1:(2N-3,3,3;0,0)_{2N+2}\to(2N-4,2,2;1,1)_{2N+2}$. The classical spectra of $SO(7)$ and $Sp(3)$ differ at $2,2,6,7,12$ charges for $E+J_L=9,\tfrac{19}2,10,\tfrac{21}2,11$, and those of $SO(9)$ and $Sp(4)$ at $2$ charges for $E+J_L=11$; $d_1$ is nonzero in $1,1,3,4,7$ sectors of $SO(7)$ and in one sector of $SO(9)$ at these levels, and vanishes for $Sp(3)$ and $Sp(4)$. One of the $SO(7)$ lifts, from $(3,1,1;2,2)_8$, is certified over $\mathbb Q$. Through $E+J_L=11$, the computed $SO(7)/Sp(3)$ and $SO(9)/Sp(4)$ spectra agree charge by charge after the rank-one $d_1$ pairings, with no $d_2$ candidate pair and zero rank on every $d_3$ candidate \cite[supplement, Section S3.3]{Repo}.
+For $N=3,4,5$, the first fortuitous class of $SO(2N+1)$ has $E=\tfrac{4N+5}2$ and $J_L=\tfrac12$, and it is lifted at one loop by $d_1:(2N-3,3,3;0,0)_{2N+2}\to(2N-4,2,2;1,1)_{2N+2}$. The classical spectra of $SO(7)$ and $Sp(3)$ differ at $2,2,6,7,12$ charges for $2(E+J_L)=18,19,20,21,22$, and those of $SO(9)$ and $Sp(4)$ at $2$ charges for $2(E+J_L)=22$; $d_1$ is nonzero in $1,1,3,4,7$ sectors of $SO(7)$ and in one sector of $SO(9)$ at these levels, and vanishes for $Sp(3)$ and $Sp(4)$. One of the $SO(7)$ lifts, from $(3,1,1;2,2)_8$, is certified over $\mathbb Q$. Through $2(E+J_L)=22$, the computed $SO(7)/Sp(3)$ and $SO(9)/Sp(4)$ spectra agree charge by charge after the rank-one $d_1$ pairings, with no $d_2$ candidate pair and zero rank on every $d_3$ candidate \cite[supplement, Section S3.3]{Repo}.
 
 \subsubsection{$\mathcal N=4$ Yang--Mills: $G_2$}\label{sec-results-G2}
 
@@ -607,7 +607,7 @@ Sector & Classical result & Lifting tests completed\\
 \hline\endhead
 $(2,2,2;0,0)_6$ & $\dim C^6=4$, $\operatorname{rank}Q_0=3$, $\HQ=1$, $\HQC=0$ $[\mathbb Q]$ & Survives at every order: closed multi-graviton completion; it is $d_r$-exact for no $r$, since $n_+=n_-=0$\\
 \hline
-All sectors through $E+J_L=\tfrac{23}2$ & At $E+J_L=\tfrac{23}2$: $\sum_{\text{sectors}}\HQ=2075$, $\sum_{\text{sectors}}(\HQ-\HQC)=170$ & $d_1=0$; no $d_2$ pairs; all $d_3$ candidate ranks zero $[p]$\\
+All sectors through $2(E+J_L)=23$ & At $2(E+J_L)=23$: $\sum_{\text{sectors}}\HQ=2075$, $\sum_{\text{sectors}}(\HQ-\HQC)=170$ & $d_1=0$; no $d_2$ pairs; all $d_3$ candidate ranks zero $[p]$\\
 \hline
 \end{xltabular}}
 
@@ -631,7 +631,7 @@ The matter consists of three adjoint chiral multiplets \cite{LeighStrassler}. In
 
 The deformation preserves only the sum of the three flavour weights and a $\mathbb Z_3$ charge. The sectors $(\Theta,c;n_+,n_-)_Y$ use $\Theta=\theta_1+\theta_2+\theta_3$ and $c=\theta_2+2\theta_3\pmod3$; the conserved charges are $E$, $J_L$, $J_R$, $\sum_IR_I$ and $c$, and $d_r$ maps $(\Theta,c;n_+,n_-)_Y$ to $(\Theta-3r,c;n_++r,n_-+r)_{Y+1-r}$.
 
-The census is carried out at $\rho=(1-q)/(1+q)=12345/678$ and $h_e=2h/(1+q)=4321/97$, as a model of generic $q$ and $h$; the checks at independent parameter values and primes are listed in \cite[supplement, Section S6.1]{Repo}. It is complete through $E+J_L=11$, including every candidate pair of sectors for $d_1$, $d_2$ and $d_3$: $d_1\ne0$ in $53$ pairs, $d_2\ne0$ in the $12$ pairs of Table~\ref{local-ch9-ls-lifts}, and there is no candidate pair for $d_3$. A source at $2(E+J_L)=m$ is denoted $P_m$.
+The census is carried out at $\rho=(1-q)/(1+q)=12345/678$ and $h_e=2h/(1+q)=4321/97$, as a model of generic $q$ and $h$; the checks at independent parameter values and primes are listed in \cite[supplement, Section S6.1]{Repo}. It is complete through $2(E+J_L)=22$, including every candidate pair of sectors for $d_1$, $d_2$ and $d_3$: $d_1\ne0$ in $53$ pairs, $d_2\ne0$ in the $12$ pairs of Table~\ref{local-ch9-ls-lifts}, and there is no candidate pair for $d_3$. A source at $2(E+J_L)=m$ is denoted $P_m$.
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}X|l|l|l|l|}
@@ -664,34 +664,34 @@ The stable comparison uses the cohomology of $SU(N)$ with $N\ge Y+1$, where a se
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|l|l|l|l|c|>{\raggedright\arraybackslash}X|l|}
-\caption{Two-loop lifts in the $SU(3)$ Leigh--Strassler theory through $E+J_L=11$. The source charges are $(E,J_L,J_R,\sum_IR_I)$.}\label{local-ch9-ls-lifts}\\
+\caption{Two-loop lifts in the $SU(3)$ Leigh--Strassler theory through $2(E+J_L)=22$. The source charges are $(E,J_L,J_R,\sum_IR_I)$.}\label{local-ch9-ls-lifts}\\
 \hline
-$E+J_L$ & Source & Source charges & Target & $\operatorname{rank}d_2$ & Origin & Field\\
+$2(E+J_L)$ & Source & Source charges & Target & $\operatorname{rank}d_2$ & Origin & Field\\
 \hline\endfirsthead
 \hline
-$E+J_L$ & Source & Source charges & Target & $\operatorname{rank}d_2$ & Origin & Field\\
+$2(E+J_L)$ & Source & Source charges & Target & $\operatorname{rank}d_2$ & Origin & Field\\
 \hline\endhead
-$7$ & $(7,0;0,0)_5$ & $(6,1,0,4)$ & $(1,0;2,2)_4$ & $1$ & $P_{14}$ & $[\mathbb Q]$\\
+$14$ & $(7,0;0,0)_5$ & $(6,1,0,4)$ & $(1,0;2,2)_4$ & $1$ & $P_{14}$ & $[\mathbb Q]$\\
 \hline
-$8$ & $(8,0;0,0)_6$ & $(7,1,0,5)$ & $(2,0;2,2)_5$ & $1$ & $P_{16}$ & $[\mathbb Q]$\\
+$16$ & $(8,0;0,0)_6$ & $(7,1,0,5)$ & $(2,0;2,2)_5$ & $1$ & $P_{16}$ & $[\mathbb Q]$\\
 \hline
-$\tfrac{17}2$ & $(7,0;1,0)_5$ & $(7,\tfrac32,\tfrac12,4)$ & $(1,0;3,2)_4$ & $1$ & $\partial_{+\dot+}P_{14}$ & $[\mathbb Q]$\\
+$17$ & $(7,0;1,0)_5$ & $(7,\tfrac32,\tfrac12,4)$ & $(1,0;3,2)_4$ & $1$ & $\partial_{+\dot+}P_{14}$ & $[\mathbb Q]$\\
 \hline
-$\tfrac{19}2$ & $(8,0;1,0)_6$ & $(8,\tfrac32,\tfrac12,5)$ & $(2,0;3,2)_5$ & $1$ & $\partial_{+\dot+}P_{16}$ & $[p]$\\
+$19$ & $(8,0;1,0)_6$ & $(8,\tfrac32,\tfrac12,5)$ & $(2,0;3,2)_5$ & $1$ & $\partial_{+\dot+}P_{16}$ & $[p]$\\
 \hline
-$\tfrac{19}2$ & $(8,0;1,0)_7$ & $(\tfrac{17}2,1,\tfrac12,\tfrac{13}2)$ & $(2,0;3,2)_6$ & $1$ & $P_{19}$ & $[p]$\\
+$19$ & $(8,0;1,0)_7$ & $(\tfrac{17}2,1,\tfrac12,\tfrac{13}2)$ & $(2,0;3,2)_6$ & $1$ & $P_{19}$ & $[p]$\\
 \hline
-$10$ & $(7,0;2,0)_5$ & $(8,2,1,4)$ & $(1,0;4,2)_4$ & $1$ & $\partial_{+\dot+}^2P_{14}$ & $[p]$\\
+$20$ & $(7,0;2,0)_5$ & $(8,2,1,4)$ & $(1,0;4,2)_4$ & $1$ & $\partial_{+\dot+}^2P_{14}$ & $[p]$\\
 \hline
-$\tfrac{21}2$ & $(9,c;1,0)_7$, $c=0,1$ & $(9,\tfrac32,\tfrac12,6)$ & $(3,c;3,2)_6$ & $6$ each & $P_{21}$ & $[p]$\\
+$21$ & $(9,c;1,0)_7$, $c=0,1$ & $(9,\tfrac32,\tfrac12,6)$ & $(3,c;3,2)_6$ & $6$ each & $P_{21}$ & $[p]$\\
 \hline
-$11$ & $(8,0;1,1)_7$ & $(\tfrac{19}2,\tfrac32,0,\tfrac{13}2)$ & $(2,0;3,3)_6$ & $5$ & & $[p]$\\
+$22$ & $(8,0;1,1)_7$ & $(\tfrac{19}2,\tfrac32,0,\tfrac{13}2)$ & $(2,0;3,3)_6$ & $5$ & & $[p]$\\
 \hline
-$11$ & $(8,0;2,0)_6$ & $(9,2,1,5)$ & $(2,0;4,2)_5$ & $1$ & $\partial_{+\dot+}^2P_{16}$ & $[p]$\\
+$22$ & $(8,0;2,0)_6$ & $(9,2,1,5)$ & $(2,0;4,2)_5$ & $1$ & $\partial_{+\dot+}^2P_{16}$ & $[p]$\\
 \hline
-$11$ & $(8,0;2,0)_7$ & $(\tfrac{19}2,\tfrac32,1,\tfrac{13}2)$ & $(2,0;4,2)_6$ & $5$ & Includes $\partial_{+\dot+}P_{19}$ & $[p]$\\
+$22$ & $(8,0;2,0)_7$ & $(\tfrac{19}2,\tfrac32,1,\tfrac{13}2)$ & $(2,0;4,2)_6$ & $5$ & Includes $\partial_{+\dot+}P_{19}$ & $[p]$\\
 \hline
-$11$ & $(8,0;2,0)_8$ & $(10,1,1,8)$ & $(2,0;4,2)_7$ & $1$ & & $[p]$\\
+$22$ & $(8,0;2,0)_8$ & $(10,1,1,8)$ & $(2,0;4,2)_7$ & $1$ & & $[p]$\\
 \hline
 \end{xltabular}}
 
@@ -724,7 +724,7 @@ The independence of these results from the two-loop scheme, for the lowest lifts
 \qquad h=0.
 \end{equation}
 
-The three flavour weights are separately conserved, and the census \cite[supplement, Section S6.7]{Repo} uses $\rho=(1-q)/(1+q)=12345/678$. It is complete through $E+J_L=\tfrac{21}2$.
+The three flavour weights are separately conserved, and the census \cite[supplement, Section S6.7]{Repo} uses $\rho=(1-q)/(1+q)=12345/678$. It is complete through $2(E+J_L)=21$.
 
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
@@ -735,9 +735,9 @@ Scope & Source & Target & Lifting result\\
 \hline
 Scope & Source & Target & Lifting result\\
 \hline\endhead
-All sectors through $E+J_L=10$ & All $d_2$ candidates & -- & $\operatorname{rank}d_2=0$\\
+All sectors through $2(E+J_L)=20$ & All $d_2$ candidates & -- & $\operatorname{rank}d_2=0$\\
 \hline
-$E+J_L=\tfrac{21}2$ & $(5,2,2;1,0)_8$, $h=1$,\newline $(E;R_I;J_L,J_R)=(\tfrac{19}2;\tfrac92,\tfrac32,\tfrac32;1,\tfrac12)$ & $(3,0,0;3,2)_7$, $\dim E_2=4$ & $\operatorname{rank}d_2=1$ $[p,p^{\prime}]$\\
+$2(E+J_L)=21$ & $(5,2,2;1,0)_8$, $h=1$,\newline $(E;R_I;J_L,J_R)=(\tfrac{19}2;\tfrac92,\tfrac32,\tfrac32;1,\tfrac12)$ & $(3,0,0;3,2)_7$, $\dim E_2=4$ & $\operatorname{rank}d_2=1$ $[p,p^{\prime}]$\\
 \hline
 \end{xltabular}}
 
@@ -777,9 +777,9 @@ Gauge group & Complete census through & $d_1$ & Higher-loop test\\
 \hline
 Gauge group & Complete census through & $d_1$ & Higher-loop test\\
 \hline\endhead
-$SU(2)\times SU(2)$ & $E+J_L=\tfrac{21}2$ & Nonzero in $61$ source blocks & Each of the $37$ $d_2$ candidates has rank $0$ at $\kappa^2=1,9$\\
+$SU(2)\times SU(2)$ & $2(E+J_L)=21$ & Nonzero in $61$ source blocks & Each of the $37$ $d_2$ candidates has rank $0$ at $\kappa^2=1,9$\\
 \hline
-$SU(3)\times SU(3)$ & $E+J_L=9$ & Nonzero in $43$ source blocks & Each of the $26$ $d_2$ candidates has rank $0$; the $d_3$ candidates at levels $9,10$ have rank $0$\\
+$SU(3)\times SU(3)$ & $2(E+J_L)=18$ & Nonzero in $43$ source blocks & Each of the $26$ $d_2$ candidates has rank $0$; the $d_3$ candidates at levels $18,20$ have rank $0$\\
 \hline
 \end{xltabular}}
 
@@ -809,9 +809,9 @@ Gauge group & Complete census through & $d_1$ & Higher-loop test\\
 \hline
 Gauge group & Complete census through & $d_1$ & Higher-loop test\\
 \hline\endhead
-$SU(2)$, $N_f=4$ & $E+J_L=12$ & $d_1=0$ throughout the census & Each of the $42$ $d_2$ candidates has rank $0$\\
+$SU(2)$, $N_f=4$ & $2(E+J_L)=24$ & $d_1=0$ throughout the census & Each of the $42$ $d_2$ candidates has rank $0$\\
 \hline
-$SU(3)$, $N_f=6$ & $E+J_L=9$ & Nonzero in $8$ sectors \cite[supplement, Section S7.1]{Repo} & Each of the $13$ $d_2$ candidates has rank $0$\\
+$SU(3)$, $N_f=6$ & $2(E+J_L)=18$ & Nonzero in $8$ sectors \cite[supplement, Section S7.1]{Repo} & Each of the $13$ $d_2$ candidates has rank $0$\\
 \hline
 \end{xltabular}}
 
@@ -6589,7 +6589,7 @@ We close with three directions.
 
 \emph{The physical theory.} All our results are obtained in the holomorphically twisted theory. It remains to understand the same structures directly in the physical theory: the supersymmetry transformation of composite operators and, more generally, the full BV transformation that includes every symmetry together with its ghosts and auxiliary fields. This requires complete control of the counterterms and of the ultraviolet divergences of composite operators, and would give a complete account of quantum anomalies in this generalized sense and of the exact structure of local operators in supersymmetric gauge theories. It is considerably harder than the twisted computation suggests.
 
-\emph{Lifting beyond one loop.} The most immediate question is whether $\mathcal N=4$ Yang--Mills theory has a two-loop lift at all. In the ranges that we have scanned, the $\mathcal N=4$ theories have a nonzero $d_1$ in nineteen sectors, one for $SU(2)$ \cite{KKLP}, sixteen for $SO(7)$ through $E+J_L=11$, the first of them found in \cite{KonishiBH}, and one each for $SO(9)$ and $SO(11)$, and no nonzero $d_r$ with $r\ge2$ \cite[supplement, Section S3.3]{Repo}. By contrast, the complete census of the $SU(3)$ Leigh--Strassler theory through $E+J_L=11$ has $53$ pairs of sectors with $d_1\ne0$ and $12$ with $d_2\ne0$ \cite[supplement, Section S6.2]{Repo}. The scans should be pushed to higher levels and ranks, and the algorithm improved. The results marked $[\mathbb Q]$ are certified over the rational numbers: among them are the three lowest two-loop lifts of the Leigh--Strassler theory (Table~\ref{local-ch9-ls-lifts}) and the lowest lifts at two, three and four loops of the abelian and $\mathcal N=2$ $SU(2)$ theories (Table~\ref{local-ch9-higher-lifts}). The other ranks are computed modulo a large prime and remain to be certified in the same way. Nonperturbative lifts of perturbative cohomology classes by instantons \cite{semichiral,BK}, and their interplay with the higher brackets and the quantum product, are also worth studying.
+\emph{Lifting beyond one loop.} The most immediate question is whether $\mathcal N=4$ Yang--Mills theory has a two-loop lift at all. In the ranges that we have scanned, the $\mathcal N=4$ theories have a nonzero $d_1$ in nineteen sectors, one for $SU(2)$ \cite{KKLP}, sixteen for $SO(7)$ through $2(E+J_L)=22$, the first of them found in \cite{KonishiBH}, and one each for $SO(9)$ and $SO(11)$, and no nonzero $d_r$ with $r\ge2$ \cite[supplement, Section S3.3]{Repo}. By contrast, the complete census of the $SU(3)$ Leigh--Strassler theory through $2(E+J_L)=22$ has $53$ pairs of sectors with $d_1\ne0$ and $12$ with $d_2\ne0$ \cite[supplement, Section S6.2]{Repo}. The scans should be pushed to higher levels and ranks, and the algorithm improved. The results marked $[\mathbb Q]$ are certified over the rational numbers: among them are the three lowest two-loop lifts of the Leigh--Strassler theory (Table~\ref{local-ch9-ls-lifts}) and the lowest lifts at two, three and four loops of the abelian and $\mathcal N=2$ $SU(2)$ theories (Table~\ref{local-ch9-higher-lifts}). The other ranks are computed modulo a large prime and remain to be certified in the same way. Nonperturbative lifts of perturbative cohomology classes by instantons \cite{semichiral,BK}, and their interplay with the higher brackets and the quantum product, are also worth studying.
 
 \emph{Other dimensions and the gravity dual.} The circuit reduction is not tied to four dimensions: the graph integrals and their current equations exist on $\mathbb C^d$ and in holomorphic--topological theories \cite{Wang,WW}, and the iterated network reductions should evaluate the corresponding Feynman graphs. It would also be interesting to identify the counterparts of the loop corrections, of the quantum product and of lifting in the gravity dual.
 
@@ -6703,14 +6703,14 @@ $\partial_{+\dot\pm}$ & covariant derivative $\nabla_{+\dot\pm}$ & $0$ & $(1,0),
 \bottomrule
 \end{xltabular}}
 
-The level is $E+J_L$. Equation \eqref{eq-E-charges} makes its set of sectors finite.
+The level is $2(E+J_L)$. Equation \eqref{eq-E-charges} makes its set of sectors finite.
 
 \begin{proofbox}
 \textbf{Example Threshold charges}
 
 The $SU(2)$ threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} has two $\gamma$, five $\beta$ and zero derivatives.
 \begin{equation*}
-\begin{gathered}\lambda=(4,4,4;0,0),\quad Y=7,\\E=\frac{19}{2},\qquad R_I=\frac32,\qquad J_L=\frac52,\qquad E+J_L=12.\end{gathered}
+\begin{gathered}\lambda=(4,4,4;0,0),\quad Y=7,\\E=\frac{19}{2},\qquad R_I=\frac32,\qquad J_L=\frac52,\qquad 2(E+J_L)=24.\end{gathered}
 \end{equation*}
 \end{proofbox}
 
@@ -6810,7 +6810,7 @@ and $D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $\mathr
 \underbrace{D_0D_Q+D_QD_0}_{(J_L,\mathrm{gh})=(-\frac12,1)}=0,\qquad
 \underbrace{D_Q}_{(J_L,\mathrm{gh})=(-\frac12,0)}{}^{2}=0,
 \end{equation*}
-the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $J_L$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve $E+J_L$, with $E$ the scaling dimension and dimensionful couplings counted with their dimensions. Every field, antifield and derivative has $E+J_L>0$, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $\mathrm{gh}=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $\mathrm{gh}$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
+the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $J_L$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve $2(E+J_L)$, with $E$ the scaling dimension and dimensionful couplings counted with their dimensions. Every field, antifield and derivative has $2(E+J_L)>0$, except the undifferentiated ghost, so the double complex is a direct sum of finite-dimensional pieces and its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on operators without the undifferentiated ghost it is concentrated in ghost number $\mathrm{gh}=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $\mathrm{gh}$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
 
 Proposition~\ref{prop-twist-cohomology} is the classical statement. Within a perturbative quantization of the physical theory that preserves the symmetries below, one can compare the total quantum differential with the quantum supercharge on physical operators. Give the supercharge a constant ghost $\epsilon$ with $(J_L,\mathrm{gh})=(\tfrac12,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_{\mathrm{phys,BRST}}+\epsilon S_Q$ has $(J_L,\mathrm{gh})=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves $\mathrm{gh}$ and $J_L$ gives, at $\epsilon=1$, a differential on local operators of the form
 \begin{equation*}
@@ -6823,7 +6823,7 @@ D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)+O(\hbar),\qquad D_1=(S_Q,\,\cdot\,)+O(\hb
 \end{equation*}
 with $D_k=O(\hbar)$ for $k\ge2$. Here $D_0$ is the quantum BRST differential of the physical theory, with the loop corrections to the gauge transformations and to the equations of motion of composite operators; $D_1$ is the quantum supercharge, with its anomalous terms; and the $D_k$ with $k\ge2$ record that the quantum supercharge squares to zero only up to BRST-exact terms, $D_1^2=-D_0D_2-D_2D_0$.
 
-\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ be the space of local operators that do not contain the undifferentiated ghost, and let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above, preserving $E+J_L$, whose eigenspaces are finite dimensional (footnote~\ref{fn-weight}).}
+\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ be the space of local operators that do not contain the undifferentiated ghost, and let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above, preserving $2(E+J_L)$, whose eigenspaces are finite dimensional (footnote~\ref{fn-weight}).}
 
 (i) \emph{The cohomology of $D_0$ is concentrated in ghost number zero, and the space $P=H^0(D_0)$ of quantum physical operators is a free $\mathbb C[[\hbar]]$-module with $P/\hbar P$ the classical space of gauge-invariant local operators modulo the equations of motion.}
 
@@ -6835,7 +6835,7 @@ H\bigl(V[[\hbar]],\mathbf D\bigr)\;\cong\;H\bigl(Q_\hbar\,;\,H(D_0)\bigr)
 \end{equation*}
 \emph{as $\mathbb C[[\hbar]]$-modules, torsion included: a class is lifted at the same order in $\hbar$ on both sides.}
 
-\emph{Proof.} (i) At each value of $E+J_L$, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
+\emph{Proof.} (i) At each value of $2(E+J_L)$, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
 \begin{equation*}
 0\to H^{\mathrm{gh}}(D_0)/\hbar H^{\mathrm{gh}}(D_0)\to H^{\mathrm{gh}}\bigl(D_0|_{\hbar=0}\bigr)\to\ker\bigl(\hbar:H^{\mathrm{gh}+1}(D_0)\to H^{\mathrm{gh}+1}(D_0)\bigr)\to0
 \end{equation*}
@@ -6843,7 +6843,7 @@ gives $H^{\mathrm{gh}}(D_0)=\hbar H^{\mathrm{gh}}(D_0)$ for $\mathrm{gh}\ne0$, h
 
 (ii) The components of $\mathbf D^2=0$ that change $J_L$ by $-\tfrac12$ and by $-1$ are $D_0D_1+D_1D_0=0$ and $D_1^2+D_0D_2+D_2D_0=0$.
 
-(iii) Since $P$ is free, the complex $(V[[\hbar]],D_0)$ splits: there are $\mathbb C[[\hbar]]$-linear maps $\iota:P\to V[[\hbar]]$, $\pi:V[[\hbar]]\to P$ and a homotopy $h$ of $(J_L,\mathrm{gh})=(0,-1)$ with $\pi\iota=1$ and $\iota\pi=1-D_0h-hD_0$. Treat $\delta=\sum_{k\ge1}D_k$ as a perturbation of $D_0$. It lowers $J_L$, which is bounded at each value of $E+J_L$, so $\delta h$ is nilpotent and the homological perturbation lemma gives a homotopy equivalence between $(V[[\hbar]],\mathbf D)$ and $P$ with the differential
+(iii) Since $P$ is free, the complex $(V[[\hbar]],D_0)$ splits: there are $\mathbb C[[\hbar]]$-linear maps $\iota:P\to V[[\hbar]]$, $\pi:V[[\hbar]]\to P$ and a homotopy $h$ of $(J_L,\mathrm{gh})=(0,-1)$ with $\pi\iota=1$ and $\iota\pi=1-D_0h-hD_0$. Treat $\delta=\sum_{k\ge1}D_k$ as a perturbation of $D_0$. It lowers $J_L$, which is bounded at each value of $2(E+J_L)$, so $\delta h$ is nilpotent and the homological perturbation lemma gives a homotopy equivalence between $(V[[\hbar]],\mathbf D)$ and $P$ with the differential
 \begin{equation*}
 \pi\Bigl(\delta+\delta h\delta+\delta h\delta h\delta+\cdots\Bigr)\iota .
 \end{equation*}
