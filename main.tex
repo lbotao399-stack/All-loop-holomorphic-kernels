@@ -97,7 +97,7 @@
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu and Chi-Ming Chang\\[6pt]
 {\normalsize $^{1}$Peking University}}
-\date{}
+\date{\small Version 20261113-155158 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -997,7 +997,7 @@ All the results above rest on the evaluation of the kernels $\mathcal I_\Gamma(\
 
 {\small\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{4pt}
 \begin{xltabular}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}Xl@{}}
-\caption{Holomorphic graph kernels as electrical networks. $\Gamma_1[S]$ is the set of edges with both ends in the vertex set $S$; the Laman bound is \cite[Equations (2.22)--(2.23)]{operatope}.}\label{tab-sum-dictionary}\\
+\caption{Holomorphic graph kernels as electrical networks. $V$ and $I$ are the vertex and edge sets of $\Gamma$; $V_S$ and $I_S$ are those of an induced subgraph $S$; the Laman bound is \cite[Equations (2.22)--(2.23)]{operatope}.}\label{tab-sum-dictionary}\\
 \toprule
 Graph kernel & Circuit & \\
 \midrule\endhead
@@ -1009,7 +1009,7 @@ vertex delta functions \eqref{eq-C-current-delta-integral}, \eqref{eq-1-9} & Kir
 loop relation \eqref{eq-C-oriented-cycle} & voltage law with resistances $t_e$ & \pictLoop\\
 weighted Laplacian \cite[Remark 6]{Wang} & conductance matrix & \pictConductance\\
 $-\partial/\partial z_e^{+\dot a}$ & insertion of the current $y_{e,+\dot a}$ & \pictInsert\\
-Laman bound $|\Gamma_1[S]|\le2|S|-3$ \eqref{eq-1-11}, $S$ a vertex set with $|S|\ge2$ & local Ohm's and Kirchhoff's laws: bound on the independent current directions & \pictLaman\\
+Laman bound $|I_S|\le2|V_S|-3$ \eqref{eq-1-11}, $S$ an induced subgraph with $|V_S|\ge2$ & local Ohm's and Kirchhoff's laws: bound on the independent current directions & \pictLaman\\
 kernel at $z=0$ & oriented volume swept by the independent currents & \pictVolume\\
 \bottomrule
 \end{xltabular}}
@@ -1331,7 +1331,7 @@ S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
 \end{equation}
 where the projection $[\cdot]_{(0,2)}$ selects antiholomorphic form degree two and the function $\bar W$ contains the antichiral superpotential and gauge kinetic terms expressed in $\gamma$ and $\mathsf w$. $\Omega$ is the holomorphic form $2\,dx^{+\dot+}\wedge dx^{+\dot-}$.
 
-Throughout, $\bar W$ is a polynomial or, more generally, a formal power series in $\gamma$ and $\mathsf w$, read coefficientwise, as perturbation theory requires.
+In the main text, $\bar W$ is a polynomial or, more generally, a formal power series in $\gamma$ and $\mathsf w$, read coefficientwise, as perturbation theory requires. Appendix~\ref{app-covariant-derivatives} treats superpotentials containing covariant derivatives.
 
 The interaction density entering the higher operations is~
 \begin{equation}\label{eq-B-10}
@@ -1747,7 +1747,7 @@ The higher brackets are the basic objects in the computation of the anomalous su
 \{\mathcal O_1,\ldots,\mathcal O_k\}_0
 ={}&(-1)^{\sum_{i=1}^{k}(k-i)|\mathcal O_i|}
 \sum_\Gamma\lim_{\varepsilon\downarrow0}
-\sum_{j=1}^{|\Gamma_1|}(-1)^{j-1}
+\sum_{j=1}^{|I|}(-1)^{j-1}
 \int_{(\mathbb C^2)^{k-1}}
 \left(\bigwedge_{v<k}\Omega_v\right)\\
 &\times W_\Gamma\!\left[
@@ -1760,14 +1760,14 @@ The higher brackets are the basic objects in the computation of the anomalous su
 \end{aligned}
 \end{equation}
 
-In this formula, $\Gamma$ runs over the connected Feynman graphs whose vertices are the $k$ operators, with edges $\Gamma_1=(e_1,\ldots,e_{|\Gamma_1|})$ in their contraction order; $\Omega_v$ is the holomorphic volume form $\Omega=2\,dx^{+\dot+}\wedge dx^{+\dot-}$ at the vertex $v$; $[P_{\varepsilon,L;e}]_\Omega$ is the propagator \eqref{eq-C-heat-homotopy} on the edge $e$, the Bochner--Martinelli form with Schwinger time integrated over $\varepsilon<t_e<L$; $[K_{\varepsilon;e}]_\Omega$ is the heat kernel \eqref{eq-C-heat-spatial} at $t_e=\varepsilon$; and $W_\Gamma$ denotes the ordered Wick contractions of the fields along the edges of $\Gamma$. The final projection to $H(\bar\partial)$ keeps the holomorphic local operators (Section \ref{dolbeault-contraction-and-wick-derivatives}).
+In this formula, $\Gamma$ runs over the connected Feynman graphs whose vertices are the $k$ operators, with edges $I=(e_1,\ldots,e_{|I|})$ in their contraction order; $\Omega_v$ is the holomorphic volume form $\Omega=2\,dx^{+\dot+}\wedge dx^{+\dot-}$ at the vertex $v$; $[P_{\varepsilon,L;e}]_\Omega$ is the propagator \eqref{eq-C-heat-homotopy} on the edge $e$, the Bochner--Martinelli form with Schwinger time integrated over $\varepsilon<t_e<L$; $[K_{\varepsilon;e}]_\Omega$ is the heat kernel \eqref{eq-C-heat-spatial} at $t_e=\varepsilon$; and $W_\Gamma$ denotes the ordered Wick contractions of the fields along the edges of $\Gamma$. The final projection to $H(\bar\partial)$ keeps the holomorphic local operators (Section \ref{dolbeault-contraction-and-wick-derivatives}).
 
 Let $F$ be the spacetime form in \eqref{eq-A-28} and $e_a=(v_a,w_a)$ its ordered edges. For operators with no input holomorphic derivatives, the Wick contraction is
 \begin{equation}\label{eq-W-fibre-explicit}
 \begin{aligned}
 &W_\Gamma[F;\mathcal O_1,\ldots,\mathcal O_k]\\
 &\quad=F\,
-\prod_{a=1}^{|\Gamma_1|}\!{}^{\mathrm{edge\ order}}
+\prod_{a=1}^{|I|}\!{}^{\mathrm{edge\ order}}
 \left(\begin{aligned}
 &\frac{\partial_L}{\partial\mathsf b_{A,v_a}}
 \frac{\partial_L}{\partial\mathsf c_{w_a}^{A}}
@@ -1959,13 +1959,13 @@ The translation \eqref{eq-B-21} of the surviving letters is the source of the mo
 \end{equation}
 with the Leibniz rule when several letters survive at $v$. A fully contracted integrated vertex has $\lambda_v=0$.
 
-\rthm{Proposition}{b-00169}{Current representation; external input \cite[Section 2.7, Equations (2.32)--(2.33)]{operatope}, \cite[Lemma 2, Proposition 9]{Wang}} \emph{Let $\Gamma$ have vertices $\Gamma_0=\{1,\ldots,k\}$, the insertion at $x_k=0$, ordered edges $\Gamma_1=(e_1,\ldots,e_{2n+1})$, each oriented from $e(0)$ to $e(1)$, and Schwinger times $t_e>0$. } \emph{With the source $\lambda_v$ of the output letters at $v$ \eqref{eq-D-lambda}, and the edge displacement $z_e$ generating the holomorphic derivatives of the input letters \eqref{eq-W-jet-edge}, and the edge currents $y_{e,+\dot a}$ of \eqref{eq-1-8}, the kernel $\mathcal I_\Gamma(\lambda;z)$ of the graph, defined in \eqref{eq-1-7}, is}
+\rthm{Proposition}{b-00169}{Current representation; external input \cite[Section 2.7, Equations (2.32)--(2.33)]{operatope}, \cite[Lemma 2, Proposition 9]{Wang}} \emph{Let $\Gamma$ have vertices $V=\{1,\ldots,k\}$, the insertion at $x_k=0$, ordered edges $I=(e_1,\ldots,e_{2n+1})$, each oriented from $e(0)$ to $e(1)$, and Schwinger times $t_e>0$. } \emph{With the source $\lambda_v$ of the output letters at $v$ \eqref{eq-D-lambda}, and the edge displacement $z_e$ generating the holomorphic derivatives of the input letters \eqref{eq-W-jet-edge}, and the edge currents $y_{e,+\dot a}$ of \eqref{eq-1-8}, the kernel $\mathcal I_\Gamma(\lambda;z)$ of the graph, defined in \eqref{eq-1-7}, is}
 \begin{equation}\label{eq-C-current-delta-integral}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
 ={}&(-1)^n\int_{\Delta_\Gamma}
  e^{-\sum_ez_e^{+\dot a}y_{e,+\dot a}}
- \bigwedge_{e\in\Gamma_1}d^2y_e\\
+ \bigwedge_{e\in I}d^2y_e\\
 &\times\prod_{v<k}\prod_{\dot a=\dot+,\dot-}
 \delta\!\left(\lambda_{v,+\dot a}
 -\sum_{e:e(0)=v}y_{e,+\dot a}
@@ -1980,8 +1980,8 @@ with the Leibniz rule when several letters survive at $v$. A fully contracted in
 \end{equation}
 \emph{for one common set of positive Schwinger times, the same for both dotted components, and $\Delta_\Gamma$ is the set of such currents, with the orientation induced by the ultraviolet boundary \eqref{eq-UV-boundary} of the Schwinger-time cube:}
 \begin{equation}\label{eq-C-projective-times}
-\Delta_\Gamma=\bigcup_{(t_e)\in\mathbb{RP}^{|\Gamma_1|-1}_{>0}}
-\Bigl\{(y_{e,+\dot a})_{e\in\Gamma_1}:\ 
+\Delta_\Gamma=\bigcup_{(t_e)\in\mathbb{RP}^{|I|-1}_{>0}}
+\Bigl\{(y_{e,+\dot a})_{e\in I}:\ %
 \sum_{\substack{e\in C\\\mathrm{along}\ C}}t_ey_{e,+\dot a}
 -\sum_{\substack{e\in C\\\mathrm{against}\ C}}t_ey_{e,+\dot a}=0
 \ \text{ for every cycle }C\Bigr\}.
@@ -1991,7 +1991,7 @@ We now derive this representation, following \cite{Wang,operatope}.
 
 \subsubsection*{The heat edge and the current form}\label{sec-B-kernel}
 
-Let $\Gamma_0=\{1,\ldots,n+2\}$ be the vertex set of an $n$-loop Feynman graph with $2n+1$ edges, the only case in which the integral does not vanish (Lemma~\ref{b-00180}), and order the edges as $\Gamma_1=(e_1,\ldots,e_{2n+1})$.
+Let $V=\{1,\ldots,n+2\}$ be the vertex set of an $n$-loop Feynman graph with $2n+1$ edges, the only case in which the integral does not vanish (Lemma~\ref{b-00180}), and order the edges as $I=(e_1,\ldots,e_{2n+1})$.
 
 Fix $x_{n+2}=0$ and $\lambda_{n+2}=-\sum_{v<n+2}\lambda_v$.
 
@@ -2062,8 +2062,8 @@ y_{e,+\dot a}
 \left(\bigwedge_{v<n+2}\Omega_v\right)
 e^{\sum_{v<n+2}\lambda_{v,+\dot a}x_v^{+\dot a}}\\
 &\times\int_{\partial_{\mathrm{UV}}[\varepsilon,L]^{2n+1}}
-e^{-\sum_{e\in\Gamma_1}y_{e,+\dot a}(x_{e(0)}-x_{e(1)}+z_e)^{+\dot a}}
-\bigwedge_{e\in\Gamma_1}d^2y_e .
+e^{-\sum_{e\in I}y_{e,+\dot a}(x_{e(0)}-x_{e(1)}+z_e)^{+\dot a}}
+\bigwedge_{e\in I}d^2y_e .
 \end{aligned}
 \end{equation}
 
@@ -2128,7 +2128,7 @@ Equation \eqref{eq-1-8} is Ohm's law: the potential at the vertex $v$ is its ant
 
 The delta functions in \eqref{eq-C-current-delta-integral} impose current conservation at every vertex, and \eqref{eq-C-oriented-cycle} is the voltage law around every loop, with resistances $t_e$;
 
-The displacements $z_e$ generate the moments of the edge currents: each $-\partial/\partial z_e^{+\dot a}$ inserts $y_{e,+\dot a}$. At $z=0$ the kernel is therefore the oriented volume swept out by the independent currents as the ratios of the edge resistances range over $\mathbb{RP}^{|\Gamma_1|-1}_{>0}$, and $z_e$ is the generating source that records the expectation values of the current $y_e$.
+The displacements $z_e$ generate the moments of the edge currents: each $-\partial/\partial z_e^{+\dot a}$ inserts $y_{e,+\dot a}$. At $z=0$ the kernel is therefore the oriented volume swept out by the independent currents as the ratios of the edge resistances range over $\mathbb{RP}^{|I|-1}_{>0}$, and $z_e$ is the generating source that records the expectation values of the current $y_e$.
 
 Table \ref{tab-sum-dictionary} in Section \ref{sec-sum-circuit} collects this dictionary.
 
@@ -2147,60 +2147,64 @@ Only a few graphs can have a nonzero contribution to \eqref{eq-C-current-delta-i
 
 \subsection{Laman constraints}\label{sec-laman}
 
-Write $\Gamma_1[S]$ for the edges with both ends in a vertex set $S\subseteq\Gamma_0$.
+For an induced subgraph $S\subseteq\Gamma$, write $V_S\subseteq V$ for its vertex set and $I_S\subseteq I$ for its edge set.
 
 Some of the proofs are easier to understand in terms of a circuit diagram (Table \ref{tab-sum-dictionary}), so we sometimes provide more than one proof to illustrate the idea.
 
 \rthm{Lemma}{b-00180}{Laman count \cite[Equation (2.22)]{operatope}, \cite[Theorem 6]{Wang}} \emph{Every nonzero graph satisfies}
 \begin{equation}\label{eq-1-12}
-|\Gamma_1|=2|\Gamma_0|-3 .
+|I|=2|V|-3 .
 \end{equation}
 
 \emph{Proof (graph integral).} The heat edge has antiholomorphic form degree two and every other propagator degree one; together they saturate the relative antiholomorphic integration directions:
 \begin{equation*}
-2+(|\Gamma_1|-1)=2(|\Gamma_0|-1).
+\underbrace{2}_{\text{heat kernel}}+\underbrace{(|I|-1)}_{P}
+=\underbrace{2(|V|-1)}_{|V|-1\text{ points}}.
 \end{equation*}
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
 \emph{Proof (circuit).} The resistance ratios sweep out the real components of the independent loop currents in \eqref{eq-C-current-delta-integral}:
 \begin{equation*}
-\underbrace{|\Gamma_1|-1}_{\text{independent resistance ratios}}
+\underbrace{|I|-1}_{\text{independent resistance ratios}}
 =\underbrace{2}_{\text{holomorphic dimension}}\,
-\underbrace{(|\Gamma_1|-|\Gamma_0|+1)}_{\text{loops}}.
+\underbrace{(|I|-|V|+1)}_{\text{loops}}.
 \end{equation*}
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
-\rthm{Lemma}{b-00194}{Laman bound on subgraphs \cite[Equation (2.23)]{operatope}, \cite[Proposition 5]{Wang}} \emph{Every $S\subseteq\Gamma_0$ with $\Gamma_1[S]\ne\emptyset$ satisfies}
+\rthm{Lemma}{b-00194}{Laman bound on subgraphs \cite[Equation (2.23)]{operatope}, \cite[Proposition 5]{Wang}} \emph{Every $S\subseteq\Gamma$ with $I_S\ne\emptyset$ satisfies}
 \begin{equation*}
-|\Gamma_1[S]|\le2|S|-3 .
+|I_S|\le2|V_S|-3 .
 \end{equation*}
 
-\emph{Proof (graph integral).} Fix $v_0\in S$; the coordinates $(x_v-x_{v_0})^{-\dot a}$, $v\in S\setminus\{v_0\}$, give $2(|S|-1)$ one-form directions in the numerators of the propagators. The total form degree cannot exceed the number of one-form directions. If the heat kernel edge $K$ lies in $S$,
+\emph{Proof (graph integral).} Fix $v_0\in V_S$; the coordinates $(x_v-x_{v_0})^{-\dot a}$, $v\in V_S\setminus\{v_0\}$, give $2(|V_S|-1)$ one-form directions in the numerators of the propagators. The total form degree cannot exceed the number of one-form directions. If the heat kernel edge $K$ lies in $S$,
 \begin{equation*}
-|\Gamma_1[S]|+1\le2(|S|-1).
+|I_S|+1\le2(|V_S|-1).
 \end{equation*}
 
 If the heat edge lies outside $S$, the radial vector annihilates every internal propagator one-form \cite[Proposition 5, Lemma 2]{Wang}, \cite[Equation (2.15)]{operatope}:
 \begin{equation*}
 \begin{gathered}
-R=\sum_{u\in S\setminus\{v_0\}}(x_u-x_{v_0})^{-\dot c}\frac{\partial}{\partial x_u^{-\dot c}},\\
+R=\sum_{u\in V_S\setminus\{v_0\}}(x_u-x_{v_0})^{-\dot c}\frac{\partial}{\partial x_u^{-\dot c}},\\
 \iota_R\bigl[-(x_v-x_w)^-_{\dot a}d(x_v-x_w)^{-\dot a}\bigr]
 =-(x_v-x_w)^-_{\dot a}(x_v-x_w)^{-\dot a}=0,
 \end{gathered}
 \end{equation*}
 so the number of holomorphic directions drops by one.
 \begin{equation*}
-|\Gamma_1[S]|\le2(|S|-1)-1 .
+|I_S|\le2(|V_S|-1)-1 .
 \end{equation*}
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
-\emph{Proof (circuit).} Ohm's law is local: the $2|\Gamma_1[S]|$ current components inside $S$ are fixed by the $2(|S|-1)$ relative potentials and by $|\Gamma_1[S]|-1$ independent resistances, a common rescaling of potentials and resistances, or the fixed resistance on the UV boundary, removing one. They vary in all directions only if
+\emph{Proof (circuit).} Ohm's law is local. For connected $S$, fix the currents entering its vertices from outside. Kirchhoff's law leaves $2(|I_S|-|V_S|+1)$ independent loop-current components. The internal resistance ratios range over $\mathbb{RP}^{|I_S|-1}_{>0}$. If their variation cannot span these loop-current directions, the pullback of the loop-current volume form vanishes identically, and so does the graph kernel. Thus its form degree cannot exceed the dimension of the resistance-ratio space:
 \begin{equation*}
-2|\Gamma_1[S]|\le2(|S|-1)+|\Gamma_1[S]|-1 .
+\underbrace{2(|I_S|-|V_S|+1)}_{\text{loop-current form degree}}
+\le\underbrace{|I_S|-1}_{\dim\mathbb{RP}^{|I_S|-1}_{>0}}
+\quad\Longleftrightarrow\quad |I_S|\le2|V_S|-3.
 \end{equation*}
+The form may have lower or equal degree, but cannot be oversaturated. For disconnected $S$, apply the bound to each connected component containing an edge and add the bounds.
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
@@ -2222,20 +2226,20 @@ Lemma~\ref{b-00194} immediately leads to:
 
 \emph{Proof (circuit).} A self-loop is shorted: $t_ey_{e,+\dot a}=0$ with $t_e>0$ gives $y_e=0$. Two resistors between the same nodes are in parallel: $t_ey_e=t_{e'}y_{e'}$, so their four current components vary in only three directions.~\hfill\qedsymbol
 
-Corollary~\ref{b-00188} is the case $|S|\le2$ of Lemma~\ref{b-00194}.
+Corollary~\ref{b-00188} is the case $|V_S|\le2$ of Lemma~\ref{b-00194}.
 
 These are the Laman constraints in two holomorphic dimensions \cite[Equations (2.22)--(2.23)]{operatope}, \cite[Section 3.3]{higher}, \cite[Definition 16, Proposition 5, Theorem 6]{Wang}.
 
 \rthm{Lemma}{b-00207}{Counts at $n$ loops} \emph{A nonzero connected $n$-loop graph satisfies}
 \begin{equation}\label{eq-1-11}
 \begin{gathered}
-|\Gamma_0|=n+2,\qquad |\Gamma_1|=2n+1,\qquad
-|\Gamma_1|-|\Gamma_0|+1=n,\\
-|\Gamma_1[S]|\le2|S|-3\qquad(S\subseteq\Gamma_0,\ |S|\ge2).
+|V|=n+2,\qquad |I|=2n+1,\qquad
+|I|-|V|+1=n,\\
+|I_S|\le2|V_S|-3\qquad(S\subseteq\Gamma,\ |V_S|\ge2).
 \end{gathered}
 \end{equation}
 
-\emph{Proof.} Lemma~\ref{b-00180} and $n=|\Gamma_1|-|\Gamma_0|+1$ give the first line; Lemma~\ref{b-00194} the second.~\hfill\qedsymbol
+\emph{Proof.} Lemma~\ref{b-00180} and $n=|I|-|V|+1$ give the first line; Lemma~\ref{b-00194} the second.~\hfill\qedsymbol
 
 \subsection{Cubic vertices: only fans}\label{sec-only-fans}
 
@@ -2272,11 +2276,11 @@ The proof of Proposition~\ref{b-00210} uses two lemmas:
 
 If there is only one source, every current is a real multiple of the source current and sweeps at most $n<2n$ dimensions; a nonzero kernel therefore has at least two sources, and both inequalities are then equalities.~\hfill\qedsymbol
 
-\rthm{Lemma}{b-00217}{No interaction cycles} \emph{If every interaction vertex is joined to $\mathcal O$, no set $S$ of interaction vertices carries a cycle.}
+\rthm{Lemma}{b-00217}{No interaction cycles} \emph{If every interaction vertex is joined to $\mathcal O$, no subgraph $S$ on interaction vertices carries a cycle.}
 
-\emph{Proof.} A loop of resistors on the interaction nodes $S$, together with their $|S|$ spokes, gives a subcircuit on $S\cup\{\mathcal O\}$ with more resistors than the local count of Ohm's law allows (Lemma~\ref{b-00194}):
+\emph{Proof.} A loop of resistors on the interaction nodes $V_S$, together with their $|V_S|$ spokes, gives a subcircuit on $V_S\cup\{\mathcal O\}$ with more resistors than the local count of Ohm's law allows (Lemma~\ref{b-00194}):
 \begin{equation*}
-|\Gamma_1[S\cup\{\mathcal O\}]|\ge2|S|>2(|S|+1)-3 .
+|I_S|+|V_S|\ge2|V_S|>2(|V_S|+1)-3 .
 \end{equation*}
 
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
@@ -2625,9 +2629,9 @@ y_{vw}=\lambda_v-y_{vu}.
 \end{equation}
 \begin{equation*}
 \begin{aligned}
-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
+\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
 ={}&\lambda_{v,+\dot a}(r_1z_{vu}+(1-r_1)z_{vw})^{+\dot a}\\
-&+\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
+&+\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot a}^{\mathrm{red}}z_e^{\mathrm{red},+\dot a}.
 \end{aligned}
 \end{equation*}
@@ -2656,9 +2660,9 @@ dy_{vu,+\dot a}
 \begin{equation*}
 \begin{aligned}
 &\lambda_{v,+\dot a}\frac{\partial}{\partial z_{uw,\dot a}^{\mathrm{red},+}}
-e^{-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}\\
+e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}\\
 &=(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a})
-e^{-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
+e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
 \end{aligned}
 \end{equation*}
 
@@ -2894,11 +2898,11 @@ Apply the operators in the order $i=n-1,n-2,\ldots,1$. Fix the inner integration
 \begin{aligned}
 &r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}
 \frac{\partial}{\partial z_{i+1,n+2}^{\mathrm{red},+\dot a}}
-e^{-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
+e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}\\
 &\quad=r_{2i}\bigl(\lambda_{i,+\dot a}^{\mathrm{red}}
 y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}\bigr)
-e^{-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
+e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
 \end{aligned}
 \end{equation}
@@ -3383,9 +3387,9 @@ Here $C_v^D$ is the field at vertex $v$, and the fibre derivatives are given by~
 ={}&\left.\frac1{n!}\{\mathcal I^{\otimes n},Aa,b_{\mathrm{aux}}B\}_0\right|_{\mathrm{aux}=0}\\
 ={}&\frac{(-1)^n}{n!(8\pi^2)^n}
 \sum_{\substack{\Gamma\ \mathrm{labelled,\ Laman}\\
-|\Gamma_0|=n+2,\ |\Gamma_1|=2n+1\\(n+1,n+2)\in\Gamma_1}}
+|V|=n+2,\ |I|=2n+1\\(n+1,n+2)\in I}}
 \Bigg[\mathcal I_\Gamma(\lambda;z)\\
-&\qquad\times\prod_{(v,w)\in\Gamma_1\setminus\{(n+1,n+2)\}}^{\mathrm{edge\ order}}
+&\qquad\times\prod_{(v,w)\in I\setminus\{(n+1,n+2)\}}^{\mathrm{edge\ order}}
 \Delta_{vw}(\mathcal I_1\cdots\mathcal I_nA_{n+1}B_{n+2})\Bigg]_{\mathrm{jets},\,x_v=x,\,z=0}.
 \end{aligned}
 \end{equation}
@@ -3717,7 +3721,7 @@ Write $F(x)=(A(x)B(0))[L]$ and $F^{(1)}(x)=(A(x)B(0))^{(1)}[L]$. The volume inte
 \begin{gathered}
 \bar\partial P_{\varepsilon,L}=K_\varepsilon-K_L,
 \qquad \bar\partial P_{\varepsilon,\infty}=K_\varepsilon,\\
-|\Gamma_0|=n+2,\qquad |\Gamma_1|=2n+1,\qquad
+|V|=n+2,\qquad |I|=2n+1,\qquad
 \frac1\hbar\frac{\hbar^{2n+1}}{n!\hbar^n}=\frac{\hbar^n}{n!}.
 \end{gathered}
 \end{equation}
@@ -3841,7 +3845,7 @@ A superpotential vertex of degree greater than three can join several arms (Prop
 On arm $i$, $v_{i,1}$ carries the source, $v_{i,\ell_i}$ is adjacent to $A$, and $v_{i,\ell_i+1}=A$. The remaining arm vertices are fully contracted:
 \begin{equation}\label{eq-1-47}
 \begin{gathered}
-\Gamma_1=\big((v_{i,j},v_{i,j+1}),(v_{i,j},B)\big)_{i=1,\ldots,a;\ j=1,\ldots,\ell_i}
+I=\big((v_{i,j},v_{i,j+1}),(v_{i,j},B)\big)_{i=1,\ldots,a;\ j=1,\ldots,\ell_i}
 \cup\{(A,B)\},\\
 \ell_1+\cdots+\ell_a=n,\qquad
 \lambda_{v_{i,j},+\dot a}=\delta_{j1}\lambda_{v_{i,1},+\dot a}.
@@ -4135,7 +4139,7 @@ The phase substitutions restore the original edge exponential, and the accumulat
     \left(1-\sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}\right)\\
     &\times\prod_{i=1}^{n}
     \bigl(\lambda_{i,+\dot a_i}y_{AB,+}^{\mathrm{red}}{}^{\dot a_i}\bigr)
-     e^{-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot b}z_e^{+\dot b}}.
+     e^{-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot b}z_e^{+\dot b}}.
     \end{aligned}
 \end{equation}
 
@@ -4845,7 +4849,7 @@ In terms of kernel operators, root each cubic interaction tree at its unique sou
 \rthm{Example}{local-f9b9d0e6-6c56-430a-826a-b94fe7879755}{Figure~\ref{fig-forest-three-loop}(a)} For $\lambda_1=\lambda_3=0$ and $\lambda_B=-\lambda_A-\lambda_2$, apply \eqref{eq-kernel-star-triangle} at $3$ and $1$, then \eqref{eq-kernel-series-parallel} at $2$. The successive ordered edge lists are
 \begin{equation*}
 \begin{aligned}
-\Gamma_1&=(12,13,1A,2B,3A,3B,AB),\\
+I&=(12,13,1A,2B,3A,3B,AB),\\
 (\Gamma^{\mathrm{red}})_1&=(1B,12,1A,2B,AB),\\
 (\Gamma^{\mathrm{red\,red}})_1&=(2A,2B,AB),\\
 (\Gamma^{\mathrm{red\,red\,red}})_1&=(AB).
@@ -5048,12 +5052,12 @@ y_{ux}&=r_1y_{ux}^{\mathrm{red}},&y_{wx}&=r_2y_{wx}^{\mathrm{red}}.
 \end{equation}
 \begin{equation*}
 \begin{aligned}
-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
+\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
 ={}&\frac{\lambda_{v,+\dot a}}{\Sigma}
 \left(\frac{t_{wx}^{\mathrm{red}}z_{vu}}{1-r_2}
 +\frac{t_{ux}^{\mathrm{red}}z_{vw}}{1-r_1}
 +t_{uw}^{\mathrm{red}}z_{vx}\right)^{+\dot a}\\
-&+\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
+&+\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot a}^{\mathrm{red}}z_e^{\mathrm{red},+\dot a}.
 \end{aligned}
 \end{equation*}
@@ -5068,7 +5072,7 @@ Use the same $z^{\mathrm{red}}$ as in Theorem~\ref{b-01159}, and leave all other
 \left(\frac{t_{wx}^{\mathrm{red}}z_{vu}}{1-r_2}
 +\frac{t_{ux}^{\mathrm{red}}z_{vw}}{1-r_1}
 +t_{uw}^{\mathrm{red}}z_{vx}\right)^{+\dot a}\right]\\
-&\times\exp\!\left[-\sum_{\substack{e\in\Gamma_1^{\mathrm{red}}\\\mathrm{edges}}}
+&\times\exp\!\left[-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
 y_{e,+\dot a}^{\mathrm{red}}z_e^{\mathrm{red},+\dot a}\right]
 \iota_{\partial/\partial r_2}\iota_{\partial/\partial r_1}\\
 &\quad\Biggl[
@@ -5078,7 +5082,7 @@ y_{e,+\dot a}^{\mathrm{red}}z_e^{\mathrm{red},+\dot a}\right]
 \bigl(-d(r_2y_{wx,+\dot+}^{\mathrm{red}})
  \wedge d(r_2y_{wx,+\dot-}^{\mathrm{red}})\bigr)\\
 &\qquad\wedge
-\bigwedge_{\substack{e\in\Gamma_1^{\mathrm{red}}\setminus T^{\mathrm{red}}\\e\ne uw}}
+\bigwedge_{\substack{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}\\e\ne uw}}
 \bigl(-dy_{e,+\dot+}^{\mathrm{red}}\wedge dy_{e,+\dot-}^{\mathrm{red}}\bigr)
 \Biggr].
 \end{aligned}
@@ -5188,7 +5192,7 @@ y_{AB}&=(1-r_3-r_4)y^{\mathrm{red}}_{AB}.
 z^{\mathrm{red}}_{1A}&=r_1(z_{2A}-z_{21})+(1-r_1)(z_{3A}-z_{31}),\\
 z^{\mathrm{red}}_{1B}&=r_2(z_{2B}-z_{21})+(1-r_2)(z_{3B}-z_{31}),\\
 z^{\mathrm{red}}_{AB}&=(1-r_3-r_4)z_{AB}+r_3(z_{2B}-z_{2A})+r_4(z_{3B}-z_{3A}),\\
-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
+\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
 &=\lambda_{2,+\dot a}\left(\frac{r_6z_{21}/r_3+r_5z_{2A}/r_2+(1-r_5-r_6)z_{2B}/r_1}{\Sigma}\right)^{+\dot a}\\
 &\quad+y^{\mathrm{red}}_{1A,+\dot a}z^{\mathrm{red},+\dot a}_{1A}
 +y^{\mathrm{red}}_{1B,+\dot a}z^{\mathrm{red},+\dot a}_{1B}
@@ -5204,10 +5208,10 @@ Integrate over the displayed domain, at fixed original sources. The derivatives 
 \bigl(-dy_{AB,+\dot+}\wedge dy_{AB,+\dot-}\bigr)
 \wedge\bigl(-dy_{2B,+\dot+}\wedge dy_{2B,+\dot-}\bigr)\\
 &\qquad\wedge\bigl(-dy_{3A,+\dot+}\wedge dy_{3A,+\dot-}\bigr)
-\exp\!\left[-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}\right]\\
+\exp\!\left[-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}\right]\\
 &=-\int\prod_{j=1}^{6}dr_j\;
 \underbrace{\det\frac{\partial(y_{AB,+\dot+},y_{AB,+\dot-},y_{2B,+\dot+},y_{2B,+\dot-},y_{3A,+\dot+},y_{3A,+\dot-})}{\partial(r_1,r_2,r_3,r_4,r_5,r_6)}}_{\text{Jacobian of the three loop currents}}\\
-&\qquad\times\exp\!\left[-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot a}(r)z_e^{+\dot a}\right]\\
+&\qquad\times\exp\!\left[-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}(r)z_e^{+\dot a}\right]\\
 &=\int\prod_{j=1}^{6}dr_j\;r_5(1-r_3-r_4)(1-r_5-r_6)\,
 \underbrace{\bigl(\lambda^{\mathrm{red}}_{1,+\dot a}\lambda^{\mathrm{red}}_{A,+}{}^{\dot a}\bigr)}_{\text{reduced triangle current-area factor}}\\
 &\quad\times\left[\lambda^{\mathrm{red}}_{1,+\dot b}\lambda^{\mathrm{red}}_{A,+}{}^{\dot b}
@@ -5215,7 +5219,7 @@ Integrate over the displayed domain, at fixed original sources. The derivatives 
 &\quad\times\left[(r_1-r_2)\lambda_{1,+\dot c}\lambda_{A,+}{}^{\dot c}
 -\frac{(r_1-r_2)r_5(r_2-r_3)+r_2(r_2-1)}{r_2r_3\Sigma}
 \lambda_{1,+\dot c}\lambda_{2,+}{}^{\dot c}\right]\\
-&\quad\times\exp\!\left[-\sum_{\substack{e\in\Gamma_1\\\mathrm{edges}}}y_{e,+\dot d}(r)z_e^{+\dot d}\right].
+&\quad\times\exp\!\left[-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot d}(r)z_e^{+\dot d}\right].
 \end{aligned}
 \end{equation*}
 
@@ -6578,12 +6582,73 @@ y^T_{e,+\dot a}
 \end{cases}\\[4pt]
 y_{e,+\dot a}(t)
 &=\frac{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}
-\left(\prod_{h\in\Gamma_1\setminus T}t_h\right)y^T_{e,+\dot a}}
-{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}\prod_{h\in\Gamma_1\setminus T}t_h}.
+\left(\prod_{h\in I\setminus T}t_h\right)y^T_{e,+\dot a}}
+{\displaystyle\sum_{\substack{T\\\mathrm{spanning\ trees}}}\prod_{h\in I\setminus T}t_h}.
 \end{aligned}
 \end{equation}
 
-A common rescaling of the resistances does not affect the formula, so we may impose $\sum_{e\in\Gamma_1}t_e=1$. Then the integral is just the Jacobian of the change of variables from the $y$'s to the independent $t$'s. The moves of Section~\ref{sec-B-local-reduction} replace this global solution by local changes of the resistances, in which the spanning-tree denominator of \eqref{eq-1-24} cancels.
+A common rescaling of the resistances does not affect the formula, so we may impose $\sum_{e\in I}t_e=1$. Then the integral is just the Jacobian of the change of variables from the $y$'s to the independent $t$'s. The moves of Section~\ref{sec-B-local-reduction} replace this global solution by local changes of the resistances, in which the spanning-tree denominator of \eqref{eq-1-24} cancels.
+
+\section{Covariant derivatives in the superpotential}\label{app-covariant-derivatives}
+
+\paragraph{The supersymmetric density.}
+Allow $W$ and $\bar W$ to contain finitely many gauge-covariant derivatives at each order in the couplings. Keep the auxiliary fields off shell and require the complete densities to be gauge invariant and chiral or antichiral, respectively:
+\begin{equation}\label{eq-derivative-chirality}
+\bar\nabla_{\dot a}W=0,\qquad \nabla_a\bar W=0,\qquad
+\nabla_a(\nabla_{+\dot b}\bar\Phi_i)
+=[\nabla_a,\nabla_{+\dot b}]\bar\Phi_i.
+\end{equation}
+The last commutator contains the gauge field strength. Thus covariantizing a derivative monomial requires its full supersymmetric completion before taking the antichiral top component. The chiral term remains $Q_-$-exact by \eqref{eq-Psi}--\eqref{eq-B-2}, with $W$ now the complete derivative-dependent density.
+
+\paragraph{Component projection.}
+First evaluate $[\bar W]_{\bar{\mathcal F}}=\tfrac14\bar\nabla^2\bar W|$ and expand all covariant derivatives in component fields and ordinary spacetime derivatives. The homotopy in \eqref{eq-B-4} includes the derivatives of every contractible pair. Since $[h_{\mathcal T},\partial_\mu]=0$, its identity on integrated local functionals gives
+\begin{equation}\label{eq-derivative-transfer}
+\begin{aligned}
+\Psi'&=h_{\mathcal T}\int d^4x\,[\bar W]_{\bar{\mathcal F}},\\
+(s+Q_-)\Psi'
+&=\int d^4x\,[\bar W]_{\bar{\mathcal F}}
+-\left.\int d^4x\,[\bar W]_{\bar{\mathcal F}}\right|_{\mathcal T=0}.
+\end{aligned}
+\end{equation}
+Here supersymmetry closes the integrated top component modulo total derivatives; take compactly supported variations. Apply the antifield translations \eqref{eq-B-2} with these derivative-dependent $\Psi,\Psi'$: their functional derivatives include integration by parts. Then assemble the retained components using \eqref{eq-B-7}. This constructs the off-shell twisted action $S_{\mathrm{tw}}$. In particular,
+\begin{equation}\label{eq-derivative-projection}
+\left.\nabla_{+\dot a}\bar\phi_i\right|_{\mathcal T=0}
+=\partial_{+\dot a}\bar\phi_i,\qquad
+\mathsf w_{\dot a}^A\longmapsto\tfrac12\partial_{+\dot a}\mathsf c^A.
+\end{equation}
+These substitutions follow the component projection; the ordered-derivative and curvature completions are those of \eqref{eq-B-16}.
+
+\paragraph{The transferred vertices.}
+Retain the complete Dolbeault density $\mathcal I$, including its curvature and ghost terms. Already the gauge part of \eqref{eq-B-15} gives
+\begin{equation}\label{eq-derivative-gauge-completion}
+Q_0(\partial_{+\dot a}\gamma_i)
+=-ig\mathsf c^A(t_A)^j{}_i\partial_{+\dot a}\gamma_j
+-ig(\partial_{+\dot a}\mathsf c^A)(t_A)^j{}_i\gamma_j.
+\end{equation}
+The second term must be included when checking the gauge invariance of a derivative vertex. For a transferred term $\bar W$ depending on $\gamma,\mathsf w$ and their holomorphic derivatives, the contribution to $Q_0\beta^i$ is its negative Euler derivative:
+\begin{equation}\label{eq-derivative-euler}
+-\sum_{\substack{r,s\ge0\\\text{holomorphic derivative orders}}}
+(-\partial_{+\dot+})^r(-\partial_{+\dot-})^s
+\frac{\partial\bar W}
+{\partial\bigl(\partial_{+\dot+}^{\,r}\partial_{+\dot-}^{\,s}\gamma_i\bigr)}.
+\end{equation}
+Here $r,s$ count the two holomorphic derivatives; only finitely many terms occur at each order in the couplings. For the general transferred interaction, use the full BV bracket $(S_{\mathrm{tw}},\,\cdot\,)$, including any $\mathsf b,\beta$ terms produced by the completion.
+
+\paragraph{Graph evaluation.}
+Treat the new couplings perturbatively with the free action \eqref{eq-BV-free-action}. For an edge $e=(v,w)$, $z_e=z_v-z_w$, the normalization \eqref{eq-coordinates} and Wick rule \eqref{eq-W-jet-edge} give
+\begin{equation}\label{eq-derivative-kernel}
+\begin{aligned}
+\partial_{v,+\dot a}&\longmapsto-2\frac{\partial}{\partial z_e^{+\dot a}},
+&\partial_{w,+\dot a}&\longmapsto+2\frac{\partial}{\partial z_e^{+\dot a}},\\
+-2\frac{\partial}{\partial z_e^{+\dot a}}
+e^{-y_{e,+\dot b}z_e^{+\dot b}}
+&=2y_{e,+\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}},
+&2\frac{\partial}{\partial z_e^{+\dot a}}
+e^{-y_{e,+\dot b}z_e^{+\dot b}}
+&=-2y_{e,+\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}}.
+\end{aligned}
+\end{equation}
+Apply these derivatives to the displaced kernel before setting $z=0$; derivatives on uncontracted letters stay on the output. Holomorphic derivatives preserve the antiholomorphic form-degree counts, hence the Laman constraints. The fan and spider classification additionally requires the $\mathsf b,\beta$ counts of Section~\ref{sec-restrictions}; check those counts on the completed vertices.
 
 \begin{thebibliography}{99}
 \small
