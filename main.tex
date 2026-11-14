@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261114-154042 (Beijing time)}
+\date{\small Version 20261114-171534 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -2862,7 +2862,18 @@ y_{uw,+\dot a}^{(j)}=r_jy_{uw,+\dot a}^{\mathrm{red}}.
 
 \subsubsection{The series--parallel move}\label{sec-B-kernel-recursion}
 
-We now integrate out the eliminated vertices. Each move becomes an operator on the reduced kernel. In successive moves, derivatives act on the entire expression to their right. For the graphs built from one edge by adding vertices joined to both endpoints of an existing edge, the type~I$'$ graphs of \cite[Definition 4.12]{GWW}, which include the fans, iterating this move interprets the cube-integral recursion of \cite[Theorem 4.13]{GWW} as successive series and parallel reductions of resistors.
+Each reduction integrates out two current coordinates. The remaining current integral is weighted by its local area Jacobian. The equivalent displacement derivatives follow from
+\begin{equation}\label{eq-current-insertions}
+\begin{aligned}
+\frac{\partial}{\partial z_e^{+\dot a}}
+e^{-y_{e,+\dot b}z_e^{+\dot b}}
+&=-y_{e,+\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}},\\
+\frac{\partial}{\partial z_{e,\dot a}^{+}}
+e^{-y_{e,+\dot b}z_e^{+\dot b}}
+&=y_{e,+}{}^{\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}}.
+\end{aligned}
+\end{equation}
+In the operator form, derivatives act on the entire expression to their right. In the current form, each earlier factor is evaluated on the currents reconstructed through all later reductions. For the graphs built from one edge by adding vertices joined to both endpoints of an existing edge, the type~I$'$ graphs of \cite[Definition 4.12]{GWW}, which include the fans, iterating this move interprets the cube-integral recursion of \cite[Theorem 4.13]{GWW} as successive series and parallel reductions of resistors.
 
 \rthm{Theorem}{b-01142}{Series--parallel} Let a Laman circuit have a degree-two vertex $v$, edges $vu,vw$, and an edge $uw$. Order $vu,vw$ first. After elimination, retain the other edge positions, including the merged $uw$. The current fractions satisfy $0<r_1,r_2<1$. The new circuit is still a Laman circuit.
 
@@ -2889,9 +2900,16 @@ r_2=\frac{t_{vu}+t_{vw}}{t_{vu}+t_{vw}+t_{uw}},\\
 \underbrace{r_2\lambda_{v,+\dot a}
 \frac{\partial}{\partial z_{uw,\dot a}^{\mathrm{red},+}}}_{\text{local current Jacobian}}
 \mathcal I_{\Gamma^{\mathrm{red}}}
-(\lambda^{\mathrm{red}};z^{\mathrm{red}}).
+(\lambda^{\mathrm{red}};z^{\mathrm{red}})\\[4pt]
+={}&\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{y^{\mathrm{red}}\in\Delta_{\Gamma^{\mathrm{red}}}\\
+\sum_{e:e(0)=v'}y_e^{\mathrm{red}}-\sum_{e:e(1)=v'}y_e^{\mathrm{red}}=\lambda_{v'}^{\mathrm{red}}}}
+r_2\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a}\\
+&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
+\bigwedge_{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}}(-d^2y_e^{\mathrm{red}}).
 \end{aligned}
 \end{equation}
+Here $T^{\mathrm{red}}$ is a spanning tree of the reduced graph containing $uw$; $v'$ ranges over its vertices. As in \eqref{eq-operatope}, $d^2y_e=dy_{e,+\dot+}\wedge dy_{e,+\dot-}$, and the remaining wedge is taken at fixed $r_1,r_2$. The original currents in the exponential are reconstructed by \eqref{b-01151}. Thus the last line is a weighted integral on the remaining current space. The displacement substitution is
 \begin{equation*}
 z_{uw}^{\mathrm{red}}=r_2z_{uw}+(1-r_2)(z_{vw}-z_{vu}),\qquad
 z_e^{\mathrm{red}}=z_e\quad(e\ne uw).
@@ -3006,11 +3024,17 @@ e^{-\lambda_{1,+\dot a}(r_1z_{12}+(1-r_1)z_{1,n+2})^{+\dot a}}\\
 r_2(\lambda_{1,+\dot b}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot b})}}
 \mathcal I_{\Gamma^{\mathrm{red}}}
 (\lambda^{\mathrm{red}};z^{\mathrm{red}})
-.
+\\[4pt]
+&={}\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{y^{\mathrm{red}}\in\Delta_{\Gamma^{\mathrm{red}}}\\
+\text{current conservation at }\lambda^{\mathrm{red}}}}
+r_2\lambda_{1,+\dot a}y_{2,n+2,+}^{\mathrm{red}}{}^{\dot a}\\
+&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
+\bigwedge_{i=2}^{n}(-d^2y_{i,i+1}).
 \end{aligned}
 \end{equation}
 
-\emph{The derivative is taken before substituting}
+The remaining spanning tree consists of the spokes; its chord currents are $y_{i,i+1}$, $2\le i\le n$. Current conservation in the integration domain means the affine constraints displayed in \eqref{eq-kernel-series-parallel}. \emph{The derivative is taken before substituting}
 \begin{equation*}
 z^{\mathrm{red}}_{2,n+2}
 =r_2z_{2,n+2}+(1-r_2)(z_{1,n+2}-z_{12}),\qquad
@@ -3057,11 +3081,19 @@ r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot b}
 \frac{\partial}{\partial z_{i+1,n+2}^{\mathrm{red},+\dot b}}
 \right)\right]
 \underbrace{\mathcal I_\triangle
-(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\text{vertices }n,n+1,n+2}.
+(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\text{vertices }n,n+1,n+2}\\[4pt]
+={}&-\int_{(0,1)^{2n-2}}\prod_{j=1}^{2n-2}dr_j
+\int_{\substack{y^{\mathrm{red}}\in\Delta_\triangle\\
+\text{current conservation at }\lambda^{\mathrm{red}}}}
+\prod_{i=1}^{n-1}
+\left(r_{2i}\lambda_{i,+\dot a_i}^{\mathrm{red}}
+y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a_i}\right)\\
+&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
+\,d^2y_{n,n+1}.
 \end{aligned}
 \end{equation}
 
-The factor $i=1$ acts outermost; $\mathrm{red}$ refers to the indicated stage, and each derivative acts on everything to its right before that stage's displacement substitution.
+The remaining space is the triangle on $n,n+1,n+2$, with its two spokes as spanning tree. In the $i$th current factor, $\lambda_i^{\mathrm{red}}$ is the source immediately before eliminating $i$, and $y_{i+1,n+2}^{\mathrm{red}}$ is the merged current immediately afterwards. These currents are reconstructed backwards from $y_{n,n+1}$ by \eqref{eq-B-fan-general-fractions}. The minus sign is its single remaining loop-area sign. In the operator form, $i=1$ acts outermost and each derivative precedes its displacement substitution.
 
 \begin{figure}[H]
 \centering
@@ -3093,84 +3125,37 @@ The sources passed inward obey the following recurrence, with empty products equ
 \end{equation}
 
 \begin{proofbox}
-\textbf{Proof of \eqref{eq-1-40}.} Every kernel in \eqref{eq-fan-operator-product} depends on the displacements only through the exponential $e^{-\sum_ey_{e,+\dot a}z_e^{+\dot a}}$. Each derivative $\partial/\partial z$ therefore reads off a current $y$, and the currents are solved completely by iterating backwards from the triangle. The proof has three steps.
+\textbf{Proof of \eqref{eq-1-40}.} We evaluate the current integral in \eqref{eq-fan-operator-product} backwards from its triangle.
 
-\medskip\noindent\textbf{Step 1: the first two operators.} The first factor of \eqref{eq-fan-operator-product} is \eqref{b-00282}; for $n\ge3$ the second is the same formula applied to the smaller fan at $(v,u,w)=(2,3,n+2)$. The first derivative acts on the phase of the second factor and on its displacement substitution:
+\medskip\noindent\textbf{Step 1: the first two reductions.} After the second elimination, the current inserted by the first is
 \begin{equation}\label{eq-B-fan-second-fractions}
 \begin{aligned}
-&r_2\lambda_{1,+}{}^{\dot a}
-\frac{\partial}{\partial z_{2,n+2}^{\mathrm{red},+\dot a}}
-e^{-\lambda_{2,+\dot b}^{\mathrm{red}}
-(r_3z_{23}+(1-r_3)z_{2,n+2}^{\mathrm{red}})^{+\dot b}}\\
-&\quad=r_2(1-r_3)
-\lambda_{1,+\dot a}\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}
-e^{-\lambda_{2,+\dot b}^{\mathrm{red}}
-(r_3z_{23}+(1-r_3)z_{2,n+2}^{\mathrm{red}})^{+\dot b}},\\[3pt]
-&z_{3,n+2}^{\mathrm{red}}
-=r_4z_{3,n+2}+(1-r_4)(z_{2,n+2}^{\mathrm{red}}-z_{23}),\\
-&\frac{\partial}{\partial z_{2,n+2}^{\mathrm{red},+\dot a}}
-\mathcal I_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}
-= (1-r_4)\frac{\partial}{\partial z_{3,n+2}^{\mathrm{red},+\dot a}}
-\mathcal I_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}.
+\lambda_2^{\mathrm{red}}&=\lambda_2+r_1\lambda_1,\\
+y_{2,n+2,+\dot a}^{\mathrm{red}}
+&=(1-r_3)\lambda_{2,+\dot a}^{\mathrm{red}}
+ +(1-r_4)y_{3,n+2,+\dot a}^{\mathrm{red}}\\
+&=\lambda_{2,+\dot a}^{\mathrm{red}}-y_{23,+\dot a}.
 \end{aligned}
 \end{equation}
-By the Leibniz rule, the first operator becomes the bracket $r_2[(1-r_3)\lambda_{1,+\dot a}\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}+(1-r_4)\lambda_{1,+}{}^{\dot a}\partial/\partial z_{3,n+2}^{\mathrm{red},+\dot a}]$ in the second equality of \eqref{eq-fan-chain} below. Its derivative reads off $y^{\mathrm{red}}_{3,n+2}$ from the exponential of the remaining kernel, as in \eqref{eq-fan-kernel-recursion}, and the two terms of the bracket add up to the current on the reduced spoke $(2,n+2)$, by Proposition~\ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea} applied at vertex $2$:
-\begin{equation*}
-(1-r_3)\lambda^{\mathrm{red}}_{2,+\dot a}+(1-r_4)y^{\mathrm{red}}_{3,n+2,+\dot a}
-=\lambda^{\mathrm{red}}_{2,+\dot a}-y_{23,+\dot a}
-=y^{\mathrm{red}}_{2,n+2,+\dot a}.
-\end{equation*}
-The first two inserted-current factors are therefore
-\begin{equation*}
-\begin{aligned}
-r_2\lambda_{1,+\dot a}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot a}
-&=r_2\lambda_{1,+\dot a}
-(\lambda_{2,+}{}^{\dot a}-y_{23,+}{}^{\dot a}(r)),\\
-r_4\lambda^{\mathrm{red}}_{2,+\dot a}y^{\mathrm{red}}_{3,n+2,+}{}^{\dot a}
-&=r_4(\lambda_{2,+\dot a}+r_1\lambda_{1,+\dot a})
-(\lambda_{3,+}{}^{\dot a}-y_{34,+}{}^{\dot a}(r)).
-\end{aligned}
-\end{equation*}
-The first two reductions give the first two equalities of the chain below; their iteration gives the rest. In each term, take the displayed derivatives first, then apply the displacement substitutions from the last reduction to the first. For $n=2$, the first reduced kernel is the triangle \eqref{eq-1-25}, so the second reduction is omitted.
+Thus, for $n\ge3$, the first two steps of the integral are
 \begin{equation}\label{eq-fan-chain}
 \begin{aligned}
-&\mathcal I_\Gamma(\lambda;z)\\
-&={}\int_0^1\!dr_1\int_0^1\!dr_2\;
-e^{-\lambda_{1,+\dot a}(r_1z_{12}+(1-r_1)z_{1,n+2})^{+\dot a}}\\
-&\quad\times
-\underbrace{r_2\lambda_{1,+}{}^{\dot b}
-\frac{\partial}{\partial z_{2,n+2}^{\mathrm{red},+\dot b}}}_{
-\substack{\text{inserts the current-area Jacobian}\\
-r_2(\lambda_{1,+\dot b}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot b})}}
-\underbrace{\mathcal I_{\Gamma^{\mathrm{red}}}
-(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{(n-1)\text{-loop kernel}}
-\\[6pt]
-&={}\int_0^1\!dr_1\int_0^1\!dr_2
-\int_0^1\!dr_3\int_0^1\!dr_4\;
-e^{-\lambda_{1,+\dot a}(r_1z_{12}+(1-r_1)z_{1,n+2})^{+\dot a}}\\
-&\quad\times
-e^{-\lambda^{\mathrm{red}}_{2,+\dot a}(r_3z_{23}+(1-r_3)z^{\mathrm{red}}_{2,n+2})^{+\dot a}}\\
-&\quad\times\underbrace{r_2\left[
-(1-r_3)\lambda_{1,+\dot a}\lambda^{\mathrm{red}}_{2,+}{}^{\dot a}
-+(1-r_4)\lambda_{1,+}{}^{\dot b}
-\frac{\partial}{\partial z_{3,n+2}^{\mathrm{red},+\dot b}}
-\right]}_{\substack{\text{inserts the first current-area Jacobian}\\
-r_2(\lambda_{1,+\dot b}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot b})}}\\
-&\quad\times
-\underbrace{r_4\lambda^{\mathrm{red}}_{2,+}{}^{\dot c}
-\frac{\partial}{\partial z_{3,n+2}^{\mathrm{red},+\dot c}}}_{
-\substack{\text{inserts the current-area Jacobian}\\
-r_4(\lambda^{\mathrm{red}}_{2,+\dot c}y^{\mathrm{red}}_{3,n+2,+}{}^{\dot c})}}
-\underbrace{\mathcal I_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}\!\left(
-\begin{gathered}
-\lambda_3+r_3\lambda_2^{\mathrm{red}},\lambda_4,\ldots,\lambda_{n+1},\\
-\lambda_{n+2}+(1-r_1)\lambda_1\\
-+(1-r_3)\lambda_2^{\mathrm{red}};z^{\mathrm{red}}
-\end{gathered}\right)}_{(n-2)\text{-loop kernel}}
-\\[6pt]
-&={}\cdots\;=\;\text{the right-hand side of \eqref{eq-1-40}}.
+\mathcal I_\Gamma(\lambda;z)
+={}&\int_{(0,1)^4}\prod_{j=1}^{4}dr_j
+\int_{\substack{y^{\mathrm{red}}\in\Delta_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}\\
+\text{current conservation at the twice-transferred sources}}}
+r_2r_4\\
+&\times\lambda_{1,+\dot a}
+\left[(1-r_3)\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}
++(1-r_4)y_{3,n+2,+}^{\mathrm{red}}{}^{\dot a}\right]
+\lambda_{2,+\dot b}^{\mathrm{red}}y_{3,n+2,+}^{\mathrm{red}}{}^{\dot b}\\
+&\times e^{-\sum_{e\in I}y_{e,+\dot c}z_e^{+\dot c}}
+\bigwedge_{i=3}^{n}(-d^2y_{i,i+1}),\\
+\lambda_3^{\mathrm{red}}&=\lambda_3+r_3\lambda_2^{\mathrm{red}},\qquad
+\lambda_{n+2}^{\mathrm{red}}=\lambda_{n+2}+(1-r_1)\lambda_1+(1-r_3)\lambda_2^{\mathrm{red}}.
 \end{aligned}
 \end{equation}
+All other remaining sources are unchanged. The term proportional to $(1-r_3)\lambda_2^{\mathrm{red}}$ is the contribution of the second source phase in the operator calculation. Keeping the reconstructed current includes it automatically. For $n=2$, \eqref{b-00282} already leaves a triangle.
 
 \medskip\noindent\textbf{Step 2: evaluation from the triangle outward.} The innermost factor of \eqref{eq-fan-operator-product} is the one-loop kernel \eqref{eq-1-25}, relabelled to $n,n+1,n+2$:
 \begin{equation}\label{eq-B-fan-second-merge}
@@ -3183,7 +3168,7 @@ y_{n,n+1,+\dot a}&=r_{2n-1}\lambda_{n,+\dot a}^{\mathrm{red}}
 -r_{2n}\lambda_{n+1,+\dot a}.
 \end{aligned}
 \end{equation}
-Apply the operators in the order $i=n-1,n-2,\ldots,1$. Fix the inner integration ratios and sources; the factors already obtained are independent of the displacements, so the next derivative acts on their exponential and reads off the current on the reduced spoke $(i+1,n+2)$:
+Restore vertices in the order $i=n-1,n-2,\ldots,1$. The next area factor is $r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}$; equivalently,
 \begin{equation}\label{eq-fan-kernel-recursion}
 \begin{aligned}
 &r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}
@@ -3223,7 +3208,7 @@ y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}
 \qquad 1\le i<n.
 \end{aligned}
 \end{equation}
-Each operator thus multiplies the displacement-independent factors by this contraction and restores one more circuit. The resulting nested integral is \eqref{eq-1-40}: insert the source sum \eqref{eq-B-fan-first-cycle}; the interval pairs come from \eqref{eq-kernel-series-parallel}, and the final simplex comes from \eqref{eq-B-fan-second-merge}.
+Each restored vertex multiplies the density by this current contraction. The resulting nested integral is \eqref{eq-1-40}: insert the source sum \eqref{eq-B-fan-first-cycle}; the interval pairs come from \eqref{eq-kernel-series-parallel}, and the final simplex comes from \eqref{eq-B-fan-second-merge}.
 
 \medskip\noindent\textbf{Step 3: the currents.} The currents are now solved backwards: the triangle gives $y_{n,n+1}$, and the coefficient of $z_{i,i+1}$ in Step 2 gives $y_{i,i+1}$ in terms of $y_{i+1,i+2}$,
 \begin{equation}\label{eq-B-fan-general-fractions}
@@ -3238,7 +3223,7 @@ y_{i,i+1,+\dot a}
 \end{equation}
 Inserting \eqref{eq-B-fan-first-cycle} gives \eqref{eq-1-38}. The coordinates are the resistance ratios $r_{2i-1}=t^{\mathrm{red}}_{i,n+2}/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})$ and $r_{2i}=(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2}+t_{i+1,n+2})$ of Theorem~\ref{b-01142}; the first line is the triangle \eqref{eq-triangle-current} with $t_{13},t_{23}$ replaced by $t^{\mathrm{red}}_{n,n+2}=r_{2n-1}$ and $t_{n+1,n+2}=r_{2n}$. The spoke currents \eqref{eq-1-39} follow from conservation in the restored fan. This reflects the order of our iteration: the path currents are fixed first, backward from $y_{n,n+1}$ to $y_{12}$, and current conservation at each path vertex then determines every spoke current.
 
-For $n=1$, the operator product is empty and gives \eqref{eq-1-25}; for $n=2$, the single operator restores the two-loop circuit of Figure~\ref{fig-fan-series-parallel-currents}. $\square$
+For $n=1$, the product of current factors is empty and gives \eqref{eq-1-25}; for $n=2$, the single current factor restores the two-loop circuit of Figure~\ref{fig-fan-series-parallel-currents}. $\square$
 \end{proofbox}
 
 \subsection{Final Taylor expansion}\label{endpoint-sources-and-taylor-expansion}
@@ -4142,7 +4127,7 @@ I=\big((v_{i,j},v_{i,j+1}),(v_{i,j},B)\big)_{i=1,\ldots,a;\ j=1,\ldots,\ell_i}
 \end{gathered}
 \end{equation}
 
-All computations of $Q_n$ involve only the spider kernel. The computation of the spider kernel is similar to repeating the computation of the fan kernel on each path.
+The $Q_n$ graphs classified in Proposition~\ref{b-00240} are spiders. Their currents follow by repeating the fan reconstruction on each arm.
 
 \rthm{Theorem}{thm-spider-kernel}{Spider kernel at every loop order} \emph{For the spider \eqref{eq-1-47} with arms of lengths $\ell_1,\ldots,\ell_a$, $\ell_1+\cdots+\ell_a=n$, sources $\lambda_A$ and $\lambda_{v_{i,1}}$, and arbitrary displacements $z_e$, in the coordinates}
 \begin{equation}\label{eq-spiderdomain}
@@ -4201,44 +4186,9 @@ Each arm is reduced as a fan is, from its outer end (Figure~\ref{fig-spider-redu
 
 Each merge lowers the loop number by one. When every arm is reduced, its branch and the original edge $AB$ merge into one resistor, whose Schwinger time is fixed to one.
 
-\subsubsection{Iterating the series--parallel operators}\label{sec-spider-reduction}
+\subsubsection{Currents along an arm}\label{sec-spider-reduction}\label{local-B5-arms-heading}\label{sec-spider-jacobian}
 
-For the spider \eqref{eq-1-47}, apply \eqref{eq-kernel-series-parallel} along each arm, then remove the book pages until one triangle remains.
-
-Eliminate the interior vertices $v_{i,1},\ldots,v_{i,\ell_i-1}$, arm by arm, followed by the terminal vertices $v_{1,\ell_1},\ldots,v_{a-1,\ell_{a-1}}$; put $v_{i,\ell_i+1}=A$ and $u=v_{i,j+1}$ when $v=v_{i,j}$.
-
-Each factor below has its own local parameters $r_1,r_2$ of \eqref{eq-kernel-series-parallel}, acts on everything to its right, and substitutes the source and displacement updates after differentiating:
-\begin{equation*}
-\begin{aligned}
-    \mathcal I_\Gamma(\lambda;z)
-    ={}&\prod_{\substack{v\ \mathrm{in\ the\ displayed\ elimination\ order}}}
-    \Biggl[
-    \int_0^1dr_1\int_0^1dr_2\,
-    e^{-\lambda_{v,+\dot a}^{\mathrm{red}}
-    [r_1z_{vu}+(1-r_1)z_{vB}^{\mathrm{red}}]^{+\dot a}}\\
-    &\hspace{42mm}\times r_2\lambda_{v,+}^{\mathrm{red}}{}^{\dot b}
-    \frac{\partial}{\partial z_{uB}^{\mathrm{red},+\dot b}}
-    \Biggr]
-    \underbrace{\mathcal I_\triangle
-    (\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\substack{\text{vertices }v_{a,\ell_a},A,B\\\text{known one-loop kernel \eqref{eq-1-25}}}}.
-    \end{aligned}
-\end{equation*}
-
-Here $v=v_{i,j}$, $u=v_{i,j+1}$ and $w=B$ in Theorem~\ref{b-01142}, with the updates
-\begin{equation*}
-\begin{gathered}
-\lambda_u^{\mathrm{red}}=\lambda_u+r_1\lambda_v,\qquad
-\lambda_B^{\mathrm{red}}=\lambda_B+(1-r_1)\lambda_v,\\
-z_{uB}^{\mathrm{red}}=r_2z_{uB}+(1-r_2)(z_{vB}-z_{vu}),
-\qquad z_e^{\mathrm{red}}=z_e\quad(e\ne uB).
-\end{gathered}
-\end{equation*}
-
-We evaluate these derivatives before expanding the final exponential.
-
-\subsubsection{Derivatives along an arm}\label{local-B5-arms-heading}
-
-The internal arm sources vanish as in \eqref{eq-1-47}, and $v_{i,\ell_i+1}=A$.
+Remove $v_{i,1},\ldots,v_{i,\ell_i-1}$ on each arm. The series--parallel map \eqref{b-01151}, with $(r_1,r_2)=(r_{i,2j-1},1-r_{i,2j})$, gives
 \begin{equation}\label{eq-spider-reduced-data}
 \begin{aligned}
 \lambda_{v_{i,j+1},+\dot a}^{\mathrm{red}}
@@ -4249,228 +4199,7 @@ The internal arm sources vanish as in \eqref{eq-1-47}, and $v_{i,\ell_i+1}=A$.
 \lambda_{v_{i,1},+\dot a},\qquad 1\le j\le\ell_i.
 \end{aligned}
 \end{equation}
-
-For $j<\ell_i$, use \eqref{eq-kernel-series-parallel} with $(v,u,w)=(v_{i,j},v_{i,j+1},B)$ and local parameters $(r_1,r_2)=(r_{i,2j-1},1-r_{i,2j})$.
-
-Each superscript $\mathrm{red}$ refers to the circuit at the indicated step; the incoming source and spoke displacement already include the preceding reductions.
-\begin{equation*}
-\begin{aligned}
-\mathcal I_\Gamma(\lambda;z)
-={}&\int_0^1dr_{i,2j-1}\int_0^1dr_{i,2j}\\
-&\times e^{-\lambda^{\mathrm{red}}_{v_{i,j},+\dot a}
-[r_{i,2j-1}z_{v_{i,j}v_{i,j+1}}+(1-r_{i,2j-1})z_{v_{i,j}B}^{\mathrm{red}}]^{+\dot a}}\\
-&\times\underbrace{(1-r_{i,2j})\lambda^{\mathrm{red}}_{v_{i,j},+}{}^{\dot b}
-\frac{\partial}{\partial z_{v_{i,j+1}B}^{\mathrm{red},+\dot b}}}_{\text{operator supplied by \eqref{eq-kernel-series-parallel}}}
-\underbrace{\mathcal I_{\Gamma^{\mathrm{red}}}
-(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\text{one fewer arm vertex and loop}}.
-\end{aligned}
-\end{equation*}
-\begin{equation*}
-z_{v_{i,j+1}B}^{\mathrm{red}}
-=(1-r_{i,2j})z_{v_{i,j+1}B}
-+r_{i,2j}\bigl(z_{v_{i,j}B}^{\mathrm{red}}-z_{v_{i,j}v_{i,j+1}}\bigr).
-\end{equation*}
-
-The later source on the same arm is a multiple of $\lambda_{v_{i,1}}$, so an earlier directional derivative annihilates its source phase:
-\begin{equation*}
-\lambda_{v_{i,1},+\dot a}\lambda_{v_{i,k},+}^{\mathrm{red}}{}^{\dot a}=0.
-\end{equation*}
-\begin{equation*}
-\lambda_{v_{i,1},+}{}^{\dot a}
-    \frac{\partial}{\partial z_{v_{i,k}B}^{\mathrm{red},+\dot a}}
-     e^{-\lambda_{v_{i,k},+\dot b}^{\mathrm{red}}
-    [r_{i,2k-1}z_{v_{i,k}v_{i,k+1}}+(1-r_{i,2k-1})z_{v_{i,k}B}^{\mathrm{red}}]^{+\dot b}}=0.
-\end{equation*}
-
-Its action on the next kernel passes through the affine displacement substitution:
-\begin{equation*}
-\lambda_{v_{i,1},+}{}^{\dot a}
-\frac{\partial}{\partial z_{v_{i,k}B}^{\mathrm{red},+\dot a}}
-=r_{i,2k}\lambda_{v_{i,1},+}{}^{\dot a}
-\frac{\partial}{\partial z_{v_{i,k+1}B}^{\mathrm{red},+\dot a}}
-\qquad(k<\ell_i).
-\end{equation*}
-
-Repeat for $j=1,\ldots,\ell_i-1$ on each arm; the remaining graph is the book on $A,B,v_{1,\ell_1},\ldots,v_{a,\ell_a}$.
-
-\subsubsection{Evaluate the book from one triangle}\label{sec-book-jacobian}
-
-Use the book labels $1,\ldots,n$, $A=n+1$, $B=n+2$, with $n=a$ pages and $\lambda_i=\lambda_{v_{i,\ell_i}}^{\mathrm{red}}$.
-
-Remove pages $1,\ldots,n-1$, leaving the triangle $(n,A,B)$; the sources and the $AB$ displacement update at each step by
-\begin{equation*}
-\begin{aligned}
-\left.\lambda_A^{\mathrm{red}}\right|_{\text{after }i}
-&=\left.\lambda_A^{\mathrm{red}}\right|_{\text{before }i}+r_1\lambda_i,\\
-\left.\lambda_B^{\mathrm{red}}\right|_{\text{after }i}
-&=\left.\lambda_B^{\mathrm{red}}\right|_{\text{before }i}+(1-r_1)\lambda_i,\\
-\left.z_{AB}^{\mathrm{red}}\right|_{\text{after }i}
-&=r_2\left.z_{AB}^{\mathrm{red}}\right|_{\text{before }i}
-+(1-r_2)(z_{iB}-z_{iA}).
-\end{aligned}
-\end{equation*}
-
-The later page phases are independent of $z_{AB}^{\mathrm{red}}$; therefore the composed derivatives act directly on the known triangle kernel:
-\begin{equation}\label{eq-B-book-full-kernel}
-\begin{aligned}
-    \mathcal I_\Gamma(\lambda;z)
-    ={}&\int_{(0,1)^{2n-2}}
-    \prod_{i=1}^{n-1}\left[d\!\left(\left.r_1\right|_{v=i}\right)
-     d\!\left(\left.r_2\right|_{v=i}\right)\right]\\
-    &\times e^{-\sum_{\substack{1\le i<n\\\mathrm{removed\ pages}}}
-    \lambda_{i,+\dot a}
-    [(\left.r_1\right|_{v=i})z_{iA}+(1-\left.r_1\right|_{v=i})z_{iB}]^{+\dot a}}\\
-    &\times\prod_{i=1}^{n-1}\left[
-    \left(\prod_{k=i}^{n-1}\left.r_2\right|_{v=k}\right)
-    \lambda_{i,+}{}^{\dot a_i}
-    \frac{\partial}{\partial z_{AB}^{\mathrm{red},+\dot a_i}}
-    \right]
-    \underbrace{\mathcal I_\triangle(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{(n,A,B)}.
-    \end{aligned}
-\end{equation}
-
-The product of local $r_2$ factors follows at every substitution from
-\begin{equation*}
-\left.\frac{\partial}{\partial z_{AB}^{\mathrm{red},+\dot a}}\right|_{\mathrm{before\ page}\ k}
-    =\left.r_2\right|_{v=k}
-    \left.\frac{\partial}{\partial z_{AB}^{\mathrm{red},+\dot a}}\right|_{\mathrm{after\ page}\ k}.
-\end{equation*}
-
-In the last triangle, use the local coordinates $r_1,r_2$ of \eqref{eq-1-25}; its currents are
-\begin{equation*}
-\begin{aligned}
-    y_{nA,+\dot a}^{\mathrm{red}}&=r_1\lambda_{n,+\dot a}-r_2\lambda_{A,+\dot a}^{\mathrm{red}},\\
-    y_{nB,+\dot a}^{\mathrm{red}}&=\lambda_{n,+\dot a}-y_{nA,+\dot a}^{\mathrm{red}},\\
-    y_{AB,+\dot a}^{\mathrm{red}}&=(1-r_2)\lambda_{A,+\dot a}^{\mathrm{red}}+r_1\lambda_{n,+\dot a}.
-    \end{aligned}
-\end{equation*}
-
-Every derivative in \eqref{eq-B-book-full-kernel} inserts this $AB$ current:
-\begin{equation*}
-\begin{aligned}
-    &\prod_{i=1}^{n-1}
-    \left[\lambda_{i,+}{}^{\dot a_i}
-    \frac{\partial}{\partial z_{AB}^{\mathrm{red},+\dot a_i}}\right]
-    \mathcal I_\triangle(\lambda^{\mathrm{red}};z^{\mathrm{red}})\\
-    &=\bigl(\lambda_{n,+\dot b}\lambda_{A,+}^{\mathrm{red}}{}^{\dot b}\bigr)
-    \int_0^1dr_1\int_0^{1-r_1}dr_2\,
-    \prod_{i=1}^{n-1}
-    \bigl(\lambda_{i,+\dot a_i}y_{AB,+}^{\mathrm{red}}{}^{\dot a_i}\bigr)
-     e^{-\sum_{\substack{e\in\{nA,nB,AB\}\\\mathrm{triangle\ edges}}}
-     y_{e,+\dot c}^{\mathrm{red}}z_e^{\mathrm{red},+\dot c}}.
-    \end{aligned}
-\end{equation*}
-
-To write the result in the current shares of \eqref{eq-spiderdomain}, include the final triangle's local parameters and use
-\begin{equation*}
-\left.r_1\right|_{v=n}=\frac{r_1}{1-r_2},\qquad
-    \left.r_2\right|_{v=n}=1-r_2.
-\end{equation*}
-\begin{equation*}
-\begin{aligned}
-    \left.y_{AB,+\dot a}^{\mathrm{red}}\right|_{\mathrm{triangle}}
-    &=\left.r_2\right|_{v=n}
-    \left.y_{AB,+\dot a}^{\mathrm{red}}\right|_{\mathrm{final\ edge}},\\
-    \lambda_{n,+\dot a}
-    \left.\lambda_{A,+}^{\mathrm{red}}{}^{\dot a}\right|_{\mathrm{triangle}}
-    &=\lambda_{n,+\dot a}
-    \left.y_{AB,+}^{\mathrm{red}}{}^{\dot a}\right|_{\mathrm{final\ edge}}.
-    \end{aligned}
-\end{equation*}
-\begin{equation}\label{eq-book-current-derivative}
-\begin{gathered}
-\left.r_1\right|_{v=i}=r_{2i-1},\qquad
-\left.r_2\right|_{v=i}
-=\frac{1-\sum_{\substack{i\le k\le n\\\mathrm{pages}}}r_{2k}}
-{1-\sum_{\substack{i<k\le n\\\mathrm{pages}}}r_{2k}},\\[3pt]
-r_{2i}=\left(1-\left.r_2\right|_{v=i}\right)
-\prod_{k=i+1}^{n}\left.r_2\right|_{v=k}.
-\end{gathered}
-\end{equation}
-
-The resulting currents are
-\begin{equation}\label{eq-B-book-reduced-current}
-\begin{aligned}
-y^{\mathrm{red}}_{n+1,n+2,+\dot a}
-&=\lambda_{n+1,+\dot a}+\sum_{j=1}^n r_{2j-1}\lambda_{j,+\dot a},\\
-y_{i,n+1,+\dot a}
-&=r_{2i-1}\lambda_{i,+\dot a}
--r_{2i}y^{\mathrm{red}}_{n+1,n+2,+\dot a},\\
-y_{i,n+2,+\dot a}
-&=(1-r_{2i-1})\lambda_{i,+\dot a}
-+r_{2i}y^{\mathrm{red}}_{n+1,n+2,+\dot a},\\
-y_{n+1,n+2,+\dot a}
-&=\left(1-\sum_i r_{2i}\right)y^{\mathrm{red}}_{n+1,n+2,+\dot a}.
-\end{aligned}
-\end{equation}
-
-The successive derivatives and the last triangle supply $\prod_{i=1}^n(\left.r_2\right|_{v=i})^i$; substituting \eqref{eq-book-current-derivative} gives the positive integration densities
-\begin{equation*}
-\begin{aligned}
-    &\prod_{i=1}^{n}\left[
-    \left(\left.r_2\right|_{v=i}\right)^i
-    \left|d\!\left(\left.r_2\right|_{v=i}\right)\right|\right]\\
-    &=\frac{\displaystyle\prod_{i=1}^{n}
-    \left(1-\sum_{\substack{i\le k\le n\\\mathrm{pages}}}r_{2k}\right)}
-    {\displaystyle\prod_{i=1}^{n}
-    \left(1-\sum_{\substack{i<k\le n\\\mathrm{pages}}}r_{2k}\right)}
-    \prod_{i=1}^{n}dr_{2i}\\
-    &=\left(1-\sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}\right)
-    \prod_{i=1}^{n}dr_{2i}.
-    \end{aligned}
-\end{equation*}
-
-The phase substitutions restore the original edge exponential, and the accumulated operators give
-\begin{equation}\label{eq-book-current-determinant}
-\begin{aligned}
-    \mathcal I_\Gamma(\lambda;z)
-    ={}&\int_{\substack{0<r_{2i-1}<1\\r_{2i}>0,\ \sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}<1}}
-    \prod_{i=1}^n(dr_{2i-1}\,dr_{2i})\,
-    \left(1-\sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}\right)\\
-    &\times\prod_{i=1}^{n}
-    \bigl(\lambda_{i,+\dot a_i}y_{AB,+}^{\mathrm{red}}{}^{\dot a_i}\bigr)
-     e^{-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot b}z_e^{+\dot b}}.
-    \end{aligned}
-\end{equation}
-
-For the marked product, set $z_{AB}=0$ after differentiating.
-
-\subsubsection{Multiply the arm factors}\label{local-B5-complete-heading}
-
-Restore the spider labels, $n=\sum_{\substack{1\le i\le a\\\mathrm{arms}}}\ell_i$; at the book, the final $AB$ displacement contains the terminal spoke with coefficient $r_{i,2\ell_i}$.
-
-Combining this coefficient with the successive arm derivatives gives the contribution from vertex $v_{i,j}$:
-\begin{equation}\label{eq-spider-jacobian-blocks}
-\begin{gathered}
-(1-r_{i,2j})
-\left(\prod_{k=1}^{j-1}r_{i,2k-1}\right)
-\left(\prod_{k=j+1}^{\ell_i-1}r_{i,2k}\right)
-r_{i,2\ell_i}
-\bigl(\lambda_{v_{i,1},+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr),
-\qquad j<\ell_i.
-\end{gathered}
-\end{equation}
-
-The terminal page contributes $\bigl(\prod_{k=1}^{\ell_i-1}r_{i,2k-1}\bigr)\bigl(\lambda_{v_{i,1},+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)$; the remaining coefficients multiply as
-\begin{equation}\label{eq-spider-final-block}
-\begin{aligned}
-&\left[\prod_{j=1}^{\ell_i-1}
-(1-r_{i,2j})
-\left(\prod_{k=1}^{j-1}r_{i,2k-1}\right)
-\left(\prod_{k=j+1}^{\ell_i-1}r_{i,2k}\right)
-r_{i,2\ell_i}\right]
-\left(\prod_{k=1}^{\ell_i-1}r_{i,2k-1}\right)\\
-&\qquad=r_{i,2\ell_i}^{\ell_i-1}
-\prod_{j=1}^{\ell_i-1}
-\left[r_{i,2j-1}^{\ell_i-j}r_{i,2j}^{j-1}(1-r_{i,2j})\right].
-\end{aligned}
-\end{equation}
-
-The source phases and reduced exponents combine as in \eqref{eq-book-current-determinant}; the evaluated integral is \eqref{eq-1-54}, and every factor comes from a displayed derivative acting on the remaining kernel.
-
-\subsubsection{Recover the currents by the same iteration}\label{sec-spider-jacobian}
-
-The final transferred source determines the final edge current \eqref{eq-spider-reduced}. Reversing the current update in \eqref{eq-kernel-series-parallel}, starting at each terminal page, gives the recurrence \eqref{eq-spider-reconstruction-recurrence}, with the reduced sources \eqref{eq-spider-reduced-data}. Its solution is
+The remaining graph is a book whose page sources are $\lambda_{v_{i,\ell_i}}^{\mathrm{red}}$. Starting at its final edge, the reverse map is \eqref{eq-spider-reconstruction-recurrence}; solving it gives
 \begin{equation}\label{eq-1-50}
 \begin{aligned}
 y^{\mathrm{red}}_{v_{i,j}B,+\dot a}
@@ -4481,7 +4210,7 @@ y^{\mathrm{red}}_{v_{i,j}B,+\dot a}
 y^{\mathrm{red}}_{AB,+\dot a}.
 \end{aligned}
 \end{equation}
-and the original currents \eqref{eq-1-51} along the arms and the exponent are
+The path currents are therefore
 \begin{equation}\label{eq-spider-arm-current}
 \begin{aligned}
 y_{v_{i,j}v_{i,j+1},+\dot a}
@@ -4496,6 +4225,133 @@ y_{v_{i,j}v_{i,j+1},+\dot a}
 y^{\mathrm{red}}_{AB,+\dot a}.
 \end{aligned}
 \end{equation}
+and conservation fixes the original spokes by \eqref{eq-1-51}. In particular, the part of a reduced spoke proportional to the source of its own arm vanishes when contracted with that source:
+\begin{equation}\label{eq-spider-arm-contraction}
+\lambda_{v_{i,1},+\dot a}y_{v_{i,j+1}B,+}^{\mathrm{red}}{}^{\dot a}
+=\left(\prod_{k=j+1}^{\ell_i-1}r_{i,2k}\right)r_{i,2\ell_i}
+\lambda_{v_{i,1},+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}.
+\end{equation}
+
+\subsubsection{The book current integral}\label{sec-book-jacobian}
+
+For the book use page labels $1,\ldots,n$, with $A=n+1$, $B=n+2$. Its $n$ page sources are arbitrary. The shares $r_{2i-1}$ transfer source to $A$, while $r_{2i}$ are the fractions of the final current carried by the page branches:
+\begin{equation}\label{eq-B-book-reduced-current}
+\begin{aligned}
+y^{\mathrm{red}}_{n+1,n+2,+\dot a}
+&=\lambda_{n+1,+\dot a}+\sum_{j=1}^n r_{2j-1}\lambda_{j,+\dot a},\\
+y_{i,n+1,+\dot a}
+&=r_{2i-1}\lambda_{i,+\dot a}
+-r_{2i}y^{\mathrm{red}}_{n+1,n+2,+\dot a},\\
+y_{i,n+2,+\dot a}
+&=(1-r_{2i-1})\lambda_{i,+\dot a}
++r_{2i}y^{\mathrm{red}}_{n+1,n+2,+\dot a},\\
+y_{n+1,n+2,+\dot a}
+&=\left(1-\sum_i r_{2i}\right)y^{\mathrm{red}}_{n+1,n+2,+\dot a}.
+\end{aligned}
+\end{equation}
+Choose the spokes $iB$ and the edge $AB$ as a spanning tree. Its remaining current space has the $n$ chord currents $y_{iA}$, with $0<r_{2i-1}<1$, $r_{2i}>0$ and $\sum_i r_{2i}<1$. Equation~\eqref{eq-operatope} becomes
+\begin{equation}\label{eq-B-book-full-kernel}
+\mathcal I_\Gamma(\lambda;z)
+=\int_{\substack{0<r_{2i-1}<1\\r_{2i}>0,\ \sum_i r_{2i}<1}}
+e^{-\sum_{e\in I}y_{e,+\dot a}z_e^{+\dot a}}
+\bigwedge_{i=1}^n(-d^2y_{iA}).
+\end{equation}
+
+\begin{proofbox}
+\textbf{The book Jacobian.} At fixed original sources,
+\begin{equation}\label{eq-book-current-differential}
+dy_{iA,+\dot a}
+=\lambda_{i,+\dot a}dr_{2i-1}
+-y_{AB,+\dot a}^{\mathrm{red}}dr_{2i}
+-r_{2i}\sum_{\substack{1\le j\le n\\\mathrm{pages}}}
+\lambda_{j,+\dot a}dr_{2j-1}.
+\end{equation}
+When $\lambda_{i,+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\ne0$,
+\begin{equation}\label{eq-book-source-decomposition}
+\lambda_{j,+\dot a}
+=\frac{\lambda_{j,+\dot b}y_{AB,+}^{\mathrm{red}}{}^{\dot b}}
+{\lambda_{i,+\dot c}y_{AB,+}^{\mathrm{red}}{}^{\dot c}}\lambda_{i,+\dot a}
++\frac{\lambda_{i,+\dot b}\lambda_{j,+}{}^{\dot b}}
+{\lambda_{i,+\dot c}y_{AB,+}^{\mathrm{red}}{}^{\dot c}}y_{AB,+\dot a}^{\mathrm{red}}.
+\end{equation}
+The terms along $y_{AB}^{\mathrm{red}}$ only shift $dr_{2i}$ by combinations of the odd differentials. The remaining determinant is
+\begin{equation}\label{eq-book-current-rank-one}
+\det_{1\le i,j\le n}\!\left[
+\delta^i{}_j-r_{2i}
+\frac{\lambda_{j,+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}}
+{\lambda_{i,+\dot b}y_{AB,+}^{\mathrm{red}}{}^{\dot b}}
+\right]
+=1-\sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}.
+\end{equation}
+The correction has rank one, so every minor of size at least two vanishes. Multiplying the local area factors gives the polynomial identity
+\begin{equation}\label{eq-book-current-wedge}
+\bigwedge_{i=1}^n(-d^2y_{iA})
+=\left(1-\sum_i r_{2i}\right)
+\prod_{i=1}^n\left(\lambda_{i,+\dot a_i}y_{AB,+}^{\mathrm{red}}{}^{\dot a_i}\right)
+\bigwedge_{i=1}^n(dr_{2i-1}\wedge dr_{2i}),
+\end{equation}
+which also holds when a pairing vanishes. Hence
+\begin{equation}\label{eq-book-current-determinant}
+\begin{aligned}
+    \mathcal I_\Gamma(\lambda;z)
+    ={}&\int_{\substack{0<r_{2i-1}<1\\r_{2i}>0,\ \sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}<1}}
+    \prod_{i=1}^n(dr_{2i-1}\,dr_{2i})\,
+    \left(1-\sum_{\substack{1\le i\le n\\\mathrm{pages}}}r_{2i}\right)\\
+    &\times\prod_{i=1}^{n}
+    \bigl(\lambda_{i,+\dot a_i}y_{AB,+}^{\mathrm{red}}{}^{\dot a_i}\bigr)
+     e^{-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot b}z_e^{+\dot b}}.
+    \end{aligned}
+\end{equation}
+\hfill$\square$
+\end{proofbox}
+
+The local parallel fractions of successive series--parallel moves and these global page shares are related by
+\begin{equation}\label{eq-book-current-derivative}
+\begin{gathered}
+\left.r_1\right|_{v=i}=r_{2i-1},\qquad
+\left.r_2\right|_{v=i}
+=\frac{1-\sum_{\substack{i\le k\le n\\\mathrm{pages}}}r_{2k}}
+{1-\sum_{\substack{i<k\le n\\\mathrm{pages}}}r_{2k}},\\[3pt]
+r_{2i}=\left(1-\left.r_2\right|_{v=i}\right)
+\prod_{k=i+1}^{n}\left.r_2\right|_{v=k}.
+\end{gathered}
+\end{equation}
+For the marked product, set $z_{AB}=0$ in the resulting current integral.
+
+\subsubsection{Multiplying the arm Jacobians}\label{local-B5-complete-heading}
+
+Return to the spider labels, $n=\sum_i\ell_i$. Each vertex $v_{i,j}$ with $j<\ell_i$ contributes the factor $(1-r_{i,2j})\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}y_{v_{i,j+1}B,+}^{\mathrm{red}}{}^{\dot a}$ from \eqref{eq-kernel-series-parallel}. Equations~\eqref{eq-spider-reduced-data} and~\eqref{eq-spider-arm-contraction} give it explicitly:
+\begin{equation}\label{eq-spider-jacobian-blocks}
+\begin{gathered}
+(1-r_{i,2j})
+\left(\prod_{k=1}^{j-1}r_{i,2k-1}\right)
+\left(\prod_{k=j+1}^{\ell_i-1}r_{i,2k}\right)
+r_{i,2\ell_i}
+\bigl(\lambda_{v_{i,1},+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr),
+\qquad j<\ell_i.
+\end{gathered}
+\end{equation}
+The terminal book page contributes
+\begin{equation}\label{eq-spider-terminal-factor}
+\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}
+=\left(\prod_{k=1}^{\ell_i-1}r_{i,2k-1}\right)
+\lambda_{v_{i,1},+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}.
+\end{equation}
+The scalar coefficients multiply to
+\begin{equation}\label{eq-spider-final-block}
+\begin{aligned}
+&\left[\prod_{j=1}^{\ell_i-1}
+(1-r_{i,2j})
+\left(\prod_{k=1}^{j-1}r_{i,2k-1}\right)
+\left(\prod_{k=j+1}^{\ell_i-1}r_{i,2k}\right)
+r_{i,2\ell_i}\right]
+\left(\prod_{k=1}^{\ell_i-1}r_{i,2k-1}\right)\\
+&\qquad=r_{i,2\ell_i}^{\ell_i-1}
+\prod_{j=1}^{\ell_i-1}
+\left[r_{i,2j-1}^{\ell_i-j}r_{i,2j}^{j-1}(1-r_{i,2j})\right].
+\end{aligned}
+\end{equation}
+Together with the book factor $1-\sum_i r_{i,2\ell_i}$, this is precisely the density in \eqref{eq-1-54}. The reconstructed currents restore the complete original-edge phase:
 \begin{equation}\label{eq-spider-loop-split}
 \begin{aligned}
 \sum_e y_{e,+\dot a}z_e^{+\dot a}
@@ -4705,18 +4561,11 @@ dy_{e,+\dot+}\wedge dy_{e,+\dot-}
 \label{fig-sourceless}
 \end{figure}
 
-Replace the source-free component by its effective resistor between $A,B$ and merge it with the marked resistor; call the resulting circuit $\Gamma^{\mathrm{red}}$. If $|T_j|=1$, its vertex $v$ has $\lambda_v=0$, and Theorem \ref{b-01142} gives
-
-\begin{equation*}
-\begin{aligned}
-\mathcal I_\Gamma(\lambda;z)
-&=\int_0^1dr_1\int_0^1dr_2\,
-\underbrace{\left.r_2\lambda_{v,+}{}^{\dot a}
-\frac{\partial}{\partial z_{AB}^{\mathrm{red},+\dot a}}\right|_{\lambda_v=0}}_{\text{zero current-area operator}}
-\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}})
-=0.
-\end{aligned}
-\end{equation*}
+Replace the source-free component by its effective resistor between $A,B$ and merge it with the marked resistor. For $|T_j|=1$, its vertex $v$ has $\lambda_v=0$, and the local current factor of \eqref{eq-kernel-series-parallel} vanishes:
+\begin{equation}\label{eq-sourceless-single-current}
+\left.r_2\lambda_{v,+\dot a}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\right|_{\lambda_v=0}=0,
+\qquad \mathcal I_\Gamma(\lambda;z)=0.
+\end{equation}
 
 If $|T_j|\ge2$, choose a spanning tree containing $AB$ and $|T_j|$ resistors of the component. There are $|T_j|$ complementary component resistors; for any two, $e,f$, \eqref{eq-sourceless-component} gives
 
@@ -4729,8 +4578,7 @@ If $|T_j|\ge2$, choose a spanning tree containing $AB$ and $|T_j|$ resistors of 
 &\quad\wedge\Big[c_f^2dJ_{+\dot+}\wedge dJ_{+\dot-}
 +c_f\,dc_f\wedge(J_{+\dot+}dJ_{+\dot-}-J_{+\dot-}dJ_{+\dot+})\Big]=0,\\
 &\mathcal I_\Gamma(\lambda;z)
-=\underbrace{0}_{\text{current-area Jacobian of the component}}
-\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}})=0.
+=0.
 \end{aligned}
 \end{equation*}
 
@@ -4823,15 +4671,15 @@ The final iteration of these forest diagrams requires star--triangle transformat
 
 As noted in Section~\ref{sec-dressed-definition}, spiders do not exhaust the graphs of the quantum product: other graphs (general forests) occur from three loops on and are the majority from four loops on, where the trees also begin to branch (Table~\ref{tab-product-census}). The series--parallel move of Theorem~\ref{b-01142} and the two star--triangle moves below reduce all of them.\footnote{From three loops on, some of these graphs are Laman graphs not of type~I$'$ \cite[Definition 4.12]{GWW}: in the three-loop graph with edges $12,13,2A,2B,3A,3B,AB$, the only degree-two vertex, $1$, has neighbours that are not joined. These reductions therefore reach beyond the recursion of \cite[Theorem 4.13]{GWW}.}
 
-The reduction of each tree in the forest can be done independently.
+Each tree can be reduced independently. We use the current form of \eqref{eq-kernel-series-parallel}: remove vertices, multiply the local area factors, and reconstruct the currents backwards. The remaining integral always displays its current domain and chord-area wedge. Earlier factors are evaluated on their own stage currents; after another reduction these currents are replaced by the corresponding reverse map.
 
-\subsubsection{Star--triangle moves as kernel operators}
+\subsubsection{Star--triangle moves on current integrals}
 
-As for the series--parallel move, each move becomes an operator on the reduced kernel; in successive moves, derivatives act on the entire expression to their right.
+The two source-free moves below preserve the sources at the remaining vertices. Their derivative forms and weighted current forms agree by \eqref{eq-current-insertions}. In each current integral, $T^{\mathrm{red}}$ is the specified reduced spanning tree; the original currents in the exponential are obtained from the displayed reverse map.
 
 \rthm{Theorem}{b-01159}{Star--triangle, the first case: two edges present} In a Laman circuit, let $v$ have degree three, neighbours $u,w,x$, and source $\lambda_v$. Assume $ux,wx$ are present and $uw$ is absent. Let $r_1,r_2$ be the old $ux,wx$ current fractions. The reduction removes one vertex, two edges, and one loop, preserving the Laman condition.
 
-For $\lambda_v=0$, the operator is \eqref{eq-kernel-star-triangle}; the complete sourced version~\eqref{local-B-sourced-operator} is given in Section~\ref{sources-at-a-trivalent-vertex}.
+For $\lambda_v=0$, choose $T^{\mathrm{red}}$ containing $ux,wx$. The full sourced current form~\eqref{local-B-sourced-operator} is given in Section~\ref{sources-at-a-trivalent-vertex}.
 \begin{equation}\label{eq-kernel-star-triangle}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
@@ -4839,7 +4687,13 @@ For $\lambda_v=0$, the operator is \eqref{eq-kernel-star-triangle}; the complete
 \underbrace{-r_1r_2
 \frac{\partial}{\partial z_{ux}^{\mathrm{red},+\dot a}}
 \frac{\partial}{\partial z_{wx,\dot a}^{\mathrm{red},+}}}_{\text{local current Jacobian}}
-\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}}).
+\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}})\\[4pt]
+={}&\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{y^{\mathrm{red}}\in\Delta_{\Gamma^{\mathrm{red}}}\\
+\text{current conservation at }\lambda}}
+r_1r_2\,y_{ux,+\dot a}^{\mathrm{red}}y_{wx,+}^{\mathrm{red}}{}^{\dot a}\\
+&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
+\bigwedge_{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}}(-d^2y_e^{\mathrm{red}}).
 \end{aligned}
 \end{equation}
 \begin{equation*}
@@ -4904,25 +4758,15 @@ dy_{wx,+\dot a}
 +r_2d\!\left(y_{wx,+\dot a}^{\mathrm{red}}-y_{uw,+\dot a}^{\mathrm{red}}\right).
 \end{aligned}
 \end{equation*}
-\begin{equation*}
+\begin{equation}\label{eq-star-current-wedge}
 \begin{aligned}
-&(-dy_{ux,+\dot+}\wedge dy_{ux,+\dot-})\wedge
-(-dy_{wx,+\dot+}\wedge dy_{wx,+\dot-})\\
-&=\frac14\Bigl[y_{ux,+\dot a}^{\mathrm{red}}dr_1-r_1dy_{uw,+\dot a}^{\mathrm{red}}
-+r_1d\!\left(y_{ux,+\dot a}^{\mathrm{red}}+y_{uw,+\dot a}^{\mathrm{red}}\right)\Bigr]\\
-&\quad\wedge\Bigl[y_{ux,+}^{\mathrm{red}}{}^{\dot a}dr_1-r_1dy_{uw,+}^{\mathrm{red}}{}^{\dot a}
-+r_1d\!\left(y_{ux,+}^{\mathrm{red}}{}^{\dot a}+y_{uw,+}^{\mathrm{red}}{}^{\dot a}\right)\Bigr]\\
-&\quad\wedge\Bigl[y_{wx,+\dot b}^{\mathrm{red}}dr_2+r_2dy_{uw,+\dot b}^{\mathrm{red}}
-+r_2d\!\left(y_{wx,+\dot b}^{\mathrm{red}}-y_{uw,+\dot b}^{\mathrm{red}}\right)\Bigr]\\
-&\quad\wedge\Bigl[y_{wx,+}^{\mathrm{red}}{}^{\dot b}dr_2+r_2dy_{uw,+}^{\mathrm{red}}{}^{\dot b}
-+r_2d\!\left(y_{wx,+}^{\mathrm{red}}{}^{\dot b}-y_{uw,+}^{\mathrm{red}}{}^{\dot b}\right)\Bigr]\\
-&\equiv-r_1r_2(y_{ux,+\dot a}^{\mathrm{red}}y_{wx,+}^{\mathrm{red}}{}^{\dot a})
-dr_1\wedge dr_2\wedge
-(-dy_{uw,+\dot+}^{\mathrm{red}}\wedge dy_{uw,+\dot-}^{\mathrm{red}}).
+(-d^2y_{ux})\wedge(-d^2y_{wx})
+&\equiv-r_1r_2
+\bigl(y_{ux,+\dot a}^{\mathrm{red}}y_{wx,+}^{\mathrm{red}}{}^{\dot a}\bigr)
+dr_1\wedge dr_2\wedge(-d^2y_{uw}^{\mathrm{red}}).
 \end{aligned}
-\end{equation*}
-
-Replacing the paired currents by the two displacement derivatives proves \eqref{eq-kernel-star-triangle}. $\square$
+\end{equation}
+Wedging with the other retained chord areas removes the omitted terms. The minus sign cancels the reversal of resistance orientation, giving the positive local factor in \eqref{eq-kernel-star-triangle}. $\square$
 \end{proofbox}
 
 \rthm{Theorem}{b-01173}{Star--triangle, the second case: two star--triangle reductions at a time} In a Laman circuit, let $v_1,v_2$ be source-free degree-three vertices joined to $u,A,B$, with $AB$ present and $uA,uB$ absent. The conductance fractions contributed by the $v_1$ star to $uA,uB$ are $r_1,r_2$; those contributed by the $v_2$ star are $1-r_1,1-r_2$. The fractions on $AB$ contributed by $v_1$, $v_2$ and the old edge are $r_3,r_4,1-r_3-r_4$. The reduction removes two vertices, four edges and two loops, preserving the Laman condition.
@@ -4934,6 +4778,7 @@ Replacing the paired currents by the two displacement derivatives proves \eqref{
 \label{local-d68f49d7-1a60-45ce-ab33-5f20a940d12e}
 \end{figure}
 
+Choose $T^{\mathrm{red}}$ containing $uA,uB$; the reduced chord $AB$ remains explicit in the wedge.
 \begin{equation}\label{eq-kernel-two-leaves}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
@@ -4944,7 +4789,17 @@ Replacing the paired currents by the two displacement derivatives proves \eqref{
 \frac{\partial}{\partial z_{AB,\dot a}^{\mathrm{red},+}}
 \frac{\partial}{\partial z_{uB}^{\mathrm{red},+\dot c}}
 \frac{\partial}{\partial z_{AB,\dot c}^{\mathrm{red},+}}
-\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}}).
+\mathcal I_{\Gamma^{\mathrm{red}}}(\lambda;z^{\mathrm{red}})\\[4pt]
+={}&\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{r_3,r_4>0\\r_3+r_4<1}}dr_3\,dr_4
+\int_{\substack{y^{\mathrm{red}}\in\Delta_{\Gamma^{\mathrm{red}}}\\
+\text{current conservation at }\lambda}}
+(r_1-r_2)(1-r_3-r_4)\\
+&\times
+\bigl(y_{uA,+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
+\bigl(y_{uB,+\dot b}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot b}\bigr)
+e^{-\sum_{e\in I}y_{e,+\dot c}z_e^{+\dot c}}\\
+&\times\bigwedge_{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}}(-d^2y_e^{\mathrm{red}}).
 \end{aligned}
 \end{equation}
 \begin{equation*}
@@ -4959,6 +4814,7 @@ z_e^{\mathrm{red}}&=z_e\quad(e\ne uA,uB,AB).
 \begin{proofbox}
 \textbf{Proof.} The two star--triangle changes and three merges preserve orientation.
 
+\nopagebreak[4]
 The branch resistances are
 \begin{equation*}
 \begin{aligned}
@@ -5015,68 +4871,26 @@ dy_{v_2A,+\dot a}
 \end{aligned}
 \end{equation*}
 
-In the following wedge products, $\equiv$ omits terms containing $dy_{e,+\dot+}^{\mathrm{red}}$ or $dy_{e,+\dot-}^{\mathrm{red}}$, where $e\ne AB$ lies outside the chosen reduced spanning tree. They vanish after wedging with the area forms of all those remaining chord currents.
-\begin{equation*}
+Wedging with every retained chord area other than $AB$ removes the final differential in the last two lines. The three surviving contributions to the local determinant have scalar coefficient
+\begin{equation}\label{eq-paired-current-coefficient}
 \begin{aligned}
-&dy_{AB,+\dot+}\wedge dy_{AB,+\dot-}\\
-&=(1-r_3-r_4)^2
- dy_{AB,+\dot+}^{\mathrm{red}}\wedge dy_{AB,+\dot-}^{\mathrm{red}}\\
-&\quad-(1-r_3-r_4)(dr_3+dr_4)\wedge
-\bigl(y_{AB,+\dot a}^{\mathrm{red}}dy_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr).
+&(1-r_3-r_4)^2
+-(1-r_3-r_4)(1-r_1-r_4)
++(1-r_3-r_4)(r_3-r_2)\\
+&\qquad=(r_1-r_2)(1-r_3-r_4).
 \end{aligned}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+Thus
+\begin{equation}\label{eq-paired-current-wedge}
 \begin{aligned}
-&dy_{v_1B,+\dot+}\wedge dy_{v_1B,+\dot-}\\
-&\equiv
-\bigl(y_{uB,+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
- dr_2\wedge dr_3\\
-&\quad+(r_3-r_2)dr_2\wedge
-\bigl(y_{uB,+\dot a}^{\mathrm{red}}dy_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)\\
-&\quad+(r_3-r_2)dr_3\wedge
-\bigl(y_{AB,+\dot a}^{\mathrm{red}}dy_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)\\
-&\quad+(r_3-r_2)^2
- dy_{AB,+\dot+}^{\mathrm{red}}\wedge dy_{AB,+\dot-}^{\mathrm{red}}.
-\end{aligned}
-\end{equation*}
-\begin{equation*}
-\begin{aligned}
-&dy_{v_2A,+\dot+}\wedge dy_{v_2A,+\dot-}\\
-&\equiv
-\bigl(y_{uA,+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
- dr_1\wedge dr_4\\
-&\quad-(1-r_1-r_4)dr_1\wedge
-\bigl(y_{uA,+\dot a}^{\mathrm{red}}dy_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)\\
-&\quad-(1-r_1-r_4)dr_4\wedge
-\bigl(y_{AB,+\dot a}^{\mathrm{red}}dy_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)\\
-&\quad+(1-r_1-r_4)^2
- dy_{AB,+\dot+}^{\mathrm{red}}\wedge dy_{AB,+\dot-}^{\mathrm{red}}.
-\end{aligned}
-\end{equation*}
-\begin{equation*}
-\begin{aligned}
-&dy_{AB,+\dot+}\wedge dy_{AB,+\dot-}
-\wedge dy_{v_1B,+\dot+}\wedge dy_{v_1B,+\dot-}
-\wedge dy_{v_2A,+\dot+}\wedge dy_{v_2A,+\dot-}\\
-&\equiv\Bigl[(1-r_3-r_4)^2
- -(1-r_3-r_4)(1-r_1-r_4)\\
-&\hspace{42mm}+(1-r_3-r_4)(r_3-r_2)\Bigr]\\
-&\quad\times
+&(-d^2y_{AB})\wedge(-d^2y_{v_1B})\wedge(-d^2y_{v_2A})\\
+&\equiv(r_1-r_2)(1-r_3-r_4)
 \bigl(y_{uA,+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
 \bigl(y_{uB,+\dot b}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot b}\bigr)\\
-&\quad\times dr_1\wedge dr_2\wedge dr_3\wedge dr_4
-\wedge dy_{AB,+\dot+}^{\mathrm{red}}\wedge dy_{AB,+\dot-}^{\mathrm{red}}\\
-&=(r_1-r_2)(1-r_3-r_4)
-\bigl(y_{uA,+\dot a}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
-\bigl(y_{uB,+\dot b}^{\mathrm{red}}y_{AB,+}^{\mathrm{red}}{}^{\dot b}\bigr)\\
-&\quad\times dr_1\wedge dr_2\wedge dr_3\wedge dr_4
-\wedge dy_{AB,+\dot+}^{\mathrm{red}}\wedge dy_{AB,+\dot-}^{\mathrm{red}},\\
-&\quad\text{modulo }dy_{e,+\dot+}^{\mathrm{red}},\,dy_{e,+\dot-}^{\mathrm{red}}
-\quad(e\ne AB\text{ a reduced chord}).
+&\qquad\times dr_1\wedge dr_2\wedge dr_3\wedge dr_4\wedge(-d^2y_{AB}^{\mathrm{red}}),
 \end{aligned}
-\end{equation*}
-
-The three loop-area minus signs reduce to the one on the retained loop. The four displacement derivatives insert the displayed current product. $\square$
+\end{equation}
+modulo the other retained chord differentials. The resistance chart preserves orientation, proving the current formula in \eqref{eq-kernel-two-leaves}. $\square$
 \end{proofbox}
 
 \subsubsection{Cubic product forests}\label{sec-B-general-forests}
@@ -5125,7 +4939,7 @@ y^{\mathrm{red}}_{AB,+\dot a}
 
 (ii) A source-free vertex $v$ whose subtree is gone has three resistors, to its tree neighbour $u$ towards the root, to $A$ and to $B$: its own spokes and the sides left by the moves at its children, merged in parallel. If $u$ has a spoke, to $X\in\{A,B\}$, two sides of the triangle that replaces $v$, namely $uX$ and $AB$, merge with resistors already there, and Theorem~\ref{b-01159} removes $v$. See Figure~\ref{fig-forest-three-loop}(a). If $u$ has none, then by \eqref{eq-product-local-spokes} $u$ has a second child $v'$, and once the subtree of $v'$ is gone, Theorem~\ref{b-01173} removes $v$ and $v'$ together. (The two star--triangle transformations at $v$ and $v'$ are performed together.) In both cases $u$ is then wired to $A$ and to $B$. The root, once its subtree is gone, has two resistors, to $A$ and to $B$, which the marked resistor joins, and Theorem~\ref{b-01142} removes it across $AB$.
 
-(iii) Each move integrates the kernel of the smaller circuit over its ratios with a polynomial (not rational) factor. The currents of the larger circuit are linear in those of the smaller one with polynomial coefficients, and the series--parallel moves pass sources on with the weights $r_1$ and $1-r_1$. A move removes one loop with two coordinates, or two loops with four, so the coordinates number $2n$. Expanding the exponential, every Taylor coefficient is a polynomial integral over products of intervals and simplices, a finite sum of \eqref{eq-Dirichlet}.~\hfill\qedsymbol
+(iii) Each move replaces two or four current coordinates by its ratios, multiplying the remaining chord-area form by the displayed polynomial current factor. The currents of the larger circuit are linear in those of the smaller one with polynomial coefficients, and the series--parallel moves pass sources on with the weights $r_1$ and $1-r_1$. A move removes one loop with two coordinates, or two loops with four, so the coordinates number $2n$. Expanding the exponential, every Taylor coefficient is a polynomial integral over products of intervals and simplices, a finite sum of \eqref{eq-Dirichlet}.~\hfill\qedsymbol
 
 \begin{figure}[H]
 \centering
@@ -5134,97 +4948,81 @@ y^{\mathrm{red}}_{AB,+\dot a}
 \label{fig-forest-three-loop}
 \end{figure}
 
-In terms of kernel operators, root each cubic interaction tree at its unique source and process its descendants first. A source-free leaf uses \eqref{eq-kernel-star-triangle} when its parent has an insertion spoke; two sibling leaves use \eqref{eq-kernel-two-leaves}; a remaining degree-two source uses \eqref{eq-kernel-series-parallel}. Keep applying the operator to the smaller kernel inside the integral, stop at the final triangle, and insert its known one-loop kernel.
+Root each tree at its unique source and eliminate descendants first. The last triangle leaves one current area; eliminating its root leaves the marked current fixed by conservation and an empty wedge, equal to one. At every stage the reverse maps \eqref{b-01151}, \eqref{b-01166} and~\eqref{b-01180} supply the currents entering both the accumulated factors and the original-edge exponential.
 
-\rthm{Example}{local-f9b9d0e6-6c56-430a-826a-b94fe7879755}{Figure~\ref{fig-forest-three-loop}(a)} For $\lambda_1=\lambda_3=0$ and $\lambda_B=-\lambda_A-\lambda_2$, apply \eqref{eq-kernel-star-triangle} at $3$ and $1$, then \eqref{eq-kernel-series-parallel} at $2$. The successive ordered edge lists are
-\begin{equation*}
+\rthm{Example}{local-f9b9d0e6-6c56-430a-826a-b94fe7879755}{Figure~\ref{fig-forest-three-loop}(a)} For $\lambda_1=\lambda_3=0$ and $\lambda_B=-\lambda_A-\lambda_2$, remove $3$ and $1$ by source-free star--triangle moves, then remove $2$ by a series--parallel move. The ordered edges are
+\begin{equation}\label{eq-forest-three-loop-edges}
 \begin{aligned}
 I&=(12,13,1A,2B,3A,3B,AB),\\
-(\Gamma^{\mathrm{red}})_1&=(1B,12,1A,2B,AB),\\
-(\Gamma^{\mathrm{red\,red}})_1&=(2A,2B,AB),\\
-(\Gamma^{\mathrm{red\,red\,red}})_1&=(AB).
+I^{\mathrm{red}}&=(1B,12,1A,2B,AB),\\
+I^{\mathrm{red\,red}}&=(2A,2B,AB),\qquad
+I^{\mathrm{red\,red\,red}}=(AB).
 \end{aligned}
-\end{equation*}
-
-Use $r_1,r_2$ for the first star--triangle move, $r_3,r_4$ for the second, and $r_5,r_6$ for the series--parallel move, all in $(0,1)$. Their displacement substitutions and source transfer are
-\begin{equation*}
+\end{equation}
+Use $r_1,r_2$, $r_3,r_4$ and $r_5,r_6$ for the three moves, all in $(0,1)$. Conservation on the final edge and the reverse current maps give
+\begin{equation}\label{eq-forest-three-loop-currents}
 \begin{aligned}
-z^{\mathrm{red}}_{1B}&=z_{13}+z_{3B},
-&z^{\mathrm{red}}_{1A}&=r_1z_{1A}+(1-r_1)(z_{13}+z_{3A}),\\
-z^{\mathrm{red}}_{AB}&=r_2z_{AB}+(1-r_2)(z_{3B}-z_{3A}),
-&z^{\mathrm{red}}_{12}&=z_{12},\quad z^{\mathrm{red}}_{2B}=z_{2B},\\
-z^{\mathrm{red\,red}}_{2A}&=z^{\mathrm{red}}_{1A}-z_{12},
-&z^{\mathrm{red\,red}}_{2B}&=r_3z_{2B}+(1-r_3)(z^{\mathrm{red}}_{1B}-z_{12}),\\
-z^{\mathrm{red\,red}}_{AB}&=r_4z^{\mathrm{red}}_{AB}
-+(1-r_4)(z^{\mathrm{red}}_{1B}-z^{\mathrm{red}}_{1A}),\\
-z^{\mathrm{red\,red\,red}}_{AB}&=r_6z^{\mathrm{red\,red}}_{AB}
-+(1-r_6)(z^{\mathrm{red\,red}}_{2B}-z^{\mathrm{red\,red}}_{2A}),\\
-\lambda_A^{\mathrm{red\,red\,red}}&=\lambda_A+r_5\lambda_2,
-&\lambda_B^{\mathrm{red\,red\,red}}&=\lambda_B+(1-r_5)\lambda_2.
+y_{AB}^{\mathrm{red\,red\,red}}&=\lambda_A+r_5\lambda_2,\\
+y_{2A}^{\mathrm{red\,red}}&=r_5\lambda_2-(1-r_6)(\lambda_A+r_5\lambda_2),\\
+y_{2B}^{\mathrm{red\,red}}&=(1-r_5)\lambda_2+(1-r_6)(\lambda_A+r_5\lambda_2),\\
+y_{AB}^{\mathrm{red\,red}}&=r_6(\lambda_A+r_5\lambda_2),\\
+y_{12}&=-y_{2A}^{\mathrm{red\,red}}-(1-r_3)y_{2B}^{\mathrm{red\,red}},\\
+y_{1A}^{\mathrm{red}}&=y_{2A}^{\mathrm{red\,red}}-(1-r_4)y_{AB}^{\mathrm{red\,red}},\\
+y_{1B}^{\mathrm{red}}&=(1-r_3)y_{2B}^{\mathrm{red\,red}}+(1-r_4)y_{AB}^{\mathrm{red\,red}},\\
+y_{2B}&=r_3y_{2B}^{\mathrm{red\,red}},\qquad
+y_{AB}^{\mathrm{red}}=r_4y_{AB}^{\mathrm{red\,red}},\\
+y_{13}&=y_{1B}^{\mathrm{red}}+(1-r_1)y_{1A}^{\mathrm{red}},\\
+y_{3A}&=(1-r_1)y_{1A}^{\mathrm{red}}-(1-r_2)y_{AB}^{\mathrm{red}},\\
+y_{3B}&=y_{1B}^{\mathrm{red}}+(1-r_2)y_{AB}^{\mathrm{red}},\\
+y_{1A}&=r_1y_{1A}^{\mathrm{red}},\qquad y_{AB}=r_2y_{AB}^{\mathrm{red}}.
 \end{aligned}
-\end{equation*}
-
-Derivatives act before these substitutions. With $z_{BA}^{\mathrm{red}}=-z_{AB}^{\mathrm{red}}$, the chain rule gives
-\begin{equation*}
-\begin{aligned}
--
-\frac{\partial}{\partial z_{1A}^{\mathrm{red},+\dot a}}
-\frac{\partial}{\partial z_{BA,\dot a}^{\mathrm{red},+}}
-&=-
-\underbrace{\left(
-\frac{\partial}{\partial z_{2A}^{\mathrm{red\,red},+\dot a}}
--(1-r_4)\frac{\partial}{\partial z_{AB}^{\mathrm{red\,red},+\dot a}}
-\right)}_{\text{displacement Jacobian}}
-\underbrace{\left(-r_4\frac{\partial}{\partial z_{AB,\dot a}^{\mathrm{red\,red},+}}\right)}_{\text{displacement Jacobian}}\\
-&=r_4
-\frac{\partial}{\partial z_{2A}^{\mathrm{red\,red},+\dot a}}
-\frac{\partial}{\partial z_{AB,\dot a}^{\mathrm{red\,red},+}}.
-\end{aligned}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+The first factor uses $y_{BA}^{\mathrm{red}}=-y_{AB}^{\mathrm{red}}$. With the two spokes $2B,AB$ as the final triangle's spanning tree, the two star moves give
+\begin{equation}\label{eq-forest-three-loop-integral}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
-={}&-\int_{(0,1)^2}dr_1\,dr_2\,r_1r_2\,
-\frac{\partial}{\partial z_{1A}^{\mathrm{red},+\dot a}}
-\frac{\partial}{\partial z_{BA,\dot a}^{\mathrm{red},+}}
-\underbrace{\mathcal I_{\Gamma^{\mathrm{red}}}
-(\lambda;z^{\mathrm{red}})}_{\text{two loops}}\\
-={}&-\int_{(0,1)^4}\prod_{j=1}^4dr_j\,r_1r_2r_3r_4^2\,\\
-&\quad\times
-\frac{\partial}{\partial z_{2A}^{\mathrm{red\,red},+\dot a}}
-\frac{\partial}{\partial z_{AB,\dot a}^{\mathrm{red\,red},+}}
-\frac{\partial}{\partial z_{2B}^{\mathrm{red\,red},+\dot c}}
-\frac{\partial}{\partial z_{AB,\dot c}^{\mathrm{red\,red},+}}
-\\
-&\quad\times\underbrace{\mathcal I_{\Gamma^{\mathrm{red\,red}}}
-(\lambda;z^{\mathrm{red\,red}})}_{\text{one loop}}\\
+={}&\int_{(0,1)^4}\prod_{j=1}^4dr_j
+\int_{\substack{y^{\mathrm{red\,red}}\in\Delta_\triangle\\
+\text{current conservation at }(\lambda_2,\lambda_A,\lambda_B)}}
+r_1r_2r_3r_4^2\\
+&\times
+\bigl(y_{2A,+\dot a}^{\mathrm{red\,red}}y_{AB,+}^{\mathrm{red\,red}}{}^{\dot a}\bigr)
+\bigl(y_{2B,+\dot b}^{\mathrm{red\,red}}y_{AB,+}^{\mathrm{red\,red}}{}^{\dot b}\bigr)
+e^{-\sum_{e\in I}y_{e,+\dot c}z_e^{+\dot c}}\,d^2y_{2A}^{\mathrm{red\,red}}\\
 ={}&-\bigl(\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a}\bigr)^3
 \int_{(0,1)^6}\prod_{j=1}^6dr_j\,
- r_1r_2r_3r_4^2r_5(1-r_5)r_6^3\\
-&\quad\times e^{-\lambda_{2,+\dot b}
-\left[r_5z^{\mathrm{red\,red}}_{2A}+(1-r_5)z^{\mathrm{red\,red}}_{2B}\right]^{+\dot b}}
-\underbrace{e^{-(\lambda_A+r_5\lambda_2)_{+\dot c}
- z_{AB}^{\mathrm{red\,red\,red},+\dot c}}}_{\text{kernel of the final resistor}}.
+r_1r_2r_3r_4^2r_5(1-r_5)r_6^3
+e^{-\sum_{e\in I}y_{e,+\dot b}(r)z_e^{+\dot b}}.
 \end{aligned}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+Indeed, the three local factors are respectively
+\begin{equation}\label{eq-forest-three-loop-factors}
+\begin{aligned}
+r_1r_2\,y_{1A,+\dot a}^{\mathrm{red}}y_{BA,+}^{\mathrm{red}}{}^{\dot a}
+&=-r_1r_2r_4r_5r_6\,\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a},\\
+r_3r_4\,y_{2B,+\dot a}^{\mathrm{red\,red}}y_{AB,+}^{\mathrm{red\,red}}{}^{\dot a}
+&=r_3r_4(1-r_5)r_6\,\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a},\\
+r_6\,\lambda_{2,+\dot a}y_{AB,+}^{\mathrm{red\,red\,red}}{}^{\dot a}
+&=r_6\,\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a}.
+\end{aligned}
+\end{equation}
+At zero displacement,
+\begin{equation}\label{eq-forest-three-loop-value}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;0)
 &=-\bigl(\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a}\bigr)^3
 \left(\frac12\right)^3\frac13\frac16\frac14\\
 &=-\frac1{576}\bigl(\lambda_{2,+\dot a}\lambda_{A,+}{}^{\dot a}\bigr)^3.
 \end{aligned}
-\end{equation*}
+\end{equation}
 
-For a larger forest, substitute the next integral of Theorems~\ref{b-01142}, \ref{b-01159} and~\ref{b-01173} for the reduced kernel and continue to a triangle; evaluate the derivatives from the innermost brackets outwards, including their action on later phases and displacement substitutions.
-
-The edge currents are then recovered in reverse reduction order by the series--parallel~\eqref{b-01151}, star--triangle~\eqref{b-01166}, and paired-leaf~\eqref{b-01180} current maps.
+For any larger forest, multiply the local area factors after reconstructing the currents at each stage. The phase remains $-\sum_{e\in I}y_{e,+\dot a}z_e^{+\dot a}$, and the remaining chord-area forms are displayed until the final current integral is evaluated.
 
 \subsubsection{Finite factorial sums}\label{local-B6-finite-heading}
 
 For a cubic product forest reduced by \eqref{eq-kernel-series-parallel}, \eqref{eq-kernel-star-triangle} and \eqref{eq-kernel-two-leaves}, the $n$-loop kernel uses $2n$ coordinates in unit intervals or standard simplices $\Delta$; each monomial is evaluated by \eqref{eq-Dirichlet}.
 
-Apply the derivatives of these three operators, with zero source at every vertex removed by \eqref{eq-kernel-star-triangle} or \eqref{eq-kernel-two-leaves}, to the final one-loop kernel. At displacement degree $m\ge0$, write the resulting polynomial as
+Reconstruct all currents and multiply the local area factors, with zero source at every vertex removed by \eqref{eq-kernel-star-triangle} or \eqref{eq-kernel-two-leaves}. At displacement degree $m\ge0$, write the resulting polynomial as
 \begin{equation*}
 \left.\mathcal I_\Gamma(\lambda;z)\right|_{\deg z=m}
 =\int_{\prod\Delta}d^{2n}r\,
@@ -5246,44 +5044,27 @@ c_k(\lambda;z)
 }
 
 \begin{proofbox}
-\emph{Finite bound from the operators.}
+\emph{Finite bound from the current Jacobian.}
 
-The triangle coefficient of displacement degree $m$ has source degree $2+m$ and coordinate degree at most $m$; the three operators give the induction
-\begin{equation*}
-\begin{array}{c|c|c|c}
-\text{formula}&\text{loops removed}&\text{derivatives}&
-\text{largest reduced degree needed}\\\hline
-\text{\eqref{eq-kernel-series-parallel}}&1&1&m+1\\
-\text{\eqref{eq-kernel-star-triangle}}&1&2&m+2\\
-\text{\eqref{eq-kernel-two-leaves}}&2&4&m+4
-\end{array}
-\end{equation*}
+Every current is linear in the original sources and separately affine in each reduction coordinate. For a series--parallel step, the transferred sources are affine in its new $r_1$ and independent of its new $r_2$. The reduced currents have the same property. In \eqref{b-01151} they are multiplied only by $r_2$ or $1-r_2$, while $r_1\lambda_v$ is added, so no square of either new coordinate occurs. The source-free maps \eqref{b-01166} and~\eqref{b-01180} are affine in their new coordinates and leave the sources unchanged. Each later reverse map is linear in the currents and sources; it preserves the degree in every earlier coordinate.
 
-For a coordinate of the smaller graph, the induction bound is
-\begin{equation*}
+Choose a spanning tree $T$ in the original graph. The $n$ chord currents provide $2n$ scalar components. In their Jacobian, column $j$ is independent of $r_j$, while every other column has degree at most one in $r_j$:
+\begin{equation}\label{eq-forest-current-degree}
 \begin{aligned}
-\text{\eqref{eq-kernel-series-parallel}}:\quad &(m+1)+2(n-1)-1=m+2n-2,\\
-\text{\eqref{eq-kernel-star-triangle}}:\quad &(m+2)+2(n-1)-1=m+2n-1,\\
-\text{\eqref{eq-kernel-two-leaves}}:\quad &(m+4)+2(n-2)-1=m+2n-1.
+\deg_{r_j}\det
+\frac{\partial(y_{e,+\dot+},y_{e,+\dot-})_{e\in I\setminus T}}
+{\partial(r_1,\ldots,r_{2n})}&\le2n-1,\\
+\deg_{r_j}\left[\frac1{m!}
+\left(-\sum_{e\in I}y_{e,+\dot a}(r)z_e^{+\dot a}\right)^m\right]&\le m.
 \end{aligned}
-\end{equation*}
-
-For the new coordinates of \eqref{eq-kernel-series-parallel}, take its phase term of degree $\ell$, $0\le\ell\le m$; the reduced term has displacement degree $m-\ell+1$, source degree $2(n-1)+m-\ell+1$, and sources affine in $r_1$.
-\begin{equation*}
-\begin{aligned}
-\deg_{r_1}&\le\ell+2(n-1)+m-\ell+1=m+2n-1,\\
-\deg_{r_2}&\le m-\ell+1\le m+2n-1.
-\end{aligned}
-\end{equation*}
-
-In \eqref{eq-kernel-star-triangle} and \eqref{eq-kernel-two-leaves}, the displacement substitutions are affine and each new-coordinate coefficient has degree at most one, giving degree at most $m+1$; hence
-\begin{equation*}
+\end{equation}
+The resistance orientation fixes the constant sign of the density, as in the local proofs; it does not affect these degrees. The Jacobian has source degree $2n$, so the degree-$m$ integrand has source degree $2n+m$ and satisfies
+\begin{equation}\label{eq-forest-monomial-bound}
 \deg_{r_j}(\text{degree-}m\text{ integrand})\le m+2n-1,
 \qquad
 \#\{\text{candidate monomials}\}\le(m+2n)^{2n}.
-\end{equation*}
-
-Integrating the monomials by \eqref{eq-Dirichlet} proves the finite sum; the same operator induction applies to arbitrary-source type I$\prime$ graphs reduced entirely by \eqref{eq-kernel-series-parallel}. $\square$
+\end{equation}
+Integrating each monomial by \eqref{eq-Dirichlet} proves the stated factorial sum. The same argument applies to arbitrary-source type~I$'$ graphs, whose reductions use only \eqref{b-01151}. $\square$
 \end{proofbox}
 
 \subsubsection{Trees with a superpotential vertex}\label{counting-with-a-superpotential-vertex}
@@ -5434,7 +5215,7 @@ dr_1\wedge dr_2\wedge
 \end{aligned}
 \end{equation*}
 
-The two orientation signs cancel. Replacing the paired currents by the two displacement derivatives recovers \eqref{eq-kernel-star-triangle}. $\square$
+The two orientation signs cancel, recovering the weighted current integral in \eqref{eq-kernel-star-triangle}. $\square$
 \end{proofbox}
 
 The sourced transfer \eqref{eq-1-78} preserves the linear dependence of every current on $\lambda$; the kernel has source degree $2n+m$ at displacement degree $m$.
