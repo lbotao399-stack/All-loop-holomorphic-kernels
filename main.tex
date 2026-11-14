@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261114-171534 (Beijing time)}
+\date{\small Version 20261114-232202 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -2669,7 +2669,7 @@ The quantum product of Section \ref{sec-product} involves further graphs, forest
 
 In Section~\ref{sec-BV}, we show that only the superpotential $\bar W$ of the original physical action enters the holomorphic theory; all other terms in the action of the holomorphic twist come from the kinetic BV terms.
 
-In four dimensions, a renormalizable $\mathcal N=1$ supersymmetric gauge theory has a superpotential of degree at most three, and its holomorphic gauge and matter vertices are cubic. The fan kernels therefore determine every loop correction to the supersymmetry transformation in these theories (Corollary \ref{b-00222}), and now we evaluate them at arbitrary loop order. We state the result first. Sections~\ref{the-one-loop-triangle-diagram}--\ref{sec-fan-positive} derive it: the series and parallel reductions of a circuit become operators on kernels (Section~\ref{sec-B-local-reduction}), and iterating them along the interaction path reduces the fan to the one-loop triangle. Section~\ref{endpoint-sources-and-taylor-expansion} gives the complete Taylor expansion.
+In four dimensions, a renormalizable $\mathcal N=1$ supersymmetric gauge theory has a superpotential of degree at most three, and its holomorphic gauge and matter vertices are cubic. The fan kernels therefore determine every loop correction to the supersymmetry transformation in these theories (Corollary \ref{b-00222}), and now we evaluate them at arbitrary loop order. We state the result first. Sections~\ref{the-one-loop-triangle-diagram}--\ref{sec-fan-positive} derive it: series and parallel reductions leave a one-loop triangle, whose currents reconstruct the fan polynomially in reverse reduction order. Section~\ref{endpoint-sources-and-taylor-expansion} gives the complete Taylor expansion.
 
 \begin{figure}[H]
 \centering
@@ -2839,9 +2839,7 @@ y_{vw,+\dot a}=r_j\lambda_{v,+\dot a}+y_{uw,+\dot a}^{\mathrm{red}}.
 
 \subsubsection{Parallel merge}\label{local-B-parallel-heading}
 
-Orient the $q$ parallel edges from $u$ to $w$, labelled by $j=1,\ldots,q$.
-
-Their common voltage gives
+If the series elimination above, or another reduction, leaves $q>1$ resistors between $u$ and $w$, we can replace them by a single resistor. Orient the parallel edges from $u$ to $w$ and label them by $j=1,\ldots,q$. Their common voltage gives
 \begin{equation}\label{eq-B-parallel-derivation}
 \begin{aligned}
 t_{uw}^{(j)}y_{uw,+\dot a}^{(j)}
@@ -2861,19 +2859,6 @@ y_{uw,+\dot a}^{(j)}=r_jy_{uw,+\dot a}^{\mathrm{red}}.
 \end{equation}
 
 \subsubsection{The series--parallel move}\label{sec-B-kernel-recursion}
-
-Each reduction integrates out two current coordinates. The remaining current integral is weighted by its local area Jacobian. The equivalent displacement derivatives follow from
-\begin{equation}\label{eq-current-insertions}
-\begin{aligned}
-\frac{\partial}{\partial z_e^{+\dot a}}
-e^{-y_{e,+\dot b}z_e^{+\dot b}}
-&=-y_{e,+\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}},\\
-\frac{\partial}{\partial z_{e,\dot a}^{+}}
-e^{-y_{e,+\dot b}z_e^{+\dot b}}
-&=y_{e,+}{}^{\dot a}e^{-y_{e,+\dot b}z_e^{+\dot b}}.
-\end{aligned}
-\end{equation}
-In the operator form, derivatives act on the entire expression to their right. In the current form, each earlier factor is evaluated on the currents reconstructed through all later reductions. For the graphs built from one edge by adding vertices joined to both endpoints of an existing edge, the type~I$'$ graphs of \cite[Definition 4.12]{GWW}, which include the fans, iterating this move interprets the cube-integral recursion of \cite[Theorem 4.13]{GWW} as successive series and parallel reductions of resistors.
 
 \rthm{Theorem}{b-01142}{Series--parallel} Let a Laman circuit have a degree-two vertex $v$, edges $vu,vw$, and an edge $uw$. Order $vu,vw$ first. After elimination, retain the other edge positions, including the merged $uw$. The current fractions satisfy $0<r_1,r_2<1$. The new circuit is still a Laman circuit.
 
@@ -2916,18 +2901,7 @@ z_e^{\mathrm{red}}=z_e\quad(e\ne uw).
 \end{equation*}
 
 \begin{proofbox}
-\textbf{Proof.} The resistance change fixes the orientation.
-\begin{equation*}
-\begin{gathered}
-t_{vu}=\frac{(1-r_1)t_{uw}^{\mathrm{red}}}{1-r_2},\quad
-t_{vw}=\frac{r_1t_{uw}^{\mathrm{red}}}{1-r_2},\quad
-t_{uw}=\frac{t_{uw}^{\mathrm{red}}}{r_2},\\
-d\!\left(\frac{t_{vu}}{t_{uw}}\right)\wedge
- d\!\left(\frac{t_{vw}}{t_{uw}}\right)
-=-\frac{r_2}{(1-r_2)^3}\,dr_1\wedge dr_2.
-\end{gathered}
-\end{equation*}
-The series step \eqref{eq-1-64}, with $r_j=1-r_1$, and the parallel merge \eqref{eq-1-63} of the new branch with the old edge $uw$, which carry the fractions $1-r_2$ and $r_2$ of the merged current, give
+\textbf{Proof.} The series step \eqref{eq-1-64}, with $r_j=1-r_1$, and the parallel merge \eqref{eq-1-63} of the new branch with the old edge $uw$, which carry the fractions $1-r_2$ and $r_2$ of the merged current, give
 \begin{equation}\label{b-01151}
 \begin{gathered}
 y_{uw}=r_2y_{uw}^{\mathrm{red}},\qquad
@@ -2974,126 +2948,63 @@ e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathr
 \end{aligned}
 \end{equation*}
 
-The two orientation signs cancel, giving \eqref{eq-kernel-series-parallel}. $\square$
+The resistance orientation cancels the displayed minus sign, giving \eqref{eq-kernel-series-parallel}.\footnote{The inverse resistance map is $t_{vu}=(1-r_1)t_{uw}^{\mathrm{red}}/(1-r_2)$, $t_{vw}=r_1t_{uw}^{\mathrm{red}}/(1-r_2)$ and $t_{uw}=t_{uw}^{\mathrm{red}}/r_2$. Hence
+\[
+d\!\left(\frac{t_{vu}}{t_{uw}}\right)\wedge d\!\left(\frac{t_{vw}}{t_{uw}}\right)
+=-\frac{r_2}{(1-r_2)^3}\,dr_1\wedge dr_2.
+\]
+This orientation reversal cancels the sign of the local current area.} $\square$
 \end{proofbox}
 
 \subsection{One elimination step}\label{sec-fan-step}
 
-The fan is reduced recursively: each step eliminates the leftmost vertex and redistributes its source between the two remaining endpoints. For the $n$-loop fan of Figure~\ref{fig-general-fan}, with path $1\to2\to\cdots\to n+1$, spokes oriented towards the insertion $n+2$, and $n\ge2$, the first step is the series--parallel move of Theorem~\ref{b-01142} at vertex $1$ (Figure~\ref{fig-fan-series-parallel-currents}).
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.96\linewidth]{figures/vec/ch4-two-loop-series-parallel-20261104.pdf}
-\caption{The two-loop fan on vertices $1,2,3,4$ reduces to the triangle on $2,3,4$ (Proposition \ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea}); vertex $4$ is the insertion. Blue source arrows inject $r_1\lambda_1$ at $2$ and $(1-r_1)\lambda_1$ at insertion $4$; the series branch carries $r_1\lambda_1-y_{12}$. The parallel merge gives the triangle on $2,3,4$; the formulas beneath the circuits reconstruct the original currents.}
-\label{fig-fan-series-parallel-currents}
-\end{figure}
-
 \rthm{Proposition}{local-d52b533c-8d77-46cd-b859-f124ac49f1ea}{One elimination step}
-
-\emph{Set}
-\begin{equation*}
-r_1=\frac{t_{1,n+2}}{t_{12}+t_{1,n+2}},\qquad
-r_2=\frac{t_{12}+t_{1,n+2}}{t_{12}+t_{1,n+2}+t_{2,n+2}},
-\end{equation*}
-\emph{where $r_1$ will be the fraction of $\lambda_1$ passed to vertex $2$ and $r_2$ will be the fraction of the merged spoke current carried by the original spoke $(2,n+2)$. } \emph{Eliminating vertex $1$ replaces the resistors $t_{12},t_{1,n+2},t_{2,n+2}$ by one resistor between $2$ and $n+2$ and moves the source $\lambda_1$ to the remaining endpoints:}
-\begin{equation*}
-t^{\mathrm{red}}_{2,n+2}=\left[\frac1{t_{12}+t_{1,n+2}}+\frac1{t_{2,n+2}}\right]^{-1},\qquad
-\lambda^{\mathrm{red}}_2=\lambda_2+r_1\lambda_1,\qquad
-\lambda^{\mathrm{red}}_{n+2}=\lambda_{n+2}+(1-r_1)\lambda_1 .
-\end{equation*}
-
-\emph{The removed currents follow from the reduced spoke current $y^{\mathrm{red}}_{2,n+2}=\lambda_2+r_1\lambda_1-y_{23}$:}
-{\small
-\begin{equation*}
-y_{2,n+2}=r_2y^{\mathrm{red}}_{2,n+2},\qquad
-y_{12}=r_1\lambda_1-(1-r_2)y_{2,n+2}^{\mathrm{red}}=r_1r_2\lambda_1-(1-r_2)\lambda_2+(1-r_2)y_{23},\qquad
-y_{1,n+2}=\lambda_1-y_{12}.
-\end{equation*}
-}
-
-\emph{With $\Gamma^{\mathrm{red}}$ the reduced fan on vertices $2,\ldots,n+2$, the kernel satisfies}
+After vertices $1,\ldots,i-1$ have been removed, $1\le i<n$, the source and spoke resistance at $i$ are $\lambda_i^{\mathrm{red}}$ and $t_{i,n+2}^{\mathrm{red}}$. For $i=1$ these are $\lambda_1$ and $t_{1,n+2}$. Set
+\begin{equation}\label{eq-fan-local-ratios}
+\begin{aligned}
+r_{2i-1}&=\frac{t_{i,n+2}^{\mathrm{red}}}{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}},
+&r_{2i}&=\frac{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}}
+{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}+t_{i+1,n+2}},\\
+t_{i+1,n+2}^{\mathrm{red}}
+&=\left[\frac1{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}}
++\frac1{t_{i+1,n+2}}\right]^{-1}.
+\end{aligned}
+\end{equation}
+Eliminating $i$ passes its source to $i+1$ and $n+2$:
+\begin{equation}\label{eq-fan-source-transfer}
+\begin{aligned}
+\lambda_{i+1,+\dot a}^{\mathrm{red}}
+&=\lambda_{i+1,+\dot a}+r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}},\\
+\left.\lambda_{n+2,+\dot a}^{\mathrm{red}}\right|_{\text{after }i}
+&=\lambda_{n+2,+\dot a}
++\sum_{\substack{1\le j\le i\\\mathrm{eliminated\ vertices}}}
+(1-r_{2j-1})\lambda_{j,+\dot a}^{\mathrm{red}}.
+\end{aligned}
+\end{equation}
+All other remaining sources are unchanged. The merged current $y_{i+1,n+2}^{\mathrm{red}}$ is evaluated immediately after this step. The reverse map is
+\begin{equation}\label{eq-fan-step-currents}
+\begin{aligned}
+y_{i+1,n+2,+\dot a}^{\mathrm{red}}
+&=\lambda_{i+1,+\dot a}^{\mathrm{red}}-y_{i+1,i+2,+\dot a},\\
+y_{i,i+1,+\dot a}
+&=r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}}
+-(1-r_{2i})y_{i+1,n+2,+\dot a}^{\mathrm{red}},\\
+y_{i,n+2,+\dot a}^{\mathrm{red}}
+&=\lambda_{i,+\dot a}^{\mathrm{red}}-y_{i,i+1,+\dot a},\qquad
+y_{i+1,n+2,+\dot a}=r_{2i}y_{i+1,n+2,+\dot a}^{\mathrm{red}}.
+\end{aligned}
+\end{equation}
+These are \eqref{b-01151} at $(v,u,w)=(i,i+1,n+2)$. The current integral acquires the factor
 \begin{equation}\label{b-00282}
-\begin{aligned}
-&\mathcal I_\Gamma(\lambda;z)\\
-&={}\int_0^1\!dr_1\int_0^1\!dr_2\;
-e^{-\lambda_{1,+\dot a}(r_1z_{12}+(1-r_1)z_{1,n+2})^{+\dot a}}\\
-&\quad\times
-\underbrace{r_2\lambda_{1,+}{}^{\dot b}
-\frac{\partial}{\partial z_{2,n+2}^{\mathrm{red},+\dot b}}}_{
-\substack{\text{inserts the current-area Jacobian}\\
-r_2(\lambda_{1,+\dot b}y^{\mathrm{red}}_{2,n+2,+}{}^{\dot b})}}
-\mathcal I_{\Gamma^{\mathrm{red}}}
-(\lambda^{\mathrm{red}};z^{\mathrm{red}})
-\\[4pt]
-&={}\int_0^1dr_1\int_0^1dr_2
-\int_{\substack{y^{\mathrm{red}}\in\Delta_{\Gamma^{\mathrm{red}}}\\
-\text{current conservation at }\lambda^{\mathrm{red}}}}
-r_2\lambda_{1,+\dot a}y_{2,n+2,+}^{\mathrm{red}}{}^{\dot a}\\
-&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
-\bigwedge_{i=2}^{n}(-d^2y_{i,i+1}).
-\end{aligned}
+r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}
+=r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
+\bigl(\lambda_{i+1,+}{}^{\dot a}-y_{i+1,i+2,+}{}^{\dot a}\bigr),
 \end{equation}
+since $\lambda_{i,+\dot a}^{\mathrm{red}}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}=0$.
 
-The remaining spanning tree consists of the spokes; its chord currents are $y_{i,i+1}$, $2\le i\le n$. Current conservation in the integration domain means the affine constraints displayed in \eqref{eq-kernel-series-parallel}. \emph{The derivative is taken before substituting}
-\begin{equation*}
-z^{\mathrm{red}}_{2,n+2}
-=r_2z_{2,n+2}+(1-r_2)(z_{1,n+2}-z_{12}),\qquad
-z^{\mathrm{red}}_e=z_e\quad(e\ne(2,n+2)).
-\end{equation*}
+\subsection{Polynomial reconstruction of the fan}\label{sec-fan-positive}\label{sec-B-fan-reduction}
 
-\emph{Proof.} The kernel identity \eqref{b-00282} is \eqref{eq-kernel-series-parallel} with $(v,u,w)=(1,2,n+2)$; the currents follow from the circuit.
-
-Conservation at $1$ and the cycle $1\to2\to n+2\to1$ give:
-\begin{equation*}
-y_{1,n+2}=\lambda_1-y_{12},\qquad
-t_{2,n+2}y_{2,n+2}=t_{1,n+2}\lambda_1-(t_{12}+t_{1,n+2})y_{12}.
-\end{equation*}
-
-The resistors on $2\to1\to n+2$ combine in series, with resistance $t_{12}+t_{1,n+2}$, and carry
-\begin{equation*}
-r_1\lambda_1-y_{12}=\frac{t_{2,n+2}y_{2,n+2}}{t_{12}+t_{1,n+2}} .
-\end{equation*}
-
-In parallel with $t_{2,n+2}$ the conductances add, and the merged current $y^{\mathrm{red}}_{2,n+2}=(r_1\lambda_1-y_{12})+y_{2,n+2}$ divides as
-\begin{equation*}
-r_1\lambda_1-y_{12}=(1-r_2)\,y^{\mathrm{red}}_{2,n+2},\qquad
-y_{2,n+2}=r_2\,y^{\mathrm{red}}_{2,n+2},
-\end{equation*}
-while conservation at $2$ in the reduced network gives $y^{\mathrm{red}}_{2,n+2}=\lambda^{\mathrm{red}}_2-y_{23}$. Solving for $y_{12}$ gives the stated formula.~\hfill\qedsymbol
-
-The next step acts on vertex $2$ with the reduced source $\lambda_2+r_1\lambda_1$ and the reduced spoke $t^{\mathrm{red}}_{2,n+2}$. The iteration eventually reaches one loop.
-
-\subsection{Fan kernels from the one-loop kernel}\label{sec-fan-positive}\label{sec-B-fan-reduction}
-
-For $n\ge2$, iterating Proposition~\ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea} along the interaction path, at vertex $1$, then vertex $2$, and so on, reduces the fan to the triangle (Figure~\ref{local-B4-fan-chain}). Repeated application of \eqref{eq-kernel-series-parallel} gives integral--derivative operators acting on the known triangle kernel \eqref{eq-1-25}:
-\begin{equation}\label{eq-fan-operator-product}
-\begin{aligned}
-\mathcal I_\Gamma(\lambda;z)
-={}&\left[
-\prod_{i=1}^{n-1}
-\left(
-\int_0^1dr_{2i-1}\int_0^1dr_{2i}\,
-e^{-\lambda_{i,+\dot a}^{\mathrm{red}}
-[r_{2i-1}z_{i,i+1}+(1-r_{2i-1})z_{i,n+2}^{\mathrm{red}}]^{+\dot a}}
-\right.\right.\\[-2pt]
-&\left.\left.\hspace{40mm}\times
-r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot b}
-\frac{\partial}{\partial z_{i+1,n+2}^{\mathrm{red},+\dot b}}
-\right)\right]
-\underbrace{\mathcal I_\triangle
-(\lambda^{\mathrm{red}};z^{\mathrm{red}})}_{\text{vertices }n,n+1,n+2}\\[4pt]
-={}&-\int_{(0,1)^{2n-2}}\prod_{j=1}^{2n-2}dr_j
-\int_{\substack{y^{\mathrm{red}}\in\Delta_\triangle\\
-\text{current conservation at }\lambda^{\mathrm{red}}}}
-\prod_{i=1}^{n-1}
-\left(r_{2i}\lambda_{i,+\dot a_i}^{\mathrm{red}}
-y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a_i}\right)\\
-&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
-\,d^2y_{n,n+1}.
-\end{aligned}
-\end{equation}
-
-The remaining space is the triangle on $n,n+1,n+2$, with its two spokes as spanning tree. In the $i$th current factor, $\lambda_i^{\mathrm{red}}$ is the source immediately before eliminating $i$, and $y_{i+1,n+2}^{\mathrm{red}}$ is the merged current immediately afterwards. These currents are reconstructed backwards from $y_{n,n+1}$ by \eqref{eq-B-fan-general-fractions}. The minus sign is its single remaining loop-area sign. In the operator form, $i=1$ acts outermost and each derivative precedes its displacement substitution.
+Iterating the step at $i=1,\ldots,n-1$ leaves the triangle on $n,n+1,n+2$. Its currents reconstruct the fan in reverse order (Figure~\ref{local-B4-fan-chain}).
 
 \begin{figure}[H]
 \centering
@@ -3105,125 +3016,54 @@ The remaining space is the triangle on $n,n+1,n+2$, with its two spokes as spann
 \node[fill=white,inner sep=1pt,minimum width=0.066\linewidth,minimum height=2.4ex,font=\footnotesize,text=blue!50!black] at (0.5004,0.1824) {\eqref{eq-kernel-series-parallel}};
 \end{scope}
 \end{tikzpicture}
-\caption{The operators in \eqref{eq-kernel-series-parallel} remove vertices $1,2,\ldots,n-1$, leaving the one-loop kernel. Source transfer follows the arrows; evaluation and current reconstruction start from the final triangle and run backwards.}
+\caption{Successive series--parallel moves remove vertices $1,2,\ldots,n-1$. Sources pass towards the final triangle; its currents reconstruct the fan backwards by \eqref{eq-B-fan-general-fractions}.}
 \label{local-B4-fan-chain}
 \end{figure}
 
-The sources passed inward obey the following recurrence, with empty products equal to one:
-\begin{equation}\label{eq-B-fan-first-cycle}
-\begin{aligned}
-\lambda_{1,+\dot a}^{\mathrm{red}}&=\lambda_{1,+\dot a},\\
-\lambda_{i+1,+\dot a}^{\mathrm{red}}
-&=\lambda_{i+1,+\dot a}+r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}}\\
-&=\lambda_{i+1,+\dot a}
-+\sum_{\substack{1\le j\le i\\\mathrm{vertices}}}
-\left(\prod_{k=j}^{i}r_{2k-1}\right)\lambda_{j,+\dot a}\\
-&=\sum_{\substack{1\le j\le i+1\\\mathrm{vertices}}}
-\left(\prod_{k=j}^{i}r_{2k-1}\right)\lambda_{j,+\dot a},
-\qquad 1\le i<n.
-\end{aligned}
-\end{equation}
-
 \begin{proofbox}
-\textbf{Proof of \eqref{eq-1-40}.} We evaluate the current integral in \eqref{eq-fan-operator-product} backwards from its triangle.
-
-\medskip\noindent\textbf{Step 1: the first two reductions.} After the second elimination, the current inserted by the first is
-\begin{equation}\label{eq-B-fan-second-fractions}
-\begin{aligned}
-\lambda_2^{\mathrm{red}}&=\lambda_2+r_1\lambda_1,\\
-y_{2,n+2,+\dot a}^{\mathrm{red}}
-&=(1-r_3)\lambda_{2,+\dot a}^{\mathrm{red}}
- +(1-r_4)y_{3,n+2,+\dot a}^{\mathrm{red}}\\
-&=\lambda_{2,+\dot a}^{\mathrm{red}}-y_{23,+\dot a}.
-\end{aligned}
+\textbf{Proof.} Source transfer gives, with empty products equal to one,
+\begin{equation}\label{eq-B-fan-first-cycle}
+\lambda_{i,+\dot a}^{\mathrm{red}}
+=\sum_{\substack{1\le j\le i\\\mathrm{vertices}}}
+\left(\prod_{k=j}^{i-1}r_{2k-1}\right)\lambda_{j,+\dot a},
+\qquad 1\le i\le n.
 \end{equation}
-Thus, for $n\ge3$, the first two steps of the integral are
-\begin{equation}\label{eq-fan-chain}
-\begin{aligned}
-\mathcal I_\Gamma(\lambda;z)
-={}&\int_{(0,1)^4}\prod_{j=1}^{4}dr_j
-\int_{\substack{y^{\mathrm{red}}\in\Delta_{(\Gamma^{\mathrm{red}})^{\mathrm{red}}}\\
-\text{current conservation at the twice-transferred sources}}}
-r_2r_4\\
-&\times\lambda_{1,+\dot a}
-\left[(1-r_3)\lambda_{2,+}^{\mathrm{red}}{}^{\dot a}
-+(1-r_4)y_{3,n+2,+}^{\mathrm{red}}{}^{\dot a}\right]
-\lambda_{2,+\dot b}^{\mathrm{red}}y_{3,n+2,+}^{\mathrm{red}}{}^{\dot b}\\
-&\times e^{-\sum_{e\in I}y_{e,+\dot c}z_e^{+\dot c}}
-\bigwedge_{i=3}^{n}(-d^2y_{i,i+1}),\\
-\lambda_3^{\mathrm{red}}&=\lambda_3+r_3\lambda_2^{\mathrm{red}},\qquad
-\lambda_{n+2}^{\mathrm{red}}=\lambda_{n+2}+(1-r_1)\lambda_1+(1-r_3)\lambda_2^{\mathrm{red}}.
-\end{aligned}
-\end{equation}
-All other remaining sources are unchanged. The term proportional to $(1-r_3)\lambda_2^{\mathrm{red}}$ is the contribution of the second source phase in the operator calculation. Keeping the reconstructed current includes it automatically. For $n=2$, \eqref{b-00282} already leaves a triangle.
-
-\medskip\noindent\textbf{Step 2: evaluation from the triangle outward.} The innermost factor of \eqref{eq-fan-operator-product} is the one-loop kernel \eqref{eq-1-25}, relabelled to $n,n+1,n+2$:
-\begin{equation}\label{eq-B-fan-second-merge}
-\begin{aligned}
-\mathcal I_\triangle(\lambda^{\mathrm{red}};z^{\mathrm{red}})
-={}&(\lambda_{n,+\dot a}^{\mathrm{red}}\lambda_{n+1,+}{}^{\dot a})
-\int_0^1dr_{2n-1}\int_0^{1-r_{2n-1}}dr_{2n}\,
-e^{-\sum_{\substack{e\in\triangle_1\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}},\\
-y_{n,n+1,+\dot a}&=r_{2n-1}\lambda_{n,+\dot a}^{\mathrm{red}}
--r_{2n}\lambda_{n+1,+\dot a}.
-\end{aligned}
-\end{equation}
-Restore vertices in the order $i=n-1,n-2,\ldots,1$. The next area factor is $r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}$; equivalently,
-\begin{equation}\label{eq-fan-kernel-recursion}
-\begin{aligned}
-&r_{2i}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}
-\frac{\partial}{\partial z_{i+1,n+2}^{\mathrm{red},+\dot a}}
-e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
-y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}\\
-&\quad=r_{2i}\bigl(\lambda_{i,+\dot a}^{\mathrm{red}}
-y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}\bigr)
-e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
-y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
-\end{aligned}
-\end{equation}
-Multiplying by the phase of the vertex being restored and substituting the reduced displacement gives
-\begin{equation*}
-\begin{aligned}
-&\lambda_{i,+\dot a}^{\mathrm{red}}
-[r_{2i-1}z_{i,i+1}+(1-r_{2i-1})z_{i,n+2}^{\mathrm{red}}]^{+\dot a}\\
-&\quad+y_{i+1,n+2,+\dot a}^{\mathrm{red}}
-[r_{2i}z_{i+1,n+2}+(1-r_{2i})(z_{i,n+2}^{\mathrm{red}}-z_{i,i+1})]^{+\dot a}\\
-&=\bigl[r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}}
--(1-r_{2i})y_{i+1,n+2,+\dot a}^{\mathrm{red}}\bigr]z_{i,i+1}^{+\dot a}\\
-&\quad+\bigl[(1-r_{2i-1})\lambda_{i,+\dot a}^{\mathrm{red}}
-+(1-r_{2i})y_{i+1,n+2,+\dot a}^{\mathrm{red}}\bigr]z_{i,n+2}^{\mathrm{red},+\dot a}
-+r_{2i}y_{i+1,n+2,+\dot a}^{\mathrm{red}}z_{i+1,n+2}^{+\dot a}.
-\end{aligned}
-\end{equation*}
-The coefficients of the three displacements are the restored currents $y_{i,i+1}$, $y^{\mathrm{red}}_{i,n+2}$ and $y_{i+1,n+2}$: the new series branch carries $(1-r_{2i})y_{i+1,n+2}^{\mathrm{red}}$, and the old spoke carries $r_{2i}y_{i+1,n+2}^{\mathrm{red}}$. Conservation at $i+1$ identifies the factor inserted by the derivative; the term $r_{2i-1}\lambda_i^{\mathrm{red}}$ drops out of the contraction, since $\lambda_{+\dot a}\lambda_{+}{}^{\dot a}=0$:
-\begin{equation}\label{eq-B-fan-first-merge}
-\begin{aligned}
-y_{i+1,n+2,+\dot a}^{\mathrm{red}}
-&=\lambda_{i+1,+\dot a}+r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}}
--y_{i+1,i+2,+\dot a},\\
-r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
-y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}
-&=r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
-\bigl(\lambda_{i+1,+}{}^{\dot a}-y_{i+1,i+2,+}{}^{\dot a}\bigr),
-\qquad 1\le i<n.
-\end{aligned}
-\end{equation}
-Each restored vertex multiplies the density by this current contraction. The resulting nested integral is \eqref{eq-1-40}: insert the source sum \eqref{eq-B-fan-first-cycle}; the interval pairs come from \eqref{eq-kernel-series-parallel}, and the final simplex comes from \eqref{eq-B-fan-second-merge}.
-
-\medskip\noindent\textbf{Step 3: the currents.} The currents are now solved backwards: the triangle gives $y_{n,n+1}$, and the coefficient of $z_{i,i+1}$ in Step 2 gives $y_{i,i+1}$ in terms of $y_{i+1,i+2}$,
+The triangle solution \eqref{eq-triangle-current} starts the backward recurrence:
 \begin{equation}\label{eq-B-fan-general-fractions}
 \begin{aligned}
 y_{n,n+1,+\dot a}
-&=r_{2n-1}\lambda_{n,+\dot a}^{\mathrm{red}}-r_{2n}\lambda_{n+1,+\dot a},\\
+&=r_{2n-1}\lambda_{n,+\dot a}^{\mathrm{red}}
+-r_{2n}\lambda_{n+1,+\dot a},\\
 y_{i,i+1,+\dot a}
-&=r_{2i-1}\lambda_{i,+\dot a}^{\mathrm{red}}-(1-r_{2i})y_{i+1,n+2,+\dot a}^{\mathrm{red}}\\
 &=r_{2i-1}r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
--(1-r_{2i})\lambda_{i+1,+\dot a}+(1-r_{2i})y_{i+1,i+2,+\dot a},\qquad i=n-1,\ldots,1.
+-(1-r_{2i})\lambda_{i+1,+\dot a}
++(1-r_{2i})y_{i+1,i+2,+\dot a},\\
+&\hspace{58mm}i=n-1,\ldots,1.
 \end{aligned}
 \end{equation}
-Inserting \eqref{eq-B-fan-first-cycle} gives \eqref{eq-1-38}. The coordinates are the resistance ratios $r_{2i-1}=t^{\mathrm{red}}_{i,n+2}/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})$ and $r_{2i}=(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2})/(t_{i,i+1}+t^{\mathrm{red}}_{i,n+2}+t_{i+1,n+2})$ of Theorem~\ref{b-01142}; the first line is the triangle \eqref{eq-triangle-current} with $t_{13},t_{23}$ replaced by $t^{\mathrm{red}}_{n,n+2}=r_{2n-1}$ and $t_{n+1,n+2}=r_{2n}$. The spoke currents \eqref{eq-1-39} follow from conservation in the restored fan. This reflects the order of our iteration: the path currents are fixed first, backward from $y_{n,n+1}$ to $y_{12}$, and current conservation at each path vertex then determines every spoke current.
+The second line follows by substituting \eqref{eq-fan-source-transfer} into \eqref{eq-fan-step-currents}. It determines every path current polynomially in $r$ and gives \eqref{eq-1-38}; conservation then gives the spoke currents \eqref{eq-1-39}.
 
-For $n=1$, the product of current factors is empty and gives \eqref{eq-1-25}; for $n=2$, the single current factor restores the two-loop circuit of Figure~\ref{fig-fan-series-parallel-currents}. $\square$
+Multiplying the local factors \eqref{b-00282} leaves the explicit triangle current integral
+\begin{equation}\label{eq-fan-operator-product}
+\begin{aligned}
+\mathcal I_\Gamma(\lambda;z)
+={}&\int_{(0,1)^{2n-2}}\prod_{j=1}^{2n-2}dr_j
+\int_{\substack{y^{\mathrm{red}}\in\Delta_\triangle\\
+\text{current conservation at }\lambda^{\mathrm{red}}}}
+\prod_{i=1}^{n-1}
+\left(r_{2i}\lambda_{i,+\dot a_i}^{\mathrm{red}}
+y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a_i}\right)\\
+&\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}(r)z_e^{+\dot b}}
+\,(-d^2y_{n,n+1}).
+\end{aligned}
+\end{equation}
+The two spokes of the final triangle form its spanning tree. Each factor uses the stage current reconstructed by \eqref{eq-fan-step-currents}; the exponential uses the original edge currents. The triangle area \eqref{b-00267} is
+\begin{equation}\label{eq-B-fan-second-merge}
+-d^2y_{n,n+1}
+=\bigl(\lambda_{n,+\dot a}^{\mathrm{red}}\lambda_{n+1,+}{}^{\dot a}\bigr)
+dr_{2n-1}\wedge dr_{2n}.
+\end{equation}
+Its simplex and the $n-1$ interval pairs give \eqref{eq-1-37}; inserting \eqref{b-00282} and~\eqref{eq-B-fan-first-cycle} gives \eqref{eq-1-40}. For $n=1$, the product is empty and the integral is \eqref{eq-1-25}. $\square$
 \end{proofbox}
 
 \subsection{Final Taylor expansion}\label{endpoint-sources-and-taylor-expansion}
@@ -4675,7 +4515,7 @@ Each tree can be reduced independently. We use the current form of \eqref{eq-ker
 
 \subsubsection{Star--triangle moves on current integrals}
 
-The two source-free moves below preserve the sources at the remaining vertices. Their derivative forms and weighted current forms agree by \eqref{eq-current-insertions}. In each current integral, $T^{\mathrm{red}}$ is the specified reduced spanning tree; the original currents in the exponential are obtained from the displayed reverse map.
+The two source-free moves below preserve the sources at the remaining vertices. In each current integral, $T^{\mathrm{red}}$ is the specified reduced spanning tree; the original currents in the exponential are obtained from the displayed reverse map.
 
 \rthm{Theorem}{b-01159}{Star--triangle, the first case: two edges present} In a Laman circuit, let $v$ have degree three, neighbours $u,w,x$, and source $\lambda_v$. Assume $ux,wx$ are present and $uw$ is absent. Let $r_1,r_2$ be the old $ux,wx$ current fractions. The reduction removes one vertex, two edges, and one loop, preserving the Laman condition.
 
