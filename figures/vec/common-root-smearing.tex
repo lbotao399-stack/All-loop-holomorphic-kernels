@@ -1,0 +1,47 @@
+\documentclass[border=2pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+ moving/.style={circle,draw,fill=white,inner sep=1.8pt,line width=.6pt},
+ fixed/.style={circle,draw,double,fill=white,inner sep=1.7pt,double distance=1.2pt,line width=.55pt},
+ first/.style={red!75!black,line width=.8pt,-{Stealth[length=1.7mm]}},
+ second/.style={blue!70!black,line width=.8pt,-{Stealth[length=1.7mm]}}]
+\begin{scope}
+ \node at (1.7,2.45) {(a)};
+ \node at (1.7,1.95) {$\displaystyle\int d^4x_A\,d^4x_D\;\bar\partial$};
+ \node[moving,label=above:{$Aa_1$}] (a) at (.6,.95) {};
+ \node[moving,label=above:{$Da_2$}] (d) at (2.8,.95) {};
+ \node[fixed] (b) at (1.7,0) {};
+ \draw[first] (a)--(b); \draw[second] (d)--(b);
+ \node[below=5pt] at (b) {$b_{\mathrm{aux},1}b_{\mathrm{aux},2}B(0)$};
+\end{scope}
+\begin{scope}[xshift=4.2cm]
+ \node at (1.5,2.45) {(b)};
+ \node at (1.5,1.95) {$\displaystyle\int d^4x_D\;\bar\partial$};
+ \node[moving,label=above:{$Da_2$}] (d) at (.7,.95) {};
+ \node[fixed] (b) at (2.1,0) {};
+ \draw[second] (d)--(b);
+ \node[below=5pt] at (b) {$b_{\mathrm{aux},2}(A\star B)(0)$};
+\end{scope}
+\begin{scope}[xshift=8.2cm]
+ \node at (1.5,2.45) {(c)};
+ \node at (1.5,1.95) {$\displaystyle\int d^4x_A\;\bar\partial$};
+ \node[moving,label=above:{$Aa_1$}] (a) at (.7,.95) {};
+ \node[fixed] (b) at (2.1,0) {};
+ \draw[first] (a)--(b);
+ \node[below=5pt] at (b) {$b_{\mathrm{aux},1}(D\star B)(0)$};
+\end{scope}
+\begin{scope}[xshift=12.5cm]
+ \node at (1.7,2.45) {(d)};
+ \node at (1.7,1.95) {$\displaystyle\int d^4x_D\;\bar\partial$};
+ \node[moving,label=above:{$\{Aa_1,Da_2\}_{\mathcal I}$}] (ad) at (.7,.95) {};
+ \node[fixed] (b) at (2.4,0) {};
+ \draw[first] (ad) to[bend left=18] (b);
+ \draw[second] (ad) to[bend right=18] (b);
+ \node[below=5pt] at (b) {$b_{\mathrm{aux},1}b_{\mathrm{aux},2}B(0)$};
+ \node at (1.7,-.93) {$P\wedge P=K\wedge P=0$};
+\end{scope}
+\end{tikzpicture}
+\end{document}
