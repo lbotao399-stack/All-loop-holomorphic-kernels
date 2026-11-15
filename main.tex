@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261115-231819 (Beijing time)}
+\date{\small Version 20261115-235105 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -136,7 +136,31 @@ Section \ref{sec-summary} summarizes our results: the all-order supercharge of $
 
 \section{Summary of results}\label{sec-summary}
 
-This section states the main results; the later sections give the definitions in full and the proofs. The setting is the holomorphic twist of a four-dimensional $\mathcal N=1$ gauge theory, reviewed in Section \ref{sec-BV}. Its fields are four Dolbeault forms $\mathsf c^A,\mathsf b_A,\gamma_i,\beta^i$ on $\mathbb C^2$; their zero-form components, with their holomorphic derivatives $\partial_{+\dot a}$, are the BPS letters, and local operators are polynomials in these letters. The supercharge acts on them as
+This section states the main results; the later sections give the definitions in full and the proofs. The setting is the holomorphic twist of a four-dimensional $\mathcal N=1$ gauge theory, reviewed in Section \ref{sec-BV}. Its fields are four Dolbeault forms $\mathsf c^A,\mathsf b_A,\gamma_i,\beta^i$ on $\mathbb C^2$; their zero-form components, with their holomorphic derivatives $\partial_{+\dot a}$, are the BPS letters, and local operators are polynomials in these letters.
+
+Each theory is specified by its gauge group, its matter representation and its antichiral superpotential $\bar W$, which enter the twisted action,
+\begin{equation}\label{local-ch9-common-action}
+\begin{gathered}
+\begin{aligned}
+S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
+&\mathsf b_A\left(\bar\partial\mathsf c^A-\frac g2C^A{}_{BC}\mathsf c^B\mathsf c^C\right)\\
+&+\left(\bar\partial\gamma_i-ig\mathsf c^A(t_A)^j{}_i\gamma_j\right)\beta^i
++\bar W(\gamma,\mathsf w)\Big]_{(0,2)}.
+\end{aligned}\\[-2pt]
+\text{(\ref{eq-B-8})}
+\end{gathered}
+\end{equation}
+where the projection $[\cdot]_{(0,2)}$ selects antiholomorphic form degree two and the function $\bar W$ contains the antichiral superpotential and gauge kinetic terms expressed in $\gamma$ and $\mathsf w$. $\Omega$ is the holomorphic form $2\,dx^{+\dot+}\wedge dx^{+\dot-}$.
+Here $(t_A)^j{}_i$ are the generators in the matter representation and $\mathsf w$ is the antichiral field strength.
+
+The interaction density entering the higher operations is~
+\begin{equation*}
+\mathcal I=-\frac g2C^A{}_{BC}\mathsf b_A\mathsf c^B\mathsf c^C
+-ig\mathsf c^A(t_A)^j{}_i\gamma_j\beta^i
++\bar W(\gamma,\mathsf w).\tag{\ref{eq-B-10}}
+\end{equation*}
+
+The supercharge acts on them as
 \begin{equation*}
 \mathbf Q=\sum_{n\ge0}\hbar^nQ_n,
 \end{equation*}
@@ -148,7 +172,20 @@ In $\mathcal N=4$ Yang--Mills theory the four twisted fields are the components 
 \begin{equation*}
 C^A(\theta)=ig\,\mathsf c^A+\theta_I\delta^{AB}(\gamma^I)_B-\frac12\varepsilon^{IJK}\theta_I\theta_J(\beta_K)^A+\frac{\theta_1\theta_2\theta_3}{ig}\delta^{AB}\mathsf b_B.\tag{\ref{eq-A-13}}
 \end{equation*}
-and the twisted action is cubic, with the structure constants $C_{ABC}$ as couplings. Every loop correction to the supercharge is then a fan graph (Figure \ref{fig-sum-families}(a)), and the fan kernel evaluates every $Q_n$, including its action on letters with arbitrary holomorphic derivatives.
+The twisted action is cubic, with the structure constants $C_{ABC}$ as couplings,
+\begin{equation}\label{local-ch9-su-action}
+\begin{gathered}
+S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge
+\left[\int d^3\theta\left(\frac12\delta_{AB}C^A\bar\partial C^B
++\frac{i}{3!}C_{ABC}C^AC^BC^C\right)\right]_{(0,2)}.\\[-2pt]
+\text{(\ref{eq-A-15})}
+\end{gathered}
+\end{equation}
+The odd coordinates obey $\theta_I\bar\partial=-\bar\partial\theta_I$, with $\int d^3\theta\,\theta_1\theta_2\theta_3=1$ and $\varepsilon^{123}=\varepsilon_{123}=1$.
+
+Every loop correction to the supercharge is then a fan graph (Figure \ref{fig-sum-families}(a)), and the fan kernel evaluates every $Q_n$, including its action on letters with arbitrary holomorphic derivatives.
+
+$Q_n$ replaces $n+1$ input letters by two output letters.\footnote{At one loop, $Q_1$ agrees with the operator of Budzik and Kulp \cite[Equations (3.64)--(3.70)]{BK} up to normalization; its component \eqref{eq-2-26} is the Konishi anomaly.} The functional derivatives act at the input positions $x+z_j$. The dependence on $z_j$ records their holomorphic derivatives.
 
 \rthm{Theorem}{b-00088}{All-loop supercharge of $\mathcal N=4$ Yang--Mills theory} \emph{With the cubic superfield action, superfield $C$, structure constants $C_{ABC}$ and odd coordinates $\theta$, the $n$-loop supercharge for $n\ge1$ and an insertion at $x$ is}
 \begin{equation}\label{eq-sum-N4}
@@ -200,11 +237,11 @@ x_{n+1}^{+\dot a}(r,z)
 \end{equation}
 }
 
-The functional derivatives act at the input positions $x+z_j$. Each $r_j$ is a parallel current-division ratio (Figure~\ref{fig-sum-moves}): for $i<n$, $r_{2i-1}$ is the fraction of the source at $i$ passed to $i+1$ and $r_{2i}$ the fraction of the merged spoke current carried by the original spoke $(i+1,n+2)$, and in the final triangle $r_{2n-1}$ and $r_{2n}$ are the fractions of the sources at $n$ and $n+1$ that flow through the edge $(n,n+1)$. $Q_n$ replaces $n+1$ input letters by two output letters.\footnote{At one loop, $Q_1$ agrees with the operator of Budzik and Kulp \cite[Equations (3.64)--(3.70)]{BK} up to normalization; its component \eqref{eq-2-26} is the Konishi anomaly.}
+Each $r_j$ is a parallel current-division ratio (Figure~\ref{fig-sum-moves}): for $i<n$, $r_{2i-1}$ is the fraction of the source at $i$ passed to $i+1$ and $r_{2i}$ the fraction of the merged spoke current carried by the original spoke $(i+1,n+2)$, and in the final triangle $r_{2n-1}$ and $r_{2n}$ are the fractions of the sources at $n$ and $n+1$ that flow through the edge $(n,n+1)$.
 
 \paragraph{Taylor expansion.}
 
-The functional derivatives in \eqref{eq-sum-N4} remove $n+1$ letters of the operator, and the dependence on $z_j$ records their holomorphic derivatives. The integrand of \eqref{eq-sum-N4} is a polynomial in $r_1,\ldots,r_{2n}$ at every order in the displacements $z_1,\ldots,z_{n+1}$, and integrating term by term gives the Taylor expansion of $Q_n$ with rational coefficients. We contract dotted indices from lower to upper, $z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$ with $z^{+}{}_{\dot b}=\epsilon_{\dot b\dot c}z^{+\dot c}$, so that the translation $z^{+\dot b}\,\partial/\partial x^{+\dot b}=-\tfrac12z^{+\dot b}\partial_{+\dot b}$ is $\tfrac12z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$. Writing $\partial_{1,+}{}^{\dot a}$ and $\partial_{n+1,+}{}^{\dot a}$ for the derivatives acting on the first output factor $(\partial_{+\dot a_1}\cdots\partial_{+\dot a_n}C^D)(x,\theta)$ and on the second output factor $(\partial_+{}^{\dot a_1}\cdots\partial_+{}^{\dot a_n}C^E)(x,\theta)$, respectively, we obtain
+The integrand of \eqref{eq-sum-N4} is a polynomial in $r_1,\ldots,r_{2n}$ at every order in the displacements $z_1,\ldots,z_{n+1}$, and integrating term by term gives the Taylor expansion of $Q_n$ with rational coefficients. We contract dotted indices from lower to upper, $z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$ with $z^{+}{}_{\dot b}=\epsilon_{\dot b\dot c}z^{+\dot c}$, so that the translation $z^{+\dot b}\,\partial/\partial x^{+\dot b}=-\tfrac12z^{+\dot b}\partial_{+\dot b}$ is $\tfrac12z^{+}{}_{\dot b}\,\partial_+{}^{\dot b}$. Writing $\partial_{1,+}{}^{\dot a}$ and $\partial_{n+1,+}{}^{\dot a}$ for the derivatives acting on the first output factor $(\partial_{+\dot a_1}\cdots\partial_{+\dot a_n}C^D)(x,\theta)$ and on the second output factor $(\partial_+{}^{\dot a_1}\cdots\partial_+{}^{\dot a_n}C^E)(x,\theta)$, respectively, we obtain
 \begin{equation}\label{eq-sum-N4-taylor}
 \begin{aligned}
 Q_n={}&\frac{(-1)^ni^{n+1}}{2(32\pi^2)^n}
@@ -266,11 +303,9 @@ C_{A_{n+1}R_nE}\\
 
 The proof and the one- and two-loop operators in components are in Section \ref{sec-supercharge}. The same fan kernel gives $Q_n$ in every $\mathcal N=1$ gauge theory with interactions of degree at most three; with a superpotential of higher degree the spiders of Figure \ref{fig-sum-families}(b) also contribute (Sections \ref{sec-restrictions} and \ref{sec-forests}).
 
-For the marked higher operations $\{\mathcal I^{\otimes n},A,B\}^{\gamma,0}$ that define the $n$-loop quantum product $A\star B$ in \eqref{eq-sum-star}, the one- and two-loop operators are given in Section~\ref{sec-product-loops}, and the $n$-loop kernels of the product forests, with their values at zero displacement and their Taylor-expansion tables, enumerated and evaluated through seven loops, are archived on GitHub at \href{https://github.com/lbotao399-stack/All-loop-holomorphic-kernels/tree/main/product_kernels}{\texttt{All-loop-holomorphic-kernels/product\_kernels}} \cite{KernelRepo}. Our iterated reduction turns every one of them into the integral of a polynomial over a product of simplices. The number of graphs is large, however, and these kernels have few practical uses at present, so we do not reproduce them in this paper.
-
 \subsection{Quantum lifting, multi-gravitons and the quantum BPS ring}\label{the-quantum-product-and-the-quantum-bps-ring}
 
-The classical BPS operators are the classes of $E_1=H(Q_0)$. The loop corrections act on them through the successive differentials $d_r$ of the homotopy transfer (Section \ref{sec-homotopy-transfer}), with pages $E_{r+1}=H(E_r,d_r)$: a class with $d_r\ne0$, and the class it is mapped to, leave the BPS spectrum at $r$ loops; they are lifted. The following statements constrain the lifting.
+The classical BPS operators are the classes of $E_1=H(Q_0)$. The loop corrections act on $E_1$ through the differentials $d_r$ of the successive homotopy transfer of Section~\ref{sec-homotopy-transfer}: $E_{r+1}=H(E_r,d_r)$, with $d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1$ and $d_2[\mathcal O_0]_2=[Q_2\mathcal O_0+Q_1\mathcal O_1]_2$ for $Q_0\mathcal O_1=-Q_1\mathcal O_0$. A class is lifted at $r$ loops when $d_r$ is nonzero on it or when it is $d_r$-exact; the source and the target of a nonzero $d_r$ then leave the perturbative BPS spectrum together. The following statements constrain the lifting.
 
 \rthm{Lemma}{b-00094}{Derivative grading \cite[Theorem 6]{Wang}, \cite[Section 2.8]{operatope}} \emph{For an interaction without holomorphic derivatives, $Q_n$ raises each holomorphic derivative total---the numbers of $\partial_{+\dot+}$ and $\partial_{+\dot-}$---by $n$.} \emph{With homotopy contractions homogeneous in these totals, the successive obstruction differential $d_r$ raises each by $r$; a nonzero class can therefore be $d_r$-exact only if both totals of its leading representative are at least $r$.} \emph{In particular, a class whose leading representative has no holomorphic derivatives is $d_r$-exact for no $r\ge1$.}
 
@@ -342,7 +377,11 @@ and in $\mathcal N=4$ Yang--Mills theory its one-loop term is
 \end{gathered}
 \end{equation}
 
-At higher orders the product is a sum over forests of interaction trees attached to both insertions; its kernels are spiders and, from three loops onwards, further cubic forests, evaluated by the same reduction in Section \ref{sec-forests}. The complete one- and two-loop products are in Section \ref{sec-product-loops}, and the kernels through seven loops in \cite{KernelRepo}.
+At higher orders the product is a sum over forests of interaction trees attached to both insertions; its kernels are spiders and, from three loops onwards, further cubic forests, evaluated by the same reduction in Section \ref{sec-forests}.
+
+For the marked higher operations $\{\mathcal I^{\otimes n},A,B\}^{\gamma,0}$ that define the $n$-loop quantum product $A\star B$ in \eqref{eq-sum-star}, the one- and two-loop operators are given in Section~\ref{sec-product-loops}, and the $n$-loop kernels of the product forests, with their values at zero displacement and their Taylor-expansion tables, enumerated and evaluated through seven loops, are archived on GitHub at \href{https://github.com/lbotao399-stack/All-loop-holomorphic-kernels/tree/main/product_kernels}{\texttt{All-loop-holomorphic-kernels/product\_kernels}} \cite{KernelRepo}. Our iterated reduction turns every one of them into the integral of a polynomial over a product of simplices. The number of graphs is large, however, and these kernels have few practical uses at present, so we do not reproduce them in this paper.
+
+Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group.
 
 \paragraph{Uses of the quantum product.}\label{uses-of-the-quantum-product}
 
@@ -382,9 +421,9 @@ We enumerate the classical cohomology $E_1=H(Q_0)$ sector by sector, isolate its
 
 \paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters, as in \eqref{eq-E-sector}. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are given by \eqref{eq-E-charges}; we quote them as $(E;R_1,R_2,R_3;J_L,J_R)$. Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $2(E+J_L)$, which we call the level; a census is complete through a level when every sector up to that level has been computed.
 
-\paragraph{Fortuitous and monotone classes.} Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group. The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $\HQ-\HQC$, with $\HQ=\dim E_1$ and $\HQC$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
+\paragraph{Fortuitous and monotone classes.} The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $\HQ-\HQC$, with $\HQ=\dim E_1$ and $\HQC$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
 
-\paragraph{Lifting.} The loop corrections act on $E_1$ through the differentials $d_r$ of the successive homotopy transfer of Section~\ref{sec-homotopy-transfer}: $E_{r+1}=H(E_r,d_r)$, with $d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1$ and $d_2[\mathcal O_0]_2=[Q_2\mathcal O_0+Q_1\mathcal O_1]_2$ for $Q_0\mathcal O_1=-Q_1\mathcal O_0$. A class is lifted at $r$ loops when $d_r$ is nonzero on it or when it is $d_r$-exact; the source and the target of a nonzero $d_r$ then leave the perturbative BPS spectrum together. For each class we therefore test both whether $d_r$ of the class vanishes and whether the class is $d_r$-exact, for every $r$ that the grading allows. A class on which every $d_r$ vanishes and which is $d_r$-exact for no $r\ge1$ survives at every perturbative order. The tables give $\operatorname{rank}d_r$ between a source sector and its target sector $(\lambda-r\mathsf d)_{Y+1-r}$.
+\paragraph{Lifting.} For each class we therefore test both whether $d_r$ of the class vanishes and whether the class is $d_r$-exact, for every $r$ that the grading allows. A class on which every $d_r$ vanishes and which is $d_r$-exact for no $r\ge1$ survives at every perturbative order. The tables give $\operatorname{rank}d_r$ between a source sector and its target sector $(\lambda-r\mathsf d)_{Y+1-r}$.
 
 \paragraph{Certification.} The labels $[p]$, $[p,p^{\prime}]$ and $[\mathbb Q]$ denote finite-field rank computations, independent checks at a second prime, and rational certificates, as specified in \cite[supplement, Section S1.7]{Repo}. Unmarked census ranks are computed modulo $p=2^{31}-1$. These labels describe how the linear independence behind each rank is established: a result marked $[\mathbb Q]$ is proved, and one marked $[p]$ or $[p,p^{\prime}]$ is a lower bound on the rational rank that is exact unless $p$ divides the relevant minors. A rational certificate is an exact elimination over $\mathbb Q$, or a chain $(\mathcal O_0,\ldots,\mathcal O_{r-1})$ together with a dual functional, reconstructed from several primes and verified exactly over $\mathbb Q$.
 
@@ -449,33 +488,11 @@ In summary:
 
 The census builds on the following work. The classical cohomology and its fortuitous classes are organized as in \cite{ChangYin,microstates,ChangLinWords,ChangChevalley}, and the enumerations extend those of \cite{ChangLin,GLRT,KLLS,BraneFused}; they reproduce the published $SU(2)$ census \cite{BPSCounting}, the one-loop lifts of \cite{KonishiBH,KKLP} and the mass-deformed classes of \cite{CK}. The classes invisible to Cartan restriction are analysed through the commuting scheme of the Lie algebra, with the higher-dimensional Chevalley restriction results of \cite{ChenNgo,ChenNgoSp,SXX,Vaccarino,Domokos,Hunziker,Richardson,LNY,SemplinerYang,Goyal}, the proofs of the conjecture of Cachazo, Douglas, Seiberg and Witten \cite{CDSW,EtingofKac,CederwallFerretti,Kumar,WittenSpSO,EtingofII}, the super-commuting schemes of \cite{KvLM} and standard invariant theory \cite{Sergeev,BereleRegev,GoodmanWallach,Bourbaki}. The Leigh--Strassler family is that of \cite{LeighStrassler,BundzikMansson}. The one- and two-loop operators used in the tests were compared with \cite{BK,KKLP}, with the two-loop kernel of \cite[Section 4.5]{GWW} and with the two-loop coefficient of the fortuity report \cite{FortuityAI}. Exact linear algebra over the integers and the rationals uses FLINT \cite{FLINT}.
 
-Each theory is specified by its gauge group, its matter representation and its antichiral superpotential $\bar W$, which enter the twisted action,
-\begin{equation}\label{local-ch9-common-action}
-\begin{gathered}
-\begin{aligned}
-S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge\Big[
-&\mathsf b_A\left(\bar\partial\mathsf c^A-\frac g2C^A{}_{BC}\mathsf c^B\mathsf c^C\right)\\
-&+\left(\bar\partial\gamma_i-ig\mathsf c^A(t_A)^j{}_i\gamma_j\right)\beta^i
-+\bar W(\gamma,\mathsf w)\Big]_{(0,2)}.
-\end{aligned}\\[-2pt]
-\text{(\ref{eq-B-8})}
-\end{gathered}
-\end{equation}
-
 In the tables below, the lifting column lists the tests that have been completed, and $R_r=\sum_{\substack{k=1\\\text{loop orders}}}^{r}Q_k\mathcal O_{r-k}$ is the order-$r$ residual of Section~\ref{sec-homotopy-transfer}: $d_r$ vanishes on a class when $R_r\in\operatorname{im}Q_0$ for a suitable choice of the lower corrections. The lower corrections are not unique. The equation $Q_0\mathcal O_1=-Q_1\mathcal O_0$ fixes $\mathcal O_1$ only up to a $Q_0$-cocycle $Z$, and the same holds at every order. This is the freedom of a finite renormalization of the composite operator, $\mathcal O_0\to\mathcal O_0+\hbar Z+\cdots$, its mixing at higher order in $\hbar$ with the other classical cocycles of the same charges. The shift changes $R_2$ by $Q_1Z$, whose class is the $d_1$-boundary $d_1[Z]_1$, and in general it changes the class of $R_r$ by an element of the images of $d_1,\ldots,d_{r-1}$. The freedom is therefore removed by passing to the pages: $d_r$ is defined on $E_r$, where these images are already divided out, and its rank does not depend on the choice. In the computation the choice is made once, by fixing homotopy contractions $(i_r,\pi_r,h_r)$ that are homogeneous in the gradings.
 
 \subsubsection{$\mathcal N=4$ Yang--Mills: $SU(N)$}\label{sec-results-SU}
 
-The three chiral multiplets are adjoint, with the superfield $C$ displayed above and the action \cite[results report, \S1.1]{Repo}
-\begin{equation}\label{local-ch9-su-action}
-\begin{gathered}
-S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge
-\left[\int d^3\theta\left(\frac12\delta_{AB}C^A\bar\partial C^B
-+\frac{i}{3!}C_{ABC}C^AC^BC^C\right)\right]_{(0,2)},
-\qquad\mathfrak g=\mathfrak{su}(N).\\[-2pt]
-\text{(\ref{eq-A-15})}
-\end{gathered}
-\end{equation}
+The three chiral multiplets are adjoint, with $\mathfrak g=\mathfrak{su}(N)$ \cite[results report, \S1.1]{Repo}.
 
 The census is complete, in all sectors, through the following levels:
 \begin{center}
@@ -1085,6 +1102,7 @@ The series step replaces the branch $u$--$v$--$w$ by one resistor and divides th
 \end{tcolorbox}
 
 \begin{tcolorbox}[enhanced,breakable,colback=white,colframe=black!45,boxrule=0.5pt,arc=1pt,left=4pt,right=4pt,top=2pt,bottom=2pt,fonttitle=\small\bfseries,title={(b) Star--triangle move (Figure \ref{fig-sum-moves}(b)): a vertex $v$ of degree three, with neighbours $u,w,x$}]
+The currents are written for $\lambda_v=0$.
 \begin{equation}\label{eq-sum-star-triangle}
 \begin{gathered}
 \begin{gathered}
@@ -1102,7 +1120,7 @@ y_{ux}=r_1y_{ux}^{\mathrm{red}},\qquad y_{wx}=r_2y_{wx}^{\mathrm{red}}.
 \text{(\ref{b-01166})}
 \end{gathered}
 \end{equation}
-The star at $v$ becomes a triangle on $u,w,x$, and its two new resistors merge in parallel with the resistors $t_{ux}$, $t_{wx}$ already present; $r_1$ and $r_2$ are the fractions of the merged currents carried by the old resistors. The currents are written for $\lambda_v=0$; a source at $v$ is divided between $u$, $w$ and $x$ \eqref{local-B-sourced-operator}. The simultaneous removal of two source-free stars, Figure \ref{fig-sum-moves}(c), has four such fractions.
+The star at $v$ becomes a triangle on $u,w,x$, and its two new resistors merge in parallel with the resistors $t_{ux}$, $t_{wx}$ already present; $r_1$ and $r_2$ are the fractions of the merged currents carried by the old resistors. A source at $v$ is divided between $u$, $w$ and $x$ \eqref{local-B-sourced-operator}. The simultaneous removal of two source-free stars, Figure \ref{fig-sum-moves}(c), has four such fractions.
 \end{tcolorbox}
 
 The move (a) is the step of the recursion that Gui, Wang and Williams found, from the algebraic properties of the propagator, for the Laman graphs of type~I$'$ \cite[Theorem 4.13]{GWW}. They left the relation of their new coordinates to the Schwinger parameters open \cite[Remark 4.14]{GWW}. Here the two coordinates of each step are current-division ratios: $r$ divides the source at the eliminated vertex between its two branches, and $r_j$ divides the current between parallel resistors; their relation to the original resistances is the one in the box (a).
