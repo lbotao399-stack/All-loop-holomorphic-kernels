@@ -87,8 +87,6 @@
   left=5pt,right=5pt,top=3pt,bottom=3pt,before skip=6pt,after skip=8pt,parbox=false}
 \newcommand{\HQ}{|H(Q_0)|}
 \newcommand{\HQC}{|H(Q_0)|_{\mathrm{Cartan}}}
-\newsavebox{\kernelbox}
-\newcommand{\fitkernel}[1]{\sbox{\kernelbox}{$\displaystyle #1$}\ifdim\wd\kernelbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\kernelbox}}\else\usebox{\kernelbox}\fi}
 \DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\sgn}{sgn}
 \allowdisplaybreaks[3]
@@ -105,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261116-222842 (Beijing time)}
+\date{\small Version 20261116-224502 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -381,7 +379,7 @@ and in $\mathcal N=4$ Yang--Mills theory its one-loop term is
 
 At higher orders the product is a sum over forests of interaction trees attached to both insertions; its kernels are spiders and, from three loops onwards, further cubic forests, evaluated by the same reduction in Section \ref{sec-forests}.
 
-For the marked higher operations $\{\mathcal I^{\otimes n},A,B\}^{\gamma,0}$ that define the $n$-loop quantum product $A\star B$ in \eqref{eq-sum-star}, the one- and two-loop operators are given in Section~\ref{sec-product-loops}, and the $n$-loop kernels of the product forests, with their values at zero displacement and their Taylor-expansion tables, enumerated and evaluated through seven loops, are archived on GitHub at \href{https://github.com/lbotao399-stack/All-loop-holomorphic-kernels/tree/main/product_kernels}{\texttt{All-loop-holomorphic-kernels/product\_kernels}} \cite{KernelRepo}. Our iterated reduction turns every one of them into the integral of a polynomial over a product of simplices. The product through four loops is displayed in Section~\ref{sec-product-four-loops}.
+For the marked higher operations $\{\mathcal I^{\otimes n},A,B\}^{\gamma,0}$ that define the $n$-loop quantum product $A\star B$ in \eqref{eq-sum-star}, the one- and two-loop operators are given in Section~\ref{sec-product-loops}, and the $n$-loop kernels of the product forests, with their values at zero displacement and their Taylor-expansion tables, enumerated and evaluated through seven loops, are archived on GitHub at \href{https://github.com/lbotao399-stack/All-loop-holomorphic-kernels/tree/main/product_kernels}{\texttt{All-loop-holomorphic-kernels/product\_kernels}} \cite{KernelRepo}. Our iterated reduction turns every one of them into the integral of a polynomial over a product of simplices. The product through two loops is displayed in Section~\ref{sec-product-four-loops}.
 
 Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it lies in the image of the stable cohomology, the cohomology at large rank, where no trace relation holds; the multi-gravitons are of this kind. A class is fortuitous otherwise: its representatives are $Q_0$-closed only by virtue of the trace relations of the finite-rank gauge group.
 
@@ -3618,7 +3616,7 @@ Derivatives on contracted letters act through these displacements with the coord
 
 For polynomial local inputs and a polynomial superpotential in the interaction \eqref{eq-B-10}, the quantum product has finitely many powers of $\hbar$.
 
-\emph{Proof.} Each order-$n$ product graph has $n$ interaction vertices and $2n$ physical contractions, so Proposition \ref{b-00249} gives
+\emph{Proof.} Each order-$n$ product graph has $n$ interaction vertices and $2n$ physical contractions, so Theorem \ref{b-00249} gives
 \begin{equation*}
 \begin{aligned}
 \#(\mathsf b,\beta\text{ in output})
@@ -4145,78 +4143,6 @@ y_{AB,+}^{\mathrm{red}}{}^{\dot a}\right)^{\ell_i}
 \label{eq-1-54}
 \end{equation}
 
-A quartic two-adjoint theory is obtained by giving the third adjoint of $\mathcal N=4$ SYM a mass \cite[Section VII E, Eq. (50)]{LeighStrassler}. In the normalization of Appendix~\ref{sec-notation}, eliminating $(\gamma^3)_A$ gives
-
-\begin{equation}\label{eq-quartic-effective-superpotential}
-\begin{aligned}
-\bar W
-={}&iC_{ABC}\delta^{AA'}\delta^{BB'}\delta^{CC'}
-(\gamma^1)_{A'}(\gamma^2)_{B'}(\gamma^3)_{C'}
-+\frac m2\delta^{AB}(\gamma^3)_A(\gamma^3)_B
-\\
-\longrightarrow{}&
-\frac1{2m}C_{ABC}C_{DEF}\delta^{CF}
-\delta^{AA'}\delta^{BB'}\delta^{DD'}\delta^{EE'}
-(\gamma^1)_{A'}(\gamma^2)_{B'}(\gamma^1)_{D'}(\gamma^2)_{E'}.
-\end{aligned}
-\end{equation}
-
-Here $m$ is the nonzero mass coefficient in the antichiral superpotential. The quartic interaction is nonrenormalizable at the Gaussian fixed point; it becomes marginal at the interacting fixed point of the two-adjoint theory.
-
-On operators built from $\beta^i$ and their holomorphic derivatives, every arm has length one. With $i,j$ labeling the matter representation of the two remaining adjoint multiplets, the corrections are
-
-{\small
-\begin{equation}\label{eq-quartic-spider-supercharge}
-\begin{aligned}
-Q_n\mathcal O(x)
-={}&\frac{(-1)^{(n-1)(n-2)/2}i^ng^n}{n!(32\pi^2)^n}
-\int_{\substack{0<r_{s,1}<1\; (1\le s\le n)\\
-r_{s,2}>0,\;\sum_{\substack{s=1,\ldots,n\\\mathrm{arms}}} r_{s,2}<1}}
-\prod_{s=1}^n(dr_{s,1}\,dr_{s,2})
-\left(1-\sum_{\substack{s=1,\ldots,n\\\mathrm{arms}}} r_{s,2}\right)\\
-&\times\int d^4z_A\prod_{s=1}^n d^4z_s
-\\
-&\times\prod_{s=1}^n(t_{D_s})^{i_s}{}_{j_s}
-\prod_{s=1}^n\left[
-\partial_{s,+\dot a_s}
-\left(\partial_A+\sum_{\substack{k=1,\ldots,n\\\mathrm{arms}}} r_{k,1}\partial_k\right)_+{}^{\dot a_s}
-\right]
-\\
-&\times\left[
-\mathsf c^{D_1}(x+x_1)\cdots\mathsf c^{D_n}(x+x_n)
-\frac{\partial^{n+1}\bar W}
-{\partial\gamma_{j_1}\cdots\partial\gamma_{j_n}\partial\gamma_j}
-(x+x_A)
-\right]
-\\
-&\times\frac{\delta_L}{\delta\beta^{i_1}(x+z_1)}\cdots
-\frac{\delta_L}{\delta\beta^{i_n}(x+z_n)}
-\frac{\delta_L}{\delta\beta^j(x+z_A)}\mathcal O(x),
-\qquad 1\le n\le3,
-\\[2pt]
-Q_n\mathcal O(x)
-={}&0,\qquad n\ge4,
-\end{aligned}
-\end{equation}
-}
-
-The shifts are
-\begin{equation}\label{eq-quartic-spider-shifts}
-\begin{aligned}
-x_A^{+\dot a}
-={}&\sum_{\substack{s=1,\ldots,n\\\mathrm{arms}}} r_{s,2}z_s^{+\dot a}
-+\left(1-\sum_{\substack{s=1,\ldots,n\\\mathrm{arms}}} r_{s,2}\right)z_A^{+\dot a},
-\\
-x_s^{+\dot a}
-={}&(1-r_{s,1})z_s^{+\dot a}+r_{s,1}x_A^{+\dot a}.
-\end{aligned}
-\end{equation}
-
-Here $\partial_s$ differentiates only the $s$th ghost, and $\partial_A$ differentiates the displayed derivative of $\bar W$, before evaluation at the translated points. The left functional derivatives and the ghost factors have the displayed order. The sums run over the arms. The representation matrices are those of the two adjoint multiplets, $(t_A^{\rm adj})^B{}_C=iC^B{}_{AC}$.
-
-The three orders have respectively $\mathsf c\,\bar W''$, $\mathsf c^2\bar W'''$ and $\mathsf c^3\bar W''''$ as their output factors. Inputs containing $\mathsf b$ allow longer arms.
-
-
 \subsection{Product forests}\label{sec-dressed-definition}
 \rthm{Theorem}{b-00249}{Product forests}
 For the interaction \eqref{eq-B-10}, a nonzero connected marked graph contributing
@@ -4498,240 +4424,75 @@ Appendix~\ref{app-sourced-star} gives the sourced star--triangle move; it recons
 
 \subsection{Quantum multiplication in $\mathcal N=4$ SYM}\label{sec-product-four-loops}
 
-
-A parenthesized pair denotes one cubic vertex and its two child branches; a leaf labeled $A$ or $B$ ends on that insertion.
-Commas between complete trees separate the components $T_1,\ldots,T_R$.
-The root of each tree retains one superfield $C$, and the marked edge $AB$ is implicit.
-Number the interaction vertices in depth-first order, with the displayed left child first.
-At vertex $v$, the parent port has color $X_v$, and its child ports have colors $A_{e_{v,1}},A_{e_{v,2}}$.
-An internal edge $e=(v,w)$ contracts $A_e$ with $X_w$ using $\delta^{A_eX_w}$.
-All vertices in $T_r$ share $\theta^{(r)}$; $r(e)$ denotes the tree containing the external edge $e$.
-The physical edges are ordered lexicographically by their endpoints, with the interaction vertices before $A$ and $B$, and the derivatives act right to left.
-The child ports in the color tensors retain their displayed order; the automorphisms fix both insertions.
-
-For inputs without holomorphic derivatives, the product through four loops is
-\begin{equation}
-\begin{aligned}
-A\star B\equiv{}&AB+
-\sum_{\substack{n\in\{1,2,3,4\}\\\mathrm{loop\ orders}}}
-\frac{(i\hbar)^n}{(32\pi^2)^n}
-\sum_{\substack{\Gamma\text{ in the }n\text{-loop table}\\\mathrm{rooted\ forests}}}
-\frac{(-1)^{R(R-1)/2}}{|\operatorname{Aut}\Gamma|}
-\int d^3\theta^{(1)}\cdots d^3\theta^{(R)}\\
-&\times\left(\prod_{v\in V\setminus\{A,B\}}C_{X_vA_{e_{v,1}}A_{e_{v,2}}}\right)
-\left(\prod_{\substack{e=(v,w)\in I\setminus\{AB\}\\w\in V\setminus\{A,B\}}}\delta^{A_eX_w}\right)
-\mathcal I_\Gamma(\partial_1,\ldots,\partial_R,\partial_A;0)\\
-&\times\Bigg[
-C^{X_{\mathrm{root}(T_1)}}(x_1,\theta^{(1)})\cdots
-C^{X_{\mathrm{root}(T_R)}}(x_R,\theta^{(R)})\\
-&\qquad\times
-\left(\prod_{\substack{e\in I\setminus\{AB\}\\e\text{ ends on }A}}^{\mathrm{edge\ order}}
-\delta^{A_eB_e}\frac{\delta}{\delta C^{B_e}(\theta^{(r(e))})}\right)A(x_A)\\
-&\qquad\times
-\left(\prod_{\substack{e\in I\setminus\{AB\}\\e\text{ ends on }B}}^{\mathrm{edge\ order}}
-\delta^{A_eB_e}\frac{\delta}{\delta C^{B_e}(\theta^{(r(e))})}\right)B(x)
-\Bigg]_{x_1=\cdots=x_R=x_A=x}
-\pmod{\hbar^5}.
-\end{aligned}
+For polynomial local operators $A,B$, including arbitrary holomorphic derivatives, the product through two loops is
+\begin{align}
+&(A\star B)(x)=A(x)B(x)\notag\\
+&+\frac{i\hbar}{32\pi^2}C_X{}^{YZ}
+\int_{\substack{r_1,r_2>0\\r_1+r_2<1}}dr_1\,dr_2\int d^3\theta
+\int d^4z_1\,d^4z_2\notag\\
+&\quad\times\exp\!\Big\{-\tfrac12
+[r_1z_1+(1-r_1)z_2]^{+\dot c}\partial_{1,+\dot c}
+-\tfrac12r_2(z_2-z_1)^{+\dot d}\partial_{3,+\dot d}\Big\}\notag\\
+&\quad\times\partial_{1,+\dot a}\partial_{3,+}{}^{\dot a}
+\Bigg[C^X(x_1,\theta)
+\frac{\delta A(x_3)}{\delta C^Y(x_3+z_1,\theta)}
+\frac{\delta B(x)}{\delta C^Z(x+z_2,\theta)}\Bigg]_{x_1=x_3=x}\notag\\[4pt]
+&+\frac{\hbar^2}{2(32\pi^2)^2}C_X{}^{YZ}C_U{}^{VW}
+\int_0^1dr_1\int_0^1dr_3
+\int_{\substack{r_2,r_4>0\\r_2+r_4<1}}dr_2\,dr_4\,(1-r_2-r_4)\notag\\
+&\quad\times\int d^3\theta^{(1)}d^3\theta^{(2)}
+\int\prod_{e\in\{13,14,23,24\}}d^4z_e\notag\\
+&\quad\times\exp\!\Big\{-\tfrac12[r_1z_{13}+(1-r_1)z_{14}]^{+\dot c}\partial_{1,+\dot c}
+-\tfrac12[r_3z_{23}+(1-r_3)z_{24}]^{+\dot d}\partial_{2,+\dot d}\notag\\
+&\hspace{60pt}-\tfrac12[r_2(z_{14}-z_{13})+r_4(z_{24}-z_{23})]^{+\dot e}
+(r_1\partial_1+r_3\partial_2+\partial_3)_{+\dot e}\Big\}\notag\\
+&\quad\times\partial_{1,+\dot a}(\partial_3+r_3\partial_2)_+{}^{\dot a}
+\partial_{2,+\dot b}(\partial_3+r_1\partial_1)_+{}^{\dot b}\notag\\
+&\quad\times\Bigg[C^X(x_1,\theta^{(1)})C^U(x_2,\theta^{(2)})
+\frac{\delta^2 A(x_3)}{\delta C^Y(x_3+z_{13},\theta^{(1)})\,
+\delta C^V(x_3+z_{23},\theta^{(2)})}\notag\\
+&\hspace{60pt}\times
+\frac{\delta^2 B(x)}{\delta C^Z(x+z_{14},\theta^{(1)})\,
+\delta C^W(x+z_{24},\theta^{(2)})}\Bigg]_{x_1=x_2=x_3=x}\notag\\[4pt]
+&+\frac{\hbar^2}{(32\pi^2)^2}C_X{}^{YR}C_R{}^{ZW}
+\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{r_3,r_4>0\\r_3+r_4<1}}dr_3\,dr_4\,
+ r_2(1-r_1)(1-r_3-r_4)\notag\\
+&\quad\times\int d^3\theta\int\prod_{e\in\{13,23,24\}}d^4z_e\notag\\
+&\quad\times\exp\!\Big\{-\tfrac12\Big[
+\big[r_1r_2+(1-r_2)(r_1r_3+r_4)\big]z_{13}
+-r_2\big[r_1(1-r_3)-r_4\big]z_{23}\notag\\
+&\hspace{60pt}+(1-r_1r_3-r_4)z_{24}\Big]^{+\dot c}\partial_{1,+\dot c}
+-\tfrac12(1-r_3-r_4)
+[z_{24}-(1-r_2)z_{13}-r_2z_{23}]^{+\dot d}\partial_{3,+\dot d}\Big\}\notag\\
+&\quad\times\partial_{1,+\dot a}\partial_{1,+\dot b}
+\partial_{3,+}{}^{\dot a}\partial_{3,+}{}^{\dot b}
+\Bigg[C^X(x_1,\theta)
+\frac{\delta^2 A(x_3)}{\delta C^Y(x_3+z_{13},\theta)\,\delta C^Z(x_3+z_{23},\theta)}\notag\\
+&\hspace{60pt}\times\frac{\delta B(x)}{\delta C^W(x+z_{24},\theta)}
+\Bigg]_{x_1=x_3=x}\notag\\[4pt]
+&-\frac{\hbar^2}{(32\pi^2)^2}C_X{}^{ZR}C_R{}^{YW}
+\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{r_3,r_4>0\\r_3+r_4<1}}dr_3\,dr_4\,r_1r_2r_4\notag\\
+&\quad\times\int d^3\theta\int\prod_{e\in\{14,23,24\}}d^4z_e\notag\\
+&\quad\times\exp\!\Big\{-\tfrac12\Big[
+\big[1-r_1r_2-r_1(1-r_2)r_3\big]z_{14}
++r_1r_3z_{23}+r_1r_2(1-r_3)z_{24}\Big]^{+\dot c}\partial_{1,+\dot c}\notag\\
+&\hspace{60pt}-\tfrac12r_4[(1-r_2)z_{14}-z_{23}+r_2z_{24}]^{+\dot d}\partial_{3,+\dot d}\Big\}\notag\\
+&\quad\times\partial_{1,+\dot a}\partial_{1,+\dot b}
+\partial_{3,+}{}^{\dot a}\partial_{3,+}{}^{\dot b}
+\Bigg[C^X(x_1,\theta)
+\frac{\delta A(x_3)}{\delta C^Y(x_3+z_{23},\theta)}\notag\\
+&\hspace{60pt}\times\frac{\delta^2 B(x)}{\delta C^Z(x+z_{14},\theta)\,\delta C^W(x+z_{24},\theta)}
+\Bigg]_{x_1=x_3=x}
++O(\hbar^3).
 \label{eq-product-four-loop-evaluated}
-\end{equation}
-The polynomials $\mathcal I_\Gamma(\lambda;0)$ are listed below; replace each
-$\lambda_{r,+\dot a}$ by $\partial_{r,+\dot a}$ and
-$\lambda_{A,+\dot a}$ by $\partial_{A,+\dot a}$.
-The factor $4^{-n}$ from the original substitution
-$\lambda_{+\dot a}\mapsto-\tfrac12\partial_{+\dot a}$ is already included
-in $(32\pi^2)^{-n}$.
+\end{align}
 
-Here $\partial_r$ acts on the surviving root field and $\partial_A$ on the differentiated input $A$, before the positions are identified.
-The brackets $(\lambda_r\lambda_s)=\lambda_{r,+\dot a}\lambda_{s,+}{}^{\dot a}$ are the spinor contractions used in Section~\ref{sec-fans}.
-The tables give the evaluated kernels, with the roots ordered as their trees; fully contracted vertices have zero source.
-
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{@{}p{.80\linewidth}r@{}}
-\caption{One-loop product kernels.}\label{tab-product-1}\\
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endfirsthead
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endhead
-$(A,B)$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)}{2}}}\\[3pt]
-\end{longtable}}
-
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{@{}p{.80\linewidth}r@{}}
-\caption{Two-loop product kernels.}\label{tab-product-2}\\
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endfirsthead
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endhead
-$(A,B),\;(A,B)$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(2 \bigl(\lambda_1\lambda_A\bigr) + \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr) - \bigl(\lambda_1\lambda_2\bigr)\right)}{24}}}\\[3pt]
-$(A,(A,B))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{2}}{24}}}\\[3pt]
-$(B,(A,B))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{2}}{24}}}\\[3pt]
-\end{longtable}}
-
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{@{}p{.80\linewidth}r@{}}
-\caption{Three-loop product kernels.}\label{tab-product-3}\\
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endfirsthead
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endhead
-$(A,B),\;(A,B),\;(A,B)$&6\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\text{\eqref{eq-product-zero-three-singletons}}}}\\[3pt]
-$(A,B),\;(A,(A,B))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\left(3 \bigl(\lambda_1\lambda_A\bigr) + 2 \bigl(\lambda_1\lambda_2\bigr)\right) \left(3 \bigl(\lambda_2\lambda_A\bigr)^{2} - 3 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{864}}}\\[3pt]
-$(A,B),\;(B,(A,B))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(3 \bigl(\lambda_1\lambda_A\bigr) + \bigl(\lambda_1\lambda_2\bigr)\right) \left(3 \bigl(\lambda_2\lambda_A\bigr)^{2} - 3 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{864}}}\\[3pt]
-$(A,(A,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{3}}{864}}}\\[3pt]
-$(A,(B,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{3}}{576}}}\\[3pt]
-$(B,(A,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{3}}{576}}}\\[3pt]
-$(B,(B,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{3}}{864}}}\\[3pt]
-$((A,B),(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{0}}\\[3pt]
-\end{longtable}}
-
-{\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{@{}p{.80\linewidth}r@{}}
-\caption{Four-loop product kernels.}\label{tab-product-4}\\
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endfirsthead
-Forest $\Gamma$ & $|\operatorname{Aut}\Gamma|$\\\toprule\endhead
-$(A,B),\;(A,B),\;(A,B),\;(A,B)$&24\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\text{\eqref{eq-product-zero-four-singletons}}}}\\[3pt]
-$(A,B),\;(A,B),\;(A,(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\text{\eqref{eq-product-zero-two-singletons-A}}}}\\[3pt]
-$(A,B),\;(A,B),\;(B,(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\text{\eqref{eq-product-zero-two-singletons-B}}}}\\[3pt]
-$(A,B),\;(A,(A,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(4 \bigl(\lambda_1\lambda_A\bigr) + 3 \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr) - \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr)^{2} - 2 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{69120}}}\\[3pt]
-$(A,B),\;(A,(B,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\left(2 \bigl(\lambda_1\lambda_A\bigr) + \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr) - \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr)^{2} - 2 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{23040}}}\\[3pt]
-$(A,B),\;(B,(A,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\left(2 \bigl(\lambda_1\lambda_A\bigr) + \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr) - \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr)^{2} - 2 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{23040}}}\\[3pt]
-$(A,B),\;(B,(B,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(4 \bigl(\lambda_1\lambda_A\bigr) + \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr) - \bigl(\lambda_1\lambda_2\bigr)\right) \left(2 \bigl(\lambda_2\lambda_A\bigr)^{2} - 2 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{69120}}}\\[3pt]
-$(A,B),\;((A,B),(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{0}}\\[3pt]
-$(A,(A,B)),\;(A,(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(6 \bigl(\lambda_1\lambda_A\bigr)^{2} + 8 \bigl(\lambda_1\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + 3 \bigl(\lambda_1\lambda_2\bigr)^{2}\right) \left(6 \bigl(\lambda_2\lambda_A\bigr)^{2} - 8 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + 3 \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{69120}}}\\[3pt]
-$(A,(A,B)),\;(B,(A,B))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\left(6 \bigl(\lambda_1\lambda_A\bigr)^{2} + 4 \bigl(\lambda_1\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right) \left(6 \bigl(\lambda_2\lambda_A\bigr)^{2} - 8 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + 3 \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{69120}}}\\[3pt]
-$(A,(A,(A,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{69120}}}\\[3pt]
-$(A,(A,(B,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(A,(B,(A,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(A,(B,(B,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(A,((A,B),(A,B)))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{0}}\\[3pt]
-$(B,(A,B)),\;(B,(A,B))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\left(6 \bigl(\lambda_1\lambda_A\bigr)^{2} + 4 \bigl(\lambda_1\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right) \left(6 \bigl(\lambda_2\lambda_A\bigr)^{2} - 4 \bigl(\lambda_2\lambda_A\bigr) \bigl(\lambda_1\lambda_2\bigr) + \bigl(\lambda_1\lambda_2\bigr)^{2}\right)}{69120}}}\\[3pt]
-$(B,(A,(A,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(B,(A,(B,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(B,(B,(A,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{- \frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$(B,(B,(B,(A,B))))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{69120}}}\\[3pt]
-$(B,((A,B),(A,B)))$&2\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{0}}\\[3pt]
-$((A,B),(A,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-$((A,B),(B,(A,B)))$&1\\*
-\multicolumn{2}{@{}l@{}}{\fitkernel{\frac{\bigl(\lambda_1\lambda_A\bigr)^{4}}{34560}}}\\[3pt]
-\end{longtable}}
-
-{\small
-\begin{equation}
-\begin{aligned}
-&\mathcal I_{(A,B),(A,B),(A,B)}(\lambda;0)\\
-&={}\frac1{24}\Bigg\{
-\prod_{r=1}^{3}\left(\lambda_r\left[\lambda_A+\frac12\sum_{\substack{t=1,\ldots,3\\\mathrm{roots}}}\lambda_t\right]\right)\\
-&+\frac1{12}\sum_{\substack{1\le r<s\le 3\\\mathrm{root\ pairs}}}
-\left[\sum_{\substack{t=1,\ldots,3\\\mathrm{roots}}}\bigl(\lambda_r\lambda_t\bigr)\bigl(\lambda_s\lambda_t\bigr)\right]\\
-&\qquad\times\prod_{\substack{k\in\{1,\ldots,3\}\setminus\{r,s\}\\\mathrm{roots}}}\left(\lambda_k\left[\lambda_A+\frac12\sum_{\substack{t=1,\ldots,3\\\mathrm{roots}}}\lambda_t\right]\right)\Bigg\}.
-\end{aligned}
-\label{eq-product-zero-three-singletons}
-\end{equation}
-}
-{\small
-\begin{equation}
-\begin{aligned}
-&\mathcal I_{(A,B),(A,B),(A,B),(A,B)}(\lambda;0)\\
-&={}\frac1{120}\Bigg\{
-\prod_{r=1}^{4}\left(\lambda_r\left[\lambda_A+\frac12\sum_{\substack{t=1,\ldots,4\\\mathrm{roots}}}\lambda_t\right]\right)\\
-&+\frac1{12}\sum_{\substack{1\le r<s\le 4\\\mathrm{root\ pairs}}}
-\left[\sum_{\substack{t=1,\ldots,4\\\mathrm{roots}}}\bigl(\lambda_r\lambda_t\bigr)\bigl(\lambda_s\lambda_t\bigr)\right]\\
-&\qquad\times\prod_{\substack{k\in\{1,\ldots,4\}\setminus\{r,s\}\\\mathrm{roots}}}\left(\lambda_k\left[\lambda_A+\frac12\sum_{\substack{t=1,\ldots,4\\\mathrm{roots}}}\lambda_t\right]\right)\\
-&+\frac1{144}\sum_{\substack{(r,s,u,v)\in\{(1,2,3,4),(1,3,2,4),(1,4,2,3)\}\\\mathrm{pairings}}}
-\left[\sum_{\substack{t=1,\ldots,4\\\mathrm{roots}}}\bigl(\lambda_r\lambda_t\bigr)\bigl(\lambda_s\lambda_t\bigr)\right]\\
-&\qquad\times\left[\sum_{\substack{k=1,\ldots,4\\\mathrm{roots}}}\bigl(\lambda_u\lambda_k\bigr)\bigl(\lambda_v\lambda_k\bigr)\right]\Bigg\}.
-\end{aligned}
-\label{eq-product-zero-four-singletons}
-\end{equation}
-}
-{\fontsize{9.8}{12}\selectfont
-\begin{equation}
-\begin{aligned}
-&\mathcal I_{(A,B),(A,B),(A,(A,B))}(\lambda;0)\\
-&={}-\frac1{480}\Bigg\{
-\left[\left(\lambda_1\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{2}3\lambda_3\right]\right)\right.\\
-&\qquad\left.\times\left(\lambda_2\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{2}3\lambda_3\right]\right)\right.\\
-&\qquad\left.+\frac{\bigl(\lambda_1\lambda_3\bigr)\bigl(\lambda_2\lambda_3\bigr)}{18}\right]\\
-&\quad\times\left[\left(\lambda_3\left[\lambda_A+\frac12(\lambda_1+\lambda_2)\right]\right)^2+\frac{\bigl(\lambda_1\lambda_3\bigr)^2+\bigl(\lambda_2\lambda_3\bigr)^2}{12}\right]\\
-&+\frac{\bigl(\lambda_1\lambda_2\bigr)}6\left(\lambda_3\left[\lambda_A+\frac12(\lambda_1+\lambda_2)\right]\right)\left[\bigl(\lambda_1\lambda_3\bigr)\left(\lambda_1\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{2}3\lambda_3\right]\right)\right.\\
-&\qquad\left.-\bigl(\lambda_2\lambda_3\bigr)\left(\lambda_2\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{2}3\lambda_3\right]\right)\right]\\
-&-\frac{\bigl(\lambda_1\lambda_2\bigr)^2\bigl(\lambda_1\lambda_3\bigr)\bigl(\lambda_2\lambda_3\bigr)}{72}\Bigg\}.
-\end{aligned}
-\label{eq-product-zero-two-singletons-A}
-\end{equation}
-}
-{\fontsize{9.8}{12}\selectfont
-\begin{equation}
-\begin{aligned}
-&\mathcal I_{(A,B),(A,B),(B,(A,B))}(\lambda;0)\\
-&={}\frac1{480}\Bigg\{
-\left[\left(\lambda_1\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{1}3\lambda_3\right]\right)\right.\\
-&\qquad\left.\times\left(\lambda_2\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{1}3\lambda_3\right]\right)\right.\\
-&\qquad\left.+\frac{\bigl(\lambda_1\lambda_3\bigr)\bigl(\lambda_2\lambda_3\bigr)}{18}\right]\\
-&\quad\times\left[\left(\lambda_3\left[\lambda_A+\frac12(\lambda_1+\lambda_2)\right]\right)^2+\frac{\bigl(\lambda_1\lambda_3\bigr)^2+\bigl(\lambda_2\lambda_3\bigr)^2}{12}\right]\\
-&+\frac{\bigl(\lambda_1\lambda_2\bigr)}6\left(\lambda_3\left[\lambda_A+\frac12(\lambda_1+\lambda_2)\right]\right)\left[\bigl(\lambda_1\lambda_3\bigr)\left(\lambda_1\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{1}3\lambda_3\right]\right)\right.\\
-&\qquad\left.-\bigl(\lambda_2\lambda_3\bigr)\left(\lambda_2\left[\lambda_A+\frac12(\lambda_1+\lambda_2)+\frac{1}3\lambda_3\right]\right)\right]\\
-&-\frac{\bigl(\lambda_1\lambda_2\bigr)^2\bigl(\lambda_1\lambda_3\bigr)\bigl(\lambda_2\lambda_3\bigr)}{72}\Bigg\}.
-\end{aligned}
-\label{eq-product-zero-two-singletons-B}
-\end{equation}
-}
-
-For inputs with holomorphic derivatives, the same forests contribute with spatial functional derivatives.
-Set the internal and marked-edge displacements to zero, and replace the kernel and external derivatives in \eqref{eq-product-four-loop-evaluated} by
-{\small
-\begin{equation}\label{eq-product-four-loop-jets}
-\begin{aligned}
-&\mathcal I_\Gamma(\partial;0)
-\prod_{\substack{e\in I\setminus\{AB\}\\e\text{ ends on }A\text{ or }B}}^{\mathrm{edge\ order}}
-\frac{\delta}{\delta C^{B_e}(\theta^{(r(e))})}\\
-&\quad\longmapsto
-4^n\int\prod_{\substack{e\in I\setminus\{AB\}\\e\text{ ends on }A\text{ or }B}}d^4z_e\,
-\mathcal I_\Gamma\!\left(-\tfrac12\partial_1,\ldots,-\tfrac12\partial_R,-\tfrac12\partial_A;-z\right)
-\prod_{\substack{e\in I\setminus\{AB\}\\e\text{ ends on }A\text{ or }B}}^{\mathrm{edge\ order}}
-\frac{\delta}{\delta C^{B_e}(x_{e(1)}+z_e,\theta^{(r(e))})},\\
-&\mathcal I_\Gamma(\lambda;-z)
-=\int_{\substack{y\in\Delta_\Gamma\\\mathrm{current\ conservation\ at}\ \lambda}}
-\exp\!\left(\sum_{\substack{e\in I\setminus\{AB\}\\\mathrm{external\ edges}}}
- y_{e,+\dot a}z_e^{+\dot a}\right)
-\bigwedge_{e\in I\setminus T}(-d^2y_e).
-\end{aligned}
-\end{equation}
-}
-Each external functional derivative acts on its designated input.
-The external edges are oriented towards their input, so $x_{e(1)}$ is $x_A$ or $x_B=x$.
-The current maps of Section~\ref{sec-forest-graphs} evaluate this integral for every input jet order.
-A zero in a table means the zero-displacement coefficient vanishes; the corresponding forest can contribute to inputs with derivatives.
-
+Color indices are raised with $\delta^{AB}$; in particular, $C_X{}^{YZ}=\delta^{YY'}\delta^{ZZ'}C_{XY'Z'}$.
+Each $\partial_v$ acts on the entire factor at $x_v$, including the displayed functional derivatives, with the integration variables $z$ held fixed.
+The coordinate convention $\partial/\partial x^{+\dot a}=-\tfrac12\partial_{+\dot a}$ makes the exponentials translations.
+The positions are identified only after these operations; the functional derivatives and the odd-coordinate integrals retain their displayed order.
 
 \section{Quantum supercharges and $\mathcal N=4$ Yang--Mills theory}\label{sec-supercharge}
 
