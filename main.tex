@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261117-112423 (Beijing time)}
+\date{\small Version 20261117-120353 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -2215,7 +2215,7 @@ For an interaction density $\mathcal I$~in the action and a holomorphic local op
 \label{fig-higher-bracket-series}
 \end{figure}
 
-The collision faces of graph configuration space, equivalently the ultraviolet boundaries of Schwinger-parameter space, give these local terms. Interaction-only clusters contribute to the QME defect (the BV or BRST anomaly); clusters containing an operator give its quantum supersymmetry transformation. Such finite boundary terms can survive without ultraviolet counterterms, while the QME cancels the net anomaly of the action.
+The collision faces of graph configuration space, equivalently the ultraviolet boundaries of Schwinger-parameter space, give these local terms. Interaction-only clusters contribute to the QME defect (the BV or BRST anomaly); clusters containing an operator give its quantum supersymmetry transformation. Such finite boundary terms can survive without ultraviolet counterterms, while the QME cancels the net anomaly of the action. BRST Ward identities in string theory likewise reduce to boundary integrals on moduli space \cite[Section 7.1]{WittenSuperstring}; here the relevant boundaries are the ultraviolet collision faces of Schwinger-parameter space \cite[Theorem 6]{Wang}, \cite[Section 3.2]{operatope}.
 
 \subsection{Where the brackets come from}\label{sec-brackets-origin}
 
@@ -3275,7 +3275,7 @@ Q_0Q_3+Q_1Q_2+Q_2Q_1+Q_3Q_0&=0.
 \end{aligned}
 \end{equation}
 
-\emph{Proof.} We use the established quadratic identities without repeating their derivation \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equation (4.19)]{higher}. Physically, these higher Jacobi, or $L_\infty$, identities express BV nilpotence, $\Delta_{\mathrm{BV}}^2=0$, together with compatibility with the free differential. With $N$ interaction entries and one operator, the identity reads
+\emph{Proof.} We use the established quadratic identities without repeating their derivation \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equation (4.19)]{higher}. Physically, these higher Jacobi, or $L_\infty$, identities express BV nilpotence, $\Delta_{\mathrm{BV}}^2=0$, together with compatibility with the free differential. For the fixed BV pairing, this algebraic identity holds independently of the quantum master equation; the latter is required for the interacting differential $\mathbf Q$ to square to zero. With $N$ interaction entries and one operator, the identity reads
 \begin{equation}\label{eq-2-46}
 \begin{aligned}
 0={}&\sum_{r=1}^{N-1}\binom Nr
@@ -3438,6 +3438,8 @@ The resulting cohomology class is therefore independent of representatives.~\hfi
 
 \subsection{Order-by-order representatives}\label{sec-order-by-order}
 
+We provide some explicit examples to illustrate the idea.
+
 For $Q_0A=Q_0B=0$, the first two orders of \eqref{eq-chain} are
 \begin{equation}\label{eq-2-55}
 \begin{aligned}
@@ -3491,7 +3493,7 @@ A\star1=1\star A=A.
 
 \emph{In the successive homotopy transfer of Section~\ref{sec-homotopy-transfer}, the quantum product induces on every page $E_r$ the ordinary product of leading representatives, and every $d_r$ is a derivation of it.}
 
-\emph{Proof.} The chain identity \eqref{eq-chain} makes the product well-defined on cohomology. A class of $E_r$ has a representative $a+\hbar a_1+\cdots$ whose $\mathbf Q$-variation starts at order $\hbar^r$ with $d_ra$. Since $A\star B=AB+O(\hbar)$, the product of two such representatives has leading term $ab$, and by \eqref{eq-chain} its $\mathbf Q$-variation starts at order $\hbar^r$ with $(d_ra)b+(-1)^{|a|}a\,d_rb$. For the unit, the identity insertion has no fields, so in a marked circuit with $n\ge1$ interaction nodes it is wired only by the marked resistor. It is a dead end: the marked resistor carries the current injected at the identity insertion, whatever its resistance, so this resistance moves no current and the current form vanishes. So only the zero-interaction marked segment contributes.
+\emph{Proof.} The chain identity \eqref{eq-chain} makes the product well-defined on cohomology. A class of $E_r$ has a representative $a+\hbar a_1+\cdots$ whose $\mathbf Q$-variation starts at order $\hbar^r$ with $d_ra$. Since $A\star B=AB+O(\hbar)$, the product of two such representatives has leading term $ab$, and by \eqref{eq-chain} its $\mathbf Q$-variation starts at order $\hbar^r$ with $(d_ra)b+(-1)^{|a|}a\,d_rb$. For the unit, the identity insertion has no fields, so in a marked circuit with $n\ge1$ interaction nodes it is wired only by the marked resistor. It is a dead end: the marked resistor carries the current injected at the identity insertion, whatever its resistance, so this resistance moves no current and the current form vanishes. Equivalently, the Laman condition describes generic minimal rigidity in the plane: a leaf can rotate about its neighbour when $|V|>2$. Deleting that leaf would leave $|I|-1=2(|V|-1)-2>2(|V|-1)-3$, violating the subgraph bound. So only the zero-interaction marked segment contributes.
 
 For three closed insertions $X,Y,Z$, sum the quadratic identities with all interaction entries, as in \cite[Sections 4.3 and 4.5]{higher}. The pure-interaction terms vanish by \eqref{eq-2-40}, and the single-input terms vanish by closure. With the ordered-bracket sign of \eqref{eq-A-28}, the remaining identity is
 \begin{equation}\label{eq-ring-twisted-jacobi}
@@ -3556,9 +3558,12 @@ Substitute \eqref{eq-ring-root-contractions} and \eqref{eq-ring-parallel-channel
 \left.\sum_{n\ge0}\frac{\hbar^{n+1}}{n!}
 \{\mathcal I^{\otimes n},Aa_1,Da_2,
  b_{\mathrm{aux},1}b_{\mathrm{aux},2}B\}
-\right|_{\mathrm{aux}=0}\right].
+\right|_{\mathrm{aux}=0}\right]\\
+&\quad=(-1)^{|D|}\mathbf Q\sum_{n\ge0}\frac{\hbar^{n+1}}{n!}
+\{\mathcal I^{\otimes n},A,D,B\}^{\gamma,\gamma^{\prime}}.
 \end{aligned}
 \end{equation}
+Here $\gamma=\{(A,B)\}$ and $\gamma^{\prime}=\{(D,B)\}$; the double-marked bracket is defined by the displayed auxiliary contraction in this order, with both marked displacements zero.
 
 Moreover, its $n$-interaction term has $2n+1$ physical contractions. The interactions supply at most $n$ fields of type $\mathsf b$ or $\beta$, so at least $n+1$ must come from the inputs. The homotopy is therefore a finite sum of local operators for finite polynomial inputs.
 
@@ -3644,9 +3649,11 @@ For a formal superpotential the bound holds coefficientwise in its coefficients.
 The one-loop triangle has vertices $1:\mathcal I$, $2:A$ and $3:B$, and marked edge $\gamma=\{(2,3)\}$. Its kernel is exactly the same as the fan kernel. Pairing its displacement exponential with the spatial functional derivatives of \eqref{eq-2-10} gives
 \begin{equation}\label{eq-2-34}
 \begin{aligned}
-\{\mathcal I,A,B\}^{\{(2,3)\},0}(x)
-={}&\frac{i}{32\pi^2}\int_0^1dr_1\int_0^{1-r_1}dr_2
-\int d^3\theta\,C_{XYZ}\\
+&(A\star B)_{\mathrm{1\text{-}loop}}(x)
+=\hbar\{\mathcal I,A,B\}^{\{(2,3)\},0}(x)
+\\
+&\quad=\frac{i\hbar}{32\pi^2}\int_0^1dr_1\int_0^{1-r_1}dr_2
+\int d^3\theta\,C_X{}^{YZ}\\
 &\times\int d^4z_1\,d^4z_2\\
 &\times(\partial_{+\dot a}C^X)
 \big(x+r_1z_1+(1-r_1)z_2,\theta\big)\\
@@ -3660,10 +3667,10 @@ The one-loop triangle has vertices $1:\mathcal I$, $2:A$ and $3:B$, and marked e
 
 Here $x$ is the arbitrary common position of the local product.
 
-At two loops the physical graphs have four edges (plus, as always, one edge for the auxiliary fields). They consist of a book and two triangles attached to opposite inputs (Figure~\ref{fig-two-loop-product}). Their ordered edges, for $3=A$ and $4=B$, are
+At two loops the physical graphs have four edges (plus, as always, one edge for the auxiliary fields). They consist of a fan and two triangles attached to opposite inputs (Figure~\ref{fig-two-loop-product}). Their ordered edges, for $3=A$ and $4=B$, are
 \begin{equation}\label{eq-productedges}
 \begin{aligned}
-\Gamma_{\mathrm{book}}&:(13,14,23,24,34),\\
+\Gamma_{\mathrm{fan}}&:(13,14,23,24,34),\\
 \Gamma_A&:(12,13,23,24,34),\\
 \Gamma_B&:(12,14,23,24,34).
 \end{aligned}
@@ -3672,139 +3679,79 @@ At two loops the physical graphs have four edges (plus, as always, one edge for 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.96\linewidth]{figures/vec/figures-two_loop_product_feynarts.pdf}
-\caption{The two-loop quantum-product graphs $\Gamma_{\mathrm{book}}$, $\Gamma_A$ and $\Gamma_B$. Squares are the insertions $3:A$ and $4:B$; dots are cubic interactions. Black arrows orient the physical contractions, and the blue edge $(3,4)$ carries the auxiliary pairing. The book leaves $C^X,C^U$ uncontracted; each triangle leaves $C^X$.}
+\caption{The two-loop quantum-product graphs $\Gamma_{\mathrm{fan}}$, $\Gamma_A$ and $\Gamma_B$. Squares are the insertions $3:A$ and $4:B$; dots are cubic interactions. Black arrows orient the physical contractions, and the blue edge $(3,4)$ carries the auxiliary pairing. The fan leaves $C^X,C^U$ uncontracted; each triangle leaves $C^X$.}
 \label{fig-two-loop-product}
 \end{figure}
 
-The last edge is the auxiliary edge. These are still fan kernels (but with more free injected momenta).
-\begin{equation}\label{eq-productkernels}
-\begin{aligned}
-\mathcal I_{\Gamma_{\mathrm{book}}}(\lambda;0)
-&=\frac1{24}
-\big[\lambda_{1,+\dot a}(\lambda_{2,+}{}^{\dot a}+2\lambda_{3,+}{}^{\dot a})\big]
-\big[\lambda_{2,+\dot b}(\lambda_{1,+}{}^{\dot b}+2\lambda_{3,+}{}^{\dot b})\big],\\
-\mathcal I_{\Gamma_A}(\lambda;0)
-&=-\frac1{24}(\lambda_{1,+\dot a}\lambda_{3,+}{}^{\dot a})^2,\\
-\mathcal I_{\Gamma_B}(\lambda;0)
-&=\frac1{24}(\lambda_{1,+\dot a}\lambda_{3,+}{}^{\dot a})^2.
-\end{aligned}
-\end{equation}
+These are still fan kernels (but with more free injected momenta).
 
-For the full result, the book kernel gives
-{\small
-\begin{equation}\label{eq-product2book}
-\begin{aligned}
-&\left.\frac12\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}(x)\right|_{\Gamma_{\mathrm{book}}}\\
-&\quad=\frac{C_{XYZ}C_{UVW}}{2(32\pi^2)^2}
-\int_0^1dr_1\int_0^1dr_3\int_0^1dr_2\int_0^{1-r_2}dr_4\,
-(1-r_2-r_4)\\
-&\times\int d^3\theta^{(1)}d^3\theta^{(2)}\,
-\int\prod_{e\in\{13,14,23,24\}}d^4z_e\\
-&\times\partial_{1,+\dot a}
-(\partial_{3,+}{}^{\dot a}+r_3\partial_{2,+}{}^{\dot a})
-\partial_{2,+\dot b}
-(\partial_{3,+}{}^{\dot b}+r_1\partial_{1,+}{}^{\dot b})\\
-&\times\Bigg[
-C^X(x_1,\theta^{(1)})C^U(x_2,\theta^{(2)})\\
-&\qquad\times
-\frac{\delta^2A(x_3)}{
-\delta C^Y(x_3+z_{13},\theta^{(1)})
-\delta C^V(x_3+z_{23},\theta^{(2)})}
-\frac{\delta^2B(x)}{
-\delta C^Z(x+z_{14},\theta^{(1)})
-\delta C^W(x+z_{24},\theta^{(2)})}
-\Bigg]_{x_v=x_v(x;r,z),\,v=1,2,3} .
-\end{aligned}
-\end{equation}
-}
-
-The translated positions are
-\begin{equation*}
-\begin{aligned}
-x_1(x;r,z)&=x+r_1z_{13}+(1-r_1)z_{14}
-+r_1\big[r_2(z_{14}-z_{13})+r_4(z_{24}-z_{23})\big],\\
-x_2(x;r,z)&=x+r_3z_{23}+(1-r_3)z_{24}
-+r_3\big[r_2(z_{14}-z_{13})+r_4(z_{24}-z_{23})\big],\\
-x_3(x;r,z)&=x+r_2(z_{14}-z_{13})+r_4(z_{24}-z_{23}).
-\end{aligned}
-\end{equation*}
-
-For $\Gamma_A$, the translated positions are
-\begin{equation*}
-\begin{aligned}
-x_1^{+\dot a}(x;r,z)
-={}&x^{+\dot a}+\big[r_1r_2+(1-r_2)(r_1r_3+r_4)\big]z_{13}^{+\dot a}
--r_2\big[r_1(1-r_3)-r_4\big]z_{23}^{+\dot a}\\
-&+(1-r_1r_3-r_4)z_{24}^{+\dot a},\\
-x_3^{+\dot a}(x;r,z)
-={}&x^{+\dot a}+(1-r_3-r_4)
-\big[z_{24}^{+\dot a}-(1-r_2)z_{13}^{+\dot a}-r_2z_{23}^{+\dot a}\big].
-\end{aligned}
-\end{equation*}
-
-The full contribution is
-\begin{equation}\label{eq-product2A}
-\begin{aligned}
-&\left.\frac12\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}(x)\right|_{\Gamma_A}\\
-&\quad=\frac{C_{XYR}C_{RZW}}{(32\pi^2)^2}
-\int_0^1dr_1\int_0^1dr_2\int_0^1dr_3\int_0^{1-r_3}dr_4\\
-&\times r_2(1-r_1)(1-r_3-r_4)
-\int d^3\theta\,
-\int\prod_{e\in\{13,23,24\}}d^4z_e\\
-&\times(\partial_{+\dot a}\partial_{+\dot b}C^X)
-\big(x_1(x;r,z),\theta\big)\\
-&\times\left.
+The complete two-loop contribution, with $\gamma=\{(3,4)\}$, is
+\begin{align}
+&(A\star B)_{\mathrm{2\text{-}loop}}(x)=\frac{\hbar^2}{2}\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}(x)\notag\\*
+&=\frac{\hbar^2}{2(32\pi^2)^2}C_X{}^{YZ}C_U{}^{VW}
+\int_0^1dr_1\int_0^1dr_3
+\int_{\substack{r_2,r_4>0\\r_2+r_4<1}}dr_2\,dr_4\,(1-r_2-r_4)\notag\\*
+&\quad\times\int d^3\theta^{(1)}d^3\theta^{(2)}
+\int\prod_{e\in\{13,14,23,24\}}d^4z_e\notag\\*
+&\quad\times\exp\!\Big\{-\tfrac12[r_1z_{13}+(1-r_1)z_{14}]^{+\dot c}\partial_{1,+\dot c}
+-\tfrac12[r_3z_{23}+(1-r_3)z_{24}]^{+\dot d}\partial_{2,+\dot d}\notag\\*
+&\hspace{60pt}-\tfrac12[r_2(z_{14}-z_{13})+r_4(z_{24}-z_{23})]^{+\dot e}
+(r_1\partial_1+r_3\partial_2+\partial_3)_{+\dot e}\Big\}\notag\\*
+&\quad\times\partial_{1,+\dot a}(\partial_3+r_3\partial_2)_+{}^{\dot a}
+\partial_{2,+\dot b}(\partial_3+r_1\partial_1)_+{}^{\dot b}\notag\\*
+&\quad\times\Bigg[C^X(x_1,\theta^{(1)})C^U(x_2,\theta^{(2)})
+\frac{\delta^2 A(x_3)}{\delta C^Y(x_3+z_{13},\theta^{(1)})\,
+\delta C^V(x_3+z_{23},\theta^{(2)})}\notag\\*
+&\hspace{60pt}\times
+\frac{\delta^2 B(x)}{\delta C^Z(x+z_{14},\theta^{(1)})\,
+\delta C^W(x+z_{24},\theta^{(2)})}\Bigg]_{x_1=x_2=x_3=x}\notag\\[4pt]
+&+\frac{\hbar^2}{(32\pi^2)^2}C_X{}^{YR}C_R{}^{ZW}
+\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{r_3,r_4>0\\r_3+r_4<1}}dr_3\,dr_4\,
+ r_2(1-r_1)(1-r_3-r_4)\notag\\*
+&\quad\times\int d^3\theta\int\prod_{e\in\{13,23,24\}}d^4z_e\notag\\*
+&\quad\times\exp\!\Big\{-\tfrac12\Big[
+\big[r_1r_2+(1-r_2)(r_1r_3+r_4)\big]z_{13}
+-r_2\big[r_1(1-r_3)-r_4\big]z_{23}\notag\\*
+&\hspace{60pt}+(1-r_1r_3-r_4)z_{24}\Big]^{+\dot c}\partial_{1,+\dot c}
+-\tfrac12(1-r_3-r_4)
+[z_{24}-(1-r_2)z_{13}-r_2z_{23}]^{+\dot d}\partial_{3,+\dot d}\Big\}\notag\\*
+&\quad\times\partial_{1,+\dot a}\partial_{1,+\dot b}
 \partial_{3,+}{}^{\dot a}\partial_{3,+}{}^{\dot b}
-\left(
-\frac{\delta^2 A(x_3)}{
-\delta C^Y(x_3+z_{13},\theta)\,
-\delta C^Z(x_3+z_{23},\theta)}
-\right)\right|_{x_3=x_3(x;r,z)}
-\frac{\delta B(x)}{\delta C^W(x+z_{24},\theta)}.
-\end{aligned}
-\end{equation}
-
-For $\Gamma_B$, the translated positions are
-\begin{equation*}
-\begin{aligned}
-x_1^{+\dot a}(x;r,z)
-={}&x^{+\dot a}+\big[1-r_1r_2-r_1(1-r_2)r_3\big]z_{14}^{+\dot a}
-+r_1r_3z_{23}^{+\dot a}
-+r_1r_2(1-r_3)z_{24}^{+\dot a},\\
-x_3^{+\dot a}(x;r,z)
-={}&x^{+\dot a}+r_4\big[(1-r_2)z_{14}^{+\dot a}-z_{23}^{+\dot a}
-+r_2z_{24}^{+\dot a}\big].
-\end{aligned}
-\end{equation*}
-
-Thus
-\begin{equation}\label{eq-product2B}
-\begin{aligned}
-&\left.\frac12\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}(x)\right|_{\Gamma_B}\\
-&\quad=-\frac{C_{XZR}C_{RYW}}{(32\pi^2)^2}
-\int_0^1dr_1\int_0^1dr_2\int_0^1dr_3\int_0^{1-r_3}dr_4\\
-&\times r_1r_2r_4\int d^3\theta\,
-\int\prod_{e\in\{14,23,24\}}d^4z_e\\
-&\times(\partial_{+\dot a}\partial_{+\dot b}C^X)
-\big(x_1(x;r,z),\theta\big)\\
-&\times\left.
+\Bigg[C^X(x_1,\theta)
+\frac{\delta^2 A(x_3)}{\delta C^Y(x_3+z_{13},\theta)\,\delta C^Z(x_3+z_{23},\theta)}\notag\\*
+&\hspace{60pt}\times\frac{\delta B(x)}{\delta C^W(x+z_{24},\theta)}
+\Bigg]_{x_1=x_3=x}\notag\\[4pt]
+&-\frac{\hbar^2}{(32\pi^2)^2}C_X{}^{ZR}C_R{}^{YW}
+\int_0^1dr_1\int_0^1dr_2
+\int_{\substack{r_3,r_4>0\\r_3+r_4<1}}dr_3\,dr_4\,r_1r_2r_4\notag\\*
+&\quad\times\int d^3\theta\int\prod_{e\in\{14,23,24\}}d^4z_e\notag\\*
+&\quad\times\exp\!\Big\{-\tfrac12\Big[
+\big[1-r_1r_2-r_1(1-r_2)r_3\big]z_{14}
++r_1r_3z_{23}+r_1r_2(1-r_3)z_{24}\Big]^{+\dot c}\partial_{1,+\dot c}\notag\\*
+&\hspace{60pt}-\tfrac12r_4[(1-r_2)z_{14}-z_{23}+r_2z_{24}]^{+\dot d}\partial_{3,+\dot d}\Big\}\notag\\*
+&\quad\times\partial_{1,+\dot a}\partial_{1,+\dot b}
 \partial_{3,+}{}^{\dot a}\partial_{3,+}{}^{\dot b}
-\left(\frac{\delta A(x_3)}{\delta C^Y(x_3+z_{23},\theta)}\right)
-\right|_{x_3=x_3(x;r,z)}
-\frac{\delta^2 B(x)}{
-\delta C^Z(x+z_{14},\theta)\,\delta C^W(x+z_{24},\theta)}.
-\end{aligned}
-\end{equation}
-
-The exchange $3\leftrightarrow4$ maps $\Gamma_A$ to $\Gamma_B$: after restoring the displayed edge order, $\mathcal I_{\Gamma_B}(\lambda;0)=-\mathcal I_{\Gamma_A}(\lambda;0)$ in \eqref{eq-productkernels}; the full displaced formulas also require exchanging the inputs, their edge displacements, and the root.
+\Bigg[C^X(x_1,\theta)
+\frac{\delta A(x_3)}{\delta C^Y(x_3+z_{23},\theta)}\notag\\*
+&\hspace{60pt}\times\frac{\delta^2 B(x)}{\delta C^Z(x+z_{14},\theta)\,\delta C^W(x+z_{24},\theta)}
+\Bigg]_{x_1=x_3=x}
+.
+\label{eq-product2A}
+\end{align}
 
 \subsection{Normal ordering and an explicit associator}\label{sec-normal-ordering}
 
 \paragraph{Normal ordering.}\label{quantum-normal-ordering}
 
-The quantum normal-ordering product is represented by the Bochner--Martinelli contour \eqref{eq-normal-ordering-theorem} \cite[Section 2.3]{semichiral}.
+The familiar quantum normal-ordering product is represented by a Bochner--Martinelli contour \cite[Section 2.3]{semichiral}, in parallel with normal ordering in two-dimensional CFT.
 
-We compare this contour with the marked product \eqref{b-00504} in the effective-observable complex of Section~\ref{sec-brackets}.
+For $L>0$, let $B_R$ be the ball of radius $R$ centred at the insertion of $B$ and $S_R^3=\partial B_R$, and define
+\begin{equation}\label{eq-contour-product-definition}
+(A\star^{\prime}B)[L]=\int_{S_R^3}\Omega\wedge[P_{0,\infty}(x)]_\Omega\,(A(x)B(0))[L].
+\end{equation}
+
+We prove that $\star^{\prime}$ and the marked product \eqref{b-00504} agree on $H(\mathbf Q_L)$ in the effective-observable complex of Section~\ref{sec-brackets}.
 
 At fixed $L>0$, the joint two-insertion expansion is
 \begin{equation}\label{eq-product-joint-effective}
@@ -3821,7 +3768,7 @@ with $I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)}$. The Wick expansion 
 \end{equation}
 For separated insertions, supersymmetry descent \cite[Sections 2.2--2.3]{semichiral} supplies the antiholomorphic translation homotopy used below.
 
-Let $A(x,\bar\theta)[L]$ be the renormalized supersymmetry multiplet of the effective insertion $A[L]$. In the coordinates of \eqref{eq-B-7},
+Let $A(x,\bar\theta)[L]$ be the renormalized supersymmetry multiplet (Dolbeault form) of the effective insertion $A[L]$. In the coordinates of \eqref{eq-B-7},
 \begin{equation}\label{eq-ring-descendant}
 \begin{aligned}
 A^{(1)}(x)[L]
@@ -3849,7 +3796,7 @@ A^{(1)}_{-\dot a}[L].
 This gives the primitive of an antiholomorphic translation in the effective-observable complex.
 \end{proofbox}
 
-At zero displacement, \eqref{eq-C-explicit-propagator} gives
+The BM kernel \eqref{eq-C-explicit-propagator} is
 \begin{equation}\label{eq-ring-propagator-residue}
 \begin{gathered}
 [P_{0,\infty}(x)]_\Omega
@@ -3870,7 +3817,7 @@ The last integral holds for every positively oriented embedded three-sphere encl
 
 Let $(A(x)B(0))^{(1)}[L]$ be the first descendant of the joint insertion with respect to the position $x$.
 
-For closed inputs and $S_1^3-S_0^3=\partial V$, with $V$ disjoint from all insertions,
+For closed inputs and two different contours $S_1^3-S_0^3=\partial V$, with $V$ disjoint from all insertions,
 \begin{equation}\label{eq-ring-sphere-homotopy}
 \begin{aligned}
 &\int_{S_1^3}\Omega\wedge[P_{0,\infty}]_\Omega(A(x)B(0))[L]
@@ -3894,19 +3841,24 @@ For $\mathbf QA=\mathbf QB=0$, descent gives $\bar\partial_x(A(x)B(0))[L]=-\bigl
 
 Equation~\eqref{eq-ring-sphere-homotopy} proves equality of the contour classes in the effective-observable complex.
 
-\rthm{Theorem}{b-00598}{Normal-ordering comparison} \emph{Let $A$ and $B$ be homogeneous quantum cocycles and $L>0$. } \emph{In the effective-observable complex at scale $L$, with differential \eqref{eq-product-local-Ward}, let $B_R$ be the ball of radius $R$ centred at the insertion of $B$ and $S_R^3=\partial B_R$. The contour product and the effective representative of \eqref{b-00504} satisfy}
+\rthm{Theorem}{b-00598}{Normal-ordering comparison} \emph{Let $A$ and $B$ be homogeneous quantum cocycles and $L>0$. } \emph{In the effective-observable complex at scale $L$, with differential \eqref{eq-product-local-Ward}, the contour product and the effective representative of \eqref{b-00504} satisfy}
 \begin{equation}\label{eq-normal-ordering-theorem}
 \begin{aligned}
-&\int_{S_R^3}\Omega\wedge[P_{0,\infty}(x)]_\Omega\,(A(x)B(0))[L]\\
-&\quad=(A\star B)[L]
--\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}(x)]_\Omega
-\wedge(A(x)B(0))^{(1)}[L].
+(A\star^{\prime}B)[L]
+&=(A\star B)[L]\\
+&\quad-\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}(x)]_\Omega
+\wedge(A(x)B(0))^{(1)}[L],\\
+[(A\star^{\prime}B)[L]]&=[(A\star B)[L]]\quad\text{in }H(\mathbf Q_L).
 \end{aligned}
 \end{equation}
 
 \emph{Proof.}
 
-Write $F(x)=(A(x)B(0))[L]$ and $F^{(1)}(x)=(A(x)B(0))^{(1)}[L]$. The volume integral uses the full joint descendant and has type $(2,2)$. Evaluate it as one coefficientwise graph limit in the decoupled auxiliary theory: physical edges carry $P_{\varepsilon,L}$ and the marked edge carries $P_{\varepsilon,\infty}$. Take the limit only after combining the ordered graphs. The marked edge is last, has zero displacement, and its single Wick factor $\hbar$ is divided out.
+The volume integral uses the full joint descendant and has type $(2,2)$. Evaluate it as one coefficientwise graph limit in the decoupled auxiliary theory: physical edges carry $P_{\varepsilon,L}$ and the marked edge carries $P_{\varepsilon,\infty}$. Independent edge cutoffs $\varepsilon_e>0$ give the same local collision kernel after all oriented lower faces are summed: each positive ray meets their union at
+\begin{equation}\label{eq-independent-cutoff-section}
+[t]\longmapsto\left(\max_{f\in I}\frac{\varepsilon_f}{t_f}\right)(t_e)_{e\in I}.
+\end{equation}
+The collision form descends to $\mathbb{RP}_{>0}^{|I|-1}$, so its integral is independent of this radial section. As every $\varepsilon_e\to0$, the finite upper cutoffs exhaust this projective domain; the ultraviolet-finite boundary limit \cite[Theorem 6]{Wang} therefore does not depend on their relative rates. The marked edge is last, has zero displacement, and its single Wick factor $\hbar$ is divided out.
 \begin{equation}\label{eq-normal-ordering-J}
 \begin{gathered}
 \bar\partial P_{\varepsilon,L}=K_\varepsilon-K_L,
@@ -3926,13 +3878,13 @@ Apply \eqref{eq-normal-ordering-J} to every edge, with the signs $(-1)^{j-1}$ of
 =(A\star B)[L].
 \end{equation}
 
-The graphs outside each collapsed cluster reconstruct its effective representative by the Ward identity $\mathbf Q_L(\mathcal O[L])=(\mathbf Q\mathcal O)[L]$ of a local insertion, the zero-form counterpart of \eqref{eq-ring-descendant}. The same ultraviolet-finite holomorphic graph prescription applies to the decoupled auxiliary extension. Away from the collision faces, the closed-input descent identity is $\bar\partial_xF=-\mathbf Q_LF^{(1)}$. The remaining boundary is $S_R^3$. Since $\Omega\wedge[P_{0,\infty}]_\Omega$ has odd degree, the regulated Stokes identity gives
+The graphs outside each collapsed cluster reconstruct its effective representative by the Ward identity $\mathbf Q_L(\mathcal O[L])=(\mathbf Q\mathcal O)[L]$ of a local insertion, the zero-form counterpart of \eqref{eq-ring-descendant}. The same ultraviolet-finite holomorphic graph prescription applies to the decoupled auxiliary extension. Away from the collision faces, the closed-input descent identity is $\bar\partial_x(A(x)B(0))[L]=-\mathbf Q_L(A(x)B(0))^{(1)}[L]$. The remaining boundary is $S_R^3$. Since $\Omega\wedge[P_{0,\infty}]_\Omega$ has odd degree, the regulated Stokes identity gives
 \begin{equation}\label{eq-normal-ordering-stokes}
 \begin{aligned}
-\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge F^{(1)}
-&=-\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\mathbf Q_LF^{(1)}\\
-&=\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\bar\partial_xF\\
-&=(A\star B)[L]-\int_{S_R^3}\Omega\wedge[P_{0,\infty}]_\Omega F.
+&\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge(A(x)B(0))^{(1)}[L]\\
+&\quad=-\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\mathbf Q_L(A(x)B(0))^{(1)}[L]\\
+&\quad=\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\bar\partial_x(A(x)B(0))[L]\\
+&\quad=(A\star B)[L]-\int_{S_R^3}\Omega\wedge[P_{0,\infty}]_\Omega\,(A(x)B(0))[L].
 \end{aligned}
 \end{equation}
 
@@ -4020,7 +3972,7 @@ Order the edges arm by arm, placing $(v_{i,j},v_{i,j+1})$ before $(v_{i,j},B)$, 
 % Existing manuscript coordinates and labels are retained.
 
 \rthm{Theorem}{thm-spider-kernel}{Spider kernel}
-We keep the sources at $A$ and each $v_{i,1},\ldots,v_{i,\ell_i}$ arbitrary, with total current conservation fixing $\lambda_B=-\sum\lambda$. The current fractions range over
+We keep the sources at $A$ and each of $v_{i,1},\ldots,v_{i,\ell_i}$ arbitrary, with total current conservation fixing $\lambda_B=-\sum\lambda$. The current fractions range over
 \begin{equation}
 0<r_{i,j}<1\quad(j<2\ell_i),\qquad
 r_{i,2\ell_i}>0,\qquad
@@ -4471,7 +4423,7 @@ coordinates. Its inverse current map is linear in the retained currents
 with polynomial coefficients; source transfer is polynomial as well.
 At the final edge, conservation fixes the current. Reversing the moves
 therefore gives polynomial currents and density in $2n$ coordinates.
-Expanding the exponential leaves polynomial integrals, evaluated on each standard simplex $\Delta$ by, for $k_j\in\mathbb Z_{\ge0}$,
+Expanding the exponential leaves polynomial integrals, evaluated on each standard simplex $\Delta$ for $k_j\in\mathbb Z_{\ge0}$, by
 \begin{equation}\label{eq-Dirichlet}
 \int_{\substack{r_j>0\\\sum_{j\,\mathrm{(coordinates)}}r_j<1}}
 \prod_{j=1}^{\dim\Delta}r_j^{k_j}\,dr_j
@@ -5441,6 +5393,8 @@ We close with three directions.
 
 We thank Si Li (Tsinghua University) for helpful discussions, which drew our attention to the original work of Wang \cite{Wang}.
 
+We also thank Eunwoo Lee for sustained and helpful discussions, particularly on the nilpotence of $\mathbf Q$ and the associated physical ideas.
+
 AI tools were used to explore simplification routes for the Feynman graphs and to improve the algorithms and the code of the lifting tests.
 
 \appendix
@@ -5866,6 +5820,13 @@ S_{\mathrm{BV,new}}
 % Compact replacement for old 7.3.5, relocated to an appendix.
 % The full wedge expression avoids an incorrect zero-source factorization.
 \rthm{Theorem}{thm-sourced-star}{Star--triangle with a source}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/vec/star-triangle-sourced-20261117.pdf}
+\caption{Star--triangle reduction with source $\lambda_v$: the source is redistributed to $u,w,x$ by \eqref{local-B-sourced-current-map}, and the original $ux,wx$ branches merge with the new triangle edges.}
+\label{fig-sourced-star}
+\end{figure}
+
 In a Laman graph, let $v$ have degree three and neighbours $u,w,x$, with $ux,wx$ present and $uw$ absent.
 After the star--triangle change and the two parallel merges, let
 $r_1,r_2\in(0,1)$ be the current fractions of the original edges
@@ -6056,6 +6017,8 @@ The FLINT team, \emph{FLINT: Fast Library for Number Theory}, \url{https://flint
 M.~Wang and B.~R.~Williams, ``On the Renormalization and Quantization of Topological--Holomorphic Field Theories,'' \emph{Adv. Math.} \textbf{496} (2026), 110970, \href{https://arxiv.org/abs/2407.08667}{arXiv:2407.08667}.
 \bibitem{CostelloBV}
 K.~Costello, ``Renormalisation and the Batalin--Vilkovisky Formalism,'' \href{https://arxiv.org/abs/0706.1533}{arXiv:0706.1533}.
+\bibitem{WittenSuperstring}
+E.~Witten, ``Superstring Perturbation Theory Revisited,'' \href{https://arxiv.org/abs/1209.5461}{arXiv:1209.5461}.
 \end{thebibliography}
 
 \end{document}
