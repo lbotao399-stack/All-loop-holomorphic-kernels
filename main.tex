@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261117-140326 (Beijing time)}
+\date{\small Version 20261117-222324 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -132,11 +132,11 @@ W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^
 \end{equation*}
 two-, three- and four-loop lifts in abelian theories of SQED type, and two- and three-loop lifts in $\mathcal N=2$ $SU(2)$ and $SU(3)$ gauge theories and their singlet deformations.
 
-Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the first fortuitous class of $SU(4)$, at $2(E+J_L)=28$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
+Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the threshold fortuitous class of $SU(4)$, at $2(E+J_L)=28$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
 
 \section{Summary of results}\label{sec-summary}
 
-This section states the main results; the later sections give the definitions in full and the proofs. The setting is the holomorphic twist of a four-dimensional $\mathcal N=1$ gauge theory, reviewed in Section \ref{sec-BV}. Its fields are four Dolbeault forms $\mathsf c^A,\mathsf b_A,\gamma_i,\beta^i$ on $\mathbb C^2$; their zero-form components, with their holomorphic derivatives $\partial_{+\dot a}$, are the BPS letters, and local operators are polynomials in these letters.
+This section states the main results; the later sections give the definitions in full and the proofs. The setting is the holomorphic twist of a four-dimensional $\mathcal N=1$ gauge theory, reviewed in Section \ref{sec-BV}. Its fields are four Dolbeault forms $\mathsf c^A,\mathsf b_A,\gamma_i,\beta^i$ on $\mathbb C^2$; their zero-form components, with their holomorphic derivatives $\partial_{+\dot a}$, are the BPS letters. Physical local operators are gauge-invariant polynomials in these letters, independent of the undifferentiated ghost $\mathsf c^{A(0)}$. The BV pairing pairs $\mathsf c^A$ with $\mathsf b_A$ and $\gamma_i$ with $\beta^i$.
 
 Each theory is specified by its gauge group, its matter representation and its antichiral superpotential $\bar W$, which enter the twisted action,
 \begin{equation}\label{local-ch9-common-action}
@@ -181,7 +181,7 @@ S_{\mathrm{tw}}=\int_{\mathbb C^2}\Omega\wedge
 \end{equation}
 The odd coordinates obey $\theta_I\bar\partial=-\bar\partial\theta_I$, with $\int d^3\theta\,\theta_1\theta_2\theta_3=1$ and $\varepsilon^{123}=\varepsilon_{123}=1$.
 
-Every loop correction to the supercharge is then a fan graph (Figure \ref{fig-sum-families}(a)), and the fan kernel evaluates every $Q_n$, including its action on letters with arbitrary holomorphic derivatives.
+Every loop correction to the supercharge is then a fan: the interaction vertices form the path $1\to\cdots\to n+1$, and each is joined by one edge, a spoke, to the insertion $n+2$. The two output letters lie at the endpoints of the path. The fan kernel evaluates every $Q_n$, including its action on letters with arbitrary holomorphic derivatives.
 
 $Q_n$ replaces $n+1$ input letters by two output letters.\footnote{At one loop, $Q_1$ agrees with the operator of Budzik and Kulp \cite[Equations (3.64)--(3.70)]{BK} up to normalization; its component \eqref{eq-2-26} is the Konishi anomaly.} The functional derivatives act at the input positions $x+z_j$. The dependence on $z_j$ records their holomorphic derivatives.
 
@@ -233,7 +233,7 @@ x_{n+1}^{+\dot a}(r,z)
 \end{equation}
 }
 
-Each $r_j$ is a parallel current-division ratio (Figure~\ref{fig-sum-moves}): for $i<n$, $r_{2i-1}$ is the fraction of the source at $i$ passed to $i+1$ and $r_{2i}$ the fraction of the merged spoke current carried by the original spoke $(i+1,n+2)$, and in the final triangle $r_{2n-1}$ and $r_{2n}$ are the fractions of the sources at $n$ and $n+1$ that flow through the edge $(n,n+1)$.
+Each $r_j$ is a current-division ratio: for $i<n$, $r_{2i-1}$ is the fraction of the source at $i$ passed to $i+1$ and $r_{2i}$ the fraction of the merged spoke current carried by the original spoke $(i+1,n+2)$, and in the final triangle $r_{2n-1}$ and $r_{2n}$ are the fractions of the sources at $n$ and $n+1$ that flow through the edge $(n,n+1)$.
 
 \paragraph{Taylor expansion.}
 
@@ -296,11 +296,11 @@ C_{A_{n+1}R_nE}\\
 \end{gathered}
 \end{equation}
 
-The proof and the one- and two-loop operators in components are in Section \ref{sec-supercharge}. The same fan kernel gives $Q_n$ in every $\mathcal N=1$ gauge theory with interactions of degree at most three; with a superpotential of higher degree the spiders of Figure \ref{fig-sum-families}(b) also contribute (Sections \ref{sec-restrictions} and \ref{sec-forests}).
+The proof and the one- and two-loop operators in components are in Section \ref{sec-supercharge}. The same fan kernel gives $Q_n$ in every $\mathcal N=1$ gauge theory with interactions of degree at most three; with a superpotential of higher degree, several paths can meet at a single $\bar W$ vertex, with every interaction vertex still joined to the insertion. These graphs are spiders (Sections \ref{sec-restrictions} and \ref{sec-forests}).
 
 \subsection{Quantum lifting, multi-gravitons and the quantum BPS ring}\label{the-quantum-product-and-the-quantum-bps-ring}
 
-The classical BPS operators are the classes of $E_1=H(Q_0)$. The loop corrections act on $E_1$ through the differentials $d_r$ of the successive homotopy transfer: $E_{r+1}=H(E_r,d_r)$, with $d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1$ and $d_2[\mathcal O_0]_2=[Q_2\mathcal O_0+Q_1\mathcal O_1]_2$ for $Q_0\mathcal O_1=-Q_1\mathcal O_0$. A class is lifted at $r$ loops when $d_r$ is nonzero on it or when it is $d_r$-exact; the source and the target of a nonzero $d_r$ then leave the perturbative BPS spectrum together. The following statements constrain the lifting.
+The classical BPS operators are the classes of $E_1=H(Q_0)$. The loop corrections act on $E_1$ through the differentials $d_r$ of the successive homotopy transfer: $E_{r+1}=H(E_r,d_r)$, with $d_1[\mathcal O_0]_1=[Q_1\mathcal O_0]_1$ and $d_2[\mathcal O_0]_2=[Q_2\mathcal O_0+Q_1\mathcal O_1]_2$ for $Q_0\mathcal O_1=-Q_1\mathcal O_0$. A class is lifted at $r$ loops when $d_r$ is nonzero on it or when it is $d_r$-exact; the source and the target of a nonzero $d_r$ then leave the perturbative BPS spectrum together. The order-$r$ residual is $R_r=\sum_{\substack{k=1\\\text{loop orders}}}^{r}Q_k\mathcal O_{r-k}$: $d_r$ vanishes on a class when $R_r\in\operatorname{im}Q_0$ for a suitable choice of the lower corrections. The following statements constrain the lifting.
 
 \rthm{Lemma}{b-00094}{Derivative grading \cite[Theorem 6]{Wang}, \cite[Section 2.8]{operatope}} \emph{For an interaction without holomorphic derivatives, $Q_n$ raises each holomorphic derivative total---the numbers of $\partial_{+\dot+}$ and $\partial_{+\dot-}$---by $n$.} \emph{With homotopy contractions homogeneous in these totals, the successive obstruction differential $d_r$ raises each by $r$; a nonzero class can therefore be $d_r$-exact only if both totals of its leading representative are at least $r$.} \emph{In particular, a class whose leading representative has no holomorphic derivatives is $d_r$-exact for no $r\ge1$.}
 
@@ -326,7 +326,7 @@ Thus $\operatorname{Tr}_R(t_A\{t_B,t_C\})=0$ makes the interaction satisfy the q
 
 \paragraph{The quantum product.}
 
-The higher-loop supercharge acts on several input fields at once, so ordinary multiplication must be replaced by a product compatible with $\mathbf Q$. The marked operation of Gaiotto, Kulp and Wu \cite[Sections 4.3 and 4.5]{higher} defines
+The higher-loop supercharge acts on several input fields at once, so ordinary multiplication must be replaced by a product $A\star B=AB+O(\hbar)$ compatible with $\mathbf Q$. The marked operation of Gaiotto, Kulp and Wu \cite[Sections 4.3 and 4.5]{higher} defines
 \begin{equation}\label{eq-sum-star}
 \begin{gathered}
 A\star B=\sum_{\substack{n\ge0\\\text{loop orders}}}\frac{\hbar^n}{n!}
@@ -334,7 +334,7 @@ A\star B=\sum_{\substack{n\ge0\\\text{loop orders}}}\frac{\hbar^n}{n!}
 \end{gathered}
 \end{equation}
 
-Here $\gamma=\{(A,B)\}$ marks the edge joining the insertions, contracted last with $z_{AB}=0$. For quantum cocycles $A,B$, the coefficient equations of $\mathbf Q(A\star B)=0$ give a closed completion with leading term $A_0B_0$. For $\hbar$-independent polynomial inputs, the coefficient of $\hbar^n$ vanishes when $n$ exceeds their combined number of $\mathsf b,\beta$ factors.
+Here $\gamma=\{(A,B)\}$ marks the edge joining the insertions, contracted last with $z_{AB}=0$. The ordered slots contain $n$ copies of $\mathcal I$ followed by $A,B$; the marks $\{(2,3)\}$ and $\{(3,4)\}$ below select the last two slots at one and two loops. For quantum cocycles $A,B$, the coefficient equations of $\mathbf Q(A\star B)=0$ give a closed completion with leading term $A_0B_0$. For $\hbar$-independent polynomial inputs, the coefficient of $\hbar^n$ vanishes when $n$ exceeds their combined number of $\mathsf b,\beta$ factors.
 
 \rthm{Theorem}{b-00106}{Quantum BPS ring} \emph{For the holomorphic graph operations, suppose that the interaction satisfies the quantum master equation.}
 
@@ -344,7 +344,7 @@ Here $\gamma=\{(A,B)\}$ marks the edge joining the insertions, contracted last w
 
 (iii) \emph{On the pages $E_1=H(Q_0)$, $E_{r+1}=H(E_r,d_r)$ of the successive homotopy transfer, it induces the ordinary product of the $\hbar^0$ terms of representatives, and every differential $d_r$ is a derivation of it.}
 
-(iv) \emph{For homogeneous quantum cocycles $A,B$ and every $L>0$, $A\star B$ is cohomologous, in the effective-observable complex at scale $L$, to the quantum normal-ordering product of \cite[Section 2.3]{semichiral}, the contour integral of the scale-$L$ two-insertion expansion of $A$ around $B$.}\footnote{The quantum product is the marked operation of Gaiotto, Kulp and Wu \cite[Sections 4.3 and 4.5]{higher}. Part~(i) follows from the quadratic identities of the higher brackets \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equations (4.19), (4.42)]{higher} with one marked edge; the Leibniz rule and a ring structure for the quantum normal-ordering product were anticipated in \cite[Section 2.2 and footnote 28]{semichiral}, and the two-mark associator graph is drawn in \cite[Figure 7]{higher}. The all-order homotopy and strict unit, the page product, and the normal-ordering comparison are established in Section \ref{sec-product}. The kernel formulas evaluate these operations graph by graph, with the complete one- and two-loop products in Section \ref{sec-product-loops}.}
+(iv) \emph{For homogeneous quantum cocycles $A,B$ and every $L>0$, $A\star B$ is cohomologous, in the effective-observable complex at scale $L$, to the quantum normal-ordering product of \cite[Section 2.3]{semichiral}, the Bochner--Martinelli contour integral of the scale-$L$ two-insertion expansion of $A$ around $B$. Here $L$ is the upper heat-kernel time in the propagator, with $\sqrt L$ the effective length scale.}\footnote{The quantum product is the marked operation of Gaiotto, Kulp and Wu \cite[Sections 4.3 and 4.5]{higher}. Part~(i) follows from the quadratic identities of the higher brackets \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equations (4.19), (4.42)]{higher} with one marked edge; the Leibniz rule and a ring structure for the quantum normal-ordering product were anticipated in \cite[Section 2.2 and footnote 28]{semichiral}, and the two-mark associator graph is drawn in \cite[Figure 7]{higher}. The all-order homotopy and strict unit, the page product, and the normal-ordering comparison are established in Section \ref{sec-product}. The kernel formulas evaluate these operations graph by graph, with the complete one- and two-loop products in Section \ref{sec-product-loops}.}
 
 The successive pages start from the classical BPS ring $E_1=H(Q_0)$: each page $E_{r+1}=H(E_r,d_r)$ is the cohomology of the ring $E_r$ with respect to the derivation $d_r$, a subquotient of $E_r$ that inherits its product. The full quantum ring also retains the higher-order product of completed operators.
 
@@ -377,9 +377,9 @@ Following \cite{microstates,ChangChevalley}, a class of $E_1$ is monotone if it 
 
 \paragraph{Uses of the quantum product.}\label{uses-of-the-quantum-product}
 
-The chain identity supplies quantum completions and determines how multiplication acts on successive cohomology pages.
+The chain identity supplies quantum completions and determines how multiplication acts on successive cohomology pages. We write $\mathcal O[\mathcal O_0]=\mathcal O_0+\hbar\mathcal O_1+\cdots$ for a closed completion, $\mathbf Q\mathcal O[\mathcal O_0]=0$.
 
-(a) \emph{Multi-gravitons remain quantum cocycles.} The single gravitons $G$, the components of $\operatorname{Tr}(dC)^p$ \cite[Section 4]{ChangYin}, satisfy $Q_nG=0$ for every $n$. Any classical product of single gravitons $G_1,\ldots,G_m$ has a closed completion $\mathcal O$ given by their iterated quantum product, with any bracketing:
+(a) \emph{Multi-gravitons remain quantum cocycles.} The single gravitons $G$, the components of $\operatorname{Tr}(dC)^p$ \cite[Section 4]{ChangYin}, satisfy $Q_nG=0$ for every $n$. Here $dC=dx^{+\dot a}\frac{\partial C}{\partial x^{+\dot a}}+d\theta_I\frac{\partial_LC}{\partial\theta_I}$, with $\partial_L$ the left derivative in the odd coordinates. Any classical product of single gravitons $G_1,\ldots,G_m$ has a closed completion $\mathcal O$ given by their iterated quantum product, with any bracketing:
 \begin{equation}\label{eq-sum-multigraviton}
 \mathbf Q\mathcal O=0,\qquad
 \left.\mathcal O\right|_{\hbar=0}=G_1\cdots G_m,
@@ -388,7 +388,7 @@ and each fixed component has finitely many corrections: with $\deg_\theta$ equal
 
 (b) \emph{Dressed classes are completed by one more product.} A closed completion $\mathcal O[\mathcal O_0]$ gives the closed completion $G\star\mathcal O[\mathcal O_0]$ of $G\mathcal O_0$ \cite[supplement, Section S8.3]{Repo}.
 
-(c) \emph{Higher differentials vanish on completed classes.} A completed class is annihilated by $d_r$ on every page on which it is defined.\footnote{A closed completion may still be removed by a $d_r$-exact leading class. If $\mathbf QX=\hbar^r\mathcal O$, then $[\mathcal O]$ is annihilated by $\hbar^r$ over formal power series, while $\mathcal O=\mathbf Q(\hbar^{-r}X)$ after inverting $\hbar$. Moreover, the product of a closed class with a class that is not closed can be closed; such products are quantum analogues of fortuitous classes.} For a finite-dimensional charge sector of $\mathcal N=4$ theory, cohomological degree $k$, and any finite number $R$ of pages,
+(c) \emph{Higher differentials vanish on completed classes.} A completed class is annihilated by $d_r$ on every page on which it is defined. A closed completion may still be removed by a $d_r$-exact leading class.\footnote{If $\mathbf QX=\hbar^r\mathcal O$, then $[\mathcal O]$ is annihilated by $\hbar^r$ over formal power series, while $\mathcal O=\mathbf Q(\hbar^{-r}X)$ after inverting $\hbar$. Moreover, the product of a closed class with a class that is not closed can be closed; such products are quantum analogues of fortuitous classes.} For a finite-dimensional charge sector of $\mathcal N=4$ theory, cohomological degree $k$, and any finite number $R$ of pages,
 \begin{equation}\label{eq-sum-rank}
 \begin{gathered}
 \begin{aligned}
@@ -418,7 +418,7 @@ J_L=\tfrac12(\Theta-Y+n_++n_-),\qquad J_R=\tfrac12(n_+-n_-),\\
 2(E+J_L)=2\Theta+3(n_++n_-).
 \end{gathered}
 \end{equation*}
-Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $2(E+J_L)$, which we call the level; a census is complete through a level when every sector up to that level has been computed.
+Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=(1,1,1;-1,-1)$ and preserves $2(E+J_L)$, which we call the level; a census is complete through a level when every sector up to that level has been computed. In the Leigh--Strassler theory the sector labels use $\Theta$ and $c=\theta_2+2\theta_3\pmod3$ in place of the three separate flavour weights.
 
 \paragraph{Fortuitous and monotone classes.} The fortuitous dimension $f$ is the dimension of $E_1$ modulo the image of the stable cohomology; it is computed as in \cite[supplement, Section S1.5]{Repo}. The Cartan-kernel dimension is $\HQ-\HQC$, with $\HQ=\dim E_1$ and $\HQC$ the rank of Cartan restriction. Cartan restriction is useful in the computation, since most monotone classes are visible to it. One might expect that every monotone class is visible to it and that every fortuitous class lies in its kernel. Both statements have counterexamples: the classes X40 and $X_7$ below are visible but are not multi-gravitons, and the $G_2$ class \eqref{local-ch9-g2-gram-class} is monotone and lies in the kernel.
 
@@ -426,14 +426,16 @@ Each $Q_n$ maps $(\lambda)_Y$ to $(\lambda-n\mathsf d)_{Y+1-n}$ with $\mathsf d=
 
 \paragraph{Certification.} The labels $[p]$, $[p,p^{\prime}]$ and $[\mathbb Q]$ denote finite-field rank computations, independent checks at a second prime, and rational certificates, as specified in \cite[supplement, Section S1.7]{Repo}. Unmarked census ranks are computed modulo $p=2^{31}-1$. These labels describe how the linear independence behind each rank is established: a result marked $[\mathbb Q]$ is proved, and one marked $[p]$ or $[p,p^{\prime}]$ is a lower bound on the rational rank that is exact unless $p$ divides the relevant minors. A rational certificate is an exact elimination over $\mathbb Q$, or a chain $(\mathcal O_0,\ldots,\mathcal O_{r-1})$ together with a dual functional, reconstructed from several primes and verified exactly over $\mathbb Q$.
 
+The adjoint-mass cutoff uses $w=\theta_1+\theta_2+2\theta_3+2(n_++n_-)$. In the abelian and remaining $\mathcal N=2$ rows, the scan weight assigns $w_g$ to $\gamma_g$, $D-w_g$ to $\beta^g$, $D$ to $\mathsf b$ and $0$ to $\mathsf c$; $D$ is the superpotential weight and holomorphic derivatives are counted separately.
+
 {\footnotesize\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{3.5pt}
 \begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}p{2.3cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.75cm}|}
-\caption{Results of the census. Second column: the census is complete for $2(E+J_L)$ up to the value given. Third column: first fortuitous class, with its sector and its charges $(E;R_1,R_2,R_3;J_L,J_R)$. Last column: field over which the ranks are established.}\label{tab-census-overview}\\
+\caption{Results of the census. Second column: scan cutoff in $2(E+J_L)$ unless a theory-dependent weight is specified; partial scans are marked. Third column: threshold class or representative result, with its sector and its charges $(E;R_1,R_2,R_3;J_L,J_R)$. Last column: field over which the ranks are established.}\label{tab-census-overview}\\
 \hline
-Theory & Complete through & First fortuitous class & Lifts found & Field\\
+Theory & Scan cutoff & Threshold / representative & Lifts found & Field\\
 \hline\endfirsthead
 \hline
-Theory & Complete through & First fortuitous class & Lifts found & Field\\
+Theory & Scan cutoff & Threshold / representative & Lifts found & Field\\
 \hline\endhead
 $\mathcal N=4$, $SU(2)$ & $33$ & $\mathcal O_0$: $(4,4,4;0,0)_7$, $(\tfrac{19}2;\tfrac32,\tfrac32,\tfrac32;\tfrac52,0)$ \cite{KKLP,ChangLinWords}; further generators $\mathcal O_1$, P39, X40 & $d_1\ne0$ on $\mathcal O_1$ \cite{KKLP}; $\mathcal O_0$, P39, X40 survive at every order & $\mathcal O_0$: $\mathbb Q$; others: $p,p^{\prime}$\\
 \hline
@@ -475,7 +477,7 @@ $\mathcal N=2$ $SU(2)$, $SU(3)$; $SU(2)$ with a flipping singlet & weight $14$, 
 
 In summary:
 
-(i) \emph{New fortuitous classes.} For $SU(2)$, beyond the threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} and the class $\mathcal O_1$ \cite{microstates}, we find the classes P39 and X40. For $SU(3)$, beyond the towers $F_1$ and $B_1$ of \cite{KLLS,BraneFused}, we find the charge-conjugation-odd class $X_7$ and four primary sectors with ten and eleven letters. X40 and $X_7$ are visible to Cartan restriction, $\HQ=\HQC$, although they are not multi-gravitons. For $SU(4)$ we find the first fortuitous class.\footnote{Earlier $SU(4)$ searches \cite{CCKLL,KLLS,FortuityAI} cover the BMN sector, whose operators carry no derivatives or gaugini; the class found here has $n_+=n_-=2$. A fortuitous $SU(4)$ class built from two $SU(2)$ cores at much higher charges is constructed in \cite{MultiCore}.} For $SO(2N+1)$ and $Sp(N)$, the $SO(7)$ class is that of \cite{GLRT}, and the first fortuitous classes of $SO(5)=Sp(2)$, $Sp(3)$, $SO(9)$ and $SO(11)$ are new. For $G_2$, the class \eqref{local-ch9-g2-gram-class} is a monotone class that is invisible to Cartan restriction.
+(i) \emph{Fortuitous classes.} For $SU(2)$, beyond the threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} and the class $\mathcal O_1$ \cite{microstates}, we identify the classes P39 and X40. The $SU(2)$ index was previously studied through $2(E+J_L)=40$ \cite[Section 3.2]{microstates}; here X40 is identified in the sector $(7,5,5;1,1)_{10}$, with $\HQ=\HQC=8$ and multi-graviton dimension $7$, giving one fortuitous class with nonzero Cartan restriction $[p,p^{\prime}]$. For $SU(3)$, beyond the towers $F_1$ and $B_1$ of \cite{KLLS,BraneFused}, we find the charge-conjugation-odd class $X_7$ and four primary sectors with ten and eleven letters. X40 and $X_7$ are visible to Cartan restriction, $\HQ=\HQC$, although they are not multi-gravitons. For $SU(4)$, we find the threshold fortuitous class at $2(E+J_L)=28$.\footnote{The threshold is the minimum level $2(E+J_L)$. Earlier $SU(4)$ searches \cite{CCKLL,KLLS,FortuityAI} cover the BMN sector, whose operators carry no derivatives or gaugini; the class found here has $n_+=n_-=2$. A fortuitous $SU(4)$ class built from two $SU(2)$ cores at much higher charges is constructed in \cite{MultiCore}.} For $SO(2N+1)$ and $Sp(N)$, the $SO(7)$ class is that of \cite{GLRT}, and the first fortuitous classes of $SO(5)=Sp(2)$, $Sp(3)$, $SO(9)$ and $SO(11)$ are new. For $G_2$, the class \eqref{local-ch9-g2-gram-class} is a monotone class that is invisible to Cartan restriction.
 
 (ii) \emph{No lift beyond one loop in $\mathcal N=2$ superconformal theories.} Across all the $\mathcal N=2$ superconformal theories tested, $\mathcal N=4$ Yang--Mills theory included, with every gauge group and in every sector, we find no lift beyond one loop: $d_r=0$ for $r\ge2$. In $\mathcal N=4$ Yang--Mills theory the differential $d_1$ is nonzero in nineteen sectors: one for $SU(2)$, sixteen for $SO(7)$ through $2(E+J_L)=22$, and one each for $SO(9)$ and $SO(11)$. The one-loop lifts of $\mathcal O_1$ and of the $SO(7)$ class $O_f$ are those of \cite{KKLP} and \cite{KonishiBH}; the one-loop lifts in $SO(9)$ and $SO(11)$ and all the higher-loop lifts below are new. Every tested $d_r$ with $r\ge2$ vanishes. After the one-loop lifts, the $SO(7)$ and $Sp(3)$ spectra, and the $SO(9)$ and $Sp(4)$ spectra, agree charge by charge through $2(E+J_L)=22$, as S-duality requires.
 
@@ -487,7 +489,7 @@ In summary:
 
 The census builds on the following work. The classical cohomology and its fortuitous classes are organized as in \cite{ChangYin,microstates,ChangLinWords,ChangChevalley}, and the enumerations extend those of \cite{ChangLin,GLRT,KLLS,BraneFused}; they reproduce the published $SU(2)$ census \cite{BPSCounting}, the one-loop lifts of \cite{KonishiBH,KKLP} and the mass-deformed classes of \cite{CK}. The classes invisible to Cartan restriction are analysed through the commuting scheme of the Lie algebra, with the higher-dimensional Chevalley restriction results of \cite{ChenNgo,ChenNgoSp,SXX,Vaccarino,Domokos,Hunziker,Richardson,LNY,SemplinerYang,Goyal}, the proofs of the conjecture of Cachazo, Douglas, Seiberg and Witten \cite{CDSW,EtingofKac,CederwallFerretti,Kumar,WittenSpSO,EtingofII}, the super-commuting schemes of \cite{KvLM} and standard invariant theory \cite{Sergeev,BereleRegev,GoodmanWallach,Bourbaki}. The Leigh--Strassler family is that of \cite{LeighStrassler,BundzikMansson}. The one- and two-loop operators used in the tests were compared with \cite{BK,KKLP}, with the two-loop kernel of \cite[Section 4.5]{GWW} and with the two-loop coefficient of the fortuity report \cite{FortuityAI}. Exact linear algebra over the integers and the rationals uses FLINT \cite{FLINT}.
 
-In the tables below, the lifting column lists the tests that have been completed, and $R_r=\sum_{\substack{k=1\\\text{loop orders}}}^{r}Q_k\mathcal O_{r-k}$ is the order-$r$ residual: $d_r$ vanishes on a class when $R_r\in\operatorname{im}Q_0$ for a suitable choice of the lower corrections. The lower corrections are not unique. The equation $Q_0\mathcal O_1=-Q_1\mathcal O_0$ fixes $\mathcal O_1$ only up to a $Q_0$-cocycle $Z$, and the same holds at every order. This is the freedom of a finite renormalization of the composite operator, $\mathcal O_0\to\mathcal O_0+\hbar Z+\cdots$, its mixing at higher order in $\hbar$ with the other classical cocycles of the same charges. The shift changes $R_2$ by $Q_1Z$, whose class is the $d_1$-boundary $d_1[Z]_1$, and in general it changes the class of $R_r$ by an element of the images of $d_1,\ldots,d_{r-1}$. The freedom is therefore removed by passing to the pages: $d_r$ is defined on $E_r$, where these images are already divided out, and its rank does not depend on the choice. In the computation the choice is made once, by fixing homotopy contractions $(i_r,\pi_r,h_r)$ that are homogeneous in the gradings.
+The lifting columns give the tests performed. Their ranks are independent of the choices of representatives and lower corrections, since $d_r$ is defined on $E_r$, where the earlier obstruction images have been divided out. The homotopy contractions used to compute them are described in Section~\ref{sec-homotopy-transfer}.
 
 \subsubsection{$\mathcal N=4$ Yang--Mills: $SU(N)$}\label{sec-results-SU}
 
