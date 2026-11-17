@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261117-095837 (Beijing time)}
+\date{\small Version 20261117-102232 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -3995,7 +3995,7 @@ The same identity holds for $B$. Together with the antisymmetry of the dotted-in
 
 \section{Spiders and product forests}\label{sec-forests}
 The reduction of Section~\ref{sec-fans} also evaluates the spiders entering $Q_n$ for higher-degree superpotentials and the forests entering $A\star B$.
-Each reduction of the $t$'s transfers sources forward and reconstructs the original currents $y$ backward.
+Each reduction of $t$ transfers sources forward and reconstructs the original currents $y$ backward.
 
 \subsection{Spider kernels and supercharges}\label{sec-spiders}
 \rthm{Definition}{b-00380}{Spiders}
@@ -4088,38 +4088,88 @@ e^{-\sum_{e\in I\,\mathrm{(edges)}}y_{e,+\dot c}(r)z_e^{+\dot c}}.
 
 
 \begin{proofbox}
-Apply the series--parallel move \eqref{eq-kernel-series-parallel} along each arm, using
-$(r_1,r_2)=(r_{i,2j-1},1-r_{i,2j})$. Each nonterminal vertex gives
-\begin{equation}
-(1-r_{i,2j})\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}
-y_{v_{i,j+1}B,+}^{\mathrm{red}}{}^{\dot a},
-\qquad
-\lambda_{v_{i,j+1}}^{\mathrm{red}}
-=\lambda_{v_{i,j+1}}+r_{i,2j-1}\lambda_{v_{i,j}}^{\mathrm{red}}.
-\end{equation}
-The remaining arm edges satisfy
-\begin{equation}
-y_{v_{i,\ell_i}A}
-=r_{i,2\ell_i-1}\lambda_{v_{i,\ell_i}}^{\mathrm{red}}
--r_{i,2\ell_i}y_{AB}^{\mathrm{red}}.
-\end{equation}
-At fixed earlier fractions their current-area wedge is
-\begin{equation}
+Apply the series--parallel move \eqref{eq-kernel-series-parallel} along each arm, using $(r_1,r_2)=(r_{i,2j-1},1-r_{i,2j})$.
+At a nonterminal vertex $v_{i,j}$, keep the earlier fractions fixed; $\equiv$ denotes equality modulo the retained loop-current differentials.
+\begin{equation}\label{eq-ch7-rewrite-06}
 \begin{aligned}
-\bigwedge_{i=1}^a(-d^2y_{v_{i,\ell_i}A})
-&=\left(1-\sum_{\substack{i\in\{1,\ldots,a\}\\\mathrm{arms}}}
-r_{i,2\ell_i}\right)
-\prod_{i=1}^a
-\left(\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}
-y_{AB,+}^{\mathrm{red}}{}^{\dot a}\right)\\
-&\qquad\times\bigwedge_{i=1}^a
-(dr_{i,2\ell_i-1}\wedge dr_{i,2\ell_i}).
+\lambda_{v_{i,j+1}}^{\mathrm{red}}
+&=\lambda_{v_{i,j+1}}+r_{i,2j-1}\lambda_{v_{i,j}}^{\mathrm{red}},\\
+dy_{v_{i,j+1}B,+\dot a}^{\mathrm{red}}
+&\equiv\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}\,dr_{i,2j-1},\\
+dy_{v_{i,j}v_{i,j+1},+\dot a}
+&\equiv(1-r_{i,2j})\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}\,dr_{i,2j-1}
+-y_{v_{i,j+1}B,+\dot a}^{\mathrm{red}}\,dr_{i,2j},\\
+-d^2y_{v_{i,j}v_{i,j+1}}
+&\equiv(1-r_{i,2j})
+\bigl(\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}
+y_{v_{i,j+1}B,+}^{\mathrm{red}}{}^{\dot a}\bigr)
+dr_{i,2j-1}\wedge dr_{i,2j}.
 \end{aligned}
 \end{equation}
-Indeed, differentiating the displayed currents gives diagonal two-by-two
-blocks and one rank-one correction, whose determinant is
-$1-\sum_{\substack{i=1,\ldots,a\\\mathrm{arms}}}r_{i,2\ell_i}$.
-Multiplying these factors gives the kernel.
+The last line is the current-area Jacobian of this elimination, with $d^2y=dy_{+\dot+}\wedge dy_{+\dot-}$.
+
+After these eliminations, one edge $v_{i,\ell_i}A$ remains on each arm.
+With all earlier fractions fixed, \eqref{eq-spider-reduced} gives
+\begin{equation}\label{eq-ch7-rewrite-07}
+\begin{aligned}
+y_{v_{i,\ell_i}A,+\dot a}
+&=r_{i,2\ell_i-1}\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}
+-r_{i,2\ell_i}y_{AB,+\dot a}^{\mathrm{red}},\\
+dy_{AB,+\dot a}^{\mathrm{red}}
+&=\sum_{\substack{k\in\{1,\ldots,a\}\\\mathrm{arms}}}
+\lambda_{v_{k,\ell_k},+\dot a}^{\mathrm{red}}\,dr_{k,2\ell_k-1},\\
+dy_{v_{i,\ell_i}A,+\dot a}
+&=\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}\,dr_{i,2\ell_i-1}
+-y_{AB,+\dot a}^{\mathrm{red}}\,dr_{i,2\ell_i}\\
+&\quad-r_{i,2\ell_i}
+\sum_{\substack{k\in\{1,\ldots,a\}\\\mathrm{arms}}}
+\lambda_{v_{k,\ell_k},+\dot a}^{\mathrm{red}}\,dr_{k,2\ell_k-1}.
+\end{aligned}
+\end{equation}
+Each $dr_{i,2\ell_i}$ occurs only in its own arm's differential, so the top-degree wedge is
+\begin{equation}\label{eq-ch7-rewrite-08}
+\begin{aligned}
+&\bigwedge_{i=1}^a(-d^2y_{v_{i,\ell_i}A})\\
+&=\bigwedge_{i=1}^a\Bigg\{\Bigg[
+\bigl(\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}
+y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)dr_{i,2\ell_i-1}\\
+&\hspace{65pt}-r_{i,2\ell_i}
+\sum_{\substack{k\in\{1,\ldots,a\}\\\mathrm{arms}}}
+\bigl(\lambda_{v_{k,\ell_k},+\dot b}^{\mathrm{red}}
+y_{AB,+}^{\mathrm{red}}{}^{\dot b}\bigr)dr_{k,2\ell_k-1}
+\Bigg]\wedge dr_{i,2\ell_i}\Bigg\}\\
+&=\Bigg[
+\prod_{i=1}^a\bigl(\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}
+y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)\\
+&\hspace{28pt}-\sum_{\substack{i\in\{1,\ldots,a\}\\\mathrm{arms}}}
+r_{i,2\ell_i}
+\prod_{k=1}^a\bigl(\lambda_{v_{k,\ell_k},+\dot b}^{\mathrm{red}}
+y_{AB,+}^{\mathrm{red}}{}^{\dot b}\bigr)
+\Bigg]\bigwedge_{i=1}^a(dr_{i,2\ell_i-1}\wedge dr_{i,2\ell_i})\\
+&=\left(1-\sum_{\substack{i\in\{1,\ldots,a\}\\\mathrm{arms}}}
+r_{i,2\ell_i}\right)
+\prod_{i=1}^a\bigl(\lambda_{v_{i,\ell_i},+\dot a}^{\mathrm{red}}
+y_{AB,+}^{\mathrm{red}}{}^{\dot a}\bigr)
+\bigwedge_{i=1}^a(dr_{i,2\ell_i-1}\wedge dr_{i,2\ell_i}).
+\end{aligned}
+\end{equation}
+Terms selecting the summed one-form from two different arms vanish because that one-form is repeated in the wedge.
+For a term selecting it only from arm $i$, only its $k=i$ summand survives, giving the factor $-r_{i,2\ell_i}$.
+
+Equation \eqref{eq-ch7-rewrite-08} is the measure of the remaining $a$ arm edges; the full measure in \eqref{eq-1-54-general} also contains the $n-a$ preceding eliminations:
+\begin{equation*}\tag{7.8a}\label{eq-spider-full-measure}
+\begin{aligned}
+&\bigwedge_{i=1}^a\bigwedge_{j=1}^{\ell_i}
+(-d^2y_{v_{i,j}v_{i,j+1}})\\
+&=\prod_{i=1}^a\prod_{j=1}^{\ell_i-1}
+\Bigl[(1-r_{i,2j})\lambda_{v_{i,j},+\dot a}^{\mathrm{red}}
+y_{v_{i,j+1}B,+}^{\mathrm{red}}{}^{\dot a}\Bigr]\\
+&\quad\times\left[\bigwedge_{i=1}^a\bigwedge_{j=1}^{\ell_i-1}
+(dr_{i,2j-1}\wedge dr_{i,2j})\right]
+\wedge\left.\bigwedge_{i=1}^a(-d^2y_{v_{i,\ell_i}A})\right|_{\substack{\text{earlier fractions fixed}}}.
+\end{aligned}
+\end{equation*}
+Substituting \eqref{eq-ch7-rewrite-08} gives the density in \eqref{eq-1-54-general}; reordering the two-form factors introduces no sign.
 \end{proofbox}
 
 For the $Q_n$ spiders, the surviving fields lie at $A$ and the outer arm vertices:
@@ -4251,7 +4301,13 @@ We use $T^{\mathrm{red}}$ to denote the specified reduced spanning tree.
 \rthm{Theorem}{b-01159}{Star--triangle}
 In a Laman graph, let $v$ be a source-free vertex of degree three with neighbours $u,w,x$, with $ux,wx$ present
 and $uw$ absent. The star--triangle move and the two parallel merges
-remove one vertex and one loop, leaving a Laman graph. If $r_1,r_2\in(0,1)$ are the current
+remove one vertex and one loop, leaving a Laman graph (Figure~\ref{local-b892637a-5c73-4368-9bf0-532548a53347}).
+\begin{figure}[H]
+\centering
+\includegraphics[width=.98\linewidth]{figures/vec/star-triangle-source-free-20261117.pdf}
+\caption{A source-free star followed by two parallel merges; $r_1,r_2$ are the original-edge current fractions.}\label{local-b892637a-5c73-4368-9bf0-532548a53347}
+\end{figure}
+If $r_1,r_2\in(0,1)$ are the current
 fractions of the original edges $ux,wx$, the reverse map is
 \begin{equation}
 \begin{aligned}
@@ -4314,7 +4370,13 @@ The resistance change reverses orientation, cancelling this minus sign.
 \rthm{Theorem}{b-01173}{Paired star--triangle}
 In a Laman graph, let source-free vertices $v_1,v_2$ each have degree three and be joined to $u,A,B$, with $AB$
 present and $uA,uB$ absent. The two star--triangle moves and three parallel
-merges remove two vertices and two loops, leaving a Laman graph. Let $r_1,r_2$ be the current
+merges remove two vertices and two loops, leaving a Laman graph (Figure~\ref{fig-ch7-paired-reduction}).
+\begin{figure}[H]
+\centering
+\includegraphics[width=.98\linewidth]{figures/vec/b3-two-stars-resistors-20261107.pdf}
+\caption{Two source-free stars followed by three parallel merges.}\label{fig-ch7-paired-reduction}
+\end{figure}
+Let $r_1,r_2$ be the current
 fractions contributed by the $v_1$ star to $uA,uB$, and $r_3,r_4$ the
 fractions contributed by $v_1,v_2$ to $AB$. Their domain is
 $0<r_1,r_2<1$, $r_3,r_4>0$, $r_3+r_4<1$, and
