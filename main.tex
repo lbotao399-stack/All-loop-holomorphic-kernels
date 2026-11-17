@@ -103,7 +103,7 @@
 {\small Beijing, China}\\[3pt]
 {\small $^{4}$Jefferson Physical Laboratory, Harvard University,}\\
 {\small Cambridge, Massachusetts 02138, USA}}
-\date{\small Version 20261116-224502 (Beijing time)}
+\date{\small Version 20261117-095837 (Beijing time)}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -353,7 +353,7 @@ Here $\gamma=\{(A,B)\}$ marks the edge joining the insertions, contracted last w
 
 (iv) \emph{For homogeneous quantum cocycles $A,B$ and every $L>0$, $A\star B$ is cohomologous, in the effective-observable complex at scale $L$, to the quantum normal-ordering product of \cite[Section 2.3]{semichiral}, the contour integral of the scale-$L$ two-insertion expansion of $A$ around $B$.}\footnote{The quantum product is the marked operation of Gaiotto, Kulp and Wu \cite[Sections 4.3 and 4.5]{higher}. Part~(i) follows from the quadratic identities of the higher brackets \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equations (4.19), (4.42)]{higher} with one marked edge; the Leibniz rule and a ring structure for the quantum normal-ordering product were anticipated in \cite[Section 2.2 and footnote 28]{semichiral}, and the two-mark associator graph is drawn in \cite[Figure 7]{higher}. The all-order homotopy and strict unit, the page product, and the normal-ordering comparison are established in Section \ref{sec-product}. The kernel formulas evaluate these operations graph by graph, with the complete one- and two-loop products in Section \ref{sec-product-loops}.}
 
-Consequently the quantum BPS ring is reached from the classical BPS ring $E_1=H(Q_0)$ by successive contractions: each page $E_{r+1}=H(E_r,d_r)$ is the cohomology of the ring $E_r$ with respect to the derivation $d_r$, a subquotient of $E_r$ that inherits its product. The quantum ring is thus a subquotient of the classical ring, in general not a subring.
+The successive pages start from the classical BPS ring $E_1=H(Q_0)$: each page $E_{r+1}=H(E_r,d_r)$ is the cohomology of the ring $E_r$ with respect to the derivation $d_r$, a subquotient of $E_r$ that inherits its product. The full quantum ring also retains the higher-order product of completed operators.
 
 The expansion \eqref{eq-sum-star} begins with the ordinary product,
 \begin{equation}\label{eq-sum-product-expansion}
@@ -419,7 +419,7 @@ The right-hand side is the dimension of the classical cohomology modulo the span
 
 We enumerate the classical cohomology $E_1=H(Q_0)$ sector by sector, isolate its fortuitous classes, and test their lifting with the explicit loop corrections $Q_1,\ldots,Q_4$ above, in $\mathcal N=4$ Yang--Mills theory with gauge groups $SU(N)$, $SO(2N+1)$, $Sp(N)$ and $G_2$, in its Leigh--Strassler and $\beta$-deformations, and in the $\mathcal N=2$ and $\mathcal N=1$ theories listed below. Table~\ref{tab-census-overview} states the results; the subsubsections that follow list the classes and their successive obstruction maps theory by theory. The algorithm, the computations and the certificates are described in the supplementary material \cite{Repo}, which also contains the results report cited below.
 
-\paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters,. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are quoted as $(E;R_1,R_2,R_3;J_L,J_R)$. With $\Theta=\theta_1+\theta_2+\theta_3$,
+\paragraph{Sectors and charges.} For the $\mathcal N=4$ theories, the sectors are $(\lambda)_Y=(\theta_1,\theta_2,\theta_3;n_+,n_-)_Y$, which record the three component weights, the two holomorphic derivative totals and the number $Y$ of letters. The conserved charges of a sector, the dimension $E$, the R-charges $R_I$ and the spins $J_L,J_R$, are quoted as $(E;R_1,R_2,R_3;J_L,J_R)$. With $\Theta=\theta_1+\theta_2+\theta_3$,
 \begin{equation*}
 \begin{gathered}
 E=\tfrac12(\Theta+Y)+n_++n_-,\qquad R_I=\theta_I-\tfrac12(\Theta-Y),\\
@@ -3575,6 +3575,8 @@ Setting $B=1$ proves graded commutativity. For three closed inputs, \eqref{eq-ch
 
 The exact term in \eqref{eq-ring-common-root-homotopy} vanishes in cohomology.~\hfill\qedsymbol
 
+For fixed quantum classes, the marked graph prescription gives a well-defined product independent of their cocycle representatives, by \eqref{eq-representatives}. A change of local prescription gives the same product on $H(\mathbf Q)$ if its difference is locally $\mathbf Q$-exact on closed inputs. This is distinct from choosing quantum lifts of classical representatives; the finite freedom in those lifts and in the renormalization prescription is discussed with the successive products in Section~\ref{sec-homotopy-transfer}.
+
 \subsection{The graph formula of the quantum product}\label{the-graph-formula}
 
 For a physical edge $(v,w)$, the operator $\Delta_{vw}$ contracts one field at vertex $v$ with its BV conjugate at vertex $w$, using the pairing~\eqref{eq-A-20}. For example, in the $\mathcal N=4$ superfield variables, at fixed vertex positions,
@@ -3993,7 +3995,7 @@ The same identity holds for $B$. Together with the antisymmetry of the dotted-in
 
 \section{Spiders and product forests}\label{sec-forests}
 The reduction of Section~\ref{sec-fans} also evaluates the spiders entering $Q_n$ for higher-degree superpotentials and the forests entering $A\star B$.
-Each reduction transfers sources forward and reconstructs the original currents backward.
+Each reduction of the $t$'s transfers sources forward and reconstructs the original currents $y$ backward.
 
 \subsection{Spider kernels and supercharges}\label{sec-spiders}
 \rthm{Definition}{b-00380}{Spiders}
@@ -4019,7 +4021,7 @@ Order the edges arm by arm, placing $(v_{i,j},v_{i,j+1})$ before $(v_{i,j},B)$, 
 % Existing manuscript coordinates and labels are retained.
 
 \rthm{Theorem}{thm-spider-kernel}{Spider kernel}
-The sources are arbitrary, with total current conservation fixing $\lambda_B$. The current fractions range over
+We keep the sources at $A$ and each $v_{i,1},\ldots,v_{i,\ell_i}$ arbitrary, with total current conservation fixing $\lambda_B=-\sum\lambda$. The current fractions range over
 \begin{equation}
 0<r_{i,j}<1\quad(j<2\ell_i),\qquad
 r_{i,2\ell_i}>0,\qquad
@@ -4117,8 +4119,7 @@ y_{AB,+}^{\mathrm{red}}{}^{\dot a}\right)\\
 Indeed, differentiating the displayed currents gives diagonal two-by-two
 blocks and one rank-one correction, whose determinant is
 $1-\sum_{\substack{i=1,\ldots,a\\\mathrm{arms}}}r_{i,2\ell_i}$.
-Differentials of the earlier fractions vanish against the area factors
-already extracted. Multiplying these factors gives the kernel.
+Multiplying these factors gives the kernel.
 \end{proofbox}
 
 For the $Q_n$ spiders, the surviving fields lie at $A$ and the outer arm vertices:
@@ -4243,8 +4244,7 @@ so the source-free argument applies.
 \caption{A seven-loop product graph with three trees between $A$ and $B$; the marked edge $AB$ is blue. Each tree has one source, at its unique vertex of degree two.}\label{fig-forest-components}
 \end{figure}
 \subsection{Reduction of product forests}\label{sec-forest-graphs}
-The two moves below preserve the sources at the remaining vertices.
-Each exponential uses the original edge currents reconstructed by the displayed maps; $T^{\mathrm{red}}$ is the specified reduced spanning tree.
+We use $T^{\mathrm{red}}$ to denote the specified reduced spanning tree.
 % Compact current-form replacements for old Theorems 7.8 and 7.9.
 % Original-current phases eliminate the unused displacement substitutions.
 
@@ -4489,10 +4489,7 @@ For polynomial local operators $A,B$, including arbitrary holomorphic derivative
 \label{eq-product-four-loop-evaluated}
 \end{align}
 
-Color indices are raised with $\delta^{AB}$; in particular, $C_X{}^{YZ}=\delta^{YY'}\delta^{ZZ'}C_{XY'Z'}$.
-Each $\partial_v$ acts on the entire factor at $x_v$, including the displayed functional derivatives, with the integration variables $z$ held fixed.
-The coordinate convention $\partial/\partial x^{+\dot a}=-\tfrac12\partial_{+\dot a}$ makes the exponentials translations.
-The positions are identified only after these operations; the functional derivatives and the odd-coordinate integrals retain their displayed order.
+There is a one-loop diagram and three two-loop diagrams.
 
 \section{Quantum supercharges and $\mathcal N=4$ Yang--Mills theory}\label{sec-supercharge}
 
@@ -4509,7 +4506,7 @@ W_\Gamma[\mathcal I^{\otimes(n+1)},\mathcal O]\Bigr],
 
 with the displacements $z$ integrated against the functional derivatives of $W_\Gamma$ as in \eqref{eq-W-jet-edge}. At $n=0$ the single-edge graph gives $Q_0\mathcal O=\{\mathcal I,\mathcal O\}$, which is the tree-level (classical) SUSY transformation.
 
-The $n$-loop $Q_n$ increases the number of derivatives by $2n$ (and by more if $\mathcal I$ contains derivatives):~
+The $n$-loop $Q_n$ increases the number of derivatives by $2n$ (and by more if $\mathcal I$ contains derivatives, in nonrenormalizable theories):~
 
 Under $\lambda_{v,+\dot a}\to c\,\lambda_{v,+\dot a}$ and $z_e^{+\dot a}\to z_e^{+\dot a}/c$ at fixed $\dot a$, the displacement exponential in \eqref{eq-operatope} is invariant and the current form, with $n$ factors $dy_{e,+\dot a}$, scales as $c^n$. Since $\lambda_v$ differentiates output fields and each $z_e$-derivative takes a derivative from an input letter, $Q_n$ raises the numbers of $\partial_{+\dot+}$ and $\partial_{+\dot-}$ derivatives by $n$ each, $2n$ in total. (A similar analysis holds in all dimensions.)
 
@@ -4629,7 +4626,7 @@ C_{A_{n+1}R_nE}\\
 
 \subsection{One- and two-loop examples in $\mathcal N=4$ Yang--Mills theory}\label{examples-in-mathcal-n4-yangmills-theory}
 
-The general-$n$ operator \eqref{eq-2-8}~can look abstract. We also display the two-loop result, a problem that has recently attracted attention \cite[Section 3.2.3]{semichiral}.
+The general-$n$ operator \eqref{eq-2-8}~can look abstract. We display the two-loop result, a problem that has recently attracted attention \cite[Section 3.2.3]{semichiral}.
 \begin{equation}\label{eq-2-17}
 \begin{aligned}
 Q_2={}&-\frac{i}{2(32\pi^2)^2}
@@ -4662,7 +4659,7 @@ This result extends previous results and agrees with them.
 
 For example, the first two components below agree with \cite[Equations (3.66) and (3.67)]{BK} up to normalization:\footnote{On the physical Lagrangian subspace, with $\delta^{AB}(\gamma^I)_B\leftrightarrow\bar\phi_I{}^A$, $(\beta_I)^A\leftrightarrow-\frac{i}{\sqrt2}\psi_+^{IA}$, $\delta^{AB}\mathsf b_B\leftrightarrow\frac14f_{++}^A$, $\partial_{+\dot a}\mathsf c^A\leftrightarrow2\bar\lambda_{\dot a}^A$ and $\partial_{+\dot a}\partial_{+\dot b}\mathsf c^A\leftrightarrow2\nabla_{+(\dot a}\bar\lambda_{\dot b)}^A$, equation~\eqref{eq-2-26} becomes $Q_1(\bar\phi_1{}^A\psi_+^{1B})=\frac{i\sqrt2\,g^2}{16\pi^2}C^A{}_{RD}C^{BR}{}_E\,\bar\lambda_{\dot a}^D\bar\lambda^{E\dot a}$, the component form of the Konishi anomaly~\cite{Konishi}.}
 
-In component form:~
+In component form, for example:~
 \begin{equation}\label{eq-2-26}
 Q_1\big(\delta^{AA'}(\gamma^1)_{A'}(\beta_1)^B\big)=\frac{g^2}{64\pi^2}C_{ARD}C_{BRE}(\partial_{+\dot a}\mathsf c^D)(\partial_+{}^{\dot a}\mathsf c^E),
 \end{equation}
@@ -4675,7 +4672,7 @@ Q_2\big((\beta_1)^{A_1}(\beta_2)^{A_2}(\beta_3)^{A_3}\big)=-\frac{ig^2}{48(32\pi
 
 \section{Multi-graviton completions and obstruction equations}\label{sec-lifting}
 
-Quantum multiplication constructs perturbatively closed multi-graviton operators in $\mathcal N=4$ Yang--Mills theory.~ We prove their closure at arbitrary loop order (Theorem \ref{b-00630}) and, for illustration, evaluate an explicit product (Section \ref{sec-graviton-example}).\footnote{The theorem proves that multi-graviton classes stay closed; however, a closed multi-graviton can still become exact, e.g., if there is a nonclosed fortuitous class with the allowed charges. The most direct one-loop example is the lifting of a black-hole class by the Konishi correction: in the $SO(7)$ theory, the one-loop supercharge pairs a multi-graviton with a fortuitous class \cite[Section 3]{KonishiBH}, and by the theorem the multi-graviton is the exact member of the pair. Section \ref{sec-results-SOSp} and \cite[supplement, Section S3]{Repo} give the one-loop lifts in $SO(2N+1)$ and their relation to S-duality. There are many more one-loop lifts in $SO(2N+1)$ than in $SU(N)$.}
+Quantum multiplication constructs perturbatively closed multi-graviton operators in $\mathcal N=4$ Yang--Mills theory.~ We prove their closure at arbitrary loop order (Theorem \ref{b-00630}) and, for illustration, evaluate an explicit product (Section \ref{sec-graviton-example}).\footnote{The theorem proves that multi-graviton classes stay closed; however, a closed multi-graviton can still become exact, e.g., if there is a nonclosed fortuitous class with the allowed charges, they can pair and be lifted by the quantum supercharge. The most direct one-loop example is the lifting of a black-hole class by the Konishi correction: in the $SO(7)$ theory, the one-loop supercharge pairs a multi-graviton with a fortuitous class \cite[Section 3]{KonishiBH}, and by the theorem the multi-graviton is the exact member of the pair. Section \ref{sec-results-SOSp} and \cite[supplement, Section S3]{Repo} give the one-loop lifts in $SO(2N+1)$ and their relation to S-duality. There are many more one-loop lifts in $SO(2N+1)$ than in $SU(N)$.}
 
 We then review the framework that uses the operators $Q_n$ to test which classical classes are lifted: the successive transfers of Section \ref{sec-homotopy-transfer} compute the perturbative obstructions of classical representatives and decide which of their closed completions are quantum coboundaries. The algorithm and the explicit results are in the supplementary material \cite{Repo}.
 
@@ -4726,7 +4723,7 @@ Induction proves the first assertion. The leading term of each binary product is
 
 Finiteness follows from the \hyperref[local-ch8-finite-product-corollary]{finiteness corollary} in Section \ref{the-graph-formula}.\hfill\qedsymbol
 
-For example, for two single gravitons $G_1$ and $G_2$, the explicit quantum product shows that $G_1G_2$ admits a quantum completion (the quantum completion is always nonunique, which is exactly the renormalization freedom), namely $G_1\star G_2$; equivalently, $G_1G_2$ is not lifted by a failure of $\mathbf Q$-closure.
+For example, for two single gravitons $G_1$ and $G_2$, the explicit quantum product shows that $G_1G_2$ admits a quantum completion (with the finite mixing freedom described below), namely $G_1\star G_2$; equivalently, $G_1G_2$ is never lifted by a failure of $\mathbf Q$-closure.
 
 \paragraph{The graviton part of the cohomology.}\label{the-graviton-part-of-the-cohomology}
 
@@ -4742,15 +4739,6 @@ A=\delta^{XY}(\gamma^1)_X(\gamma^1)_Y,
 \end{equation}
 
 Equation \eqref{eq-A-13}, with left differentiation, identifies both operators as components of $\operatorname{Tr}(dC)^2$:
-\begin{equation}\label{local-ch8-graviton-component-expansion}
-\begin{aligned}
-\left.\frac{\partial_L C^A}{\partial\theta_2}\right|_{\theta_1=\theta_2=0}
-&=\delta^{AX}(\gamma^2)_X-\theta_3(\beta_1)^A,\\
-\left.\delta_{AB}\frac{\partial_L C^A}{\partial\theta_2}
-\frac{\partial_L C^B}{\partial\theta_2}\right|_{\theta_1=\theta_2=0}
-&=\delta^{XY}(\gamma^2)_X(\gamma^2)_Y-2\theta_3(\gamma^2)_X(\beta_1)^X.
-\end{aligned}
-\end{equation}
 \begin{equation}\label{local-ch8-graviton-component-extraction}
 \begin{aligned}
 A&=\left.\delta_{AB}\frac{\partial_L C^A}{\partial\theta_1}
@@ -5168,6 +5156,64 @@ d_r[A_0]_r=d_r[B_0]_r=0\quad\Longrightarrow\quad d_r[A_0B_0]_r=0,\\
 [A_0B_0]_r\in\operatorname{im}d_r.
 \end{gathered}
 \end{equation}
+
+The inherited product on the successive pages does not fix the choice of a quantum completion. Fix a closed completion $\mathcal O$. Another completion with the same leading representative differs by a series with no constant term. Since the space of formal local operators has no $\hbar$-torsion,
+\begin{equation}\label{eq-lift-finite-freedom}
+\begin{gathered}
+\mathbf Q\mathcal O'=0,\qquad
+\mathcal O'_0=\mathcal O_0
+\quad\Longleftrightarrow\quad
+\mathcal O'=\mathcal O+\hbar Z,\qquad \mathbf QZ=0,\\
+[\mathcal O']_{\mathbf Q}=[\mathcal O]_{\mathbf Q}
+\quad\Longleftrightarrow\quad \hbar[Z]_{\mathbf Q}=0.
+\end{gathered}
+\end{equation}
+Here $Z$ is a formal local operator with the charges and grading required by the correction. Thus the freedom in the completed class is precisely the allowed part of $\hbar H(\mathbf Q)$. A $Q_0$-closed first correction must still satisfy the higher lifting equations; it need not extend to such a $Z$. For homogeneous completions in $\mathcal N=4$ SYM, $\deg_\theta\mathcal O_s=\deg_\theta\mathcal O_0-3s$ bounds this freedom, and excludes every higher correction when $\deg_\theta\mathcal O_0<3$.
+
+For closed $A,A',B$ with $A'_0=A_0$, bilinearity gives
+\begin{equation}\label{eq-product-lift-mixing}
+A'=A+\hbar Z,\quad \mathbf QZ=0
+\quad\Longrightarrow\quad
+[A'\star B]_{\mathbf Q}-[A\star B]_{\mathbf Q}
+=\hbar[Z\star B]_{\mathbf Q}.
+\end{equation}
+Changing the quantum lift can therefore change the product class even though its classical leading term is unchanged. This is operator mixing, rather than an ambiguity in multiplying two fixed quantum classes.
+
+A finite change of operator convention is an even, local, invertible $\mathbb C[[\hbar]]$-linear redefinition $A\mapsto A'$, equal to the identity modulo $\hbar$, preserving the unit and the physical gradings. Transporting the differential and product by this same redefinition gives
+\begin{equation}\label{eq-product-finite-redefinition}
+\begin{gathered}
+\mathbf Q'A'=(\mathbf QA)',\qquad
+A'\star' B'=(A\star B)',\qquad 1'=1,\\
+[A]_{\mathbf Q}\longmapsto[A']_{\mathbf Q'},\qquad
+[A\star B]_{\mathbf Q}\longmapsto[A'\star'B']_{\mathbf Q'}.
+\end{gathered}
+\end{equation}
+The inverse redefinition makes this a unital ring isomorphism. If $\mathbf Q$ is held fixed, the redefinition must commute with it. Equality under the identity identification is stronger than this isomorphism.
+
+An independent finite contact term in the two-insertion prescription is a further possible change. At fixed $\mathbf Q$, its difference from $\star$ must obey the chain identity, and the modified product must obey the ring laws on cohomology. For closed inputs its class is unchanged precisely when
+\begin{equation}\label{eq-product-contact-equivalence}
+A\star' B-A\star B\in\operatorname{im}\mathbf Q
+\quad\text{in the space of local operators}.
+\end{equation}
+The marked graph prescription fixes these contact terms. Associativity, graded commutativity, the unit and the classical limit alone do not establish the displayed exactness. In particular, an effective $\mathbf Q_L$-exact comparison does not by itself provide a local $\mathbf Q$-primitive.
+
+There is also freedom to change the quantum action. If $I'[L]-I[L]$ has positive order in $\hbar$, subtraction of the two regularized master equations gives the exact condition
+\begin{equation}\label{eq-finite-action-QME}
+\mathbf Q_L\bigl(I'[L]-I[L]\bigr)
++\frac12\bigl(I'[L]-I[L],I'[L]-I[L]\bigr)_L=0.
+\end{equation}
+The family $I'[L]$ must also obey the renormalization-group transport and the same locality and symmetry conditions. Infinitesimally, a $\mathbf Q_L$-exact change is a quantum BV canonical change; a finite such equivalence requires its completion at every order, compatibly with locality and scale transport. Other admissible action changes can change the quantization or couplings, and are excluded when comparing products in a fixed quantum theory. Ultraviolet finiteness removes the need for divergent counterterms, not these finite choices.
+
+Finally, inheritance of the classical product means the ordinary multiplication on each successive page, as proved above. It does not assert that every classical relation is unchanged in the full quantum ring. Indeed,
+\begin{equation}\label{eq-product-classical-relation}
+\begin{gathered}
+\mathbf QA=\mathbf QB=0,\qquad A_0B_0=Q_0X_0,\\
+A\star B-\mathbf QX_0=\hbar\mathcal O,
+\qquad \mathbf Q\mathcal O=0,
+\qquad [A\star B]_{\mathbf Q}=\hbar[\mathcal O]_{\mathbf Q}.
+\end{gathered}
+\end{equation}
+The second line follows by cancelling the constant coefficient and applying $\mathbf Q$. The degree bound makes the correction finite; its vanishing in cohomology is a separate condition. The quantum BPS ring inherits associativity, graded commutativity, the unit and the leading multiplication from the classical ring, while its full relations are determined by the quantum product and the chosen quantum classes.
 
 \paragraph{Higher differentials on the graviton part.}\label{sec-graviton-dr}
 
