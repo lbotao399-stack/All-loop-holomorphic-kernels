@@ -18,7 +18,7 @@
   cutmark/.style={postaction={decorate},decoration={markings,mark=at position .5 with {\draw[line width=.8pt] (-2pt,-3.6pt)--(-.2pt,3.6pt); \draw[line width=.8pt] (.7pt,-3.6pt)--(2.5pt,3.6pt);}}},
   cutI/.style={line width=1.6pt,draw=orange!85!black,cutmark},cutO/.style={line width=1.6pt,draw=violet!80!black,cutmark},
   hfprop/.style={line width=.7pt,draw=black!85,postaction={decorate},decoration={markings,mark=at position .58 with {\arrow{Stealth[length=2mm,width=1.5mm]}}}},
-  hfheat/.style={line width=1.6pt,draw=red!72!black,cutmark},
+  hfheat/.style={line width=1.6pt,draw=black,cutmark},
   hfout/.style={line width=.7pt,draw=teal!55!black,-{Stealth[length=2mm,width=1.5mm]}},
   hfv/.style={circle,fill=black,inner sep=1.6pt},hfo/.style={rectangle,draw,fill=white,inner sep=2.6pt,line width=.6pt},
   cutv/.style={circle,fill=black,inner sep=1.4pt},cuto/.style={rectangle,draw,fill=white,inner sep=2.3pt}}
@@ -75,8 +75,7 @@
   \draw[parr,blue!65!black] (.6,.06) arc (0:280:.12);}}
 \usepackage[hyphens]{url}
 \usepackage[numbers,sort&compress]{natbib}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!60!black}
+\usepackage[hidelinks]{hyperref}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
@@ -93,7 +92,7 @@
 \setlength{\parskip}{3pt}
 \setlength{\parindent}{1.2em}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang}}
+\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261118-140936}}
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu$^{2,3,4}$ and Chi-Ming Chang$^{2,5}$\\[6pt]
 {\small $^{1}$Peking University}\\[3pt]
@@ -105,7 +104,7 @@
 {\small Cambridge, Massachusetts 02138, USA}\\[3pt]
 {\small $^{5}$Beijing Institute of Mathematical Sciences and Applications (BIMSA),}\\
 {\small Beijing, China}}
-\date{\small Version 20261118-125253 (Beijing time)}
+\date{}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -3084,9 +3083,9 @@ Iterating the step at $i=1,\ldots,n-1$ leaves the triangle on $n,n+1,n+2$. Its c
 \begin{tikzpicture}
 \node[anchor=south west,inner sep=0] (img) at (0,0) {\includegraphics[width=0.96\linewidth]{figures/vec/b4-general-fan-chain-20261108.pdf}};
 \begin{scope}[x={(img.south east)},y={(img.north west)}]
-\node[fill=white,inner sep=1pt,minimum width=0.066\linewidth,minimum height=2.4ex,font=\footnotesize,text=blue!50!black] at (0.5004,0.7889) {\eqref{eq-kernel-series-parallel}};
-\node[fill=white,inner sep=1pt,minimum width=0.072\linewidth,minimum height=2.4ex,font=\footnotesize,text=blue!50!black] at (0.4733,0.5397) {\eqref{eq-kernel-series-parallel},};
-\node[fill=white,inner sep=1pt,minimum width=0.066\linewidth,minimum height=2.4ex,font=\footnotesize,text=blue!50!black] at (0.5004,0.1824) {\eqref{eq-kernel-series-parallel}};
+\node[fill=white,inner sep=1pt,minimum width=0.066\linewidth,minimum height=2.4ex,font=\footnotesize,text=black] at (0.5004,0.7889) {\eqref{eq-kernel-series-parallel}};
+\node[fill=white,inner sep=1pt,minimum width=0.072\linewidth,minimum height=2.4ex,font=\footnotesize,text=black] at (0.4733,0.5397) {\eqref{eq-kernel-series-parallel},};
+\node[fill=white,inner sep=1pt,minimum width=0.066\linewidth,minimum height=2.4ex,font=\footnotesize,text=black] at (0.5004,0.1824) {\eqref{eq-kernel-series-parallel}};
 \end{scope}
 \end{tikzpicture}
 \caption{Successive series--parallel moves remove vertices $1,2,\ldots,n-1$. Sources pass towards the final triangle; its currents reconstruct the fan backwards by \eqref{eq-B-fan-general-fractions}.}
