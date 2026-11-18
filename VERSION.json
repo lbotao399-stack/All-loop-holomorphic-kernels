@@ -1,9 +1,9 @@
 {
-  "version": "20261117-230057",
-  "beijing_time": "2026-11-17 23:00:57",
+  "version": "20261118-112936",
+  "beijing_time": "2026-11-18 11:29:36",
   "pages": 107,
   "pdf": "Holomorphic_Feynman_diagrams_quantum_BPS_ring.pdf",
   "source": "main.tex",
-  "pdf_sha256": "94e1642a9ca34c83a47a368fa0ab1af4806d3c5d4d15685fdbb16d6fd7617fb2",
-  "source_sha256": "b5b8610a77df1e8bf4b372c73f65ea1b8531869384c9cfddeddf6b5a333906e3"
+  "pdf_sha256": "70981fbc3956ab2aa9b232c38a0aa324825657173b9d6d5d2f8fb6a16baaf24a",
+  "source_sha256": "9b1aa1623058c6c2a662f0e407c55a2ee53a7955a52f1432fb84680610e29487"
 }
