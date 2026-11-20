@@ -92,7 +92,7 @@
 \setlength{\parskip}{3pt}
 \setlength{\parindent}{1.2em}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261120-190033}}
+\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261120-221918}}
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu$^{2,3,4}$ and Chi-Ming Chang$^{2,5}$\\[6pt]
 {\small $^{1}$Peking University}\\[3pt]
@@ -2715,7 +2715,7 @@ Its simplest coefficient, without displacements, is \eqref{eq-1-42}.
 
 \section{Quantum multiplication and the Leibniz rule}\label{sec-product}
 
-As we have seen, the differential $Q_1$ contains two input derivatives \cite{BK}.
+At tree level, $Q_0=\{\mathcal I,\,\cdot\,\}$ contracts a single input letter and therefore acts as a graded derivation of pointwise operator multiplication $AB$. Starting at one loop, however, $Q_n$ ($n\ge1$) contracts $n+1$ input letters simultaneously and breaks the classical Leibniz rule whenever its spokes attach to both factors of a composite product $AB$. To exhibit this failure concretely, recall from Section~\ref{the-all-order-supercharge-of-mathcal-n4-yangmills-theory} (proved at all loop orders in Theorem~\ref{b-00431} of Section~\ref{sec-supercharge}) the one-loop supercharge $Q_1$ of $\mathcal N=4$ Yang--Mills theory~\cite{BK}, written in terms of the superfield $C^A(x,\theta)$ of Appendix~\ref{sec-N4-superfield} ($\theta_I$, $I=1,2,3$) and the displaced functional derivatives~\eqref{eq-sum-deltaC-norm}:
 \begin{equation}\label{eq-2-16}
 \begin{aligned}
 Q_1={}&-\frac{1}{64\pi^2}
@@ -2729,27 +2729,23 @@ C_{ARD}C_{BRE}\\
 \frac{\delta}{\delta C^B(x+z_2,\theta)}.
 \end{aligned}
 \end{equation}
-
-Acting on the product of two operators $A$ and $B$, the two functional derivatives can contract one letter from each factor of $AB$. For operators without holomorphic derivatives in $\mathcal N=4$~SYM, this mixed contraction gives
+When $Q_1$ acts on the pointwise product $AB$ of two operators without holomorphic derivatives, the two equal cross-contraction assignments $(A,B)\leftrightarrow(z_1,z_2)$ and $(z_2,z_1)$ multiply the simplex area $\int_0^1dr_2\int_0^{1-r_2}dr_1=\tfrac12$ by $2$, leaving the finite coincident contact defect
 \begin{equation}\label{eq-2-29}
 \begin{aligned}
 &Q_1(AB)-(Q_1A)B-(-1)^{|A|}A(Q_1B)\\
 &\qquad=-\frac1{64\pi^2}\int d^3\theta\,
 C_{XRD}C_{YRE}
 (\partial_{+\dot a}C^D)(\partial_+{}^{\dot a}C^E)
-\frac{\delta A}{\delta C^X}\frac{\delta B}{\delta C^Y}.
+\frac{\delta A}{\delta C^X(\theta)}\frac{\delta B}{\delta C^Y(\theta)}.
 \end{aligned}
 \end{equation}
+Whereas separated insertions satisfy the graded Leibniz rule by~\eqref{eq-C-separated-insertions}, bringing two one-loop cocycles $A$ and $B$ to the same point produces the nonvanishing collision term~\eqref{eq-2-29} via~\eqref{eq-C-contact-boundary}, so the naive product $AB$ is generally not closed at $O(\hbar)$.
 
-Here $C(z^{+\dot a}, \theta_i)$ is the superfield of Appendix~\ref{sec-N4-superfield}.
-
-The mixed contraction can be nonzero even when $A$ and $B$ are closed through one loop. For separated insertions, the Ward identity \eqref{eq-C-separated-insertions} gives the graded Leibniz rule. At coincidence, the finite contact contribution \eqref{eq-2-29} survives, as in \eqref{eq-C-contact-boundary}.
-
-The quantum product of \cite[Sections 4.3 and 4.5]{higher}, \cite[footnote 28]{semichiral} supplies the local correction: its one-loop term cancels \eqref{eq-2-29}, and its higher terms give the exact Leibniz identity \eqref{eq-chain}. We derive this identity from the QME, display its order-by-order cancellation, and then prove the ring laws and evaluate the product graphs.
+The marked quantum product $A\star B$ of Gaiotto, Kulp, and Wu~\cite[Sections 4.3 and 4.5]{higher}, \cite[footnote 28]{semichiral} restores the Leibniz rule to all loop orders: its $O(\hbar)$ correction cancels~\eqref{eq-2-29}, and its higher-loop terms yield the exact derivation identity $\mathbf Q(A\star B)=(\mathbf QA)\star B+(-1)^{|A|}A\star(\mathbf QB)$. In Section~\ref{sec-dressed-chain} we prove $\mathbf Q^2=0$, establish gauge-anomaly cancellation for general $\mathcal N=1$ gauge theories, and derive the all-order Leibniz rule; Section~\ref{sec-order-by-order} unpacks the resulting order-by-order cocycle completions; Section~\ref{sec-ring} proves that $\star$ endows $H(\mathbf Q)$ (and every intermediate space $\mathrm{BPS}_{\hbar^{r-1}}$) with an associative, graded-commutative, unital ring structure; Sections~\ref{the-graph-formula} and~\ref{sec-product-loops} give the operatope graph expansion of $A\star B$, prove its polynomial termination in $\hbar$, and evaluate explicit one- and two-loop products in $\mathcal N=4$ Yang--Mills theory; and Section~\ref{sec-normal-ordering} proves equivalence on cohomology with the Bochner--Martinelli contour normal-ordering product alongside an explicit nonvanishing chain-level associator.
 
 \subsection{The Leibniz rule of the quantum supercharge}\label{sec-dressed-chain}
 
-Here $\{\cdot\}$ denotes the brackets of Section~\ref{sec-setup}. The interacting bracket $\{X,Y\}_{\mathcal I}$ sums all perturbative orders of the interaction $\mathcal I$:
+Here $\{\,\cdot\,\}$ denotes the higher brackets of Definition~\ref{b-00151}. Writing $\{X,Y\}_{\mathcal I}$ for the interaction-dressed binary bracket summing all perturbative insertions of $\mathcal I$, we have
 \begin{equation}\label{eq-2-51}
 \mathbf Q\mathcal O=\sum_{s\ge1}\frac{\hbar^{s-1}}{s!}\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{s},\mathcal O\bigr\},\qquad
 \{X,Y\}_{\mathcal I}=\sum_{r\ge0}\frac{\hbar^r}{r!}\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{r},X,Y\bigr\}.
@@ -2758,10 +2754,9 @@ Here $\{\cdot\}$ denotes the brackets of Section~\ref{sec-setup}. The interactin
 \rthm{Lemma}{b-00452}{The quantum master equation; \cite[Theorem 7]{Wang}, \cite[Section 3.2]{operatope}, \cite[Equations (1.12) and (2.25)--(2.26)]{BK}} \emph{Suppose that the interaction satisfies}
 \begin{equation}\label{eq-2-40}
 \sum_{k\ge2}\frac{\hbar^{k-2}}{k!}\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{k}\bigr\}
-=\sum_{n\ge0}\frac{\hbar^n}{n+2}Q_n\mathcal I=0 .
+=\sum_{n\ge0}\frac{\hbar^n}{n+2}Q_n\mathcal I=0.
 \end{equation}
-
-\emph{Then $\mathbf Q^2=0$; at the first orders,}
+\emph{Then $\mathbf Q^2=0$; at the lowest loop orders,}
 \begin{equation}\label{eq-nilpotence}
 \begin{aligned}
 Q_0^2&=0,& Q_0Q_1+Q_1Q_0&=0,\\
@@ -2770,7 +2765,8 @@ Q_0Q_3+Q_1Q_2+Q_2Q_1+Q_3Q_0&=0.
 \end{aligned}
 \end{equation}
 
-\emph{Proof.} We use the established quadratic identities without repeating their derivation \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equation (4.19)]{higher}. Physically, these higher Jacobi, or $L_\infty$, identities express BV nilpotence, $\Delta_{\mathrm{BV}}^2=0$, together with compatibility with the free differential. For the fixed BV pairing, this algebraic identity holds independently of the quantum master equation; the latter is required for the interacting differential $\mathbf Q$ to square to zero. With $N$ interaction entries and one operator, the identity reads
+\begin{proofbox}
+\textbf{Proof.} The higher brackets satisfy the quadratic $L_\infty$ (generalized Jacobi) identities~\cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Eq.~(4.19)]{higher}, which express $\Delta_{\mathrm{BV}}^2=0$ and compatibility with $Q_{\mathrm{BV}}=\bar\partial$ on UV collision faces independently of the QME. Evaluated on $N$ identical interaction entries $\mathcal I$ and one local operator $\mathcal O$, the quadratic identity reads
 \begin{equation}\label{eq-2-46}
 \begin{aligned}
 0={}&\sum_{r=1}^{N-1}\binom Nr
@@ -2779,8 +2775,7 @@ Q_0Q_3+Q_1Q_2+Q_2Q_1+Q_3Q_0&=0.
 \bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{N-k},\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{k}\bigr\},\mathcal O\bigr\}.
 \end{aligned}
 \end{equation}
-
-Multiplying by $\hbar^{N-2}/N!$ and summing over $N\ge2$, the first sum becomes $\mathbf Q^2\mathcal O$. The second factorizes into the QME insertion:
+Multiplying~\eqref{eq-2-46} by $\hbar^{N-2}/N!$ and summing over $N\ge2$, the first sum assembles into $\mathbf Q^2\mathcal O$ while the second factorizes into the QME insertion:
 \begin{equation}\label{eq-2-48}
 \begin{aligned}
 \mathbf Q^2\mathcal O
@@ -2788,45 +2783,37 @@ Multiplying by $\hbar^{N-2}/N!$ and summing over $N\ge2$, the first sum becomes 
 \Bigg\{\underbrace{\mathcal I,\ldots,\mathcal I}_{m},
 \underbrace{\sum_{\substack{k\ge2\\\text{interaction entries}}}
 \frac{\hbar^{k-2}}{k!}\bigl\{\mathcal I_1,\ldots,\mathcal I_k\bigr\}}_{0\text{ by \eqref{eq-2-40}}\;(\mathcal I_i=\mathcal I)},
-\mathcal O\Bigg\}=0.
+\mathcal O\Bigg\}=0,
 \end{aligned}
 \end{equation}
-This proves \eqref{eq-nilpotence}.~\hfill\qedsymbol
+whose lowest $\hbar$-powers give~\eqref{eq-nilpotence}.~\hfill\qedsymbol
+\end{proofbox}
 
-\rthm{Theorem}{b-00465}{Explicit QME and gauge-anomaly cancellation} ~ \emph{Suppose that $\bar W$ is gauge invariant and the matter representation obeys}
+\rthm{Theorem}{b-00465}{Explicit QME and gauge-anomaly cancellation} ~ \emph{Suppose that $\bar W(\gamma,w)$ is gauge invariant and the chiral matter representation $R$ obeys}
 \begin{equation}\label{eq-2-41}
 \operatorname{Tr}_R\!\left(t_A\{t_B,t_C\}\right)=0.
 \end{equation}
-
-\emph{For the interaction \eqref{eq-B-10}, the integrated interaction satisfies}
+\emph{Then the twisted interaction density $\mathcal I$ of~\eqref{eq-B-10} satisfies, modulo holomorphic total derivatives,}
 \begin{equation}\label{b-00468}
 \bar\partial\mathcal I=0,\qquad
 Q_0\mathcal I=0,\qquad Q_1\mathcal I=0,\qquad
 Q_2\mathcal I=Q_3\mathcal I=\cdots=0.
 \end{equation}
+\emph{Consequently, $\mathcal I$ solves the all-order QME~\eqref{eq-2-40}, and $\mathbf Q^2=0$ by Lemma~\ref{b-00452}.}
 
-\emph{Consequently, $\mathcal I$ satisfies \eqref{eq-2-40}, $\bigl(\bar\partial+Q_0+\sum_{n\ge1}\hbar^nQ_n\bigr)\mathcal I=0$, and $\mathbf Q^2=0$ by Lemma~\ref{b-00452}.}
-
-\emph{Proof.} The free differential $\bar\partial$ maps the integrated Dolbeault density of $\mathcal I$ to a total derivative. The gauge and matter vertices satisfy the classical master equation by
-\begin{equation*}
-C^A{}_{B[C}C^B{}_{DE]}=0,
-\qquad [t_A,t_B]=iC^C{}_{AB}t_C.
-\end{equation*}
-
-Since $\bar W$ contains no $b$ or $\beta$, its self-bracket vanishes, and, up to holomorphic total derivatives,
+\begin{proofbox}
+\textbf{Proof.} Applying $\bar\partial$ to $[\mathcal I]_{(0,2)}$ produces an antiholomorphic total derivative. At tree level ($n=0$), the gauge and matter kinetic couplings satisfy $\{\mathcal I_{\mathrm{gauge}}+\mathcal I_{\mathrm{matter}},\mathcal I_{\mathrm{gauge}}+\mathcal I_{\mathrm{matter}}\}=0$ by the Jacobi identity $C^A{}_{B[C}C^B{}_{DE]}=0$ and $[t_A,t_B]=iC^C{}_{AB}t_C$. Because $\bar W(\gamma,w)$ contains no $b$ or $\beta$ antifields, $\{\bar W,\bar W\}=0$, and up to holomorphic total derivatives its cross-bracket with the gauge and matter vertices vanishes by gauge invariance of $\bar W$:
 \begin{equation*}
 \begin{aligned}
 Q_0\mathcal I=\{\mathcal I,\mathcal I\}
 ={}&-2igc^A(t_A)^j{}_i\gamma_j
-\frac{\partial\bar W}{\partial\gamma_i}\\
-&-2gc^AC^B{}_{AC}w^C_{\dot a}
+\frac{\partial\bar W}{\partial\gamma_i}
+-2gc^AC^B{}_{AC}w^C_{\dot a}
 \frac{\partial_L\bar W}{\partial w^B_{\dot a}}=0.
 \end{aligned}
 \end{equation*}
 
-The last equality is gauge invariance of $\bar W$.
-
-At one loop, the triangle graphs give
+At one loop ($n=1$), $Q_1\mathcal I=\frac12\{\mathcal I,\mathcal I,\mathcal I\}$ is evaluated by the one-loop triangle fan ($\mathcal I_{\triangle}=\frac12$). The pure-gauge $(bcc)^3$ loop vanishes identically because the adjoint generators $(t_A^{\mathrm{adj}})^D{}_E=iC^D{}_{AE}$ are antisymmetric ($\operatorname{Tr}_{\mathrm{adj}}(t_A^{\mathrm{adj}}\{t_B^{\mathrm{adj}},t_C^{\mathrm{adj}}\})=0$), whereas the two opposite cyclic orientations of the matter $(c\gamma\beta)^3$ loop sum to the symmetrized trace~\eqref{eq-2-41}:
 \begin{equation}\label{b-00478}
 Q_1\mathcal I
 =\frac{ig^3}{128\pi^2}
@@ -2834,28 +2821,25 @@ Q_1\mathcal I
 c^A(\partial_{+\dot a}c^B)
 (\partial_+{}^{\dot a}c^C)=0.
 \end{equation}
-
-Each monomial of $\mathcal I$ contains at most one $b$ or $\beta$. For a nonzero graph term, \eqref{eq-antifield-loss} would give
+Finally, every monomial of $\mathcal I$ contains at most one antifield $b$ or $\beta$, so for $n\ge2$ the antifield count~\eqref{eq-antifield-loss} would require
 \begin{equation*}
 \begin{aligned}
-0&\le\#(b,\beta\text{ in the output})\\
-&=\#(b,\beta\text{ in the input monomial})
--n-\#(\bar W\text{ interaction vertices})\\
-&\le1-n<0\qquad(n\ge2).
+0&\le\#(b,\beta\text{ in output})\\
+&=\#(b,\beta\text{ in input monomial})
+-n-\#(\bar W\text{ interaction vertices})
+\le 1-n<0,
 \end{aligned}
 \end{equation*}
-Hence $Q_n\mathcal I=0$ for $n\ge2$.~\hfill\qedsymbol
+forcing $Q_n\mathcal I=0$ for all $n\ge2$.~\hfill\qedsymbol
+\end{proofbox}
 
-The same quadratic identities construct a product compatible with $\mathbf Q$: after summing interaction insertions and imposing the QME, their one-input component gives $\mathbf Q^2=0$, and their two-input component gives the bracket compatibility \eqref{eq-2-52}. To recover ordinary multiplication at order zero, dress $A,B$ with auxiliary fields whose unique contraction gives $AB$. This turns the bracket compatibility into the graded Leibniz rule \eqref{eq-chain}.
-
-The construction of \cite[Sections 4.3 and 4.5]{higher}, \cite[footnote 28]{semichiral} introduces a decoupled auxiliary pair with action $\int\Omega\wedge[a\bar\partial b_{\mathrm{aux}}]_{(0,2)}$ and $|a|=0$, $|b_{\mathrm{aux}}|=1$. For every $n\ge0$, $Q_na=Q_nb_{\mathrm{aux}}=0$; the free differential is still $Q_{\mathrm{BV}}=\bar\partial$, which vanishes on the holomorphic auxiliary jets. Thus
+Whereas the one-input $L_\infty$ identities give $\mathbf Q^2=0$, their two-input counterparts make $\mathbf Q$ a derivation of the interaction-dressed bracket $\{X,Y\}_{\mathcal I}$ in~\eqref{eq-2-52}. Because $\{X,Y\}_{\mathcal I}$ carries degree $+1$ and vanishes when no fields contract between $X$ and $Y$, Gaiotto, Kulp, and Wu~\cite[Sections 4.3 and 4.5]{higher}, \cite[footnote 28]{semichiral} adjoin a decoupled free auxiliary pair $(a,b_{\mathrm{aux}})$ with free action $\int_{\mathbb C^2}\Omega\wedge[a\bar\partial b_{\mathrm{aux}}]_{(0,2)}$ and degrees $|a|=0$, $|b_{\mathrm{aux}}|=1$. Since $(a,b_{\mathrm{aux}})$ does not appear in $\mathcal I$ and $\bar\partial$ vanishes on holomorphic jets, $Q_na=Q_nb_{\mathrm{aux}}=0$ for all $n\ge0$, so
 \begin{equation*}
 \mathbf Q(Aa)=(\mathbf QA)a,
 \qquad
 \mathbf Q(b_{\mathrm{aux}}B)=-b_{\mathrm{aux}}\mathbf QB.
 \end{equation*}
-
-The quantum product is defined by the unique auxiliary contraction; $\gamma=\{(A,B)\}$ marks this edge, and $\mathrm{aux}=0$ sets the remaining auxiliary fields to zero after contraction:
+Extracting the unique auxiliary Wick contraction $\gamma=\{(A,B)\}$ and setting the remaining auxiliary fields to zero ($\mathrm{aux}=0$) lowers the ghost number by $1$---so $|A\star B|=|A|+|B|$---and recovers ordinary pointwise multiplication $AB$ at $O(\hbar^0)$ (Figure~\ref{fig-product-graphs}):
 \begin{equation}\label{b-00504}
 \begin{gathered}
 A\star B
@@ -2868,38 +2852,36 @@ A\star B
 (Aa\,b_{\mathrm{aux}}B)=AB.
 \end{gathered}
 \end{equation}
-
-The auxiliary propagator marks the contraction; its relation to normal ordering is established in Section~\ref{sec-normal-ordering}.
+The equivalence between this marked-edge prescription and Bochner--Martinelli contour normal ordering is proved in Section~\ref{sec-normal-ordering}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.86\linewidth]{figures/vec/figures-circuits-product_graphs.pdf}
-\caption{The quantum product through order $\hbar^2$. Squares denote $A,B$, dots the interactions $\mathcal I$, and the blue edge the auxiliary contraction. Applying $\bar\partial$ gives the heat-edge sum; at order zero it gives $AB$. The coefficients include the interaction labellings.}
+\caption{The quantum product $A\star B$ through order $\hbar^2$. Squares denote $A,B$, dots the interactions $\mathcal I$, and the blue edge $\gamma$ the auxiliary contraction. Applying $\bar\partial$ gives the heat-edge sum; at order $\hbar^0$ it reduces to $AB$.}
 \label{fig-product-graphs}
 \end{figure}
 
 \rthm{Theorem}{local-7173c1bc-746f-41a1-b0c1-2796d8fbad48}{Leibniz rule}
-
-\emph{Suppose that the interaction satisfies the QME \eqref{eq-2-40}; for \eqref{eq-B-10}, Theorem~\ref{b-00465} gives its gauge-anomaly cancellation condition. For homogeneous operators $X,Y$, with $|X|$ the fermion number of $X$,}
+\emph{Suppose that the interaction satisfies the QME~\eqref{eq-2-40} (for~\eqref{eq-B-10}, under the anomaly-cancellation condition~\eqref{eq-2-41} of Theorem~\ref{b-00465}). For homogeneous local operators $X,Y$, with $|X|$ the fermion number of $X$,}
 \begin{equation}\label{eq-2-52}
 \mathbf Q\{X,Y\}_{\mathcal I}
 -\{\mathbf QX,Y\}_{\mathcal I}
 +(-1)^{|X|}\{X,\mathbf QY\}_{\mathcal I}=0,
 \end{equation}
-\emph{and the quantum product obeys}
+\emph{and the marked quantum product~\eqref{b-00504} obeys the exact graded Leibniz rule}
 \begin{equation}\label{eq-chain}
 \mathbf Q(A\star B)
 =(\mathbf QA)\star B+(-1)^{|A|}A\star(\mathbf QB).
 \end{equation}
+\emph{In particular, $\star$ maps quantum cocycles to quantum cocycles and descends to $\mathbf Q$-cohomology.}
 
-\emph{In particular, quantum multiplication takes quantum cocycles to quantum cocycles and descends to $\mathbf Q$-cohomology.}
-
-\emph{Proof.} The quadratic identity \cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Equation (4.19)]{higher} groups its terms according to whether the inner bracket contains both $X,Y$, only $X$, only $Y$, or only interactions. For $N$ interaction entries, a choice of $r$ entries has coefficient $\binom Nr$. Multiplying by $\hbar^{N-1}/N!$ uses
+\begin{proofbox}
+\textbf{Proof.} Partitioning the quadratic $L_\infty$ identity~\cite[Section 3.2]{operatope}, \cite[Theorem 7]{Wang}, \cite[Eq.~(4.19)]{higher} on $N$ copies of $\mathcal I$ and two operators $X,Y$ according to whether the inner bracket contains both $X$ and $Y$, only $X$, only $Y$, or only interactions, and multiplying by
 \begin{equation}\label{eq-quadratic-two}
 \frac{\hbar^{N-1}}{N!}\binom Nr
-=\frac{\hbar^{N-r-1}}{(N-r)!}\frac{\hbar^r}{r!}.
+=\frac{\hbar^{N-r-1}}{(N-r)!}\frac{\hbar^r}{r!},
 \end{equation}
-Summing over $N\ge1$ therefore gives
+summing over $N\ge1$ gives
 \begin{equation}\label{eq-quadratic-two-summed}
 \begin{aligned}
 0={}&\mathbf Q\{X,Y\}_{\mathcal I}
@@ -2909,33 +2891,27 @@ Summing over $N\ge1$ therefore gives
 \frac{\hbar^{s+1}}{s!}
 \Bigg\{\underbrace{\mathcal I,\ldots,\mathcal I}_{s},
 \underbrace{\sum_{\substack{k\ge2\\\text{interaction entries}}}
-\frac{\hbar^{k-2}}{k!}\bigl\{\mathcal I_1,\ldots,\mathcal I_k\bigr\}}_{0\text{ by \eqref{eq-2-40}}\;(\mathcal I_i=\mathcal I)},X,Y\Bigg\}.
+\frac{\hbar^{k-2}}{k!}\bigl\{\mathcal I_1,\ldots,\mathcal I_k\bigr\}}_{0\text{ by \eqref{eq-2-40}}\;(\mathcal I_i=\mathcal I)},X,Y\Bigg\},
 \end{aligned}
 \end{equation}
-The final line vanishes by the QME, leaving \eqref{eq-2-52}.
-
-Set $X=Aa$ and $Y=b_{\mathrm{aux}}B$ in \eqref{eq-2-52}, and extract the auxiliary contraction:
+establishing~\eqref{eq-2-52}. Substituting $X=Aa$ (fermion number $|A|$) and $Y=b_{\mathrm{aux}}B$ (with $\mathbf Q(b_{\mathrm{aux}}B)=-b_{\mathrm{aux}}\mathbf QB$) into~\eqref{eq-2-52} and projecting onto the single auxiliary contraction yields~\eqref{eq-chain}:
 \begin{equation*}
-0=\mathbf Q(A\star B)
--(\mathbf QA)\star B-(-1)^{|A|}A\star(\mathbf QB).
+0=\mathbf Q(A\star B)-(\mathbf QA)\star B-(-1)^{|A|}A\star(\mathbf QB).
 \end{equation*}
-
-Consequently, $\mathbf QA=\mathbf QB=0$ gives $\mathbf Q(A\star B)=0$. For homogeneous $X,Y$ with $|X|=|A|+1$ and $|Y|=|B|+1$, the same identity and $\mathbf Q^2=0$ (Lemma~\ref{b-00452}) give
+Hence $\mathbf QA=\mathbf QB=0$ implies $\mathbf Q(A\star B)=0$, while for coboundary shifts $\mathbf QX,\mathbf QY$ ($|X|=|A|-1$, $|Y|=|B|-1$ mod $2$) equation~\eqref{eq-chain} and $\mathbf Q^2=0$ give
 \begin{equation}\label{eq-representatives}
 \begin{aligned}
 &(A+\mathbf QX)\star(B+\mathbf QY)-A\star B\\
 &\qquad=\mathbf Q\bigl(X\star B+(-1)^{|A|}A\star Y
-+X\star\mathbf QY\bigr).
++X\star\mathbf QY\bigr),
 \end{aligned}
 \end{equation}
-
-The resulting cohomology class is therefore independent of representatives.~\hfill\qedsymbol
+proving that $[A\star B]_{\mathbf Q}$ depends only on the cohomology classes $[A]_{\mathbf Q}$ and $[B]_{\mathbf Q}$.~\hfill\qedsymbol
+\end{proofbox}
 
 \subsection{Order-by-order representatives}\label{sec-order-by-order}
 
-We provide some explicit examples to illustrate the idea.
-
-For $Q_0A=Q_0B=0$, the first two orders of \eqref{eq-chain} are
+Expanding the derivation identity~\eqref{eq-chain} in powers of $\hbar$ shows directly how the loop terms of $A\star B$ repair the failure of the pointwise Leibniz rule. For classical cocycles $Q_0A=Q_0B=0$, the $O(\hbar)$ and $O(\hbar^2)$ coefficients of~\eqref{eq-chain} read
 \begin{equation}\label{eq-2-55}
 \begin{aligned}
 Q_0\{\mathcal I,A,B\}^{\gamma,0}+Q_1(AB)
@@ -2947,10 +2923,9 @@ Q_0\{\mathcal I,A,B\}^{\gamma,0}+Q_1(AB)
 +(-1)^{|A|}\{\mathcal I,A,Q_1B\}^{\gamma,0}.
 \end{aligned}
 \end{equation}
+At one loop, the classical variation $Q_0\{\mathcal I,A,B\}^{\gamma,0}$ cancels the cross-contraction defect $Q_1(AB)-(Q_1A)B-(-1)^{|A|}A(Q_1B)$ of~\eqref{eq-2-29} identically; at two loops, $\frac12\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}$ simultaneously absorbs the two-loop cross-contractions in $Q_2(AB)$ and the one-loop variation $Q_1\{\mathcal I,A,B\}^{\gamma,0}$ of the one-loop product correction.
 
-\textbf{Thus, the classical variation of the one-loop term of the quantum product cancels the one-loop cross-contraction.} Its two-loop term absorbs the remaining two-loop defect together with the action of $Q_1$ on the one-loop term.
-
-If $A=\sum_i\hbar^iA_i$ and $B=\sum_j\hbar^jB_j$ are quantum cocycles, their product has coefficients
+More generally, given any two full quantum cocycles $A=\sum_{i\ge0}\hbar^iA_i$ and $B=\sum_{j\ge0}\hbar^jB_j$ ($\mathbf QA=\mathbf QB=0$), expanding $\mathcal O=A\star B=\sum_{r\ge0}\hbar^r\mathcal O_r$ gives
 \begin{equation}\label{eq-2-32}
 \mathcal O_r=\sum_{i+j+n=r}\frac1{n!}\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{n},A_i,B_j\bigr\}^{\gamma,0},\qquad\mathcal O_0=A_0B_0\ \text{\eqref{b-00504}},
 \end{equation}
@@ -2964,33 +2939,31 @@ If $A=\sum_i\hbar^iA_i$ and $B=\sum_j\hbar^jB_j$ are quantum cocycles, their pro
 +{\frac12\{\mathcal I,\mathcal I,A_0,B_0\}^{\gamma,0}}.
 \end{aligned}
 \end{equation}
-
-Equation~\eqref{eq-chain} gives $\sum_{k=0}^rQ_k\mathcal O_{r-k}=0$ at every order. These are the completion equations \eqref{eq-liftingequations} for the product $A_0B_0$: the quantum product gives in closed form the completion that the homotopy transfer of Section~\ref{sec-homotopy-transfer} constructs order by order.
+By~\eqref{eq-chain}, these coefficients automatically solve the cocycle-completion equations $\sum_{k=0}^rQ_k\mathcal O_{r-k}=0$~\eqref{eq-liftingequations} at every order $r\ge0$, providing an explicit closed-form completion of $A_0B_0$ without solving linear $Q_0$-inversion systems order by order (as exploited for multi-graviton operators in Section~\ref{sec-lifting}).
 
 \subsection{The quantum BPS ring}\label{sec-ring}
 
-Write $[\cdot]_{\mathbf Q}$ for the class of a quantum cocycle.
+Write $[\cdot]_{\mathbf Q}$ for the cohomology class of a quantum cocycle in $H(\mathbf Q)$.
 
-\rthm{Theorem}{b-00513}{} \emph{Suppose the interaction satisfies \eqref{eq-2-40}, the quantum master equation. } \emph{The quantum product \eqref{b-00504} induces an associative, graded-commutative, unital multiplication on $H(\mathbf Q)$. } \emph{For quantum cocycles $A,B,D$,}
+\rthm{Theorem}{b-00513}{Associativity, graded commutativity, and descent of the quantum BPS ring} \emph{Suppose the interaction satisfies the quantum master equation~\eqref{eq-2-40}. Then the marked product~\eqref{b-00504} induces an associative, graded-commutative, unital multiplication on $H(\mathbf Q)$: for homogeneous quantum cocycles $A,B,D$,}
 \begin{equation}\label{eq-ring-associativity}
 [(A\star B)\star D]_{\mathbf Q}
 =[A\star(B\star D)]_{\mathbf Q},
 \end{equation}
 \begin{equation}\label{eq-ring-commutativity}
 [A\star B]_{\mathbf Q}
-=(-1)^{|A||B|}[B\star A]_{\mathbf Q}.
+=(-1)^{|A||B|}[B\star A]_{\mathbf Q},
 \end{equation}
-
-\emph{The unit is strict:}
+\emph{with strict cochain-level unit}
 \begin{equation}\label{eq-ring-unit}
 A\star1=1\star A=A.
 \end{equation}
+\emph{Furthermore, under the successive homotopy transfers of Section~\ref{sec-homotopy-transfer}, $\star$ induces on every intermediate space $\mathrm{BPS}_{\hbar^{r-1}}$ ($r\ge1$) the ordinary product of leading representatives, and each differential $d_r$ is a graded derivation of this product.}
 
-\emph{In the successive homotopy transfer of Section~\ref{sec-homotopy-transfer}, the quantum product induces on every space $\mathrm{BPS}_{\hbar^{r-1}}$ ($r\ge1$) the ordinary product of leading representatives, and every $d_r$ is a derivation of it.}
+\begin{proofbox}
+\textbf{Proof.} \emph{(i) Descent to $\mathrm{BPS}_{\hbar^{r-1}}$ and strict unit.} Equation~\eqref{eq-representatives} ensures that $\star$ is well defined on $H(\mathbf Q)$. Similarly, any class in $\mathrm{BPS}_{\hbar^{r-1}}$ is represented by a partial completion $\tilde A=a+\hbar a_1+\cdots$ whose $\mathbf Q$-variation begins at order $\hbar^r$ with representative $d_ra$; since $\tilde A\star\tilde B=ab+O(\hbar)$, equation~\eqref{eq-chain} implies that $\mathbf Q(\tilde A\star\tilde B)$ also vanishes through $O(\hbar^{r-1})$ and begins at $O(\hbar^r)$ with $(d_ra)b+(-1)^{|a|}a(d_rb)$, proving both induced multiplication and the derivation property of $d_r$. For the unit~\eqref{eq-ring-unit}, the identity operator $1$ carries no fields, so in any marked graph with $n\ge1$ interaction vertices it attaches solely via the single marked edge: as a degree-one leaf in the electrical network, its resistor carries fixed external current regardless of its resistance, so its current differential vanishes (equivalently, deleting that leaf leaves $|I'|=2n$ edges on $|V'|=n+1\ge2$ vertices, violating the Laman bound $2n\le2(n+1)-3$). Thus only the $n=0$ term survives, giving $A\star1=1\star A=A$ identically.
 
-\emph{Proof.} The chain identity \eqref{eq-chain} makes the product well-defined on cohomology. A class of $\mathrm{BPS}_{\hbar^{r-1}}$ has a representative $a+\hbar a_1+\cdots$ whose $\mathbf Q$-variation starts at order $\hbar^r$ with $d_ra$. Since $A\star B=AB+O(\hbar)$, the product of two such representatives has leading term $ab$, and by \eqref{eq-chain} its $\mathbf Q$-variation starts at order $\hbar^r$ with $(d_ra)b+(-1)^{|a|}a\,d_rb$. For the unit, the identity insertion has no fields, so in a marked circuit with $n\ge1$ interaction nodes it is wired only by the marked resistor. It is a dead end: the marked resistor carries the current injected at the identity insertion, whatever its resistance, so this resistance moves no current and the current form vanishes. Equivalently, the Laman condition describes generic minimal rigidity in the plane: a leaf can rotate about its neighbour when $|V|>2$. Deleting that leaf would leave $|I|-1=2(|V|-1)-2>2(|V|-1)-3$, violating the subgraph bound. So only the zero-interaction marked segment contributes.
-
-For three closed insertions $X,Y,Z$, sum the quadratic identities with all interaction entries, as in \cite[Sections 4.3 and 4.5]{higher}. The pure-interaction terms vanish by \eqref{eq-2-40}, and the single-input terms vanish by closure. With the ordered-bracket sign of \eqref{eq-A-28}, the remaining identity is
+\emph{(ii) Common-root homotopy and vanishing of parallel marks.} For any three $\mathbf Q$-closed insertions $X,Y,Z$, summing the quadratic $L_\infty$ identities over all interaction insertions as in~\cite[Sections 4.3 and 4.5]{higher} (where pure-interaction inner brackets vanish by~\eqref{eq-2-40} and single-operator inner brackets vanish by $\mathbf Q$-closure, while a ternary graph with $n$ interactions has $|V|=n+3$, $|I|=2n+3$, and loop order $n+1$) gives, with the sign conventions of~\eqref{eq-A-28},
 \begin{equation}\label{eq-ring-twisted-jacobi}
 \begin{aligned}
 0={}&\{X,\{Y,Z\}_{\mathcal I}\}_{\mathcal I}
@@ -3001,28 +2974,21 @@ For three closed insertions $X,Y,Z$, sum the quadratic identities with all inter
 \bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{n},X,Y,Z\bigr\}.
 \end{aligned}
 \end{equation}
-
-A ternary graph with $n$ interactions has $n+3$ vertices and $2n+3$ edges, hence loop number $n+1$. This fixes the power of $\hbar$ in the last line.
-
-Take two independent copies $(a_1,b_{\mathrm{aux},1})$ and $(a_2,b_{\mathrm{aux},2})$ of the free auxiliary pair defined above. Each $a_i$ is even and each $b_{\mathrm{aux},i}$ is odd. Substitute
+Introduce two independent decoupled auxiliary pairs $(a_1,b_{\mathrm{aux},1})$ and $(a_2,b_{\mathrm{aux},2})$ ($|a_i|=0$, $|b_{\mathrm{aux},i}|=1$) and set
 \begin{equation*}
 X=Aa_1,\qquad Y=Da_2,\qquad
-Z=b_{\mathrm{aux},1}b_{\mathrm{aux},2}B.
+Z=b_{\mathrm{aux},1}b_{\mathrm{aux},2}B,
 \end{equation*}
-
-The last insertion is the root. This marks the edges $AB$ and $DB$, as in Figure~\ref{b-00530}.
+placing $Z$ at the root $0$ so that the auxiliary contractions mark both edges $(A,B)$ and $(D,B)$ (Figure~\ref{b-00530}).
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\linewidth]{figures/vec/common-root-smearing.pdf}
 \caption{Common-root integration and pair-collapse channels. The double circle fixes $B$ at $0$; all other positions range over $\mathbb C^2$. Only auxiliary contractions are drawn; the integrals and the ultraviolet part of $\bar\partial$ act on the full graph. Parallel marks in (d) give zero.}
-\label{b-00527}
-\label{b-00528}
-\label{b-00529}
-\label{b-00530}
+\label{b-00527}\label{b-00528}\label{b-00529}\label{b-00530}
 \end{figure}
 
-The ordered-bracket sign gives
+Evaluating the three binary channels in~\eqref{eq-ring-twisted-jacobi}: in the first two (panels (b) and (c)), contracting $(a_1,b_{\mathrm{aux},1})$ or $(a_2,b_{\mathrm{aux},2})$ yields
 \begin{equation}\label{eq-ring-root-contractions}
 \begin{aligned}
 \left.\{Aa_1,b_{\mathrm{aux},1}b_{\mathrm{aux},2}B\}_{\mathcal I}
@@ -3030,21 +2996,17 @@ The ordered-bracket sign gives
 &=(-1)^{|A|}b_{\mathrm{aux},2}(A\star B),\\
 \left.\{Da_2,b_{\mathrm{aux},1}b_{\mathrm{aux},2}B\}_{\mathcal I}
 \right|_{a_2=b_{\mathrm{aux},2}=0}
-&=(-1)^{|D|+1}b_{\mathrm{aux},1}(D\star B).
+&=(-1)^{|D|+1}b_{\mathrm{aux},1}(D\star B),
 \end{aligned}
 \end{equation}
-
-In the second line the odd derivative passes through $b_{\mathrm{aux},1}$, contributing the extra minus sign.
-
-The third binary channel first collapses $A,D$. Both marked resistors then join that collapsed node to $B$: they are in parallel, and their proportional currents kill the measure for every holomorphic derivative (Corollary~\ref{b-00188}, \eqref{eq-1-13}). Consequently,
+where in the second line $\partial_L/\partial b_{\mathrm{aux},2}$ passes odd $b_{\mathrm{aux},1}$. In the third channel (panel (d)), $\{Aa_1,Da_2\}_{\mathcal I}$ first collapses $A$ and $D$ to a single vertex, after which both marked edges connect that collapsed vertex in parallel to $B$; by Corollary~\ref{b-00188}~\eqref{eq-1-13}, parallel edges carry collinear currents and annihilate the current measure at every derivative order:
 \begin{equation}\label{eq-ring-parallel-channel}
 \left.
 \{\{Aa_1,Da_2\}_{\mathcal I},
 b_{\mathrm{aux},1}b_{\mathrm{aux},2}B\}_{\mathcal I}
 \right|_{\mathrm{aux}=0}=0.
 \end{equation}
-
-Substitute \eqref{eq-ring-root-contractions} and \eqref{eq-ring-parallel-channel} into \eqref{eq-ring-twisted-jacobi}. Multiplication by $(-1)^{|D|+1}$ gives
+Substituting~\eqref{eq-ring-root-contractions}--\eqref{eq-ring-parallel-channel} into~\eqref{eq-ring-twisted-jacobi} and multiplying by $(-1)^{|D|+1}$ yields the chain-level common-root homotopy
 \begin{equation}\label{eq-ring-common-root-homotopy}
 \begin{aligned}
 &A\star(D\star B)-(-1)^{|A||D|}D\star(A\star B)\\
@@ -3055,37 +3017,33 @@ Substitute \eqref{eq-ring-root-contractions} and \eqref{eq-ring-parallel-channel
  b_{\mathrm{aux},1}b_{\mathrm{aux},2}B\bigr\}
 \right|_{\mathrm{aux}=0}\right]\\
 &\quad=(-1)^{|D|}\mathbf Q\sum_{n\ge0}\frac{\hbar^{n+1}}{n!}
-\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{n},A,D,B\bigr\}^{\gamma,\gamma^{\prime}}.
+\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{n},A,D,B\bigr\}^{\gamma,\gamma^{\prime}},
 \end{aligned}
 \end{equation}
-Here $\gamma=\{(A,B)\}$ and $\gamma^{\prime}=\{(D,B)\}$; the double-marked bracket is defined by the displayed auxiliary contraction in this order, with both marked displacements zero.
+where $\gamma=\{(A,B)\}$ and $\gamma'=\{(D,B)\}$ have zero marked displacements (note that the $n$-interaction term has $2n+1$ physical contractions while $\mathcal I_1,\ldots,\mathcal I_n$ supply at most $n$ antifields $b,\beta$, so the sum terminates finitely on polynomial inputs).
 
-Moreover, its $n$-interaction term has $2n+1$ physical contractions. The interactions supply at most $n$ fields of type $b$ or $\beta$, so at least $n+1$ must come from the inputs. The homotopy is therefore a finite sum of local operators for finite polynomial inputs.
-
-Setting $B=1$ proves graded commutativity. For three closed inputs, \eqref{eq-chain}, graded commutativity, and \eqref{eq-ring-common-root-homotopy} give
+\emph{(iii) Graded commutativity and associativity.} Setting $B=1$ in~\eqref{eq-ring-common-root-homotopy} and using $D\star1=D$, $A\star1=A$ immediately proves graded commutativity~\eqref{eq-ring-commutativity} on $H(\mathbf Q)$. Combining~\eqref{eq-ring-commutativity} with~\eqref{eq-ring-common-root-homotopy} on $H(\mathbf Q)$ then gives associativity~\eqref{eq-ring-associativity}:
 \begin{equation}\label{eq-ring-associativity-proof}
 \begin{aligned}
 [(A\star B)\star D]_{\mathbf Q}
 &\underset{\eqref{eq-ring-commutativity}}{=}(-1)^{(|A|+|B|)|D|}[D\star(A\star B)]_{\mathbf Q}\\
 &\underset{\eqref{eq-ring-common-root-homotopy}}{=}(-1)^{|B||D|}[A\star(D\star B)]_{\mathbf Q}\\
-&\underset{\eqref{eq-ring-commutativity}}{=}[A\star(B\star D)]_{\mathbf Q}.
+&\underset{\eqref{eq-ring-commutativity}}{=}[A\star(B\star D)]_{\mathbf Q}.\quad\qedsymbol
 \end{aligned}
 \end{equation}
+\end{proofbox}
 
-The exact term in \eqref{eq-ring-common-root-homotopy} vanishes in cohomology.~\hfill\qedsymbol
-
-For fixed quantum classes, the marked graph prescription gives a well-defined product independent of their cocycle representatives, by \eqref{eq-representatives}. A change of local prescription gives the same product on $H(\mathbf Q)$ if its difference is locally $\mathbf Q$-exact on closed inputs. This is distinct from choosing quantum completions of classical representatives; the finite freedom in those completions and in the renormalization prescription is discussed with the successive products in Section~\ref{sec-homotopy-transfer}.
+For fixed quantum classes in $H(\mathbf Q)$, the marked-graph product is independent of cocycle representatives by~\eqref{eq-representatives}, and any alternative local product prescription differing by a $\mathbf Q$-exact homotopy on closed inputs induces the same ring structure on $H(\mathbf Q)$ (distinct from the finite $\hbar$-completion freedom of classical classes classified in Theorem~\ref{product-uniqueness-ch9-p01}).
 
 \subsection{The graph formula of the quantum product}\label{the-graph-formula}
 
-For a physical edge $(v,w)$, the operator $\Delta_{vw}$ contracts one field at vertex $v$ with its BV conjugate at vertex $w$, using the pairing~\eqref{eq-A-20}. For example, in the $\mathcal N=4$ superfield variables, at fixed vertex positions,
+On each physical edge $(v,w)$, $\Delta_{vw}$ contracts paired fields between vertices $v$ and $w$ via~\eqref{eq-A-20}---for instance, in $\mathcal N=4$ superfield variables~\eqref{eq-A-16},
 \begin{equation*}
 \Delta_{vw}=-\delta^{DE}\int d^3\theta\,
 \frac{\delta}{\delta C_v^D(\theta)}
 \frac{\delta}{\delta C_w^E(\theta)}.
 \end{equation*}
-
-Here $C_v^D$ is the field at vertex $v$, and the fibre derivatives are given by~\eqref{eq-A-16}. Composing these contractions in edge order gives the graph coefficient
+Substituting the operatope representation~\eqref{eq-operatope} into~\eqref{b-00504} expresses the $n$-loop product coefficient as a sum over Laman graphs containing the marked edge $\gamma=\{(n+1,n+2)\}$:
 \begin{equation}\label{eq-2-31}
 \begin{aligned}
 \frac1{n!}\bigl\{\underbrace{\mathcal I,\ldots,\mathcal I}_{n},A,B\bigr\}^{\gamma,0}
@@ -3102,67 +3060,69 @@ Here $C_v^D$ is the field at vertex $v$, and the fibre derivatives are given by~
 \Bigg]_{\mathrm{jets},\,x_v=x,\,z=0}.
 \end{aligned}
 \end{equation}
-Here $\gamma=\{(n+1,n+2)\}$ and $T$ is a spanning tree containing the marked edge. The remaining $n=|I|-|T|$ currents supply the measure, with $d^2y_e=dy_{e,+\dot+}\wedge dy_{e,+\dot-}$ and the orientation of \eqref{eq-operatope}; conservation is imposed at every vertex $v\in V$.
-
-The jet prescription acts on the complete integral. A derivative with respect to an edge displacement inserts its current:
+Here $T\subset I$ is any spanning tree containing the marked edge $(n+1,n+2)$, the $n=|I|-|T|$ complementary chords carry $-d^2y_e=-dy_{e,+\dot+}\wedge dy_{e,+\dot-}$, and current conservation holds at every vertex. Derivatives on contracted input letters act via~\eqref{eq-sum-spinor-conventions} and edge displacements,
 \begin{equation}\label{eq-product-current-insertion}
 \frac{\partial}{\partial z_e^{+\dot a}}
 e^{-\sum_{f\in I}y_{f,+\dot b}z_f^{+\dot b}}
 =-y_{e,+\dot a}
-e^{-\sum_{f\in I}y_{f,+\dot b}z_f^{+\dot b}}.
+e^{-\sum_{f\in I}y_{f,+\dot b}z_f^{+\dot b}},
 \end{equation}
-Derivatives on contracted letters act through these displacements with the coordinate convention \eqref{eq-sum-spinor-conventions}; $\lambda_v$ differentiates the surviving fields at $v$. Finally set $z=0$ and $x_v=x$. Section~\ref{sec-forests} reduces the graph sum to product forests and evaluates the remaining current integrals.
+while $\lambda_v$ differentiates surviving output fields at $v$ before setting $z=0$ and $x_v=x$. Section~\ref{sec-forests} classifies the contributing graphs as product forests and reduces their current integrals polynomially.
 
 \rthm{Corollary}{local-ch8-finite-product-corollary}{Finiteness of the quantum product}
+\emph{For polynomial local inputs $A,B$ and any polynomial superpotential $\bar W$ in~\eqref{eq-B-10}, the marked product $A\star B$ terminates at a finite power of $\hbar$.}
 
-For polynomial local inputs and a polynomial superpotential in the interaction \eqref{eq-B-10}, the quantum product has finitely many powers of $\hbar$.
-
-\emph{Proof.} Each order-$n$ product graph has $n$ interaction vertices and $2n$ physical contractions, so Theorem \ref{b-00249} gives
+\begin{proofbox}
+\textbf{Proof.} An order-$n$ graph in~\eqref{eq-2-31} has $n$ interaction vertices and $2n$ physical contractions, so Theorem~\ref{b-00249} gives
 \begin{equation*}
 \begin{aligned}
 \#(b,\beta\text{ in output})
-&=\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B)\\
-&\quad+\underbrace{n-\#(\bar W\text{ vertices})}_{\text{interaction terminals}}
+&=\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B)
++\underbrace{n-\#(\bar W\text{ vertices})}_{\text{interaction terminals}}
 -\underbrace{2n}_{\text{physical contractions}}\\
-&=\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B)-n-\#(\bar W\text{ vertices})\ge0.
+&=\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B)-n-\#(\bar W\text{ vertices})\ge0,
 \end{aligned}
 \end{equation*}
-
-Writing $[\hbar^n]$ for the coefficient of $\hbar^n$, we obtain
+and therefore
 \begin{equation}\label{local-ch8-finite-product-bound}
 [\hbar^n](A\star B)=0
-\quad\text{if}\quad
+\quad\text{whenever}\quad
 n>\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B).
 \end{equation}
-
-For polynomial inputs the counts are the maxima over their monomials; the same loss adds at the binary vertices of any fixed bracketing of finitely many inputs.
-
-For a formal superpotential the bound holds coefficientwise in its coefficients. $\square$
+Taking the maximum over the finitely many monomials of $A$ and $B$ proves polynomial termination in $\hbar$ (and similarly for any iterated product of finitely many polynomial inputs; for a formal power-series superpotential, the bound holds coefficientwise in its couplings).~\hfill\qedsymbol
+\end{proofbox}
 
 \subsection{One- and two-loop examples in $\mathcal N=4$ Yang--Mills theory}\label{sec-product-loops}
 
-The one-loop triangle has vertices $1:\mathcal I$, $2:A$ and $3:B$, and marked edge $\gamma=\{(2,3)\}$. Its kernel is exactly the same as the fan kernel. Pairing its displacement exponential with the spatial functional derivatives of \eqref{eq-2-10} gives
+In $\mathcal N=4$ Yang--Mills theory with superfield action~\eqref{eq-A-15}, the one-loop product $(A\star B)_{\mathrm{1\text{-}loop}}(x)$ comes from the single triangle on vertices $(1:\mathcal I,2:A,3:B)$ with marked edge $\gamma=\{(2,3)\}$. Evaluating its triangle current integral on the two-simplex $\Delta^2=\{r_1,r_2>0,\,r_1+r_2<1\}$ and pairing with the displaced functional derivatives~\eqref{eq-sum-deltaC-norm} yields
 \begin{equation}\label{eq-2-34}
 \begin{aligned}
 &(A\star B)_{\mathrm{1\text{-}loop}}(x)
 =\hbar\{\mathcal I,A,B\}^{\{(2,3)\},0}(x)
 \\
 &\quad=\frac{i\hbar}{32\pi^2}\int_0^1dr_1\int_0^{1-r_1}dr_2
-\int d^3\theta\,C_X{}^{YZ}\\
-&\times\int d^4z_1\,d^4z_2\\
-&\times(\partial_{+\dot a}C^X)
+\int d^3\theta\,C_X{}^{YZ}
+\int d^4z_1\,d^4z_2\\
+&\qquad\times(\partial_{+\dot a}C^X)
 \big(x+r_1z_1+(1-r_1)z_2,\theta\big)\\
-&\times\left.
+&\qquad\times\left.
 \partial_{2,+}{}^{\dot a}
 \left(\frac{\delta A(x_2)}{\delta C^Y(x_2+z_1,\theta)}\right)
 \right|_{x_2=x+r_2(z_2-z_1)}
-\frac{\delta B(x)}{\delta C^Z(x+z_2,\theta)}.
+\frac{\delta B(x)}{\delta C^Z(x+z_2,\theta)},
 \end{aligned}
 \end{equation}
+where $\partial_{2,+}{}^{\dot a}$ differentiates uncontracted fields in $A(x_2)$ prior to setting $x_2=x+r_2(z_2-z_1)$. In particular, when $A$ and $B$ contain no input holomorphic derivatives ($z_1=z_2=0$), integrating $\int_{\Delta^2}dr_1\,dr_2=\tfrac12$ reduces~\eqref{eq-2-34} immediately to
+\begin{equation*}
+(A\star B)_{\mathrm{1\text{-}loop}}(x)\big|_{\text{no input derivatives}}
+=\frac{i\hbar}{64\pi^2}\int d^3\theta\,C_X{}^{YZ}
+(\partial_{+\dot a}C^X)(x,\theta)\,
+\partial_+{}^{\dot a}\!\left(\frac{\delta A}{\delta C^Y(\theta)}\right)
+\frac{\delta B}{\delta C^Z(\theta)},
+\end{equation*}
+whose $Q_0$-variation cancels~\eqref{eq-2-29} and evaluates multi-graviton one-loop completions directly (Section~\ref{sec-graviton-example}).
 
-Here $x$ is the arbitrary common position of the local product.
-
-At two loops the physical graphs have four edges (plus, as always, one edge for the auxiliary fields). They consist of a fan and two triangles attached to opposite inputs (Figure~\ref{fig-two-loop-product}). Their ordered edges, for $3=A$ and $4=B$, are
+At two loops ($|V|=4$ with interactions $1,2$ and insertions $3:A,4:B$, marked edge $\gamma=\{(3,4)\}$), three Laman topologies contribute (Figure~\ref{fig-two-loop-product}), with ordered edge lists
 \begin{equation}\label{eq-productedges}
 \begin{aligned}
 \Gamma_{\mathrm{fan}}&:(13,14,23,24,34),\\
@@ -3178,9 +3138,7 @@ At two loops the physical graphs have four edges (plus, as always, one edge for 
 \label{fig-two-loop-product}
 \end{figure}
 
-These are still fan kernels (but with more free injected momenta).
-
-The complete two-loop contribution, with $\gamma=\{(3,4)\}$, is
+All three two-loop topologies reduce via series--parallel moves to fan-type integrals with independent external momenta at both interactions and $A$: in~\eqref{eq-product2A} below, the first integral (carrying $1/2!=1/2$ from exchanging $1\leftrightarrow2$) is $\Gamma_{\mathrm{fan}}$ with two surviving output superfields $C^X(x_1,\theta^{(1)})$ and $C^U(x_2,\theta^{(2)})$, while the second and third integrals (where the two labellings $1\leftrightarrow2$ double $1/2!$ to $1$) are the asymmetric graphs $\Gamma_A$ and $\Gamma_B$ leaving a single twice-differentiated superfield $C^X(x_1,\theta)$. Writing $\partial_1,\partial_2,\partial_3$ for holomorphic derivatives acting on $C^X(x_1)$, $C^U(x_2)$, and the uncontracted letters of $A(x_3)$ respectively before setting $x_1=x_2=x_3=x$, the complete two-loop product is
 \begin{align}
 &(A\star B)_{\mathrm{2\text{-}loop}}(x)=\frac{\hbar^2}{2}\{\mathcal I,\mathcal I,A,B\}^{\gamma,0}(x)\notag\\*
 &=\frac{\hbar^2}{2(32\pi^2)^2}C_X{}^{YZ}C_U{}^{VW}
@@ -3230,8 +3188,7 @@ The complete two-loop contribution, with $\gamma=\{(3,4)\}$, is
 \Bigg[C^X(x_1,\theta)
 \frac{\delta A(x_3)}{\delta C^Y(x_3+z_{23},\theta)}\notag\\*
 &\hspace{60pt}\times\frac{\delta^2 B(x)}{\delta C^Z(x+z_{14},\theta)\,\delta C^W(x+z_{24},\theta)}
-\Bigg]_{x_1=x_3=x}
-.
+\Bigg]_{x_1=x_3=x}.
 \label{eq-product2A}
 \end{align}
 
@@ -3239,59 +3196,44 @@ The complete two-loop contribution, with $\gamma=\{(3,4)\}$, is
 
 \paragraph{Normal ordering.}\label{quantum-normal-ordering}
 
-The familiar quantum normal-ordering product is represented by a Bochner--Martinelli contour \cite[Section 2.3]{semichiral}, in parallel with normal ordering in two-dimensional CFT.
-
-For $L>0$, let $B_R$ be the ball of radius $R$ centred at the insertion of $B$ and $S_R^3=\partial B_R$, and define
+In direct analogy with contour normal ordering in two-dimensional CFT, one can also define a geometric product in four-dimensional holomorphic field theory by integrating a separated insertion against the Bochner--Martinelli kernel over a three-sphere~\cite[Section 2.3]{semichiral}: for scale $L>0$ and $S_R^3=\partial B_R$ the three-sphere of radius $R$ around $0$,
 \begin{equation}\label{eq-contour-product-definition}
 (A\star^{\prime}B)[L]=\int_{S_R^3}\Omega\wedge[P_{0,\infty}(x)]_\Omega\,(A(x)B(0))[L].
 \end{equation}
+We now prove that $\star'$ and the marked-graph product $\star$ of~\eqref{b-00504} represent the exact same cohomology product on $H(\mathbf Q_L)$ in the scale-$L$ effective complex of Section~\ref{sec-brackets}.
 
-We prove that $\star^{\prime}$ and the marked product \eqref{b-00504} agree on $H(\mathbf Q_L)$ in the effective-observable complex of Section~\ref{sec-brackets}.
-
-At fixed $L>0$, the joint two-insertion expansion is
+At fixed $L>0$, the joint effective two-operator insertion (including Wick contractions between $A(x)$ and $B(0)$, and requiring no UV counterterms by~\cite{Wang}) is
 \begin{equation}\label{eq-product-joint-effective}
 (A(x)B(0))[L]e^{I[L]/\hbar}
 =\lim_{\varepsilon\downarrow0}
 e^{\hbar\partial_{P_{\varepsilon,L}}}
 \bigl(A(x)B(0)e^{I/\hbar}\bigr),
 \end{equation}
-with $I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)}$. The Wick expansion includes contractions between the two insertions. As in \eqref{eq-C-local-to-effective}, the ultraviolet limit is taken at fixed $L$; the holomorphic theory studied here requires no divergent counterterms. The effective representatives depend on $L$, and \eqref{eq-C-RG-transport} identifies their cohomology at different scales. The local insertion Ward identity is
+with $I=\int_{\mathbb C^2}\Omega\wedge[\mathcal I]_{(0,2)}$, and local insertions intertwine $\mathbf Q$ and $\mathbf Q_L$ via
 \begin{equation}\label{eq-product-local-Ward}
 \mathbf Q_L(\mathcal O[L])=(\mathbf Q\mathcal O)[L],
 \qquad
 \mathbf Q_L=\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L.
 \end{equation}
-For separated insertions, supersymmetry descent \cite[Sections 2.2--2.3]{semichiral} supplies the antiholomorphic translation homotopy used below.
-
-Let $A(x,\bar\theta)[L]$ be the renormalized supersymmetry multiplet (Dolbeault form) of the effective insertion $A[L]$. In the coordinates of \eqref{eq-B-7},
+For separated insertions, holomorphic descent~\cite[Sections 2.2--2.3]{semichiral} provides the antiholomorphic translation homotopy: writing $A(x,\bar\theta)[L]$ for the full Dolbeault multiplet of $A[L]$ in the coordinates~\eqref{eq-B-7}, its $(0,1)$-form descendant satisfies
 \begin{equation}\label{eq-ring-descendant}
 \begin{aligned}
 A^{(1)}(x)[L]
 &=\frac14dx^{-\dot a}
 \left.\frac{\partial_L A(x,\bar\theta)[L]}{\partial\bar\theta^{\dot a}}
 \right|_{\bar\theta=0},\\
-\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)
-A^{(1)}[L]+\bar\partial_x A[L]&=(\mathbf QA)^{(1)}[L].
+\mathbf Q_L A^{(1)}[L]+\bar\partial_x A[L]&=(\mathbf QA)^{(1)}[L].
 \end{aligned}
 \end{equation}
-
-Taking the one-form component of the full composite multiplet gives its descendant \cite[Section 2.2]{semichiral}.
-
-\begin{proofbox}
-For $\mathbf QA=0$, write the form to the left of its coefficient:
+In particular, when $\mathbf QA=0$, writing $A^{(1)}[L]=dx^{-\dot a}A^{(1)}_{-\dot a}[L]$ expresses antiholomorphic derivatives as $\mathbf Q_L$-exact:
 \begin{equation}\label{eq-ring-descendant-component}
-\begin{aligned}
-A^{(1)}[L]&=dx^{-\dot a}A^{(1)}_{-\dot a}[L],\\
+A^{(1)}[L]=dx^{-\dot a}A^{(1)}_{-\dot a}[L],\qquad
 \frac{\partial A[L]}{\partial x^{-\dot a}}
-&=\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)
+=\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)
 A^{(1)}_{-\dot a}[L].
-\end{aligned}
 \end{equation}
 
-This gives the primitive of an antiholomorphic translation in the effective-observable complex.
-\end{proofbox}
-
-The BM kernel \eqref{eq-C-explicit-propagator} is
+Recall from~\eqref{eq-C-explicit-propagator} and~\eqref{eq-C-heat-spatial} the Bochner--Martinelli residue normalization on any positively oriented embedded three-sphere $S^3$ linking the origin once:
 \begin{equation}\label{eq-ring-propagator-residue}
 \begin{gathered}
 [P_{0,\infty}(x)]_\Omega
@@ -3299,61 +3241,39 @@ The BM kernel \eqref{eq-C-explicit-propagator} is
 {8\pi^2|x|_E^4},\qquad
 d\bigl(\Omega\wedge[P_{0,\infty}]_\Omega\bigr)
 =\delta_E^{(4)}(x)d^4x_E,\\
-\int_{S^3}\Omega\wedge[P_{0,\infty}]_\Omega=1.
+\int_{S^3}\Omega\wedge[P_{0,\infty}]_\Omega
+=\lim_{\varepsilon\downarrow0}\int_{|x|_E\le r}\Omega\wedge[K_\varepsilon]_\Omega
+=\lim_{\varepsilon\downarrow0}\left[1-\left(1+\frac{r^2}{2\varepsilon}\right)e^{-r^2/(2\varepsilon)}\right]=1.
 \end{gathered}
 \end{equation}
-
-The last integral holds for every positively oriented embedded three-sphere enclosing the origin once; its normalization is that of the heat kernel,
-\begin{equation*}
-\int_{|x|_E\le r}\Omega\wedge[K_\varepsilon]_\Omega
-=1-\left(1+\frac{r^2}{2\varepsilon}\right)e^{-r^2/(2\varepsilon)}
-\xrightarrow{\varepsilon\downarrow0}1.
-\end{equation*}
-
-Let $(A(x)B(0))^{(1)}[L]$ be the first descendant of the joint insertion with respect to the position $x$.
-
-For closed inputs and two different contours satisfying $S_1^3-S_0^3=\partial V$, with $V$ disjoint from all insertions,
+Writing $(A(x)B(0))^{(1)}[L]$ for the $(0,1)$-form descendant with respect to $x$, any two homologous contours $S_1^3-S_0^3=\partial V$ disjoint from $0$ define the same class in $H(\mathbf Q_L)$: for $\mathbf QA=\mathbf QB=0$, descent gives $\bar\partial_x(A(x)B(0))[L]=-\mathbf Q_L(A(x)B(0))^{(1)}[L]$, and since $d(\Omega\wedge[P_{0,\infty}]_\Omega)=0$ on $V$, Stokes' theorem yields
 \begin{equation}\label{eq-ring-sphere-homotopy}
 \begin{aligned}
 &\int_{S_1^3}\Omega\wedge[P_{0,\infty}]_\Omega(A(x)B(0))[L]
 -\int_{S_0^3}\Omega\wedge[P_{0,\infty}]_\Omega(A(x)B(0))[L]\\
-&\quad=-\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)
-\int_V\Omega\wedge[P_{0,\infty}]_\Omega
+&\quad=-\int_V\Omega\wedge[P_{0,\infty}]_\Omega\wedge\bar\partial_x(A(x)B(0))[L]
+=-\mathbf Q_L\int_V\Omega\wedge[P_{0,\infty}]_\Omega
 \wedge(A(x)B(0))^{(1)}[L].
 \end{aligned}
 \end{equation}
 
-For $\mathbf QA=\mathbf QB=0$, descent gives $\bar\partial_x(A(x)B(0))[L]=-\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)(A(x)B(0))^{(1)}[L]$; the propagator is closed on $V$, so
-
-\begin{equation*}
-\begin{aligned}
-\int_{\partial V}\Omega\wedge[P_{0,\infty}]_\Omega(A(x)B(0))[L]
-&=-\int_V\Omega\wedge[P_{0,\infty}]_\Omega\wedge\bar\partial_x(A(x)B(0))[L]\\
-&=-\bigl(\bar\partial+(I[L],\,\cdot\,)_L+\hbar\Delta_L\bigr)
-\int_V\Omega\wedge[P_{0,\infty}]_\Omega\wedge(A(x)B(0))^{(1)}[L].
-\end{aligned}
-\end{equation*}
-
-Equation~\eqref{eq-ring-sphere-homotopy} proves equality of the contour classes in the effective-observable complex.
-
-\rthm{Theorem}{b-00598}{Normal-ordering comparison} \emph{Let $A$ and $B$ be homogeneous quantum cocycles and $L>0$. } \emph{In the effective-observable complex at scale $L$, with differential \eqref{eq-product-local-Ward}, the contour product and the effective representative of \eqref{b-00504} satisfy}
+\rthm{Theorem}{b-00598}{Normal-ordering comparison} \emph{Let $A$ and $B$ be homogeneous quantum cocycles and $L>0$. In the effective-observable complex at scale $L$ with differential~\eqref{eq-product-local-Ward}, the contour product~\eqref{eq-contour-product-definition} and the marked product~\eqref{b-00504} satisfy}
 \begin{equation}\label{eq-normal-ordering-theorem}
 \begin{aligned}
 (A\star^{\prime}B)[L]
-&=(A\star B)[L]\\
-&\quad-\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}(x)]_\Omega
+&=(A\star B)[L]
+-\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}(x)]_\Omega
 \wedge(A(x)B(0))^{(1)}[L],\\
 [(A\star^{\prime}B)[L]]&=[(A\star B)[L]]\quad\text{in }H(\mathbf Q_L).
 \end{aligned}
 \end{equation}
 
-\emph{Proof.}
-
-The volume integral uses the full joint descendant and has type $(2,2)$. Evaluate it as one coefficientwise graph limit in the decoupled auxiliary theory: physical edges carry $P_{\varepsilon,L}$ and the marked edge carries $P_{\varepsilon,\infty}$. Independent edge cutoffs $\varepsilon_e>0$ give the same local collision kernel after all oriented lower faces are summed: each positive ray meets their union at
+\begin{proofbox}
+\textbf{Proof.} Shrinking the inner boundary of $V$ to $x=0$ replaces $V$ by the ball $B_R$, where the $(2,2)$-form integrand $\Omega\wedge[P_{0,\infty}(x)]_\Omega\wedge(A(x)B(0))^{(1)}[L]$ is evaluated coefficientwise as a regulated graph limit in the auxiliary extension: physical edges carry $P_{\varepsilon,L}$, while the auxiliary marked edge (ordered last, with zero displacement and its single $\hbar$ factor divided out) carries $P_{\varepsilon,\infty}$. Assigning independent UV cutoffs $\varepsilon_e>0$ to edges produces the same local collision integral once all lower UV facets are summed, because every positive resistance ray intersects their union at
 \begin{equation}\label{eq-independent-cutoff-section}
-[t]\longmapsto\left(\max_{f\in I}\frac{\varepsilon_f}{t_f}\right)(t_e)_{e\in I}.
+[t]\longmapsto\left(\max_{f\in I}\frac{\varepsilon_f}{t_f}\right)(t_e)_{e\in I},
 \end{equation}
-The collision form descends to $\mathbb{RP}_{>0}^{|I|-1}$, so its integral is independent of this radial section. As every $\varepsilon_e\to0$, the permitted resistance ratios exhaust this projective domain; the ultraviolet-finite boundary limit \cite[Theorem 6]{Wang} therefore does not depend on their relative rates. The marked edge is last, has zero displacement, and its single Wick factor $\hbar$ is divided out.
+and the closed projective current form on $\mathbb{RP}_{>0}^{|I|-1}$ is independent of this radial section as $\varepsilon_e\to0$~\cite[Theorem 6]{Wang}. On a connected cluster with $n$ interactions ($|V|=n+2$, $|I|=2n+1$), edge variations and $\hbar$ powers satisfy
 \begin{equation}\label{eq-normal-ordering-J}
 \begin{gathered}
 \bar\partial P_{\varepsilon,L}=K_\varepsilon-K_L,
@@ -3362,8 +3282,7 @@ The collision form descends to $\mathbb{RP}_{>0}^{|I|-1}$, so its integral is in
 \frac1\hbar\frac{\hbar^{2n+1}}{n!\hbar^n}=\frac{\hbar^n}{n!}.
 \end{gathered}
 \end{equation}
-
-Apply \eqref{eq-normal-ordering-J} to every edge, with the signs $(-1)^{j-1}$ of \eqref{eq-A-28}. The upper physical-edge faces assemble into $\mathbf Q_L$; pure-interaction collision faces cancel by the quantum master equation, and faces with only one insertion vanish by $\mathbf QA=\mathbf QB=0$. A remaining cluster contains both insertions and $n$ interactions. The rescaling $t_e\mapsto\varepsilon t_e$, $x_v\mapsto\sqrt\varepsilon\,x_v$ sends the physical upper endpoint to $L/\varepsilon\to\infty$, yielding exactly the projective marked kernel \eqref{eq-2-31}. The ordered Wick signs are those of \eqref{eq-A-28}; the zero-interaction identity in \eqref{b-00504} fixes the collision sign to $+AB$.
+Applying~\eqref{eq-normal-ordering-J} with the signs $(-1)^{j-1}$ of~\eqref{eq-A-28}, the upper $K_L$ faces assemble into $\mathbf Q_L$; pure-interaction UV collision clusters cancel by the QME, and single-insertion UV clusters vanish by $\mathbf QA=\mathbf QB=0$. On the remaining UV clusters collapsing both $A,B$ and $n$ interactions to $0$, rescaling $t_e\mapsto\varepsilon t_e$, $x_v\mapsto\sqrt\varepsilon\,x_v$ sends $L/\varepsilon\to\infty$ and reproduces the exact marked kernel~\eqref{eq-2-31} (with $n=0$ sign $+AB$ fixed by~\eqref{b-00504}), while the external Wick contractions reconstruct the scale-$L$ effective operator:
 \begin{equation}\label{eq-normal-ordering-smeared}
 \left[
 \left.\sum_{n\ge0}\frac{\hbar^n}{n!}
@@ -3372,22 +3291,23 @@ Apply \eqref{eq-normal-ordering-J} to every edge, with the signs $(-1)^{j-1}$ of
 \right][L]
 =(A\star B)[L].
 \end{equation}
-
-The graphs outside each collapsed cluster reconstruct its effective representative by the Ward identity $\mathbf Q_L(\mathcal O[L])=(\mathbf Q\mathcal O)[L]$ of a local insertion, the zero-form counterpart of \eqref{eq-ring-descendant}. The same ultraviolet-finite holomorphic graph prescription applies to the decoupled auxiliary extension. Away from the collision faces, the closed-input descent identity is $\bar\partial_x(A(x)B(0))[L]=-\mathbf Q_L(A(x)B(0))^{(1)}[L]$. The remaining boundary is $S_R^3$. Since $\Omega\wedge[P_{0,\infty}]_\Omega$ has odd degree, the regulated Stokes identity gives
+Combining this UV collision residue at $0$ with the outer sphere boundary $S_R^3$ and $\bar\partial_x(A(x)B(0))[L]=-\mathbf Q_L(A(x)B(0))^{(1)}[L]$ away from collisions (noting that $\Omega\wedge[P_{0,\infty}]_\Omega$ has odd total degree $3$) gives the regulated Stokes identity
 \begin{equation}\label{eq-normal-ordering-stokes}
 \begin{aligned}
 &\mathbf Q_L\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge(A(x)B(0))^{(1)}[L]\\
 &\quad=-\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\mathbf Q_L(A(x)B(0))^{(1)}[L]\\
 &\quad=\int_{B_R}\Omega\wedge[P_{0,\infty}]_\Omega\wedge\bar\partial_x(A(x)B(0))[L]\\
-&\quad=(A\star B)[L]-\int_{S_R^3}\Omega\wedge[P_{0,\infty}]_\Omega\,(A(x)B(0))[L].
+&\quad=(A\star B)[L]-\int_{S_R^3}\Omega\wedge[P_{0,\infty}]_\Omega\,(A(x)B(0))[L],
 \end{aligned}
 \end{equation}
-
-This is \eqref{eq-normal-ordering-theorem}. The collision coefficient is independent of $L$ by this rescaling \cite[Theorem 6]{Wang}; $L$ remains in the effective representatives and their differential.\hfill\qedsymbol
+which rearranges to~\eqref{eq-normal-ordering-theorem}.~\hfill\qedsymbol
+\end{proofbox}
 
 \paragraph{An explicit associator example.}\label{an-explicit-associator}
 
-\rthm{Example}{b-00610}{} In $\mathcal N=4$ Yang--Mills theory, let $A$ and $B$ be gauge-invariant polynomials in the scalar fields $(\gamma^I)_X$~(a subsector of the BMN sector), without holomorphic derivatives, and set $D=(\gamma^3)_X(\beta_2)^X$. Then
+Although $\star$ is associative on $H(\mathbf Q)$ (Theorem~\ref{b-00513}), it is \emph{not} associative at the cochain level: the ternary homotopy in~\eqref{eq-ring-common-root-homotopy} produces a genuine, nonzero $\mathbf Q$-exact associator even on gauge-invariant $1/16$-BPS cocycles.
+
+\rthm{Example}{b-00610}{Nonvanishing chain-level associator in $\mathcal N=4$ Yang--Mills theory} In $\mathcal N=4$ Yang--Mills theory, let $A$ and $B$ be gauge-invariant polynomials in the undifferentiated scalars $(\gamma^I)_X$ (a subsector of the chiral BMN sector), and set $D=(\gamma^3)_X(\beta_2)^X$. Then $A$, $B$, and $D$ are exact all-loop quantum cocycles ($\mathbf QA=\mathbf QB=\mathbf QD=0$), and their chain-level associator is the nonzero $\mathbf Q$-coboundary
 \begin{equation}\label{eq-ring-scalar-associator}
 \begin{aligned}
 &(A\star B)\star D-A\star(B\star D)\\
@@ -3402,7 +3322,10 @@ This is \eqref{eq-normal-ordering-theorem}. The collision coefficient is indepen
 \end{aligned}
 \end{equation}
 
-\emph{Proof.} Gauge invariance gives $Q_0A=Q_0B=0$. Since~$C^{XYZ}(\gamma^3)_X(\gamma^3)_Y(\gamma^1)_Z$~is zero, $Q_0 D$ is also zero. The possible one-loop action on $D$ contains $(\theta_1\theta_2)\theta_2=0$, and $Q_{n\ge2}$ requires at least three input fields. Thus $\mathbf QD=0$. Equation~\eqref{eq-2-34} gives
+\begin{proofbox}
+\textbf{Proof.} Gauge invariance gives $Q_0A=Q_0B=0$, and $Q_0D\propto C^{XYZ}(\gamma^3)_X(\gamma^3)_Y(\gamma^1)_Z=0$ by antisymmetry of $C^{XYZ}$. At loop level, $Q_1D$ vanishes because $(\theta_1\theta_2)\theta_2=0$ in~\eqref{eq-A-16}, while $Q_{n\ge2}D=0$ because $D$ has only two letters; similarly $Q_{n\ge1}A=Q_{n\ge1}B=0$ by Corollary~\ref{b-00235} since $A,B$ contain no $(b,\beta)$ antifields. Thus $\mathbf QA=\mathbf QB=\mathbf QD=0$.
+
+By Corollary~\ref{local-ch8-finite-product-corollary}, $A\star B=AB$ receives no loop corrections ($\#(b,\beta)=0$), whereas any product involving $D$ ($\#(b,\beta)=1$) is one-loop exact. Evaluating~\eqref{eq-2-34} on $(A,D)$ at $z_1=z_2=0$ gives
 \begin{equation*}
 \{\mathcal I,A,D\}^{\gamma,0}
 =\frac{g}{64\pi^2}C_{EX}{}^Y
@@ -3411,8 +3334,7 @@ This is \eqref{eq-normal-ordering-theorem}. The collision coefficient is indepen
 \left(\frac{\partial A}{\partial(\gamma^2)_X}\right)
 (\gamma^3)_Y.
 \end{equation*}
-
-Each physical contraction uses one $b$ or $\beta$. For an order-$n$ product, the $n$ interactions supply at most $n$ such factors, and $D$ supplies one; its $2n$ physical contractions therefore require $n\le1$~(one-loop exact). Products between operators containing only $c$ and $\gamma$ have no quantum correction. Expanding the two bracketings consequently gives, exactly,
+Subtracting $A\star(B\star D)=A(BD+\hbar\{\mathcal I,B,D\}^{\gamma,0})+\hbar\{\mathcal I,A,BD\}^{\gamma,0}$ from $(A\star B)\star D=(AB)\star D=ABD+\hbar\{\mathcal I,AB,D\}^{\gamma,0}$ leaves the cross-derivative terms of $\partial_{+\dot a}\partial/\partial(\gamma^2)_X$:
 \begin{equation*}
 \begin{aligned}
 &(A\star B)\star D-A\star(B\star D)\\
@@ -3426,18 +3348,17 @@ Each physical contraction uses one $b$ or $\beta$. For an order-$n$ product, the
 \right](\gamma^3)_Y.
 \end{aligned}
 \end{equation*}
-
-We have
+On the other hand, since $A$ is gauge invariant ($c^EC_{EY}{}^X(\gamma^I)_X\partial A/\partial(\gamma^I)_Y=0$), differentiating with respect to $(\gamma^2)_X$ and contracting with $(\gamma^3)_X$ gives
 \begin{equation*}
 Q_0\left[
 \partial_+{}^{\dot a}\left(
 \frac{\partial A}{\partial(\gamma^2)_X}\right)(\gamma^3)_X
 \right]
 =-gC_{EX}{}^Y(\partial_+{}^{\dot a}c^E)
-\frac{\partial A}{\partial(\gamma^2)_X}(\gamma^3)_Y.
+\frac{\partial A}{\partial(\gamma^2)_X}(\gamma^3)_Y,
 \end{equation*}
-
-The same identity holds for $B$. Together with the antisymmetry of the dotted-index contraction, it evaluates the displayed $\mathbf Q$-variation to the associator. For an operator containing only $\gamma$ and its derivatives, an $n$-loop supercharge graph would require $2n+1\le n+1$, so all its positive-loop variations vanish. Thus $\mathbf QA=\mathbf QB=0$, and $\mathbf Q$ acting on the primitive reduces to $Q_0$.~\hfill\qedsymbol
+and analogously for $B$. Because the primitive inside braces in~\eqref{eq-ring-scalar-associator} is built purely from $\gamma$ and its holomorphic derivatives, $Q_{n\ge1}$ annihilates it identically, so $\mathbf Q$ reduces on it to $Q_0$; using $(\partial_{+\dot a}B)(\partial_+{}^{\dot a}c^E)=-(\partial_{+\dot a}c^E)(\partial_+{}^{\dot a}B)$ yields~\eqref{eq-ring-scalar-associator}.~\hfill\qedsymbol
+\end{proofbox}
 
 \section{Spiders and product forests}\label{sec-forests}
 
@@ -4901,7 +4822,7 @@ We close with three directions.
 
 We thank Si Li (Tsinghua University) for helpful discussions, which drew our attention to the original work of Wang \cite{Wang}. We also thank Eunwoo Lee for sustained and helpful discussions, particularly on the nilpotence of $\mathbf Q$ and the associated physical ideas. We thank Kasia Budzik for helpful discussions.
 
-KL is supported by the NSFC special fund for theoretical physics No.~12447108 and the National Key Research and Development Program of China No.~2020YFA0713000. KL would like to thank the support of the Tsinghua University Short-term Visiting Scholarship for Doctoral Students. C.C. is supported by NSFC Grant No.~12575075.
+BL would like to thank the support of the Peking University Global Influence High-Level Overseas Study Program for Undergraduates. KL is supported by the NSFC special fund for theoretical physics No.~12447108 and the National Key Research and Development Program of China No.~2020YFA0713000. KL would like to thank the support of the Tsinghua University Short-term Visiting Scholarship for Doctoral Students. C.C. is supported by NSFC Grant No.~12575075.
 
 AI tools were used to explore simplification routes for the Feynman graphs and to improve the algorithms and the code of the lifting tests.
 
