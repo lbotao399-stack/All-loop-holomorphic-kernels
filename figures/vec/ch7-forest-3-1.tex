@@ -1,0 +1,37 @@
+\documentclass[border=2pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,tikz}
+\usetikzlibrary{arrows.meta}
+\definecolor{direct}{RGB}{37,82,156}
+\definecolor{spoke}{RGB}{100,100,108}
+\definecolor{src}{RGB}{195,80,15}
+\tikzset{
+  v/.style={circle,fill=black,inner sep=1.35pt},
+  ins/.style={rectangle,draw=black,fill=white,line width=0.6pt,minimum size=4.0pt,inner sep=0pt},
+  intedge/.style={black,line width=1.15pt},
+  spk/.style={spoke,line width=0.62pt},
+  mk/.style={direct,line width=1.05pt},
+  sarr/.style={-{Stealth[length=1.25mm,width=0.95mm]},src,line width=0.65pt}
+}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\scriptsize]
+\path[use as bounding box] (-0.40,-0.46) rectangle (2.80,2.12);
+\coordinate (A) at (0,0);
+\coordinate (B) at (2.4,0);
+\draw[mk] (A)--(B);
+
+\coordinate (v1) at (1.2,0.44);
+\coordinate (v2) at (1.2,0.96);
+\coordinate (v3) at (1.2,1.50);
+\foreach \p in {v1,v2,v3}{\draw[spk] (\p)--(A); \draw[spk] (\p)--(B); \node[v] at (\p) {};}
+\draw[sarr] (1.2,0.14)--(v1); \node[src,fill=white,inner sep=0.6pt] at (1.52,0.20) {$\lambda_1$};
+\draw[sarr] (0.86,0.96)--(v2); \node[src,fill=white,inner sep=0.6pt,left] at (0.85,0.96) {$\lambda_2$};
+\draw[sarr] (0.82,1.62)--(v3); \node[src,left,inner sep=1pt] at (0.81,1.64) {$\lambda_3$};
+\node[right,inner sep=1.5pt] at (v1) {$1$};
+\node[right,inner sep=1.5pt] at (v2) {$2$};
+\node[right,inner sep=1.5pt] at (v3) {$3$};
+
+\node[ins] at (A) {}; \node[below,inner sep=1pt] at (0,-0.08) {$A$};
+\node[ins] at (B) {}; \node[below,inner sep=1pt] at (2.4,-0.08) {$B$};
+\end{tikzpicture}
+\end{document}
