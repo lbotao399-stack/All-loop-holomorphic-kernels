@@ -92,7 +92,7 @@
 \setlength{\parskip}{3pt}
 \setlength{\parindent}{1.2em}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261120-221918}}
+\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261120-231110}}
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu$^{2,3,4}$ and Chi-Ming Chang$^{2,5}$\\[6pt]
 {\small $^{1}$Peking University}\\[3pt]
@@ -2234,22 +2234,22 @@ The quantum product of Section \ref{sec-product} involves further graphs, forest
 
 \section{Fan kernels}\label{sec-fans}
 
-In Section~\ref{sec-BV}, we show that only the superpotential $\bar W$ of the original physical action enters the holomorphic theory; all other terms in the action of the holomorphic twist come from the kinetic BV terms.
+In Section~\ref{sec-BV}, homotopy transfer eliminated all $Q_-$-exact terms from the physical $\mathcal N=1$ action, leaving the first-order gauge and matter couplings together with the antichiral potential $\bar W(\gamma,w)$ in~\eqref{eq-B-10}. In four dimensions, every renormalizable $\mathcal N=1$ supersymmetric gauge theory (massless or massive, with constant gauge coupling) has $\deg\bar W\le3$, so every interaction vertex in $S_{\mathrm{tw}}$ is at most cubic. By Corollary~\ref{b-00222}, the fan graphs of Figure~\ref{fig-general-fan} therefore determine \emph{every} perturbative loop correction $Q_n$ ($n\ge1$) to the supersymmetry transformation in renormalizable theories, as well as all one- and two-loop quantum-product graphs (Section~\ref{sec-product-loops}).
 
-In four dimensions, a renormalizable $\mathcal N=1$ supersymmetric gauge theory has a superpotential of degree at most three, and its holomorphic gauge and matter vertices are cubic. The fan kernels therefore determine every loop correction to the supersymmetry transformation in these theories (Corollary \ref{b-00222}), and now we evaluate them at arbitrary loop order. We state the result first. Sections~\ref{the-one-loop-triangle-diagram}--\ref{sec-fan-positive} derive it: series and parallel reductions leave a one-loop triangle, whose currents reconstruct the fan polynomially in reverse reduction order. Section~\ref{endpoint-sources-and-taylor-expansion} gives the complete Taylor expansion.
+We state the complete all-loop fan theorem first and then build its circuit proof step by step: Section~\ref{the-one-loop-triangle-diagram} solves the base one-loop triangle; Section~\ref{sec-B-local-reduction} formulates local series, parallel, and series--parallel moves as variable changes on Schwinger space; Sections~\ref{sec-fan-step} and~\ref{sec-fan-positive} iterate $n-1$ series--parallel eliminations to prove~\eqref{eq-1-40}--\eqref{eq-1-39}; and Section~\ref{endpoint-sources-and-taylor-expansion} specializes to endpoint sources to prove~\eqref{eq-1-41}--\eqref{eq-1-42} and the all-order Taylor expansion~\eqref{eq-fan-full-taylor}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.91\linewidth]{figures/vec/figures-circuits-fan_general.pdf}
-\caption{The $n$-loop fan circuit: a path of $n+1$ cubic interactions joined to the insertion. The resistors have resistances $t_{vw}$, and the external arrows carry the currents $\lambda_v$. The short stubs and central ellipsis indicate omitted intermediate vertices.}
+\caption{The $n$-loop fan circuit: a path of $n+1$ cubic interactions joined to the insertion $n+2$. The resistors carry Schwinger resistances $t_{vw}$, and external arrows inject currents $\lambda_v$. Short stubs and central ellipses indicate omitted intermediate vertices.}
 \label{fig-general-fan}
 \end{figure}
 
-\rthm{Theorem}{thm-fan-kernel}{Fan kernel at every loop order} \emph{Let $\Gamma$ be the $n$-loop fan of Figure~\ref{fig-general-fan}, $n\ge1$: a path $1\to2\to\cdots\to n+1$ of interaction vertices, each joined to the insertion $n+2$ by a spoke oriented towards it. Let the path vertices carry arbitrary sources $\lambda_1,\ldots,\lambda_{n+1}$, with $\lambda_{n+2}=-\sum_{v<n+2}\lambda_v$, and the edges arbitrary displacements $z_e$. In the coordinates}
+\rthm{Theorem}{thm-fan-kernel}{Fan kernel at every loop order} \emph{Let $\Gamma$ be the $n$-loop fan of Figure~\ref{fig-general-fan} ($n\ge1$): a directed path $1\to2\to\cdots\to n+1$ of interaction vertices, each joined to the insertion $n+2$ by a spoke $(i,n+2)$ oriented towards $n+2$. Let the path vertices carry arbitrary external sources $\lambda_1,\ldots,\lambda_{n+1}$ (with $\lambda_{n+2}=-\sum_{v<n+2}\lambda_v$) and the edges carry arbitrary displacements $z_e$. On the $(2n-2)$-cube times two-simplex}
 \begin{equation}\label{eq-1-37}
-0<r_j<1\quad(1\leq j\leq2n-2),\qquad r_{2n-1}>0,\quad r_{2n}>0,\quad r_{2n-1}+r_{2n}<1 .
+0<r_j<1\quad(1\leq j\leq2n-2),\qquad r_{2n-1}>0,\quad r_{2n}>0,\quad r_{2n-1}+r_{2n}<1,
 \end{equation}
-\emph{the kernel \eqref{eq-operatope} is}
+\emph{the operatope kernel~\eqref{eq-operatope} equals}
 \begin{equation}\label{eq-1-40}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
@@ -2264,7 +2264,7 @@ In four dimensions, a renormalizable $\mathcal N=1$ supersymmetric gauge theory 
 \,e^{-\sum_e y_{e,+\dot a}(r)z_e^{+\dot a}}.
 \end{aligned}
 \end{equation}
-\emph{All currents are polynomial in $r$. Along the path,}
+\emph{Every edge current $y_e(r)$ is a polynomial in $r$: along the interaction path,}
 \begin{equation}\label{eq-1-38}
 \begin{aligned}
 y_{n,n+1,+\dot a}
@@ -2275,7 +2275,7 @@ y_{i,i+1,+\dot a}
 &=r_{2i-1}r_{2i}\sum_{j=1}^{i}
 \left(\prod_{k=j}^{i-1}r_{2k-1}\right)\lambda_{j,+\dot a}\\
 &\quad-(1-r_{2i})\lambda_{i+1,+\dot a}
-+(1-r_{2i})y_{i+1,i+2,+\dot a},\qquad1\le i<n.
++(1-r_{2i})y_{i+1,i+2,+\dot a},\qquad1\le i<n,
 \end{aligned}
 \end{equation}
 \emph{and on the spokes, by current conservation,}
@@ -2287,7 +2287,7 @@ y_{i,n+2,+\dot a}&=\lambda_{i,+\dot a}+y_{i-1,i,+\dot a}-y_{i,i+1,+\dot a},
 y_{n+1,n+2,+\dot a}&=\lambda_{n+1,+\dot a}+y_{n,n+1,+\dot a}.
 \end{aligned}
 \end{equation}
-\emph{For the sources and displacements of $Q_n$ in a renormalizable theory, $\lambda_2=\cdots=\lambda_n=0$, $z_{i,i+1}=0$ and $z_{i,n+2}=-z_i$, the density factorizes:}
+\emph{For the source and displacement pattern of $Q_n$ in a renormalizable theory ($\lambda_2=\cdots=\lambda_n=0$, $z_{i,i+1}=0$, and $z_{i,n+2}=-z_i$), the measure factorizes into a single monomial:}
 \begin{equation}\label{eq-1-41}
 \begin{aligned}
 &\mathcal I_\Gamma(\lambda;z)
@@ -2300,22 +2300,18 @@ r_{2n}^{n-1}
 e^{\sum_j y_{j,n+2,+\dot a}z_j^{+\dot a}}.
 \end{aligned}
 \end{equation}
-\emph{At zero displacement the kernel is}\footnote{For $n=1,2,3$, \eqref{eq-1-42} agrees with the operatope values \cite[Equations (4.20), (4.44), (4.67)]{operatope}, for which the code \cite{LamanLoopstrap} is public, and with the fans of Gui, Wang and Williams \cite[Sections 4.4--4.6]{GWW}; at $n=1$ it is the coefficient of \cite[Equation (2.48)]{BK}.}
+\emph{At zero displacement ($z=0$), this integral evaluates in closed form to}\footnote{For $n=1,2,3$, \eqref{eq-1-42} agrees with the operatope values \cite[Equations (4.20), (4.44), (4.67)]{operatope} (publicly implemented in \cite{LamanLoopstrap}) and with the fan weights of Gui, Wang, and Williams \cite[Sections 4.4--4.6]{GWW}; at $n=1$ it reproduces \cite[Equation (2.48)]{BK}.}
 \begin{equation}\label{eq-1-42}
 \left.\mathcal I_\Gamma(\lambda;0)\right|_{\lambda_{2,+\dot a}=\cdots=\lambda_{n,+\dot a}=0}
-=\frac{(\lambda_{1,+\dot a}\lambda_{n+1,+}{}^{\dot a})^n}{(n!)^3(n+1)}.
+=\frac{(\lambda_{1,+\dot a}\lambda_{n+1,+}{}^{\dot a})^n}{(n!)^3(n+1)},
 \end{equation}
-\emph{Every coefficient of the displacement expansion of \eqref{eq-1-40} at $\lambda_2=\cdots=\lambda_n=0$, for arbitrary edge displacements, is the explicit finite factorial sum \eqref{eq-fan-full-taylor}.}
+\emph{and for arbitrary edge displacements at $\lambda_2=\cdots=\lambda_n=0$, every Taylor coefficient is given explicitly by the finite factorial sum~\eqref{eq-fan-full-taylor}.}
 
-The final two coordinates form a triangle; the earlier coordinates range independently over intervals. \textbf{Each $r_j$ with $j\le2n-2$ is a current-division ratio of the iteration: $r_{2i-1}$ is the fraction of the source at the eliminated vertex $i$ that the series step passes to vertex $i+1$, and $r_{2i}$ is the fraction of the merged current carried by the original spoke $(i+1,n+2)$ after the parallel merge.} The last two, $r_{2n-1}$ and $r_{2n}$, are the simplex coordinates of the final triangle, as in \eqref{eq-1-25}.
-
-All currents are polynomial in the new coordinates, without the spanning-tree denominators that appeared in previous work (Appendix~\ref{sec-B-spanning}), so every fixed Taylor coefficient is a polynomial integral over the explicit domain \eqref{eq-1-37}, for arbitrary sources on the path.
-
-We keep the sources $\lambda_2,\ldots,\lambda_n$ arbitrary. In a renormalizable theory, however, these $\lambda$'s are zero in $Q_n$ because there are no uncontracted letters at these vertices; only $\lambda_1$ and $\lambda_{n+1}$ (and $\lambda_{n+2}=-\sum_{v<n+2}\lambda_v$) are nonzero.~ (By Propositions~\ref{b-00225} and~\ref{b-00240}, even in a non-renormalizable theory, at most one of $\lambda_2,\ldots,\lambda_n$ is nonzero in every fan kernel considered here.)
+Each coordinate $r_j$ in~\eqref{eq-1-37} has a direct electrical meaning: for $1\le i\le n-1$, $r_{2i-1}\in(0,1)$ is the fraction of the accumulated source at vertex $i$ passed forward to $i+1$ during series elimination, while $r_{2i}\in(0,1)$ is the fraction of the merged spoke current carried by the original spoke $(i+1,n+2)$ after parallel merging; the final pair $(r_{2n-1},r_{2n})\in\Delta^2$ parameterizes the remaining one-loop triangle as in~\eqref{eq-1-25}. Because all currents $y_e(r)$ are polynomial in $r$---eliminating the spanning-tree denominators of the global Kirchhoff solution (Appendix~\ref{sec-B-spanning})---every Taylor coefficient in $z$ reduces to an elementary Beta and simplex integral on~\eqref{eq-1-37}. Although $\lambda_2=\cdots=\lambda_n=0$ in $Q_n$ for renormalizable theories (where interior cubic vertices have all three legs contracted), keeping $\lambda_1,\ldots,\lambda_{n+1}$ general in~\eqref{eq-1-40} simultaneously covers both two-loop quantum products (Section~\ref{sec-product-loops}) and higher-degree superpotential vertices (where at most one interior vertex carries a nonzero source by Propositions~\ref{b-00225} and~\ref{b-00240}).
 
 \subsection{The one-loop triangle diagram}\label{the-one-loop-triangle-diagram}
 
-We first review the well-known one-loop result in the circuit picture.
+We begin with the base $n=1$ triangle on vertices $\{1,2,3\}$ with the insertion at $3$ (Figure~\ref{fig-low-fans}).
 
 \begin{figure}[H]
 \centering
@@ -2324,7 +2320,7 @@ We first review the well-known one-loop result in the circuit picture.
 \label{fig-low-fans}
 \end{figure}
 
-The vertices of the triangle are $1,2,3$, with $3$ at the origin, the insertion. With the gauge~$t_{12}+t_{13}+t_{23}=1$, current conservation and the cycle equation give\footnote{The first line of \eqref{eq-triangle-current} is read off from $\partial y_{12}/\partial\lambda_1=t_{13}$ and $\partial y_{12}/\partial\lambda_2=-t_{23}$. With $\lambda_2$ switched off, the current $\lambda_1$ enters at vertex $1$ and leaves at vertex $3$ through the two parallel paths $1\to3$ and $1\to2\to3$; the path through edge $12$, of resistance $t_{12}+t_{23}$, carries the fraction $t_{13}/(t_{12}+t_{13}+t_{23})=t_{13}$. The other two lines are just current conservation at vertices $1$ and $2$.}
+Normalizing the projective resistances by $t_{12}+t_{13}+t_{23}=1$, current conservation at vertices $1,2$ and Kirchhoff's loop law $t_{12}y_{12}+t_{23}y_{23}-t_{13}y_{13}=0$ determine all three edge currents:\footnote{When $\lambda_2=0$, $\lambda_1$ enters at $1$ and exits at $3$ across two parallel branches of resistances $t_{13}$ and $t_{12}+t_{23}$, so branch $1\to2\to3$ carries fraction $t_{13}/(t_{12}+t_{13}+t_{23})=t_{13}$; superposing the symmetric $\lambda_2$ flow gives $y_{12}$.}
 \begin{equation}\label{eq-triangle-current}
 \begin{aligned}
 y_{12,+\dot a}&=t_{13}\lambda_{1,+\dot a}-t_{23}\lambda_{2,+\dot a},\\
@@ -2332,29 +2328,22 @@ y_{13,+\dot a}&=\lambda_{1,+\dot a}-y_{12,+\dot a},\\
 y_{23,+\dot a}&=\lambda_{2,+\dot a}+y_{12,+\dot a}.
 \end{aligned}
 \end{equation}
-
-Use simplex coordinates $r_1,r_2$ with $(t_{12},t_{13},t_{23})=(1-r_1-r_2,r_1,r_2)$.
-
-The Jacobian is
+Passing to simplex coordinates $(t_{12},t_{13},t_{23})=(1-r_1-r_2,r_1,r_2)$ on $\Delta^2=\{r_1,r_2>0,\,r_1+r_2<1\}$, taking $T=\{13,23\}$ as the spanning tree in~\eqref{eq-operatope} gives the chord Jacobian
 \begin{equation}\label{b-00267}
 -dy_{12,+\dot+}\wedge dy_{12,+\dot-}
-=(\lambda_{1,+\dot a}\lambda_{2,+}{}^{\dot a})\,dr_1\wedge dr_2.
+=(\lambda_{1,+\dot a}\lambda_{2,+}{}^{\dot a})\,dr_1\wedge dr_2,
 \end{equation}
-
-Then
+and hence the one-loop triangle kernel
 \begin{equation}\label{eq-1-25}
-\begin{aligned}
 \mathcal I_\triangle(\lambda;z)
-&=(\lambda_{1,+\dot a}\lambda_{2,+}{}^{\dot a})
+=(\lambda_{1,+\dot a}\lambda_{2,+}{}^{\dot a})
 \int_0^1dr_1\int_0^{1-r_1}dr_2\,
 e^{-\sum_e y_{e,+\dot b}z_e^{+\dot b}}.
-\end{aligned}
 \end{equation}
-
-Expanding the exponential and integrating each monomial yields the entire displacement dependence, as in \cite[Equation (2.47)]{BK}:\footnote{As in \eqref{eq-W-jet-edge}, the displacements generate the holomorphic derivatives of the letters of $\mathcal O$.}
+Substituting $y_{13}=\lambda_1-y_{12}$ and $y_{23}=\lambda_2+y_{12}$ regroups the exponent into $-\lambda_{1,+\dot b}z_{13}^{+\dot b}-\lambda_{2,+\dot b}z_{23}^{+\dot b}-(r_1\lambda_1-r_2\lambda_2)_{+\dot b}(z_{12}+z_{23}-z_{13})^{+\dot b}$. Expanding in powers of $r_1,r_2$ and integrating term by term via $\int_{\Delta^2}r_1^ir_2^j\,dr_1\,dr_2=\frac{i!\,j!}{(i+j+2)!}$ cancels $i!\,j!$ and yields the complete displacement expansion~\cite[Eq.~(2.47)]{BK}:
 \begin{equation}\label{eq-1-46}
 \begin{aligned}
-\mathcal I_\Gamma(\lambda;z)
+\mathcal I_\triangle(\lambda;z)
 ={}&(\lambda_{1,+\dot a}\lambda_{2,+}{}^{\dot a})\,
  e^{-\lambda_{1,+\dot a}z_{13}^{+\dot a}-\lambda_{2,+\dot a}z_{23}^{+\dot a}}\\
 &\times\sum_{i,j\ge0}
@@ -2365,32 +2354,29 @@ Expanding the exponential and integrating each monomial yields the entire displa
 
 \subsection{Local reductions as kernel operators}\label{sec-B-local-reduction}\label{sec-network}
 
-We reduce each graph integral to an integro-differential operator acting on the kernel of a smaller graph. Each move replaces a circuit by a reduced one, whose quantities carry the superscript $\mathrm{red}$; the kernel operator of the move follows from the corresponding change of variables. The moves are local: they do not use the global solution of the circuit by a sum over spanning trees \cite[Theorem 4 and Corollary 2]{Wang}, which is recalled in Appendix~\ref{sec-B-spanning}.
+We now express local circuit reductions as integral-differential operators acting on the kernel $\mathcal I_{\Gamma^{\mathrm{red}}}$ of a smaller graph $\Gamma^{\mathrm{red}}$ (indicated by superscript $\mathrm{red}$). Because Ohm's and Kirchhoff's laws are local, each move changes variables only on the edges incident to the reduced subcircuit without ever invoking the global spanning-tree denominator (Appendix~\ref{sec-B-spanning}).
 
 \subsubsection{Series elimination}\label{local-B-series-heading}
 
-If $v$ has only two neighbours, $u,w$, we can eliminate $v$ by first transferring the external current injected at $v$ to $u$ and $w$ (Figure~\ref{local-498490d8-748b-4aac-a672-decb922b2630}).
+Suppose a vertex $v$ has degree two in $\Gamma$, incident only to $vu$ and $vw$. We eliminate $v$ while transferring its injected source $\lambda_v$ to its neighbours $u$ and $w$ (Figure~\ref{local-498490d8-748b-4aac-a672-decb922b2630}).
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/vec/b3-series-resistors-20261107.pdf}
-\caption{Series elimination. The source at $v$ is transferred to $u,w$ as in \eqref{eq-1-64}; the loop number is unchanged.}
+\caption{Series elimination: the source $\lambda_v$ at a degree-two vertex $v$ is transferred to $u,w$ by~\eqref{eq-1-64}, leaving the loop number unchanged.}
 \label{local-498490d8-748b-4aac-a672-decb922b2630}
 \end{figure}
 
-Conservation and the voltage between them give
+Current conservation at $v$ and the total potential drop from $u$ to $w$ give
 \begin{equation}\label{eq-B-series-derivation}
 \begin{aligned}
 y_{vu,+\dot a}+y_{vw,+\dot a}&=\lambda_{v,+\dot a},\\
 \frac{(x_u-x_w)^-_{\dot a}}2
-&=-t_{vu}y_{vu,+\dot a}+t_{vw}y_{vw,+\dot a}\\
-&=t_{vw}\lambda_{v,+\dot a}-(t_{vu}+t_{vw})y_{vu,+\dot a}.
+&=-t_{vu}y_{vu,+\dot a}+t_{vw}y_{vw,+\dot a}
+=t_{vw}\lambda_{v,+\dot a}-(t_{vu}+t_{vw})y_{vu,+\dot a}.
 \end{aligned}
 \end{equation}
-
-For the elimination labelled $j$, take $r_j=t_{vw}/(t_{vu}+t_{vw})$.
-
-The reduced edge $u\to w$ and transferred sources are
+Setting $r_j=t_{vw}/(t_{vu}+t_{vw})\in(0,1)$ replaces $(vu,vw)$ by a single directed series edge $u\to w$ with resistance, transferred sources, and reconstructed currents
 \begin{equation}\label{eq-1-64}
 \begin{gathered}
 r_j=\frac{t_{vw}}{t_{vu}+t_{vw}},\qquad
@@ -2406,51 +2392,52 @@ y_{vw,+\dot a}=(1-r_j)\lambda_{v,+\dot a}+y_{uw,+\dot a}^{\mathrm{red}}.
 
 \subsubsection{Parallel merge}\label{local-B-parallel-heading}
 
-If the series elimination above, or another reduction, leaves $q>1$ resistors between $u$ and $w$, we can replace them by a single resistor. Orient the parallel edges from $u$ to $w$ and label them by $j=1,\ldots,q$. Their common voltage gives
+When series elimination (or star--triangle reduction in Section~\ref{sec-forests}) produces $q>1$ parallel edges between $u$ and $w$, orient all $q$ branches $u\to w$ ($j=1,\ldots,q$). Sharing the same potential drop, their conductances add:
 \begin{equation}\label{eq-B-parallel-derivation}
-\begin{aligned}
 t_{uw}^{(j)}y_{uw,+\dot a}^{(j)}
-&=\frac{(x_u-x_w)^-_{\dot a}}2,\\
+=\frac{(x_u-x_w)^-_{\dot a}}2,\qquad
 y_{uw,+\dot a}^{\mathrm{red}}
-&=\sum_{j=1}^q y_{uw,+\dot a}^{(j)}
+=\sum_{j=1}^q y_{uw,+\dot a}^{(j)}
 =\left(\sum_{j=1}^q\frac1{t_{uw}^{(j)}}\right)
-\frac{(x_u-x_w)^-_{\dot a}}2.
-\end{aligned}
+\frac{(x_u-x_w)^-_{\dot a}}2,
 \end{equation}
+giving the merged resistance and current-division fractions
 \begin{equation}\label{eq-1-63}
 \begin{gathered}
 \frac1{t_{uw}^{\mathrm{red}}}=\sum_{j=1}^q\frac1{t_{uw}^{(j)}},\qquad
-r_j=\frac{t_{uw}^{\mathrm{red}}}{t_{uw}^{(j)}},\qquad\sum_{j=1}^q r_j=1,\\
+r_j=\frac{t_{uw}^{\mathrm{red}}}{t_{uw}^{(j)}},\qquad\sum_{j=1}^q r_j=1,\qquad
 y_{uw,+\dot a}^{(j)}=r_jy_{uw,+\dot a}^{\mathrm{red}}.
 \end{gathered}
 \end{equation}
 
 \subsubsection{The series--parallel move}\label{sec-B-kernel-recursion}
 
-\rthm{Theorem}{b-01142}{Series--parallel} Let a Laman circuit have a degree-two vertex $v$, edges $vu,vw$, and an edge $uw$. Order $vu,vw$ first. After elimination, retain the other edge positions, including the merged $uw$. The current fractions satisfy $0<r_1,r_2<1$. The new circuit is still a Laman circuit.
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.96\linewidth]{figures/vec/b3-series-parallel-resistors-20261107.pdf}
-\caption{Series--parallel reduction. The series branch (orange) merges with the original $uw$ edge (blue), removing one loop.}
+\caption{Series--parallel reduction: eliminating a degree-two vertex $v$ merges the series branch (orange) with the existing edge $uw$ (blue), reducing the loop number by one.}
 \label{local-5fd0befa-d230-4f2f-949d-2c1a04ffe402}
 \end{figure}
 
+\rthm{Theorem}{b-01142}{Series--parallel reduction} \emph{Let $\Gamma$ be a Laman graph containing a degree-two vertex $v$ with oriented incident edges $vu,vw$ and base edge $uw$ (Figure~\ref{local-5fd0befa-d230-4f2f-949d-2c1a04ffe402}), ordered with $(vu,vw)$ first and all remaining edges (including the merged edge $uw$) retaining their relative order in $\Gamma^{\mathrm{red}}$. Setting}
 \begin{equation*}
 \begin{gathered}
-r_1=\frac{t_{vw}}{t_{vu}+t_{vw}},\qquad
-r_2=\frac{t_{vu}+t_{vw}}{t_{vu}+t_{vw}+t_{uw}},\\
+r_1=\frac{t_{vw}}{t_{vu}+t_{vw}}\in(0,1),\qquad
+r_2=\frac{t_{vu}+t_{vw}}{t_{vu}+t_{vw}+t_{uw}}\in(0,1),\\
 \lambda_u^{\mathrm{red}}=\lambda_u+r_1\lambda_v,\qquad
-\lambda_w^{\mathrm{red}}=\lambda_w+(1-r_1)\lambda_v.
+\lambda_w^{\mathrm{red}}=\lambda_w+(1-r_1)\lambda_v,\\
+z_{uw}^{\mathrm{red}}=r_2z_{uw}+(1-r_2)(z_{vw}-z_{vu}),\qquad
+z_e^{\mathrm{red}}=z_e\quad(e\ne uw),
 \end{gathered}
 \end{equation*}
+\emph{the reduced graph $\Gamma^{\mathrm{red}}$ is again Laman, and the operatope kernel~\eqref{eq-operatope} satisfies}
 \begin{equation}\label{eq-kernel-series-parallel}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
-={}&\int_0^1dr_1\int_0^1dr_2\\
-&\times e^{-\lambda_{v,+\dot a}(r_1z_{vu}+(1-r_1)z_{vw})^{+\dot a}}
-\underbrace{r_2\lambda_{v,+\dot a}
-\frac{\partial}{\partial z_{uw,\dot a}^{\mathrm{red},+}}}_{\text{local current Jacobian}}
+={}&\int_0^1dr_1\int_0^1dr_2\,
+e^{-\lambda_{v,+\dot a}(r_1z_{vu}+(1-r_1)z_{vw})^{+\dot a}}
+\underbrace{r_2\lambda_{v,+\dot a}\left(-\epsilon^{\dot a\dot b}
+\frac{\partial}{\partial z_{uw}^{\mathrm{red},+\dot b}}\right)}_{\text{local current Jacobian}}
 \mathcal I_{\Gamma^{\mathrm{red}}}
 (\lambda^{\mathrm{red}};z^{\mathrm{red}})\\[4pt]
 ={}&\int_0^1dr_1\int_0^1dr_2
@@ -2458,75 +2445,52 @@ r_2=\frac{t_{vu}+t_{vw}}{t_{vu}+t_{vw}+t_{uw}},\\
 \sum_{e:e(0)=v'}y_e^{\mathrm{red}}-\sum_{e:e(1)=v'}y_e^{\mathrm{red}}=\lambda_{v'}^{\mathrm{red}}}}
 r_2\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a}\\
 &\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}}
-\bigwedge_{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}}(-d^2y_e^{\mathrm{red}}).
+\bigwedge_{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}}(-d^2y_e^{\mathrm{red}}),
 \end{aligned}
 \end{equation}
-Here $T^{\mathrm{red}}$ is a spanning tree of the reduced graph containing $uw$; $v'$ ranges over its vertices. As in \eqref{eq-operatope}, $d^2y_e=dy_{e,+\dot+}\wedge dy_{e,+\dot-}$, and the remaining wedge is taken at fixed $r_1,r_2$. The original currents in the exponential are reconstructed by \eqref{b-01151}. Thus the last line is a weighted integral on the remaining current space. The displacement substitution is
-\begin{equation*}
-z_{uw}^{\mathrm{red}}=r_2z_{uw}+(1-r_2)(z_{vw}-z_{vu}),\qquad
-z_e^{\mathrm{red}}=z_e\quad(e\ne uw).
-\end{equation*}
+\emph{where $T^{\mathrm{red}}$ is any spanning tree of $\Gamma^{\mathrm{red}}$ containing $uw$, the wedge product is taken at fixed $(r_1,r_2)$, and the original edge currents in the exponent are reconstructed polynomially by~\eqref{b-01151}.}
 
 \begin{proofbox}
-\textbf{Proof.} The series step \eqref{eq-1-64}, with $r_j=r_1$, and the parallel merge \eqref{eq-1-63} of the new branch with the old edge $uw$, which carry the fractions $1-r_2$ and $r_2$ of the merged current, give
+\textbf{Proof.} Combining the series elimination~\eqref{eq-1-64} ($r_j=r_1$) with the two-branch parallel merge~\eqref{eq-1-63} (where the series branch $u\to v\to w$ and original edge $uw$ carry fractions $1-r_2$ and $r_2$ of $y_{uw}^{\mathrm{red}}$) gives
 \begin{equation}\label{b-01151}
-\begin{gathered}
 y_{uw}=r_2y_{uw}^{\mathrm{red}},\qquad
 y_{vu}=r_1\lambda_v-(1-r_2)y_{uw}^{\mathrm{red}},\qquad
-y_{vw}=\lambda_v-y_{vu}.
-\end{gathered}
+y_{vw}=\lambda_v-y_{vu},
 \end{equation}
+so the displacement pairing splits into
 \begin{equation*}
-\begin{aligned}
-\sum_{\substack{e\in I\\\mathrm{edges}}}y_{e,+\dot a}z_e^{+\dot a}
-={}&\lambda_{v,+\dot a}(r_1z_{vu}+(1-r_1)z_{vw})^{+\dot a}\\
-&+\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}
+\sum_{e\in I}y_{e,+\dot a}z_e^{+\dot a}
+=\lambda_{v,+\dot a}(r_1z_{vu}+(1-r_1)z_{vw})^{+\dot a}
++\sum_{e\in I^{\mathrm{red}}}
 y_{e,+\dot a}^{\mathrm{red}}z_e^{\mathrm{red},+\dot a}.
-\end{aligned}
 \end{equation*}
-
-Choose a reduced spanning tree containing $uw$; conservation at fixed $\lambda$ makes $d(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a})$ a linear combination of the retained loop-current differentials; $\equiv$ denotes equality modulo those differentials.
+Lift the spanning tree $T^{\mathrm{red}}\ni uw$ of $\Gamma^{\mathrm{red}}$ to $T=T^{\mathrm{red}}\cup\{vw\}$ of $\Gamma$, so $vu\notin T$ is the eliminated chord. At fixed external sources $\lambda$, Kirchhoff conservation makes $d(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a})$ a linear combination of the retained chord differentials $\{dy_e^{\mathrm{red}}:e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}\}$; writing $\equiv$ for equality modulo those differentials,
 \begin{equation*}
 \begin{aligned}
-dy_{uw,+\dot a}^{\mathrm{red}}
-&=\lambda_{v,+\dot a}dr_1
-+d\!\left(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a}\right),\\
 dy_{vu,+\dot a}
 &=r_2\lambda_{v,+\dot a}dr_1+y_{uw,+\dot a}^{\mathrm{red}}dr_2
--(1-r_2)d\!\left(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a}\right),\\
+-(1-r_2)d\!\left(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a}\right)\\
+&\equiv r_2\lambda_{v,+\dot a}dr_1+y_{uw,+\dot a}^{\mathrm{red}}dr_2,\\
 -dy_{vu,+\dot+}\wedge dy_{vu,+\dot-}
-&=-r_2\left(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a}\right)
- dr_1\wedge dr_2\\
-&\quad+(1-r_2)\left(r_2\lambda_{v,+\dot a}dr_1+y_{uw,+\dot a}^{\mathrm{red}}dr_2\right)
- \wedge d\!\left(y_{uw,+}^{\mathrm{red}}{}^{\dot a}-r_1\lambda_{v,+}{}^{\dot a}\right)\\
-&\quad-\frac{(1-r_2)^2}{2}
- d\!\left(y_{uw,+\dot a}^{\mathrm{red}}-r_1\lambda_{v,+\dot a}\right)
- \wedge d\!\left(y_{uw,+}^{\mathrm{red}}{}^{\dot a}-r_1\lambda_{v,+}{}^{\dot a}\right)\\
-&\equiv-r_2\left(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a}\right)
+&\equiv -r_2\left(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a}\right)
  dr_1\wedge dr_2.
 \end{aligned}
 \end{equation*}
+Since the inverse resistance map $t_{vu}=(1-r_1)t_{uw}^{\mathrm{red}}/(1-r_2)$, $t_{vw}=r_1t_{uw}^{\mathrm{red}}/(1-r_2)$, $t_{uw}=t_{uw}^{\mathrm{red}}/r_2$ reverses orientation,\footnote{Explicitly, $d(t_{vu}/t_{uw})\wedge d(t_{vw}/t_{uw})=-\frac{r_2}{(1-r_2)^3}\,dr_1\wedge dr_2$, cancelling the minus sign in $-dy_{vu,+\dot+}\wedge dy_{vu,+\dot-}$ on $(0,1)^2$.} the oriented integral over $0<r_1,r_2<1$ acquires $+r_2(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a})\,dr_1\wedge dr_2$. Finally,
 \begin{equation*}
-\begin{aligned}
-&\lambda_{v,+\dot a}\frac{\partial}{\partial z_{uw,\dot a}^{\mathrm{red},+}}
-e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}\\
-&=(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a})
-e^{-\sum_{\substack{e\in I^{\mathrm{red}}\\\mathrm{edges}}}y_{e,+\dot b}^{\mathrm{red}}z_e^{\mathrm{red},+\dot b}}.
-\end{aligned}
+\lambda_{v,+\dot a}\left(-\epsilon^{\dot a\dot b}
+\frac{\partial}{\partial z_{uw}^{\mathrm{red},+\dot b}}\right)
+e^{-\sum_{e\in I^{\mathrm{red}}}y_{e,+\dot c}^{\mathrm{red}}z_e^{\mathrm{red},+\dot c}}
+=(\lambda_{v,+\dot a}y_{uw,+}^{\mathrm{red}}{}^{\dot a})
+e^{-\sum_{e\in I^{\mathrm{red}}}y_{e,+\dot c}^{\mathrm{red}}z_e^{\mathrm{red},+\dot c}},
 \end{equation*}
-
-The resistance orientation cancels the displayed minus sign, giving \eqref{eq-kernel-series-parallel}.\footnote{The inverse resistance map is $t_{vu}=(1-r_1)t_{uw}^{\mathrm{red}}/(1-r_2)$, $t_{vw}=r_1t_{uw}^{\mathrm{red}}/(1-r_2)$ and $t_{uw}=t_{uw}^{\mathrm{red}}/r_2$. Hence
-\[
-d\!\left(\frac{t_{vu}}{t_{uw}}\right)\wedge d\!\left(\frac{t_{vw}}{t_{uw}}\right)
-=-\frac{r_2}{(1-r_2)^3}\,dr_1\wedge dr_2.
-\]
-This orientation reversal cancels the sign of the local current area.} $\square$
+proving both lines of~\eqref{eq-kernel-series-parallel}.~\hfill\qedsymbol
 \end{proofbox}
 
 \subsection{One elimination step}\label{sec-fan-step}
 
-\rthm{Proposition}{local-d52b533c-8d77-46cd-b859-f124ac49f1ea}{One elimination step}
-After vertices $1,\ldots,i-1$ have been removed, $1\le i<n$, the source and spoke resistance at $i$ are $\lambda_i^{\mathrm{red}}$ and $t_{i,n+2}^{\mathrm{red}}$. For $i=1$ these are $\lambda_1$ and $t_{1,n+2}$. Set
+\rthm{Proposition}{local-d52b533c-8d77-46cd-b859-f124ac49f1ea}{One fan-elimination step}
+\emph{After path vertices $1,\ldots,i-1$ ($1\le i<n$) of the $n$-loop fan have been eliminated, vertex $i$ has degree two with accumulated source $\lambda_i^{\mathrm{red}}$ and spoke resistance $t_{i,n+2}^{\mathrm{red}}$ (equal to $\lambda_1$ and $t_{1,n+2}$ at $i=1$). Setting}
 \begin{equation}\label{eq-fan-local-ratios}
 \begin{aligned}
 r_{2i-1}&=\frac{t_{i,n+2}^{\mathrm{red}}}{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}},
@@ -2534,10 +2498,10 @@ r_{2i-1}&=\frac{t_{i,n+2}^{\mathrm{red}}}{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}},
 {t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}+t_{i+1,n+2}},\\
 t_{i+1,n+2}^{\mathrm{red}}
 &=\left[\frac1{t_{i,i+1}+t_{i,n+2}^{\mathrm{red}}}
-+\frac1{t_{i+1,n+2}}\right]^{-1}.
++\frac1{t_{i+1,n+2}}\right]^{-1},
 \end{aligned}
 \end{equation}
-Eliminating $i$ passes its source to $i+1$ and $n+2$:
+\emph{eliminating vertex $i$ via Theorem~\ref{b-01142} transfers its source to $i+1$ and $n+2$,}
 \begin{equation}\label{eq-fan-source-transfer}
 \begin{aligned}
 \lambda_{i+1,+\dot a}^{\mathrm{red}}
@@ -2545,10 +2509,10 @@ Eliminating $i$ passes its source to $i+1$ and $n+2$:
 \left.\lambda_{n+2,+\dot a}^{\mathrm{red}}\right|_{\text{after }i}
 &=\lambda_{n+2,+\dot a}
 +\sum_{\substack{1\le j\le i\\\mathrm{eliminated\ vertices}}}
-(1-r_{2j-1})\lambda_{j,+\dot a}^{\mathrm{red}}.
+(1-r_{2j-1})\lambda_{j,+\dot a}^{\mathrm{red}},
 \end{aligned}
 \end{equation}
-All other remaining sources are unchanged. The merged current $y_{i+1,n+2}^{\mathrm{red}}$ is evaluated immediately after this step. The reverse map is
+\emph{reconstructs the stage-$i$ currents backward from $y_{i+1,i+2}$ by}
 \begin{equation}\label{eq-fan-step-currents}
 \begin{aligned}
 y_{i+1,n+2,+\dot a}^{\mathrm{red}}
@@ -2558,20 +2522,23 @@ y_{i,i+1,+\dot a}
 -(1-r_{2i})y_{i+1,n+2,+\dot a}^{\mathrm{red}},\\
 y_{i,n+2,+\dot a}^{\mathrm{red}}
 &=\lambda_{i,+\dot a}^{\mathrm{red}}-y_{i,i+1,+\dot a},\qquad
-y_{i+1,n+2,+\dot a}=r_{2i}y_{i+1,n+2,+\dot a}^{\mathrm{red}}.
+y_{i+1,n+2,+\dot a}=r_{2i}y_{i+1,n+2,+\dot a}^{\mathrm{red}},
 \end{aligned}
 \end{equation}
-These are \eqref{b-01151} at $(v,u,w)=(i,i+1,n+2)$. The current integral acquires the factor
+\emph{and multiplies the current integrand by the local Jacobian factor}
 \begin{equation}\label{b-00282}
 r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}
 =r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
-\bigl(\lambda_{i+1,+}{}^{\dot a}-y_{i+1,i+2,+}{}^{\dot a}\bigr),
+\bigl(\lambda_{i+1,+}{}^{\dot a}-y_{i+1,i+2,+}{}^{\dot a}\bigr).
 \end{equation}
-since $\lambda_{i,+\dot a}^{\mathrm{red}}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}=0$.
+
+\begin{proofbox}
+\textbf{Proof.} Apply Theorem~\ref{b-01142} to $(v,u,w)=(i,i+1,n+2)$ with $(r_1,r_2)=(r_{2i-1},r_{2i})$, noting that the edge $i\to i+1$ is already oriented from $v$ to $u$ (replacing $t_{vu},t_{vw},t_{uw}$ by $t_{i,i+1},t_{i,n+2}^{\mathrm{red}},t_{i+1,n+2}$). Conservation at vertex $i+1$ in the reduced fan (where $i$ has been removed, so only $i+1\to i+2$ and the merged spoke $(i+1,n+2)$ meet $i+1$) gives the first line of~\eqref{eq-fan-step-currents}, while~\eqref{b-01151} gives the remaining lines. Substituting $y_{i+1,n+2}^{\mathrm{red}}=\lambda_{i+1}+r_{2i-1}\lambda_i^{\mathrm{red}}-y_{i+1,i+2}$ into $r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a}$ and using $\lambda_{i,+\dot a}^{\mathrm{red}}\lambda_{i,+}^{\mathrm{red}}{}^{\dot a}=0$ yields~\eqref{b-00282}.~\hfill\qedsymbol
+\end{proofbox}
 
 \subsection{Polynomial reconstruction of the fan}\label{sec-fan-positive}\label{sec-B-fan-reduction}
 
-Iterating the step at $i=1,\ldots,n-1$ leaves the triangle on $n,n+1,n+2$. Its currents reconstruct the fan in reverse order (Figure~\ref{local-B4-fan-chain}).
+Iterating Proposition~\ref{local-d52b533c-8d77-46cd-b859-f124ac49f1ea} for $i=1,\ldots,n-1$ reduces the $n$-loop fan to the final one-loop triangle on $\{n,n+1,n+2\}$, whose currents reconstruct the entire fan polynomially in reverse order (Figure~\ref{local-B4-fan-chain}).
 
 \begin{figure}[H]
 \centering
@@ -2588,14 +2555,14 @@ Iterating the step at $i=1,\ldots,n-1$ leaves the triangle on $n,n+1,n+2$. Its c
 \end{figure}
 
 \begin{proofbox}
-\textbf{Proof.} Source transfer gives, with empty products equal to one,
+\textbf{Proof of Theorem~\ref{thm-fan-kernel} (equations~\eqref{eq-1-40}--\eqref{eq-1-39}).} Solving the forward source recurrence~\eqref{eq-fan-source-transfer} (with empty products equal to $1$) gives
 \begin{equation}\label{eq-B-fan-first-cycle}
 \lambda_{i,+\dot a}^{\mathrm{red}}
 =\sum_{\substack{1\le j\le i\\\mathrm{vertices}}}
 \left(\prod_{k=j}^{i-1}r_{2k-1}\right)\lambda_{j,+\dot a},
 \qquad 1\le i\le n.
 \end{equation}
-The triangle solution \eqref{eq-triangle-current} starts the backward recurrence:
+On the final triangle $\{n,n+1,n+2\}$ in simplex coordinates $(r_{2n-1},r_{2n})\in\Delta^2$, equation~\eqref{eq-triangle-current} determines $y_{n,n+1}$ and initiates the backward recurrence from~\eqref{eq-fan-step-currents}:
 \begin{equation}\label{eq-B-fan-general-fractions}
 \begin{aligned}
 y_{n,n+1,+\dot a}
@@ -2604,13 +2571,11 @@ y_{n,n+1,+\dot a}
 y_{i,i+1,+\dot a}
 &=r_{2i-1}r_{2i}\lambda_{i,+\dot a}^{\mathrm{red}}
 -(1-r_{2i})\lambda_{i+1,+\dot a}
-+(1-r_{2i})y_{i+1,i+2,+\dot a},\\
-&\hspace{58mm}i=n-1,\ldots,1.
++(1-r_{2i})y_{i+1,i+2,+\dot a},
+\qquad i=n-1,\ldots,1,
 \end{aligned}
 \end{equation}
-The second line follows by substituting \eqref{eq-fan-source-transfer} into \eqref{eq-fan-step-currents}. It determines every path current polynomially in $r$ and gives \eqref{eq-1-38}; conservation then gives the spoke currents \eqref{eq-1-39}.
-
-Multiplying the local factors \eqref{b-00282} leaves the explicit triangle current integral
+which establishes~\eqref{eq-1-38} (and~\eqref{eq-1-39} by vertex conservation). Multiplying the $n-1$ local Jacobians~\eqref{b-00282} leaves the reduced triangle integral
 \begin{equation}\label{eq-fan-operator-product}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
@@ -2621,31 +2586,29 @@ Multiplying the local factors \eqref{b-00282} leaves the explicit triangle curre
 \left(r_{2i}\lambda_{i,+\dot a_i}^{\mathrm{red}}
 y_{i+1,n+2,+}^{\mathrm{red}}{}^{\dot a_i}\right)\\
 &\qquad\times e^{-\sum_{e\in I}y_{e,+\dot b}(r)z_e^{+\dot b}}
-\,(-d^2y_{n,n+1}).
+\,(-d^2y_{n,n+1}),
 \end{aligned}
 \end{equation}
-The two spokes of the final triangle form its spanning tree. Each factor uses the stage current reconstructed by \eqref{eq-fan-step-currents}; the exponential uses the original edge currents. The triangle area \eqref{b-00267} is
+where $T_\triangle=\{(n,n+2),(n+1,n+2)\}$ is the spanning tree of the final triangle and its chord two-form~\eqref{b-00267} is
 \begin{equation}\label{eq-B-fan-second-merge}
 -d^2y_{n,n+1}
 =\bigl(\lambda_{n,+\dot a}^{\mathrm{red}}\lambda_{n+1,+}{}^{\dot a}\bigr)
 dr_{2n-1}\wedge dr_{2n}.
 \end{equation}
-Its simplex and the $n-1$ interval pairs give \eqref{eq-1-37}; inserting \eqref{b-00282} and~\eqref{eq-B-fan-first-cycle} gives \eqref{eq-1-40}. For $n=1$, the product is empty and the integral is \eqref{eq-1-25}. $\square$
+Combining $(0,1)^{2n-2}$ with $\Delta^2$ gives the domain~\eqref{eq-1-37}, and substituting~\eqref{b-00282} and~\eqref{eq-B-fan-first-cycle} yields~\eqref{eq-1-40} (reducing at $n=1$ to~\eqref{eq-1-25}).~\hfill\qedsymbol
 \end{proofbox}
 
 \subsection{Final Taylor expansion}\label{endpoint-sources-and-taylor-expansion}
 
-As noted above, in the computation of $Q_n$ in renormalizable theories, the middle $\lambda$'s are all zero.
+We now specialize Theorem~\ref{thm-fan-kernel} to $\lambda_2=\cdots=\lambda_n=0$ and prove~\eqref{eq-1-41}, \eqref{eq-1-42}, and~\eqref{eq-fan-full-taylor}. When $\lambda_2=\cdots=\lambda_n=0$, equation~\eqref{eq-B-fan-first-cycle} collapses to $\lambda_i^{\mathrm{red}}=\bigl(\prod_{k=1}^{i-1}r_{2k-1}\bigr)\lambda_1$. Because $\lambda_{1,+\dot a}\lambda_{1,+}{}^{\dot a}=0$, only the $\lambda_{n+1}$ piece of $y_{i+1,i+2}$ in~\eqref{eq-1-38}---namely $-r_{2n}\bigl(\prod_{k=i+1}^{n-1}(1-r_{2k})\bigr)\lambda_{n+1}$---survives when contracted against $\lambda_i^{\mathrm{red}}$ in~\eqref{eq-1-40}. Multiplying the $n-1$ elimination factors with the final triangle factor $(\prod_{k=1}^{n-1}r_{2k-1})(\lambda_{1,+\dot b}\lambda_{n+1,+}{}^{\dot b})$ collects powers of each $r_j$ and establishes~\eqref{eq-1-41} (where for $Q_n$ in renormalizable theories the interaction vertices carry no derivatives, so $z_{i,i+1}=0$ and $z_{i,n+2}=-z_i$).
 
-Moreover, the interaction vertices carry no derivatives, so only the holomorphic derivatives of the letters of $\mathcal O$ generate displacements. These sit on the spokes: $z_{i,i+1}=0$ and $z_{i,n+2}=-z_i$, where $z_i$ displaces the letter contracted on spoke $i$. The density of \eqref{eq-1-40} then factorizes into \eqref{eq-1-41}: since $\lambda_{1,+\dot a}\lambda_{1,+}{}^{\dot a}=0$, only the $\lambda_{n+1}$ term of $y_{i+1,i+2}$ in \eqref{eq-1-38}, $-r_{2n}\prod_{k=i+1}^{n-1}(1-r_{2k})\,\lambda_{n+1}$, contributes to the factor of vertex $i$.
-
-The exponential in \eqref{eq-1-41} translates the two endpoint fields. Substituting the currents \eqref{eq-1-38}--\eqref{eq-1-39} gives
+In~\eqref{eq-1-41}, the spoke-displacement exponent translates the two endpoint output fields: substituting~\eqref{eq-1-38}--\eqref{eq-1-39} gives
 \begin{equation}\label{eq-fan-output-translation}
 \sum_{j=1}^{n+1}y_{j,n+2,+\dot a}(r)z_j^{+\dot a}
 =\lambda_{1,+\dot a}x_1^{+\dot a}(r,z)
 +\lambda_{n+1,+\dot a}x_{n+1}^{+\dot a}(r,z),
 \end{equation}
-where the translated positions are
+with the explicit polynomial translation vectors
 \begin{equation}\label{eq-fan-output-points}
 \begin{aligned}
 x_1^{+\dot a}(r,z)
@@ -2667,14 +2630,32 @@ x_{n+1}^{+\dot a}(r,z)
 \end{aligned}
 \end{equation}
 
-We now give the Taylor expansion in explicit form, ready for direct use in the machine enumeration of the later sections.
-
-The monomial moments on the parameter domain are
+Every monomial integral over the product domain~\eqref{eq-1-37} factorizes into elementary interval and two-simplex Beta integrals:
 \begin{equation}\label{eq-1-44}
 \int_{\eqref{eq-1-37}}dr_1\cdots dr_{2n}\,\prod_{j=1}^{2n}r_j^{m_j}=\frac{m_{2n-1}!\,m_{2n}!}{(m_{2n-1}+m_{2n}+2)!}\prod_{j=1}^{2n-2}\frac1{m_j+1}.
 \end{equation}
+In particular, at zero displacement ($z=0$), integrating~\eqref{eq-1-41} via~\eqref{eq-1-44} (and $\int_0^1 r_{2j}(1-r_{2j})^{j-1}\,dr_{2j}=\frac{1}{j(j+1)}$) yields~\eqref{eq-1-42} immediately:
+\begin{equation*}
+\begin{aligned}
+\left.\mathcal I_\Gamma(\lambda;0)\right|_{\lambda_2=\cdots=\lambda_n=0}
+&=(\lambda_{1,+\dot a}\lambda_{n+1,+}{}^{\dot a})^n
+\left(\prod_{j=1}^{n-1}\frac{1}{n-j+1}\right)
+\left(\prod_{j=1}^{n-1}\frac{1}{j(j+1)}\right)
+\frac{0!\,(n-1)!}{(n+1)!}\\
+&=(\lambda_{1,+\dot a}\lambda_{n+1,+}{}^{\dot a})^n
+\cdot\frac{1}{n!}\cdot\frac{1}{(n-1)!\,n!}\cdot\frac{1}{n(n+1)}
+=\frac{(\lambda_{1,+\dot a}\lambda_{n+1,+}{}^{\dot a})^n}{(n!)^3(n+1)}.
+\end{aligned}
+\end{equation*}
 
-Grouping by the total displacement degree $m$, the full Taylor expansion is
+More generally, keeping arbitrary displacements $(z_{i,i+1},z_{j,n+2})$ on all $2n+1$ edges at $\lambda_2=\cdots=\lambda_n=0$, spoke conservation~\eqref{eq-1-39} rewrites the exponent $-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}$ in terms of the path currents $y_{i,i+1}$ and cycle combinations $(z_{i,i+1}+z_{i+1,n+2}-z_{i,n+2})$:
+\begin{equation*}
+-\sum_{e\in I}y_{e,+\dot b}z_e^{+\dot b}
+=-\lambda_{1,+\dot b}z_{1,n+2}^{+\dot b}
+-\lambda_{n+1,+\dot b}z_{n+1,n+2}^{+\dot b}
+-\sum_{i=1}^n y_{i,i+1,+\dot b}(z_{i,i+1}+z_{i+1,n+2}-z_{i,n+2})^{+\dot b}.
+\end{equation*}
+By~\eqref{eq-1-38}, each $y_{i,i+1}$ is a sum of $n-i+1$ positive $\lambda_1$ monomials (indexed by $k=i,\ldots,n$) and one negative $\lambda_{n+1}$ monomial. Expanding the exponential with multinomial exponents $r_0,s_0\ge0$, $r_{ik}\ge0$ ($1\le i\le k\le n$), and $s_i\ge0$ ($1\le i\le n$) at total derivative degree $m$, and integrating each factored $(r_1,\ldots,r_{2n})$ Beta/simplex integrand via~\eqref{eq-1-44}, gives the explicit all-order Taylor expansion used in our computer census:
 \begin{equation}\label{eq-fan-full-taylor}
 \begin{aligned}
 &\left.\mathcal I_\Gamma(\lambda;z)
@@ -2705,13 +2686,10 @@ r_0+s_0+\sum_{i=1}^ns_i+\sum_{k=1}^n\sum_{i=1}^kr_{ik}=m}}\\
 \frac{
 \left(1+\sum_{i=1}^{j}r_{ij}\right)!
 \left(j-1+\sum_{i=1}^{j}\left[s_i+\sum_{k=j+1}^{n}r_{ik}\right]\right)!}
-{\left(j+1+\sum_{i=1}^{j}\left[s_i+\sum_{k=j}^{n}r_{ik}\right]\right)!}.
+{\left(j+1+\sum_{i=1}^{j}\left[s_i+\sum_{k=j}^{n}r_{ik}\right]\right)!},
 \end{aligned}
 \end{equation}
-
-For arbitrary edge displacements, sum over nonnegative integers $r_0,s_0,r_{ik},s_i$, with $1\le i\le k\le n$.
-
-Its simplest coefficient, without displacements, is \eqref{eq-1-42}.
+whose $m=0$ term ($r_0=s_0=r_{ik}=s_i=0$) reproduces~\eqref{eq-1-42}.
 
 \section{Quantum multiplication and the Leibniz rule}\label{sec-product}
 
@@ -4114,62 +4092,52 @@ mapping three chiral fermions directly into a pair of covariantly differentiated
 
 \section{Multi-graviton completions and obstruction equations}\label{sec-lifting}
 
-Quantum multiplication constructs perturbatively closed multi-graviton operators in $\mathcal N=4$ Yang--Mills theory.~ We prove their closure at arbitrary loop order (Theorem \ref{b-00630}) and, for illustration, evaluate an explicit product (Section \ref{sec-graviton-example}).\footnote{The theorem proves that multi-graviton classes stay closed; however, a closed multi-graviton can still become exact, e.g., if there is a nonclosed fortuitous class with the allowed charges, they can form a pair and be lifted by the quantum supercharge. The most direct one-loop example is the lifting of a black-hole class by the Konishi correction: in the $SO(7)$ theory, the one-loop supercharge pairs a multi-graviton with a fortuitous class \cite[Section 3]{KonishiBH}, and by the theorem the multi-graviton is the exact member of the pair. Section \ref{sec-results-SOSp} and \cite[supplement, Section S3]{Repo} give the one-loop lifts in $SO(2N+1)$ and their relation to S-duality. There are many more one-loop lifts in $SO(2N+1)$ than in $SU(N)$.}
+Quantum multiplication constructs perturbatively closed multi-graviton operators in $\mathcal N=4$ Yang--Mills theory. In Section~\ref{sec-graviton-closure} we prove that every iterated marked product of single-graviton representatives is $\mathbf Q$-closed to all loop orders and terminates at a finite order in $\hbar$ (Theorem~\ref{b-00630}), and in Section~\ref{sec-graviton-example} we evaluate an explicit two-graviton product to illustrate how the one-loop contact term of $A\star B$ cancels the anomalous variation $Q_1(AB)$.\footnote{Theorem~\ref{b-00630} proves that multi-graviton classes remain $\mathbf Q$-closed; however, a closed multi-graviton can still become $\mathbf Q$-exact if a nonclosed fortuitous class in the adjacent ghost/spin sector maps onto it under a quantum differential. The simplest one-loop example occurs in the $SO(7)$ theory, where $Q_1$ pairs a multi-graviton with a fortuitous black-hole class~\cite[Section 3]{KonishiBH}; by Theorem~\ref{b-00630}, the multi-graviton is necessarily the exact member of the pair. Section~\ref{sec-results-SOSp} and~\cite[supplement, Section S3]{Repo} give the one-loop lifts in $SO(2N+1)$ and their relation to S-duality. There are many more one-loop lifts in $SO(2N+1)$ than in $SU(N)$.}
 
-We then review the framework that uses the operators $Q_n$ to test which classical classes are lifted: the successive transfers of Section \ref{sec-homotopy-transfer} compute the perturbative obstructions of classical representatives and decide which of their closed completions are quantum coboundaries. The algorithm and the explicit results are in the supplementary material \cite{Repo}.
-
-Since every graviton class has a closed completion, no differential maps one graviton class to another (Section \ref{sec-homotopy-transfer}); a lift pairs a fortuitous class with a graviton class or with another fortuitous class. This makes the quantum-correction test much lighter than a brute-force sweep. Quantum closure of a classical representative $\mathcal O_0$ means that there exist finite corrections $\mathcal O_1,\mathcal O_2,\ldots$ with $\mathbf Q(\mathcal O_0+\hbar\mathcal O_1+\hbar^2\mathcal O_2+\cdots)=0$ at every order in $\hbar$; we remind the reader that $\mathcal O_0$ itself is in general not annihilated by $\mathbf Q$ (Section \ref{sec-homotopy-transfer}). Nonperturbative corrections can also modify the cohomology.
+Section~\ref{sec-homotopy-transfer} then develops the successive homotopy-transfer framework that uses the loop operators $Q_n$ to compute the higher-loop differentials $d_r$ on $\mathrm{BPS}_{\hbar^{r-1}}$, establishes the choice-independence and rational dual-functional certification of $d_r\ne 0$ (Proposition~\ref{prop-ch9-subspace-certificate}), proves the fortuitous bound~\eqref{eq-sum-rank} on the total lifting rank across all loop orders (Corollary~\ref{cor-ch9-fortuitous-bound}), and characterizes operator-mixing and renormalization ambiguities (Theorem~\ref{product-uniqueness-ch9-p01}). Because every multi-graviton class admits a closed completion, no differential $d_r$ can map one multi-graviton class to another: every perturbative lift pairs a fortuitous class either with a multi-graviton class or with another fortuitous class, reducing the lifting census from the full classical cohomology to its fortuitous quotient. We remind the reader that quantum closure of a classical representative $\mathcal O_0$ means the existence of loop corrections $\mathcal O_1,\mathcal O_2,\ldots$ satisfying $\mathbf Q(\mathcal O_0+\hbar\mathcal O_1+\hbar^2\mathcal O_2+\cdots)=0$ order by order in $\hbar$, whereas $\mathcal O_0$ itself is in general not annihilated by $\mathbf Q$; nonperturbative instanton effects can modify the cohomology further. The computer implementation and complete sector tables are archived in~\cite{Repo}.
 
 \subsection{Perturbative closure of multi-gravitons}\label{sec-graviton-closure}
 
-The single-graviton representatives of Chang and Yin \cite[Section 4]{ChangYin} are components of $\operatorname{Tr}(dC)^p$, where
+The single-graviton representatives of Chang and Yin~\cite[Section 4]{ChangYin} are components of $\operatorname{Tr}(dC)^p$, where
 \begin{equation}\label{b-00629}
 dC=dx^{+\dot a}\frac{\partial C}{\partial x^{+\dot a}}
 +d\theta_I\frac{\partial_LC}{\partial\theta_I}.
 \end{equation}
 
-\rthm{Theorem}{b-00630}{} \emph{Let $G_1,\ldots,G_m$ be single-graviton representatives. } \emph{Every iterated quantum product $\mathcal O$ of these operators, with any fixed bracketing, satisfies}
+\rthm{Theorem}{b-00630}{All-order perturbative closure of multi-gravitons} \emph{Let $G_1,\ldots,G_m$ be single-graviton representatives. Every iterated quantum product $\mathcal O$ of these operators, with any fixed bracketing, satisfies}
 \begin{equation}\label{eq-multigraviton-closure}
 \mathbf Q\mathcal O=0,\qquad
 \left.\mathcal O\right|_{\hbar=0}=G_1\cdots G_m.
 \end{equation}
+\emph{For each fixed component, its perturbative completion has finitely many terms in $\hbar$.}
 
-\emph{For each fixed component, its perturbative completion has finitely many terms.}
-
-\emph{Proof.} The classical differential acts on a single graviton by
+\begin{proofbox}
+\textbf{Proof.} The classical differential~\eqref{eq-A-15} acts on $dC$ and $\operatorname{Tr}(dC)^p$ by
 \begin{equation}\label{eq-2-58}
 Q_0(dC)=[C,dC],\qquad Q_0\operatorname{Tr}(dC)^p=\operatorname{Tr}[C,(dC)^p]=0.
 \end{equation}
-
-Let us first consider a single graviton $G$.
-
-At order $n\ge1$, the auxiliary $\theta$ part of the $Q_n$ kernel reads:
+Consider first a single graviton $G$. At loop order $n\ge1$, the auxiliary Grassmann factor of the $Q_n$ fan kernel reads
 \begin{equation}\label{eq-graviton-odd-factor}
 \prod_{j=1}^{n}\prod_{I=1}^{3}
 \bigl(\theta_I^{(j)}-\theta_I^{(j+1)}\bigr).
 \end{equation}
-
-A nonzero coincident value requires at least $3n$ odd derivatives. Each of the $n+1$ contracted factors of $dC$ supplies at most one, leaving degree $3n-(n+1)=2n-1>0$ in the relative odd coordinates. Equivalently, in \eqref{eq-2-8} all functional derivatives have the same odd argument $\theta$. Each contraction with $dC$ at $\theta'$ leaves at least two of the three odd factors $\theta_I-\theta'_I$, so the product of the $n+1$ contractions has degree at least $2(n+1)>3$ and vanishes before any graviton component is extracted.
+A nonzero coincident value requires at least $3n$ odd derivatives, whereas each of the $n+1$ contracted factors of $dC$ supplies at most one, leaving positive odd degree $3n-(n+1)=2n-1>0$ in the relative Grassmann coordinates. Equivalently, in~\eqref{eq-2-8} all $n+1$ functional derivatives carry the same odd argument $\theta$: each contraction with $dC(\theta')$ leaves at least two of the three factors $\theta_I-\theta'_I$, so the product of the $n+1$ contractions has degree at least $2(n+1)>3$ in $\theta-\theta'$ and vanishes identically before any component of $\operatorname{Tr}(dC)^p$ is extracted:
 \begin{equation}\label{eq-2-60}
 Q_0G=0,\qquad Q_nG=0\quad(n\geq1).
 \end{equation}
-
-Applying \eqref{eq-chain} at each binary vertex of a quantum product gives
+Applying the Leibniz identity~\eqref{eq-chain} at each binary vertex of an iterated marked product gives
 \begin{equation}\label{b-00642}
 \mathbf Q(A\star B)
 =(\mathbf QA)\star B+(-1)^{|A|}A\star(\mathbf QB)=0
-\qquad(\mathbf QA=\mathbf QB=0).
+\qquad(\mathbf QA=\mathbf QB=0),
 \end{equation}
+so induction on $m$ proves $\mathbf Q\mathcal O=0$, while the leading term of each binary product is ordinary multiplication~\cite[Section 5]{ChangYin}. Finiteness in $\hbar$ follows from Corollary~\ref{local-ch8-finite-product-corollary} in Section~\ref{the-graph-formula}.~\hfill\qedsymbol
+\end{proofbox}
 
-Induction proves the first assertion. The leading term of each binary product is ordinary multiplication, giving the stated classical limit \cite[Section 5]{ChangYin}.
-
-Finiteness follows from the \hyperref[local-ch8-finite-product-corollary]{finiteness corollary} in Section \ref{the-graph-formula}.\hfill\qedsymbol
-
-For example, for two single gravitons $G_1$ and $G_2$, the explicit quantum product shows that $G_1G_2$ admits a quantum completion (with the finite mixing freedom described below), namely $G_1\star G_2$; equivalently, $G_1G_2$ is never lifted by a failure of $\mathbf Q$-closure.
+For example, for two single gravitons $G_1$ and $G_2$, the marked product $G_1\star G_2$ furnishes an explicit quantum completion of $G_1G_2$ (up to the finite $\hbar$-mixing freedom classified in Theorem~\ref{product-uniqueness-ch9-p01}); equivalently, $G_1G_2$ is never lifted by a failure of $\mathbf Q$-closure.
 
 \paragraph{The graviton part of the cohomology.}\label{the-graviton-part-of-the-cohomology}
-
-At finite rank the classical cohomology consists of a graviton part, spanned by multi-graviton classes, and the remaining fortuitous classes \cite{microstates}. Theorem~\ref{b-00630} supplies every class of the graviton part with an explicit closed completion: write its classical representative as a polynomial in single-graviton representatives and replace each product by a quantum product. By Theorem \ref{b-00513}, the resulting class is independent of bracketing. Exchanging adjacent homogeneous factors $G_i$ and $G_j$ multiplies the class by $(-1)^{|G_i||G_j|}$. The same construction applies to a graviton-dressed fortuitous class $G\,\mathcal O_0$: once the fortuitous core $\mathcal O_0$ has a closed completion $\mathcal O[\mathcal O_0]$, the product $G\star\mathcal O[\mathcal O_0]$ is closed.
+At finite rank $N$, the classical cohomology $\mathrm{BPS}_{\hbar^0}=H(Q_0)$ splits into the graviton subalgebra, spanned by polynomials in single-graviton classes, and the remaining fortuitous classes~\cite{microstates}. Theorem~\ref{b-00630} equips every class in the graviton part with an explicit all-order closed completion obtained by replacing ordinary products of single-graviton representatives by marked products $\star$. By Theorem~\ref{b-00513}, the resulting $\mathbf Q$-cohomology class is independent of bracketing, and exchanging adjacent homogeneous factors $G_i,G_j$ multiplies the class by $(-1)^{|G_i||G_j|}$. The same construction dresses any closed completion $\mathcal O[\mathcal O_0]$ of a fortuitous core $\mathcal O_0$: the product $G\star\mathcal O[\mathcal O_0]$ is again $\mathbf Q$-closed.
 
 \subsection{An explicit example}\label{sec-graviton-example}
 
@@ -4179,8 +4147,7 @@ A=\delta^{XY}(\gamma^1)_X(\gamma^1)_Y,
 \qquad B=(\gamma^2)_X(\beta_1)^X,
 \qquad\mathcal O_0=AB.
 \end{equation}
-
-Equation \eqref{eq-A-13}, with left differentiation, identifies both operators as components of $\operatorname{Tr}(dC)^2$:
+Equation~\eqref{eq-A-13}, with left Grassmann differentiation, identifies both operators as components of $\operatorname{Tr}(dC)^2$:
 \begin{equation}\label{local-ch8-graviton-component-extraction}
 \begin{aligned}
 A&=\left.\delta_{AB}\frac{\partial_L C^A}{\partial\theta_1}
@@ -4190,15 +4157,11 @@ B&=-\frac12\left.\frac{\partial_L}{\partial\theta_3}
 \frac{\partial_L C^B}{\partial\theta_2}\right)\right|_{\theta=0}.
 \end{aligned}
 \end{equation}
-
-Gauge invariance gives $Q_0A=0$. For $B$, the superpotential term gives
+Gauge invariance gives $Q_0A=0$, and for $B$ the superpotential term gives
 \begin{equation}\label{b-00658}
-Q_0B=-iC^{XYZ}(\gamma^2)_X(\gamma^2)_Y(\gamma^3)_Z=0.
+Q_0B=-iC^{XYZ}(\gamma^2)_X(\gamma^2)_Y(\gamma^3)_Z=0,
 \end{equation}
-
-Both $A$ and $B$ are automatically $Q_1$-closed by Theorem \ref{b-00630}.
-
-Using \eqref{eq-2-8}, $\mathcal O_0$ itself is not $Q_1$-closed:
+while $Q_nA=Q_nB=0$ ($n\ge1$) by Theorem~\ref{b-00630}. By contrast, the classical product $\mathcal O_0=AB$ is not $Q_1$-closed; evaluating~\eqref{eq-2-8} at $n=1$ gives
 \begin{equation}\label{eq-scalarfermionQ1}
 Q_1\mathcal O_0
 =\frac{g^2}{32\pi^2}
@@ -4206,30 +4169,26 @@ C^X{}_{RD}C^{YR}{}_E
 (\gamma^1)_X(\gamma^2)_Y
 (\partial_{+\dot a}c^D)(\partial_+{}^{\dot a}c^E).
 \end{equation}
+Without the quantum product, deciding whether $[\mathcal O_0]_{\hbar^0}$ survives at one loop requires testing linear-algebraically whether the right-hand side of~\eqref{eq-scalarfermionQ1} is $Q_0$-exact: if $\mathrm{RHS}=Q_0\mathcal O'$, then $\mathcal O_0-\hbar\mathcal O'$ is closed through $O(\hbar)$ (and cannot be $\mathbf Q$-exact because $\mathcal O_0$ carries no derivatives), whereas otherwise $[\mathcal O_0]_{\hbar^0}$ is lifted together with another class in $\mathrm{BPS}_{\hbar^0}$.
 
-Without the quantum product, whether $\mathcal O_0$ is lifted needs to be examined: one has to implement an algorithm to test whether the right-hand side of \eqref{eq-scalarfermionQ1} is $Q_0$-exact. If the answer is yes, $\mathrm{RHS}=Q_0\mathcal O^{\prime}$, then $\mathcal O_0-\hbar\mathcal O^{\prime}$ is closed through one loop and the class survives at one loop (it is not $\mathbf Q$-exact since it has no derivatives); if the answer is no, $\mathcal O_0$ is lifted together with another member of the $Q_0$-cohomology.
-
-However, with the quantum product, we can explicitly answer the question: $\mathcal O_0$ is not lifted.
-
-Taking $\mathcal O_1=[\hbar](A\star B)$, we obtain
+With the quantum product, no linear-system search is needed: Theorem~\ref{b-00630} guarantees that $\mathcal O_1=[\hbar](A\star B)$ solves $Q_0\mathcal O_1=-Q_1\mathcal O_0$ directly:
 \begin{equation}\label{eq-2-65}
 \begin{aligned}
 \mathcal O_1
 &=\{\mathcal I,A,B\}^{\gamma,0}\\
-&={\frac{i}{8\pi^2}}
-{2(ig)(-1)}
-{\frac12}
-{\frac14}
+&=\underbrace{\frac{i}{32\pi^2}}_{\text{prefactor \eqref{eq-2-34}}}
+\cdot\underbrace{\frac12}_{\int_{\Delta^2}dr_1dr_2}
+\cdot\underbrace{(ig)}_{\partial C^D|_{\theta=0}}
+\cdot\underbrace{(-2)}_{\delta A/\delta C^Y}
+\cdot\underbrace{(-1)}_{\delta B/\delta C^Z}
+\cdot\underbrace{(-1)}_{\text{Koszul sign}}\,
 C_D{}^{XY}(\partial_{+\dot a}c^D)
 (\partial_+{}^{\dot a}(\gamma^1)_X)(\gamma^2)_Y\\
 &=\frac{g}{32\pi^2}C_D{}^{XY}(\partial_{+\dot a}c^D)
 (\partial_+{}^{\dot a}(\gamma^1)_X)(\gamma^2)_Y.
 \end{aligned}
 \end{equation}
-
-Let us verify that $Q_0\mathcal O_1+Q_1\mathcal O_0=0$.
-
-Expanding $Q_0\mathcal O_1$ gives
+Let us verify explicitly that $Q_0\mathcal O_1+Q_1\mathcal O_0=0$. Expanding $Q_0\mathcal O_1$ gives
 \begin{equation}\label{eq-scalarfermionexpand}
 \begin{aligned}
 Q_0\mathcal O_1={}&\frac{g^2}{32\pi^2}C_D{}^{XY}\Bigl[
@@ -4244,13 +4203,11 @@ Q_0\mathcal O_1={}&\frac{g^2}{32\pi^2}C_D{}^{XY}\Bigl[
 \Bigr].
 \end{aligned}
 \end{equation}
-
-The first, third and fourth lines cancel by invariance of $C_{DXY}$ (the Jacobi identity):
+The first, third, and fourth lines cancel by the Jacobi identity for $C_{DXY}$,
 \begin{equation}\label{b-00670}
-C_{RX}{}^TC_{TYZ}+C_{RY}{}^TC_{XTZ}+C_{RZ}{}^TC_{XYT}=0.
+C_{RX}{}^TC_{TYZ}+C_{RY}{}^TC_{XTZ}+C_{RZ}{}^TC_{XYT}=0,
 \end{equation}
-
-The remaining term is
+leaving the second line:
 \begin{equation}\label{eq-2-66}
 \begin{aligned}
 Q_0\mathcal O_1
@@ -4259,12 +4216,11 @@ C_D{}^{XY}C_{XE}{}^F(\gamma^1)_F(\gamma^2)_Y
 (\partial_{+\dot a}c^D)(\partial_+{}^{\dot a}c^E)\\
 &=-\frac{g^2}{32\pi^2}
 C^X{}_{RD}C^{YR}{}_{E}(\gamma^1)_X(\gamma^2)_Y
-(\partial_{+\dot a}c^D)(\partial_+{}^{\dot a}c^E)\\
-&=-Q_1\mathcal O_0.
+(\partial_{+\dot a}c^D)(\partial_+{}^{\dot a}c^E)
+=-Q_1\mathcal O_0.
 \end{aligned}
 \end{equation}
-
-The one-loop term of the quantum product therefore cancels the variation of the ordinary product of the two gravitons. The component degrees $\deg_\theta\mathcal O_0=5$ and $\deg_\theta\mathcal O_1=2$ make the quantum product terminate after its one-loop term:
+The one-loop contact term of $A\star B$ thus cancels the anomalous one-loop variation of $AB$. Moreover, since $\deg_\theta\mathcal O_0=5$ and $\deg_\theta\mathcal O_1=2$, the component-degree bound~\eqref{eq-2-63}--\eqref{eq-graviton-differential-degree} forces all higher-loop contributions to vanish:
 \begin{equation}\label{eq-finiteexample}
 \begin{gathered}
 \mathcal O=A\star B=\mathcal O_0+\hbar\mathcal O_1,\qquad
@@ -4273,24 +4229,19 @@ Q_{n\ge2}\mathcal O_0=Q_{n\ge1}\mathcal O_1=0,\\
 =\hbar(Q_1\mathcal O_0+Q_0\mathcal O_1)=0.
 \end{gathered}
 \end{equation}
-
-The displayed one-loop completion is the full perturbative product.
-
-For other, more complicated classes, the two-loop term $Q_2\mathcal O_0$ might not vanish automatically, but the quantum product provides the completion at every order.
+Here $\mathcal O_0+\hbar\mathcal O_1$ is already the exact all-order perturbative completion; for higher-charge multi-graviton words where $Q_2\mathcal O_0\ne0$, the higher orders of $A\star B$ supply the required completions systematically.
 
 \subsection{Homotopy transfer and successive obstructions}\label{sec-homotopy-transfer}
 
-\label{local-6ec23ed5-3799-421d-9885-62c4032bf174}The operators $Q_n$ determine the successive equations for a quantum completion:
-
+\label{local-6ec23ed5-3799-421d-9885-62c4032bf174}%
+The loop operators $Q_n$ organize the perturbative cocycle condition $\mathbf Q\mathcal O=0$ into a hierarchy of linear obstruction equations:
 \begin{equation}\label{eq-liftingequations}
 \mathbf Q\bigl(\mathcal O_0+\hbar\mathcal O_1+\hbar^2\mathcal O_2+\cdots\bigr)=0
 \quad\Longleftrightarrow\quad
 \sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal O_{s-j}=0
 \qquad(s\ge0).
 \end{equation}
-
-\label{b-00680}Write $\mathrm{BPS}_{\hbar^r}$ for the classes surviving the obstruction tests through order $r$, after dividing out the $d_s$-exact subspaces ($s\le r$):
-
+\label{b-00680}We write $\mathrm{BPS}_{\hbar^r}$ for the space of cohomology classes surviving the obstruction differentials $d_1,\ldots,d_r$, after quotienting at each step by the coboundaries in $\operatorname{im}d_r$:
 \begin{equation}\label{eq-page-iterated}
 \begin{gathered}
 \mathrm{BPS}_{\hbar^0}=H(Q_0),\qquad
@@ -4302,13 +4253,10 @@ For other, more complicated classes, the two-loop term $Q_2\mathcal O_0$ might n
 \qquad(r\ge1).
 \end{gathered}
 \end{equation}
-
-\label{local-fdf2e150-8ec9-429f-b9ca-451558773672}Here $k=\mathrm{gh}-2J_L$ is the cochain degree, with $\mathrm{gh}$ the BV ghost number and $J_L$ the undotted rotation charge: the BRST part has $(\Delta\mathrm{gh},\Delta J_L)=(1,0)$ and the physical supercharge has $(0,-\tfrac12)$, so both raise $k$ by one.
-
-\label{ch9-degree-parity}On physical ghost-number-zero operators $k=-2J_L$; the signs $(-1)^{|A|}$ continue to use the fermion number $|A|$.
-
-\label{b-00682}The first obstruction is $d_1[\mathcal O_0]_{\hbar^0}=[Q_1\mathcal O_0]_{\hbar^0}$; in general $[\mathcal O_0]_{\hbar^{r-1}}$ denotes its class in $\mathrm{BPS}_{\hbar^{r-1}}$, and
-
+\label{local-fdf2e150-8ec9-429f-b9ca-451558773672}\label{ch9-degree-parity}%
+Here $k=\mathrm{gh}-2J_L$ is the cochain degree, combining the BV ghost number $\mathrm{gh}$ and the undotted spin $J_L$: the BRST differential carries $(\Delta\mathrm{gh},\Delta J_L)=(1,0)$ and the supercharge carries $(0,-\tfrac12)$, so every $Q_n$ and every $d_r$ raises $k$ by $+1$. On physical ghost-number-zero operators $k=-2J_L$, while Koszul signs $(-1)^{|A|}$ continue to use the fermion number $|A|$ (modulo $2$).
+\label{b-00682}%
+Writing $[\mathcal O_0]_{\hbar^{r-1}}$ for the class of a survivable representative in $\mathrm{BPS}_{\hbar^{r-1}}$, the one-loop differential is $d_1[\mathcal O_0]_{\hbar^0}=[Q_1\mathcal O_0]_{\hbar^0}$, and the $r$-loop obstruction differential acts on a representative admitting a partial completion $\mathcal O_0+\hbar\mathcal O_1+\cdots+\hbar^{r-1}\mathcal O_{r-1}$ by
 \begin{equation}\label{local-ch8-obstruction-definition}
 d_r[\mathcal O_0]_{\hbar^{r-1}}=
 \left[\sum_{\substack{j=1\\\text{loop orders}}}^{r}Q_j\mathcal O_{r-j}\right]_{\hbar^{r-1}},
@@ -4316,8 +4264,8 @@ d_r[\mathcal O_0]_{\hbar^{r-1}}=
 \sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal O_{s-j}=0\quad(0\le s<r).
 \end{equation}
 
-\label{sentence-f7cf8b1c4d9515f1155b6d5b}Choose representatives by $i_r:\mathrm{BPS}_{\hbar^r}\to\mathrm{BPS}_{\hbar^{r-1}}$, a projection $\pi_r$ in the reverse direction, and a degree-$-1$ homotopy $h_r$ satisfying
-
+\label{sentence-f7cf8b1c4d9515f1155b6d5b}\label{ch9-initial-contraction}%
+To compute the successive differentials systematically, choose at each stage $r\ge0$ an inclusion of representatives $i_r:\mathrm{BPS}_{\hbar^r}\to\mathrm{BPS}_{\hbar^{r-1}}$ (where $\mathrm{BPS}_{\hbar^{-1}}$ denotes the local-operator cochain complex with $d_0=Q_0$, so $i_0:H(Q_0)\to\ker Q_0$), a projection $\pi_r$ in the reverse direction, and a degree-$-1$ contracting homotopy $h_r$ satisfying the standard SDR (strong deformation retraction) identities
 \begin{equation}\label{eq-page-contraction}
 \begin{gathered}
 \pi_ri_r=1,\qquad d_ri_r=\pi_rd_r=0,\qquad
@@ -4326,26 +4274,21 @@ h_ri_r=\pi_rh_r=h_r^2=0.
 \end{gathered}
 \end{equation}
 
-\label{ch9-initial-contraction}At $r=0$, use $d_0=Q_0$ on the original local-operator complex and let $i_0$ include the chosen representatives of $H(Q_0)$.
-
 \begin{figure}[H]\centering
 \includegraphics[width=.98\linewidth]{figures/vec/ch9-contraction.pdf}
 \caption{The contraction of $d_r$, $r\ge1$: $i_r$ selects cohomology representatives and $h_r$ returns a primitive of each boundary.}\label{b-00686}
 \end{figure}
 
-\label{local-c88f0722-45da-497d-a867-98f5ece2431b}For a $d_r$-closed representative $a$, the contraction separates the chosen representative from its exact part:
-
+\label{local-c88f0722-45da-497d-a867-98f5ece2431b}\label{ch9-splitting-construction}%
+Explicitly, choosing a subspace of cocycle representatives for $\ker d_r/\operatorname{im}d_r$ and a direct-sum complement to $\ker d_r$, $h_r$ inverts $d_r$ from $\operatorname{im}d_r$ onto that complement and vanishes on the remaining summands; on any $d_r$-cocycle $a$, the retraction separates its chosen representative from its $d_r$-exact piece:
 \begin{equation}\label{local-ch8-representative-decomposition}
 d_ra=0\quad\Longrightarrow\quad
- a=i_r\pi_ra+\underbrace{d_rh_ra}_{\text{exact part}}.
+a=i_r\pi_ra+\underbrace{d_rh_ra}_{\text{exact part}}.
 \end{equation}
 
-\label{ch9-splitting-construction}These maps are obtained by choosing representatives of $\ker d_r/\operatorname{im}d_r$ and a complement to $\ker d_r$; $h_r$ inverts $d_r$ from its image to that complement and vanishes on the other summands.
-
-\rthm{Proposition}{prop-ch8-transfer-validity}{Successive homotopy transfer} Let $\mathbf Q^{(0)}=\mathbf Q$ and suppose $(\mathbf Q^{(r)})^2=0$, with constant coefficient $d_r$.
-
-\label{sentence-1c81212a26645a318650d146}For $r\ge1$, $\mathbf Q^{(r)}$ acts on $\mathrm{BPS}_{\hbar^{r-1}}[[\hbar]]$, the formal series with coefficients in $\mathrm{BPS}_{\hbar^{r-1}}$; $[\hbar^j]$ extracts a series coefficient:
-
+\rthm{Proposition}{prop-ch8-transfer-validity}{Successive homotopy transfer}
+\label{sentence-1c81212a26645a318650d146}%
+Let $\mathbf Q^{(0)}=\mathbf Q$, and suppose at stage $r\ge0$ that $(\mathbf Q^{(r)})^2=0$ on $\mathrm{BPS}_{\hbar^{r-1}}[[\hbar]]$ (the formal $\hbar$-series with coefficients in $\mathrm{BPS}_{\hbar^{r-1}}$, or in the local-operator complex at $r=0$) with $\hbar^0$ term $d_r$:
 \begin{equation}\label{local-f6c8e4e4-0aee-4848-9206-eb392052b047}
 \begin{gathered}
 \mathbf Q^{(0)}=Q_0+\hbar Q_1+\hbar^2Q_2+\cdots,\\
@@ -4354,9 +4297,8 @@ d_ra=0\quad\Longrightarrow\quad
 \qquad d_r=[\hbar^0]\mathbf Q^{(r)}.
 \end{gathered}
 \end{equation}
-
-\label{sentence-b90b299e58efe89e59c80d6d}The corrected contraction and the next obstruction differential are
-
+\label{sentence-b90b299e58efe89e59c80d6d}\label{local-ad0354ed-9d48-4627-96be-ed9ae2bc3fae}%
+Then the homological perturbation formulas define a deformed contraction $(i_r(\hbar),\pi_r(\hbar),h_r(\hbar))$ and a transferred differential $\mathbf Q^{(r+1)}$ on $\mathrm{BPS}_{\hbar^r}[[\hbar]]$:
 \begin{equation}\label{eq-page-transfer}
 \begin{aligned}
 i_r(\hbar)&=\bigl[1+h_r(\mathbf Q^{(r)}-d_r)\bigr]^{-1}i_r,\\
@@ -4367,14 +4309,11 @@ d_{r+1}&=[\hbar^0]\mathbf Q^{(r+1)}
 =\pi_r\bigl([\hbar]\mathbf Q^{(r)}\bigr)i_r.
 \end{aligned}
 \end{equation}
-
-\label{local-ad0354ed-9d48-4627-96be-ed9ae2bc3fae}Taking $d_r$-cohomology removes the leading differential; all remaining orders are transported by $i_r(\hbar)$ and $\pi_r(\hbar)$ to $\hbar\mathbf Q^{(r+1)}$.
-
+Passing to $d_r$-cohomology eliminates the constant-order differential $d_r$ and transports all higher orders into $\hbar\mathbf Q^{(r+1)}$ (Figure~\ref{local-d58db19c-52ae-4d15-8c98-3d77b2407fd2}), satisfying
 \begin{figure}[H]\centering
 \includegraphics[width=.98\linewidth]{figures/vec/ch9-full-transfer.pdf}
 \caption{Transfer of the full differential, $r\ge1$; the lower arrow retains the factor $\hbar$.}\label{local-d58db19c-52ae-4d15-8c98-3d77b2407fd2}
 \end{figure}
-
 \begin{equation}\label{eq-page-transfer-identities}
 \begin{aligned}
 \mathbf Q^{(r)}i_r(\hbar)&=\hbar i_r(\hbar)\mathbf Q^{(r+1)},\\
@@ -4385,11 +4324,8 @@ d_{r+1}&=[\hbar^0]\mathbf Q^{(r+1)}
 \end{equation}
 
 \begin{proofbox}
-
-\label{reader-callout-1359-start}\emph{Proof.}
-
-\label{ch8-transfer-proof-inverse-intro}At order $\hbar^n$, the inverse contains finitely many terms because $\mathbf Q^{(r)}-d_r$ has zero constant coefficient:
-
+\label{reader-callout-1359-start}\label{ch8-transfer-proof-inverse-intro}%
+\textbf{Proof.} Because $\mathbf Q^{(r)}-d_r$ has zero $\hbar^0$ term, the geometric series for the resolvents truncate at finite length at every fixed power $\hbar^n$:
 \begin{equation}\label{eq-ch8-transfer-inverses}
 \begin{aligned}
 [\hbar^n]\bigl[1+h_r(\mathbf Q^{(r)}-d_r)\bigr]^{-1}
@@ -4400,19 +4336,16 @@ d_{r+1}&=[\hbar^0]\mathbf Q^{(r+1)}
 (-1)^\ell\bigl[(\mathbf Q^{(r)}-d_r)h_r\bigr]^\ell.
 \end{aligned}
 \end{equation}
-
-\label{ch8-transfer-proof-finite-coefficients}Multiplying by the denominator cancels adjacent powers, and gives
-
+\label{ch8-transfer-proof-finite-coefficients}\label{ch8-transfer-proof-side-intro}%
+Clearing denominators gives the resolvent relations
 \begin{equation}\label{eq-ch8-transfer-resolvent-identities}
 \begin{aligned}
 i_r(\hbar)&=i_r-h_r(\hbar)(\mathbf Q^{(r)}-d_r)i_r,\\
 \pi_r(\hbar)&=\pi_r-\pi_r(\mathbf Q^{(r)}-d_r)h_r(\hbar),\\
-h_r(\hbar)&=h_r\bigl[1+(\mathbf Q^{(r)}-d_r)h_r\bigr]^{-1}.
+h_r(\hbar)&=h_r\bigl[1+(\mathbf Q^{(r)}-d_r)h_r\bigr]^{-1},
 \end{aligned}
 \end{equation}
-
-\label{ch8-transfer-proof-side-intro}Together with $h_r^2=h_ri_r=\pi_rh_r=0$, these identities imply
-
+which together with the side conditions $h_r^2=h_ri_r=\pi_rh_r=0$ imply
 \begin{equation}\label{eq-ch8-transfer-retraction-proof}
 \begin{gathered}
 h_r(\hbar)^2=h_r(\hbar)i_r=\pi_rh_r(\hbar)=0,\\
@@ -4425,17 +4358,14 @@ h_r(\hbar)i_r(\hbar)&=\pi_r(\hbar)h_r(\hbar)=0.
 \end{aligned}
 \end{gathered}
 \end{equation}
-
-\label{ch8-transfer-proof-nilpotence-intro}The relations $(\mathbf Q^{(r)})^2=d_r^2=0$ give
-
+\label{ch8-transfer-proof-nilpotence-intro}\label{ch8-transfer-proof-homotopy-intro}%
+Using $(\mathbf Q^{(r)})^2=d_r^2=0$, we have
 \begin{equation}\label{eq-ch8-transfer-perturbation-algebra}
 (\mathbf Q^{(r)}-d_r)\mathbf Q^{(r)}
 +\mathbf Q^{(r)}(\mathbf Q^{(r)}-d_r)
-=(\mathbf Q^{(r)}-d_r)^2.
+=(\mathbf Q^{(r)}-d_r)^2,
 \end{equation}
-
-\label{ch8-transfer-proof-homotopy-intro}The homotopy identity follows by multiplying by the two denominators:
-
+and multiplying $\mathbf Q^{(r)}h_r(\hbar)+h_r(\hbar)\mathbf Q^{(r)}$ on both sides by the resolvent denominators yields
 \begin{equation}\label{eq-ch8-transfer-homotopy-calculation}
 \begin{aligned}
 &\bigl[1+h_r(\mathbf Q^{(r)}-d_r)\bigr]
@@ -4450,9 +4380,8 @@ h_r(\hbar)i_r(\hbar)&=\pi_r(\hbar)h_r(\hbar)=0.
 \bigl[1+(\mathbf Q^{(r)}-d_r)h_r\bigr]-i_r\pi_r.
 \end{aligned}
 \end{equation}
-
-\label{ch8-transfer-proof-homotopy-conclusion}Applying the inverses gives the third line of \eqref{eq-page-transfer-identities}; its commutator with $\mathbf Q^{(r)}$ and its action on $i_r(\hbar)$ give
-
+\label{ch8-transfer-proof-homotopy-conclusion}\label{ch8-transfer-proof-chain-intro}%
+Applying the two inverses establishes the third identity of~\eqref{eq-page-transfer-identities}; commuting it with $\mathbf Q^{(r)}$ and acting on $i_r(\hbar)$ then gives
 \begin{equation}\label{eq-ch8-transfer-invariance}
 \begin{gathered}
 \mathbf Q^{(r)}i_r(\hbar)\pi_r(\hbar)
@@ -4467,9 +4396,7 @@ h_r(\hbar)\mathbf Q^{(r)}i_r(\hbar)=0,\\
 \end{aligned}
 \end{gathered}
 \end{equation}
-
-\label{ch8-transfer-proof-chain-intro}Thus the retraction gives the two chain identities and nilpotence:
-
+The retraction identities therefore imply the chain-map relations and nilpotence:
 \begin{equation}\label{eq-ch8-transfer-chain-maps-proved}
 \begin{aligned}
 \mathbf Q^{(r)}i_r(\hbar)
@@ -4481,20 +4408,15 @@ h_r(\hbar)\mathbf Q^{(r)}i_r(\hbar)=0,\\
 0&=\pi_r(\hbar)(\mathbf Q^{(r)})^2i_r(\hbar)
 =\hbar^2(\mathbf Q^{(r+1)})^2,\\
 (\mathbf Q^{(r+1)})^2&=0,\qquad
-d_{r+1}^2=[\hbar^0](\mathbf Q^{(r+1)})^2=0.
+d_{r+1}^2=[\hbar^0](\mathbf Q^{(r+1)})^2=0,
 \end{aligned}
 \end{equation}
-
-\label{ch8-transfer-proof-induction}Multiplication by $\hbar^2$ is injective on formal series, and the coefficient of $\hbar$ in \eqref{eq-page-transfer} gives the displayed formula for $d_{r+1}$.
-
-\label{reader-callout-1359-end}$\square$
-
+\label{ch8-transfer-proof-induction}\label{reader-callout-1359-end}%
+since multiplication by $\hbar^2$ is injective on formal power series, and extracting $[\hbar]$ in~\eqref{eq-page-transfer} gives the formula for $d_{r+1}$.~\hfill\qedsymbol
 \end{proofbox}
 
-\label{local-904255ed-c0ef-4c2e-8ac8-4f651e639552}The transfer identifies $H(\mathbf Q^{(r)})$ with $H(\hbar\mathbf Q^{(r+1)})$ over $\mathbb C[[\hbar]]$.
-
-\label{ch9-torsion-meaning}Dividing the differential by $\hbar$ preserves its kernel and enlarges its image; the resulting obstruction sequence keeps track of the classes removed at each order.
-
+\label{local-904255ed-c0ef-4c2e-8ac8-4f651e639552}\label{ch9-torsion-meaning}\label{ch9-localized-transfer}%
+Over $\mathbb C[[\hbar]]$, the contraction $(i_r(\hbar),\pi_r(\hbar),h_r(\hbar))$ identifies $H(\mathbf Q^{(r)})$ with $H(\hbar\mathbf Q^{(r+1)})$. Dividing $\hbar\mathbf Q^{(r+1)}$ by $\hbar$ preserves the cocycle space while enlarging the coboundary space by $\hbar$-torsion classes removed at higher loop orders:
 \begin{equation}\label{ch9-rescaling-cohomology}
 \begin{gathered}
 \ker(\hbar\mathbf Q^{(r+1)})=\ker\mathbf Q^{(r+1)},\qquad
@@ -4504,24 +4426,20 @@ H(\hbar\mathbf Q^{(r+1)})
 =\frac{\ker\mathbf Q^{(r+1)}}{\hbar\operatorname{im}\mathbf Q^{(r+1)}}.
 \end{gathered}
 \end{equation}
+Once $\hbar$ is inverted over the Laurent field $\mathbb C((\hbar))$, rescaling by $\hbar$ is an isomorphism and all $H(\mathbf Q^{(r)})\otimes_{\mathbb C[[\hbar]]}\mathbb C((\hbar))$ are canonically isomorphic to $H(\mathbf Q)\otimes_{\mathbb C[[\hbar]]}\mathbb C((\hbar))$.
 
-\label{ch9-localized-transfer}After allowing finite negative powers of $\hbar$, that is, over $\mathbb C((\hbar))$, the rescaling is invertible and the successive cohomologies are isomorphic.
-
-\paragraph{Obstructions and corrected representatives}\label{the-first-obstruction-maps}
-
-\label{b-00695}Expanding the first transfer in the original loop operators gives
-
+\paragraph{Obstructions and corrected representatives.}\label{the-first-obstruction-maps}
+\label{b-00695}\label{local-0667fcdb-52db-4ff4-98bf-52ad74006705}\label{local-ch8-transfer-coefficients-intro}%
+Expanding the first transfer $\mathbf Q^{(1)}$ in terms of the loop operators $Q_n$ gives
 \begin{equation}\label{eq-first-page-series}
 \begin{aligned}
 [\hbar^0]\mathbf Q^{(1)}&=\pi_0Q_1i_0,\\
 [\hbar]\mathbf Q^{(1)}&=\pi_0(Q_2-Q_1h_0Q_1)i_0,\\
 [\hbar^2]\mathbf Q^{(1)}&=\pi_0\bigl(Q_3-Q_2h_0Q_1-Q_1h_0Q_2
-+Q_1h_0Q_1h_0Q_1\bigr)i_0.
++Q_1h_0Q_1h_0Q_1\bigr)i_0,
 \end{aligned}
 \end{equation}
-
-\label{local-0667fcdb-52db-4ff4-98bf-52ad74006705}The third obstruction also includes the correction of representatives in $H(Q_0)$ generated by $h_1$:
-
+while the first three obstruction differentials $d_1,d_2,d_3$---including at three loops the correction of one-loop representatives in $\mathrm{BPS}_{\hbar^0}$ generated by $h_1$---read
 \begin{equation}\label{b-00699}
 \begin{aligned}
 d_1&=\pi_0Q_1i_0,\\
@@ -4530,9 +4448,7 @@ d_3&=\pi_2\pi_1\pi_0\Bigl[Q_3-Q_2h_0Q_1-Q_1h_0Q_2+Q_1h_0Q_1h_0Q_1\\
 &\hspace{32mm}-(Q_2-Q_1h_0Q_1)i_0h_1\pi_0(Q_2-Q_1h_0Q_1)\Bigr]i_0i_1i_2.
 \end{aligned}
 \end{equation}
-
-\label{local-ch8-transfer-coefficients-intro}At every stage the same expansion reads
-
+More generally, at every stage $r\ge0$,
 \begin{equation}\label{local-ch8-transfer-coefficients}
 \begin{aligned}
 [\hbar]\mathbf Q^{(r+1)}
@@ -4542,8 +4458,8 @@ d_{r+2}&=\pi_{r+1}\bigl([\hbar]\mathbf Q^{(r+1)}\bigr)i_{r+1}.
 \end{aligned}
 \end{equation}
 
-\label{b-00705}For $a\in\mathrm{BPS}_{\hbar^2}$, the condition $d_2i_2a=0$ gives a completion through two loops:
-
+\label{b-00705}\label{local-dbdb9386-d316-419c-a28d-6ab8a76ead17}%
+For a class $a\in\mathrm{BPS}_{\hbar^2}$ (so $d_2i_2a=0$), the transferred inclusion constructs an explicit completion through two loops:
 \begin{equation}\label{eq-two-loop-representative-transfer}
 \begin{aligned}
 \mathcal O_0&=i_0i_1i_2a,\\
@@ -4552,9 +4468,7 @@ d_{r+2}&=\pi_{r+1}\bigl([\hbar]\mathbf Q^{(r+1)}\bigr)i_{r+1}.
 \mathcal O_2&=-h_0(Q_2\mathcal O_0+Q_1\mathcal O_1).
 \end{aligned}
 \end{equation}
-
-\label{local-dbdb9386-d316-419c-a28d-6ab8a76ead17}The second term in $\mathcal O_1$ is $Q_0$-closed and cancels the projected second-order obstruction; the coefficient $[\hbar](\mathbf Q^{(1)})^2=0$ gives its $d_1$-closure:
-
+Here the second term of $\mathcal O_1$ is a $Q_0$-closed adjustment whose $Q_1$-action cancels the $d_1$-exact projection of $(Q_2-Q_1h_0Q_1)\mathcal O_0$, as verified using $[\hbar](\mathbf Q^{(1)})^2=0$:
 \begin{equation}\label{eq-two-loop-representative-projection}
 \begin{aligned}
 d_1\pi_0(Q_2-Q_1h_0Q_1)\mathcal O_0
@@ -4568,16 +4482,13 @@ Q_0(Q_2\mathcal O_0+Q_1\mathcal O_1)
 Q_0\mathcal O_2&=-Q_2\mathcal O_0-Q_1\mathcal O_1.
 \end{aligned}
 \end{equation}
-
-\label{b-00710}Iterating the chain identity gives the general reconstruction:
-
+\label{b-00710}\label{b-00712}\label{sec-graviton-dr}%
+At arbitrary order $r\ge1$, iterating the first identity of~\eqref{eq-page-transfer-identities} gives
 \begin{equation}\label{eq-page-representative-chain}
 \mathbf Q\,i_0(\hbar)\cdots i_{r-1}(\hbar)
 =\hbar^r i_0(\hbar)\cdots i_{r-1}(\hbar)\mathbf Q^{(r)}.
 \end{equation}
-
-\label{b-00712}For $a\in\mathrm{BPS}_{\hbar^r}$, choose $\mathcal O_s=[\hbar^s]\bigl(i_0(\hbar)\cdots i_{r-1}(\hbar)i_ra\bigr)$.
-
+Setting $\mathcal O_s=[\hbar^s]\bigl(i_0(\hbar)\cdots i_{r-1}(\hbar)i_ra\bigr)$ for $a\in\mathrm{BPS}_{\hbar^r}$ therefore solves the cocycle equations through order $r$ and expresses the next differential $d_{r+1}$ on $\mathrm{BPS}_{\hbar^r}$ in the form~\eqref{local-ch8-obstruction-definition}:
 \begin{equation}\label{eq-2-75}
 \begin{gathered}
 \sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal O_{s-j}=0
@@ -4586,11 +4497,74 @@ d_{r+1}[\mathcal O_0]_{\hbar^r}
 =\left[\sum_{\substack{j=1\\\text{loop orders}}}^{r+1}Q_j\mathcal O_{r+1-j}\right]_{\hbar^r}.
 \end{gathered}
 \end{equation}
+In particular, any classical representative $\mathcal O_0$ admitting an all-order completion $\mathcal O=\sum_{s\ge0}\hbar^s\mathcal O_s$ with $\mathbf Q\mathcal O=0$ satisfies $d_{r+1}[\mathcal O_0]_{\hbar^r}=0$ on every successive cohomology space $\mathrm{BPS}_{\hbar^r}$; by Theorem~\ref{b-00630}, this holds for every multi-graviton representative in $\mathcal N=4$ Yang--Mills theory.
 
-\label{sec-graviton-dr}A closed completion satisfies $d_r[\mathcal O_0]_{\hbar^{r-1}}=0$ on every successive space $\mathrm{BPS}_{\hbar^{r-1}}$ in which its leading class survives; this applies to the multi-graviton completions of Theorem~\ref{b-00630}.
+\rthm{Proposition}{prop-ch9-subspace-certificate}{Choice-independence and rational obstruction certificates}
+For each cochain degree $k$ and integer $r\ge0$, define canonical subspaces $B_r^k\subseteq Z_r^k\subseteq\mathrm{BPS}_{\hbar^0}^k=H^k(Q_0)$ directly from the loop operators $Q_0,Q_1,\ldots,Q_r$ by setting $Z_0^k=\mathrm{BPS}_{\hbar^0}^k$, $B_0^k=0$, and for $r\ge1$:
+\begin{equation}\label{eq-ch9-canonical-filtration}
+\begin{aligned}
+Z_r^k&=\Bigl\{[\mathcal O_0]_{\hbar^0}\in H^k(Q_0):\exists\,\mathcal O_1,\ldots,\mathcal O_r\text{ with }
+\sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal O_{s-j}=0\;\;(0\le s\le r)\Bigr\},\\
+B_r^k&=\Bigl\{\Bigl[-\sum_{\substack{j=1\\\text{loop orders}}}^{m}Q_j\mathcal X_{m-j}\Bigr]_{\hbar^0}\in H^k(Q_0):
+1\le m\le r,\;\sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal X_{s-j}=0\;\;(0\le s<m)\Bigr\}.
+\end{aligned}
+\end{equation}
+Then:
+\begin{enumerate}
+\item For every choice of contractions $(i_m,\pi_m,h_m)_{0\le m<r}$, sending $a\in\mathrm{BPS}_{\hbar^r}^k$ to the classical class $[\,[\hbar^0](i_0(\hbar)\cdots i_{r-1}(\hbar)i_ra)\,]_{\hbar^0}$ induces a canonical isomorphism
+\begin{equation}\label{eq-ch9-canonical-subquotient}
+\begin{gathered}
+\mathrm{BPS}_{\hbar^r}^k\;\cong\;\frac{Z_r^k}{B_r^k},\\
+\operatorname{rank}\bigl(d_r:\mathrm{BPS}_{\hbar^{r-1}}^k\to\mathrm{BPS}_{\hbar^{r-1}}^{k+1}\bigr)
+=\dim Z_{r-1}^k-\dim Z_r^k=\dim B_r^{k+1}-\dim B_{r-1}^{k+1}.
+\end{gathered}
+\end{equation}
+In particular, $\dim\mathrm{BPS}_{\hbar^r}^k$ and $\operatorname{rank}d_r^k$ are independent of all choices of representatives and homotopies.
+\item Let $[\mathcal O_0]_{\hbar^0}\in Z_{r-1}^k$ ($r\ge1$) with any partial completion $\mathcal O_0+\hbar\mathcal O_1+\cdots+\hbar^{r-1}\mathcal O_{r-1}$ solving $\sum_{j=0}^s Q_j\mathcal O_{s-j}=0$ for $0\le s<r$, and define the indeterminate subspace in degree $k+1$:
+\begin{equation}\label{eq-ch9-indeterminate-subspace}
+\begin{gathered}
+W_r^{k+1}=\Bigl\{\sum_{\substack{j=0\\\text{loop orders}}}^{r-1}Q_j\mathcal Y_{r-1-j}:
+\sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal Y_{s-j}=0\;\;(0\le s\le r-2)\Bigr\},\\
+W_1^{k+1}=\operatorname{im}Q_0,\qquad
+W_2^{k+1}=\operatorname{im}Q_0+Q_1(\ker Q_0).
+\end{gathered}
+\end{equation}
+Then $d_r[\mathcal O_0]_{\hbar^{r-1}}\ne0$ in $\mathrm{BPS}_{\hbar^{r-1}}^{k+1}$ if and only if $\sum_{j=1}^r Q_j\mathcal O_{r-j}\notin W_r^{k+1}$. When the operators $Q_0,\ldots,Q_r$ are defined over $\mathbb Q$ in a finite-dimensional sector basis, any rational linear functional $\ell$ vanishing on $W_r^{k+1}$ with $\ell\bigl(\sum_{j=1}^r Q_j\mathcal O_{r-j}\bigr)\ne0$ furnishes an exact, choice-independent certificate over $\mathbb Q$ that $d_r[\mathcal O_0]_{\hbar^{r-1}}\ne0$.
+\end{enumerate}
 
-\rthm{Proposition}{ch9-finiteness}{Finite graph operations and bounded sectors} For the interaction \eqref{eq-B-10}, with a polynomial superpotential, the graph counts give
+\begin{proofbox}
+\textbf{Proof.} Nilpotence $\sum_{j=0}^m Q_j Q_{m-j}=0$ implies that every element $-\sum_{j=1}^m Q_j\mathcal X_{m-j}$ in the definition of $B_r^k$ is $Q_0$-closed and admits the trivial completion $0=\mathbf Q(\sum_{s=0}^{m-1}\hbar^s\mathcal X_s)+\hbar^m(\sum_{j=1}^m Q_j\mathcal X_{m-j})+\cdots$ through order $r$ upon adjusting $\mathcal X_m$, giving $0=B_0^k\subseteq B_1^k\subseteq\cdots\subseteq B_r^k\subseteq Z_r^k\subseteq\cdots\subseteq Z_0^k$. We prove $\mathrm{BPS}_{\hbar^r}^k\cong Z_r^k/B_r^k$ by induction on $r$, the base case $r=0$ being $\mathrm{BPS}_{\hbar^0}^k=H^k(Q_0)$. Assuming the isomorphism through $r-1$, equation~\eqref{eq-2-75} shows that every $a\in\mathrm{BPS}_{\hbar^{r-1}}^k$ is represented by a tuple $(\mathcal O_0,\ldots,\mathcal O_{r-1})$ solving~\eqref{eq-liftingequations} through $r-1$, with $[\mathcal O_0]_{\hbar^0}\in Z_{r-1}^k$ well defined modulo $B_{r-1}^k$. Under the induction hypothesis on degree $k+1$, the class $d_r a=\bigl[\sum_{j=1}^r Q_j\mathcal O_{r-j}\bigr]_{\hbar^{r-1}}\in\mathrm{BPS}_{\hbar^{r-1}}^{k+1}\cong Z_{r-1}^{k+1}/B_{r-1}^{k+1}$ vanishes if and only if $\sum_{j=1}^r Q_j\mathcal O_{r-j}$ is $Q_0$-cohomologous to $-\sum_{j=1}^m Q_j\mathcal Y_{m-j}$ ($1\le m\le r-1$) for some lower-order cocycle tuple $\mathcal Y$, i.e., if and only if there exist adjustments $(\widetilde{\mathcal Y}_1,\ldots,\widetilde{\mathcal Y}_{r-1})$ of $(\mathcal O_1,\ldots,\mathcal O_{r-1})$ with $\widetilde{\mathcal Y}_0=0$ and an $\mathcal O_r$ such that $Q_0\mathcal O_r+\sum_{j=1}^r Q_j(\mathcal O_{r-j}-\widetilde{\mathcal Y}_{r-j})=0$, which is precisely $[\mathcal O_0]_{\hbar^0}\in Z_r^k$ and $\sum_{j=1}^r Q_j\mathcal O_{r-j}\in W_r^{k+1}$. Likewise, the image of $d_r:\mathrm{BPS}_{\hbar^{r-1}}^{k-1}\to\mathrm{BPS}_{\hbar^{r-1}}^k$ corresponds under $Z_{r-1}^k/B_{r-1}^k$ precisely to $B_r^k/B_{r-1}^k$. Taking $(\ker d_r)/(\operatorname{im}d_r)=(Z_r^k/B_{r-1}^k)/(B_r^k/B_{r-1}^k)\cong Z_r^k/B_r^k$ proves both~(1) and the subspace criterion $\sum_{j=1}^r Q_j\mathcal O_{r-j}\notin W_r^{k+1}$ in~(2). Over $\mathbb Q$, a vector $v$ lies outside a subspace $W$ if and only if there exists a linear functional $\ell\in W^\perp$ with $\ell(v)\ne0$.~\hfill\qedsymbol
+\end{proofbox}
 
+\rthm{Corollary}{cor-ch9-fortuitous-bound}{Fortuitous bound on quantum lifting}
+In $\mathcal N=4$ Yang--Mills theory at fixed gauge group and conserved charge sector, let $M^k\subseteq\mathrm{BPS}_{\hbar^0}^k$ be the multi-graviton subspace and $F^k=\mathrm{BPS}_{\hbar^0}^k/M^k$ the fortuitous quotient. Then for every $R\ge1$,
+\begin{equation}\label{eq-ch9-fortuitous-rank-bound}
+\begin{aligned}
+\sum_{\substack{r=1\\\text{obstruction orders}}}^{R}
+\operatorname{rank}\bigl(d_r:\mathrm{BPS}_{\hbar^{r-1}}^k\to\mathrm{BPS}_{\hbar^{r-1}}^{k+1}\bigr)
+&\le\dim F^k,\\
+\dim(M^k\cap B_R^k)\le\sum_{\substack{r=1\\\text{obstruction orders}}}^{R}
+\operatorname{rank}\bigl(d_r:\mathrm{BPS}_{\hbar^{r-1}}^{k-1}\to\mathrm{BPS}_{\hbar^{r-1}}^k\bigr)
+&\le\dim F^{k-1}.
+\end{aligned}
+\end{equation}
+
+\begin{proofbox}
+\textbf{Proof.} By Theorem~\ref{b-00630}, every class in $M^k$ admits an all-order $\mathbf Q$-closed completion, so $M^k\subseteq Z_R^k$ for every $R\ge1$. Telescoping~\eqref{eq-ch9-canonical-subquotient} gives
+\begin{equation*}
+\begin{aligned}
+\sum_{r=1}^R\operatorname{rank}d_r^k
+&=\sum_{r=1}^R(\dim Z_{r-1}^k-\dim Z_r^k)
+=\dim\mathrm{BPS}_{\hbar^0}^k-\dim Z_R^k\\
+&\le\dim\mathrm{BPS}_{\hbar^0}^k-\dim M^k=\dim F^k.
+\end{aligned}
+\end{equation*}
+Similarly, $\dim(M^k\cap B_R^k)\le\dim B_R^k=\sum_{r=1}^R(\dim B_r^k-\dim B_{r-1}^k)=\sum_{r=1}^R\operatorname{rank}d_r^{k-1}\le\dim F^{k-1}$, bounding the number of linearly independent multi-graviton classes in degree $k$ that can become exact through order $R$.~\hfill\qedsymbol
+\end{proofbox}
+
+\rthm{Proposition}{ch9-finiteness}{Finite graph operations and bounded sectors}
+\label{local-21383d5a-696a-4007-95a9-598f18902d64}%
+For the interaction~\eqref{eq-B-10} with a polynomial superpotential, the antifield counts give for every polynomial local operator $\mathcal O,A,B$:
 \begin{equation}\label{ch9-general-graph-bound}
 \begin{aligned}
 Q_n\mathcal O&=0
@@ -4599,15 +4573,11 @@ Q_n\mathcal O&=0
 &&\bigl(n>\#(b,\beta\text{ in }A)+\#(b,\beta\text{ in }B)\bigr).
 \end{aligned}
 \end{equation}
-
-\label{local-21383d5a-696a-4007-95a9-598f18902d64}The transfer is defined coefficientwise for every formal differential as above; its inverse series terminate on a sector with bounded holomorphic derivative totals if $Q_0$ preserves those totals and $Q_n$ raises each by $n$.
+The homotopy transfer~\eqref{eq-page-transfer} is defined coefficientwise for every formal differential; on any sector with bounded holomorphic derivative totals $\max(n_+,n_-)<\infty$, its resolvent series and reconstructed completions $i_0(\hbar)\cdots i_{r-1}(\hbar)i_ra$ terminate as finite polynomials in $\hbar$ whenever $Q_0$ preserves $n_\pm$ and $Q_n$ raises both $n_+$ and $n_-$ by $n$.
 
 \begin{proofbox}
-
-\label{ch9-finiteness-proof-start}\emph{Proof.}
-
-\label{ch9-count-proof}Every propagator consumes one $b$ or $\beta$, every gauge or matter vertex supplies one, and a $\bar W$ vertex supplies none, so \eqref{eq-antifield-loss} and \eqref{eq-product-antifield-loss} give
-
+\label{ch9-finiteness-proof-start}\label{ch9-count-proof}\label{ch9-count-bound}%
+\textbf{Proof.} Every physical propagator consumes one $b$ or $\beta$, every gauge or matter interaction vertex supplies one, and a $\bar W$ vertex supplies none, so~\eqref{eq-antifield-loss} and~\eqref{eq-product-antifield-loss} give
 \begin{equation}\label{ch9-antifield-count}
 \begin{aligned}
 \#(b,\beta)_{\mathrm{out}}
@@ -4616,58 +4586,45 @@ Q_n\mathcal O&=0
 &=\#(b,\beta)_A+\#(b,\beta)_B-n-\#(\bar W\text{ vertices}).
 \end{aligned}
 \end{equation}
+Nonnegativity of the surviving antifield count proves~\eqref{ch9-general-graph-bound} (with formal superpotentials read coefficientwise).
 
-\label{ch9-count-bound}Nonnegative output count proves the graph bounds, whose losses add under iterated products; a formal superpotential is read coefficientwise.
-
-\label{ch8-transfer-proof-grading-intro}For vertices without holomorphic derivatives, the current homogeneity \eqref{eq-derivative-homogeneity} gives $n_\pm(Q_n a)=n_\pm(a)+n$, where $n_\pm$ count the two holomorphic derivative directions.
-
-\label{ch9-homogeneous-contractions}Choose homogeneous $i_r,\pi_r$ to preserve these totals and $h_r$ to invert the shift of $d_r$; for nonzero outputs,
-
+\label{ch8-transfer-proof-grading-intro}\label{ch9-homogeneous-contractions}\label{ch9-shift-induction}\label{ch9-finite-sector-condition}%
+For interaction vertices without holomorphic derivatives, the current-form homogeneity~\eqref{eq-derivative-homogeneity} gives $n_\pm(Q_n a)=n_\pm(a)+n$, where $n_\pm$ count $\partial_{+\dot\pm}$ derivatives. Choosing homogeneous contractions $(i_r,\pi_r,h_r)$ so that $i_r,\pi_r$ preserve $n_\pm$ and $h_r$ inverts the shift of $d_r$, any nonzero output obeys by induction on $r$:
 \begin{equation}\label{eq-ch8-transfer-lowering}
 \begin{aligned}
 n_\pm(h_ra)&=n_\pm(a)-r,\\
 n_\pm\bigl(([\hbar^m]\mathbf Q^{(r)})a\bigr)&=n_\pm(a)+r+m,\\
 n_\pm\bigl(h_r([\hbar^m]\mathbf Q^{(r)})a\bigr)
-&=n_\pm\bigl(([\hbar^m]\mathbf Q^{(r)})h_ra\bigr)=n_\pm(a)+m.
+&=n_\pm\bigl(([\hbar^m]\mathbf Q^{(r)})h_ra\bigr)=n_\pm(a)+m,
 \end{aligned}
 \end{equation}
-
-\label{ch9-shift-induction}Indeed, a transfer term with $\ell$ perturbation factors of total order $m+1$ and $\ell-1$ homotopies has derivative shift $\ell r+(m+1)-(\ell-1)r=r+m+1$, proving the induction.
-
+since a transfer word with $\ell$ perturbation factors of total $\hbar$-excess $m+1$ and $\ell-1$ homotopies shifts $n_\pm$ by $\ell r+(m+1)-(\ell-1)r=r+m+1$. Consequently,
 \begin{equation}\label{eq-ch8-transfer-finite-inverses}
 \begin{gathered}
 [\hbar^s]\bigl[1+h_r(\mathbf Q^{(r)}-d_r)\bigr]^{-1}a
 =[\hbar^s]\bigl[1+(\mathbf Q^{(r)}-d_r)h_r\bigr]^{-1}a=0,\\
-s>\min_{\pm}\bigl(\max_{\text{fixed sector}}n_\pm-n_\pm(a)\bigr).
+s>\min_{\pm}\bigl(\max_{\text{fixed sector}}n_\pm-n_\pm(a)\bigr),
 \end{gathered}
 \end{equation}
-
-\label{ch9-finite-sector-condition}This proves polynomial termination whenever the displayed maximum is finite, including a fixed effective-theory truncation with bounded derivative order.
-
-\label{ch9-finiteness-proof-end}$\square$
-
+which proves finite termination in $\hbar$ whenever the sector maximum of $n_+$ or $n_-$ is finite (including any effective-theory truncation with bounded derivative order).~\hfill\qedsymbol
 \end{proofbox}
 
-\label{local-ch8-finite-correction-degree-intro}For the homogeneous reconstruction and contractions in $\mathcal N=4$ SYM, the component degree of Appendix~\ref{sec-E-sectors} gives the sharper bound
-
+\label{local-ch8-finite-correction-degree-intro}\label{ch9-unbounded-formal}%
+In particular, in all theories studied in Section~\ref{sec-applications} where a positive conserved weight bounds $n_++n_-$ at fixed quantum numbers---including $\mathcal N=4$ Yang--Mills theory and its Leigh--Strassler and $\beta$-deformations (where $2(E+J_L)=2\Theta+3(n_++n_-)$ is conserved), $\mathcal N=2$ gauge theories, and the mass-deformed theories ordered by $w_{\mathrm{IR}}=q_A+q_B+2(n_++n_-)$---every survivable polynomial local operator $\mathcal O_0$ in the original fields and their derivatives admits a quantum completion $\mathcal O=\sum_{s=0}^S\hbar^s\mathcal O_s$ that is a finite sum in $\hbar$. In $\mathcal N=4$ SYM and its marginal deformations, the component degree $\Theta=\deg_\theta$ of Appendix~\ref{sec-E-sectors} gives the explicit degree drop
 \begin{equation}\label{local-ch8-finite-correction-degree}
 \begin{gathered}
 \deg_\theta\mathcal O_s=\deg_\theta\mathcal O_0-3s,
 \qquad \mathcal O_s=0\quad(3s>\deg_\theta\mathcal O_0),\\
 \deg_\theta\bigl(h_r([\hbar^m]\mathbf Q^{(r)})a\bigr)
 =\deg_\theta\bigl(([\hbar^m]\mathbf Q^{(r)})h_ra\bigr)
-=\deg_\theta a-3m.
+=\deg_\theta a-3m,
 \end{gathered}
 \end{equation}
+while for unrestricted couplings without a conserved positive weight, the resolvents in~\eqref{eq-ch8-transfer-inverses} remain well defined coefficientwise as formal series in $\hbar$.
 
-\label{ch9-unbounded-formal}For unrestricted couplings and sectors, the inverse series in \eqref{eq-ch8-transfer-inverses} are defined coefficientwise in $\hbar$.
-
-\paragraph{Products and operator mixing}\label{products-and-classical-representatives}
-
-\label{b-00716}Suppose $A=\sum_{s<r}\hbar^sA_s$ and $B=\sum_{s<r}\hbar^sB_s$ satisfy the closure equations through order $r-1$, and put $\mathcal O_s=[\hbar^s](A\star B)$.
-
-\label{sentence-50ec3b8f1ff406611fdb48b5}The chain identity \eqref{eq-chain}, with $\mathcal O_0=A_0B_0$, gives
-
+\paragraph{Products and operator mixing.}\label{products-and-classical-representatives}
+\label{b-00716}\label{sentence-50ec3b8f1ff406611fdb48b5}\label{b-00718}\label{b-00720}%
+Suppose $A=\sum_{s<r}\hbar^sA_s$ and $B=\sum_{s<r}\hbar^sB_s$ solve the closure equations~\eqref{eq-liftingequations} through order $r-1$, and put $\mathcal O_s=[\hbar^s](A\star B)$ with $\mathcal O_0=A_0B_0$. Expanding the Leibniz identity~\eqref{eq-chain} through order $r$ gives
 \begin{equation}\label{eq-2-77}
 \begin{gathered}
 \sum_{\substack{j=0\\\text{loop orders}}}^{s}Q_j\mathcal O_{s-j}=0\qquad(0\le s<r),\\
@@ -4678,46 +4635,39 @@ Q_0\mathcal O_r+\sum_{\substack{j=1\\\text{loop orders}}}^{r}Q_j\mathcal O_{r-j}
 \end{aligned}
 \end{gathered}
 \end{equation}
-
-\label{b-00718}Passing to $\mathrm{BPS}_{\hbar^{r-1}}$ yields the product and its derivation:
-
+Passing to $\mathrm{BPS}_{\hbar^{r-1}}$ shows that the classical product descends to each successive cohomology space and that $d_r$ acts as a graded derivation:
 \begin{equation}\label{eq-2-78}
 \begin{aligned}
 [A_0]_{\hbar^{r-1}}[B_0]_{\hbar^{r-1}}&=[A_0B_0]_{\hbar^{r-1}},\\
 d_r([A_0]_{\hbar^{r-1}}[B_0]_{\hbar^{r-1}})
 &=(d_r[A_0]_{\hbar^{r-1}})[B_0]_{\hbar^{r-1}}+(-1)^{|A_0|}[A_0]_{\hbar^{r-1}}(d_r[B_0]_{\hbar^{r-1}}),\\
 [A_0]_{\hbar^{r-1}}=d_ra,\quad d_r[B_0]_{\hbar^{r-1}}=0
-&\quad\Longrightarrow\quad [A_0B_0]_{\hbar^{r-1}}=d_r\bigl(a[B_0]_{\hbar^{r-1}}\bigr).
+&\quad\Longrightarrow\quad [A_0B_0]_{\hbar^{r-1}}=d_r\bigl(a[B_0]_{\hbar^{r-1}}\bigr),
 \end{aligned}
 \end{equation}
+inheriting associativity, graded commutativity, and the unit from $\mathrm{BPS}_{\hbar^0}=H(Q_0)$.
 
-\label{b-00720}Thus multiplication descends successively from $H(Q_0)$ and inherits associativity, graded commutativity and the unit.
-
-\rthm{Theorem}{product-uniqueness-ch9-p01}{Operator mixing and renormalization} Fix a quantum master-equation solution, its local differential $\mathbf Q$ and marked product $\star$.
-
-\label{sentence-f0b87ccfd17306bc92503267}For a closed completion $\mathcal O$, all completions of the same leading representative obey
-
+\rthm{Theorem}{product-uniqueness-ch9-p01}{Operator mixing and renormalization}
+\label{sentence-f0b87ccfd17306bc92503267}\label{product-uniqueness-ch9-p02}%
+Fix a solution of the quantum master equation, its local BV differential $\mathbf Q$, and its marked product $\star$. Given a closed completion $\mathcal O$ of $\mathcal O_0$, every closed completion $\mathcal O'$ sharing the same classical leading term $\mathcal O'_0=\mathcal O_0$ has the form
 \begin{equation}\label{eq-lift-finite-freedom}
 \begin{gathered}
 \mathbf Q\mathcal O'=0,\quad\mathcal O'_0=\mathcal O_0
 \quad\Longleftrightarrow\quad
 \mathcal O'=\mathcal O+\hbar Z,\quad\mathbf QZ=0,\\
 [\mathcal O']_{\mathbf Q}=[\mathcal O]_{\mathbf Q}
-\quad\Longleftrightarrow\quad \hbar[Z]_{\mathbf Q}=0.
+\quad\Longleftrightarrow\quad \hbar[Z]_{\mathbf Q}=0,
 \end{gathered}
 \end{equation}
-
-\label{product-uniqueness-ch9-p02}Here $Z$ has the charges required by the correction, so the allowed completed classes form $[\mathcal O]_{\mathbf Q}+\hbar H(\mathbf Q)$ in those charges.
-
+where $Z$ carries the conserved charges required by the $\hbar$-shift; thus the set of completed classes over $[\mathcal O_0]_{\hbar^0}$ is the affine coset $[\mathcal O]_{\mathbf Q}+\hbar H(\mathbf Q)$ in that charge sector, and changing the completion shifts quantum products by
 \begin{equation}\label{eq-product-lift-mixing}
 \mathbf QA=\mathbf QB=\mathbf QZ=0
 \quad\Longrightarrow\quad
 [(A+\hbar Z)\star B]_{\mathbf Q}
 =[A\star B]_{\mathbf Q}+\hbar[Z\star B]_{\mathbf Q}.
 \end{equation}
-
-\label{product-uniqueness-ch9-p05}An even, local, invertible $\mathbb C[[\hbar]]$-linear operator redefinition $A\mapsto A'$, equal to the identity modulo $\hbar$ and preserving the unit and physical gradings, transports the differential and product by
-
+\label{product-uniqueness-ch9-p05}\label{product-uniqueness-ch9-p06}\label{product-uniqueness-ch9-p07}%
+Furthermore, any even, local, invertible $\mathbb C[[\hbar]]$-linear operator redefinition $A\mapsto A'$ equal to the identity modulo $\hbar$ and preserving the unit and physical gradings transports $(\mathbf Q,\star)$ by a unital ring isomorphism (commuting with $\mathbf Q$ whenever $\mathbf Q'=\mathbf Q$):
 \begin{equation}\label{eq-product-finite-redefinition}
 \begin{gathered}
 \mathbf Q'A'=(\mathbf QA)',\qquad
@@ -4726,54 +4676,38 @@ A'\star' B'=(A\star B)',\qquad 1'=1,\\
 [A\star B]_{\mathbf Q}\longmapsto[A'\star'B']_{\mathbf Q'}.
 \end{gathered}
 \end{equation}
-
-\label{product-uniqueness-ch9-p06}This is a unital ring isomorphism; at fixed $\mathbf Q$, the redefinition commutes with $\mathbf Q$.
-
-\label{product-uniqueness-ch9-p07}Two admissible local product prescriptions on the same complex induce the same product precisely when, for every closed pair,
-
+Two admissible local product prescriptions $\star,\star'$ on the same complex $(\mathcal A_{\mathrm{loc}}[[\hbar]],\mathbf Q)$ induce the same ring structure on $H(\mathbf Q)$ if and only if their difference on every closed pair is locally $\mathbf Q$-exact:
 \begin{equation}\label{eq-product-contact-equivalence}
 [A\star' B]_{\mathbf Q}=[A\star B]_{\mathbf Q}
 \quad\Longleftrightarrow\quad
 A\star' B-A\star B\in\operatorname{im}\mathbf Q
 \quad\text{in local operators}.
 \end{equation}
-
-\label{product-uniqueness-ch9-p09}A finite action change $I'[L]-I[L]$ of positive $\hbar$-order satisfies the quantum master equation precisely when
-
+\label{product-uniqueness-ch9-p09}\label{product-uniqueness-ch9-p10}%
+Finally, a finite action deformation $I'[L]-I[L]$ of positive $\hbar$-order (respecting locality, symmetry, and renormalization-group flow) preserves the regularized quantum master equation if and only if it solves the Maurer--Cartan equation
 \begin{equation}\label{eq-finite-action-QME}
 \mathbf Q_L\bigl(I'[L]-I[L]\bigr)
 +\frac12\bigl(I'[L]-I[L],I'[L]-I[L]\bigr)_L=0.
 \end{equation}
 
-\label{product-uniqueness-ch9-p10}The family also obeys the prescribed locality, symmetry and renormalization-group conditions.
-
 \begin{proofbox}
-
-\label{ch9-mixing-proof-start}\emph{Proof.}
-
+\label{ch9-mixing-proof-start}\label{ch9-mixing-proof-torsion}\label{ch9-mixing-proof-linear}\label{ch9-mixing-proof-equivalence}\label{ch9-action-proof-intro}\label{ch9-mixing-proof-end}%
+\textbf{Proof.} Writing $\mathcal O'-\mathcal O=\hbar Z$ for $\mathcal O'_0=\mathcal O_0$, injectivity of multiplication by $\hbar$ on formal local-operator series gives
 \begin{equation}\label{ch9-mixing-proof-closed}
 \mathcal O'-\mathcal O=\hbar Z,\qquad
 0=\mathbf Q(\mathcal O'-\mathcal O)=\hbar\mathbf QZ
-\quad\Longrightarrow\quad \mathbf QZ=0.
+\quad\Longrightarrow\quad \mathbf QZ=0,
 \end{equation}
-
-\label{ch9-mixing-proof-torsion}The implication uses the injectivity of multiplication by $\hbar$ on formal local operators; passing to cohomology gives \eqref{eq-lift-finite-freedom}, including possible classes annihilated by $\hbar$.
-
-\label{ch9-mixing-proof-linear}Bilinearity proves \eqref{eq-product-lift-mixing}, while the transported operations satisfy
-
+and passing to $H(\mathbf Q)$ yields~\eqref{eq-lift-finite-freedom} (retaining any $\hbar$-torsion classes obeying $\hbar[Z]_{\mathbf Q}=0$). $\mathbb C[[\hbar]]$-bilinearity of $\star$ gives~\eqref{eq-product-lift-mixing}, while transporting $(\mathbf Q,\star)$ along an invertible redefinition $A\mapsto A'$ preserves nilpotence and the Leibniz rule:
 \begin{equation}\label{ch9-redefinition-proof}
 \begin{gathered}
 (\mathbf Q')^2A'=(\mathbf Q^2A)'=0,\qquad
 (\mathbf QX)'=\mathbf Q'X',\\
 \mathbf Q'(A'\star' B')
-=(\mathbf Q'A')\star' B'+(-1)^{|A|}A'\star'(\mathbf Q'B').
+=(\mathbf Q'A')\star' B'+(-1)^{|A|}A'\star'(\mathbf Q'B'),
 \end{gathered}
 \end{equation}
-
-\label{ch9-mixing-proof-equivalence}The inverse redefinition transports cocycles, boundaries and products back, and \eqref{eq-product-contact-equivalence} is equality in the local cohomology quotient.
-
-\label{ch9-action-proof-intro}Subtracting the two regularized master equations gives
-
+whose inverse transports cocycles, coboundaries, and products back; \eqref{eq-product-contact-equivalence} is tautological in the quotient $H(\mathbf Q)=\ker\mathbf Q/\operatorname{im}\mathbf Q$. Lastly, subtracting the regularized quantum master equations for $I'[L]$ and $I[L]$ gives
 \begin{equation}\label{ch9-action-proof}
 \begin{aligned}
 0={}&Q_{\mathrm{BV}}\bigl(I'[L]-I[L]\bigr)
@@ -4781,32 +4715,23 @@ A\star' B-A\star B\in\operatorname{im}\mathbf Q
 +\bigl(I[L],I'[L]-I[L]\bigr)_L\\
 &+\frac12\bigl(I'[L]-I[L],I'[L]-I[L]\bigr)_L\\
 ={}&\mathbf Q_L\bigl(I'[L]-I[L]\bigr)
-+\frac12\bigl(I'[L]-I[L],I'[L]-I[L]\bigr)_L.
++\frac12\bigl(I'[L]-I[L],I'[L]-I[L]\bigr)_L,
 \end{aligned}
 \end{equation}
-
-\label{ch9-mixing-proof-end}$\square$
-
+which is~\eqref{eq-finite-action-QME}.~\hfill\qedsymbol
 \end{proofbox}
 
-\label{product-uniqueness-ch9-p08}The marked graph prescription fixes the contact terms; an independent admissible change is equivalent under the identity map exactly under \eqref{eq-product-contact-equivalence}.
-
-\label{ch9-action-freedom}An infinitesimal $\mathbf Q_L$-exact action change generates a quantum BV canonical transformation; a finite equivalence completes it at every order, compatibly with locality and scale transport.
-
-\label{ch9-action-comparison}Other solutions of \eqref{eq-finite-action-QME} can change the quantization or couplings, which are held fixed when comparing products of a fixed quantum theory.
-
-\label{product-uniqueness-ch9-p11}Inheritance of the classical multiplication on the successive spaces allows quantum corrections to relations among chosen completions:
-
+\label{product-uniqueness-ch9-p08}\label{ch9-action-freedom}\label{ch9-action-comparison}\label{product-uniqueness-ch9-p11}\label{product-uniqueness-ch9-p12}%
+The marked-graph prescription fixes the contact terms canonically, with any admissible change of contact prescription governed by~\eqref{eq-product-contact-equivalence}. Infinitesimally $\mathbf Q_L$-exact deformations of $I[L]$ generate quantum BV canonical transformations (integrated to finite equivalences compatible with locality and scale transport), whereas non-exact solutions of~\eqref{eq-finite-action-QME} shift physical couplings or quantization choices and are held fixed when comparing products within a given quantum theory. Finally, while multiplication on each $\mathrm{BPS}_{\hbar^{r-1}}$ is inherited from $H(Q_0)$, classical ring relations $A_0B_0=Q_0X_0$ among chosen quantum completions $\mathbf QA=\mathbf QB=0$ can acquire quantum corrections of order $\hbar$:
 \begin{equation}\label{eq-product-classical-relation}
 \begin{gathered}
 \mathbf QA=\mathbf QB=0,\qquad A_0B_0=Q_0X_0,\\
 A\star B-\mathbf QX_0=\hbar\mathcal O,\qquad
 0=\hbar\mathbf Q\mathcal O\quad\Longrightarrow\quad\mathbf Q\mathcal O=0,\\
-[A\star B]_{\mathbf Q}=\hbar[\mathcal O]_{\mathbf Q}.
+[A\star B]_{\mathbf Q}=\hbar[\mathcal O]_{\mathbf Q},
 \end{gathered}
 \end{equation}
-
-\label{product-uniqueness-ch9-p12}The second line follows by cancelling the constant coefficient and applying $\mathbf Q$; the relation is unchanged precisely when $\hbar[\mathcal O]_{\mathbf Q}=0$.
+where cancelling the $\hbar^0$ term and applying $\mathbf Q$ shows $\mathbf Q\mathcal O=0$; the classical relation persists unmodified in $H(\mathbf Q)$ if and only if $\hbar[\mathcal O]_{\mathbf Q}=0$.
 
 \section{Discussion}\label{sec-conclusion}
 
