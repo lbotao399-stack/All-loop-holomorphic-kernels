@@ -1,3 +1,4 @@
+\pdfoutput=1
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -92,7 +93,7 @@
 \setlength{\parskip}{3pt}
 \setlength{\parindent}{1.2em}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261120-231110}}
+\hypersetup{pdftitle={Holomorphic Feynman diagrams in four dimensions and the quantum BPS ring},pdfauthor={Botao Li, Kangning Liu, Chi-Ming Chang},pdfsubject={Manuscript version 20261121-103805}}
 \title{Holomorphic Feynman diagrams in four dimensions\\ and the quantum BPS ring}
 \author{Botao Li$^{1}$, Kangning Liu$^{2,3,4}$ and Chi-Ming Chang$^{2,5}$\\[6pt]
 {\small $^{1}$Peking University}\\[3pt]
@@ -127,13 +128,13 @@ The operatope is defined in arbitrary dimension $d$, for all graphs that satisfy
 
 The anomalous supersymmetry transformation\footnote{We use the terms anomalous supersymmetry transformation, loop correction to the supercharge and quantum BV differential interchangeably; strictly they are different notions, but here they refer to the same operator.} violates the Leibniz rule: at one loop it acts on two letters at once, like a second-order differential operator, and at $n$ loops on $n+1$ letters. The holomorphic twist also provides a perturbative quantum product, built from the higher brackets with a pair of auxiliary fields \cite{higher} and analogous to normal ordering in an interacting conformal field theory. When the quantum master equation holds, that is, when the gauge anomaly cancels, the perturbative BV differential obeys the Leibniz rule for this product. We prove that the analogy is exact: the quantum product is cohomologous to the integral over an arbitrary three-sphere against the Bochner--Martinelli form, the propagator. It is associative and graded commutative on $\mathbf Q$-cohomology, but neither on the full BV complex. The quantum product is not needed to compute the cohomology as a vector space; it supplies the ring structure. For example, the test of quantum lifting \cite[Section 1]{semichiral} then needs to be carried out only on the generators of the BPS ring. The explicit form of the product also shows that the multi-gravitons of the $1/16$-BPS sector of $SU(N)$ $\mathcal N=4$ Yang--Mills theory remain quantum cocycles at arbitrary loop order. The quantum product is evaluated by the same kind of graph integrals; it involves more types of kernels than the supersymmetry transformation. From three loops on, the quantum product also contains interaction forests that are neither fans nor spiders; for renormalizable theories, series, parallel, and zero-source star--triangle moves keep their currents polynomial.\footnote{In the original Schwinger times the same integrands are rational, with powers of the spanning-tree polynomial in the denominator \cite[Corollaries 1--2 and proof of Theorem 6]{Wang}, while the operatope coordinates simplify the integrand at the price of an intricate integration region \cite[Sections 2.3 and 2.6]{operatope}. Fans and spiders are Laman graphs of type~I$'$; Gui, Wang and Williams wrote their weights recursively from the $L_\infty$ relations as integrals over unit cubes with polynomial integrands at each order in the displacements \cite[Theorem 4.13]{GWW}, leaving the relation of the cube parameters to Schwinger parameters open \cite[Remark 4.14]{GWW}, and evaluated the fans explicitly through three loops, the last with computer algebra \cite[Sections 4.4--4.6]{GWW}. We supply this relation and its physical interpretation.}
 
-As an explicit application, we give the all-order supercharge of $\mathcal N=4$ Yang--Mills theory in \eqref{eq-sum-N4}. We also improve the enumeration algorithm for fortuitous classes and find new classes in $\mathcal N=4$ Yang--Mills theory with gauge groups $SU(N)$, $SO(2N+1)$, $Sp(N)$ and $G_2$. The results and a description of the algorithm are collected in the repository \cite{Repo}. With the explicit $Q_2,Q_3,\ldots$ derived here, we test the lifting of these classes beyond one loop. We find no two-loop lift in the $\mathcal N=4$ sectors tested. We do find many one-loop lifts in the $SO(2N+1)$ theories; through the levels computed, they restore the agreement of the $SO(2N+1)$ and $Sp(N)$ spectra required by S-duality. We also find two-loop lifts in the Leigh--Strassler deformation \cite{LeighStrassler} of $SU(3)$ $\mathcal N=4$ Yang--Mills theory, with superpotential
+As an explicit application, we give the all-order supercharge of $\mathcal N=4$ Yang--Mills theory in \eqref{eq-sum-N4}. We also improve the enumeration algorithm for fortuitous classes and find new classes in $\mathcal N=4$ Yang--Mills theory with gauge groups $SU(N)$, $SO(2N+1)$, $Sp(N)$ and $G_2$. The results and a description of the algorithm are collected in the repository \cite{Repo}. With the explicit $Q_2,Q_3,\ldots$ derived here, we test the lifting of these classes beyond one loop. We find no two-loop lift in the $\mathcal N=4$ sectors tested. We do find many one-loop lifts in the $SO(2N+1)$ theories; through the levels computed, they restore the agreement of the $SO(2N+1)$ and $Sp(N)$ spectra required by S-duality. We also find two-loop lifts in the Leigh--Strassler deformation \cite{LeighStrassler} of $SU(3)$ $\mathcal N=4$ Yang--Mills theory, with antichiral superpotential
 \begin{equation*}
-W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^3\gamma^2)+\frac{h}{3}\left[\operatorname{tr}((\gamma^1)^3)+\operatorname{tr}((\gamma^2)^3)+\operatorname{tr}((\gamma^3)^3)\right].
+\bar W=\operatorname{tr}(\gamma^1\gamma^2\gamma^3)-q\operatorname{tr}(\gamma^1\gamma^3\gamma^2)+\frac{h}{3}\left[\operatorname{tr}((\gamma^1)^3)+\operatorname{tr}((\gamma^2)^3)+\operatorname{tr}((\gamma^3)^3)\right].
 \end{equation*}
 We find two-, three- and four-loop lifts in abelian theories of SQED type, and two- and three-loop lifts in $\mathcal N=2$ $SU(2)$ and $SU(3)$ gauge theories and their singlet deformations.
 
-Section \ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the threshold fortuitous class of $SU(4)$, at $2(E+J_L)=28$. Section \ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section \ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section \ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section \ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section \ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section \ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section \ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix \ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix \ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix \ref{sec-B-spanning} recalls the spanning-tree solution of the circuit, which our reductions do not use.
+Section~\ref{sec-summary} summarizes our results: the all-order supercharge of $\mathcal N=4$ Yang--Mills theory, the theorems on quantum lifting, on multi-gravitons and on the quantum BPS ring, the census of fortuitous classes and of their lifts at one loop and beyond, and the circuit picture behind the kernels. As a by-product of the census, we find the threshold fortuitous class of $SU(4)$, at $2(E+J_L)=28$. Section~\ref{sec-BV} reviews the holomorphic twist of the physical theory, the higher brackets and their reduction to a current integral, the starting point of our computations, for readers who have not met them. Section~\ref{sec-restrictions} proves constraints on the contributing graphs in four dimensions and classifies the graphs of $Q_n$. Section~\ref{sec-fans} computes the fan kernel, the kernel most used in practice, together with the circuit reductions on which it rests. Section~\ref{sec-product} treats the quantum product and its Leibniz rule, with explicit products through two loops. Section~\ref{sec-forests} gives the further kernels, those of spiders and cubic forests, which enter the quantum product and theories with superpotentials of higher degree. Section~\ref{sec-supercharge} writes the $n$-loop supercharge $Q_n$ of $\mathcal N=4$ Yang--Mills theory as a differential operator of order $n+1$. Section~\ref{sec-lifting} proves that the multi-gravitons remain closed under the full supercharge and sets up the successive homotopy transfer on which the practical computation of the cohomology ring rests. Appendix~\ref{sec-notation} collects the $\mathcal N=4$ superfield and the charge sectors and gradings used in the lifting tests. Appendix~\ref{app-twist-cohomology} proves that the cohomology of the twisted complex is the $Q$-cohomology of the physical operators. Appendix~\ref{sec-B-spanning} recalls the global spanning-tree solution of the circuit for comparison with our local reductions. Appendix~\ref{app-covariant-derivatives} shows that superspace covariant derivatives in the superpotential decouple into a $Q_-$-exact full-superspace term and leave the twisted operations unchanged, and Appendix~\ref{app-sourced-star} records the sourced star--triangle reduction for Laman graphs.
 
 \section{Summary of results}\label{sec-summary}
 
@@ -2004,43 +2005,37 @@ Only a few graphs can have a nonzero contribution to \eqref{eq-C-current-delta-i
 
 \subsection{Laman constraints}\label{sec-laman}
 
-For an induced subgraph $S\subseteq\Gamma$, write $V_S\subseteq V$ for its vertex set and $I_S\subseteq I$ for its edge set.
-
-Some of the proofs are easier to understand in terms of a circuit diagram (Table \ref{tab-sum-dictionary}), so we sometimes provide more than one proof to illustrate the idea.
+For an induced subgraph $S\subseteq\Gamma$, write $V_S\subseteq V$ for its vertex set and $I_S\subseteq I$ for its edge set. Because several constraints have a direct electrical-network reading (Table~\ref{tab-sum-dictionary}), we present both the form-degree proof and the circuit proof where helpful.
 
 \rthm{Lemma}{b-00180}{Laman count \cite[Equation (2.22)]{operatope}, \cite[Theorem 6]{Wang}} \emph{Every nonzero graph satisfies}
 \begin{equation}\label{eq-1-12}
 |I|=2|V|-3 .
 \end{equation}
 
-\emph{Proof (graph integral).} The heat edge has antiholomorphic form degree two and every other propagator degree one; together they saturate the relative antiholomorphic integration directions:
+\begin{proofbox}
+\textbf{Proof (graph integral).} The heat edge has antiholomorphic form degree two and every other propagator degree one; together they saturate the relative antiholomorphic integration directions:
 \begin{equation*}
 \underbrace{2}_{\text{heat kernel}}+\underbrace{(|I|-1)}_{P}
 =\underbrace{2(|V|-1)}_{|V|-1\text{ points}}.
 \end{equation*}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
-\emph{Proof (circuit).} The resistance ratios sweep out the real components of the independent loop currents in \eqref{eq-C-current-delta-integral}:
+\smallskip\noindent\textbf{Proof (circuit).} The resistance ratios sweep out the real components of the independent loop currents in \eqref{eq-C-current-delta-integral}:
 \begin{equation*}
 \underbrace{|I|-1}_{\text{independent resistance ratios}}
 =\underbrace{2}_{\text{holomorphic dimension}}\,
 \underbrace{(|I|-|V|+1)}_{\text{loops}}.
 \end{equation*}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
+\end{proofbox}
 
 \rthm{Lemma}{b-00194}{Laman bound on subgraphs \cite[Equation (2.23)]{operatope}, \cite[Proposition 5]{Wang}} \emph{Every $S\subseteq\Gamma$ with $I_S\ne\emptyset$ satisfies}
 \begin{equation*}
 |I_S|\le2|V_S|-3 .
 \end{equation*}
 
-\emph{Proof (graph integral).} Fix $v_0\in V_S$; the coordinates $(x_v-x_{v_0})^{-\dot a}$, $v\in V_S\setminus\{v_0\}$, give $2(|V_S|-1)$ one-form directions in the numerators of the propagators. The total form degree cannot exceed the number of one-form directions. If the heat kernel edge $K$ lies in $S$,
-\begin{equation*}
-|I_S|+1\le2(|V_S|-1).
-\end{equation*}
-
-If the heat edge lies outside $S$, the radial vector annihilates every internal propagator one-form \cite[Proposition 5, Lemma 2]{Wang}, \cite[Equation (2.15)]{operatope}:
+\begin{proofbox}
+\textbf{Proof (graph integral).} Fix $v_0\in V_S$; the coordinates $(x_v-x_{v_0})^{-\dot a}$, $v\in V_S\setminus\{v_0\}$, give $2(|V_S|-1)$ one-form directions in the numerators of the propagators. The total form degree cannot exceed the number of one-form directions. If the heat kernel edge $K$ lies in $S$, then $|I_S|+1\le2(|V_S|-1)$. If the heat edge lies outside $S$, the radial vector annihilates every internal propagator one-form \cite[Proposition 5, Lemma 2]{Wang}, \cite[Equation (2.15)]{operatope}:
 \begin{equation*}
 \begin{gathered}
 R=\sum_{u\in V_S\setminus\{v_0\}}(x_u-x_{v_0})^{-\dot c}\frac{\partial}{\partial x_u^{-\dot c}},\\
@@ -2048,28 +2043,21 @@ R=\sum_{u\in V_S\setminus\{v_0\}}(x_u-x_{v_0})^{-\dot c}\frac{\partial}{\partial
 =-(x_v-x_w)^-_{\dot a}(x_v-x_w)^{-\dot a}=0,
 \end{gathered}
 \end{equation*}
-so the number of antiholomorphic directions drops by one.
-\begin{equation*}
-|I_S|\le2(|V_S|-1)-1 .
-\end{equation*}
+so the number of antiholomorphic directions drops by one and $|I_S|\le2(|V_S|-1)-1$.~\hfill\qedsymbol
 
-\par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
-
-\emph{Proof (circuit).} Ohm's law is local. For connected $S$, fix the currents entering its vertices from outside. Kirchhoff's law leaves $2(|I_S|-|V_S|+1)$ independent loop-current components. The internal resistance ratios range over $\mathbb{RP}^{|I_S|-1}_{>0}$. If their variation cannot span these loop-current directions, the pullback of the loop-current volume form vanishes identically, and so does the graph kernel. Thus its form degree cannot exceed the dimension of the resistance-ratio space:
+\smallskip\noindent\textbf{Proof (circuit).} Ohm's law is local. For connected $S$, fix the currents entering its vertices from outside. Kirchhoff's law leaves $2(|I_S|-|V_S|+1)$ independent loop-current components, while the internal resistance ratios range over $\mathbb{RP}^{|I_S|-1}_{>0}$. If their variation cannot span these loop-current directions, the pullback of the loop-current volume form vanishes identically, and so does the graph kernel. Thus its form degree cannot exceed the dimension of the resistance-ratio space:
 \begin{equation*}
 \underbrace{2(|I_S|-|V_S|+1)}_{\text{loop-current form degree}}
 \le\underbrace{|I_S|-1}_{\dim\mathbb{RP}^{|I_S|-1}_{>0}}
 \quad\Longleftrightarrow\quad |I_S|\le2|V_S|-3.
 \end{equation*}
-The form may have lower or equal degree, but cannot be oversaturated. For disconnected $S$, apply the bound to each connected component containing an edge and add the bounds.
-
-\par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
-
-Lemma~\ref{b-00194} immediately leads to:
+For disconnected $S$, apply the bound to each connected component containing an edge and sum the bounds.~\hfill\qedsymbol
+\end{proofbox}
 
 \rthm{Corollary}{b-00188}{No self-loops or parallel edges \cite[Proposition 5]{Wang}, \cite[Section 2.1]{operatope}} \emph{A nonzero graph has no self-loop and at most one edge between any two vertices.}
 
-\emph{Proof (propagators).} A self-loop carries $d(x_v-x_v)^{-\dot a}=0$ \cite[Section 2.3]{Wang}. Two edges between $v$ and $w$, with holomorphic shifts $z,z'$, share the one-form direction of $x_v-x_w$ \cite[Section 2.1]{operatope}:
+\begin{proofbox}
+\textbf{Proof (propagators).} A self-loop carries $d(x_v-x_v)^{-\dot a}=0$ \cite[Section 2.3]{Wang}. Two edges between $v$ and $w$, with holomorphic shifts $z,z'$, share the one-form direction of $x_v-x_w$ \cite[Section 2.1]{operatope}:
 \begin{equation}\label{eq-1-13}
 \begin{aligned}
 [P_{\varepsilon,L;vw}(x_v-x_w+z)]_\Omega
@@ -2078,14 +2066,12 @@ Lemma~\ref{b-00194} immediately leads to:
 \wedge[P_{\varepsilon,L;vw}(x_v-x_w+z')]_\Omega&=0.
 \end{aligned}
 \end{equation}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 
-\emph{Proof (circuit).} A self-loop is shorted: $t_ey_{e,+\dot a}=0$ with $t_e>0$ gives $y_e=0$. Two resistors between the same nodes are in parallel: $t_ey_e=t_{e'}y_{e'}$, so their four current components vary in only three directions.~\hfill\qedsymbol
+\smallskip\noindent\textbf{Proof (circuit).} A self-loop is shorted: $t_ey_{e,+\dot a}=0$ with $t_e>0$ gives $y_e=0$. Two resistors between the same nodes are in parallel: $t_ey_e=t_{e'}y_{e'}$, so their four current components vary in only three directions.~\hfill\qedsymbol
+\end{proofbox}
 
-Corollary~\ref{b-00188} is the case $|V_S|\le2$ of Lemma~\ref{b-00194}.
-
-These are the Laman constraints in two holomorphic dimensions \cite[Equations (2.22)--(2.23)]{operatope}, \cite[Section 3.3]{higher}, \cite[Definition 16, Proposition 5, Theorem 6]{Wang}.
+Corollary~\ref{b-00188} is the $|V_S|\le2$ specialization of Lemma~\ref{b-00194}; together, Lemmas~\ref{b-00180} and~\ref{b-00194} are the Laman constraints in two holomorphic dimensions \cite[Equations (2.22)--(2.23)]{operatope}, \cite[Section 3.3]{higher}, \cite[Definition 16, Proposition 5, Theorem 6]{Wang}.
 
 \rthm{Lemma}{b-00207}{Counts at $n$ loops} \emph{A nonzero connected $n$-loop graph satisfies}
 \begin{equation}\label{eq-1-11}
@@ -2096,15 +2082,15 @@ These are the Laman constraints in two holomorphic dimensions \cite[Equations (2
 \end{gathered}
 \end{equation}
 
-\emph{Proof.} Lemma~\ref{b-00180} and $n=|I|-|V|+1$ give the first line; Lemma~\ref{b-00194} the second.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof.} Lemma~\ref{b-00180} and $n=|I|-|V|+1$ give the first line; Lemma~\ref{b-00194} gives the second.~\hfill\qedsymbol
+\end{proofbox}
 
 \subsection{Cubic vertices: only fans}\label{sec-only-fans}
 
-We now turn to the condition special to $d=4$.
+Turning to the four-dimensional field content, \eqref{eq-1-1} shows that the Feynman graphs of the loop-corrected supercharge $Q_n$ have $n+1$ interaction vertices and one insertion $\mathcal O$. We call an edge that joins an interaction vertex to $\mathcal O$ a \emph{spoke}, and write $\deg_\Gamma\mathcal O$ for the number of spokes of a graph $\Gamma$, the degree of $\mathcal O$; by Corollary~\ref{b-00188} it is at most $n+1$.
 
-By \eqref{eq-1-1}, the Feynman graphs of the loop-corrected supercharge $Q_n$ have $n+1$ interaction vertices and one insertion $\mathcal O$. We call an edge that joins an interaction vertex to $\mathcal O$ a \emph{spoke}, and write $\deg_\Gamma\mathcal O$ for the number of spokes of a graph $\Gamma$, the degree of $\mathcal O$; by Corollary~\ref{b-00188} it is at most $n+1$.
-
-\rthm{Proposition}{b-00210}{Graphs of $Q_n$ with cubic vertices are fans} \emph{For a translation-invariant interaction $\mathcal I$ whose vertices have degree at most three, every nonzero connected $n$-loop kernel with one local-operator insertion is a fan of cubic vertices (Figure~\ref{fig-fan-family}), for $n\ge1$. (The $n=0$ case is a single edge connecting two vertices, representing the classical tree-level SUSY transformation.)} \emph{The interaction vertices form a path; each is joined to the insertion, and one output field remains at each endpoint of the path.}
+\rthm{Proposition}{b-00210}{Graphs of $Q_n$ with cubic vertices are fans} \emph{For a translation-invariant interaction $\mathcal I$ whose vertices have degree at most three, every nonzero connected $n$-loop kernel with one local-operator insertion is a fan of cubic vertices (Figure~\ref{fig-fan-family}), for $n\ge1$ (at $n=0$, the single-edge tree represents the classical supersymmetry transformation $Q_0$). The interaction vertices form a path; each is joined to the insertion, and one output field remains at each endpoint of the path.}
 
 \begin{figure}[H]
 \centering
@@ -2113,13 +2099,12 @@ By \eqref{eq-1-1}, the Feynman graphs of the loop-corrected supercharge $Q_n$ ha
 \label{fig-fan-family}
 \end{figure}
 
-By Lemma~\ref{b-00207}, there are $n+1$ interaction vertices besides the insertion $\mathcal O$.
-
-The proof of Proposition~\ref{b-00210} uses two lemmas:
+By Lemma~\ref{b-00207}, there are $n+1$ interaction vertices besides the insertion $\mathcal O$; Proposition~\ref{b-00210} follows from two lemmas.
 
 \rthm{Lemma}{b-00213}{$\deg_\Gamma\mathcal O$ is maximal} \emph{In a graph of Proposition~\ref{b-00210}, $\deg_\Gamma\mathcal O=n+1$: every interaction vertex is joined to $\mathcal O$ by one edge and exactly two interaction fields remain uncontracted.}
 
-\emph{Proof (circuit).} The uncontracted interaction fields inject the external currents. By Corollary~\ref{b-00188} and Lemma~\ref{b-00207}, with equality in the first step only for cubic vertices,
+\begin{proofbox}
+\textbf{Proof (circuit).} The uncontracted interaction fields inject the external currents. By Corollary~\ref{b-00188} and Lemma~\ref{b-00207}, with equality in the first step only for cubic vertices,
 \begin{equation}\label{eq-cubiccount}
 \begin{aligned}
 \#(\text{sources})
@@ -2130,45 +2115,51 @@ The proof of Proposition~\ref{b-00210} uses two lemmas:
 &=\underbrace{\deg_\Gamma\mathcal O}_{\substack{\le n+1\\\text{by Corollary~\ref{b-00188}}}}-n+1\le2.
 \end{aligned}
 \end{equation}
-
-If there is only one source, every current is a real multiple of the source current and sweeps at most $n<2n$ dimensions; a nonzero kernel therefore has at least two sources, and both inequalities are then equalities.~\hfill\qedsymbol
+If there is only one source, every current is a real multiple of the source current and sweeps at most $n<2n$ dimensions; a nonzero kernel therefore has at least two sources, forcing both inequalities to be equalities.~\hfill\qedsymbol
+\end{proofbox}
 
 \rthm{Lemma}{b-00217}{No interaction cycles} \emph{If every interaction vertex is joined to $\mathcal O$, no subgraph $S$ on interaction vertices carries a cycle.}
 
-\emph{Proof.} A loop of resistors on the interaction nodes $V_S$, together with their $|V_S|$ spokes, gives a subcircuit on $V_S\cup\{\mathcal O\}$ with more resistors than the local count of Ohm's law allows (Lemma~\ref{b-00194}):
+\begin{proofbox}
+\textbf{Proof.} A loop of resistors on the interaction nodes $V_S$, together with their $|V_S|$ spokes, gives a subcircuit on $V_S\cup\{\mathcal O\}$ with more resistors than the local count of Ohm's law allows (Lemma~\ref{b-00194}):
 \begin{equation*}
 |I_S|+|V_S|\ge2|V_S|>2(|V_S|+1)-3 .
 \end{equation*}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
+\end{proofbox}
 
-\emph{Proof of Proposition~\ref{b-00210}.} By Lemma~\ref{b-00213}, each of the $n+1$ cubic interaction nodes is wired to $\mathcal O$ by one spoke, which leaves $2n+1-(n+1)=n$ internal resistors; they close no loop (Lemma~\ref{b-00217}) and form a tree. Each node spends one terminal on its spoke and keeps at most two for internal resistors, so the tree is a chain: its interior nodes wire all three terminals, and each end keeps one free terminal, the two sources of Lemma~\ref{b-00213}.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof of Proposition~\ref{b-00210}.} By Lemma~\ref{b-00213}, each of the $n+1$ cubic interaction nodes is wired to $\mathcal O$ by one spoke, which leaves $2n+1-(n+1)=n$ internal resistors; they close no loop (Lemma~\ref{b-00217}) and form a tree. Each node spends one terminal on its spoke and keeps at most two for internal resistors, so the tree is a chain: its interior nodes wire all three terminals, and each end keeps one free terminal, the two sources of Lemma~\ref{b-00213}.~\hfill\qedsymbol
+\end{proofbox}
 
 \rthm{Corollary}{b-00222}{Renormalizable theories} \emph{For every renormalizable $\mathcal N=1$ gauge theory, massless or massive, every nonzero connected graph of $Q_n$, $n\ge1$, with one insertion $\mathcal O$ is a fan of cubic vertices.}
 
-\emph{Proof.} The superpotential has degree at most three, and Proposition~\ref{b-00210} applies.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof.} The superpotential has degree at most three, so Proposition~\ref{b-00210} applies.~\hfill\qedsymbol
+\end{proofbox}
 
-The fan kernel is the simplest one to evaluate. If the theory is non-renormalizable (with $\mathcal I$ of degree greater than three), other kinds of kernels can also appear; they are, however, also highly constrained.
+The fan kernel is the simplest family to evaluate. When the interaction contains higher-degree superpotential vertices, additional graph topologies can appear, though antifield counting still restricts them to a single family.
 
 \subsection{Superpotential vertices of higher degree: spiders}\label{sec-spider-classification}
 
-\rthm{Proposition}{b-00225}{Superpotential vertices and antifield count} \emph{For the interaction \eqref{eq-B-10}, allow $\bar W(\gamma,w)$ to have arbitrary degree. } \emph{Every nonzero connected $n$-loop graph of $Q_n\mathcal O$ with one insertion $\mathcal O$, $n\ge1$, contains at most one $\bar W$ vertex. } \emph{Each graph term lowers the number of $b,\beta$ factors by $n$ plus the number of $\bar W$ vertices.}
+\rthm{Proposition}{b-00225}{Superpotential vertices and antifield count} \emph{For the interaction \eqref{eq-B-10}, allow $\bar W(\gamma,w)$ to have arbitrary degree. Every nonzero connected $n$-loop graph of $Q_n\mathcal O$ with one insertion $\mathcal O$, $n\ge1$, contains at most one $\bar W$ vertex, and each graph term lowers the number of $b,\beta$ factors by $n$ plus the number of $\bar W$ vertices.}
 
 We prove Proposition~\ref{b-00225} with the help of two lemmas.
 
-\rthm{Lemma}{local-3f6d7139-9e21-4d1f-95cc-7d06f9c41ebc}{Antifield terminals}
+\rthm{Lemma}{local-3f6d7139-9e21-4d1f-95cc-7d06f9c41ebc}{Antifield terminals} \emph{Every contraction pairs a $b$ or $\beta$ factor with a $c$ or $\gamma$ factor. A gauge or matter vertex of \eqref{eq-B-10} supplies one $b$ or $\beta$ factor, and a $\bar W$ vertex none.}
 
-\emph{Every contraction pairs a $b$ or $\beta$ factor with a $c$ or $\gamma$ factor. } \emph{A gauge or matter vertex of \eqref{eq-B-10} supplies one $b$ or $\beta$ factor, a $\bar W$ vertex none.}
-
-\emph{Proof.} A gauge or matter node, $bcc$ or $c\gamma\beta$ in \eqref{eq-B-10}, has one antifield terminal, a node of $\bar W(\gamma,w)$ none.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof.} A gauge or matter node, $bcc$ or $c\gamma\beta$ in \eqref{eq-B-10}, has one antifield terminal, whereas a node of $\bar W(\gamma,w)$ has none.~\hfill\qedsymbol
+\end{proofbox}
 
 \rthm{Lemma}{b-00228}{Internal edges} \emph{A nonzero connected $n$-loop graph of $Q_n$ has at least $n$ edges between interaction vertices.}
 
-\emph{Proof.} Two resistors from $\mathcal O$ to the same interaction node would be in parallel (Corollary~\ref{b-00188}), so at most $n+1$ of the $2n+1$ resistors (Lemma~\ref{b-00207}) end at $\mathcal O$, and $2n+1-\deg_\Gamma\mathcal O\ge2n+1-(n+1)=n$ join interaction nodes.~
+\begin{proofbox}
+\textbf{Proof.} Two resistors from $\mathcal O$ to the same interaction node would be in parallel (Corollary~\ref{b-00188}), so at most $n+1$ of the $2n+1$ resistors (Lemma~\ref{b-00207}) end at $\mathcal O$, leaving $2n+1-\deg_\Gamma\mathcal O\ge2n+1-(n+1)=n$ internal edges between interaction nodes without using the cubic-vertex hypothesis of Lemma~\ref{b-00213}.~\hfill\qedsymbol
+\end{proofbox}
 
-This is a weaker version of Lemma~\ref{b-00213}, which does not use the cubic condition.\hfill\qedsymbol
-
-\emph{Proof of Proposition~\ref{b-00225}.} By Lemmas~\ref{local-3f6d7139-9e21-4d1f-95cc-7d06f9c41ebc} and~\ref{b-00228},
+\begin{proofbox}
+\textbf{Proof of Proposition~\ref{b-00225}.} By Lemmas~\ref{local-3f6d7139-9e21-4d1f-95cc-7d06f9c41ebc} and~\ref{b-00228},
 \begin{equation}\label{eq-1-15}
 \begin{gathered}
 \underbrace{n}_{\substack{\deg_\Gamma\mathcal O\le n+1\\
@@ -2193,20 +2184,21 @@ and each of the $2n+1$ resistors takes one antifield terminal, a $b$ or $\beta$ 
   -n-\#(\bar W\text{ vertices}).
 \end{aligned}
 \end{equation}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
+\end{proofbox}
 
 \rthm{Corollary}{b-00235}{Finite loop order} \emph{For $\bar W$ of any degree, or a formal power series read coefficientwise, $Q_n\mathcal O=0$ for $n>\#(b,\beta\text{ in }\mathcal O)$, and terms with a $\bar W$ vertex vanish already for $n+1>\#(b,\beta\text{ in }\mathcal O)$.}
 
-\emph{Proof.} The left side of \eqref{eq-antifield-loss} is nonnegative.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof.} The left-hand side of \eqref{eq-antifield-loss} is nonnegative.~\hfill\qedsymbol
+\end{proofbox}
 
-Corollary~\ref{b-00235} and dimensional counting make the perturbative expansion truncate at a finite order, so that the perturbative cohomology is well defined.
+Corollary~\ref{b-00235} and dimensional counting make the perturbative expansion truncate at a finite order on every polynomial local operator, so that the perturbative cohomology is well defined without auxiliary cutoffs.
 
-\rthm{Proposition}{b-00240}{Graphs with one superpotential vertex} \emph{For the interaction \eqref{eq-B-10}, a nonzero connected $n$-loop graph of $Q_n$, $n\ge1$, with one insertion $\mathcal O$ and one $\bar W$ vertex joins $\mathcal O$ to all $n+1$ interaction vertices, for any degree of $\bar W$. } \emph{Removing $\mathcal O$ leaves a tree whose arms meet at $\bar W$.}
+\rthm{Proposition}{b-00240}{Graphs with one superpotential vertex} \emph{For the interaction \eqref{eq-B-10}, a nonzero connected $n$-loop graph of $Q_n$, $n\ge1$, with one insertion $\mathcal O$ and one $\bar W$ vertex joins $\mathcal O$ to all $n+1$ interaction vertices, for any degree of $\bar W$. Removing $\mathcal O$ leaves a tree whose arms meet at $\bar W$, i.e., a spider (Definition~\ref{b-00380}).}
 
-This type of kernel is called a spider.
-
-\emph{Proof.} With one $\bar W$ vertex the two bounds in \eqref{eq-1-15} coincide:
+\begin{proofbox}
+\textbf{Proof.} With one $\bar W$ vertex the two bounds in \eqref{eq-1-15} coincide:
 \begin{equation}\label{eq-superpotential-spokes}
 n\le2n+1-\deg_\Gamma\mathcal O\le n
 \quad\Longrightarrow\quad
@@ -2221,20 +2213,21 @@ so every interaction node is wired to $\mathcal O$, and the $n$ internal resisto
 \end{gathered}
 \end{equation}
 where $\deg\bar W$, the number of field factors of the contributing monomial, covers the $a$ internal resistors at the $\bar W$ node and its spoke.~\hfill\qedsymbol
+\end{proofbox}
 
-\rthm{Remark}{b-00246}{} With at most two arms the graph of Proposition~\ref{b-00240} is a fan; the bound $a+1\le\deg\bar W$ gives this case for $\deg\bar W\le3$.
+\rthm{Remark}{b-00246}{Specialization to $\deg\bar W\le3$} With at most two arms the graph of Proposition~\ref{b-00240} reduces to a fan; the bound $a+1\le\deg\bar W$ forces $a\le2$ whenever $\deg\bar W\le3$.
 
 \rthm{Corollary}{b-00247}{Graphs of $Q_n$} \emph{For the interaction \eqref{eq-B-10}, every nonzero connected graph of $Q_n$, $n\ge1$, with one insertion $\mathcal O$ is a fan, or a spider whose arms meet at its $\bar W$ vertex (Definition~\ref{b-00380}); for $\deg\bar W\le3$ it is a fan.}
 
-\emph{Proof.} Propositions~\ref{b-00210}, \ref{b-00225} and~\ref{b-00240}.~\hfill\qedsymbol
+\begin{proofbox}
+\textbf{Proof.} Combine Propositions~\ref{b-00210}, \ref{b-00225} and~\ref{b-00240}.~\hfill\qedsymbol
+\end{proofbox}
 
-This completes the classification of the diagrams of $Q_n$.
-
-The quantum product of Section \ref{sec-product} involves further graphs, forests of interaction trees attached to both insertions; they are classified in Section \ref{sec-dressed-definition}.
+This completes the classification of the graphs of $Q_n$; the marked graphs of the quantum product (Section~\ref{sec-product}) involve more general forests of interaction trees attached to both insertions, classified in Section~\ref{sec-dressed-definition}.
 
 \section{Fan kernels}\label{sec-fans}
 
-In Section~\ref{sec-BV}, homotopy transfer eliminated all $Q_-$-exact terms from the physical $\mathcal N=1$ action, leaving the first-order gauge and matter couplings together with the antichiral potential $\bar W(\gamma,w)$ in~\eqref{eq-B-10}. In four dimensions, every renormalizable $\mathcal N=1$ supersymmetric gauge theory (massless or massive, with constant gauge coupling) has $\deg\bar W\le3$, so every interaction vertex in $S_{\mathrm{tw}}$ is at most cubic. By Corollary~\ref{b-00222}, the fan graphs of Figure~\ref{fig-general-fan} therefore determine \emph{every} perturbative loop correction $Q_n$ ($n\ge1$) to the supersymmetry transformation in renormalizable theories, as well as all one- and two-loop quantum-product graphs (Section~\ref{sec-product-loops}).
+In Section~\ref{sec-BV}, homotopy transfer eliminated all $Q_-$-exact terms from the physical $\mathcal N=1$ action, leaving the cubic gauge ($bcc$) and matter ($c\gamma\beta$) interaction vertices together with the antichiral superpotential $\bar W(\gamma,w)$ in~\eqref{eq-B-10}. In four dimensions, every renormalizable $\mathcal N=1$ supersymmetric gauge theory (massless or massive, with constant gauge coupling) has $\deg\bar W\le3$, so every interaction vertex in $S_{\mathrm{tw}}$ is at most cubic. By Corollary~\ref{b-00222}, the fan graphs of Figure~\ref{fig-general-fan} therefore determine \emph{every} perturbative loop correction $Q_n$ ($n\ge1$) to the supersymmetry transformation in renormalizable theories, as well as all one- and two-loop quantum-product graphs (Section~\ref{sec-product-loops}).
 
 We state the complete all-loop fan theorem first and then build its circuit proof step by step: Section~\ref{the-one-loop-triangle-diagram} solves the base one-loop triangle; Section~\ref{sec-B-local-reduction} formulates local series, parallel, and series--parallel moves as variable changes on Schwinger space; Sections~\ref{sec-fan-step} and~\ref{sec-fan-positive} iterate $n-1$ series--parallel eliminations to prove~\eqref{eq-1-40}--\eqref{eq-1-39}; and Section~\ref{endpoint-sources-and-taylor-expansion} specializes to endpoint sources to prove~\eqref{eq-1-41}--\eqref{eq-1-42} and the all-order Taylor expansion~\eqref{eq-fan-full-taylor}.
 
@@ -3954,7 +3947,7 @@ W_\Gamma[\mathcal I_1,\ldots,\mathcal I_{n+1},\mathcal O]\Bigr].
 \end{equation}
 At $n=0$, the single-edge tree gives $Q_0\mathcal O=\{\mathcal I,\mathcal O\}$, reproducing the classical supersymmetry transformation.
 
-Whenever the interaction $\mathcal I$ contains no holomorphic derivatives (including nonrenormalizable higher-degree superpotentials $\bar W$), $Q_n$ obeys a sharp derivative selection rule. Under the independent rescaling $\lambda_{v,+\dot a}\mapsto c\,\lambda_{v,+\dot a}$ and $z_e^{+\dot a}\mapsto c^{-1}z_e^{+\dot a}$ at fixed $\dot a\in\{\dot+,\dot-\}$, the displacement exponential in~\eqref{eq-operatope} is invariant while the current $2n$-form scales by $c^n$ in each dotted spinor index~\eqref{eq-derivative-homogeneity}. Because each factor of $\lambda_{v,+\dot a}$ differentiates an output field and each $-\partial/\partial z_e^{+\dot a}$ removes a derivative from an input letter, $Q_n$ increases the counts $(d_{\dot+},d_{\dot-})$ of $(\partial_{+\dot+},\partial_{+\dot-})$ derivatives by $(n,n)$, and hence raises the total holomorphic derivative count by $2n$ (an analogous homogeneity argument holds in arbitrary even dimension). Consequently, a local operator carrying $(d_{\dot+},d_{\dot-})$ holomorphic derivatives can lie in the image of $Q_n$ only if $n\le\min(d_{\dot+},d_{\dot-})$; when the homotopy retracts preserve both derivative counts, Lemma~\ref{b-00094} imposes the same bound $n\le\min(d_{\dot+},d_{\dot-})$ for a class in $\mathrm{BPS}_{\hbar^{n-1}}$ to be $d_n$-exact (Corollary~\ref{b-00758}).
+Whenever the interaction $\mathcal I$ contains no holomorphic derivatives (including nonrenormalizable higher-degree superpotentials $\bar W$), $Q_n$ obeys a sharp derivative selection rule. Under the independent rescaling $\lambda_{v,+\dot a}\mapsto \kappa\,\lambda_{v,+\dot a}$ and $z_e^{+\dot a}\mapsto \kappa^{-1}z_e^{+\dot a}$ ($\kappa>0$) at fixed $\dot a\in\{\dot+,\dot-\}$, the displacement exponential in~\eqref{eq-operatope} is invariant while the current $2n$-form scales by $\kappa^n$ in each dotted spinor index~\eqref{eq-derivative-homogeneity}. Because each factor of $\lambda_{v,+\dot a}$ differentiates an output field and each $-\partial/\partial z_e^{+\dot a}$ removes a derivative from an input letter, $Q_n$ increases the counts $(d_{\dot+},d_{\dot-})$ of $(\partial_{+\dot+},\partial_{+\dot-})$ derivatives by $(n,n)$, and hence raises the total holomorphic derivative count by $2n$ (an analogous homogeneity argument holds in arbitrary even dimension). Consequently, a local operator carrying $(d_{\dot+},d_{\dot-})$ holomorphic derivatives can lie in the image of $Q_n$ only if $n\le\min(d_{\dot+},d_{\dot-})$; when the homotopy retracts preserve both derivative counts, Lemma~\ref{b-00094} imposes the same bound $n\le\min(d_{\dot+},d_{\dot-})$ for a class in $\mathrm{BPS}_{\hbar^{n-1}}$ to be $d_n$-exact (Corollary~\ref{b-00758}).
 
 We now specialize~\eqref{eq-2-3} to our primary non-abelian application: the all-order anomalous supersymmetry transformation in four-dimensional $\mathcal N=4$ Yang--Mills theory. For the holomorphic twist with respect to $Q_-^4$, the gauge fields and the three adjoint chiral multiplets assemble into a single superfield $C^A(x,\theta)$ on $\mathbb C^{2|3}$~\cite[Section 2]{ChangYin}, \cite[Eq.~(3.52)]{BK}, whose component expansion~\eqref{eq-A-13} and cubic Chern--Simons-type twisted action~\eqref{eq-A-15} are reviewed in Appendix~\ref{sec-N4-superfield}. Functional derivatives at displaced insertion points are normalized by
 \begin{equation}\label{eq-2-10}
@@ -4759,22 +4752,16 @@ This appendix collects the superfield of $\mathcal N=4$ Yang--Mills theory and t
 
 \subsection{The $\mathcal N=4$ Yang--Mills superfield}\label{sec-N4-superfield}
 
-The $\mathcal N=4$ SYM theory has the superpotential
+The $\mathcal N=4$ SYM theory has the antichiral superpotential
 \begin{equation}\label{b-01022}
 \bar W(\gamma,0)=\frac i{3!}\varepsilon_{IJK}C_{ABC}
 \delta^{AD}\delta^{BE}\delta^{CF}(\gamma^I)_D(\gamma^J)_E(\gamma^K)_F.
 \end{equation}
-
-For the twist by $Q_-^4$, the three adjoint chiral multiplets can be further combined with the gauge fields into one superfield $C^A(\theta)$ \cite{ChangYin,BK}.
-
-The odd coordinates obey $\theta_I\bar\partial=-\bar\partial\theta_I$, with $\int d^3\theta\,\theta_1\theta_2\theta_3=1$ and $\varepsilon^{123}=\varepsilon_{123}=1$.
+For the twist by $Q_-^4$, the three adjoint chiral multiplets combine with the gauge fields into one superfield $C^A(\theta)$ on $\mathbb C^{2|3}$ \cite{ChangYin,BK}. The odd coordinates obey $\theta_I\bar\partial=-\bar\partial\theta_I$, with $\int d^3\theta\,\theta_1\theta_2\theta_3=1$ and $\varepsilon^{123}=\varepsilon_{123}=1$:
 \begin{equation}\label{eq-A-13}
 C^A(\theta)=ig\,c^A+\theta_I\delta^{AB}(\gamma^I)_B-\frac12\varepsilon^{IJK}\theta_I\theta_J(\beta_K)^A+\frac{\theta_1\theta_2\theta_3}{ig}\delta^{AB}b_B,
 \end{equation}
-
-The~physical meaning of each $\theta_I$ is~$Q_+^I C^A=\partial_L C^A/\partial\theta_I$.
-
-With $(t_A^{\mathrm{adj}})^B{}_C=iC^B{}_{AC}$, the action and differential are
+where each $\theta_I$ implements $Q_+^I C^A=\partial_L C^A/\partial\theta_I$. With $(t_A^{\mathrm{adj}})^B{}_C=iC^B{}_{AC}$, the twisted action and tree differential take the holomorphic Chern--Simons form
 \begin{equation}\label{eq-A-15}
 \begin{aligned}
 S_{\mathrm{tw}}
@@ -4785,8 +4772,7 @@ S_{\mathrm{tw}}
 Q_0C^A&=\frac i2C^A{}_{BC}C^BC^C.
 \end{aligned}
 \end{equation}
-
-The left derivative with respect to the superfield and the odd integration reproduce the component pairing,
+Left differentiation with respect to the superfield and Berezin integration reproduce the component BV pairing and edge contraction operator:
 \begin{equation}\label{eq-A-16}
 \begin{aligned}
 \frac{\delta}{\delta C^A(\theta)}
@@ -4798,7 +4784,7 @@ The left derivative with respect to the superfield and the odd integration repro
 -ig\frac{\partial}{\partial b_A},\\
 \frac{\delta C^B(\theta^{(2)})}{\delta C^A(\theta^{(1)})}
 ={}&\delta_A{}^B\prod_{I=1}^3
-(\theta_I^{(1)}-\theta_I^{(2)}).
+(\theta_I^{(1)}-\theta_I^{(2)}),
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eq-A-17}
@@ -4807,43 +4793,36 @@ The left derivative with respect to the superfield and the odd integration repro
 
 \subsection{Charge sectors and the grading of the loop corrections}\label{sec-E-sectors}
 
-For $\mathcal N=4$ Yang--Mills theory, we organize the cochains by their letter weights and derivative counts.
-
-Counting the vertices and contractions gives the grading of each loop correction, which determines its target sector and bounds the possible obstruction orders.
-
-For the $\mathcal N=4$ letters, $\theta_I$ counts the $I$th odd-coordinate weight in $C$, and $n_\pm$ counts $\partial_{+\dot\pm}$ derivatives.
-
-For a monomial with $Y$ letters, let $e_I$ be the $I$th unit vector and write
+For $\mathcal N=4$ Yang--Mills theory, we organize cochains by their letter weights and derivative counts; counting vertices and contractions determines the target sector of each loop correction and bounds the admissible obstruction orders. For the $\mathcal N=4$ letters, $\theta_I$ counts the $I$th odd-coordinate weight in $C$, and $n_\pm$ counts $\partial_{+\dot\pm}$ derivatives. For a monomial with $Y$ letters, let $e_I$ be the $I$th unit vector and write
 \begin{equation}\label{eq-E-sector}
-\begin{gathered}\lambda=(\theta_1,\theta_2,\theta_3;n_+,n_-),\qquad \Theta=\theta_1+\theta_2+\theta_3,\qquad \mathbf d=(1,1,1;-1,-1),\\ \theta(\gamma^I)=e_I,\qquad \theta(\beta_I)=(1,1,1)-e_I,\qquad \theta(b)=(1,1,1),\qquad \theta(c)=0,\end{gathered}
+\begin{gathered}\lambda=(\theta_1,\theta_2,\theta_3;n_+,n_-),\qquad \Theta=\theta_1+\theta_2+\theta_3,\qquad \mathbf d=(1,1,1;-1,-1),\\ \theta(\gamma^I)=e_I,\qquad \theta(\beta_I)=(1,1,1)-e_I,\qquad \theta(b)=(1,1,1),\qquad \theta(c)=0.\end{gathered}
 \end{equation}
-
-$C^Y(\lambda)$, also written $(\lambda)_Y$, is the cochain sector with weight $\lambda$ and $Y$ letters. Its component degree is $\Theta=\deg_\theta$.
+Here $C^Y(\lambda)$, also written $(\lambda)_Y$, denotes the cochain sector of weight $\lambda$ and $Y$ letters, with total component degree $\Theta=\deg_\theta$:
 \begin{equation}\label{eq-2-62}
-\deg_\theta c=0,\quad\deg_\theta\gamma=1,\quad\deg_\theta\beta=2,\quad\deg_\theta b=3,\qquad\deg_\theta(\partial_{+\dot a}X)=\deg_\theta X,
+\deg_\theta c=0,\quad\deg_\theta\gamma=1,\quad\deg_\theta\beta=2,\quad\deg_\theta b=3,\qquad\deg_\theta(\partial_{+\dot a}X)=\deg_\theta X.
 \end{equation}
-
-At order $n$, a product graph has $n$ cubic vertices and $2n$ physical edges, each pairing component degrees that sum to three.
+At loop order $n$, a marked product graph has $n$ cubic vertices and $2n$ physical edges, each pairing component degrees that sum to three, so degree losses add under iterated products:
 \begin{equation}\label{eq-2-63}
 \deg_\theta\mathcal O_n=\deg_\theta\mathcal O_0+{3n}-{6n}=\deg_\theta\mathcal O_0-3n,\qquad\mathcal O_n=0\quad\text{if }3n>\deg_\theta\mathcal O_0.
 \end{equation}
-
-The degree losses add under iterated products.
-
-For a nonzero $Q_nX$, the $n+1$ cubic vertices and $2n+1$ edges give
+Similarly, for a nonzero $Q_nX$, the $n+1$ cubic vertices and $2n+1$ edges give
 \begin{equation}\label{eq-graviton-differential-degree}
 \deg_\theta(Q_nX)
-=\deg_\theta X+3(n+1)-3(2n+1)=\deg_\theta X-3n
+=\deg_\theta X+3(n+1)-3(2n+1)=\deg_\theta X-3n.
 \end{equation}
 
-The physical charges are the dimension $E$, the three $SU(4)_R$ Cartan charges $R_I$, and the spins $J_L,J_R$.
+The physical conserved charges are the scaling dimension $E$, the three $SU(4)_R$ Cartan charges $R_I$, and the spins $J_L,J_R$:
 \begin{equation}\label{eq-E-charges}
 \begin{gathered}E=\tfrac12(\Theta+Y)+n_++n_-,\qquad R_I=\theta_I-\tfrac12(\Theta-Y),\\ J_L=\tfrac12(\Theta-Y+n_++n_-),\qquad J_R=\tfrac12(n_+-n_-),\\ E=R_1+R_2+R_3+2J_L,\qquad 2(E+J_L)=2\Theta+3(n_++n_-).\end{gathered}
 \end{equation}
+By \eqref{eq-E-charges}, only finitely many sectors occur at each fixed level $2(E+J_L)$.
 
 {\small\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{4pt}
 \begin{xltabular}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xllllll@{}}
 \caption{Letters of $\mathcal N=4$ Yang--Mills theory and their charges.}\label{appE2-0020}\\
+\toprule
+letter & physical field & $\theta$ & $(n_+,n_-)$ & $E$ & $(R_1,R_2,R_3)$ & $J_L$ & $J_R$\\
+\midrule\endfirsthead
 \toprule
 letter & physical field & $\theta$ & $(n_+,n_-)$ & $E$ & $(R_1,R_2,R_3)$ & $J_L$ & $J_R$\\
 \midrule\endhead
@@ -4855,48 +4834,33 @@ $\partial_{+\dot\pm}$ & covariant derivative $\nabla_{+\dot\pm}$ & $0$ & $(1,0),
 \bottomrule
 \end{xltabular}}
 
-The level is $2(E+J_L)$. Equation \eqref{eq-E-charges} makes its set of sectors finite.
-
-\begin{proofbox}
-\textbf{Example Threshold charges}
-
-The $SU(2)$ threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} has two $\gamma$, five $\beta$ and zero derivatives.
+\rthm{Example}{ex-threshold-charges}{Threshold charges in $SU(2)$} The $SU(2)$ threshold class $\mathcal O_0$ \cite{KKLP,ChangLinWords} has two $\gamma$ letters, five $\beta$ letters and zero derivatives:
 \begin{equation*}
 \begin{gathered}\lambda=(4,4,4;0,0),\quad Y=7,\\E=\frac{19}{2},\qquad R_I=\frac32,\qquad J_L=\frac52,\qquad 2(E+J_L)=24.\end{gathered}
 \end{equation*}
-\end{proofbox}
 
-The current form \eqref{eq-operatope} has degree $n$ in each dotted component, giving
+Because the current form \eqref{eq-operatope} has degree $n$ in each dotted component, independent rescaling at fixed $\dot a\in\{\dot+,\dot-\}$ gives
 \begin{equation}\label{eq-derivative-homogeneity}
 \mathcal I_\Gamma
-\bigl(\lambda_{v,+\dot a}\mapsto c\lambda_{v,+\dot a};\,
-z_e^{+\dot a}\mapsto c^{-1}z_e^{+\dot a}\bigr)
-=c^n\,\mathcal I_\Gamma(\lambda;z),
-\qquad c>0.
+\bigl(\lambda_{v,+\dot a}\mapsto \kappa\lambda_{v,+\dot a};\,
+z_e^{+\dot a}\mapsto \kappa^{-1}z_e^{+\dot a}\bigr)
+=\kappa^n\,\mathcal I_\Gamma(\lambda;z),
+\qquad \kappa>0.
 \end{equation}
+The $\lambda$ powers supply output derivatives while the $z$ powers remove input derivatives, so $Q_n$ adds $n$ derivatives in each dotted direction \cite[Equations (3.44)--(3.45)]{semichiral}. Since $Q_0$ preserves both derivative totals, we may choose homogeneous contractions $(i_r,\pi_r,h_r)$ in \eqref{eq-page-transfer}.
 
-The $\lambda$ powers supply output derivatives and the $z$ powers remove input derivatives. Hence $Q_n$ adds $n$ derivatives in each direction \cite[Equations (3.44)--(3.45)]{semichiral}.
-
-$Q_0$ preserves both totals. Choose homogeneous contractions $(i_r,\pi_r,h_r)$ in \eqref{eq-page-transfer}.
-
-\rthm{Proposition}{appE2-0024}{}
-
-For $n\ge0$ and $r\ge1$,
+\rthm{Proposition}{appE2-0024}{Sector shifts and charge increments} \emph{For $n\ge0$ and $r\ge1$,}
 \begin{equation}\label{eq-E-grading}
-Q_n:C^Y(\lambda)\to C^{Y+1-n}(\lambda-n\mathbf d),\qquad d_r:\mathrm{BPS}_{\hbar^{r-1}}^Y(\lambda)\to \mathrm{BPS}_{\hbar^{r-1}}^{Y+1-r}(\lambda-r\mathbf d).
+Q_n:C^Y(\lambda)\to C^{Y+1-n}(\lambda-n\mathbf d),\qquad d_r:\mathrm{BPS}_{\hbar^{r-1}}^Y(\lambda)\to \mathrm{BPS}_{\hbar^{r-1}}^{Y+1-r}(\lambda-r\mathbf d),
 \end{equation}
-
-Both maps have $(\Delta E;\Delta R_I;\Delta J_L,\Delta J_R)=(\tfrac12;\tfrac12,\tfrac12,\tfrac12;-\tfrac12,0)$.
+\emph{and both maps carry $(\Delta E;\Delta R_I;\Delta J_L,\Delta J_R)=(\tfrac12;\tfrac12,\tfrac12,\tfrac12;-\tfrac12,0)$.}
 
 \begin{proofbox}
-\textbf{Proof}
+\textbf{Proof.} Counting vertices and edges gives the letter and flavour shifts
 \begin{equation*}
-\Delta Y=3(n+1)-2(2n+1)=1-n,\qquad\theta_I(Q_nX)-\theta_I(X)=(n+1)-(2n+1)=-n.
+\Delta Y=3(n+1)-2(2n+1)=1-n,\qquad\theta_I(Q_nX)-\theta_I(X)=(n+1)-(2n+1)=-n,
 \end{equation*}
-
-The vertex and edge counts give the letter and flavour shifts. Equation \eqref{eq-derivative-homogeneity} supplies $n$ derivatives in each direction.
-
-The homogeneous contractions and transferred coefficients obey
+while \eqref{eq-derivative-homogeneity} supplies $n$ derivatives in each dotted direction. By induction from $\mathbf Q^{(0)}=\mathbf Q$, the homogeneous contractions and transferred coefficients obey
 \begin{equation}\label{local-ch8-transfer-grading}
 \begin{gathered}
 h_r:\mathrm{BPS}_{\hbar^{r-1}}^Y(\lambda)\longrightarrow \mathrm{BPS}_{\hbar^{r-1}}^{Y+r-1}(\lambda+r\mathbf d),\\
@@ -4904,43 +4868,31 @@ h_r:\mathrm{BPS}_{\hbar^{r-1}}^Y(\lambda)\longrightarrow \mathrm{BPS}_{\hbar^{r-
 \mathrm{BPS}_{\hbar^{r-1}}^Y(\lambda)\longrightarrow \mathrm{BPS}_{\hbar^{r-1}}^{Y+1-r-m}\bigl(\lambda-(r+m)\mathbf d\bigr).
 \end{gathered}
 \end{equation}
-
-For $[\hbar^m]\mathbf Q^{(r+1)}$, let $\ell$ count perturbation factors. Their orders sum to $m+1$, and the term contains $\ell-1$ copies of $h_r$.
+Indeed, if a term of $[\hbar^m]\mathbf Q^{(r+1)}$ contains $\ell$ perturbation factors of total order $m+1$ and $\ell-1$ copies of $h_r$, then
 \begin{equation}\label{local-ch8-transfer-grading-calculation}
 \begin{aligned}
 \Delta Y&=\ell(1-r)-(m+1)+(\ell-1)(r-1)=-r-m,\\
 \Delta\lambda&=-(\ell r+m+1)\mathbf d+(\ell-1)r\mathbf d=-(r+m+1)\mathbf d.
 \end{aligned}
 \end{equation}
-
-This proves the induction from $\mathbf Q^{(0)}=\mathbf Q$. Set $m=0$ for $d_{r+1}$ and insert the shifts into \eqref{eq-E-charges}.
+Setting $m=0$ for $d_{r+1}$ and inserting the shifts into \eqref{eq-E-charges} gives
 \begin{equation*}
 \Delta\Theta=-3n,\qquad\Delta(n_++n_-)=2n,\qquad(\Delta E;\Delta R_I;\Delta J_L,\Delta J_R)=\left(\frac12;\frac12,\frac12,\frac12;-\frac12,0\right).
 \end{equation*}
-
 \par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
 \end{proofbox}
 
-The sectors $(\lambda+k\mathbf d)_{Y+k}$, $k\in\mathbb Z$, have the same physical charges. The cochain grading distinguishes the loop orders.
+Although the sectors $(\lambda+k\mathbf d)_{Y+k}$ ($k\in\mathbb Z$) share identical physical charges, the cochain grading separates distinct loop orders and bounds the active differentials on any sector.
 
-\rthm{Corollary}{b-00758}{}
-
-A nonvanishing obstruction $d_r[\mathcal O_0]_{\hbar^{r-1}}\ne0$ requires $r\le\min_I\theta_I$, and $d_r$-exactness $[\mathcal O_0]_{\hbar^{r-1}}\in\operatorname{im}d_r$ requires $r\le\min(n_+,n_-)$.
-
-In particular, no nonzero class with zero input derivatives is $d_r$-exact for $r\ge1$.
+\rthm{Corollary}{b-00758}{Obstruction and $d_r$-exactness bounds} \emph{A nonvanishing obstruction $d_r[\mathcal O_0]_{\hbar^{r-1}}\ne0$ requires $r\le\min_I\theta_I$, and $d_r$-exactness $[\mathcal O_0]_{\hbar^{r-1}}\in\operatorname{im}d_r$ requires $r\le\min(n_+,n_-)$. In particular, no nonzero class with zero input derivatives is $d_r$-exact for $r\ge1$.}
 
 \begin{proofbox}
-\textbf{Proof}
-\begin{equation*}
-\theta_I-r\ge0\quad\Longleftrightarrow\quad r\le\min_I\theta_I,\qquad n_\pm-r\ge0\quad\Longleftrightarrow\quad r\le\min(n_+,n_-).
-\end{equation*}
-
-\par\vspace{-\medskipamount}\noindent\hspace*{\fill}\qedsymbol
+\textbf{Proof.} Nonnegativity of the target weights in \eqref{eq-E-grading} requires $\theta_I-r\ge0$ ($\Longleftrightarrow r\le\min_I\theta_I$) and, for a source mapping into $(\lambda)_Y$, $n_\pm-r\ge0$ ($\Longleftrightarrow r\le\min(n_+,n_-)$).~\hfill\qedsymbol
 \end{proofbox}
 
 \section{The twisted complex and the physical $Q$-cohomology}\label{app-twist-cohomology}
 
-This appendix proves the identification \eqref{eq-twist-cohomology} of Section \ref{canonical-changes-of-variables}, in the notation of that section, and gives its form in perturbation theory.
+This appendix proves the identification \eqref{eq-twist-cohomology} of Section~\ref{canonical-changes-of-variables}, in the notation of that section, and gives its form in perturbation theory.
 
 \rthm{Proposition}{prop-twist-cohomology}{The twisted complex and the BPS operators} \emph{Consider local operators invariant under constant gauge transformations and independent of the undifferentiated ghost $c_{\mathrm{gh}}^A$. In each finite-dimensional $2(E+J_L)$ eigenspace, the isomorphisms \eqref{eq-twist-cohomology} read}
 \begin{equation*}
@@ -4950,10 +4902,11 @@ H\bigl((S_{\mathrm{tw}},\,\cdot\,)\bigr)
 \end{equation*}
 \emph{The cohomology of the total differential, which contains the gauge BRST transformation, the equations of motion and $Q_-$, is thus the same as the cohomology of $Q_-$ on the BRST cohomology of the physical theory.}
 
-\emph{Proof.} The canonical transformations generated by $\Psi$ and $\Psi'$ are changes of variables, and by \eqref{eq-T-representative} every cocycle of $S_{\mathrm{BV,new}}=S_{\mathrm{tw}}+S_{\mathcal T}$ has a representative that depends only on the retained fields $\mathcal S$ and their antifields; this gives the first isomorphism. For the second, write
+\begin{proofbox}
+\textbf{Proof.} The canonical transformations generated by $\Psi$ and $\Psi'$ are changes of variables, and by \eqref{eq-T-representative} every cocycle of $S_{\mathrm{BV,new}}=S_{\mathrm{tw}}+S_{\mathcal T}$ has a representative that depends only on the retained fields $\mathcal S$ and their antifields; this gives the first isomorphism. For the second, write
 \begin{equation*}
-S_{\mathrm{BV}}=S_{\mathrm{phys,BRST}}+S_Q,\qquad
-S_{\mathrm{phys,BRST}}=S_{\mathrm{phys}}+\int d^4x\,(s\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},\qquad
+S_{\mathrm{BV}}=S_{\mathrm{phys,BRST}}+S_Q,\quad
+S_{\mathrm{phys,BRST}}=S_{\mathrm{phys}}+\int d^4x\,(s\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},\quad
 S_Q=\int d^4x\,(Q_-\Phi^{\mathcal A})\Phi^\ddagger_{\mathcal A},
 \end{equation*}
 and $D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $\mathrm{gh}$ be the ghost number and $J_L=J_{+-}$ the Cartan generator of the rotations of the undotted index, as in \eqref{eq-E-charges}; the supercharge $Q_-$ has $J_L=-\tfrac12$. Then
@@ -4962,7 +4915,9 @@ and $D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)$, $D_Q=(S_Q,\,\cdot\,)$. Let $\mathr
 \underbrace{D_0D_Q+D_QD_0}_{(J_L,\mathrm{gh})=(-\frac12,1)}=0,\qquad
 \underbrace{D_Q}_{(J_L,\mathrm{gh})=(-\frac12,0)}{}^{2}=0,
 \end{equation*}
-the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $J_L$, so the local operators form a double complex.\footnote{\label{fn-weight}Both differentials preserve $2(E+J_L)$, with $E$ the scaling dimension and dimensionful couplings counted with their dimensions. The $J_L$ filtration is bounded in each finite-dimensional weight space, so its spectral sequence converges.} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on this relative complex it is concentrated in ghost number $\mathrm{gh}=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $\mathrm{gh}$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
+the three components of $(S_{\mathrm{BV}},S_{\mathrm{BV}})=0$ of fixed $J_L$, so the local operators form a double complex.\footnotemark{} Its first page is the cohomology of $D_0$, the local BRST cohomology of the gauge theory: on this relative complex it is concentrated in ghost number $\mathrm{gh}=0$, where it is the space of gauge-invariant local operators modulo the equations of motion \cite{BBH}. The differential induced on it by $D_Q$ is $Q_-$. The higher differentials $d_r$, $r\ge2$, change $\mathrm{gh}$ by $1-r\ne0$ and therefore vanish, which gives the second isomorphism.~\hfill\qedsymbol
+\end{proofbox}
+\footnotetext{\label{fn-weight}Both differentials preserve $2(E+J_L)$, with $E$ the scaling dimension and dimensionful couplings counted with their dimensions. The $J_L$ filtration is bounded in each finite-dimensional weight space, so its spectral sequence converges.}
 
 Proposition~\ref{prop-twist-cohomology} is the classical statement. Within a perturbative quantization of the physical theory that preserves the symmetries below, one can compare the total quantum differential with the quantum supercharge on physical operators. Give the supercharge a constant ghost $\epsilon$ with $(J_L,\mathrm{gh})=(\tfrac12,1)$, so that $S_{\mathrm{BV}}(\epsilon)=S_{\mathrm{phys,BRST}}+\epsilon S_Q$ has $(J_L,\mathrm{gh})=(0,0)$; the physical theory is the part of order $\epsilon^0$, and the twist is $\epsilon=1$. A perturbative quantization that preserves $\mathrm{gh}$ and $J_L$ gives, at $\epsilon=1$, a differential on local operators of the form
 \begin{equation*}
@@ -4975,7 +4930,7 @@ D_0=(S_{\mathrm{phys,BRST}},\,\cdot\,)+O(\hbar),\qquad D_1=(S_Q,\,\cdot\,)+O(\hb
 \end{equation*}
 with $D_k=O(\hbar)$ for $k\ge2$. Here $D_0$ is the quantum BRST differential of the physical theory, with the loop corrections to the gauge transformations and to the equations of motion of composite operators; $D_1$ is the quantum supercharge, with its anomalous terms; and the $D_k$ with $k\ge2$ record that the quantum supercharge squares to zero only up to BRST-exact terms, $D_1^2=-D_0D_2-D_2D_0$.
 
-\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ consist of local operators invariant under constant gauge transformations and independent of the undifferentiated ghost. Let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above that preserves $2(E+J_L)$. Assume the eigenspaces of $2(E+J_L)$ in $V$ are finite dimensional (footnote~\ref{fn-weight}).}
+\rthm{Proposition}{prop-twist-cohomology-quantum}{Quantum BPS operators} \emph{Let $V$ consist of local operators invariant under constant gauge transformations and independent of the undifferentiated ghost $c_{\mathrm{gh}}^A$. Let $\mathbf D=\sum_{k\ge0}D_k$ be a $\mathbb C[[\hbar]]$-linear differential on $V[[\hbar]]$ of the form above that preserves $2(E+J_L)$. Assume the eigenspaces of $2(E+J_L)$ in $V$ are finite dimensional (footnote~\ref{fn-weight}).}
 
 (i) \emph{The cohomology of $D_0$ is concentrated in ghost number zero, and the space $P=H^0(D_0)$ of quantum physical operators is a free $\mathbb C[[\hbar]]$-module with $P/\hbar P$ the classical space of gauge-invariant local operators modulo the equations of motion.}
 
@@ -4987,7 +4942,8 @@ H\bigl(V[[\hbar]],\mathbf D\bigr)\;\cong\;H\bigl(Q_\hbar\,;\,H(D_0)\bigr)
 \end{equation*}
 \emph{as $\mathbb C[[\hbar]]$-modules, torsion included: a class is lifted at the same order in $\hbar$ on both sides.}
 
-\emph{Proof.} (i) At each value of $2(E+J_L)$, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
+\begin{proofbox}
+\textbf{Proof.} (i) At each value of $2(E+J_L)$, $(V[[\hbar]],D_0)$ is a bounded complex of free $\mathbb C[[\hbar]]$-modules of finite rank whose reduction modulo $\hbar$ is the classical complex of $D_0$, with cohomology in ghost number zero only (proof of Proposition~\ref{prop-twist-cohomology}). The universal coefficient sequence
 \begin{equation*}
 0\to H^{\mathrm{gh}}(D_0)/\hbar H^{\mathrm{gh}}(D_0)\to H^{\mathrm{gh}}\bigl(D_0|_{\hbar=0}\bigr)\to\ker\bigl(\hbar:H^{\mathrm{gh}+1}(D_0)\to H^{\mathrm{gh}+1}(D_0)\bigr)\to0
 \end{equation*}
@@ -5000,6 +4956,7 @@ gives $H^{\mathrm{gh}}(D_0)=\hbar H^{\mathrm{gh}}(D_0)$ for $\mathrm{gh}\ne0$, h
 \pi\delta(1+h\delta)^{-1}\iota=\pi\Bigl(\delta-\delta h\delta+\delta h\delta h\delta-\cdots\Bigr)\iota .
 \end{equation*}
 A term with the factors $D_{a_1},\ldots,D_{a_n}$ has $(J_L,\mathrm{gh})=(-\tfrac A2,1-A)$ with $A=a_1+\cdots+a_n\ge n$. Because $P$ lies in ghost number zero, only $A=1$ contributes, that is, the single term $\pi D_1\iota=Q_\hbar$.~\hfill\qedsymbol
+\end{proofbox}
 
 Under the hypotheses of Proposition~\ref{prop-twist-cohomology-quantum}, the total differential $\mathbf D$ and the quantum supercharge on physical operators have the same cohomology. This compares two complexes within the chosen quantization of the physical theory. The differential $\mathbf Q$ of \eqref{eq-1-1}, however, is obtained by quantizing the classical twisted action $S_{\mathrm{tw}}$ directly. Identifying its complex with $(V[[\hbar]],\mathbf D)$ requires a quantum comparison compatible with local operator renormalization. Independence of gauge fixing and regularization within a fixed BV quantization \cite{Costello} does not by itself construct this comparison. We assume this identification when interpreting the results as physical quantum BPS cohomology, as stated in Section~\ref{sec-brackets}.
 
@@ -5027,53 +4984,36 @@ A common rescaling of the resistances does not affect the formula, so we may imp
 
 \section{Covariant derivatives in the superpotential}\label{app-covariant-derivatives}
 
-The superpotential in \eqref{eq-Psi} may also contain superspace covariant derivatives. For the same off-shell chiral and vector multiplets, the complete gauge-invariant Lorentz-scalar density obeys
-
-
+The superpotential in \eqref{eq-Psi} may also contain superspace covariant derivatives. For the standard off-shell chiral and vector multiplets, any local gauge-invariant Lorentz-scalar chiral or antichiral density obeys
 \begin{equation}\label{eq-derivative-chirality}
 \bar\nabla_{\dot a}W=0,\qquad \nabla_a\bar W=0.
 \end{equation}
 
-\rthm{Proposition}{local-196ab6e2-5e7c-4a77-9d70-3e6d55639ef1}{Covariant chiral cohomology} For the standard off-shell chiral and vector multiplets, a compact gauge group and linearly transforming matter, the local gauge-invariant Lorentz-scalar densities satisfying \eqref{eq-derivative-chirality} admit the decomposition
-
+\rthm{Proposition}{local-196ab6e2-5e7c-4a77-9d70-3e6d55639ef1}{Covariant chiral cohomology} \emph{For the standard off-shell chiral and vector multiplets, a compact gauge group and linearly transforming matter, the local gauge-invariant Lorentz-scalar densities satisfying \eqref{eq-derivative-chirality} admit the decomposition}
 \begin{equation}\label{eq-spinor-chiral-decomposition}
 \begin{aligned}
 W&=W(\Phi,W_a)+\frac14\bar\nabla^2K,\\
-\bar W&=\bar W(\bar\Phi,\bar W_{\dot a})+\frac14\nabla^2K^\dagger.
+\bar W&=\bar W(\bar\Phi,\bar W_{\dot a})+\frac14\nabla^2K^\dagger,
 \end{aligned}
 \end{equation}
-
-\label{d-rewrite-classification-s2}The ordinary superpotentials depend on undifferentiated matter and field-strength superfields; $K$ is a gauge-invariant local scalar and may contain superspace covariant derivatives.
-
-\label{d-rewrite-classification-source-s2}The statement is coefficientwise in formal power series, with finitely many derivatives at each order.
+\label{d-rewrite-classification-s2}\emph{where the ordinary superpotentials depend only on undifferentiated matter and field-strength superfields, while $K$ is a gauge-invariant local scalar that may contain superspace covariant derivatives.} \label{d-rewrite-classification-source-s2}\emph{The decomposition holds coefficientwise in formal power series, with finitely many derivatives at each order.}
 
 \begin{proofbox}
-
-\label{proof-d-spinor-cohomology-start}\emph{Proof.}
-
-\label{d-rewrite-classification-source}The first line of \eqref{eq-spinor-chiral-decomposition} is Brandt\textquoteright s scalar chiral-cohomology theorem, used here as an external input: \href{https://arxiv.org/pdf/hep-th/0212070#page=34}{Eqs.~(B.32)--(B.33)} with the off-shell realization in \href{https://arxiv.org/pdf/hep-th/0212070#page=16}{Section 6e(c)}.
-
-\label{d-cohomology-proof-multiplets}The required off-shell multiplet decomposition is established in \href{https://arxiv.org/pdf/hep-th/9609192#page=39}{Section 10} and \href{https://arxiv.org/pdf/hep-th/9609192#page=48}{Appendix C.2}; complex conjugation gives the second line.
-
-\label{proof-d-spinor-cohomology-end}$\square$
-
+\label{proof-d-spinor-cohomology-start}\textbf{Proof.}
+\label{d-rewrite-classification-source}The first line of \eqref{eq-spinor-chiral-decomposition} is Brandt's scalar chiral-cohomology theorem \cite[Section 6e(c) and Eqs.~(B.32)--(B.33)]{Brandt2002}, \label{d-cohomology-proof-multiplets}whose required off-shell multiplet decomposition is established in \cite[Section 10 and Appendix C.2]{Brandt1996}; complex conjugation gives the second line.~\hfill\label{proof-d-spinor-cohomology-end}\qedsymbol
 \end{proofbox}
 
-\label{d-rewrite-classification-source-s3}Field-strength terms generated by covariant commutators are included in the ordinary $W(\Phi,W_a)$ in \eqref{eq-spinor-chiral-decomposition}.
+\label{d-rewrite-classification-source-s3}Field-strength factors generated by commutators of superspace covariant derivatives are absorbed into the ordinary superpotential $W(\Phi,W_a)$ in \eqref{eq-spinor-chiral-decomposition}.
 
-\rthm{Proposition}{prop-d-projector-removal}{Removal of the chiral projection} The projector terms in \eqref{eq-spinor-chiral-decomposition} give a full-superspace term with $\delta K=K+K^\dagger$, removed by the antifield translation generated by
-
+\rthm{Proposition}{prop-d-projector-removal}{Removal of the chiral projection} \emph{The projector terms in \eqref{eq-spinor-chiral-decomposition} assemble into a full-superspace D-term with $\delta K=K+K^\dagger$, which is removed in the BV complex by the canonical antifield translation generated by}
 \begin{equation}\label{eq-spinor-dterm-generator}
 \delta\Psi=\frac18\int d^4x\,
 \nabla_+\bar\nabla^2\delta K\Big|.
 \end{equation}
 
 \begin{proofbox}
-
-\label{proof-d-spinor-canonical-start}\emph{Proof.}
-
-\label{d-rewrite-projector-intro}Using $\nabla^2=2\nabla_-\nabla_+$ and superspace integration by parts, with vanishing spacetime boundary terms,
-
+\label{proof-d-spinor-canonical-start}\textbf{Proof.}
+\label{d-rewrite-projector-intro}Using $\nabla^2=2\nabla_-\nabla_+$ and superspace integration by parts with vanishing spacetime boundary terms gives
 \begin{equation}\label{eq-spinor-projector-dterm}
 \begin{aligned}
 \delta S_{\mathrm{phys}}
@@ -5087,9 +5027,7 @@ W&=W(\Phi,W_a)+\frac14\bar\nabla^2K,\\
 \qquad s\delta\Psi=0.
 \end{aligned}
 \end{equation}
-
-\label{d-rewrite-canonical-proof}With the Euler functional derivatives and the sign of \eqref{eq-B-2},
-
+\label{d-rewrite-canonical-proof}With Euler--Lagrange functional derivatives and the sign convention of \eqref{eq-B-2},
 \begin{equation}\label{eq-spinor-canonical-removal}
 \begin{aligned}
 \Phi^\ddagger_{\mathcal A,\mathrm{new}}
@@ -5106,25 +5044,14 @@ S_{\mathrm{BV,new}}
 \Phi^\ddagger_{\mathcal A,\mathrm{new}}.
 \end{aligned}
 \end{equation}
-
-\label{d-rewrite-canonical-jacobian}The translation is triangular with identity diagonal, hence has unit Berezinian; $\Delta\delta\Psi=0$ because $\delta\Psi$ depends on fields and their derivatives and is independent of antifields.
-
-\label{proof-d-spinor-canonical-end}$\square$
-
+\label{d-rewrite-canonical-jacobian}Because $\delta\Psi$ depends solely on fields and their derivatives and is independent of antifields, the translation is triangular with identity diagonal, has unit Berezinian, and satisfies $\Delta\delta\Psi=0$.~\hfill\label{proof-d-spinor-canonical-end}\qedsymbol
 \end{proofbox}
 
-\rthm{Proposition}{prop-d-unchanged-twist}{Twisted operations} Fix the ordinary superpotential in \eqref{eq-spinor-chiral-decomposition}, the canonical insertions and the quantization prescription of Section 3.6.
-
-\label{d-rewrite-operations}The projector sector leaves the canonical $H(\bar\partial)$ representatives, the $Q_n$ and the quantum product unchanged.
+\rthm{Proposition}{prop-d-unchanged-twist}{Twisted operations} \emph{Fix the ordinary superpotential in \eqref{eq-spinor-chiral-decomposition}, the canonical insertions, and the quantization prescription of Section~\ref{sec-brackets}.} \label{d-rewrite-operations}\emph{The projector sector leaves the canonical $H(\bar\partial)$ representatives, the loop operators $Q_n$, and the quantum product $\star$ unchanged.}
 
 \begin{proofbox}
-
-\label{proof-d-spinor-operations-start}\emph{Proof.}
-
-\label{d-rewrite-antichiral}The chiral F term is still $Q_-$-exact by \eqref{eq-Psi}, so after the preceding translation the twist retains the ordinary antichiral term.
-
-\label{d-rewrite-action}The same contraction of the pairs in Table 3.1 gives
-
+\label{proof-d-spinor-operations-start}\textbf{Proof.}
+\label{d-rewrite-antichiral}The chiral F-term remains $Q_-$-exact by \eqref{eq-Psi}, so after the translation \eqref{eq-spinor-canonical-removal} the twist retains only the ordinary antichiral term. \label{d-rewrite-action}Eliminating the contractible pairs of Table~\ref{b-00904} yields the unchanged interaction density
 \begin{equation}\label{eq-derivative-interaction}
 \begin{gathered}
 \mathcal I=-\frac g2C^A{}_{BC}b_Ac^Bc^C
@@ -5133,9 +5060,7 @@ S_{\mathrm{BV,new}}
 w_{\dot a}^A=\frac12\partial_{+\dot a}c^A.
 \end{gathered}
 \end{equation}
-
-\label{d-rewrite-representatives}The canonical $H(\bar\partial)$ representatives remain the holomorphic zero-form letters $c,b,\gamma,\beta$ and their holomorphic derivatives; their physical-variable dictionary changes by
-
+\label{d-rewrite-representatives}The canonical $H(\bar\partial)$ representatives remain the holomorphic zero-form letters $c,b,\gamma,\beta$ and their holomorphic derivatives, while their dictionary to untwisted physical fields shifts by
 \begin{equation}\label{eq-spinor-representative-shift}
 \delta\beta^{(0)i}
 =\frac{\delta_L\delta\Psi}{\delta\bar{\mathcal F}_i},
@@ -5143,9 +5068,7 @@ w_{\dot a}^A=\frac12\partial_{+\dot a}c^A.
 \delta b_A^{(0)}
 =-\frac i2\frac{\delta_L\delta\Psi}{\delta\lambda_-^A}.
 \end{equation}
-
-\label{d-rewrite-loops}For fixed canonical insertions $\mathcal O,A,B$, the free BV pairing, gauge fixing and interaction therefore give
-
+\label{d-rewrite-loops}For fixed canonical insertions $\mathcal O,A,B$, the free BV pairing, gauge fixing, and interaction satisfy
 \begin{equation}\label{eq-spinor-unchanged-operations}
 \begin{gathered}
 \delta S_{\mathrm{free}}=\delta\mathcal I=0,
@@ -5154,26 +5077,20 @@ w_{\dot a}^A=\frac12\partial_{+\dot a}c^A.
 \qquad \delta(A\star B)=0.
 \end{gathered}
 \end{equation}
-
-\label{d-rewrite-loops-s2}The projector vertices have been removed before the Wick expansion, and the graph-degree count for $Q_n\mathcal O$ remains
-
+\label{d-rewrite-loops-s2}Because the projector vertices are removed prior to the Wick expansion, the form-degree count for $Q_n\mathcal O$ remains
 \begin{equation}\label{eq-spinor-degree-count}
 \underbrace{|I|-1}_{\text{propagators}}
 +\underbrace{2}_{\text{heat kernel}}
 =\underbrace{2(|V|-1)}_{|V|-1\ \text{integrated points}},
-\qquad |V|=n+2,\quad |I|=2n+1.
+\qquad |V|=n+2,\quad |I|=2n+1,
 \end{equation}
-
-\label{d-rewrite-graph-result}The Section 4 classification therefore applies for $n\ge1$: fans for interactions of degree at most three, and fans or spiders for an ordinary superpotential of arbitrary degree.
-
-\label{proof-d-spinor-operations-end}$\square$
-
+\label{d-rewrite-graph-result}so the classification of Section~\ref{sec-restrictions} applies verbatim for $n\ge1$: fans for interactions of degree at most three, and fans or spiders for an ordinary superpotential of arbitrary degree.~\hfill\label{proof-d-spinor-operations-end}\qedsymbol
 \end{proofbox}
 
 \section{Star--triangle reduction with a source}\label{app-sourced-star}
-% Compact replacement for old 7.3.5, relocated to an appendix.
-% The full wedge expression avoids an incorrect zero-source factorization.
-\rthm{Theorem}{thm-sourced-star}{Star--triangle with a source}
+
+Theorem~\ref{b-01159} gave the star--triangle move at a source-free degree-three vertex; when the eliminated vertex $v$ carries an external current source $\lambda_v$, the transformation redistributes $\lambda_v$ across its three neighbours with resistance-dependent weights before merging the parallel edges (Figure~\ref{fig-sourced-star}).
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/vec/star-triangle-sourced-20261117.pdf}
@@ -5181,16 +5098,13 @@ w_{\dot a}^A=\frac12\partial_{+\dot a}c^A.
 \label{fig-sourced-star}
 \end{figure}
 
-In a Laman graph, let $v$ have degree three and neighbours $u,w,x$, with $ux,wx$ present and $uw$ absent. Use the edge orders of Theorem~\ref{b-01159}.
-After the star--triangle change and the two parallel merges, let
-$r_1,r_2\in(0,1)$ be the current fractions of the original edges
-$ux,wx$. The sum of the triangle resistances before the merges is
+\rthm{Theorem}{thm-sourced-star}{Star--triangle with a source} \emph{In a Laman graph, let $v$ have degree three and neighbours $u,w,x$, with $ux,wx$ present and $uw$ absent, ordered as in Theorem~\ref{b-01159}. After the star--triangle change and the two parallel merges, let $r_1,r_2\in(0,1)$ be the current fractions of the original edges $ux,wx$, and set}
 \begin{equation}\label{eq-sourced-Sigma}
 \Sigma=t_{uw}^{\mathrm{red}}
 +\frac{t_{ux}^{\mathrm{red}}}{1-r_1}
-+\frac{t_{wx}^{\mathrm{red}}}{1-r_2}.
++\frac{t_{wx}^{\mathrm{red}}}{1-r_2}
 \end{equation}
-The sources and original currents are
+\emph{for the sum of the triangle resistances prior to merging. The reduced sources and original currents are}
 \begin{equation}\label{local-B-sourced-current-map}
 \begin{aligned}
 \lambda_u^{\mathrm{red}}
@@ -5211,8 +5125,7 @@ y_{vx}
 y_{ux}&=r_1y_{ux}^{\mathrm{red}},&y_{wx}&=r_2y_{wx}^{\mathrm{red}}.
 \end{aligned}
 \end{equation}
-Choose $T^{\mathrm{red}}$ containing $ux,wx$. For an $n$-loop graph,
-the kernel is the full current-area pullback
+\emph{Choosing a spanning tree $T^{\mathrm{red}}$ containing $ux$ and $wx$, the $n$-loop kernel is the full current-area pullback}
 \begin{equation}\label{local-B-sourced-operator}
 \begin{aligned}
 \mathcal I_\Gamma(\lambda;z)
@@ -5223,29 +5136,16 @@ e^{-\sum_{e\in I\,\mathrm{(edges)}}y_{e,+\dot a}z_e^{+\dot a}}\\
 &\quad\wedge[-d(r_2y_{wx,+\dot+}^{\mathrm{red}})
 \wedge d(r_2y_{wx,+\dot-}^{\mathrm{red}})]
 \wedge\bigwedge_{\substack{e\in I^{\mathrm{red}}\setminus T^{\mathrm{red}}\\e\ne uw}}
-(-d^2y_e^{\mathrm{red}}).
+(-d^2y_e^{\mathrm{red}}),
 \end{aligned}
 \end{equation}
-Here $d$ varies both fractions and the positive reduced resistance ratios
-at fixed original sources; the reduced currents are evaluated at the
-displayed resistance-dependent sources.
-
+\emph{where $d$ varies $(r_1,r_2)$ and the positive reduced resistance ratios at fixed original sources, with reduced currents evaluated at the resistance-dependent sources in \eqref{local-B-sourced-current-map}.}
 
 \begin{proofbox}
-The subset count in Theorem \ref{b-01159} proves that the reduced graph is Laman.
-The star--triangle change divides $\lambda_v$ according to the opposite
-triangle resistances. Parallel merging gives the displayed factors
-$1-r_1,1-r_2$ and the current maps. Replacing $ux,wx$ in
-$T^{\mathrm{red}}$ by $vu,vw,vx$ gives the original spanning tree;
-its chords are $ux,wx$ and the retained chords other than $uw$.
-Their area wedge is precisely the integrand above. The resistance
-change reverses orientation, supplying the minus sign.
+\textbf{Proof.} The subset count in Theorem~\ref{b-01159} proves that the reduced graph is Laman. The star--triangle change divides $\lambda_v$ in proportion to the opposite triangle conductances (equivalently, opposite triangle resistances divided by $\Sigma$), and parallel merging supplies the factors $1-r_1,1-r_2$ and the current maps \eqref{local-B-sourced-current-map}. Replacing $ux,wx$ in $T^{\mathrm{red}}$ by $vu,vw,vx$ gives a spanning tree of $\Gamma$ whose chords are $ux,wx$ together with the retained chords other than $uw$; their area wedge is the integrand in \eqref{local-B-sourced-operator}, with the overall minus sign from orientation reversal.~\hfill\qedsymbol
 \end{proofbox}
 
-
-For higher-degree superpotentials, the output count \eqref{eq-1-23} allows several source vertices in one tree.
-Successive sourced reductions give rational currents and current-area densities.
-At fixed resistance ratios, the source transfers and reverse maps require a polynomial number of arithmetic operations in the graph size.
+For higher-degree superpotentials, the output count \eqref{eq-1-23} permits multiple source vertices inside a single interaction tree: iterating Theorem~\ref{thm-sourced-star} then yields rational currents and current-area densities whose source transfers and reverse maps require only polynomially many arithmetic operations in the graph size at fixed resistance ratios.
 
 \begin{thebibliography}{99}
 \small
@@ -5373,6 +5273,10 @@ M.~Wang and B.~R.~Williams, ``On the Renormalization and Quantization of Topolog
 K.~Costello, ``Renormalisation and the Batalin--Vilkovisky Formalism,'' \href{https://arxiv.org/abs/0706.1533}{arXiv:0706.1533}.
 \bibitem{WittenSuperstring}
 E.~Witten, ``Superstring Perturbation Theory Revisited,'' \href{https://arxiv.org/abs/1209.5461}{arXiv:1209.5461}.
+\bibitem{Brandt2002}
+F.~Brandt, ``Extended BRST Cohomology, Consistent Deformations and Anomalies of Four-Dimensional Supersymmetric Gauge Theories,'' \emph{JHEP} \textbf{04} (2003), 035, \href{https://arxiv.org/abs/hep-th/0212070}{arXiv:hep-th/0212070}.
+\bibitem{Brandt1996}
+F.~Brandt, ``Local BRST Cohomology in Minimal $D=4$, $N=1$ Supergravity,'' \emph{Ann. Phys.} \textbf{259} (1997), 253--312, \href{https://arxiv.org/abs/hep-th/9609192}{arXiv:hep-th/9609192}.
 \end{thebibliography}
 
 \end{document}
